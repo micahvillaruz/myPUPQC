@@ -10,7 +10,7 @@
 		"website": "www.abcd.com",
 		"contact_email": "info@abcd.com",
 		"since": "1995",
-		"image_src": "assets/images/brands/dribbble.png"
+		"image_src": "public/images/brands/dribbble.png"
 	},
 	{
 		"id": "2",
@@ -23,7 +23,7 @@
 		"website": "www.itesttech.com",
 		"contact_email": "info@itesttech.com",
 		"since": "2005",
-		"image_src": "assets/images/brands/bitbucket.png"
+		"image_src": "public/images/brands/bitbucket.png"
 	},
 	{
 		"id": "3",
@@ -36,7 +36,7 @@
 		"website": "www.forcemedicine.com",
 		"contact_email": "info@forcemedicine.com",
 		"since": "1998",
-		"image_src": "assets/images/companies/img-8.png"
+		"image_src": "public/images/companies/img-8.png"
 	},
 	{
 		"id": "4",
@@ -49,7 +49,7 @@
 		"website": "www.digitech.com",
 		"contact_email": "info@digitech.com",
 		"since": "1992",
-		"image_src": "assets/images/companies/img-1.png"
+		"image_src": "public/images/companies/img-1.png"
 	},
 	{
 		"id": "5",
@@ -62,7 +62,7 @@
 		"website": "www.zoetic.com",
 		"contact_email": "info@zoetic.com",
 		"since": "1993",
-		"image_src": "assets/images/companies/img-6.png"
+		"image_src": "public/images/companies/img-6.png"
 	},
 	{
 		"id": "6",
@@ -75,7 +75,7 @@
 		"website": "www.microdesign.com",
 		"contact_email": "info@microdesign.com",
 		"since": "2005",
-		"image_src": "assets/images/brands/dropbox.png"
+		"image_src": "public/images/brands/dropbox.png"
 	},
 	{
 		"id": "7",
@@ -88,7 +88,7 @@
 		"website": "www.syntycesolu.com",
 		"contact_email": "info@syntycesolu.com",
 		"since": "1991",
-		"image_src": "assets/images/brands/mail_chimp.png"
+		"image_src": "public/images/brands/mail_chimp.png"
 	},
 	{
 		"id": "8",
@@ -101,7 +101,7 @@
 		"website": "www.meta4systems.com",
 		"contact_email": "info@meta4systems.com",
 		"since": "1989",
-		"image_src": "assets/images/companies/img-3.png"
+		"image_src": "public/images/companies/img-3.png"
 	},
 	{
 		"id": "9",
@@ -114,7 +114,7 @@
 		"website": "www.moetic.com",
 		"contact_email": "info@moetic.com",
 		"since": "1975",
-		"image_src": "assets/images/companies/img-4.png"
+		"image_src": "public/images/companies/img-4.png"
 	},
 	{
 		"id": "10",
@@ -127,6 +127,6 @@
 		"website": "www.syntyce.com",
 		"contact_email": "info@syntyce.com",
 		"since": "2009",
-		"image_src": "assets/images/brands/slack.png"
+		"image_src": "public/images/brands/slack.png"
 	}
 ]

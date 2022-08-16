@@ -1,7 +1,7 @@
 [
 	{
 		"id": "1",
-		"name": ["assets/images/users/avatar-9.jpg", "Thomas Taylor"],
+		"name": ["public/images/users/avatar-9.jpg", "Thomas Taylor"],
 		"company_name": "iTest Factory",
 		"designation": "UI / UX Designer",
 		"date": "2012-04-23T18:25:43.511Z",
@@ -12,7 +12,7 @@
 	},
 	{
 		"id": "2",
-		"name": ["assets/images/users/avatar-2.jpg", "Nancy Martino"],
+		"name": ["public/images/users/avatar-2.jpg", "Nancy Martino"],
 		"company_name": "Force Medicines",
 		"designation": "PHP Developer",
 		"date": "2019-03-20T18:25:43.511Z",
@@ -23,7 +23,7 @@
 	},
 	{
 		"id": "3",
-		"name": ["assets/images/users/avatar-4.jpg", "Alexis Clarke"],
+		"name": ["public/images/users/avatar-4.jpg", "Alexis Clarke"],
 		"company_name": "Android Galaxy",
 		"designation": "Asp.Net Developer",
 		"date": "2018-10-11T19:30:43.511Z",
@@ -34,7 +34,7 @@
 	},
 	{
 		"id": "4",
-		"name": ["assets/images/users/avatar-3.jpg", "James Price"],
+		"name": ["public/images/users/avatar-3.jpg", "James Price"],
 		"company_name": "Themesbrand",
 		"designation": "Lead Developer",
 		"date": "2018-11-12T12:25:50.511Z",
@@ -45,7 +45,7 @@
 	},
 	{
 		"id": "5",
-		"name": ["assets/images/users/avatar-5.jpg", "Mary Cousar"],
+		"name": ["public/images/users/avatar-5.jpg", "Mary Cousar"],
 		"company_name": "Micro Design",
 		"designation": "Full Stack Developer",
 		"date": "2015-03-20T18:25:43.511Z",
@@ -56,7 +56,7 @@
 	},
 	{
 		"id": "6",
-		"name": ["assets/images/users/avatar-6.jpg", "Herbert Stokes"],
+		"name": ["public/images/users/avatar-6.jpg", "Herbert Stokes"],
 		"company_name": "Themesbrand",
 		"designation": "Mean Stack Developer",
 		"date": "2012-05-10T10:25:55.511Z",
@@ -67,7 +67,7 @@
 	},
 	{
 		"id": "7",
-		"name": ["assets/images/users/avatar-7.jpg", "Michael Morris"],
+		"name": ["public/images/users/avatar-7.jpg", "Michael Morris"],
 		"company_name": "Syntyce Solutions",
 		"designation": "NodeJS Developer",
 		"date": "2021-08-12T18:25:43.511Z",
@@ -78,7 +78,7 @@
 	},
 	{
 		"id": "8",
-		"name": ["assets/images/users/avatar-9.jpg", "Timothy Smith"],
+		"name": ["public/images/users/avatar-9.jpg", "Timothy Smith"],
 		"company_name": "Digitech Galaxy",
 		"designation": "Assitant Developer",
 		"date": "2017-09-18T18:36:10.511Z",
@@ -89,7 +89,7 @@
 	},
 	{
 		"id": "9",
-		"name": ["assets/images/users/avatar-8.jpg", "Kevin Dawson"],
+		"name": ["public/images/users/avatar-8.jpg", "Kevin Dawson"],
 		"company_name": "Meta4Systems",
 		"designation": "Senoir Developer",
 		"date": "2011-06-09T22:30:43.511Z",
@@ -100,7 +100,7 @@
 	},
 	{
 		"id": "10",
-		"name": ["assets/images/users/avatar-10.jpg", "Tonya Noble"],
+		"name": ["public/images/users/avatar-10.jpg", "Tonya Noble"],
 		"company_name": "Nesta Technologies",
 		"designation": "Lead Designer / Developer",
 		"date": "2012-04-23T18:25:43.511Z",

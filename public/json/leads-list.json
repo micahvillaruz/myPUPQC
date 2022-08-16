@@ -1,7 +1,7 @@
 [
 	{
 		"id": "1",
-		"image_src": "assets/images/users/avatar-4.jpg",
+		"image_src": "public/images/users/avatar-4.jpg",
 		"name": "Alexis Clarke",
 		"company_name": "Force Medicines",
 		"date": "07 Apr, 2021",
@@ -12,7 +12,7 @@
 	},
 	{
 		"id": "2",
-		"image_src": "assets/images/users/avatar-3.jpg",
+		"image_src": "public/images/users/avatar-3.jpg",
 		"name": "James Morris",
 		"company_name": "iTest Factory",
 		"date": "15 Feb, 2021",
@@ -23,7 +23,7 @@
 	},
 	{
 		"id": "3",
-		"image_src": "assets/images/users/avatar-2.jpg",
+		"image_src": "public/images/users/avatar-2.jpg",
 		"name": "Nancy Martino",
 		"company_name": "Syntyce Solutions",
 		"date": "02 Jan, 2022",
@@ -34,7 +34,7 @@
 	},
 	{
 		"id": "4",
-		"image_src": "assets/images/users/avatar-7.jpg",
+		"image_src": "public/images/users/avatar-7.jpg",
 		"name": "Michael Morris",
 		"company_name": "Micro Design",
 		"date": "19 May, 2021",
@@ -45,7 +45,7 @@
 	},
 	{
 		"id": "5",
-		"image_src": "assets/images/users/avatar-8.jpg",
+		"image_src": "public/images/users/avatar-8.jpg",
 		"name": "Kevin Dawson",
 		"company_name": "Nesta Technologies",
 		"date": "14 Apr, 2021",
@@ -56,7 +56,7 @@
 	},
 	{
 		"id": "6",
-		"image_src": "assets/images/users/avatar-6.jpg",
+		"image_src": "public/images/users/avatar-6.jpg",
 		"name": "Herbert Stokes",
 		"company_name": "Zoetic Fashion",
 		"date": "07 Jun, 2020",
@@ -67,7 +67,7 @@
 	},
 	{
 		"id": "7",
-		"image_src": "assets/images/users/avatar-5.jpg",
+		"image_src": "public/images/users/avatar-5.jpg",
 		"name": "Glen Matney",
 		"company_name": "Moetic Fashion",
 		"date": "19 May, 2021",
@@ -78,7 +78,7 @@
 	},
 	{
 		"id": "8",
-		"image_src": "assets/images/users/avatar-1.jpg",
+		"image_src": "public/images/users/avatar-1.jpg",
 		"name": "Charles Kubik",
 		"company_name": "Syntyce Solutions",
 		"date": "25 Sep, 2021",
@@ -89,7 +89,7 @@
 	},
 	{
 		"id": "9",
-		"image_src": "assets/images/users/avatar-9.jpg",
+		"image_src": "public/images/users/avatar-9.jpg",
 		"name": "Thomas Taylor",
 		"company_name": "Digitech Galaxy",
 		"date": "28 Feb, 2019",
@@ -100,7 +100,7 @@
 	},
 	{
 		"id": "10",
-		"image_src": "assets/images/users/avatar-10.jpg",
+		"image_src": "public/images/users/avatar-10.jpg",
 		"name": "Tonya Noble",
 		"company_name": "Micro Design",
 		"date": "23 Nov, 2021",
@@ -109,5 +109,4 @@
 		"location": "London, UK",
 		"tags": ["Lead", "Partner"]
 	}
-
 ]
