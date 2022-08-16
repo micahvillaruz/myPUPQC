@@ -25,5 +25,4 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 # myPUPQC
 dist/
 .vscode/
-src/
 node_modules/
