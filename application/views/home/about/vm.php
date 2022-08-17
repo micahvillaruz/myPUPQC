@@ -12,7 +12,7 @@
                 <p class="text-center">PUP: Pambansang Politeknikong Unibersidad</p>
                 <h2 class="text-primary fw-medium">Vision (Bisyon)</h2>
                 <div class="row">
-                  <p class="col-6">PUP QC, a committed and comprehensive institution of learning that provides a culture of excellence.</p>
+                  <p class="col-6 text-justify">PUP QC, a committed and comprehensive institution of learning that provides a culture of excellence.</p>
                   <p class="col-6"> Ang PUP QC, isang nakatuon at komprehensibong institusyon ng pag-aaral na nagbibigay ng kultura ng kahusayan.</p>
                 </div>
               </div>
@@ -28,14 +28,29 @@
                   <p class="col-6">PUP QC responsive to the needs of its stakeholders is committed to promote cultural and academic excellence guided with ethical and moral leadership in pursuit of quality education.</p>
                   <p class="col-6">Ang PUP QC na tumutugon sa mga pangangailangan ng mga kasapi nito ay nakatuon sa pagtataguyod ng kahusayan sa kultura at akademiko na ginagabayan ng etikal at moral na pamumuno sa paghahangad ng kalidad na edukasyon.</p>
                 </div>
-                <h2 class="text-primary fw-medium">Ten Pillars (Sampung Haligi)</h2>
+                <h2 class="text-primary fw-medium">Goals</h2>
                 <div class="row">
-                  <p class="col-6">
-                  Pillar 1:  Dynamic, Transformational, and Responsible Leadership  </br><br>Pillar 2: Responsive and Innovative Curricula and Instruction </br> <br>Pillar 3:  Enabling and Productive Learning Environment </br> <br>Pillar 4:  Holistic Student Development and Engagement </br><br>Pillar 5:  Empowered Faculty Members and Employees </br><br> Pillar 6: Vigorous Research Production and Utilization </br><br>Pillar 7:  Global Academic Standards and Excellence  </br><br>Pillar 8: Synergistic, Productive, Strategic Networks and Partnerships </br><br>Pillar 9: Active and Sustained Stakeholders Engagement </br><br>Pillar 10: Sustainable Social Development Programs and Projects</br></p>
-                  <p class="col-6">Haligi 1: Dinamiko, Mapagbago at Responsableng Pamumuno </br><br> Haligi 2: Tumutugon at Makabagong  Kurikula at Pagtuturo </br> <br>Haligi 3: Nakatutulong at Produktibong Kapaligirang Pampagkatuto</br> <br>Haligi 4: Holistiko at Nakahihikayat na  Pagpapaunlad Pang-mag-aaral </br><br>Haligi 5: Pinahusay na Dalubguro at Kawani</br><br> Haligi 6: Masikhay na Produksyon at Pakikinabang ng Pananaliksik</br><br>Haligi 7: Pandaigdigang Pamantayang Akademiko at Kahusayan  </br><br>Haligi 8: Kolaborasyon, Produktibo, Estratehikong Ugnayan at Pagtutuwang</br><br> Haligi 9: Aktibo at Napapanatiling Ugnayan sa Pinaglilingkuran</br><br> Haligi 10: Patuluyang Programa at Proyektong Pagpapaunlad Panlipunan</br></p>
+                <ul class="list-unstyled">
+              <ul>
+            <li>Effective curriculum that promotes arts, science, and research based education.</li>
+            <li>Harmonious relationship between the administration, faculty, non-teaching personnel and students, by considering the culture of academic excellence and academic freedom in the institution.</li>
+            <li>Competent university personnels and student leaders, to sustain quality standard education.</li>
+            <li>Graduates that are globally competitive in their chosen fields and responsive to the community needs.</li>
+            </ul>
+                </ul>
+                <h2 class="text-primary fw-medium">Objectives</h2>
+                <div class="row">
+                <ul class="list-unstyled">
+              <ul>
+            <li>	Provide quality education that is responsive to the needs of the society.</li>
+            <li>	Preserve the commitment and pursue common goals.</li>
+            <li>Provide its students and faculty with arts, science and research based education..</li>
+            <li>Promote culture of academic excellence among the faculty, students and non-teaching personnel by maintaining academic freedom responsibility.</li>
+            <li>Sustain a reliable world class products in the future.</li>
+            <li>Make a PUP QC a prime learning institution in the locality.</li>
+            </ul>
                 </div>
-                <iframe width="708" height="398" src="https://www.youtube.com/embed/i7qQVvI8fOI" title="PUP Vision, Mission, and 10 Pillars Reform Agenda" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
+              </div> 
             </div>
             <!-- end card body -->
           </div>
