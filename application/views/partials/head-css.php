@@ -11,4 +11,5 @@
 	<link href="<?= base_url() ?>public/css/app.min.css" rel="stylesheet" type="text/css" />
 	<!-- custom Css-->
 	<link href="<?= base_url() ?>public/css/custom.css" rel="stylesheet" type="text/css" />
+
 	</head>
