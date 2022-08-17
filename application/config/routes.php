@@ -55,3 +55,6 @@ $route['translate_uri_dashes'] = FALSE;
 
 // Authentication Routes
 $route['signin'] = 'auth/signin';
+
+// Home Routes
+$route['about/vm'] = 'home/vm';

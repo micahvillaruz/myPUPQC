@@ -13,4 +13,16 @@ class Home extends CI_Controller
 		$this->load->view('partials/foot-scripts');
 		$this->load->view('home/scripts/landing-scripts');
 	}
+
+	public function vm()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/about/vm');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/vm-scripts');
+	}
 }
