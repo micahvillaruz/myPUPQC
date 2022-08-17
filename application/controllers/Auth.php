@@ -13,4 +13,14 @@ class Auth extends CI_Controller
     $this->load->view('partials/foot-scripts');
     $this->load->view('access/scripts/signin-scripts');
   }
+
+  public function forgot_password()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('access/forgot-password');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('access/scripts/forgot-password-scripts');
+  }
 }
