@@ -3,10 +3,11 @@
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0" nonce="KOSJDxRE"></script>
 	<!-- Begin page -->
 	<div class="layout-wrapper landing">
-		<nav class="navbar navbar-expand-lg navbar-landing fixed-top" id="navbar">
+		<nav class="navbar navbar-expand-lg navbar-landing navbar-light fixed-top" id="navbar">
 			<div class="container">
 				<a class="navbar-brand" href="index.html">
 					<img src="<?= base_url() ?>public/images/mypupqc-logo.png" class="card-logo card-logo-dark" alt="myPUPQC logo" height="25">
+					<img src="<?= base_url() ?>public/images/mypupqc-logo.png" class="card-logo card-logo-light" alt="myPUPQC logo" height="25">
 				</a>
 				<button class="navbar-toggler py-0 fs-20 text-body" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<i class="mdi mdi-menu"></i>
