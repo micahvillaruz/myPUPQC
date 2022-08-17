@@ -3,6 +3,16 @@
 
 	<!-- landing init -->
 	<script src="<?= base_url() ?>public/js/pages/landing.init.js"></script>
-	</body>
+
+	<script src="<?= base_url() ?>public/js/pages/nft-landing.init.js"></script>
+
+	<!-- prismjs plugin -->
+	<script src="<?= base_url() ?>public/libs/prismjs/prism.js"></script>
+
+	<!--Swiper slider js-->
+	<script src="<?= base_url() ?>public/libs/swiper/swiper-bundle.min.js"></script>
+
+	<!-- swiper.init js -->
+	<script src="<?= base_url() ?>public/js/pages/swiper.init.js"></script>
 
 	</html>
