@@ -4,7 +4,7 @@
 	<div class="layout-wrapper landing">
 		<nav class="navbar navbar-expand-lg navbar-landing navbar-light fixed-top" id="navbar">
 			<div class="container">
-				<a class="navbar-brand" href="#">
+				<a class="navbar-brand" href="<?= base_url() ?>">
 					<img src="<?= base_url() ?>public/images/mypupqc-logo.png" class="card-logo card-logo-dark" alt="myPUPQC logo" height="25">
 					<img src="<?= base_url() ?>public/images/mypupqc-logo.png" class="card-logo card-logo-light" alt="myPUPQC logo" height="25">
 				</a>
@@ -26,7 +26,7 @@
 										<a class="" href="#">University Profile</a>
 									</li>
 									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/about/vm">Vision and Mission</a>
+										<a class="" href="<?= base_url() ?>about/vm">Vision and Mission</a>
 									</li>
 									<li class="list-group-item dropdown-item">
 										<a class="" href="https://www.pup.edu.ph/quezoncity/history">History</a>
@@ -249,11 +249,11 @@
 									<span class="d-block text-primary fw-medium">Attend an Event</span>
 								</div>
 								<div class="col-3">
-									<a href=""><i class="bx bx-file border border-primary border-3 rounded-circle h2 p-3 text-primary"></i></a>
+									<a href="https://odrs.pup.edu.ph/ur/"><i class="bx bx-file border border-primary border-3 rounded-circle h2 p-3 text-primary"></i></a>
 									<span class="d-block text-primary fw-medium">Request Document</span>
 								</div>
 								<div class="col-3">
-									<a href=""><i class="bx bxs-school border border-primary border-3 rounded-circle h2 p-3 text-primary"></i></a>
+									<a href="https://apps.pup.edu.ph/appointment/"><i class="bx bxs-school border border-primary border-3 rounded-circle h2 p-3 text-primary"></i></a>
 									<span class="d-block text-primary fw-medium">Schedule Appointment</span>
 								</div>
 							</div>
@@ -276,10 +276,14 @@
 							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-1.jpg" alt="Card image"></a>
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
 								<div class="card-body px-1">
-								<a href="https://sis8.pup.edu.ph/" target="_blank"><p class="card-text text-white text-center mb-2">Portal for PUP Students, view class schedule and grades</p></a>
+									<a href="https://sis8.pup.edu.ph/" target="_blank">
+										<p class="card-text text-white text-center mb-2">Portal for PUP Students, view class schedule and grades</p>
+									</a>
 								</div>
 								<div class="card-footer bg-transparent">
-								<a href="https://sis8.pup.edu.ph/" target="_blank"><h4 class="card-title text-white mb-0 text-center">PUP Student Portal</h4></a>
+									<a href="https://sis8.pup.edu.ph/" target="_blank">
+										<h4 class="card-title text-white mb-0 text-center">PUP Student Portal</h4>
+									</a>
 								</div>
 							</div>
 						</div>
@@ -290,10 +294,14 @@
 							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-2.jpg" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
 								<div class="card-body px-1">
-								<a href="https://www.pup.edu.ph/students/scholarships" target="_blank"><p class="card-text text-white text-center mb-2">Access to educational opportunities in terms of scholarship and financial assistance to students</p></a>
+									<a href="https://www.pup.edu.ph/students/scholarships" target="_blank">
+										<p class="card-text text-white text-center mb-2">Access to educational opportunities in terms of scholarship and financial assistance to students</p>
+									</a>
 								</div>
 								<div class="card-footer bg-transparent">
-								<a href="https://www.pup.edu.ph/students/scholarships" target="_blank"><h4 class="card-title text-white mb-0 text-center">Scholarships</h4></a>
+									<a href="https://www.pup.edu.ph/students/scholarships" target="_blank">
+										<h4 class="card-title text-white mb-0 text-center">Scholarships</h4>
+									</a>
 								</div>
 							</div>
 						</div>
@@ -304,10 +312,14 @@
 							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-3.jpg" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
 								<div class="card-body px-1">
-								<a href="https://osssac.pup.edu.ph/knowledgebase.php?category=221" target="_blank"><p class="card-text text-white text-center mb-2">Transcript of record, certification, clearance, honorable dismissal and diploma</p></a>
+									<a href="https://osssac.pup.edu.ph/knowledgebase.php?category=221" target="_blank">
+										<p class="card-text text-white text-center mb-2">Transcript of record, certification, clearance, honorable dismissal and diploma</p>
+									</a>
 								</div>
 								<div class="card-footer bg-transparent">
-								<a href="https://osssac.pup.edu.ph/knowledgebase.php?category=221" target="_blank"><h4 class="card-title text-white mb-0 text-center">Documents Processing</h4></a>
+									<a href="https://osssac.pup.edu.ph/knowledgebase.php?category=221" target="_blank">
+										<h4 class="card-title text-white mb-0 text-center">Documents Processing</h4>
+									</a>
 								</div>
 							</div>
 						</div>
@@ -318,10 +330,14 @@
 							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-4.jpg" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
 								<div class="card-body px-1">
-								<a href="https://www.pup.edu.ph/students/studentorganizations" target="_blank"><p class="card-text text-white text-center mb-2">Get to know different student organizations</p></a>
+									<a href="https://www.pup.edu.ph/students/studentorganizations" target="_blank">
+										<p class="card-text text-white text-center mb-2">Get to know different student organizations</p>
+									</a>
 								</div>
 								<div class="card-footer bg-transparent">
-								<a href="https://www.pup.edu.ph/students/studentorganizations" target="_blank"><h4 class="card-title text-white mb-0 text-center">Student Organizations</h4></a>
+									<a href="https://www.pup.edu.ph/students/studentorganizations" target="_blank">
+										<h4 class="card-title text-white mb-0 text-center">Student Organizations</h4>
+									</a>
 								</div>
 							</div>
 						</div>
@@ -332,10 +348,14 @@
 							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-5.jpg" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
 								<div class="card-body px-1">
-								<a href="https://osssac.pup.edu.ph" target="_blank"><p class="card-text text-white text-center mb-2">Online service dedicated to answer queries and reports of the students concerning admission, enrollment, library processes and more</p></a>
+									<a href="https://osssac.pup.edu.ph" target="_blank">
+										<p class="card-text text-white text-center mb-2">Online service dedicated to answer queries and reports of the students concerning admission, enrollment, library processes and more</p>
+									</a>
 								</div>
 								<div class="card-footer bg-transparent">
-								<a href="https://osssac.pup.edu.ph" target="_blank"><h4 class="card-title text-white mb-0 text-center">Student Support</h4></a>
+									<a href="https://osssac.pup.edu.ph" target="_blank">
+										<h4 class="card-title text-white mb-0 text-center">Student Support</h4>
+									</a>
 								</div>
 							</div>
 						</div>
@@ -346,10 +366,14 @@
 							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-6.jpg" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
 								<div class="card-body px-1">
-								<a href="https://www.pup.edu.ph/about/calendar" target="_blank"><p class="card-text text-white text-center mb-2">University Calendar for Academic Year 2021-2022</p></a>
+									<a href="https://www.pup.edu.ph/about/calendar" target="_blank">
+										<p class="card-text text-white text-center mb-2">University Calendar for Academic Year 2021-2022</p>
+									</a>
 								</div>
 								<div class="card-footer bg-transparent">
-								<a href="https://www.pup.edu.ph/about/calendar" target="_blank"><h4 class="card-title text-white mb-0 text-center">Academic Calendar</h4></a>
+									<a href="https://www.pup.edu.ph/about/calendar" target="_blank">
+										<h4 class="card-title text-white mb-0 text-center">Academic Calendar</h4>
+									</a>
 								</div>
 							</div>
 						</div>
@@ -495,20 +519,26 @@
 								<div class="swiper pagination-dynamic-swiper rounded">
 									<div class="swiper-wrapper">
 										<div class="swiper-slide">
-										<a href="https://www.facebook.com/361074807312478/posts/5320818454671397/" target="_blank"><img src="<?= base_url() ?>public/images/news/img-1.jpg" alt="" class="img-fluid mb-4" /></a>
-											<a href="https://www.facebook.com/361074807312478/posts/5320818454671397/" target="_blank"><h5 class="text-wrap fs-14 mb-1 text-primary">PUP President Muhi announces face-to-face recognition and graduation rites</h5></a>
+											<a href="https://www.facebook.com/361074807312478/posts/5320818454671397/" target="_blank"><img src="<?= base_url() ?>public/images/news/img-1.jpg" alt="" class="img-fluid mb-4" /></a>
+											<a href="https://www.facebook.com/361074807312478/posts/5320818454671397/" target="_blank">
+												<h5 class="text-wrap fs-14 mb-1 text-primary">PUP President Muhi announces face-to-face recognition and graduation rites</h5>
+											</a>
 											<span class="fs-13">1 Aug, 2022,</span>
 											<small class="text-muted">09:48 AM</small>
 										</div>
 										<div class="swiper-slide">
-										<a href="https://www.facebook.com/361074807312478/posts/5308009152618994/" target="_blank"><img src="<?= base_url() ?>public/images/news/img-2.jpg" alt="" class="img-fluid mb-4" /></a>
-											<a href="https://www.facebook.com/361074807312478/posts/5308009152618994/"><h5 class="text-wrap fs-14 mb-1 text-primary">Succession of new PUPQC Aministration Announced for Academic Year 22-23</h5></a>
+											<a href="https://www.facebook.com/361074807312478/posts/5308009152618994/" target="_blank"><img src="<?= base_url() ?>public/images/news/img-2.jpg" alt="" class="img-fluid mb-4" /></a>
+											<a href="https://www.facebook.com/361074807312478/posts/5308009152618994/">
+												<h5 class="text-wrap fs-14 mb-1 text-primary">Succession of new PUPQC Aministration Announced for Academic Year 22-23</h5>
+											</a>
 											<span class="fs-13">13 Jul, 2022,</span>
 											<small class="text-muted">02:15 PM</small>
 										</div>
 										<div class="swiper-slide">
-										<a href="https://www.facebook.com/361074807312478/posts/5359676797452229/" target="_blank"><img src="<?= base_url() ?>public/images/news/img-3.jpg" alt="" class="img-fluid mb-4" /></a>
-											<a href="https://www.facebook.com/361074807312478/posts/5359676797452229/" target="_blank"><h5 class="text-wrap fs-14 mb-1 text-primary">PUPQC Heralds its New Set of Leaders</h5></a>
+											<a href="https://www.facebook.com/361074807312478/posts/5359676797452229/" target="_blank"><img src="<?= base_url() ?>public/images/news/img-3.jpg" alt="" class="img-fluid mb-4" /></a>
+											<a href="https://www.facebook.com/361074807312478/posts/5359676797452229/" target="_blank">
+												<h5 class="text-wrap fs-14 mb-1 text-primary">PUPQC Heralds its New Set of Leaders</h5>
+											</a>
 											<span class="fs-13">17 Jul, 2022,</span>
 											<small class="text-muted">03:29 PM</small>
 										</div>

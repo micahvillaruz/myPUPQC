@@ -1,4 +1,5 @@
 	<!-- JAVASCRIPT -->
+	<script src="<?= base_url() ?>public/js/common.js"></script>
 	<script src="<?= base_url() ?>public/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="<?= base_url() ?>public/libs/simplebar/simplebar.min.js"></script>
 	<script src="<?= base_url() ?>public/libs/node-waves/waves.min.js"></script>
