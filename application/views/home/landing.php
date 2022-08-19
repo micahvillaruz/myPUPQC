@@ -208,7 +208,7 @@
 					</ul>
 
 					<div class="">
-						<a href="apps-nft-wallet.html" class="btn btn-primary">Log In</a>
+						<a href="<?= base_url() ?>signin" class="btn btn-primary">Log In</a>
 					</div>
 				</div>
 
@@ -244,7 +244,7 @@
 						<div class="text-center mt-5">
 							<div class="row">
 								<div class="col-3">
-									<a href=""><i class="bx bx-edit border border-primary border-3 rounded-circle h2 p-3 text-primary"></i></a>
+									<a href="https://iapply.pup.edu.ph/signin"><i class="bx bx-edit border border-primary border-3 rounded-circle h2 p-3 text-primary"></i></a>
 									<span class="d-block text-primary fw-medium">Enroll Now</span>
 								</div>
 								<div class="col-3">
