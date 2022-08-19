@@ -59,3 +59,6 @@ $route['forgot-password'] = 'auth/forgot_password';
 
 // Home Routes
 $route['about/vm'] = 'home/vm';
+
+// Student Routes
+$route['student/dashboard'] = 'student';
