@@ -192,7 +192,7 @@
 									<span class="d-block text-primary fw-medium">Attend an Event</span>
 								</div>
 								<div class="col-3">
-									<a href="<?= base_url() ?>documents"><i class="bx bx-file border border-primary border-3 rounded-circle h2 p-3 text-primary"></i></a>
+									<a href="<?= base_url() ?>docu-request"><i class="bx bx-file border border-primary border-3 rounded-circle h2 p-3 text-primary"></i></a>
 									<span class="d-block text-primary fw-medium">Request Document</span>
 								</div>
 								<div class="col-3">
@@ -250,7 +250,7 @@
 							<div class="menu-overlay"></div>
 							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-3.jpg" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
-								<a href="<?= base_url() ?>documents">
+								<a href="<?= base_url() ?>docu-request">
 									<div class="card-body px-1">
 										<p class="card-text text-white text-center mb-2">Transcript of record, certification, clearance, honorable dismissal and diploma</p>
 									</div>
@@ -331,7 +331,7 @@
 							<div class="card-body">
 								<div class="mx-n3">
 									<div data-simplebar data-simplebar-auto-hide="false" data-simplebar-track="primary" style="max-height: 494px;">
-										<a href="#!" class="text-reset notification-item d-block dropdown-item">
+										<a href="https://www.facebook.com/sscpupquezoncity/videos/1919189238471683/" class="text-reset notification-item d-block dropdown-item">
 											<div class="d-flex align-items-start">
 												<div class="flex-grow-1 overflow-hidden">
 													<h5 class="text-truncate fs-14 mb-1 text-primary">E-REPORT: Safe Space for PUPQC Students' Academic Issues & Concerns</h5>
@@ -341,7 +341,7 @@
 												</div>
 											</div>
 										</a>
-										<a href="#!" class="text-reset notification-item d-block dropdown-item active">
+										<a href="https://www.facebook.com/sscpupquezoncity/posts/pfbid0pJgkKFiqPrTVLvev4KCJk894vhgzipEJ1tccAySHAGoiYbKW5RmBnwjkY1rf1bB7l" class="text-reset notification-item d-block dropdown-item active">
 											<div class="d-flex align-items-start">
 												<div class="flex-grow-1 overflow-hidden">
 													<h5 class="text-truncate fs-14 mb-1 text-primary">A Resolution Recognizing the Newly Established Student Commission on Election (COMELEC) in the Polytechnic University of the Philippines Quezon City Branch</h5>
@@ -351,7 +351,7 @@
 												</div>
 											</div>
 										</a>
-										<a href="#!" class="text-reset notification-item d-block dropdown-item">
+										<a href="https://www.facebook.com/sscpupquezoncity/posts/pfbid02wRAw94xJTYpbSXkT72qoTiqaCoyPUZ6xhRA8zjHqu742KjWCEYNe37Fpf2CWLBywl" class="text-reset notification-item d-block dropdown-item">
 											<div class="d-flex align-items-start">
 												<div class="flex-grow-1 overflow-hidden">
 													<h5 class="text-truncate fs-14 mb-1 text-primary">A Resolution Adopting the Amendments to the Constitution and By-Laws of the PUP Quezon City Supreme Student Council</h5>
@@ -361,7 +361,7 @@
 												</div>
 											</div>
 										</a>
-										<a href="#!" class="text-reset notification-item d-block dropdown-item">
+										<a href="https://www.facebook.com/ThePUPOfficial/posts/pfbid0EMX2xx6XxvW2JZ9Cf9rxDRoYsnVCVr5ACieVxtYsmFjSsZRViD7X4YUTTagRWcuXl" class="text-reset notification-item d-block dropdown-item">
 											<div class="d-flex align-items-start">
 												<div class="flex-grow-1 overflow-hidden">
 													<h5 class="text-truncate fs-14 mb-1 text-primary"> Printing of Certificate of Candidacy (COC) will end on August 15, 2022</h5>
@@ -371,7 +371,7 @@
 												</div>
 											</div>
 										</a>
-										<a href="#!" class="text-reset notification-item d-block dropdown-item">
+										<a href="https://www.facebook.com/ThePUPOfficial/posts/pfbid0riNCN2XSpZV67VN4ynkr6JvAPJLPShndGJmy8vQvXVCHdzBt9e9o9GAyfxjYWozul" class="text-reset notification-item d-block dropdown-item">
 											<div class="d-flex align-items-start">
 												<div class="flex-grow-1 overflow-hidden">
 													<h5 class="text-truncate fs-14 mb-1 text-primary">Freshmen Students, submission of credentials is extended until August 31, 2022.</h5>
@@ -381,7 +381,7 @@
 												</div>
 											</div>
 										</a>
-										<a href="#!" class="text-reset notification-item d-block dropdown-item">
+										<a href="https://www.facebook.com/voxnovapupqc/posts/pfbid02v1vGtiw7i41YvzqwqhhiVwzwkdmYbzvhY76TRni8v5QKBLy6VsHVoVLwTgtfiQmBl" class="text-reset notification-item d-block dropdown-item">
 											<div class="d-flex align-items-start">
 												<div class="flex-grow-1 overflow-hidden">
 													<h5 class="text-truncate fs-14 mb-1 text-primary">BREAKING: CAEPUPQC RESULTS SET TO RELEASE TODAY THROUGH iAPPLY</h5>
@@ -391,7 +391,7 @@
 												</div>
 											</div>
 										</a>
-										<a href="#!" class="text-reset notification-item d-block dropdown-item">
+										<a href="https://www.facebook.com/ThePUPOfficial/posts/pfbid02GuwAAiNxECZY5orgSMBcHBLjmbqJxk4U2qUAmxDmyRaxATWi1q7n9nqx15Je8XFrl" class="text-reset notification-item d-block dropdown-item">
 											<div class="d-flex align-items-start">
 												<div class="flex-grow-1 overflow-hidden">
 													<h5 class="text-truncate fs-14 mb-1 text-primary">Re-opening of the Application for Year-End Graduation AY 2021-2022 for the Main Campus and Branches and Campuses</h5>
@@ -401,7 +401,7 @@
 												</div>
 											</div>
 										</a>
-										<a href="#!" class="text-reset notification-item d-block dropdown-item">
+										<a href="https://www.facebook.com/sscpupquezoncity/posts/pfbid02SCZLiiEYuLVwMz3pRe6yPd66H88DsW8uoVWPXqKtbXZtYgFdLqrEggD1NSmqJP5Pl" class="text-reset notification-item d-block dropdown-item">
 											<div class="d-flex align-items-start">
 												<div class="flex-grow-1 overflow-hidden">
 													<h5 class="text-truncate fs-14 mb-1 text-primary">The application for graduation is extended until June 15, 2022 as per Ms. Cherrylyn Esparagoza of Admission Office.</h5>
@@ -411,7 +411,7 @@
 												</div>
 											</div>
 										</a>
-										<a href="#!" class="text-reset notification-item d-block dropdown-item">
+										<a href="https://www.facebook.com/voxnovapupqc/posts/pfbid0QYZehnipJMkCkhBT7eVr2zgxCe3nmdTBLq19cdGJxia8uh5xYwDieAuehqPTeV6nl" class="text-reset notification-item d-block dropdown-item">
 											<div class="d-flex align-items-start">
 												<div class="flex-grow-1 overflow-hidden">
 													<h5 class="text-truncate fs-14 mb-1 text-primary">F2F Graduation in PUPQC for Academic Year 2021-2022 in Talks</h5>
@@ -421,7 +421,7 @@
 												</div>
 											</div>
 										</a>
-										<a href="#!" class="text-reset notification-item d-block dropdown-item">
+										<a href="https://www.facebook.com/voxnovapupqc/posts/pfbid0Rm1E452K9BacxHKmUrBkPoBUvvQYxeDb9bj2mCQJtBVFgCCaz3S2JssVsjiXx9kml" class="text-reset notification-item d-block dropdown-item">
 											<div class="d-flex align-items-start">
 												<div class="flex-grow-1 overflow-hidden">
 													<h5 class="text-truncate fs-14 mb-1 text-primary">PUPQC Admin Releases Graduating Students' Schedule for Second Semester</h5>
@@ -529,25 +529,25 @@
 										</div>
 										<div class="card-body">
 											<h5 class="mb-1">
-												<a href="apps-nft-item-details.html">The 2nd ASEAN Internasional Student Competition 2022</a>
+												<a href="https://www.facebook.com/katagapupqc/posts/pfbid0cqADWCNFuofoQDA1Cp3uDPaAVLsbFN9itC4ktxr6RRpaenSMiJ4jLrKq26FJkqnSl">Online Recognition of TOP Achievers as well as the President's and Dean's Lister with the theme "INTELLIGENTES Meet 2022"</a>
 											</h5>
-											<span class="fs-13">17 Jul, 2022,</span>
-											<small class="text-muted">03:29 PM</small>
+											<span class="fs-13">10 Sept, 2022 : </span>
+											<small class="text-muted">06:00 PM - 08:00 PM</small>
 										</div>
 									</div>
 								</div>
 								<div class="swiper-slide">
 									<div class="card explore-box card-animate rounded">
 										<div class="explore-place-bid-img">
-											<img src="<?= base_url() ?>public/images/events/img-2.png" alt="" class="img-fluid card-img-top explore-img" />
+											<img src="<?= base_url() ?>public/images/events/img-2.jpg" alt="" class="img-fluid card-img-top explore-img" />
 											<div class="bg-overlay"></div>
 										</div>
 										<div class="card-body">
 											<h5 class="mb-1">
-												<a href="apps-nft-item-details.html">Best Business Plan and Pitching and Grand Innovation Expo</a>
+												<a href="https://www.facebook.com/YouthEntrepreneursSociety/posts/pfbid0MJcWtzpgaTspmz1UbuUDo5tpGY8pzdBVpYS3xY8nnTndKxWeptip7CnctbTXMRWtl">Cross Worlds Beginner's Guide Empowered by Youth Entrepreneur Society with a theme of "Mission Unlock: Dive Into Your New Career Path"</a>
 											</h5>
-											<span class="fs-13">11 Aug, 2022,</span>
-											<small class="text-muted">03:29 PM</small>
+											<span class="fs-13">06 Aug, 2022 : </span>
+											<small class="text-muted">01:00 PM - 04:00 PM</small>
 										</div>
 									</div>
 								</div>
@@ -559,10 +559,40 @@
 										</div>
 										<div class="card-body">
 											<h5 class="mb-1">
-												<a href="apps-nft-item-details.html">Balik Sintang Paaralan: The PUP Alumni Webinar Series</a>
+												<a href="https://www.facebook.com/PSCofficial19/posts/pfbid02ewuokLHe1VE8nrKTFnbobFzXCtBqWGcsX2bQWdvPXcKB6hi54MctLFjTski7Hmc5l">Championship Match for the MLBB Tournament Season 2 of PUPQC Sports Club entitled "SQUAD RIVALS: FIght for Glory"</a>
 											</h5>
-											<span class="fs-13">01 Apr, 2022,</span>
-											<small class="text-muted">03:29 PM</small>
+											<span class="fs-13">02 Aug, 2022 : </span>
+											<small class="text-muted">01:00 PM</small>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="card explore-box card-animate rounded">
+										<div class="explore-place-bid-img">
+											<img src="<?= base_url() ?>public/images/events/img-4.jpg" alt="" class="img-fluid card-img-top explore-img" />
+											<div class="bg-overlay"></div>
+										</div>
+										<div class="card-body">
+											<h5 class="mb-1">
+												<a href="https://www.facebook.com/JMSPUPQC/posts/pfbid0mM7jvs2tveNKFCrewe3xwjrTjifaAwzi9c7RECAwMG4wwPwficvZmzdxDii2i2syl">The Marketing Senior's Virtual Event entitled "#UNFILTERED: Behind the Scenes of Content Creation in Social Media Marketing"</a>
+											</h5>
+											<span class="fs-13">15 Jul, 2022 : </span>
+											<small class="text-muted">02:00 PM - 05:00 PM</small>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="card explore-box card-animate rounded">
+										<div class="explore-place-bid-img">
+											<img src="<?= base_url() ?>public/images/events/img-5.jpg" alt="" class="img-fluid card-img-top explore-img" />
+											<div class="bg-overlay"></div>
+										</div>
+										<div class="card-body">
+											<h5 class="mb-1">
+												<a href="https://www.facebook.com/sscpupquezoncity/posts/pfbid0YU7vzB9JvVB84KhPQFdpwaQat5aTbJDUNvTqY7ZNNs8pXqeJJ6AAYyGK3i2iDha8l">In-house Leadership Training and Capacity-Builing Program with the theme, "Building Foundational Leadership Inside Out"</a>
+											</h5>
+											<span class="fs-13">19 Jul, 2022 - 21 Jul, 2022 : </span>
+											<small class="text-muted">01:00 PM</small>
 										</div>
 									</div>
 								</div>

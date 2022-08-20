@@ -103,7 +103,7 @@ $route['research/intellectual-property'] = 'home/intellectual_property';
 // CTA
 $route['applicants'] = 'home/applicants';
 $route['events'] = 'home/events';
-$route['documents'] = 'home/documents';
+$route['docu-request'] = 'home/documents';
 $route['scholarships'] = 'home/scholarships';
 $route['calendar'] = 'home/calendar';
 
