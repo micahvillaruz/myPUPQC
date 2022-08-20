@@ -47,7 +47,7 @@
                         <h3 class="mb-3 text-primary">About</h3>
                         <div class="mx-3">
                           <div class="mb-3 d-flex justify-content-center">
-                            <img src="<?= base_url() ?>public/images/about/img-1.jpg" alt="" height="400">
+                            <img src="<?= base_url() ?>public/images/about/img-1.jpg" alt="" class="img-fluid">
                           </div>
                           <p>
                             The Polytechnic University of the Philippines Quezon City (abbreviated as PUPQC; also known as PUP Commonwealth Campus) is one of the satellite campuses of the Polytechnic University of the Philippines located in Don Fabian Street., Barangay Commonwealth, Quezon City, Philippines. It was established in 1997. It confers undergraduate and diploma degrees.
@@ -74,7 +74,7 @@
                           </ul>
                           </p>
                           <div class="mb-3 d-flex justify-content-center">
-                            <img src="<?= base_url() ?>public/images/about/img-2.jpg" alt="" height="500">
+                            <img src="<?= base_url() ?>public/images/about/img-2.jpg" alt="" class="img-fluid">
                           </div>
                           <p>
                             PUPQC was established through the generosity and benevolence of Walter Rothlehner, a German church leader who donated his property in Barangay Commonwealth, Quezon City to PUP. The campus lot with an area of 1.9 hectares is donated by SIKHAY, an association led by Rev. Fr. Joel Tabora. The PUP Open University was tasked to administer and maintain the campus and its facilities. PUPQC was formally inaugurated on July 29, 1997. Although it was in existing prior to 1997, it only started its operations and formal classes after its inauguration.
