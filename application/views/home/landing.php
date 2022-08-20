@@ -14,7 +14,7 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav mx-auto mt-2 mt-lg-0 dropdown" id="navbar-nav">
 						<li class="nav-item">
-							<a class="nav-link active" href="#hero">Home</a>
+							<a class="nav-link active" href="<?= base_url() ?>">Home</a>
 						</li>
 						<li class="nav-item">
 							<div class="dropdown">
@@ -23,58 +23,43 @@
 								</a>
 								<ul class="list-group-flush dropdown-menu" aria-labelledby="dropdownMenuButton">
 									<li class="list-group-item dropdown-item">
-										<a class="" href="#">University Profile</a>
+										<a class="" href="<?= base_url() ?>about">University Profile</a>
 									</li>
 									<li class="list-group-item dropdown-item">
 										<a class="" href="<?= base_url() ?>about/vm">Vision and Mission</a>
 									</li>
 									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/quezoncity/history">History</a>
+										<a class="" href="<?= base_url() ?>about/history">History</a>
 									</li>
 									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/about/logosymbols">Logo and Symbols</a>
+										<a class="" href="<?= base_url() ?>about/logo-and-symbols">Logo and Symbols</a>
 									</li>
 									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/about/hymn">Hymn</a>
+										<a class="" href="<?= base_url() ?>about/hymn">Hymn</a>
 									</li>
 									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/about/annualreports">Annual Reports</a>
+										<a class="" href="<?= base_url() ?>about/annual-reports">Annual Reports</a>
 									</li>
 									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/about/recognitions">Awards and Recognitions</a>
+										<a class="" href="<?= base_url() ?>about/contact-us">Contact us</a>
 									</li>
 									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/quezoncity/contactinfo">Contact us</a>
+										<a class="" href="<?= base_url() ?>about/maps">Maps</a>
 									</li>
 									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/about/maps">Maps</a>
+										<a class="" href="<?= base_url() ?>about/code">University Code</a>
 									</li>
 									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/about/code">University Code</a>
+										<a class="" href="<?= base_url() ?>about/memorandum-orders">Memorandum Orders</a>
 									</li>
 									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/about/developmentplan">Institutional Development Plan</a>
+										<a class="" href="<?= base_url() ?>about/executive-orders">Executive Orders</a>
 									</li>
 									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/about/qps">Quality Policy Statement</a>
+										<a class="" href="<?= base_url() ?>about/codi-manual">CODI Manual</a>
 									</li>
 									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/memo/">Memorandum Orders</a>
-									</li>
-									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/executiveorders/">Executive Orders</a>
-									</li>
-									<li class="list-group-item dropdown-item">
-										<a class="" href="https://bit.ly/PUPCODIManual">CODI Manual</a>
-									</li>
-									<li class="list-group-item dropdown-item">
-										<a class="" href="https://drive.google.com/file/d/0B1BuDAuN0r8SbmFEU1RJUDFYU1E/view?usp=sharing&resourcekey=0-ntyYkBAnyIFKdRJWhiKEcw">Citizens Charter</a>
-									</li>
-									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/officememo/">Office Memorandum</a>
-									</li>
-									<li class="list-group-item dropdown-item">
-										<a class="" href="https://drive.google.com/file/d/0B1BuDAuN0r8SVzMySDQ1ZVFNdEU/view?usp=sharing&resourcekey=0-o8GTj44gUKaFJsFNbmPDQQ">Strategic Performance Management System</a>
+										<a class="" href="<?= base_url() ?>about/citizens-charter">Citizens Charter</a>
 									</li>
 								</ul>
 							</div>
@@ -86,28 +71,16 @@
 								</a>
 								<ul class="list-group-flush dropdown-menu" aria-labelledby="dropdownMenuButton">
 									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/academic/programs">Academic Programs</a>
+										<a class="" href="<?= base_url() ?>academic/programs">Academic Programs</a>
 									</li>
 									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/ous/">Open University System</a>
+										<a class="" href="<?= base_url() ?>academic/ous">Open University System</a>
 									</li>
 									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/academic/graduatestudies">Graduate Studies</a>
+										<a class="" href="<?= base_url() ?>academic/library">Library Services</a>
 									</li>
 									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/academic/colleges">Colleges</a>
-									</li>
-									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/nallrc/">Library Services</a>
-									</li>
-									<li class="list-group-item dropdown-item">
-										<a class="" href="https://ils.pup.edu.ph/">Online Public Access Catalog</a>
-									</li>
-									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/qac/">Quality Assurance Center</a>
-									</li>
-									<li class="list-group-item dropdown-item">
-										<a class="" href="https://drive.google.com/drive/folders/1w3vJg3LiDzKE5-DnJegyftR2l99tG9NL">OVPAA Advisories</a>
+										<a class="" href="<?= base_url() ?>academic/ovpaa">OVPAA Advisories</a>
 									</li>
 								</ul>
 							</div>
@@ -119,22 +92,19 @@
 								</a>
 								<ul class="list-group-flush dropdown-menu" aria-labelledby="dropdownMenuButton">
 									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/students/">Student Services</a>
+										<a class="" href="<?= base_url() ?>student/services">Student Services</a>
 									</li>
 									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/students/organizations">Student Organizations</a>
+										<a class="" href="<?= base_url() ?>student/organizations">Student Organizations</a>
 									</li>
 									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/students/publications">Student Publications</a>
+										<a class="" href="<?= base_url() ?>student/publications">Student Publications</a>
 									</li>
 									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/students/council">Student Council</a>
+										<a class="" href="<?= base_url() ?>student/council">Student Council</a>
 									</li>
 									<li class="list-group-item dropdown-item">
-										<a class="" href="https://drive.google.com/file/d/0B1BuDAuN0r8SX1BWX2NSN3FURzg/view?resourcekey=0-oi8lUy9PCFysh0FDyL5ipw">Student Handbook</a>
-									</li>
-									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/students/registrar">University Registrar</a>
+										<a class="" href="<?= base_url() ?>student/handbook">Student Handbook</a>
 									</li>
 									<li class="list-group-item dropdown-item">
 										<a class="" href="https://sisstudents.pup.edu.ph/">PUP Student Information System</a>
@@ -146,10 +116,7 @@
 										<a class="" href="https://apps.pup.edu.ph/books/">PUP Bookstore</a>
 									</li>
 									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/downloads/students/">Downloadable Forms</a>
-									</li>
-									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/jobpost/">Online Job Postings</a>
+										<a class="" href="<?= base_url() ?>student/downloads">Downloadable Forms</a>
 									</li>
 								</ul>
 							</div>
@@ -161,40 +128,16 @@
 								</a>
 								<ul class="list-group-flush dropdown-menu" aria-labelledby="dropdownMenuButton">
 									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/research/rmo/">Researches</a>
+										<a class="" href="<?= base_url() ?>research/researches">Researches</a>
 									</li>
 									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/research/emo/">Extensions</a>
+										<a class="" href="<?= base_url() ?>research/extensions">Extensions</a>
 									</li>
 									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/research/ipo/">Institutional Planning</a>
-									</li>
-									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/research/ipmo/">Intellectual Property</a>
-									</li>
-									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/research/rpo/">Research Publications</a>
-									</li>
-									<li class="list-group-item dropdown-item">
-										<a class="" href="pup.edu.ph/research/rist/">Science and Technology</a>
-									</li>
-									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/research/ricl/">Cultural and Language</a>
-									</li>
-									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/research/risfi/">Strategic Foresight and Innovation</a>
-									</li>
-									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/research/rihsd/">Human and Social Development</a>
-									</li>
-									<li class="list-group-item dropdown-item">
-										<a class="" href="https://www.pup.edu.ph/research/gado/">Gender and Development</a>
+										<a class="" href="<?= base_url() ?>research/intellectual-property">Intellectual Property</a>
 									</li>
 									<li class="list-group-item dropdown-item">
 										<a class="" href="https://apps.pup.edu.ph/ojs/">PUP Online Journal System</a>
-									</li>
-									<li class="list-group-item dropdown-item">
-										<a class="" href="https://survey.pup.edu.ph/facultyevaluation/">PUP Online Survey for Faculty Evaluation</a>
 									</li>
 									<li class="list-group-item dropdown-item">
 										<a class="" href="https://drive.google.com/open?id=0B1BuDAuN0r8SMFpBYWNGckhUWkE">University Thesis and Dissertation Manual</a>
@@ -241,15 +184,15 @@
 						<div class="text-center mt-5">
 							<div class="row">
 								<div class="col-3">
-									<a href="https://iapply.pup.edu.ph/signin"><i class="bx bx-edit border border-primary border-3 rounded-circle h2 p-3 text-primary"></i></a>
+									<a href="<?= base_url() ?>applicants"><i class="bx bx-edit border border-primary border-3 rounded-circle h2 p-3 text-primary"></i></a>
 									<span class="d-block text-primary fw-medium">Enroll Now</span>
 								</div>
 								<div class="col-3">
-									<a href="https://www.pup.edu.ph/events/"><i class="bx bx-calendar-event border border-primary border-3 rounded-circle h2 p-3 text-primary"></i></a>
+									<a href="<?= base_url() ?>events"><i class="bx bx-calendar-event border border-primary border-3 rounded-circle h2 p-3 text-primary"></i></a>
 									<span class="d-block text-primary fw-medium">Attend an Event</span>
 								</div>
 								<div class="col-3">
-									<a href="https://odrs.pup.edu.ph/ur/"><i class="bx bx-file border border-primary border-3 rounded-circle h2 p-3 text-primary"></i></a>
+									<a href="<?= base_url() ?>documents"><i class="bx bx-file border border-primary border-3 rounded-circle h2 p-3 text-primary"></i></a>
 									<span class="d-block text-primary fw-medium">Request Document</span>
 								</div>
 								<div class="col-3">
@@ -275,16 +218,14 @@
 							<div class="menu-overlay"></div>
 							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-1.jpg" alt="Card image"></a>
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
-								<div class="card-body px-1">
-									<a href="https://sis8.pup.edu.ph/" target="_blank">
+								<a href="https://sisstudents.pup.edu.ph/">
+									<div class="card-body px-1">
 										<p class="card-text text-white text-center mb-2">Portal for PUP Students, view class schedule and grades</p>
-									</a>
-								</div>
-								<div class="card-footer bg-transparent">
-									<a href="https://sis8.pup.edu.ph/" target="_blank">
+									</div>
+									<div class="card-footer bg-transparent">
 										<h4 class="card-title text-white mb-0 text-center">PUP Student Portal</h4>
-									</a>
-								</div>
+									</div>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -293,16 +234,14 @@
 							<div class="menu-overlay"></div>
 							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-2.jpg" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
-								<div class="card-body px-1">
-									<a href="https://www.pup.edu.ph/students/scholarships" target="_blank">
+								<a href="<?= base_url() ?>scholarships">
+									<div class="card-body px-1">
 										<p class="card-text text-white text-center mb-2">Access to educational opportunities in terms of scholarship and financial assistance to students</p>
-									</a>
-								</div>
-								<div class="card-footer bg-transparent">
-									<a href="https://www.pup.edu.ph/students/scholarships" target="_blank">
+									</div>
+									<div class="card-footer bg-transparent">
 										<h4 class="card-title text-white mb-0 text-center">Scholarships</h4>
-									</a>
-								</div>
+									</div>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -311,16 +250,14 @@
 							<div class="menu-overlay"></div>
 							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-3.jpg" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
-								<div class="card-body px-1">
-									<a href="https://osssac.pup.edu.ph/knowledgebase.php?category=221" target="_blank">
+								<a href="<?= base_url() ?>documents">
+									<div class="card-body px-1">
 										<p class="card-text text-white text-center mb-2">Transcript of record, certification, clearance, honorable dismissal and diploma</p>
-									</a>
-								</div>
-								<div class="card-footer bg-transparent">
-									<a href="https://osssac.pup.edu.ph/knowledgebase.php?category=221" target="_blank">
+									</div>
+									<div class="card-footer bg-transparent">
 										<h4 class="card-title text-white mb-0 text-center">Documents Processing</h4>
-									</a>
-								</div>
+									</div>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -329,16 +266,14 @@
 							<div class="menu-overlay"></div>
 							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-4.jpg" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
-								<div class="card-body px-1">
-									<a href="https://www.pup.edu.ph/students/studentorganizations" target="_blank">
+								<a href="<?= base_url() ?>student/organizations">
+									<div class="card-body px-1">
 										<p class="card-text text-white text-center mb-2">Get to know different student organizations</p>
-									</a>
-								</div>
-								<div class="card-footer bg-transparent">
-									<a href="https://www.pup.edu.ph/students/studentorganizations" target="_blank">
+									</div>
+									<div class="card-footer bg-transparent">
 										<h4 class="card-title text-white mb-0 text-center">Student Organizations</h4>
-									</a>
-								</div>
+									</div>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -347,16 +282,14 @@
 							<div class="menu-overlay"></div>
 							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-5.jpg" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
-								<div class="card-body px-1">
-									<a href="https://osssac.pup.edu.ph" target="_blank">
+								<a href="https://osssac.pup.edu.ph">
+									<div class="card-body px-1">
 										<p class="card-text text-white text-center mb-2">Online service dedicated to answer queries and reports of the students concerning admission, enrollment, library processes and more</p>
-									</a>
-								</div>
-								<div class="card-footer bg-transparent">
-									<a href="https://osssac.pup.edu.ph" target="_blank">
+									</div>
+									<div class="card-footer bg-transparent">
 										<h4 class="card-title text-white mb-0 text-center">Student Support</h4>
-									</a>
-								</div>
+									</div>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -365,16 +298,14 @@
 							<div class="menu-overlay"></div>
 							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-6.jpg" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
-								<div class="card-body px-1">
-									<a href="https://www.pup.edu.ph/about/calendar" target="_blank">
+								<a href="<?= base_url() ?>calendar">
+									<div class="card-body px-1">
 										<p class="card-text text-white text-center mb-2">University Calendar for Academic Year 2021-2022</p>
-									</a>
-								</div>
-								<div class="card-footer bg-transparent">
-									<a href="https://www.pup.edu.ph/about/calendar" target="_blank">
+									</div>
+									<div class="card-footer bg-transparent">
 										<h4 class="card-title text-white mb-0 text-center">Academic Calendar</h4>
-									</a>
-								</div>
+									</div>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -519,24 +450,24 @@
 								<div class="swiper pagination-dynamic-swiper rounded">
 									<div class="swiper-wrapper">
 										<div class="swiper-slide">
-											<a href="https://www.facebook.com/361074807312478/posts/5320818454671397/" target="_blank"><img src="<?= base_url() ?>public/images/news/img-1.jpg" alt="" class="img-fluid mb-4" /></a>
-											<a href="https://www.facebook.com/361074807312478/posts/5320818454671397/" target="_blank">
+											<a href="https://www.facebook.com/361074807312478/posts/5359676797452229/" target="_blank">
+												<img src="<?= base_url() ?>public/images/news/img-1.jpg" alt="" class="img-fluid mb-4" />
 												<h5 class="text-wrap fs-14 mb-1 text-primary">PUP President Muhi announces face-to-face recognition and graduation rites</h5>
 											</a>
 											<span class="fs-13">1 Aug, 2022,</span>
 											<small class="text-muted">09:48 AM</small>
 										</div>
 										<div class="swiper-slide">
-											<a href="https://www.facebook.com/361074807312478/posts/5308009152618994/" target="_blank"><img src="<?= base_url() ?>public/images/news/img-2.jpg" alt="" class="img-fluid mb-4" /></a>
-											<a href="https://www.facebook.com/361074807312478/posts/5308009152618994/">
+											<a href="https://www.facebook.com/361074807312478/posts/5308009152618994/" target="_blank">
+												<img src="<?= base_url() ?>public/images/news/img-2.jpg" alt="" class="img-fluid mb-4" />
 												<h5 class="text-wrap fs-14 mb-1 text-primary">Succession of new PUPQC Aministration Announced for Academic Year 22-23</h5>
 											</a>
 											<span class="fs-13">13 Jul, 2022,</span>
 											<small class="text-muted">02:15 PM</small>
 										</div>
 										<div class="swiper-slide">
-											<a href="https://www.facebook.com/361074807312478/posts/5359676797452229/" target="_blank"><img src="<?= base_url() ?>public/images/news/img-3.jpg" alt="" class="img-fluid mb-4" /></a>
-											<a href="https://www.facebook.com/361074807312478/posts/5359676797452229/" target="_blank">
+											<a href="https://www.facebook.com/361074807312478/posts/5320818454671397/" target="_blank">
+												<img src="<?= base_url() ?>public/images/news/img-3.jpg" alt="" class="img-fluid mb-4" />
 												<h5 class="text-wrap fs-14 mb-1 text-primary">PUPQC Heralds its New Set of Leaders</h5>
 											</a>
 											<span class="fs-13">17 Jul, 2022,</span>
@@ -757,108 +688,3 @@
 			<!-- end container -->
 		</section>
 		<!-- end contact -->
-
-		<!-- Start footer -->
-		<footer class="custom-footer bg-dark py-5 position-relative">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-7 ms-lg-auto">
-						<div class="row">
-							<div class="col-sm-6 mt-4">
-								<h5 class="text-white text-uppercase mb-0">Online Services</h5>
-								<div class="text-muted mt-3">
-									<ul class="list-unstyled ff-secondary footer-list">
-										<li><a href="https://outlook.live.com/owa/">PUP WebMail</a></li>
-										<li><a href="https://www.pup.edu.ph/iapply/">PUP iApply</a></li>
-										<li><a href="https://sis2.pup.edu.ph/">Student Information System</a></li>
-										<li><a href="https://osssac.pup.edu.ph/">OSSSAC</a></li>
-										<li><a href="https://apps.pup.edu.ph/appointment/Authentication">PUP Appointment System</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="col-sm-6 mt-4">
-								<h5 class="text-white mb-0 text-uppercase">Quick Links</h5>
-								<div class="text-muted mt-3">
-									<ul class="list-unstyled ff-secondary footer-list">
-										<li><a href="https://www.pup.edu.ph/about/">About PUP</a></li>
-										<li><a href="https://www.pup.edu.ph/admission/">Admission Information</a></li>
-										<li><a href="https://www.pup.edu.ph/academic/undergrad">Academic Programs</a></li>
-										<li><a href="https://www.pup.edu.ph/goodgovernance/transparency/">Transparency Seal</a></li>
-										<li><a href="https://www.pup.edu.ph/notices/">Bid Notices and Invitation</a></li>
-										<li><a href="https://www.pup.edu.ph/international/">International Affairs</a></li>
-										<li><a href="https://www.pup.edu.ph/jobpost/">Jobs for PUPians</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 mt-4">
-						<div>
-							<h5 class="text-white mb-3 text-uppercase">Keep in touch</h5>
-							<div class="mt-sm-0">
-								<ul class="list-inline mb-0 footer-social-link">
-									<li class="list-inline-item">
-										<a href="javascript: void(0);" class="avatar-xs d-block">
-											<div class="avatar-title rounded-circle">
-												<i class="ri-facebook-fill"></i>
-											</div>
-										</a>
-									</li>
-									<li class="list-inline-item">
-										<a href="javascript: void(0);" class="avatar-xs d-block">
-											<div class="avatar-title rounded-circle">
-												<i class="ri-github-fill"></i>
-											</div>
-										</a>
-									</li>
-									<li class="list-inline-item">
-										<a href="javascript: void(0);" class="avatar-xs d-block">
-											<div class="avatar-title rounded-circle">
-												<i class="ri-linkedin-fill"></i>
-											</div>
-										</a>
-									</li>
-									<li class="list-inline-item">
-										<a href="javascript: void(0);" class="avatar-xs d-block">
-											<div class="avatar-title rounded-circle">
-												<i class="ri-google-fill"></i>
-											</div>
-										</a>
-									</li>
-									<li class="list-inline-item">
-										<a href="javascript: void(0);" class="avatar-xs d-block">
-											<div class="avatar-title rounded-circle">
-												<i class="ri-dribbble-line"></i>
-											</div>
-										</a>
-									</li>
-								</ul>
-							</div>
-							<div class="mt-4">
-								<h5 class="text-white mb-0 text-uppercase">Contact Us</h5>
-								<div class="mt-3">
-									<p>Phone: 8-287-82-04 or 5335-1777</p>
-									<p>Email: inquire@pup.edu.ph</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="row text-center text-sm-center align-items-center mt-5">
-					<div class="col-sm-12">
-						<div>
-							<small class="copy-rights mb-0 text-uppercase">
-								<script>
-									document.write(new Date().getFullYear())
-								</script>
-								© Polytechnic University of the Philippines - Quezon City Branch
-							</small>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
-		<!-- end footer -->
-	</div>
-	<!-- end layout wrapper -->

@@ -53,12 +53,66 @@ $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-// Authentication Routes
+/*
+| -------------------------------------------------------------------------
+| AUTHENTICATION ROUTES
+| -------------------------------------------------------------------------
+*/
 $route['signin'] = 'auth/signin';
 $route['forgot-password'] = 'auth/forgot_password';
 
-// Home Routes
+/*
+| -------------------------------------------------------------------------
+| HOME ROUTES
+| -------------------------------------------------------------------------
+*/
+// About
+$route['about'] = 'home/about';
 $route['about/vm'] = 'home/vm';
+$route['about/history'] = 'home/history';
+$route['about/logo-and-symbols'] = 'home/logo_symbols';
+$route['about/hymn'] = 'home/hymn';
+$route['about/annual-reports'] = 'home/annual_reports';
+$route['about/contact-us'] = 'home/contact_us';
+$route['about/maps'] = 'home/maps';
+$route['about/code'] = 'home/code';
+$route['about/memorandum-orders'] = 'home/memorandum_orders';
+$route['about/executive-orders'] = 'home/executive_orders';
+$route['about/codi-manual'] = 'home/codi_manual';
+$route['about/citizens-charter'] = 'home/citizens_charter';
 
-// Student Routes
+// Academic
+$route['academic/programs'] = 'home/programs';
+$route['academic/ous'] = 'home/ous';
+$route['academic/library'] = 'home/library';
+$route['academic/ovpaa'] = 'home/ovpaa';
+
+// Students
+$route['student/services'] = 'home/student_services';
+$route['student/organizations'] = 'home/organizations';
+$route['student/publications'] = 'home/student_publications';
+$route['student/council'] = 'home/student_council';
+$route['student/handbook'] = 'home/student_handbook';
+$route['student/downloads'] = 'home/downloads';
+
+// Research
+$route['research/researches'] = 'home/researches';
+$route['research/extensions'] = 'home/extensions';
+$route['research/intellectual-property'] = 'home/intellectual_property';
+
+// CTA
+$route['applicants'] = 'home/applicants';
+$route['events'] = 'home/events';
+$route['documents'] = 'home/documents';
+$route['scholarships'] = 'home/scholarships';
+$route['calendar'] = 'home/calendar';
+
+// Footer
+$route['admission'] = 'home/admission';
+
+/*
+| -------------------------------------------------------------------------
+| STUDENT ROUTES
+| -------------------------------------------------------------------------
+*/
 $route['student/dashboard'] = 'student';

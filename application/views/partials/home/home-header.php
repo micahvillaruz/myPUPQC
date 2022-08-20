@@ -14,7 +14,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto mt-2 mt-lg-0 dropdown" id="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="#hero">Home</a>
+              <a class="nav-link active" href="<?= base_url() ?>">Home</a>
             </li>
             <li class="nav-item">
               <div class="dropdown">
@@ -23,58 +23,43 @@
                 </a>
                 <ul class="list-group-flush dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="#">University Profile</a>
+                    <a class="" href="<?= base_url() ?>about">University Profile</a>
                   </li>
                   <li class="list-group-item dropdown-item">
                     <a class="" href="<?= base_url() ?>about/vm">Vision and Mission</a>
                   </li>
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/quezoncity/history">History</a>
+                    <a class="" href="<?= base_url() ?>about/history">History</a>
                   </li>
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/about/logosymbols">Logo and Symbols</a>
+                    <a class="" href="<?= base_url() ?>about/logo-and-symbols">Logo and Symbols</a>
                   </li>
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/about/hymn">Hymn</a>
+                    <a class="" href="<?= base_url() ?>about/hymn">Hymn</a>
                   </li>
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/about/annualreports">Annual Reports</a>
+                    <a class="" href="<?= base_url() ?>about/annual-reports">Annual Reports</a>
                   </li>
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/about/recognitions">Awards and Recognitions</a>
+                    <a class="" href="<?= base_url() ?>about/contact-us">Contact us</a>
                   </li>
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/quezoncity/contactinfo">Contact us</a>
+                    <a class="" href="<?= base_url() ?>about/maps">Maps</a>
                   </li>
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/about/maps">Maps</a>
+                    <a class="" href="<?= base_url() ?>about/code">University Code</a>
                   </li>
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/about/code">University Code</a>
+                    <a class="" href="<?= base_url() ?>about/memorandum-orders">Memorandum Orders</a>
                   </li>
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/about/developmentplan">Institutional Development Plan</a>
+                    <a class="" href="<?= base_url() ?>about/executive-orders">Executive Orders</a>
                   </li>
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/about/qps">Quality Policy Statement</a>
+                    <a class="" href="<?= base_url() ?>about/codi-manual">CODI Manual</a>
                   </li>
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/memo/">Memorandum Orders</a>
-                  </li>
-                  <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/executiveorders/">Executive Orders</a>
-                  </li>
-                  <li class="list-group-item dropdown-item">
-                    <a class="" href="https://bit.ly/PUPCODIManual">CODI Manual</a>
-                  </li>
-                  <li class="list-group-item dropdown-item">
-                    <a class="" href="https://drive.google.com/file/d/0B1BuDAuN0r8SbmFEU1RJUDFYU1E/view?usp=sharing&resourcekey=0-ntyYkBAnyIFKdRJWhiKEcw">Citizens Charter</a>
-                  </li>
-                  <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/officememo/">Office Memorandum</a>
-                  </li>
-                  <li class="list-group-item dropdown-item">
-                    <a class="" href="https://drive.google.com/file/d/0B1BuDAuN0r8SVzMySDQ1ZVFNdEU/view?usp=sharing&resourcekey=0-o8GTj44gUKaFJsFNbmPDQQ">Strategic Performance Management System</a>
+                    <a class="" href="<?= base_url() ?>about/citizens-charter">Citizens Charter</a>
                   </li>
                 </ul>
               </div>
@@ -86,28 +71,16 @@
                 </a>
                 <ul class="list-group-flush dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/academic/programs">Academic Programs</a>
+                    <a class="" href="<?= base_url() ?>academic/programs">Academic Programs</a>
                   </li>
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/ous/">Open University System</a>
+                    <a class="" href="<?= base_url() ?>academic/ous">Open University System</a>
                   </li>
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/academic/graduatestudies">Graduate Studies</a>
+                    <a class="" href="<?= base_url() ?>academic/library">Library Services</a>
                   </li>
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/academic/colleges">Colleges</a>
-                  </li>
-                  <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/nallrc/">Library Services</a>
-                  </li>
-                  <li class="list-group-item dropdown-item">
-                    <a class="" href="https://ils.pup.edu.ph/">Online Public Access Catalog</a>
-                  </li>
-                  <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/qac/">Quality Assurance Center</a>
-                  </li>
-                  <li class="list-group-item dropdown-item">
-                    <a class="" href="https://drive.google.com/drive/folders/1w3vJg3LiDzKE5-DnJegyftR2l99tG9NL">OVPAA Advisories</a>
+                    <a class="" href="<?= base_url() ?>academic/ovpaa">OVPAA Advisories</a>
                   </li>
                 </ul>
               </div>
@@ -119,22 +92,19 @@
                 </a>
                 <ul class="list-group-flush dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/students/">Student Services</a>
+                    <a class="" href="<?= base_url() ?>student/services">Student Services</a>
                   </li>
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/students/organizations">Student Organizations</a>
+                    <a class="" href="<?= base_url() ?>student/organizations">Student Organizations</a>
                   </li>
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/students/publications">Student Publications</a>
+                    <a class="" href="<?= base_url() ?>student/publications">Student Publications</a>
                   </li>
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/students/council">Student Council</a>
+                    <a class="" href="<?= base_url() ?>student/council">Student Council</a>
                   </li>
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="https://drive.google.com/file/d/0B1BuDAuN0r8SX1BWX2NSN3FURzg/view?resourcekey=0-oi8lUy9PCFysh0FDyL5ipw">Student Handbook</a>
-                  </li>
-                  <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/students/registrar">University Registrar</a>
+                    <a class="" href="<?= base_url() ?>student/handbook">Student Handbook</a>
                   </li>
                   <li class="list-group-item dropdown-item">
                     <a class="" href="https://sisstudents.pup.edu.ph/">PUP Student Information System</a>
@@ -146,10 +116,7 @@
                     <a class="" href="https://apps.pup.edu.ph/books/">PUP Bookstore</a>
                   </li>
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/downloads/students/">Downloadable Forms</a>
-                  </li>
-                  <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/jobpost/">Online Job Postings</a>
+                    <a class="" href="<?= base_url() ?>student/downloads">Downloadable Forms</a>
                   </li>
                 </ul>
               </div>
@@ -161,40 +128,16 @@
                 </a>
                 <ul class="list-group-flush dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/research/rmo/">Researches</a>
+                    <a class="" href="<?= base_url() ?>research/researches">Researches</a>
                   </li>
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/research/emo/">Extensions</a>
+                    <a class="" href="<?= base_url() ?>research/extensions">Extensions</a>
                   </li>
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/research/ipo/">Institutional Planning</a>
-                  </li>
-                  <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/research/ipmo/">Intellectual Property</a>
-                  </li>
-                  <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/research/rpo/">Research Publications</a>
-                  </li>
-                  <li class="list-group-item dropdown-item">
-                    <a class="" href="pup.edu.ph/research/rist/">Science and Technology</a>
-                  </li>
-                  <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/research/ricl/">Cultural and Language</a>
-                  </li>
-                  <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/research/risfi/">Strategic Foresight and Innovation</a>
-                  </li>
-                  <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/research/rihsd/">Human and Social Development</a>
-                  </li>
-                  <li class="list-group-item dropdown-item">
-                    <a class="" href="https://www.pup.edu.ph/research/gado/">Gender and Development</a>
+                    <a class="" href="<?= base_url() ?>research/intellectual-property">Intellectual Property</a>
                   </li>
                   <li class="list-group-item dropdown-item">
                     <a class="" href="https://apps.pup.edu.ph/ojs/">PUP Online Journal System</a>
-                  </li>
-                  <li class="list-group-item dropdown-item">
-                    <a class="" href="https://survey.pup.edu.ph/facultyevaluation/">PUP Online Survey for Faculty Evaluation</a>
                   </li>
                   <li class="list-group-item dropdown-item">
                     <a class="" href="https://drive.google.com/open?id=0B1BuDAuN0r8SMFpBYWNGckhUWkE">University Thesis and Dissertation Manual</a>

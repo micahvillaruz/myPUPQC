@@ -11,7 +11,20 @@ class Home extends CI_Controller
 		$this->load->view('partials/head-css');
 		$this->load->view('home/landing');
 		$this->load->view('partials/foot-scripts');
+		$this->load->view('partials/home/home-footer');
 		$this->load->view('home/scripts/landing-scripts');
+	}
+
+	public function about()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/about');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/about-scripts');
 	}
 
 	public function vm()
@@ -24,5 +37,365 @@ class Home extends CI_Controller
 		$this->load->view('partials/home/home-footer');
 		$this->load->view('partials/foot-scripts');
 		$this->load->view('home/scripts/vm-scripts');
+	}
+
+	public function history()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/about/history');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/history-scripts');
+	}
+
+	public function logo_symbols()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/about/logo-symbols');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/logo-symbols-scripts');
+	}
+
+	public function hymn()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/about/hymn');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/hymn-scripts');
+	}
+
+	public function annual_reports()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/about/annual-reports');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/annual-reports-scripts');
+	}
+
+	public function contact_us()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/about/contact-us');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/contact-us-scripts');
+	}
+
+	public function maps()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/about/maps');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/maps-scripts');
+	}
+
+	public function code()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/about/code');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/code-scripts');
+	}
+
+	public function memorandum_orders()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/about/memorandum-orders');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/memorandum-orders-scripts');
+	}
+
+	public function executive_orders()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/about/executive-orders');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/executive-orders-scripts');
+	}
+
+	public function codi_manual()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/about/codi-manual');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/codi-manual-scripts');
+	}
+
+	public function citizens_charter()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/about/citizens-charter');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/citizens-charter-scripts');
+	}
+
+	public function programs()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/academic/programs');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/programs-scripts');
+	}
+
+	public function ous()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/academic/ous');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/ous-scripts');
+	}
+
+	public function library()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/academic/library');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/library-scripts');
+	}
+
+	public function ovpaa()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/academic/ovpaa');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/ovpaa-scripts');
+	}
+
+	public function student_services()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/student/services');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/student-services-scripts');
+	}
+
+	public function organizations()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/student/organizations');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/organizations-scripts');
+	}
+
+	public function student_publications()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/student/publications');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/student-publications-scripts');
+	}
+
+	public function student_council()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/student/council');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/student-council-scripts');
+	}
+
+	public function student_handbook()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/student/handbook');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/student-handbook-scripts');
+	}
+
+	public function downloads()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/student/downloads');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/downloads-scripts');
+	}
+
+	public function researches()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/research/researches');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/researches-scripts');
+	}
+
+	public function extensions()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/research/extensions');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/extensions-scripts');
+	}
+
+	public function intellectual_property()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/research/intellectual-property');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/ip-scripts');
+	}
+
+	public function applicants()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/applicants');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/applicants-scripts');
+	}
+
+	public function events()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/events');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/events-scripts');
+	}
+
+	public function documents()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/documents');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/documents-scripts');
+	}
+
+	public function scholarships()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/scholarships');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/scholarships-scripts');
+	}
+
+	public function calendar()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/calendar');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/calendar-scripts');
+	}
+
+	public function admission()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/admission');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/admission-scripts');
 	}
 }
