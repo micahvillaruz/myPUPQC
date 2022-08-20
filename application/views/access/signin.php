@@ -37,35 +37,50 @@
                   <p class="text-muted">Sign in to continue to myPUPQC</p>
                 </div>
                 <div class="p-2 mt-4">
-                  <form action="http://localhost/myPUPQC/student/dashboard">
+                  <form class="needs-validation" novalidate action="<?= base_url() ?>student/dashboard">
+
                     <div class="mb-3">
-                      <label for="username" class="form-label">Email</label>
-                      <input type="text" class="form-control" id="username" placeholder="Enter email" />
+                      <label for="user_no" class="form-label">Student / Employee Number <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="user_no" name="user_no" placeholder="Enter Student / Employee Number" required>
+                      <div class="invalid-feedback">
+                        Please enter Student / Employee Number
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label" for="password-input">Password <span class="text-danger">*</span></label>
+                      <div class="position-relative auth-pass-inputgroup">
+                        <input type="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Enter Password" id="password-input" aria-describedby="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                        <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+                        <div class="invalid-feedback">
+                          Please enter Password
+                        </div>
+                      </div>
                     </div>
 
-                    <label class="form-label" for="password-input">Password</label>
-                    <div class="position-relative auth-pass-inputgroup mb-3">
-                      <input type="password" class="form-control pe-5" placeholder="Enter password" id="password-input" />
-                      <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted" type="button" id="password-addon">
-                        <i class="ri-eye-fill align-middle"></i>
-                      </button>
+                    <div class="mb-4">
+                      <div class="row">
+                        <div class="col-6">
+                          <input class="form-check-input" type="checkbox" value="" id="auth-remember-check" />
+                          <label class="form-check-label" for="auth-remember-check">Remember me</label>
+                        </div>
+
+                        <div class="col-6 text-end">
+                          <a href="#!" class="fw-semibold text-info">Forgot password?</a>
+                        </div>
+                      </div>
                     </div>
-                </div>
-                <div class="mb-3">
-                  <div class="float-end">
-                    <a href="auth-pass-reset-basic.html" class="fw-semibold text-info" target="-blank">Forgot password?</a>
-                  </div>
 
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="auth-remember-check" />
-                    <label class="form-check-label" for="auth-remember-check">Remember me</label>
-                  </div>
+                    <div id="password-contain" class="p-3 bg-light mb-2 rounded">
+                      <h5 class="fs-13">Password must contain:</h5>
+                      <p id="pass-length" class="invalid fs-12 mb-2">Minimum <b>8 characters</b></p>
+                      <p id="pass-lower" class="invalid fs-12 mb-2">At <b>lowercase</b> letter (a-z)</p>
+                      <p id="pass-upper" class="invalid fs-12 mb-2">At least <b>uppercase</b> letter (A-Z)</p>
+                      <p id="pass-number" class="invalid fs-12 mb-0">A least <b>number</b> (0-9)</p>
+                    </div>
 
-                  <div class="mt-4">
-                    <button class="btn btn-primary w-100" type="submit">Sign In</button>
-                  </div>
-
-
+                    <div class="mt-4">
+                      <button class="btn btn-primary w-100" type="submit">Sign In</button>
+                    </div>
                   </form>
                 </div>
               </div>
