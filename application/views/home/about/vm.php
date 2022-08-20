@@ -57,8 +57,8 @@
               <div class="text-muted">
                 <h2 class="text-primary fw-medium">Objectives</h2>
                 <ul>
-                  <li> Provide quality education that is responsive to the needs of the society.</li>
-                  <li> Preserve the commitment and pursue common goals.</li>
+                  <li>Provide quality education that is responsive to the needs of the society.</li>
+                  <li>Preserve the commitment and pursue common goals.</li>
                   <li>Provide its students and faculty with arts, science and research based education..</li>
                   <li>Promote culture of academic excellence among the faculty, students and non-teaching personnel by maintaining academic freedom responsibility.</li>
                   <li>Sustain a reliable world class products in the future.</li>
@@ -85,3 +85,5 @@
       <!-- end row -->
     </div>
     <!-- end main content-->
+  </div>
+  <!-- END layout-wrapper -->
