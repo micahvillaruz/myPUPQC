@@ -1,178 +1,242 @@
 <body>
-
   <!-- Begin page -->
   <div id="layout-wrapper">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-9 col-lg-8">
-          <div class="card border-1">
-            <div class="card-body">
-              <div class="text-muted">
-                <div class="text-center">
-                <h2 class="text-primary h3 mb-0">PUP Hymn</h2>
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="main-content ms-0 bg-light">
+      <div class="page-content pt-4">
+        <div class="container-fluid">
+          <div class="profile-foreground position-relative mx-n4 mt-n4">
+            <div class="profile-wid-bg">
+              <img src="<?= base_url() ?>public/images/pupqc-bg.jpg" alt="" class="profile-wid-img" />
+            </div>
+          </div>
+          <div class="pt-4 mb-4 mb-lg-3 pb-lg-4">
+            <div class="row g-4">
+              <div class="col-auto">
+                <div class="avatar-lg">
+                  <img src="<?= base_url() ?>public/images/pupqc-logo.png" class="img-thumbnail rounded-circle" />
                 </div>
               </div>
-            </div>
-            <!-- end card body -->
-          </div>
-          <!-- end card -->
-          <div class="card">
-            <div class="card-body">
-              <div class="text-muted">
-                <h2 class="text-primary fw-medium">Imno ng PUP</h2>
-                <div class="row">
-                  <p class="col-6 text-justify">S. Calabig, S. Roldan, and R. Amaranto</p>
-                  <!-- Ratio Video 16:9 -->
-                  <div class="ratio ratio-16x9">
-                  <iframe src="https://www.youtube.com/embed/Yib_s5UeGvc" title="YouTube video" allowfullscreen></iframe>
+              <!--end col-->
+              <div class="col">
+                <div class="p-2">
+                  <h3 class="text-white mb-3">Polytechnic University of the Philippines</h3>
+                  <h3 class="text-white">Quezon City Branch</h3>
+                  <div class="hstack text-white-50 gap-1">
+                    <div class="me-2">
+                      <i class="ri-road-map-line me-1 text-white-75 fs-16 align-middle"></i>
+                      <span class="ms-1">Don Fabian St., Commonwealth Quezon City</span>
+                    </div>
                   </div>
-                  <p class=""></p>
-                  <p class="col-4">Sintang Paaralan
-                  Tanglaw ka ng bayan
-                  Pandayan ng isip ng kabataan
-                  Kami ay dumating nang salat sa yaman
-                  Hanap na dunong ay iyong alay
-                  Ang layunin mong makatao
-                  Dinarangal ang Pilipino
-                  Ang iyong aral, diwa, adhikang taglay
-                  PUP, aming gabay
-                  Paaralang dakila
-                  PUP, pinagpala
-                  Gagamitin ang karunungan
-                  Mula sa iyo, para sa bayan
-                  Ang iyong aral, diwa, adhikang taglay
-                  PUP, aming gabay
-                  Paaralang dakila
-                  PUP, pinagpala</p>
                 </div>
               </div>
+              <!--end col-->
             </div>
-            <!-- end card body -->
+            <!--end row-->
           </div>
-          <!-- end card -->
-          <div class="card">
-            <div class="card-body">
-              <div class="text-muted">
-                <h2 class="text-primary fw-medium">PCC Hymn</h2>
-                <div class="row">
-                  <p class="col-4">Oh! PCC thy glorious name
-                  A symbol we'll uphold
-                  Forever we will follow on
-                  The light that guides us all
-                  Thy beacon light has led us through
-                  To strive for dignity
-                  We'll stand and fight for PCC
-                  To keep her name unowned
-                  Dear Alma Mater may your brow
-                  With Laurels ever crowned
-                  All hail the flag of PCC
-                  In bright maroon and gold
-                  The colors bright for loyalty
-                  For service keep unfurled
-                  The honors we have always won
-                  Shalt live forever on
-                  For loyal sons and daughters
-                  of our dear PCC
-                  Forever thee we'll honor
-                  and serve with loyalty.</p>
+
+          <div class="row">
+            <div class="col-lg-12">
+              <div>
+                <div class="row pt-4 text-muted">
+                  <div class="col-xxl-9">
+                    <div class="card">
+                      <div class="card-body">
+                        <h3 class="mb-3 text-primary">PUP Hymn</h3>
+                        <div class="mx-4">
+                          <h4 class="text-primary">Imno ng PUP</h4>
+                          <p class="fst-italic">S. Calabig, S. Roldan, and R. Amaranto</p>
+                          <div class="mx-4 mt-3">
+                            <iframe width="800" height="500" src="https://www.youtube.com/embed/Yib_s5UeGvc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="mt-3">
+                              <p>
+                                Sintang Paaralan <br>
+                                Tanglaw ka ng bayan <br>
+                                Pandayan ng isip ng kabataan <br>
+                                Kami ay dumating nang salat sa yaman <br>
+                                Hanap na dunong ay iyong alay <br>
+                                Ang layunin mong makatao <br>
+                                Dinarangal ang Pilipino <br>
+                                Ang iyong aral, diwa, adhikang taglay <br>
+                                PUP, aming gabay <br>
+                                Paaralang dakila <br>
+                                PUP, pinagpala <br>
+                                Gagamitin ang karunungan <br>
+                                Mula sa iyo, para sa bayan <br>
+                                Ang iyong aral, diwa, adhikang taglay <br>
+                                PUP, aming gabay <br>
+                                Paaralang dakila <br>
+                                PUP, pinagpala <br>
+                              </p>
+                            </div>
+                          </div>
+                          <h4 class="text-primary">PCC Hymn</h4>
+                          <div class="mx-4 mt-3">
+                            <p>
+                              Oh! PCC thy glorious name <br>
+                              A symbol we'll uphold <br>
+                              Forever we will follow on <br>
+                              The light that guides us all <br>
+                              Thy beacon light has led us through <br>
+                              To strive for dignity <br>
+                              We'll stand and fight for PCC <br>
+                              To keep her name unowned <br>
+                              Dear Alma Mater may your brow <br>
+                              With Laurels ever crowned <br>
+                              All hail the flag of PCC <br>
+                              In bright maroon and gold <br>
+                              The colors bright for loyalty <br>
+                              For service keep unfurled <br>
+                              The honors we have always won <br>
+                              Shalt live forever on <br>
+                              For loyal sons and daughters <br>
+                              of our dear PCC <br>
+                              Forever thee we'll honor <br>
+                              and serve with loyalty. <br>
+                            </p>
+                          </div>
+                          <h4 class="text-primary">PUP Imno Sentenyal</h4>
+                          <p class="fst-italic">Pacelli S. Eugenio and Antonio R. Regalario</p>
+                          <div class="mx-4 mt-3">
+                            <p>
+                              Sandaang taon ng iyong kasaysayan <br>
+                              Mula sa abang karukhaang kinagisnan <br>
+                              Sa hirap at pagdurusang sakdal labis <br>
+                              Nagtiis at di nawalan ng pag-asa <br>
+                              Sa puso, sa diwa ay nagtanim ng pangarap. <br>
+                            </p>
+                            <p>
+                              Sanlaksang pagsubok binaka <br>
+                              Nakipagtunggali sa mga unos ng buhay <br>
+                              Ika'y bumangon, nakibaka't nagtagumpay <br>
+                              Nakamtan ang hangad na dangal <br>
+                              Para malayang ikampay <br>
+                              Kalayaang bumukal sa kaluluwa ng kabayanihan. <br>
+                            </p>
+                            <p>
+                              Sandaang taon ng iyong kasaysayan <br>
+                              Maningning kang bantayog ng kagitingan <br>
+                              Luningning ka ng kadakilaan <br>
+                              Ilaw sa kaisipan ng Kapilipinuhan <br>
+                              Nagpupugay kmi sa iyo <br>
+                              Pag-asa ka ng bayan. <br>
+                            </p>
+                            <p>
+                              Dakila ka PUP, sa diwa mong makabayan <br>
+                              Sa kaluluwa mong maka-Diyos <br>
+                              Dakila kang totoo. <br>
+                            </p>
+                            <p>
+                              PUP, manguna ka <br>
+                              Sa husay, sa laya't katarungan <br>
+                              Alay sa dukhang Pilipino <br>
+                              Mabuhay ka, magpakailanman. <br>
+                            </p>
+                            <p>
+                              PUP Mabuhay ka!
+                            </p>
+                          </div>
+                          <h4 class="text-primary">Imno ng PUP</h4>
+                          <p class="fst-italic">(English translation, not to be sung)</p>
+                          <div class="mx-4 mt-3">
+                            <p>
+                              Beloved School <br>
+                              You are the light of the nation <br>
+                              Forger of the youth's mind <br>
+                              We came not having much wealth <br>
+                              Searching for wisdom that you offer <br>
+                              Your objectives are benevolent <br>
+                              Honoring the Filipino <br>
+                              The lessons, essence, aspirations you possess <br>
+                              PUP, our guide <br>
+                              A great school <br>
+                              PUP, you are blessed <br>
+                              We will use the knowledge (we learned) <br>
+                              From you, for the country <br>
+                              The lessons, essence, aspirations you possess <br>
+                              PUP, our guide <br>
+                              A great school <br>
+                              PUP, you are blessed <br>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <!--end card-body-->
+                    </div>
+                    <!-- end card -->
+                  </div>
+                  <!--end col-->
+                  <div class="col-xxl-3">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="d-flex align-items-center mb-4">
+                          <div class="flex-grow-1">
+                            <h5 class="card-title mb-0 text-primary">Contents</h5>
+                          </div>
+                        </div>
+                        <div>
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about">University Profile</a>
+                            </li>
+                            <li class="list-group-item text-muted">
+                              <a class="text-muted" href="<?= base_url() ?>about/vm">Vision and Mission</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/history">History</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/logo-and-symbols">Logo and Symbols</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/hymn">Hymn</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/annual-reports">Annual Reports</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/contact-us">Contact us</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/maps">Maps</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/code">University Code</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/memorandum-orders">Memorandum Orders</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/executive-orders">Executive Orders</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/codi-manual">CODI Manual</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/citizens-charter">Citizens Charter</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <!-- end card body -->
+                    </div>
+                    <!--end card-->
+                  </div>
+                  <!--end col-->
                 </div>
+                <!--end row-->
               </div>
             </div>
+            <!--end col-->
           </div>
-          <div class="card">
-            <div class="card-body">
-              <div class="text-muted">
-                <h2 class="text-primary fw-medium">PUP Imno Sentenyal</h2>
-                <ul>
-                  <li>Effective curriculum that promotes arts, science, and research based education.</li>
-                  <li>Harmonious relationship between the administration, faculty, non-teaching personnel and students, by considering the culture of academic excellence and academic freedom in the institution.</li>
-                  <li>Competent university personnels and student leaders, to sustain quality standard education.</li>
-                  <li>Graduates that are globally competitive in their chosen fields and responsive to the community needs.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-body">
-              <div class="text-muted">
-                <h2 class="text-primary fw-medium">PUP Imno Sentenyal</h2>
-                <p class="col-6 text-justify">Pacelli S. Eugenio and Antonio R. Regalario</p>
-                <p class="col-4 text-justify">Sandaang taon ng iyong kasaysayan
-                <br>Mula sa abang karukhaang kinagisnan
-                Sa hirap at pagdurusang sakdal labis
-                Nagtiis at di nawalan ng pag-asa
-                Sa puso, sa diwa ay nagtanim ng pangarap.</br>
-
-                <br>Sanlaksang pagsubok binaka
-                Nakipagtunggali sa mga unos ng buhay
-                Ikaâ€™y bumangon, nakibakaâ€™t nagtagumpay
-                Nakamtan ang hangad na dangal
-                Para malayang ikampay
-                Kalayaang bumukal sa kaluluwa ng kabayanihan.</br>
-
-                <br>Sandaang taon ng iyong kasaysayan
-                Maningning kang bantayog ng kagitingan
-                Luningning ka ng kadakilaan
-                Ilaw sa kaisipan ng Kapilipinuhan
-                Nagpupugay kmi sa iyo
-                Pag-asa ka ng bayan.</br>
-
-                <br>Dakila ka PUP, sa diwa mong makabayan
-                Sa kaluluwa mong maka-Diyos
-                Dakila kang totoo.</br>
-
-                <br>PUP, manguna ka
-                Sa husay, sa layaâ€™t katarungan
-                Alay sa dukhang Pilipino
-                Mabuhay ka, magpakailanman.</br>
-
-                <br>PUP Mabuhay ka!</br></p>
-              </div>
-            </div>
-            <!-- end card body -->
-            <div class="card">
-            <div class="card-body">
-              <div class="text-muted">
-                <h2 class="text-primary fw-medium">Imno ng PUP</h2>
-                <p class="col-6 text-justify">(English translation, not to be sung)</p>
-                <p class="col-4 text-justify">Beloved School
-                You are the light of the nation
-                Forger of the youth's mind
-                We came not having much wealth
-                Searching for wisdom that you offer
-                Your objectives are benevolent
-                Honoring the Filipino
-                The lessons, essence, aspirations you possess
-                PUP, our guide
-                A great school
-                PUP, you are blessed
-                We will use the knowledge (we learned)
-                From you, for the country
-                The lessons, essence, aspirations you possess
-                PUP, our guide
-                A great school
-                PUP, you are blessed</p>
-              
-                 
-                </div>
-              </div>
-            </div>
-            <!-- end card body -->
-          </div>
-          <!-- end card -->
+          <!--end row-->
         </div>
-        <!-- end col -->
-        <div class="col-xl-3 col-lg-4">
-          <p class="text-primary">Contents</p>
-          <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action">University Profile</a>
-            <a href="#" class="list-group-item list-group-item-action">Vision and Mission</a>
-            <a href="#" class="list-group-item list-group-item-action">History</a>
-            <a href="#" class="list-group-item list-group-item-action">Logo and Symbols</a>
-          </div>
-        </div>
-        <!-- end col -->
+        <!-- container-fluid -->
       </div>
-      <!-- end row -->
+      <!-- End Page-content -->
     </div>
     <!-- end main content-->
+  </div>
+  <!-- END layout-wrapper -->

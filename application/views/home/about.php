@@ -126,13 +126,12 @@
                         <h5 class="text-primary">Undergraduate Degrees</h5>
                         <div class="mx-3">
                           <ul>
-                            <li>Bachelor of Science in Business Administration major in Marketing Management (BSBA-MM)</li>
+                            <li>Bachelor of Science in Business Administration Major in Marketing Management (BSBA MM)</li>
                             <li>Bachelor of Science in Information Technology (BSIT)</li>
-                            <li>Bachelor in Business Teacher Education major in Home Economics (BBTE-HE)</li>
-                            <li>Bachelor in Business TeacherEducation major in Information Communication Technology (BBTE-ICT)</li>
-                            <li>Bachelor of Science in Business Administration major in Human Resource Management (BSBA-HRM)</li>
-                            <li>Bachelor of Science in Entrepreneurship (BSEnt)</li>
-                            <li>HR</li>
+                            <li>Bachelor of Science in Business Teacher's Education (BBTE)</li>
+                            <li>Bachelor of Science in Business Administration Major in Human Resource Development Management (BSBA HRM)</li>
+                            <li>Bachelor of Science in Business Administration Major in Entrepreneurship (BSBA ENT)</li>
+                            <li>Bachelor of Public Administration Major in Public Financial Management (BPA FPM)</li>
                           </ul>
                         </div>
                         <h5 class="text-primary">Diploma</h5>
