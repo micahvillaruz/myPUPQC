@@ -97,7 +97,7 @@
                               <a class="text-muted" href="<?= base_url() ?>academic/ous">Open University System</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>academic/library">Library Services</a>
+                              <a class="text-muted" href="https://www.pup.edu.ph/nallrc/" target="_blank">Library Services</a>
                             </li>
                             <li class="list-group-item">
                               <a class="text-muted" href="<?= base_url() ?>academic/ovpaa">OVPAA Advisories</a>
