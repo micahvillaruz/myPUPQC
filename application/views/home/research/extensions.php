@@ -1,79 +1,112 @@
 <body>
-
+  <!-- Begin page -->
   <div id="layout-wrapper">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-9 col-lg-8">
-          <div class="card border-1">
-            <div class="card-body">
-              <div class="text-muted">
-                <div class="text-center">
-                <h2 class="text-primary h3 mb-0"></h2>
-                </div>
-              </div>
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="main-content ms-0 bg-light">
+      <div class="page-content pt-4">
+        <div class="container-fluid">
+          <div class="profile-foreground position-relative mx-n4 mt-n4">
+            <div class="profile-wid-bg">
+              <img src="<?= base_url() ?>public/images/pupqc-bg.jpg" alt="" class="profile-wid-img" />
             </div>
-            <!-- end card body -->
-            </div>
-          <!-- end card -->
-          <div class="card">
-            <div class="card-body">
-              <div class="text-muted">
-                <h2 class="text-primary fw-medium">Extension Management Office</h2>
-                <div class="row">
-                  <p class="text-justify">The Extension Management Office (EMO) is the lead unit of the University in the design and conduct of extension work. Its vision-mission statement describes EMO as being â€œdesigned to actively participate in the pursuit of social and community development to contribute to the empowerment of its beneficiaries, partner barangays and government and private organizations in collaboration with its partner colleges, branches, and campuses through relevant and responsive extension programs designed to address their needs.</p>
-                </div>
-              </div>
-            </div>
-            <!-- end card body -->
           </div>
-          <!-- end card -->
-          <div class="card">
-            <div class="card-body">
-              <div class="text-muted">
-                <h2 class="text-primary fw-medium">Centers</h2>
-                <div class="">
-                <ul class="">
+          <div class="pt-4 mb-4 mb-lg-3 pb-lg-4">
+            <div class="row g-4">
+              <div class="col-auto">
+                <div class="avatar-lg">
+                  <img src="<?= base_url() ?>public/images/pupqc-logo.png" class="img-thumbnail rounded-circle" />
+                </div>
+              </div>
+              <!--end col-->
+              <div class="col">
+                <div class="p-2">
+                  <h3 class="text-white mb-3">Polytechnic University of the Philippines</h3>
+                  <h3 class="text-white">Quezon City Branch</h3>
+                  <div class="hstack text-white-50 gap-1">
+                    <div class="me-2">
+                      <i class="ri-road-map-line me-1 text-white-75 fs-16 align-middle"></i>
+                      <span class="ms-1">Don Fabian St., Commonwealth Quezon City</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--end col-->
+            </div>
+            <!--end row-->
+          </div>
+
+          <div class="row">
+            <div class="col-lg-12">
+              <div>
+                <div class="row pt-4 text-muted">
+                  <div class="col-xxl-9">
+                    <div class="card">
+                      <div class="card-body">
+                        <h3 class="mb-3 text-primary">Extension Management Office</h3>
+                        <p>The Extension Management Office (EMO) is the lead unit of the University in the design and conduct of extension work. Its vision-mission statement describes EMO as being designed to actively participate in the pursuit of social and community development to contribute to the empowerment of its beneficiaries, partner barangays and government and private organizations in collaboration with its partner colleges, branches, and campuses through relevant and responsive extension programs designed to address their needs.</p>
+                        <h5 class="text-primary">Centers</h5>
                         <ul>
-                            <li> Community Relations and Outreach Services</li>
-                            <li> Center for Extension Support Services</li>
-                            <li> Center for Extension Monitoring and Evaluation</li>
-                            <li> Center for Inclusivity and Diversity</li>
-                            <li> Center for Extension and Community Linkages</li>
+                          <li>Community Relations and Outreach Services</li>
+                          <li>Center for Extension Support Services</li>
+                          <li>Center for Extension Monitoring and Evaluation</li>
+                          <li>Center for Inclusivity and Diversity</li>
+                          <li>Center for Extension and Community Linkages</li>
                         </ul>
+                      </div>
+                      <!--end card-body-->
+                    </div>
+                    <!-- end card -->
+                  </div>
+                  <!--end col-->
+                  <div class="col-xxl-3">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="d-flex align-items-center mb-4">
+                          <div class="flex-grow-1">
+                            <h5 class="card-title mb-0 text-primary">Contents</h5>
+                          </div>
+                        </div>
+                        <div>
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                              <a class="text-muted" href="#!">Extension Management Office</a>
+                            </li>
+                            <li class="list-group-item text-muted">
+                              <a class="text-muted" href="#!">Vision, Mission</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="#!">Services</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="#!">Logo</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="#!">Officials and Staff</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="#!">Contact Information</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <!-- end card body -->
+                    </div>
+                    <!--end card-->
+                  </div>
+                  <!--end col-->
                 </div>
+                <!--end row-->
               </div>
             </div>
+            <!--end col-->
           </div>
-          <div class="">
-            <div class="">
-              <div class="text-muted">
-                <h2 class="text-primary fw-medium"></h2>
-              </div>
-            </div>
-          </div>
-          <div class="">
-            <div class="">
-              <div class="text-muted">
-                <h2 class="text-primary fw-medium"></h2>
-              </div>
-            </div>
-            <!-- end card body -->
-          </div>
-          <!-- end card -->
+          <!--end row-->
         </div>
-        <!-- end col -->
-        <div class="col-xl-3 col-lg-4">
-          <p class="text-primary">Contents</p>
-          <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action">University Profile</a>
-            <a href="#" class="list-group-item list-group-item-action">Vision and Mission</a>
-            <a href="#" class="list-group-item list-group-item-action">History</a>
-            <a href="#" class="list-group-item list-group-item-action">Logo and Symbols</a>
-          </div>
-        </div>
-        <!-- end col -->
+        <!-- container-fluid -->
       </div>
-      <!-- end row -->
+      <!-- End Page-content -->
     </div>
     <!-- end main content-->
   </div>
