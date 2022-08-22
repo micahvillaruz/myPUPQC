@@ -81,6 +81,9 @@ $route['about/executive-orders'] = 'home/executive_orders';
 $route['about/codi-manual'] = 'home/codi_manual';
 $route['about/citizens-charter'] = 'home/citizens_charter';
 
+$route['terms'] = 'home/terms';
+$route['privacy'] = 'home/privacy';
+
 // Academic
 $route['academic/programs'] = 'home/programs';
 $route['academic/ous'] = 'home/ous';

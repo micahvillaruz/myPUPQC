@@ -82,8 +82,8 @@
 
             <div class="mt-4 text-center">
               By using this service, you understood and agree to the PUP Online Services
-              <a href="https://www.pup.edu.ph/terms/" class="fw-semibold text-primary" target="_blank">Terms of Use</a> and
-              <a href="https://www.pup.edu.ph/privacy/" class="fw-semibold text-primary" target="_blank">Privacy Statement</a>
+              <a href="<?= base_url() ?>terms" class="fw-semibold text-primary">Terms of Use</a> and
+              <a href="<?= base_url() ?>privacy" class="fw-semibold text-primary">Privacy Statement</a>
               </p>
             </div>
           </div>
