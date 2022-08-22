@@ -1,4 +1,4 @@
-<body data-bs-spy="scroll" data-bs-target="#navbar-example">
+<body>
   <!-- Begin page -->
   <div class="layout-wrapper landing">
     <nav class="navbar navbar-expand-lg navbar-landing" id="navbar">
