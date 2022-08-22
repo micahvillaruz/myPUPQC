@@ -674,18 +674,21 @@
 					<!-- end col -->
 					<div class="col-lg-8">
 						<div>
-							<form>
+							<form id="contact_form" class="needs-validation">
 								<div class="row">
 									<div class="col-lg-6">
 										<div class="mb-4">
 											<label for="name" class="form-label fs-13">Name</label>
-											<input name="name" id="name" type="text" class="form-control bg-light border-light" placeholder="Your name*" />
+											<input name="name" id="name" type="text" class="form-control bg-light border-light" placeholder="Your name*" required />
+											<div class="invalid-feedback">
+												Please enter Name
+											</div>
 										</div>
 									</div>
 									<div class="col-lg-6">
 										<div class="mb-4">
 											<label for="email" class="form-label fs-13">Email</label>
-											<input name="email" id="email" type="email" class="form-control bg-light border-light" placeholder="Your email*" />
+											<input name="email" id="email" type="email" class="form-control bg-light border-light" placeholder="Your email*" required />
 										</div>
 									</div>
 								</div>
@@ -693,7 +696,7 @@
 									<div class="col-lg-12">
 										<div class="mb-4">
 											<label for="subject" class="form-label fs-13">Subject</label>
-											<input type="text" class="form-control bg-light border-light" id="subject" name="subject" placeholder="Your Subject.." />
+											<input type="text" class="form-control bg-light border-light" id="subject" name="subject" placeholder="Your Subject.." required />
 										</div>
 									</div>
 								</div>
@@ -707,7 +710,7 @@
 								</div>
 								<div class="row">
 									<div class="col-lg-12 text-end">
-										<input type="submit" id="submit" name="send" class="submitBnt btn btn-primary" value="Send Message" />
+										<input type="submit" id="submit" name="send" class="submitBtn btn btn-primary" value="Send Message" />
 									</div>
 								</div>
 							</form>

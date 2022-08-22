@@ -3,8 +3,8 @@ $(function () {
 		e.preventDefault()
 
 		if ($('#signin_form')[0].checkValidity()) {
-			console.log($('#user_no').val())
-			console.log($('#password-input').val())
+			console.log(`Student/Employee Number: ${$('#user_no').val()}`)
+			console.log(`Password: ${$('#password-input').val()}`)
 		}
 	})
 })

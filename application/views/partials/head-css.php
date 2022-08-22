@@ -11,6 +11,9 @@
 		<!--Swiper slider css-->
 		<link href="<?= base_url() ?>public/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
 
+		<!-- Sweet Alert css-->
+		<link href="<?= base_url() ?>public/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
+
 		<!-- Layout config Js -->
 		<script src="<?= base_url() ?>public/js/layout.js"></script>
 		<!-- Bootstrap Css -->
