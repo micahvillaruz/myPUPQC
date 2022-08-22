@@ -1,385 +1,351 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Calendar</title>
-</head>
 <body>
-    
-    <h2 class="text text-center text-danger">Academic Calendar</h2>
-    <table class="table table-danger table-sm">
+  <!-- Begin page -->
+  <div id="layout-wrapper">
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="main-content ms-0 bg-light">
+      <div class="page-content pt-4">
+        <div class="container-fluid">
+          <div class="profile-foreground position-relative mx-n4 mt-n4">
+            <div class="profile-wid-bg">
+              <img src="<?= base_url() ?>public/images/pupqc-bg.jpg" alt="" class="profile-wid-img" />
+            </div>
+          </div>
+          <div class="pt-4 mb-4 mb-lg-3 pb-lg-4">
+            <div class="row g-4">
+              <div class="col-auto">
+                <div class="avatar-lg">
+                  <img src="<?= base_url() ?>public/images/pupqc-logo.png" class="img-thumbnail rounded-circle" />
+                </div>
+              </div>
+              <!--end col-->
+              <div class="col">
+                <div class="p-2">
+                  <h3 class="text-white mb-3">Polytechnic University of the Philippines</h3>
+                  <h3 class="text-white">Quezon City Branch</h3>
+                  <div class="hstack text-white-50 gap-1">
+                    <div class="me-2">
+                      <i class="ri-road-map-line me-1 text-white-75 fs-16 align-middle"></i>
+                      <span class="ms-1">Don Fabian St., Commonwealth Quezon City</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--end col-->
+            </div>
+            <!--end row-->
+          </div>
 
-        
-        <tbody>
-            <tr>
-            <td>
-                    July 
-            </td>
-            <td>
-                19-Aug 18 <br>26-31
-            </td>
-            <td>
-                Senior High School Grade 11 Enrollment<br>
-                Online encoding of subject offerings for the First Semester, A.Y. 2021-2022 (PUPSIS) 
-            </td>
-        </tr>
-            <tr>
-            <td>
-                    August 
-            </td>
-            <td>
-                9-27 <br><br><br>23-Sept 4 <br><br> 30 <br><br> 30-Sept 10 <br><br>
-            </td>
-            <td>
-                <strong>College Freshman (Main, Sta. Mesa, Manila)</strong> Processing of Freshman Online Admission and<br> Enrollment and Printing of Registration Card<br><br>
-                Online encoding of subject offerings for the First Semester, A.Y. 2021-2022 (PUPSIS) <br> Senior High School Grade 12 Online Registration
-                <br>National Heroes Day<br><br><strong>College Freshman (Branches and Campuses) Processing of Credentials, Interview, Enrollment, Medical Clearance</strong> 
-            </td>
-        </tr>
-            <tr>
-            <td>
-                    September
-            </td>
-            <td>
-                13-27 <br><br>15,22 <br><br>16,23 <br><br>17,24 <br><br>18,25 <br><br>20,27 <br><br>20-24 <br><br><br>21,28 <br><br>29-30 <br><br>
-            </td>
-            <td>
-                Application and Processing of Credentials of Re-admission of Returning Students<br><br>
-                Second Year Online Registration (Sta. Mesa, Manila) <br><br> Third Year Online Registration (Sta. Mesa, Manila)<br><br>
-                Fourth Year and Fifth Year Online Registration (Sta. Mesa, Manila)<br><br>
-                Second Year Online Registration (Branches and Campuses)<br><br>
-                Third Year Online Registration (Branches and Campuses)<br><br>
-                Application and Processing of Credentials of Admission of Transfer Students with complete credentials /<br> Ladderized Programs from PUP Institute of Technology<br><br>
-                Fourth Year and Fifth Year Online Registration (Branches and Campuses)<br><br>
-                All Year Level Online Registration 
-            </td>
-        
-            <tr>
-            <td>
-                    October 
-            </td>
-            <td>
-                1-2 <br><br>1-2 <br><br><br>1<br><br>11 <br><br>11-29 <br><br>29
-            </td>
-            <td>
-                <strong>PUP 117th Founding Anniversary</strong><br><br>
-                Online Registration of Returning Students and Transfer Students with complete credentials /<br> Ladderized Program from PUP Institute of Technology <br><br>
-                College Faculty Meeting<br><br>
-                <strong>First Semester classes start</strong><br><br>
-                Adjustment period<br><br>
-                Deadline for submission of Application for Change of Enrollment (ACE) Forms<br> to the Office of the University Registrar (OUR)<br><br>
-            </td>
-        </tr>
-            <tr>
-            <td>
-                    November
-            </td>
-            <td>
-                1<br><br>15-Dec 15 <br><br><br><br>20<br><br>26<br><br>30
-            </td>
-            <td>
-                All Saints' Day<br><br>
-                Online filing of Application for Mid-Year Graduation A.Y. 2021 -2022.<br>  Upload proof of payment of P150.00 for Second Time or more Applications and for students not covered by<br> Republic Act 10931 also known as Universal Access to 
-                Quality Tertiary Education Act of 2017 <br><br>
-                Auto finalization of Grades in PUPSIS for Summer A.Y. 2020-2021<br><br>
-                Last day of payment of tuition, miscellaneous, and other fees thru LANDBANK (for students not covered by Republic Act 10931)<br><br>
-                Bonifacio Day<br><br>
-            </td>
-        </tr>
-            <tr>
-            <td>
-                    December
-            </td>
-            <td>
-                8<br><br><strong>13-27</strong> <br><br>16-22<br><br>20-Jan 2<br><br>30
-            </td>
-            <td>
-                Immaculate Conception<br><br>
-                <strong>Mid-Term and Departmental Examinations</strong> <br><br>
-                Online encoding of Mid-Term grades<br><br>
-                <strong>Christmas Vacation</strong><br><br>
-                Rizal Day<br><br>
-            </td>
-        </tr>
-        <th>2022</th>
-                <th></th>
-                <th></th>
-            <tr>
-            <td>
-                    January
-            </td>
-            <td>
-                1<br><br> <strong>3</strong>
-            </td>
-            <td>
-                New Year's Day<br><br>
-                <strong>Classes resume</strong> <br><br>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-                    February
-            </td>
-            <td>
-                <strong>14-19</strong><br><br>16-22 <br><br>18-22<br><br>24<br><br>25<br><br><strong>28-Mar 5</strong>
-            </td>
-            <td>
-                <strong>Final and Departmental Examinations of Graduating Students</strong><br><br>
-                Online encoding of Final Grades of Graduating Students for the First Semester, A.Y. 2021-2022 (PUPSIS) <br><br>
-                Finalization of grades of Graduating Students in the PUPSIS (First Semester, A.Y. 2021-2022)<br><br>
-                Last day for Graduating Students to clear their academic and non-academic deficiencies<br><br>
-                EDSA Revolution Anniversary<br><br><strong>Final and Departmental Examinations of Non-Graduating Students</strong>
-            </td>
-            </tr>
-        <tr>
-            <td>
-                    March
-            </td>
-            <td>
-                2-7<br><br><strong>5</strong><br><br>8<br><br>9<br><br>11<br><br>25<br><br>29
-            </td>
-            <td>
-                Online encoding of Final Grades of Non-Graduating Students for the First Semester, A.Y. 2021-2022 (PUPSIS)<br><br>
-                <strong>First Semester ends</strong><br><br>
-                Last day of finalization of grades of Graduating ang Non-Graduating Students for the First Semester, A.Y. 2021-2022<br><br>
-                Submission of First Semester, A.Y. 2021-2022 grade sheets to the Office of the Dean or Director<br><br>
-                Submission of First Semester, A.Y. 2021-2022 grade sheets to the Office of the University Registrar<br><br>
-                College Faculty Meeting<br><br>
-                University Academic Council Meeting<br><br>
+          <div class="row">
+            <div class="col-lg-12">
+              <div>
+                <div class="row pt-4 text-muted">
+                  <div class="col-xxl-9">
+                    <div class="card">
+                      <div class="card-body">
+                        <h3 class="mb-3 text-primary">Calendar</h3>
+                        <div class="row">
+                          <div class="col-12">
+                            <div class="row">
+                              <div class="col-xl-3">
+                                <div class="card card-h-100">
+                                  <div class="card-body">
+                                    <button class="btn btn-primary w-100" id="btn-new-event">
+                                      <i class="mdi mdi-plus"></i> Create New Event
+                                    </button>
 
-            </td>
-            </tr>
-            <tr>
-            <td>
-                    May
-            </td>
-            <td>
-                13
-            </td>
-            <td>
-                Deadline of submission of Completion Forms for Incomplete Marks,<br> First Semester, A.Y. 2020-2021 to the Office of the University Registrar
-            </td>
-            </tr>
-            <tr>
-                <td>
-                        April
-                </td>
-                <td>
-                    13<br><br><br><strong>18</strong>
-                </td>
-                <td>
-                    Deadline of submission of Completion Forms for Incomplete Marks, First Semester,<br> A.Y. 2020-2021 to the Office of the University Registrar<br><br>
-                    <strong>Mid-Year Commencement Exercises</strong><br><br>
-                </td>
-                </tr>
-                
-                <th>Second Semester, Academic Year 2021-2022</th>
-                <th></th>
-                <th></th>
-                <tr>
-                    <td>
-                            September
-                    </td>
-                    <td>
-                        7,16 <br><br>8,17 <br><br>9,18 <br><br>10,19 <br><br>11,21 <br><br>12,22 <br><br>14,23<br><br><br>15,24 <br><br>25-26 <br><br><strong>28</strong><br><br>28-Apr 29
-                    </td>
-                    <td>
-                        First Year Online Registration (Sta. Mesa, Manila)<br><br>
-                        Second Year Online Registration (Sta. Mesa, Manila) <br><br>
-                        Third Year Online Registration (Sta. Mesa, Manila)<br><br>
-                        Fourth Year and Fifth Year Online Registration (Sta. Mesa, Manila)<br><br>
-                        First Year Online Registration (Branches and Campuses)<br><br>
-                        Second Year Online Registration (Branches and Campuses)<br><br>
-                        Third Year Online Registration (Branches and Campuses)<br><br><br>
-                        Fourth Year and Fifth Year Online Registration (Branches and Campuses)<br><br>
-                        All Year Level Online Registration <br><br>
-                        <strong>Second Semester Classes start</strong><br><br>
-                        Adjustment period
-                    </td>
-                    </tr>
-                <tr>
-                    <td>
-                            April
-                    </td>
-                    <td>
-                       9<br><br>14,15,16 <br><br>29 
-                    </td>
-                    <td>
-                        The Day of Valor<br><br>
-                        Maundy Thursday, Good Friday, Black Saturday <br><br>
-                        Deadline for submission of Application for Change of Enrollment (ACE) Forms <br> to the Office of the University Registrar (OUR)<br><br>
-                    </td>
-                    </tr>
-                    <tr>
-                        <td>
-                                September
-                        </td>
-                        <td>
-                            7,16 <br><br>8,17 <br><br>9,18 <br><br>10,19 <br><br>11,21 <br><br>12,22 <br><br>14,23<br><br><br>15,24 <br><br>25-26 <br><br><strong>28</strong><br><br>28-Apr 29
-                        </td>
-                        <td>
-                            First Year Online Registration (Sta. Mesa, Manila)<br><br>
-                            Second Year Online Registration (Sta. Mesa, Manila) <br><br>
-                            Third Year Online Registration (Sta. Mesa, Manila)<br><br>
-                            Fourth Year and Fifth Year Online Registration (Sta. Mesa, Manila)<br><br>
-                            First Year Online Registration (Branches and Campuses)<br><br>
-                            Second Year Online Registration (Branches and Campuses)<br><br>
-                            Third Year Online Registration (Branches and Campuses)<br><br><br>
-                            Fourth Year and Fifth Year Online Registration (Branches and Campuses)<br><br>
-                            All Year Level Online Registration <br><br>
-                            <strong>Second Semester Classes start</strong><br><br>
-                            Adjustment period
-                        </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                    May
-                            </td>
-                            <td>
-                                1<br><br>6<br><br>2-31<br><br><br><br><strong>23-28</strong><br><br>25-31
-                            </td>
-                            <td>
-                                Labor Day<br><br>
-                                Last day of payment of tuition, miscellaneous, and other fees thru LANDBANK and PUP Cashier (for students not covered by Republic Act 10931) <br><br>
-                                Online filing of Application for Year-End Graduation A.Y. 2021 -2022.<br>  Upload proof of payment of P150.00 for Second Time or more Applications and for students not covered by<br> Republic Act 10931 also known as Universal Access to Quality Tertiary Education Act of 2017<br><br>
-                                <strong>Mid-Term and Departmental Examinations</strong><br><br>
-                                Online encoding of Mid-Term grades<br><br>
-                            </td>
-                            </tr>
-                        <tr>
-                            <td>
-                                    June
-                            </td>
-                            <td>
-                                12<br><br>24
-                            </td>
-                            <td>
-                                Philippine Independence Day<br><br>
-                                Manila Day <br><br>
-                            </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                        July
-                                </td>
-                                <td>
-                                    <strong>13-19</strong><br><br>18-22<br><br>23<br><br>25-30<br><br>27-Aug 2<br><br><strong>30</strong><br><br><strong>31</strong>
-                                </td>
-                                <td>
-                                    <strong>Final and Departmental Examinations of Graduating Students</strong><br><br>
-                                    Online encoding of Final Grades of Graduating Students for the Second Semester, A.Y. 2021-2022 (PUPSIS) <br><br>
-                                    Finalization of grades of Graduating Students for the Second Semester, A.Y. 2021-2022<br><br>
-                                    <strong>Final Examinations of Non-Graduating Students</strong><br><br>
-                                    Online encoding of Final Grades of Non-Graduating Students for the Second Semester, A.Y. 2021-2022 (PUPSIS)<br><br>
-                                    <strong>Second Semester ends</strong><br><br>
-                                    <strong>Long Vacation begins</strong><br><br>
-                                </td>
-                                </tr>
-                            <tr>
-                                <td>
-                                    August
-                                </td>
-                                <td>
-                                    3<br><br>4<br><br>5<br><br>5<br><br>12<br><br>12
-                                </td>
-                                <td>
-                                    Last day of finalization of grades of Graduating and Non-Graduating Students for the Second Semester, A.Y. 2021-2022<br><br>
-                                    Submission of Second Semester, A.Y. 2021-2022 grade sheets to the Office of the Dean or Director <br><br>
-                                    Submission of Second Semester, A.Y. 2021-2022 grade sheets to the Office of the University Registrar<br><br>
-                                    University Academic Council Meeting<br><br>
-                                    Auto finalization of grades in the PUPSIS (Second Semester, A.Y. 2021-2022)<br><br>
-                                    Deadline of submission of Completion Forms for Incomplete Marks,<br> Second Semester, A.Y. 2020-2021 to the Office of the University Registrar<br><br>
-                                </td>
-                                </tr>
-                            <tr>
-                                <td>
-                                    September
-                                </td>
-                                <td>
-                                    16
-                                </td>
-                                <td>
-                                  <strong> Year-End Commencement Exercises</strong> <br><br>
-                                </td>
-                                </tr>
-                                <th>Summer Term, Academic Year 2021-2022</th>
-                                <th></th>
-                                <th></th>
-                                <tr>
-                                    <td>
-                                        May
-                                    </td>
-                                    <td>
-                                        23-27
-                                    </td>
-                                    <td>
-                                        Online encoding of subject offerings for Summer Term, A.Y. 2021-2022 (PUPSIS)   <br><br>
-                                    </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            August
-                                        </td>
-                                        <td>
-                                            1-3<br><br><strong>4</strong><br><br>4-6<br><br>6<br><br>16<br><br>18-20
-                                        </td>
-                                        <td>
-                                            First to Fifth Year Online Registration (Sta. Mesa, Manila, Branches and Campuses)<br><br>
-                                            <strong>Summer Classes start</strong> <br><br>
-                                            Adjustment period<br><br>
-                                            Deadline for submission of Application for Change of Enrollment (ACE) forms to the Office of the University Registrar<br><br>
-                                            Last day of payment of tuition, miscellaneous, and other fees thru LANDBANK (for students not covered by Republic Act 10931)<br><br>
-                                            <strong>Mid-Term Examinations</strong><br><br>
-                                        </td>
-                                        </tr>
-                                    <tr>
-                                        <td>
-                                            September
-                                        </td>
-                                        <td>
-                                            <strong>9-13</strong><br><br>12-16<br><br><strong>13</strong><br><br>17<br><br>23<br><br>28<br><br>30
-                                        </td>
-                                        <td>
-                                            <strong>Final Examinations</strong><br><br>
-                                            Summer Classes start <br><br>
-                                            <strong>Summer Term Ends</strong><br><br>
-                                            Last day of Online Encoding of Final Grades for Summer Term, A.Y. 2021-2022<br><br>
-                                            Submission of Summer Term, A.Y. 2021-2022 grade sheets to the Office of the Dean or Director<br><br>
-                                            Submission of Summer Term, A.Y. 2021-2022 grade sheets to the Office of the University Registrar<br><br>
-                                            Deadline of submission of completion forms for Incomplete (INC) marks to the<br> Office of the University Registrar, Summer Term, A.Y. 2020-2021<br><br>
-                                        </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                October
-                                            </td>
-                                            <td>
-                                               <strong>8</strong> 
-                                            </td>
-                                            <td>
-                                            <strong>Long vacation ends</strong><br><br>
-                                            </td>
-                                            </tr>
-                                            <th>For the First Semester, Academic Year 2022-2023</th>
-                                            <th></th>
-                                            <th></th>
-                                        <tr>
-                                            <td>
-                                                August
-                                            </td>
-                                            <td>
-                                               1-5
-                                            </td>
-                                            <td>
-                                            <strong>Online Encoding of Subject Offerings for First Semester, A.Y. 2022-2023</strong><br><br>
-                                            </td>
-                                            </tr>
-                                
-                                
-        </table> 
-    </tbody>
-</body>
-</html>
+                                    <div id="external-events">
+                                      <br />
+                                      <p class="text-muted">
+                                        Drag and drop your event or click in the calendar
+                                      </p>
+                                      <div class="external-event fc-event bg-soft-success text-success" data-class="bg-soft-success">
+                                        <i class="mdi mdi-checkbox-blank-circle font-size-11 me-2"></i>New Event
+                                        Planning
+                                      </div>
+                                      <div class="external-event fc-event bg-soft-info text-info" data-class="bg-soft-info">
+                                        <i class="mdi mdi-checkbox-blank-circle font-size-11 me-2"></i>Meeting
+                                      </div>
+                                      <div class="external-event fc-event bg-soft-warning text-warning" data-class="bg-soft-warning">
+                                        <i class="mdi mdi-checkbox-blank-circle font-size-11 me-2"></i>Generating Reports
+                                      </div>
+                                      <div class="external-event fc-event bg-soft-danger text-danger" data-class="bg-soft-danger">
+                                        <i class="mdi mdi-checkbox-blank-circle font-size-11 me-2"></i>Create
+                                        New theme
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div>
+                                  <h5 class="mb-1">Upcoming Events</h5>
+                                  <p class="text-muted">Don't miss scheduled events</p>
+                                  <div class="pe-2 me-n1 mb-3" data-simplebar style="height: 400px">
+                                    <div id="upcoming-event-list"></div>
+                                  </div>
+                                </div>
+
+                                <div class="card">
+                                  <div class="card-body bg-soft-info">
+                                    <div class="d-flex">
+                                      <div class="flex-shrink-0">
+                                        <i data-feather="calendar" class="text-info icon-dual-info"></i>
+                                      </div>
+                                      <div class="flex-grow-1 ms-3">
+                                        <h6 class="fs-15">Welcome to your Calendar!</h6>
+                                        <p class="text-muted mb-0">
+                                          Event that applications book will appear here. Click on an event to
+                                          see the details and manage applicants event.
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!--end card-->
+                              </div>
+                              <!-- end col-->
+
+                              <div class="col-xl-9">
+                                <div class="card card-h-100">
+                                  <div class="card-body">
+                                    <div id="calendar"></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- end col -->
+                            </div>
+                            <!--end row-->
+
+                            <div style="clear: both"></div>
+
+                            <!-- Add New Event MODAL -->
+                            <div class="modal fade" id="event-modal" tabindex="-1">
+                              <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content border-0">
+                                  <div class="modal-header p-3 bg-soft-info">
+                                    <h5 class="modal-title" id="modal-title">Event</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+                                  </div>
+                                  <div class="modal-body p-4">
+                                    <form class="needs-validation" name="event-form" id="form-event" novalidate>
+                                      <div class="text-end">
+                                        <a href="#" class="btn btn-sm btn-soft-primary" id="edit-event-btn" data-id="edit-event" onclick="editEvent(this)" role="button">Edit</a>
+                                      </div>
+                                      <div class="event-details">
+                                        <div class="d-flex mb-2">
+                                          <div class="flex-grow-1 d-flex align-items-center">
+                                            <div class="flex-shrink-0 me-3">
+                                              <i class="ri-calendar-event-line text-muted fs-16"></i>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                              <h6 class="d-block fw-semibold mb-0" id="event-start-date-tag"></h6>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2">
+                                          <div class="flex-shrink-0 me-3">
+                                            <i class="ri-time-line text-muted fs-16"></i>
+                                          </div>
+                                          <div class="flex-grow-1">
+                                            <h6 class="d-block fw-semibold mb-0">
+                                              <span id="event-timepicker1-tag"></span> -
+                                              <span id="event-timepicker2-tag"></span>
+                                            </h6>
+                                          </div>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2">
+                                          <div class="flex-shrink-0 me-3">
+                                            <i class="ri-map-pin-line text-muted fs-16"></i>
+                                          </div>
+                                          <div class="flex-grow-1">
+                                            <h6 class="d-block fw-semibold mb-0">
+                                              <span id="event-location-tag"></span>
+                                            </h6>
+                                          </div>
+                                        </div>
+                                        <div class="d-flex mb-3">
+                                          <div class="flex-shrink-0 me-3">
+                                            <i class="ri-discuss-line text-muted fs-16"></i>
+                                          </div>
+                                          <div class="flex-grow-1">
+                                            <p class="d-block text-muted mb-0" id="event-description-tag"></p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row event-form">
+                                        <div class="col-12">
+                                          <div class="mb-3">
+                                            <label class="form-label">Type</label>
+                                            <select class="form-select d-none" name="category" id="event-category" required>
+                                              <option value="bg-soft-danger">Danger</option>
+                                              <option value="bg-soft-success">Success</option>
+                                              <option value="bg-soft-primary">Primary</option>
+                                              <option value="bg-soft-info">Info</option>
+                                              <option value="bg-soft-dark">Dark</option>
+                                              <option value="bg-soft-warning">Warning</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                              Please select a valid event category
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <!--end col-->
+                                        <div class="col-12">
+                                          <div class="mb-3">
+                                            <label class="form-label">Event Name</label>
+                                            <input class="form-control d-none" placeholder="Enter event name" type="text" name="title" id="event-title" required value="" />
+                                            <div class="invalid-feedback">
+                                              Please provide a valid event name
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <!--end col-->
+                                        <div class="col-12">
+                                          <div class="mb-3">
+                                            <label>Event Date</label>
+                                            <div class="input-group d-none">
+                                              <input type="text" id="event-start-date" class="form-control flatpickr flatpickr-input" placeholder="Select date" readonly required />
+                                              <span class="input-group-text"><i class="ri-calendar-event-line"></i></span>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <!--end col-->
+                                        <div class="col-12" id="event-time">
+                                          <div class="row">
+                                            <div class="col-6">
+                                              <div class="mb-3">
+                                                <label class="form-label">Start Time</label>
+                                                <div class="input-group d-none">
+                                                  <input id="timepicker1" type="text" class="form-control flatpickr flatpickr-input" placeholder="Select start time" readonly />
+                                                  <span class="input-group-text"><i class="ri-time-line"></i></span>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="col-6">
+                                              <div class="mb-3">
+                                                <label class="form-label">End Time</label>
+                                                <div class="input-group d-none">
+                                                  <input id="timepicker2" type="text" class="form-control flatpickr flatpickr-input" placeholder="Select end time" readonly />
+                                                  <span class="input-group-text"><i class="ri-time-line"></i></span>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <!--end col-->
+                                        <div class="col-12">
+                                          <div class="mb-3">
+                                            <label for="event-location">Location</label>
+                                            <div>
+                                              <input type="text" class="form-control d-none" name="event-location" id="event-location" placeholder="Event location" />
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <!--end col-->
+                                        <input type="hidden" id="eventid" name="eventid" value="" />
+                                        <div class="col-12">
+                                          <div class="mb-3">
+                                            <label class="form-label">Description</label>
+                                            <textarea class="form-control d-none" id="event-description" placeholder="Enter a description" rows="3" spellcheck="false"></textarea>
+                                          </div>
+                                        </div>
+                                        <!--end col-->
+                                      </div>
+                                      <!--end row-->
+                                      <div class="hstack gap-2 justify-content-end">
+                                        <button type="button" class="btn btn-soft-danger" id="btn-delete-event">
+                                          <i class="ri-close-line align-bottom"></i> Delete
+                                        </button>
+                                        <button type="submit" class="btn btn-success" id="btn-save-event">
+                                          Add Event
+                                        </button>
+                                      </div>
+                                    </form>
+                                  </div>
+                                </div>
+                                <!-- end modal-content-->
+                              </div>
+                              <!-- end modal dialog-->
+                            </div>
+                            <!-- end modal-->
+
+
+                          </div>
+                          <!--end card-body-->
+                        </div>
+                        <!-- end card -->
+                      </div>
+                      <!--end col-->
+                    </div>
+                    <!--end card -->
+                  </div>
+                  <!-- end col -->
+                  <div class="col-xxl-3">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="d-flex align-items-center mb-4">
+                          <div class="flex-grow-1">
+                            <h5 class="card-title mb-0 text-primary">Contents</h5>
+                          </div>
+                        </div>
+                        <div>
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about">University Profile</a>
+                            </li>
+                            <li class="list-group-item text-muted">
+                              <a class="text-muted" href="<?= base_url() ?>about/vm">Vision and Mission</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/history">History</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/logo-and-symbols">Logo and Symbols</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/hymn">Hymn</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/annual-reports">Annual Reports</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/contact-us">Contact us</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/maps">Maps</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/code">University Code</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/memorandum-orders">Memorandum Orders</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/executive-orders">Executive Orders</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/codi-manual">CODI Manual</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/citizens-charter">Citizens Charter</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <!-- end card body -->
+                    </div>
+                    <!--end card-->
+                  </div>
+                  <!--end col-->
+                </div>
+                <!--end col-->
+              </div>
+              <!--end row-->
+            </div>
+            <!-- container-fluid -->
+          </div>
+          <!-- End Page-content -->
+        </div>
+        <!-- end main content-->
+      </div>
+      <!-- END layout-wrapper -->

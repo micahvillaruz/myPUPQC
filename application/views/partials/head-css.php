@@ -5,6 +5,9 @@
 
 		<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" />
 
+		<!-- fullcalendar css -->
+		<link href="<?= base_url() ?>public/libs/fullcalendar/main.min.css" rel="stylesheet" type="text/css" />
+
 		<!-- glightbox css -->
 		<link rel="stylesheet" href="<?= base_url() ?>public/libs/glightbox/css/glightbox.min.css" />
 
