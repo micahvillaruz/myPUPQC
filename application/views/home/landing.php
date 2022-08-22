@@ -77,7 +77,8 @@
 										<a class="" href="<?= base_url() ?>academic/ous">Open University System</a>
 									</li>
 									<li class="list-group-item dropdown-item">
-										<a class="" href="<?= base_url() ?>academic/library">Library Services</a>
+										<a class="" href="https://www.pup.edu.ph/nallrc/">Library Services</a>
+										<!-- <a class="" href="<?= base_url() ?>academic/library">Library Services</a> -->
 									</li>
 									<li class="list-group-item dropdown-item">
 										<a class="" href="<?= base_url() ?>academic/ovpaa">OVPAA Advisories</a>
