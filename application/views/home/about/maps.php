@@ -22,7 +22,7 @@
               <!--end col-->
               <div class="col">
                 <div class="p-2">
-                  <h3 class="text-white mb-3">Poltechnic University of the Philippines</h3>
+                  <h3 class="text-white mb-3">Polytechnic University of the Philippines</h3>
                   <h3 class="text-white">Quezon City Branch</h3>
                   <div class="hstack text-white-50 gap-1">
                     <div class="me-2">
