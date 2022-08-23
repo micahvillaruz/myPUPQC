@@ -44,9 +44,11 @@
                   <div class="col-xxl-9">
                     <div class="card">
                       <div class="card-body">
-                        <h3 class="mb-3 text-primary">PUP Hymn</h3>
+                        <div class="text-center">
+                        <h1 class="mb-3 text-primary">PUP Hymn</h1>
+                        <div class=""></div>
                         <div class="mx-4">
-                          <h4 class="text-primary">Imno ng PUP</h4>
+                          <h3 class="text-primary">Imno ng PUP</h3>
                           <p class="fst-italic">S. Calabig, S. Roldan, and R. Amaranto</p>
                           <div class="mx-4 mt-3">
                             <iframe width="800" height="500" src="https://www.youtube.com/embed/Yib_s5UeGvc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -71,8 +73,11 @@
                                 PUP, pinagpala <br>
                               </p>
                             </div>
+                            </div>
                           </div>
-                          <h4 class="text-primary">PCC Hymn</h4>
+                          <br></br>
+                          <div class="text-center">
+                          <h3 class="text-primary">PCC Hymn</h3>
                           <div class="mx-4 mt-3">
                             <p>
                               Oh! PCC thy glorious name <br>
@@ -97,7 +102,11 @@
                               and serve with loyalty. <br>
                             </p>
                           </div>
-                          <h4 class="text-primary">PUP Imno Sentenyal</h4>
+                          </div>
+                          <br></br>
+                          <div class=""></div>
+                          <div class="text-center">
+                          <h3 class="text-primary">PUP Imno Sentenyal</h3>
                           <p class="fst-italic">Pacelli S. Eugenio and Antonio R. Regalario</p>
                           <div class="mx-4 mt-3">
                             <p>
@@ -138,7 +147,11 @@
                               PUP Mabuhay ka!
                             </p>
                           </div>
-                          <h4 class="text-primary">Imno ng PUP</h4>
+                          </div>
+                          <br></br>
+                          <div class=""></div>
+                          <div class="text-center">
+                          <h3 class="text-primary">Imno ng PUP</h3>
                           <p class="fst-italic">(English translation, not to be sung)</p>
                           <div class="mx-4 mt-3">
                             <p>
@@ -160,6 +173,7 @@
                               A great school <br>
                               PUP, you are blessed <br>
                             </p>
+                          </div>
                           </div>
                         </div>
                       </div>
