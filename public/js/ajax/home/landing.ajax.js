@@ -8,7 +8,7 @@ $(function () {
 					'<div class="mt-3">' +
 					'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
 					'<div class="mt-4 pt-2 fs-15">' +
-					'<h4>Get in Touch Successfully !</h4>' +
+					'<h4>Message sent successfully !</h4>' +
 					`<p class="text-muted mx-4 mb-0">Name: ${$('#name').val()}</p>` +
 					`<p class="text-muted mx-4 mb-0">Email: ${$('#email').val()}</p>` +
 					`<p class="text-muted mx-4 mb-0">Subject: ${$('#subject').val()}</p>` +

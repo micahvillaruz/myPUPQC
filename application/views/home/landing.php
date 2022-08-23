@@ -674,37 +674,46 @@
 					<!-- end col -->
 					<div class="col-lg-8">
 						<div>
-							<form id="contact_form" class="needs-validation">
+							<form id="contact_form" class="needs-validation" novalidate>
 								<div class="row">
 									<div class="col-lg-6">
 										<div class="mb-4">
-											<label for="name" class="form-label fs-13">Name</label>
-											<input name="name" id="name" type="text" class="form-control bg-light border-light" placeholder="Your name*" required />
+											<label for="name" class="form-label fs-13">Name <span class="text-danger">*</span></label>
+											<input name="name" id="name" type="text" class="form-control bg-light border-light" placeholder="Your Name" required />
 											<div class="invalid-feedback">
-												Please enter Name
+												Please enter your Name
 											</div>
 										</div>
 									</div>
 									<div class="col-lg-6">
 										<div class="mb-4">
-											<label for="email" class="form-label fs-13">Email</label>
-											<input name="email" id="email" type="email" class="form-control bg-light border-light" placeholder="Your email*" required />
+											<label for="email" class="form-label fs-13">Email <span class="text-danger">*</span></label>
+											<input name="email" id="email" type="email" class="form-control bg-light border-light" placeholder="Your email" required />
+											<div class="invalid-feedback">
+												Please enter your Email
+											</div>
 										</div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-lg-12">
 										<div class="mb-4">
-											<label for="subject" class="form-label fs-13">Subject</label>
-											<input type="text" class="form-control bg-light border-light" id="subject" name="subject" placeholder="Your Subject.." required />
+											<label for="subject" class="form-label fs-13">Subject <span class="text-danger">*</span></label>
+											<input type="text" class="form-control bg-light border-light" id="subject" name="subject" placeholder="Subject of your Message" required />
+											<div class="invalid-feedback">
+												Please enter the Subject of your Message
+											</div>
 										</div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-lg-12">
 										<div class="mb-3">
-											<label for="comments" class="form-label fs-13">Message</label>
-											<textarea name="comments" id="comments" rows="3" class="form-control bg-light border-light" placeholder="Your message..."></textarea>
+											<label for="comments" class="form-label fs-13">Message <span class="text-danger">*</span></label>
+											<textarea name="comments" id="comments" rows="3" class="form-control bg-light border-light" placeholder="Your message" required></textarea>
+											<div class="invalid-feedback">
+												Please Enter your Message
+											</div>
 										</div>
 									</div>
 								</div>
