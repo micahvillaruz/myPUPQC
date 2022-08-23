@@ -58,7 +58,7 @@
                                 <div class="header"><span>How to apply</span></div>
                                 <span class="body">
                                     Requirements and eligibility criteria
-                                    <span class="minfo">More Info</span>
+                                    <!-- <span class="minfo">More Info</span> -->
                                 </span>
                             </a>
                         </div>
@@ -70,7 +70,7 @@
                                 <div class="headerg"><span>What are the courses offered</span></div>
                                 <span class="body">
                                     List of courses offered by different Branches and Campuses
-                                    <span class="minfo">More Info</span>
+                                    <!-- <span class="minfo">More Info</span> -->
                                 </span>
                             </a>
                         </div>
@@ -82,7 +82,7 @@
                                 <div class="header"><span>PUP iApply</span></div>
                                 <span class="body">
                                     Online registration for various University admission evaluation and entrance exams
-                                    <span class="minfo">More Info</span>
+                                    <!-- <span class="minfo">More Info</span> -->
                                 </span>
                             </a>
                         </div>
@@ -92,7 +92,8 @@
                         <div class="sspotlight-item-content sgold">
                             <a class="link" href="https://apps.pup.edu.ph/appointment">
                                 <div class="headerg"><span>PUP Visitor Appointment and Scheduling System</span></div>
-                                <span class="body">Schedule an appointment prior to visiting the University<span class="minfo">More Info</span></span>
+                                <span class="body">Schedule an appointment prior to visiting the University</span>
+                                <!-- <span class="minfo">More Info</span> -->
                             </a>
                         </div>
                     </li>
@@ -169,7 +170,7 @@
         </div>
     </div>
     <div class="row margin-60">
-        <h4 class="text-center"><i class="fa fa-question-circle"></i>&nbsp;If you have questions, you can look at our <u><a href="https://osssac.pup.edu.ph/knowledgebase.php">FAQs</a></u>. Or email us at <u>osssac@pup.edu.ph</u></h4>
+        <h4 class="text-center fs-5"><i class="fa fa-question-circle"></i>&nbsp;If you have questions, you can look at our <u><a href="https://osssac.pup.edu.ph/knowledgebase.php">FAQs</a></u>. Or email us at <u>osssac@pup.edu.ph</u></h4>
     </div>
 </div>
                         </div>
