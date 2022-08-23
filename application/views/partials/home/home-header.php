@@ -93,7 +93,7 @@
                 </a>
                 <ul class="list-group-flush dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="<?= base_url() ?>student/services">Student Services</a>
+                    <a class="" href="<?= base_url() ?>#student-services">Student Services</a>
                   </li>
                   <li class="list-group-item dropdown-item">
                     <a class="" href="<?= base_url() ?>student/organizations">Student Organizations</a>

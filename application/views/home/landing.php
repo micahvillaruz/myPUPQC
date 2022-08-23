@@ -93,7 +93,7 @@
 								</a>
 								<ul class="list-group-flush dropdown-menu" aria-labelledby="dropdownMenuButton">
 									<li class="list-group-item dropdown-item">
-										<a class="" href="<?= base_url() ?>student/services">Student Services</a>
+										<a class="" href="<?= base_url() ?>#student-services">Student Services</a>
 									</li>
 									<li class="list-group-item dropdown-item">
 										<a class="" href="<?= base_url() ?>student/organizations">Student Organizations</a>
@@ -214,7 +214,7 @@
 		<!-- end Work Process -->
 
 		<!-- start team -->
-		<section class="section bg-light" id="team">
+		<section class="section bg-light" id="student-services">
 			<div class="container">
 				<div class="row hstack gap-1">
 					<div class="col px-0">
