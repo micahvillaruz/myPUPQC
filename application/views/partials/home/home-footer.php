@@ -34,37 +34,37 @@
             <div class="mt-sm-0">
               <ul class="list-inline mb-0 footer-social-link">
                 <li class="list-inline-item">
-                  <a href="javascript: void(0);" class="avatar-xs d-block">
+                  <a href="https://www.facebook.com/ThePUPQCBranchOfficial" class="avatar-xs d-block" target="_blank">
                     <div class="avatar-title rounded-circle">
                       <i class="ri-facebook-fill"></i>
                     </div>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="javascript: void(0);" class="avatar-xs d-block">
+                  <a href="https://www.twitter.com/ThePUPOfficial" class="avatar-xs d-block" target="_blank">
                     <div class="avatar-title rounded-circle">
-                      <i class="ri-github-fill"></i>
+                      <i class="ri-twitter-fill"></i>
                     </div>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="javascript: void(0);" class="avatar-xs d-block">
+                  <a href="https://www.youtube.com/user/pupcreatv" class="avatar-xs d-block" target="_blank">
+                    <div class="avatar-title rounded-circle">
+                      <i class="ri-youtube-fill"></i>
+                    </div>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://www.linkedin.com/school/polytechnic-university-of-the-philippines/" class="avatar-xs d-block" target="_blank">
                     <div class="avatar-title rounded-circle">
                       <i class="ri-linkedin-fill"></i>
                     </div>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="javascript: void(0);" class="avatar-xs d-block">
+                  <a href="https://open.spotify.com/show/6x7hlv9qZX8VpwMIRAAiRb?si=h7yM8PeXR6qxSjQIs2GveA&dl_branch=1" class="avatar-xs d-block" target="_blank">
                     <div class="avatar-title rounded-circle">
-                      <i class="ri-google-fill"></i>
-                    </div>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="javascript: void(0);" class="avatar-xs d-block">
-                    <div class="avatar-title rounded-circle">
-                      <i class="ri-dribbble-line"></i>
+                      <i class="ri-spotify-fill"></i>
                     </div>
                   </a>
                 </li>
