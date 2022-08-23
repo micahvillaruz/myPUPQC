@@ -115,6 +115,7 @@ $route['calendar'] = 'home/calendar';
 
 // PUP QC
 $route['facilities'] = 'home/facilities';
+$route['offices'] = 'home/offices';
 
 // Footer
 $route['admission'] = 'home/admission';

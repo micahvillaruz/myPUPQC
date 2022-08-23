@@ -120,10 +120,10 @@
                               <a class="text-muted" href="<?= base_url() ?>about/history">History</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="#!">Facilities</a>
+                              <a class="text-muted" href="<?= base_url() ?>facilities">Facilities</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="#!">Offices</a>
+                              <a class="text-muted" href="<?= base_url() ?>offices">Offices</a>
                             </li>
                             <li class="list-group-item">
                               <a class="text-muted" href="#!">Officials and Staff</a>
