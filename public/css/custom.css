@@ -43,3 +43,8 @@ File: Custom Css File
 	height: 408px;
 	object-fit: cover;
 }
+.events-img {
+	width: 100%;
+	height: 360px;
+	object-fit: cover;
+}
