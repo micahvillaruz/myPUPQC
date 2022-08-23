@@ -135,6 +135,9 @@
                     <a class="" href="<?= base_url() ?>research/extensions">Extensions</a>
                   </li>
                   <li class="list-group-item dropdown-item">
+                    <a class="" href="<?= base_url() ?>research/research-ethics">Research Ethics</a>
+                  </li>
+                  <li class="list-group-item dropdown-item">
                     <a class="" href="<?= base_url() ?>research/intellectual-property">Intellectual Property</a>
                   </li>
                   <li class="list-group-item dropdown-item">

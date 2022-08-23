@@ -102,6 +102,7 @@ $route['student/downloads'] = 'home/downloads';
 $route['research/researches'] = 'home/researches';
 $route['research/extensions'] = 'home/extensions';
 $route['research/intellectual-property'] = 'home/intellectual_property';
+$route['research/research-ethics'] = 'home/research_ethics';
 
 // CTA
 $route['applicants'] = 'home/applicants';

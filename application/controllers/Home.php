@@ -327,6 +327,18 @@ class Home extends CI_Controller
 		$this->load->view('home/scripts/ip-scripts');
 	}
 
+	public function research_ethics()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/research/research-ethics');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/ip-scripts');
+	}
+
 	public function applicants()
 	{
 		$this->load->view('partials/main');
