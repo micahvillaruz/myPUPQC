@@ -66,6 +66,11 @@ $route['forgot-password'] = 'auth/forgot_password';
 | HOME ROUTES
 | -------------------------------------------------------------------------
 */
+
+// Log In
+$route['terms'] = 'home/terms';
+$route['privacy'] = 'home/privacy';
+
 // About
 $route['about'] = 'home/about';
 $route['about/vm'] = 'home/vm';
@@ -80,9 +85,6 @@ $route['about/memorandum-orders'] = 'home/memorandum_orders';
 $route['about/executive-orders'] = 'home/executive_orders';
 $route['about/codi-manual'] = 'home/codi_manual';
 $route['about/citizens-charter'] = 'home/citizens_charter';
-
-$route['terms'] = 'home/terms';
-$route['privacy'] = 'home/privacy';
 
 // Academic
 $route['academic/programs'] = 'home/programs';
@@ -110,6 +112,9 @@ $route['events'] = 'home/events';
 $route['docu-request'] = 'home/documents';
 $route['scholarships'] = 'home/scholarships';
 $route['calendar'] = 'home/calendar';
+
+// PUP QC
+$route['facilities'] = 'home/facilities';
 
 // Footer
 $route['admission'] = 'home/admission';
