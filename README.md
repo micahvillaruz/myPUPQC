@@ -1,7 +1,7 @@
 # myPUPQC (Web Application)
 
 <div align="center">
-    <p><i>myPUPQC Logo soon...</i></p>
+    <img src="public/images/mypupqc-logo.png">
 </div>
 
 <br />
