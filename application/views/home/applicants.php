@@ -44,135 +44,271 @@
                   <div class="col-xxl-9">
                     <div class="card">
                       <div class="card-body">
-                        <h3 class="mb-3 text-primary">Applications</h3>
+                        <h3 class="mb-3 text-primary">College Admission Evaluation of PUP (CAEPUP)</h3>
                         <div class="mx-3">
-                        <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="portfolio-page sspotlight-4column">
-                <ul id="sspotlight-list" data-animated="fadeIn">
-                    <li class="full">
-                        <!-- <img src="public/images/photos/apply.jpg" alt="How to apply" style="margin-left:-80px"> -->
-                        <div class="sspotlight-item-content">
-                            <a class="link" href="requirements">
-                                <div class="header"><span>How to apply</span></div>
-                                <span class="body">
-                                    Requirements and eligibility criteria
-                                    <!-- <span class="minfo">More Info</span> -->
-                                </span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="full">
-                        <!-- <img src="../../resources/images/photos/courses.jpg" alt="Academic Programs" style="margin-left:-128px"> -->
-                        <div class="sspotlight-item-content sgold">
-                            <a class="link" href="/academic/programs">
-                                <div class="headerg"><span>What are the courses offered</span></div>
-                                <span class="body">
-                                    List of courses offered by different Branches and Campuses
-                                    <!-- <span class="minfo">More Info</span> -->
-                                </span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="full">
-                        <!-- <img src="../../resources/images/photos/iapply.jpg" alt="PUP iApply"> -->
-                        <div class="sspotlight-item-content">
-                            <a class="link" href="/iapply/">
-                                <div class="header"><span>PUP iApply</span></div>
-                                <span class="body">
-                                    Online registration for various University admission evaluation and entrance exams
-                                    <!-- <span class="minfo">More Info</span> -->
-                                </span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="full">
-                        <!-- <img src="../../resources/images/photos/vass.jpg" alt=""> -->
-                        <div class="sspotlight-item-content sgold">
-                            <a class="link" href="https://apps.pup.edu.ph/appointment">
-                                <div class="headerg"><span>PUP Visitor Appointment and Scheduling System</span></div>
-                                <span class="body">Schedule an appointment prior to visiting the University</span>
-                                <!-- <span class="minfo">More Info</span> -->
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="hr5" style="margin-top: 25px; margin-bottom: 55px;"></div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="latest-posts">
-                <h4 class="classic-title"><span>Deadlines to Remember</span></h4>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-            <ul class="ulist">
-                <li><a href="/iapply/caepup"><code>07/30/2022</code> CAEPUP Alfonso, Cavite</a></li>
-                <li><a href="/iapply/caepup"><code>08/31/2022</code> CAEPUP Bansud, Oriental Mindoro</a></li>
-                <li><a href="/iapply/caepup"><code>07/15/2022</code> CAEPUP Bataan</a></li>
-                <li><a href="/iapply/caepup"><code>08/23/2022</code> CAEPUP Biñan, Laguna</a></li>
-                <li><a href="/iapply/caepup"><code>08/24/2022</code> CAEPUP Cabiao, Nueva Ecija</a></li>
-                <li><a href="/iapply/caepup"><code>08/19/2022</code> CAEPUP Calauan, Laguna</a></li>
-                <li><a href="/iapply/caepup"><code>08/22/2022</code> CAEPUP General Luna, Quezon</a></li>
-                <li><a href="/iapply/caepup"><code>08/31/2022</code> CAEPUP Lopez, Quezon</a></li>
-                <li><a href="/iapply/caepup"><code>08/14/2022</code> CAEPUP Maragondon, Cavite</a></li>
-                <li><a href="/iapply/caepup"><code>08/22/2022</code> CAEPUP Mulanay, Quezon</a></li>
-                <li><a href="/iapply/caepup"><code>07/14/2022</code> CAEPUP Parañaque</a></li>
-                <li><a href="/iapply/caepup"><code>08/25/2022</code> CAEPUP Pulilan, Bulacan</a></li>
-                <li><a href="/iapply/caepup"><code>08/21/2022</code> CAEPUP Quezon City</a></li>
-                <li><a href="/iapply/caepup"><code>08/18/2022</code> CAEPUP Ragay, Camarines Sur</a></li>
-                <li><a href="/iapply/caepup"><code>08/29/2022</code> CAEPUP Sablayan, Occidental Mindoro </a></li>
-                <li><a href="/iapply/caepup"><code>08/19/2022</code> CAEPUP San Juan City</a></li>
-                <li><a href="/iapply/caepup"><code>08/16/2022</code> CAEPUP San Pedro, Laguna</a></li>
-                <li><a href="/iapply/caepup"><code>08/20/2022</code> CAEPUP Sta. Maria, Bulacan</a></li>
-            </ul>
-        </div>
-        <div class="col-md-6">
-            <ul class="ulist">
-                <li><a href="/iapply/caepup"><code>08/22/2022</code> CAEPUP Sta. Mesa, Manila</a></li>
-                <li><a href="/iapply/caepup"><code>08/16/2022</code> CAEPUP Sta. Rosa, Laguna</a></li>
-                <li><a href="/iapply/caepup"><code>09/13/2022</code> CAEPUP Sto. Tomas, Batangas</a></li>
-                <li><a href="/iapply/caepup"><code>05/30/2022</code> CAEPUP Taguig</a></li>
-                <li><a href="/iapply/caepup"><code>06/30/2022</code> CAEPUP Unisan, Quezon</a></li>
-                <li><a href="/iapply/caepupous"><code>08/31/2022</code> CAEPUP-OUS Sta. Mesa, Manila</a></li>
-                <li><a href="/iapply/gsee"><code>08/05/2022</code> GSEE Sta. Mesa, Manila</a></li>
-                <li><a href="/iapply/gseecba"><code>02/28/2023</code> GSEE-CBA Sta. Mesa, Manila</a></li>
-                <li><a href="/iapply/gseecpspa"><code>09/28/2022</code> GSEE-CPSPA Sta. Mesa, Manila</a></li>
-                <li><a href="/iapply/gseeeduc"><code>12/31/2022</code> GSEE-EDUC Sta. Mesa, Manila</a></li>
-                <li><a href="/iapply/juniorhs"><code>08/03/2022</code> LHSEE Sta. Mesa, Manila</a></li>
-                <li><a href="https://iapply.pup.edu.ph/"><code>12/31/2022</code> OUS-INE Sta. Mesa, Manila</a></li>
-                <li><a href="/iapply/"><code>10/06/2022</code> PSYCHOLOGICAL EXAM-OU Sta. Mesa, Manila</a></li>
-                <li><a href="/iapply/clee"><code>04/24/2022</code> PUPCLEE Sta. Mesa, Manila</a></li>
-                <li><a href="/iapply/ousee"><code>09/30/2022</code> PUPOUSEE Sta. Mesa, Manila</a></li>
-                <li><a href="/iapply/seniorhs"><code>08/17/2022</code> SENIOR HIGH SCHOOL Sta. Mesa, Manila</a></li>
-                <li><a href="https://iapply.pup.edu.ph/"><code>04/13/2022</code> TRANSFEREE Sta. Mesa, Manila</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="hr5" style="margin-top: 25px; margin-bottom: 55px;"></div>
-    <div id="parallax" data-stellar-background-ratio="0.5" class="parallax" style="background: url(&quot;/resources/images/parallax/history.jpg&quot;) 74.7222px 592.613px / cover no-repeat fixed;">
-        <div class="parallax-text-container-1">
-            <div class="parallax-text-item">
-                <div class="container">
-                    <div class="row">
-                        <div class="section-video-content text-center">
-                            <h1 class="fittext wite-text uppercase">Academic Calendar</h1>
-                            <a href="/about/calendar" class="btn-system btn-large btn-wite"><i class="fa fa-calendar"></i> View Academic Year 2022-2023</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row margin-60">
-        <h4 class="text-center fs-5"><i class="fa fa-question-circle"></i>&nbsp;If you have questions, you can look at our <u><a href="https://osssac.pup.edu.ph/knowledgebase.php">FAQs</a></u>. Or email us at <u>osssac@pup.edu.ph</u></h4>
-    </div>
-</div>
+                          <p>See also: <a href="https://www.pup.edu.ph/iapply/procedure/caepup">CAEPUP step-by-step procedure</a> | <a href="https://www.pup.edu.ph/iapply/photoguidelines">Read photo guidelines</a></p>
+                          <p>Online application for the <strong>College Admission Evaluation of PUP</strong> #CAEPUP</strong> for the <strong> First Semester, Academic Year 2022-2023</strong>. </p>
+                          <div class="card text-dark bg-light shadow-lg p-3 mb-5 bg-body rounded">
+                            <div class="card-body">
+                              <p><strong>IMPORTANT, please read carefully:</strong></p>
+                              <ul>
+                                <li>Once your online application is finalized, no more editing of application</li>
+                                <li>Multiple accounts, multiple applications are ground for disqualification</li>
+                                <li>Wrong entry of information and grades are grounds for disqualification </li>
+                              </ul>
+                              <p><strong>Note:</strong>&nbsp;
+                                For general admission
+                                requirements, please read the
+                                <a href="https://drive.google.com/file/d/1WNusy51XI-eXNZPg7zBfTV4nkpBThD6x/view?usp=sharing" target="_blank">
+                                  <strong class="text-primary">Specific Academic Program
+                                    Criteria</strong></a> (see matrix below for PUP Branch and Satellite Campus Program Criteria).
+                              </p>
+                              <p><strong>Before you apply online, please make sure that you have the following files on your device or USB drive (each file size must not be more than 300 kilobytes KB):</strong></p>
+                              <ol>
+                                <li>Applicant's photo (JPEG file,
+                                  <a href="/iapply/photoguidelines">read photo guidelines</a>)
+                                </li>
+                                <li>Grades in English, Math, Science and General Weighted Average (GWA) in Grades 10 and Grades in all subjects in Grade 11 and GWA in Grade 11</li>
+                                <li>Scanned Grade 10 Report Card (JPEG file)</li>
+                                <li>Scanned Grade 11 Report Card (JPEG file)</li>
+                                <li>Report Cards must clearly show
+                                  your complete name, LRN, grades in English, Math, Science and GWA</li>
+                              </ol>
+                            </div>
+                          </div>
+                          <br>
+                          <h4 class="text-primary">Schedule for CAEPUP Quezon City</h4>
+                          <table class="table w-100">
+                            <thead>
+                              <tr class="table-active">
+                                <td tabindex="0">
+                                  <h5 class="text-primary">Metro Manila</h5>
+                                </td>
+                                <td class="tblHL">
+                                  &nbsp;</td>
+                                <td class="tblHL">
+                                  &nbsp;</td>
+                                <td class="tblHL">
+                                  &nbsp;</td>
+                                <td class="tblHL">
+                                  &nbsp;</td>
+                              </tr>
+                              <tr>
+                                <th class="tblH sorting_disabled" style="width: 105.778px;" data-priority="1" rowspan="1" colspan="1">
+                                  Branch / Satellite Campus</th>
+                                <th class="tblH sorting_disabled" data-priority="2" rowspan="1" colspan="1" style="width: 105.778px;">
+                                  Online
+                                  Application</th>
+                                <th class="tblH sorting_disabled" data-priority="4" rowspan="1" colspan="1" style="width: 106.778px;">
+                                  Last Day of Issuance of
+                                  Application Form</th>
+                                <th class="tblH sorting_disabled" data-priority="5" rowspan="1" colspan="1" style="width: 105.778px;">
+                                  Evaluation Result</th>
+                                <th class="tblH sorting_disabled" data-priority="3" rowspan="1" colspan="1" style="width: 105.778px;">
+                                  Criteria</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr class="odd">
+                                <td class="tblD dtr-control" style="width: 20%" tabindex="0">
+                                  <strong>Quezon City</strong>
+                                </td>
+                                <td class="tblD" style="width: 20%">August 20, 2022 to August 21, 2022</td>
+                                <td class="tblDR" style="width: 20%">August 22, 2022</td>
+                                <td class="tblDR" style="width: 20%">August 23, 2022</td>
+                                <td class="tblD">
+                                  <a href="https://drive.google.com/file/d/1zI36YQY4Y3Sg5yFtVZ_XSpK1TYvc6-TI/view" target="_blank">Academic Program
+                                    Criteria</a>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <h4>Who are qualified to take
+                            the CAEPUP?</h4>
+                          <p><span lang="EN-US">Those
+                              qualified to apply as first
+                              years are:</span></p>
+                          <ol>
+                            <li>A Grade 12 student
+                              expected to graduate at the
+                              end of AY 2021-2022; and
+                              those who graduated from
+                              K-12 pilot schools and have
+                              not enrolled in any
+                              technical/diploma/degree
+                              programs after graduation.<br>
+                              <br>
+                            </li>
+                            <li>Must have final grades
+                              for two (2) high school
+                              years (Grade 10 and 11)
+                              preceding the year of
+                              graduation as follows:
+                            <br>
+                              <table class="table w-75 mx-auto my-3">
+                                <thead class="table-light">
+                                <tr>
+                                  <th class="tblH" style="width: 50%">
+                                    &nbsp;</th>
+                                  <th class="tblH">PUP
+                                    Sta. Mesa, Manila<br>Baccalaureate Degree</th>
+                                  <th class="tblH">PUP Open University
+                                    System</th>
+                                  <th class="tblH">PUP Institute of
+                                    Technology</th>
+                                  <th class="tblH">PUP Branches and
+                                    Satellite Campuses</th>
+                                </tr>
+                                <tbody>
+                                  </thead>
+                                  <tr>
+                                    <td class="tblD">
+                                      Minimum Grade 10
+                                      grades in Math,
+                                      English, Science</td>
+                                    <td class="tblDC">85</td>
+                                    <td class="tblDC">82</td>
+                                    <td class="tblDC">82</td>
+                                    <td class="tblDC">82</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="tblD">
+                                      Minimum Grade 10
+                                      General Weighted
+                                      Average (GWA)</td>
+                                    <td class="tblDC">85</td>
+                                    <td class="tblDC">82</td>
+                                    <td class="tblDC">82</td>
+                                    <td class="tblDC">82</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="tblD">
+                                      Minimum Grade 11
+                                      grades in all subjects</td>
+                                    <td class="tblDC">85</td>
+                                    <td class="tblDC">82</td>
+                                    <td class="tblDC">82</td>
+                                    <td class="tblDC">82</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="tblD">
+                                      Minimum Grade 11 GWA
+                                      for each (First and
+                                      Second) Semester</td>
+                                    <td class="tblDC">88</td>
+                                    <td class="tblDC">82</td>
+                                    <td class="tblDC">82</td>
+                                    <td class="tblDC">82</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </li>
+                            <li>Passer of Philippine
+                              Educational Placement Test
+                              (PEPT), eligible for
+                              admission to college with an
+                              average rating of at least
+                              85%&nbsp;or higher in its 5
+                              subject areas: Math,
+                              English, Science, Filipino
+                              and Araling Panlipunan;</li>
+                            <li>An Alternative Learning
+                              System Accreditation &amp;
+                              Equivalency (ALS A&amp;E) Test
+                              for Secondary Level passer,
+                              eligible for admission to
+                              college and has 100 or
+                              higher Standard Score (SS)
+                              with Essay Writing of 2 or
+                              higher. </li>
+                          </ol>
+                          <h4>Where to apply?</h4>
+                          <p>All CAEPUP applicants must
+                            apply online (using PUP iApply,
+                            <a href="procedure/caepup">read
+                              the step-by-step procedure</a>).&nbsp;
+                            <strong>An applicant can apply
+                              for CAEPUP in one (1) PUP
+                              Branch/Campus only once this
+                              academic year.&nbsp;<u>Multiple
+                                accounts and applications will
+                                make the applicant's evaluation
+                                result null and void, and ground
+                                for disqualification</u>.</strong>
+                          </p>
+                          <h3>Enrollment Requirements:</h3>
+                          <ul>
+                            <li>CAEPUP 2022 Application
+                              Form (<a href="https://iapply.pup.edu.ph/">system
+                                generated from your PUP
+                                iApply account</a>)</li>
+                            <li>Grades 10 and 11
+                              Certified True Copy of
+                              Grades/Original Senior High
+                              School Card (F138) with
+                              school dry seal</li>
+                            <li>Notarized certification
+                              of non-enrolment for senior
+                              high school graduates who
+                              have not enrolled in any
+                              technical/diploma/degree
+                              program immediately after
+                              graduation</li>
+                            <li>Certificate of
+                              Completion for Senior High
+                              School</li>
+                            <li>Original PSA Birth
+                              Certificate</li>
+                            <li>Certification of Good
+                              Moral issued by the SHS
+                              Principal/or Guidance
+                              Counselor with school dry
+                              seal</li>
+                            <li>Duly authenticated copy
+                              of the PEPT/ALS A&amp;E Test
+                              Certificate of Rating,
+                              certified by the DepEd-NETRC
+                              -BALS</li>
+                          </ul>
+                          <p><strong>Note:</strong>&nbsp;
+                            For general admission
+                            requirements, please read the
+                            <a href="https://drive.google.com/file/d/1WNusy51XI-eXNZPg7zBfTV4nkpBThD6x/view?usp=sharing" target="_blank">
+                              <strong>Specific Academic Program
+                                Criteria</strong></a> (see
+                            matrix above for PUP Branch and
+                            Satellite Campus Program
+                            Criteria).
+                          </p>
+                          <p>CAEPUP applicants must secure
+                            their system-generated CAEPUP
+                            Application Form using their PUP
+                            iApply account within seven (7)
+                            working days.</p>
+                          <h4>More Information</h4>
+                          <ul>
+                            <li><strong>For CAEPUP applicants</strong>: After a successful online application, allow
+                              seven (7) working days before you
+                              <a href="https://iapply.pup.edu.ph/">
+                                generate your Application
+                                Form</a>
+                            </li>
+                            <li>PUP iApply performs better on
+                              Google Chrome 20 (or higher),
+                              Mozilla Firefox 20 (or
+                              higher), or Microsoft Edge</li>
+                          </ul>
+                          <p><strong>A FRIENDLY REMINDER:</strong>
+                            Before applying online, make
+                            sure that you already have your
+                            2 x 2 inch colored photo with
+                            name tag saved as JPEG (.jpg or
+                            .jpeg and file size is not more
+                            than 300 kilobytes) in your
+                            computer or USB device.</p>
+
+                          <p><a class="btn btn-primary btn-md" href="http://iapply.pup.edu.ph/">
+                              Apply Now</a></p>
                         </div>
                       </div>
                       <!--end card-body-->
@@ -190,13 +326,27 @@
                         </div>
                         <div>
                           <ul class="list-group list-group-flush">
-                            <li class="list-group-item">PUP Quezon City Branch</li>
-                            <li class="list-group-item">History</li>
-                            <li class="list-group-item">Facilities</li>
-                            <li class="list-group-item">Offices</li>
-                            <li class="list-group-item">Officials and Staff</li>
-                            <li class="list-group-item">Faculty</li>
-                            <li class="list-group-item">Contact Information</li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about">PUP Quezon City Branch</a>
+                            </li>
+                            <li class="list-group-item text-muted">
+                              <a class="text-muted" href="<?= base_url() ?>about/history">History</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>facilities">Facilities</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>offices">Offices</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>personnel">Officials and Staff</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>faculty">Faculty</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="#!">Contact Information</a>
+                            </li>
                           </ul>
                         </div>
                       </div>
