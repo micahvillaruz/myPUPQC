@@ -129,7 +129,7 @@
                               <a class="text-muted" href="<?= base_url() ?>personnel">Officials and Staff</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="#!">Faculty</a>
+                              <a class="text-muted" href="<?= base_url() ?>faculty">Faculty</a>
                             </li>
                             <li class="list-group-item">
                               <a class="text-muted" href="#!">Contact Information</a>
