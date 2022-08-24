@@ -136,7 +136,7 @@
                               <a class="text-muted" href="<?= base_url() ?>offices">Offices</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="#!">Officials and Staff</a>
+                              <a class="text-muted" href="<?= base_url() ?>personnel">Officials and Staff</a>
                             </li>
                             <li class="list-group-item">
                               <a class="text-muted" href="#!">Faculty</a>
