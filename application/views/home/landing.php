@@ -168,6 +168,15 @@
 					<div class="carousel-item active">
 						<img class="d-block img-fluid mx-auto landing-img" src="<?= base_url() ?>public/images/landing/landing-1.jpg">
 					</div>
+					<div class="carousel-item">
+						<img class="d-block img-fluid mx-auto landing-img" src="<?= base_url() ?>public/images/landing/landing-2.png">
+					</div>
+					<div class="carousel-item">
+						<img class="d-block img-fluid mx-auto landing-img" src="<?= base_url() ?>public/images/landing/landing-3.png">
+					</div>
+					<div class="carousel-item">
+						<img class="d-block img-fluid mx-auto landing-img" src="<?= base_url() ?>public/images/landing/landing-4.png">
+					</div>
 				</div>
 				<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
