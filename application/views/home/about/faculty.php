@@ -94,7 +94,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
-                                    Mary Grace I. Cruz, MEM
+                                      Mary Grace I. Cruz, MEM
                                     </h5>
                                     <p class="text-muted fs-13 mb-0">
                                       Assistant Professor II
@@ -112,7 +112,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
-                                    Edgardo S. Delmo, MGM, MBA
+                                      Edgardo S. Delmo, MGM, MBA
                                     </h5>
                                     <p class="text-muted fs-13 mb-0">
                                       Assistant Professor IV
@@ -130,7 +130,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
-                                    Rodrigo S. Dolorosa, DEM
+                                      Rodrigo S. Dolorosa, DEM
                                     </h5>
                                     <p class="text-muted fs-13 mb-0">
                                       Assistant Professor IV
@@ -148,7 +148,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
-                                    Cherrylyn P. Esparagoza, MPA
+                                      Cherrylyn P. Esparagoza, MPA
                                     </h5>
                                     <p class="text-muted fs-13 mb-0">
                                       Assistant Professor I
@@ -166,7 +166,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
-                                    Alma C. Fernandez, MIT
+                                      Alma C. Fernandez, MIT
                                     </h5>
                                     <p class="text-muted fs-13 mb-0">
                                       Assistant Professor III
@@ -184,7 +184,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
-                                    Doris B. Gatan, MBA
+                                      Doris B. Gatan, MBA
                                     </h5>
                                     <p class="text-muted fs-13 mb-0">
                                       Associate Professor V
@@ -202,7 +202,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
-                                    Irynne P. Gatchalian
+                                      Irynne P. Gatchalian
                                     </h5>
                                     <p class="text-muted fs-13 mb-0">
                                       Assistant Professor IV
@@ -220,7 +220,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
-                                    Roseller M. Malabanan, MPA
+                                      Roseller M. Malabanan, MPA
                                     </h5>
                                     <p class="text-muted fs-13 mb-0">
                                       Assistant Professor IV
@@ -241,7 +241,7 @@
                                       Demelyn E. Monzon, MEM
                                     </h5>
                                     <p class="text-muted fs-13 mb-0">
-                                    Associate Professor II
+                                      Associate Professor II
                                     </p>
                                   </div>
                                 </div>
@@ -256,10 +256,10 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
-                                    Sheryl R. Morales, MEM
+                                      Sheryl R. Morales, MEM
                                     </h5>
                                     <p class="text-muted fs-13 mb-0">
-                                    Assistant Professor I
+                                      Assistant Professor I
                                     </p>
                                   </div>
                                 </div>
@@ -273,10 +273,10 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
-                                    Rommel Y. Roxas, MBA
+                                      Rommel Y. Roxas, MBA
                                     </h5>
                                     <p class="text-muted fs-13 mb-0">
-                                    Assistant Professor I
+                                      Assistant Professor I
                                     </p>
                                   </div>
                                 </div>
@@ -290,10 +290,10 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
-                                    Cleotilde B. Servigon
+                                      Cleotilde B. Servigon
                                     </h5>
                                     <p class="text-muted fs-13 mb-0">
-                                    Assistant Professor I
+                                      Assistant Professor I
                                     </p>
                                   </div>
                                 </div>
@@ -307,10 +307,10 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
-                                    Philip Sj Soberano, MPA
+                                      Philip Sj Soberano, MPA
                                     </h5>
                                     <p class="text-muted fs-13 mb-0">
-                                    Instructor I
+                                      Instructor I
                                     </p>
                                   </div>
                                 </div>
@@ -324,10 +324,10 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
-                                    Caroline T. Sumande, DEM
+                                      Caroline T. Sumande, DEM
                                     </h5>
                                     <p class="text-muted fs-13 mb-0">
-                                    Professor IV
+                                      Professor IV
                                     </p>
                                   </div>
                                 </div>
@@ -380,7 +380,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Abraham Seth R. Bernardino
+                                      Abraham Seth R. Bernardino
                                     </h5>
                                   </div>
                                 </div>
@@ -395,7 +395,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Berna A. Bulawit, MEM
+                                      Berna A. Bulawit, MEM
                                     </h5>
                                   </div>
                                 </div>
@@ -410,7 +410,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Francisco S. Calingasan, MPA
+                                      Francisco S. Calingasan, MPA
                                     </h5>
                                   </div>
                                 </div>
@@ -425,7 +425,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Norberto V. Caturay, DEM
+                                      Norberto V. Caturay, DEM
                                     </h5>
                                   </div>
                                 </div>
@@ -440,7 +440,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Nieva M. Cecogo, MEM
+                                      Nieva M. Cecogo, MEM
                                     </h5>
                                   </div>
                                 </div>
@@ -455,7 +455,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Ricardo H. Clenuar
+                                      Ricardo H. Clenuar
                                     </h5>
                                   </div>
                                 </div>
@@ -470,7 +470,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Elijah Paul B. Delmo
+                                      Elijah Paul B. Delmo
                                     </h5>
                                   </div>
                                 </div>
@@ -485,7 +485,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Celeste L. De Leon
+                                      Celeste L. De Leon
                                     </h5>
                                   </div>
                                 </div>
@@ -500,7 +500,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Cherry M. Doromal, MIT
+                                      Cherry M. Doromal, MIT
                                     </h5>
                                   </div>
                                 </div>
@@ -515,7 +515,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Roberto B. Doromal
+                                      Roberto B. Doromal
                                     </h5>
                                   </div>
                                 </div>
@@ -530,7 +530,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Leah A. Dungca, MAED
+                                      Leah A. Dungca, MAED
                                     </h5>
                                   </div>
                                 </div>
@@ -545,7 +545,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Rosicar E. Escober, Ph.D.
+                                      Rosicar E. Escober, Ph.D.
                                     </h5>
                                   </div>
                                 </div>
@@ -560,7 +560,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Firmo A. Esguerra, MBA
+                                      Firmo A. Esguerra, MBA
                                     </h5>
                                   </div>
                                 </div>
@@ -575,7 +575,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Zandro T. Estella, MBA
+                                      Zandro T. Estella, MBA
                                     </h5>
                                   </div>
                                 </div>
@@ -590,7 +590,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Noel F. Fabela, MBA
+                                      Noel F. Fabela, MBA
                                     </h5>
                                   </div>
                                 </div>
@@ -605,7 +605,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Jorgen Z. Fulleros, MBA
+                                      Jorgen Z. Fulleros, MBA
                                     </h5>
                                   </div>
                                 </div>
@@ -620,7 +620,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Atty. Richard M. Fulleros, MBA
+                                      Atty. Richard M. Fulleros, MBA
                                     </h5>
                                   </div>
                                 </div>
@@ -635,7 +635,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Asuncion V. Gabasa, MA Language Teaching
+                                      Asuncion V. Gabasa, MA Language Teaching
                                     </h5>
                                   </div>
                                 </div>
@@ -650,7 +650,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Maita C. Garcia
+                                      Maita C. Garcia
                                     </h5>
                                   </div>
                                 </div>
@@ -665,7 +665,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Harold Q. Gardon, MBA
+                                      Harold Q. Gardon, MBA
                                     </h5>
                                   </div>
                                 </div>
@@ -680,7 +680,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Jamaica Ann B. Gatan-Malabonga, MEM
+                                      Jamaica Ann B. Gatan-Malabonga, MEM
                                     </h5>
                                   </div>
                                 </div>
@@ -695,7 +695,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Leslie O. Gatan, MPA
+                                      Leslie O. Gatan, MPA
                                     </h5>
                                   </div>
                                 </div>
@@ -710,7 +710,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Pascualito B. Gatan, MBA
+                                      Pascualito B. Gatan, MBA
                                     </h5>
                                   </div>
                                 </div>
@@ -725,7 +725,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Esther S. Gulmatico, Ph.D.
+                                      Esther S. Gulmatico, Ph.D.
                                     </h5>
                                   </div>
                                 </div>
@@ -740,7 +740,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    John Robert F. Isip
+                                      John Robert F. Isip
                                     </h5>
                                   </div>
                                 </div>
@@ -755,7 +755,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Marilyn F. Isip, MEM
+                                      Marilyn F. Isip, MEM
                                     </h5>
                                   </div>
                                 </div>
@@ -770,7 +770,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Nelson R. Janoras Jr.
+                                      Nelson R. Janoras Jr.
                                     </h5>
                                   </div>
                                 </div>
@@ -785,7 +785,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Erwin Vicman Lara, MPA
+                                      Erwin Vicman Lara, MPA
                                     </h5>
                                   </div>
                                 </div>
@@ -800,7 +800,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Atty. Jerome Chrstopher G. Leynes
+                                      Atty. Jerome Chrstopher G. Leynes
                                     </h5>
                                   </div>
                                 </div>
@@ -815,7 +815,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Jonalyn Mabborang, MEM
+                                      Jonalyn Mabborang, MEM
                                     </h5>
                                   </div>
                                 </div>
@@ -830,7 +830,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Rosalinda R. Madelo, Cpa, MEM, MBA
+                                      Rosalinda R. Madelo, Cpa, MEM, MBA
                                     </h5>
                                   </div>
                                 </div>
@@ -845,7 +845,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Francis Leo T. Mingo, MSMATH
+                                      Francis Leo T. Mingo, MSMATH
                                     </h5>
                                   </div>
                                 </div>
@@ -860,7 +860,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Teresita M. Moldogo, MAED
+                                      Teresita M. Moldogo, MAED
                                     </h5>
                                   </div>
                                 </div>
@@ -875,7 +875,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Analiza V. Muñoz, Llb, MPA
+                                      Analiza V. Muñoz, Llb, MPA
                                     </h5>
                                   </div>
                                 </div>
@@ -890,7 +890,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Ernesto J. Odpaga Jr.
+                                      Ernesto J. Odpaga Jr.
                                     </h5>
                                   </div>
                                 </div>
@@ -905,7 +905,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Joanna Marie Dc Oliquino
+                                      Joanna Marie Dc Oliquino
                                     </h5>
                                   </div>
                                 </div>
@@ -920,7 +920,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    John Wilxander J. Peralta
+                                      John Wilxander J. Peralta
                                     </h5>
                                   </div>
                                 </div>
@@ -935,7 +935,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Rosanna Florencia A. UPLEP, DMD, MPH
+                                      Rosanna Florencia A. UPLEP, DMD, MPH
                                     </h5>
                                   </div>
                                 </div>
@@ -950,7 +950,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Aries Brylle J. Ventura
+                                      Aries Brylle J. Ventura
                                     </h5>
                                   </div>
                                 </div>
@@ -965,7 +965,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Mary Ann H. Verzonilla, MBA
+                                      Mary Ann H. Verzonilla, MBA
                                     </h5>
                                   </div>
                                 </div>
@@ -980,7 +980,7 @@
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
-                                    Mary Joy D. Viñas, MIT
+                                      Mary Joy D. Viñas, MIT
                                     </h5>
                                   </div>
                                 </div>
@@ -1025,7 +1025,7 @@
                               <a class="text-muted" href="<?= base_url() ?>faculty">Faculty</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="#!">Contact Information</a>
+                              <a class="text-muted" href="<?= base_url() ?>about/contact-us">Contact Information</a>
                             </li>
                           </ul>
                         </div>

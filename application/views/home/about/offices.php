@@ -142,7 +142,7 @@
                               <a class="text-muted" href="<?= base_url() ?>faculty">Faculty</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="#!">Contact Information</a>
+                              <a class="text-muted" href="<?= base_url() ?>about/contact-us">Contact Information</a>
                             </li>
                           </ul>
                         </div>
