@@ -117,6 +117,7 @@ $route['calendar'] = 'home/calendar';
 $route['facilities'] = 'home/facilities';
 $route['offices'] = 'home/offices';
 $route['personnel'] = 'home/personnel';
+$route['faculty'] = 'home/faculty';
 
 // Footer
 $route['admission'] = 'home/admission';

@@ -87,6 +87,18 @@ class Home extends CI_Controller
 		$this->load->view('home/scripts/personnel-scripts');
 	}
 
+	public function faculty()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/about/faculty');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/faculty-scripts');
+	}
+
 	public function logo_symbols()
 	{
 		$this->load->view('partials/main');
