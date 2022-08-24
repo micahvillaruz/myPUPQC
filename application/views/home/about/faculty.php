@@ -85,6 +85,254 @@
                                 </div>
                               </li>
                               <!-- end list item -->
+                              <li class="list-group-item" data-id="03">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-3.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-1">
+                                    Mary Grace I. Cruz, MEM
+                                    </h5>
+                                    <p class="text-muted fs-13 mb-0">
+                                      Assistant Professor II
+                                    </p>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="04">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-4.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-1">
+                                    Edgardo S. Delmo, MGM, MBA
+                                    </h5>
+                                    <p class="text-muted fs-13 mb-0">
+                                      Assistant Professor IV
+                                    </p>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="05">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-5.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-1">
+                                    Rodrigo S. Dolorosa, DEM
+                                    </h5>
+                                    <p class="text-muted fs-13 mb-0">
+                                      Assistant Professor IV
+                                    </p>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="06">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-6.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-1">
+                                    Cherrylyn P. Esparagoza, MPA
+                                    </h5>
+                                    <p class="text-muted fs-13 mb-0">
+                                      Assistant Professor I
+                                    </p>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="07">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-7.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-1">
+                                    Alma C. Fernandez, MIT
+                                    </h5>
+                                    <p class="text-muted fs-13 mb-0">
+                                      Assistant Professor III
+                                    </p>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="08">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-8.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-1">
+                                    Doris B. Gatan, MBA
+                                    </h5>
+                                    <p class="text-muted fs-13 mb-0">
+                                      Associate Professor V
+                                    </p>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="09">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-9.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-1">
+                                    Irynne P. Gatchalian
+                                    </h5>
+                                    <p class="text-muted fs-13 mb-0">
+                                      Assistant Professor IV
+                                    </p>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="10">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-10.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-1">
+                                    Roseller M. Malabanan, MPA
+                                    </h5>
+                                    <p class="text-muted fs-13 mb-0">
+                                      Assistant Professor IV
+                                    </p>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="11">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-11.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-1">
+                                      Demelyn E. Monzon, MEM
+                                    </h5>
+                                    <p class="text-muted fs-13 mb-0">
+                                    Associate Professor II
+                                    </p>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="12">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-12.jpg" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-1">
+                                    Sheryl R. Morales, MEM
+                                    </h5>
+                                    <p class="text-muted fs-13 mb-0">
+                                    Assistant Professor I
+                                    </p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="list-group-item" data-id="13">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-13.jpg" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-1">
+                                    Rommel Y. Roxas, MBA
+                                    </h5>
+                                    <p class="text-muted fs-13 mb-0">
+                                    Assistant Professor I
+                                    </p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="list-group-item" data-id="14">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-14.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-1">
+                                    Cleotilde B. Servigon
+                                    </h5>
+                                    <p class="text-muted fs-13 mb-0">
+                                    Assistant Professor I
+                                    </p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="list-group-item" data-id="15">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-15.jpg" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-1">
+                                    Philip Sj Soberano, MPA
+                                    </h5>
+                                    <p class="text-muted fs-13 mb-0">
+                                    Instructor I
+                                    </p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="list-group-item" data-id="16">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-16.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-1">
+                                    Caroline T. Sumande, DEM
+                                    </h5>
+                                    <p class="text-muted fs-13 mb-0">
+                                    Professor IV
+                                    </p>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
                             </ul>
                             <!-- end ul list -->
                           </div>
@@ -118,6 +366,621 @@
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-0">
                                       Mark Anthony R. Aribon III, MITI
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="03">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-19.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Abraham Seth R. Bernardino
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="04">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-20.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Berna A. Bulawit, MEM
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="05">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-21.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Francisco S. Calingasan, MPA
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="06">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-22.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Norberto V. Caturay, DEM
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="07">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-23.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Nieva M. Cecogo, MEM
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="08">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-24.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Ricardo H. Clenuar
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="09">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-25.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Elijah Paul B. Delmo
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="10">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-26.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Celeste L. De Leon
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="11">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-27.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Cherry M. Doromal, MIT
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="12">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-28.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Roberto B. Doromal
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="13">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-29.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Leah A. Dungca, MAED
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="14">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-30.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Rosicar E. Escober, Ph.D.
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="15">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-31.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Firmo A. Esguerra, MBA
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="16">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-32.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Zandro T. Estella, MBA
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="17">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-33.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Noel F. Fabela, MBA
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="18">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-34.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Jorgen Z. Fulleros, MBA
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="19">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-35.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Atty. Richard M. Fulleros, MBA
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="20">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-36.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Asuncion V. Gabasa, MA Language Teaching
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="21">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-37.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Maita C. Garcia
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="22">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-38.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Harold Q. Gardon, MBA
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="23">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-39.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Jamaica Ann B. Gatan-Malabonga, MEM
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="24">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-40.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Leslie O. Gatan, MPA
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="25">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-41.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Pascualito B. Gatan, MBA
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="26">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-42.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Esther S. Gulmatico, Ph.D.
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="27">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-43.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    John Robert F. Isip
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="28">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-44.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Marilyn F. Isip, MEM
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="29">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-45.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Nelson R. Janoras Jr.
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="30">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-46.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Erwin Vicman Lara, MPA
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="31">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-47.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Atty. Jerome Chrstopher G. Leynes
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="32">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-48.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Jonalyn Mabborang, MEM
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="33">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-49.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Rosalinda R. Madelo, Cpa, MEM, MBA
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="34">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-50.jpg" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Francis Leo T. Mingo, MSMATH
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="35">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-51.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Teresita M. Moldogo, MAED
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="36">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-52.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Analiza V. Muñoz, Llb, MPA
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="37">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-53.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Ernesto J. Odpaga Jr.
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="38">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-54.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Joanna Marie Dc Oliquino
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="39">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-55.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    John Wilxander J. Peralta
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="40">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-56.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Rosanna Florencia A. UPLEP, DMD, MPH
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="41">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-57.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Aries Brylle J. Ventura
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="42">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-58.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Mary Ann H. Verzonilla, MBA
+                                    </h5>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- end list item -->
+                              <li class="list-group-item" data-id="43">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-shrink-0 me-4">
+                                    <div>
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-59.png" />
+                                    </div>
+                                  </div>
+                                  <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="mb-0">
+                                    Mary Joy D. Viñas, MIT
                                     </h5>
                                   </div>
                                 </div>
