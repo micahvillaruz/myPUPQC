@@ -22,7 +22,7 @@
               <!--end col-->
               <div class="col">
                 <div class="p-2">
-                  <h3 class="text-white mb-3">Poltechnic University of the Philippines</h3>
+                  <h3 class="text-white mb-3">Polytechnic University of the Philippines</h3>
                   <h3 class="text-white">Quezon City Branch</h3>
                   <div class="hstack text-white-50 gap-1">
                     <div class="me-2">
@@ -47,7 +47,7 @@
                         <h3 class="mb-3 text-primary">About</h3>
                         <div class="mx-3">
                           <div class="mb-3 d-flex justify-content-center">
-                            <img src="<?= base_url() ?>public/images/about/img-1.jpg" alt="" height="400">
+                            <img src="<?= base_url() ?>public/images/about/img-1.jpg" alt="" class="img-fluid">
                           </div>
                           <p>
                             The Polytechnic University of the Philippines Quezon City (abbreviated as PUPQC; also known as PUP Commonwealth Campus) is one of the satellite campuses of the Polytechnic University of the Philippines located in Don Fabian Street., Barangay Commonwealth, Quezon City, Philippines. It was established in 1997. It confers undergraduate and diploma degrees.
@@ -74,7 +74,7 @@
                           </ul>
                           </p>
                           <div class="mb-3 d-flex justify-content-center">
-                            <img src="<?= base_url() ?>public/images/about/img-2.jpg" alt="" height="500">
+                            <img src="<?= base_url() ?>public/images/about/img-2.jpg" alt="" class="img-fluid">
                           </div>
                           <p>
                             PUPQC was established through the generosity and benevolence of Walter Rothlehner, a German church leader who donated his property in Barangay Commonwealth, Quezon City to PUP. The campus lot with an area of 1.9 hectares is donated by SIKHAY, an association led by Rev. Fr. Joel Tabora. The PUP Open University was tasked to administer and maintain the campus and its facilities. PUPQC was formally inaugurated on July 29, 1997. Although it was in existing prior to 1997, it only started its operations and formal classes after its inauguration.
@@ -126,13 +126,12 @@
                         <h5 class="text-primary">Undergraduate Degrees</h5>
                         <div class="mx-3">
                           <ul>
-                            <li>Bachelor of Science in Business Administration major in Marketing Management (BSBA-MM)</li>
+                            <li>Bachelor of Science in Business Administration Major in Marketing Management (BSBA MM)</li>
                             <li>Bachelor of Science in Information Technology (BSIT)</li>
-                            <li>Bachelor in Business Teacher Education major in Home Economics (BBTE-HE)</li>
-                            <li>Bachelor in Business TeacherEducation major in Information Communication Technology (BBTE-ICT)</li>
-                            <li>Bachelor of Science in Business Administration major in Human Resource Management (BSBA-HRM)</li>
-                            <li>Bachelor of Science in Entrepreneurship (BSEnt)</li>
-                            <li>HR</li>
+                            <li>Bachelor of Science in Business Teacher's Education (BBTE)</li>
+                            <li>Bachelor of Science in Business Administration Major in Human Resource Development Management (BSBA HRM)</li>
+                            <li>Bachelor of Science in Business Administration Major in Entrepreneurship (BSBA ENT)</li>
+                            <li>Bachelor of Public Administration Major in Public Financial Management (BPA FPM)</li>
                           </ul>
                         </div>
                         <h5 class="text-primary">Diploma</h5>
@@ -158,13 +157,27 @@
                         </div>
                         <div>
                           <ul class="list-group list-group-flush">
-                            <li class="list-group-item">PUP Quezon City Branch</li>
-                            <li class="list-group-item">History</li>
-                            <li class="list-group-item">Facilities</li>
-                            <li class="list-group-item">Offices</li>
-                            <li class="list-group-item">Officials and Staff</li>
-                            <li class="list-group-item">Faculty</li>
-                            <li class="list-group-item">Contact Information</li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about">PUP Quezon City Branch</a>
+                            </li>
+                            <li class="list-group-item text-muted">
+                              <a class="text-muted" href="<?= base_url() ?>about/history">History</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>facilities">Facilities</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>offices">Offices</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>personnel">Officials and Staff</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>faculty">Faculty</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/contact-us">Contact Information</a>
+                            </li>
                           </ul>
                         </div>
                       </div>

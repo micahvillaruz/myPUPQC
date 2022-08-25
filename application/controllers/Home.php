@@ -51,6 +51,54 @@ class Home extends CI_Controller
 		$this->load->view('home/scripts/history-scripts');
 	}
 
+	public function facilities()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/about/facilities');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/facilities-scripts');
+	}
+
+	public function offices()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/about/offices');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/offices-scripts');
+	}
+
+	public function personnel()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/about/personnel');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/personnel-scripts');
+	}
+
+	public function faculty()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/about/faculty');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/faculty-scripts');
+	}
+
 	public function logo_symbols()
 	{
 		$this->load->view('partials/main');
@@ -327,6 +375,18 @@ class Home extends CI_Controller
 		$this->load->view('home/scripts/ip-scripts');
 	}
 
+	public function research_ethics()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/research/research-ethics');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/ip-scripts');
+	}
+
 	public function applicants()
 	{
 		$this->load->view('partials/main');
@@ -397,5 +457,29 @@ class Home extends CI_Controller
 		$this->load->view('partials/home/home-footer');
 		$this->load->view('partials/foot-scripts');
 		$this->load->view('home/scripts/admission-scripts');
+	}
+
+	public function terms()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/terms');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/terms-scripts');
+	}
+
+	public function privacy()
+	{
+		$this->load->view('partials/main');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/privacy');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/privacy-scripts');
 	}
 }

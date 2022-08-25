@@ -1,4 +1,4 @@
-<body data-bs-spy="scroll" data-bs-target="#navbar-example">
+<body>
   <!-- Begin page -->
   <div class="layout-wrapper landing">
     <nav class="navbar navbar-expand-lg navbar-landing" id="navbar">
@@ -77,7 +77,8 @@
                     <a class="" href="<?= base_url() ?>academic/ous">Open University System</a>
                   </li>
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="<?= base_url() ?>academic/library">Library Services</a>
+                    <a class="" href="https://www.pup.edu.ph/nallrc/" target="_blank">Library Services</a>
+                    <!-- <a class="" href="<?= base_url() ?>academic/library">Library Services</a> -->
                   </li>
                   <li class="list-group-item dropdown-item">
                     <a class="" href="<?= base_url() ?>academic/ovpaa">OVPAA Advisories</a>
@@ -92,7 +93,7 @@
                 </a>
                 <ul class="list-group-flush dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <li class="list-group-item dropdown-item">
-                    <a class="" href="<?= base_url() ?>student/services">Student Services</a>
+                    <a class="" href="<?= base_url() ?>#student-services">Student Services</a>
                   </li>
                   <li class="list-group-item dropdown-item">
                     <a class="" href="<?= base_url() ?>student/organizations">Student Organizations</a>
@@ -132,6 +133,9 @@
                   </li>
                   <li class="list-group-item dropdown-item">
                     <a class="" href="<?= base_url() ?>research/extensions">Extensions</a>
+                  </li>
+                  <li class="list-group-item dropdown-item">
+                    <a class="" href="<?= base_url() ?>research/research-ethics">Research Ethics</a>
                   </li>
                   <li class="list-group-item dropdown-item">
                     <a class="" href="<?= base_url() ?>research/intellectual-property">Intellectual Property</a>

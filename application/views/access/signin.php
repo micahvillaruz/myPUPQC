@@ -18,10 +18,11 @@
           <div class="col-lg-12">
             <div class="text-center mt-sm-5 mb-4 text-white-50">
               <div>
-                <a href="index.html" class="d-inline-block auth-logo">
+                <a href="<?= base_url() ?>" class="d-inline-block auth-logo">
+                  <img src="<?= base_url() ?>public/images/logo-light.png" alt="" height="60">
                 </a>
               </div>
-              <p class="mt-3 fs-15 fw-medium"></p>
+              <p class="mt-3 fs-15 fw-medium">A Student Self Service Portal</p>
             </div>
           </div>
         </div>
@@ -32,12 +33,11 @@
             <div class="card mt-4">
               <div class="card-body p-4">
                 <div class="text-center mt-2">
-                  <img src="<?= base_url() ?>public\images\mypupqc-logo.png" alt="" height="40" class="mb-4" />
-                  <h5 class="text-primary">Welcome to myPUPQC!</h5>
-                  <p class="text-muted">Sign in to continue to myPUPQC</p>
+                  <h5 class="text-primary">Welcome Back !</h5>
+                  <p class="text-muted">Sign in to continue to myPUPQC.</p>
                 </div>
                 <div class="p-2 mt-4">
-                  <form class="needs-validation" novalidate action="<?= base_url() ?>student/dashboard">
+                  <form id="signin_form" class="needs-validation" novalidate action="<?= base_url() ?>student/dashboard">
 
                     <div class="mb-3">
                       <label for="user_no" class="form-label">Student / Employee Number <span class="text-danger">*</span></label>
@@ -49,7 +49,7 @@
                     <div class="mb-3">
                       <label class="form-label" for="password-input">Password <span class="text-danger">*</span></label>
                       <div class="position-relative auth-pass-inputgroup">
-                        <input type="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Enter Password" id="password-input" aria-describedby="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                        <input type="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Enter Password" id="password-input" required>
                         <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
                         <div class="invalid-feedback">
                           Please enter Password
@@ -65,17 +65,9 @@
                         </div>
 
                         <div class="col-6 text-end">
-                          <a href="#!" class="fw-semibold text-info">Forgot password?</a>
+                          <a href="<?= base_url() ?>forgot-password" class="fw-semibold text-info">Forgot password?</a>
                         </div>
                       </div>
-                    </div>
-
-                    <div id="password-contain" class="p-3 bg-light mb-2 rounded">
-                      <h5 class="fs-13">Password must contain:</h5>
-                      <p id="pass-length" class="invalid fs-12 mb-2">Minimum <b>8 characters</b></p>
-                      <p id="pass-lower" class="invalid fs-12 mb-2">At <b>lowercase</b> letter (a-z)</p>
-                      <p id="pass-upper" class="invalid fs-12 mb-2">At least <b>uppercase</b> letter (A-Z)</p>
-                      <p id="pass-number" class="invalid fs-12 mb-0">A least <b>number</b> (0-9)</p>
                     </div>
 
                     <div class="mt-4">
@@ -90,8 +82,8 @@
 
             <div class="mt-4 text-center">
               By using this service, you understood and agree to the PUP Online Services
-              <a href="https://www.pup.edu.ph/terms/" class="fw-semibold text-primary" target="_blank">Terms of Use</a> and
-              <a href="https://www.pup.edu.ph/privacy/" class="fw-semibold text-primary" target="_blank">Privacy Statement</a>
+              <a href="<?= base_url() ?>terms" class="fw-semibold text-primary">Terms of Use</a> and
+              <a href="<?= base_url() ?>privacy" class="fw-semibold text-primary">Privacy Statement</a>
               </p>
             </div>
           </div>

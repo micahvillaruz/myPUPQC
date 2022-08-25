@@ -77,7 +77,8 @@
 										<a class="" href="<?= base_url() ?>academic/ous">Open University System</a>
 									</li>
 									<li class="list-group-item dropdown-item">
-										<a class="" href="<?= base_url() ?>academic/library">Library Services</a>
+										<a class="" href="https://www.pup.edu.ph/nallrc/" target="_blank">Library Services</a>
+										<!-- <a class="" href="<?= base_url() ?>academic/library">Library Services</a> -->
 									</li>
 									<li class="list-group-item dropdown-item">
 										<a class="" href="<?= base_url() ?>academic/ovpaa">OVPAA Advisories</a>
@@ -92,7 +93,7 @@
 								</a>
 								<ul class="list-group-flush dropdown-menu" aria-labelledby="dropdownMenuButton">
 									<li class="list-group-item dropdown-item">
-										<a class="" href="<?= base_url() ?>student/services">Student Services</a>
+										<a class="" href="<?= base_url() ?>#student-services">Student Services</a>
 									</li>
 									<li class="list-group-item dropdown-item">
 										<a class="" href="<?= base_url() ?>student/organizations">Student Organizations</a>
@@ -134,6 +135,9 @@
 										<a class="" href="<?= base_url() ?>research/extensions">Extensions</a>
 									</li>
 									<li class="list-group-item dropdown-item">
+										<a class="" href="<?= base_url() ?>research/research-ethics">Research Ethics</a>
+									</li>
+									<li class="list-group-item dropdown-item">
 										<a class="" href="<?= base_url() ?>research/intellectual-property">Intellectual Property</a>
 									</li>
 									<li class="list-group-item dropdown-item">
@@ -163,6 +167,15 @@
 				<div class="carousel-inner" role="listbox">
 					<div class="carousel-item active">
 						<img class="d-block img-fluid mx-auto landing-img" src="<?= base_url() ?>public/images/landing/landing-1.jpg">
+					</div>
+					<div class="carousel-item">
+						<img class="d-block img-fluid mx-auto landing-img" src="<?= base_url() ?>public/images/landing/landing-2.png">
+					</div>
+					<div class="carousel-item">
+						<img class="d-block img-fluid mx-auto landing-img" src="<?= base_url() ?>public/images/landing/landing-3.png">
+					</div>
+					<div class="carousel-item">
+						<img class="d-block img-fluid mx-auto landing-img" src="<?= base_url() ?>public/images/landing/landing-4.png">
 					</div>
 				</div>
 				<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
@@ -210,7 +223,7 @@
 		<!-- end Work Process -->
 
 		<!-- start team -->
-		<section class="section bg-light" id="team">
+		<section class="section bg-light" id="student-services">
 			<div class="container">
 				<div class="row hstack gap-1">
 					<div class="col px-0">
@@ -673,40 +686,52 @@
 					<!-- end col -->
 					<div class="col-lg-8">
 						<div>
-							<form>
+							<form id="contact_form" class="needs-validation" novalidate>
 								<div class="row">
 									<div class="col-lg-6">
 										<div class="mb-4">
-											<label for="name" class="form-label fs-13">Name</label>
-											<input name="name" id="name" type="text" class="form-control bg-light border-light" placeholder="Your name*" />
+											<label for="name" class="form-label fs-13">Name <span class="text-danger">*</span></label>
+											<input name="name" id="name" type="text" class="form-control bg-light border-light" placeholder="Your Name" required />
+											<div class="invalid-feedback">
+												Please enter your Name
+											</div>
 										</div>
 									</div>
 									<div class="col-lg-6">
 										<div class="mb-4">
-											<label for="email" class="form-label fs-13">Email</label>
-											<input name="email" id="email" type="email" class="form-control bg-light border-light" placeholder="Your email*" />
+											<label for="email" class="form-label fs-13">Email <span class="text-danger">*</span></label>
+											<input name="email" id="email" type="email" class="form-control bg-light border-light" placeholder="Your email" required />
+											<div class="invalid-feedback">
+												Please enter your Email
+											</div>
 										</div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-lg-12">
 										<div class="mb-4">
-											<label for="subject" class="form-label fs-13">Subject</label>
-											<input type="text" class="form-control bg-light border-light" id="subject" name="subject" placeholder="Your Subject.." />
+											<label for="subject" class="form-label fs-13">Subject <span class="text-danger">*</span></label>
+											<input type="text" class="form-control bg-light border-light" id="subject" name="subject" placeholder="Subject of your Message" required />
+											<div class="invalid-feedback">
+												Please enter the Subject of your Message
+											</div>
 										</div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-lg-12">
 										<div class="mb-3">
-											<label for="comments" class="form-label fs-13">Message</label>
-											<textarea name="comments" id="comments" rows="3" class="form-control bg-light border-light" placeholder="Your message..."></textarea>
+											<label for="comments" class="form-label fs-13">Message <span class="text-danger">*</span></label>
+											<textarea name="comments" id="comments" rows="3" class="form-control bg-light border-light" placeholder="Your message" required></textarea>
+											<div class="invalid-feedback">
+												Please Enter your Message
+											</div>
 										</div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-lg-12 text-end">
-										<input type="submit" id="submit" name="send" class="submitBnt btn btn-primary" value="Send Message" />
+										<input type="submit" id="submit" name="send" class="submitBtn btn btn-primary" value="Send Message" />
 									</div>
 								</div>
 							</form>
