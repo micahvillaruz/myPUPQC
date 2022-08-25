@@ -19,10 +19,11 @@
           <div class="col-lg-12">
             <div class="text-center mt-sm-5 mb-4 text-white-50">
               <div>
-                <a href="index.html" class="d-inline-block auth-logo">
-                  <img src="assets/images/logo-light.png" alt="" height="20">
+                <a href="<?= base_url() ?>" class="d-inline-block auth-logo">
+                  <img src="<?= base_url() ?>public/images/logo-light.png" alt="" height="60">
                 </a>
               </div>
+              <p class="mt-3 fs-15 fw-medium">A Student Self Service Portal</p>
             </div>
           </div>
         </div>
@@ -34,9 +35,8 @@
 
               <div class="card-body p-4">
                 <div class="text-center mt-2">
-                <img src="<?= base_url() ?>public\images\mypupqc-logo.png" alt="" height="40" class="center"/>
-
-                  <p class="text-muted">Reset my password...</p>
+                  <h5 class="text-primary">Forgot Password?</h5>
+                  <p class="text-muted">Reset your password in myPUPQC.</p>
                   <lord-icon src="https://cdn.lordicon.com/rhvddzym.json" trigger="loop" colors="primary:#0ab39c" class="avatar-xl"></lord-icon>
 
                 </div>
@@ -62,7 +62,7 @@
             <!-- end card -->
 
             <div class="mt-4 text-center">
-              <p class="mb-0">Wait, I remember my password... <a href="auth-signin-basic.html" class="fw-semibold text-primary text-decoration-underline"> Signin </a> </p>
+              <p class="mb-0">Wait, I remember my password... <a href="<?= base_url() ?>signin" class="fw-semibold text-primary text-decoration-underline"> Signin </a> </p>
             </div>
 
           </div>
@@ -82,7 +82,7 @@
               <p class="mb-0 text-muted">&copy;
                 <script>
                   document.write(new Date().getFullYear())
-                </script>  BSIT 3-1 Capstone
+                </script> BSIT 3-1 Capstone
               </p>
             </div>
           </div>

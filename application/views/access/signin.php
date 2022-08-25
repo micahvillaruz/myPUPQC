@@ -18,10 +18,11 @@
           <div class="col-lg-12">
             <div class="text-center mt-sm-5 mb-4 text-white-50">
               <div>
-                <a href="index.html" class="d-inline-block auth-logo">
+                <a href="<?= base_url() ?>" class="d-inline-block auth-logo">
+                  <img src="<?= base_url() ?>public/images/logo-light.png" alt="" height="60">
                 </a>
               </div>
-              <p class="mt-3 fs-15 fw-medium"></p>
+              <p class="mt-3 fs-15 fw-medium">A Student Self Service Portal</p>
             </div>
           </div>
         </div>
@@ -32,9 +33,8 @@
             <div class="card mt-4">
               <div class="card-body p-4">
                 <div class="text-center mt-2">
-                  <img src="<?= base_url() ?>public\images\mypupqc-logo.png" alt="" height="40" class="mb-4" />
-                  <h5 class="text-primary">Welcome to myPUPQC!</h5>
-                  <p class="text-muted">Sign in to continue to myPUPQC</p>
+                  <h5 class="text-primary">Welcome Back !</h5>
+                  <p class="text-muted">Sign in to continue to myPUPQC.</p>
                 </div>
                 <div class="p-2 mt-4">
                   <form id="signin_form" class="needs-validation" novalidate action="<?= base_url() ?>student/dashboard">
@@ -65,7 +65,7 @@
                         </div>
 
                         <div class="col-6 text-end">
-                          <a href="#!" class="fw-semibold text-info">Forgot password?</a>
+                          <a href="<?= base_url() ?>forgot-password" class="fw-semibold text-info">Forgot password?</a>
                         </div>
                       </div>
                     </div>
