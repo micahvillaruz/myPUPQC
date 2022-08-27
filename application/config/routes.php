@@ -128,3 +128,16 @@ $route['admission'] = 'home/admission';
 | -------------------------------------------------------------------------
 */
 $route['student/dashboard'] = 'student';
+
+
+/*
+| -------------------------------------------------------------------------
+| SUPER ADMIN ROUTES
+| -------------------------------------------------------------------------
+*/
+$route['admin/dashboard'] = 'admin';
+
+// User Management
+$route['admin/user-management/students'] = 'admin/user_students';
+$route['admin/user-management/pup-staffs'] = 'admin/user_pup_staffs';
+$route['admin/user-management/super-admins'] = 'admin/user_super_admins';
