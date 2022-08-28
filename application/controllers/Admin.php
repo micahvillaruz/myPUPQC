@@ -28,6 +28,7 @@ class Admin extends CI_Controller
     $this->load->view('partials/page-title', ["page_title" => "User Management", "title" => "Students"]);
     $this->load->view('admin/user-management/students');
     $this->load->view('partials/footer');
+    $this->load->view('admin/user-management/components/students-modal');
     $this->load->view('partials/foot-scripts');
     $this->load->view('admin/user-management/scripts/students-scripts');
   }
@@ -41,6 +42,7 @@ class Admin extends CI_Controller
     $this->load->view('partials/page-title', ["page_title" => "User Management", "title" => "PUP Staffs"]);
     $this->load->view('admin/user-management/pup-staffs');
     $this->load->view('partials/footer');
+    $this->load->view('admin/user-management/components/pup-staffs-modal');
     $this->load->view('partials/foot-scripts');
     $this->load->view('admin/user-management/scripts/pup-staffs-scripts');
   }
@@ -54,6 +56,7 @@ class Admin extends CI_Controller
     $this->load->view('partials/page-title', ["page_title" => "User Management", "title" => "Super Admin"]);
     $this->load->view('admin/user-management/super-admins');
     $this->load->view('partials/footer');
+    $this->load->view('admin/user-management/components/super-admins-modal');
     $this->load->view('partials/foot-scripts');
     $this->load->view('admin/user-management/scripts/super-admins-scripts');
   }
