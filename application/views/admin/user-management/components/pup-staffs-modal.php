@@ -145,7 +145,7 @@
                   <h5 class="fs-13 mb-1">Designation</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">Emeng Faculty ganda lang</div>
+                  <div class="d-flex fs-13 fw-medium">No Designation</div>
                 </div>
               </div>
             </li>
