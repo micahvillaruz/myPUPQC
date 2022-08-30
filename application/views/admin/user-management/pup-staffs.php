@@ -4,7 +4,7 @@
       <div class="card-header d-flex align-items-center">
         <h5 class="card-title mb-0 flex-grow-1">Staff Users</h5>
         <div>
-          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addStudentModal">Add Professor</button>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addStaffModal">Add Faculty/Staff</button>
         </div>
       </div>
       <div class="card-body">
