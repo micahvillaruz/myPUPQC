@@ -5,6 +5,9 @@
 
 		<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" />
 
+		<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+
 		<!-- fullcalendar css -->
 		<link href="<?= base_url() ?>public/libs/fullcalendar/main.min.css" rel="stylesheet" type="text/css" />
 
@@ -17,6 +20,15 @@
 		<!-- Sweet Alert css-->
 		<link href="<?= base_url() ?>public/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
 
+		<!-- Filepond css -->
+		<link rel="stylesheet" href="<?= base_url() ?>public/libs/filepond/filepond.min.css" type="text/css" />
+		<link rel="stylesheet" href="<?= base_url() ?>public/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.css" />
+
+		<!-- multi.js css -->
+		<link rel="stylesheet" type="text/css" href="<?= base_url() ?>public/libs/multi.js/multi.min.css" />
+		<!-- autocomplete css -->
+		<link rel="stylesheet" href="<?= base_url() ?>public/libs/@tarekraafat/autocomplete.js/css/autoComplete.css" />
+
 		<!-- Layout config Js -->
 		<script src="<?= base_url() ?>public/js/layout.js"></script>
 		<!-- Bootstrap Css -->
@@ -25,6 +37,7 @@
 		<link href="<?= base_url() ?>public/css/icons.min.css" rel="stylesheet" type="text/css" />
 		<!-- App Css-->
 		<link href="<?= base_url() ?>public/css/app.min.css" rel="stylesheet" type="text/css" />
+
 		<!-- custom Css-->
 		<link href="<?= base_url() ?>public/css/custom.css" rel="stylesheet" type="text/css" />
 
