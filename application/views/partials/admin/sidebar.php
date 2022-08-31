@@ -34,23 +34,23 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>admin/user-management/students">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/omsss/medical-appointment">
                 <i class="las la-user-graduate"></i>
-                <span>Students</span>
+                <span>Medical Appointment</span>
               </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>admin/user-management/pup-staffs">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/omsss/dentist-appointment">
                 <i class="las la-user-tie"></i>
-                <span>PUP Staff</span>
+                <span>Dental Appointment</span>
               </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>admin/user-management/super-admins">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/omsss/guidance-appointment">
                 <i class="las la-user-lock"></i>
-                <span>Super Admin</span>
+                <span>Guidance Appointment</span>
               </a>
             </li>
 
