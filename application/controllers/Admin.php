@@ -60,4 +60,45 @@ class Admin extends CI_Controller
     $this->load->view('partials/foot-scripts');
     $this->load->view('admin/user-management/scripts/super-admins-scripts');
   }
+
+  public function medical_appointment()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/admin/topbar');
+    $this->load->view('partials/admin/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "Medical Appointment", "title" => "Medical Appointment"]);
+    $this->load->view('admin/omsss/medical-appointment/medical-appointment');
+    $this->load->view('partials/footer');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('admin/omsss/medical-appointment/scripts/medical-appointment-scripts');
+  }
+  public function dentist_appointment()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/admin/topbar');
+    $this->load->view('partials/admin/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "Dentist Appointment", "title" => "Dentist Appointment"]);
+    $this->load->view('admin/omsss/dentist-appointment/dentist-appointment');
+    $this->load->view('partials/footer');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('admin/omsss/dentist-appointment/scripts/dentist-appointment-scripts');
+  }
+
+  public function guidance_appointment()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/admin/topbar');
+    $this->load->view('partials/admin/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "Guidance Appointment", "title" => "Guidance Appointment"]);
+    $this->load->view('admin/omsss/guidance-appointment/guidance-appointment');
+    $this->load->view('partials/footer');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('admin/omsss/guidance-appointment/scripts/guidance-appointment-scripts');
+  }
 }

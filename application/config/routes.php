@@ -141,3 +141,8 @@ $route['admin/dashboard'] = 'admin';
 $route['admin/user-management/students'] = 'admin/user_students';
 $route['admin/user-management/pup-staffs'] = 'admin/user_pup_staffs';
 $route['admin/user-management/super-admins'] = 'admin/user_super_admins';
+
+// OMSSS
+$route['admin/omsss/medical-appointment'] = 'admin/medical_appointment';
+$route['admin/omsss/dentist-appointment'] = 'admin/dentist_appointment';
+$route['admin/omsss/guidance-appointment'] = 'admin/guidance_appointment';
