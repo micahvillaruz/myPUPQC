@@ -129,6 +129,11 @@ $route['admission'] = 'home/admission';
 */
 $route['student/dashboard'] = 'student';
 
+// ODRS
+$route['odrs/student/new-request'] = 'odrs/new_request';
+$route['odrs/student/requests'] = 'odrs/requests';
+$route['odrs/student/transactions'] = 'odrs/transactions';
+
 
 /*
 | -------------------------------------------------------------------------

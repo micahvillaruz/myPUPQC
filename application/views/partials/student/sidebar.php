@@ -167,26 +167,6 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link" href="#sidebarAdvanceUI" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAdvanceUI">
-                <i class="mdi mdi-file-document-multiple-outline"></i>
-                <span>Document Request</span>
-              </a>
-              <div class="collapse menu-dropdown" id="sidebarAdvanceUI">
-                <ul class="nav nav-sm flex-column">
-                  <li class="nav-item">
-                    <a href="advance-ui-sweetalerts.html" class="nav-link">Request a Document</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="advance-ui-scrollbar.html" class="nav-link">Requests List</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="advance-ui-animation.html" class="nav-link">Track Document Request</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-
-            <li class="nav-item">
               <a class="nav-link menu-link">
                 <i class="ri-honour-line"></i>
                 <span>Scholarships</span>
@@ -240,7 +220,7 @@
 
             <li class="nav-item">
               <a class="nav-link menu-link" href="widgets.html">
-                <i class="ri-hand-coin-line"></i>
+                <i class="mdi mdi-account-group-outline"></i>
                 <span>Organizations</span>
               </a>
             </li>
@@ -264,8 +244,34 @@
 
             <li class="nav-item">
               <a class="nav-link menu-link">
-                <i class="mdi mdi-account-supervisor-outline"></i>
+                <i class="ri-question-answer-line"></i>
                 <span>HelpDesk</span>
+              </a>
+            </li>
+
+            <li class="menu-title">
+              <i class="ri-more-fill"></i>
+              <span>Document Request</span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>odrs/student/new-request">
+                <i class="ri-file-add-line"></i>
+                <span>New Request</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>odrs/student/requests">
+                <i class="ri-file-copy-2-line"></i>
+                <span>Requests</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>odrs/student/transactions">
+                <i class="mdi mdi-archive-clock-outline"></i>
+                <span>Transactions</span>
               </a>
             </li>
 
