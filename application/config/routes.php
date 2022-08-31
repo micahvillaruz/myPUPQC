@@ -156,6 +156,11 @@ $route['student/omsss/medical-logs'] = 'student/medical_logs';
 $route['student/omsss/contact-omsss'] = 'student/contact_omsss';
 
 
+// ODRS
+$route['odrs/student/new-request'] = 'odrs/new_request';
+$route['odrs/student/requests'] = 'odrs/requests';
+$route['odrs/student/transactions'] = 'odrs/transactions';
+
 
 /*
 | -------------------------------------------------------------------------
