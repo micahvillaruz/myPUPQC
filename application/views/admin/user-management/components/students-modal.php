@@ -8,25 +8,26 @@
       </div>
 
       <div class="modal-body">
-        <form>
+        <form class="needs-validation" novalidate>
           <div class="mb-3">
             <label for="studentNo" class="form-label">Student No.</label>
-            <input type="text" class="form-control" id="studentNo" placeholder="Enter student no" />
+            <input type="text" class="form-control" id="studentNo" placeholder="Enter student no" required />
           </div>
           <div class="mb-3">
             <label for="fullName" class="form-label">Name</label>
-            <input type="text" class="form-control" id="fullName" placeholder="Enter name" />
+            <input type="text" class="form-control" id="fullName" placeholder="Enter name" required />
           </div>
           <div class="mb-3">
             <label for="emailInput" class="form-label">Email Address</label>
             <div class="input-group">
-              <input class="form-control" id="emailInput" placeholder="Enter email" />
+              <input class="form-control" id="emailInput" placeholder="Enter email" required />
               <span class="input-group-text" id="basic-addon2">@iskolarngbayan.pup.edu.ph</span>
             </div>
           </div>
           <div class="mb-3">
             <label for="program" class="form-label">Program</label>
-            <select id="program" class="form-select mb-3">
+            <select id="program" class="form-select mb-3" required>
+              <option selected></option>
               <option value="BBTLEDHE">BBTLEDHE</option>
               <option value="BSBAHRM">BSBAHRM</option>
               <option value="BSBA-MM">BSBA-MM</option>
@@ -38,7 +39,7 @@
           </div>
           <div class="mb-3">
             <label for="yearSection" class="form-label">Year and Section</label>
-            <input type="text" class="form-control" id="yearSection" placeholder="Enter year and section" />
+            <input type="text" class="form-control" id="yearSection" placeholder="Enter year and section" required />
           </div>
           <div class="mb-3">
             <label for="enrolledDate" class="form-label">Date Enrolled</label>
@@ -46,17 +47,11 @@
           </div>
           <div class="mb-3">
             <label for="enrollStatus" class="form-label">Enrollment Status</label>
-            <select class="form-select mb-3" id="enrollStatus">
-              <option selected>Select enrollment status</option>
+            <select class="form-select mb-3" id="enrollStatus" required>
+              <option selected></option>
               <option value="1">Enrolled</option>
               <option value="0">Not Enrolled</option>
             </select>
-          </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="checkTerms" />
-            <label class="form-check-label" for="checkTerms">I agree to the
-              <span class="fw-semibold">Terms of Service</span>
-              and Privacy Policy</label>
           </div>
           <div class="text-end">
             <button type="submit" class="btn btn-primary">Add Student</button>
@@ -198,7 +193,7 @@
       </div>
 
       <div class="modal-body">
-        <form>
+        <form class="needs-validation" novalidate>
           <div class="mb-3">
             <label for="studentNo" class="form-label">Student No.</label>
             <input type="text" class="form-control" id="studentNo" placeholder="Enter student no" />
@@ -249,12 +244,6 @@
               <option value="1">Active</option>
               <option value="0">Inactive</option>
             </select>
-          </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="checkTerms" />
-            <label class="form-check-label" for="checkTerms">I agree to the
-              <span class="fw-semibold">Terms of Service</span>
-              and Privacy Policy</label>
           </div>
           <div class="text-end">
             <button type="submit" class="btn btn-primary">Edit Student</button>

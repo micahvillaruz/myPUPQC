@@ -13,6 +13,9 @@
 
 <script src="<?= base_url() ?>public/js/pages/datatables.init.js"></script>
 
+<!-- validation init -->
+<script src="<?= base_url() ?>public/js/pages/form-validation.init.js"></script>
+
 <!-- flatpickr.js -->
 <script type='text/javascript' src='<?= base_url() ?>public/libs/flatpickr/flatpickr.min.js'></script>
 
