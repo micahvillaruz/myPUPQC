@@ -26,15 +26,15 @@
               <td>00014414</td>
               <td>Rosanna Florencia A. Ulep, DMD, MPH</td>
               <td>Shein</td>
-              <td>Covid</td>
+              <td>Cleaning</td>
               <td>09-01-2022</td>
               <td>1:00 - 2:00PM</td>
-              <td><span class="badge rounded-pill bg-success">Accept</span></td>
+              <td><span class="badge rounded-pill bg-success">Accepted</span></td>
               <td>
                 <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editStudentModal"><i class="ri-edit-2-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="ri-delete-bin-5-fill"></i></button>
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDentistModal"><i class="ri-eye-fill"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editDentistModal"><i class="ri-edit-2-fill"></i></button>
+                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteDentistModal"><i class="ri-delete-bin-5-fill"></i></button>
                 </div>
               </td>
             </tr>
@@ -48,9 +48,9 @@
               <td><span class="badge rounded-pill bg-danger">Denied</span></td>
               <td>
                 <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editStudentModal"><i class="ri-edit-2-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="ri-delete-bin-5-fill"></i></button>
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDentistModal"><i class="ri-eye-fill"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editDentistModal"><i class="ri-edit-2-fill"></i></button>
+                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteDentistModal"><i class="ri-delete-bin-5-fill"></i></button>
                 </div>
               </td>
             </tr>
@@ -64,9 +64,9 @@
               <td><span class="badge rounded-pill bg-secondary">Pending</span></td>
               <td>
                 <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editStudentModal"><i class="ri-edit-2-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="ri-delete-bin-5-fill"></i></button>
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDentistModal"><i class="ri-eye-fill"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editDentistModal"><i class="ri-edit-2-fill"></i></button>
+                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteDentistModal"><i class="ri-delete-bin-5-fill"></i></button>
                 </div>
               </td>
             </tr>
@@ -77,12 +77,12 @@
               <td>Braces</td>
               <td>09-04-2022</td>
               <td>4:00 - 5:00PM</td>
-              <td><span class="badge rounded-pill bg-success">Accept</span></td>
+              <td><span class="badge rounded-pill bg-success">Accepted</span></td>
               <td>
                 <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editStudentModal"><i class="ri-edit-2-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="ri-delete-bin-5-fill"></i></button>
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDentistModal"><i class="ri-eye-fill"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editDentistModal"><i class="ri-edit-2-fill"></i></button>
+                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteDentistModal"><i class="ri-delete-bin-5-fill"></i></button>
                 </div>
               </td>
             </tr>
@@ -96,9 +96,9 @@
               <td><span class="badge rounded-pill bg-danger">Denied</span></td>
               <td>
                 <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editStudentModal"><i class="ri-edit-2-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="ri-delete-bin-5-fill"></i></button>
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDentistModal"><i class="ri-eye-fill"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editDentistModal"><i class="ri-edit-2-fill"></i></button>
+                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteDentistModal"><i class="ri-delete-bin-5-fill"></i></button>
                 </div>
               </td>
             </tr>
@@ -112,9 +112,9 @@
               <td><span class="badge rounded-pill bg-secondary">Pending</span></td>
               <td>
                 <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editStudentModal"><i class="ri-edit-2-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="ri-delete-bin-5-fill"></i></button>
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDentistModal"><i class="ri-eye-fill"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editDentistModal"><i class="ri-edit-2-fill"></i></button>
+                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteDentistModal"><i class="ri-delete-bin-5-fill"></i></button>
                 </div>
               </td>
             </tr>
@@ -125,12 +125,12 @@
               <td>Cleaning</td>
               <td>09-07-2022</td>
               <td>12:00 - 1:00PM</td>
-              <td><span class="badge rounded-pill bg-success">Accept</span></td>
+              <td><span class="badge rounded-pill bg-success">Accepted</span></td>
               <td>
                 <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editStudentModal"><i class="ri-edit-2-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="ri-delete-bin-5-fill"></i></button>
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDentistModal"><i class="ri-eye-fill"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editDentistModal"><i class="ri-edit-2-fill"></i></button>
+                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteDentistModal"><i class="ri-delete-bin-5-fill"></i></button>
                 </div>
               </td>
             </tr>
@@ -144,9 +144,9 @@
               <td><span class="badge rounded-pill bg-danger">Denied</span></td>
               <td>
                 <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editStudentModal"><i class="ri-edit-2-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="ri-delete-bin-5-fill"></i></button>
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDentistModal"><i class="ri-eye-fill"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editDentistModal"><i class="ri-edit-2-fill"></i></button>
+                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteDentistModal"><i class="ri-delete-bin-5-fill"></i></button>
                 </div>
               </td>
             </tr>
@@ -160,9 +160,9 @@
               <td><span class="badge rounded-pill bg-secondary">Pending</span></td>
               <td>
                 <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editStudentModal"><i class="ri-edit-2-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="ri-delete-bin-5-fill"></i></button>
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDentistModal"><i class="ri-eye-fill"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editDentistModal"><i class="ri-edit-2-fill"></i></button>
+                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteDentistModal"><i class="ri-delete-bin-5-fill"></i></button>
                 </div>
               </td>
             </tr>
@@ -173,12 +173,12 @@
               <td>Nasapak sa mukha kailangan tanggalin ngipin</td>
               <td>09-10-2022</td>
               <td>3:00 - 4:00PM</td>
-              <td><span class="badge rounded-pill bg-success">Accept</span></td>
+              <td><span class="badge rounded-pill bg-success">Accepted</span></td>
               <td>
                 <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editStudentModal"><i class="ri-edit-2-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="ri-delete-bin-5-fill"></i></button>
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDentistModal"><i class="ri-eye-fill"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editDentistModal"><i class="ri-edit-2-fill"></i></button>
+                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteDentistModal"><i class="ri-delete-bin-5-fill"></i></button>
                 </div>
               </td>
             </tr>
@@ -192,9 +192,9 @@
               <td><span class="badge rounded-pill bg-danger">Denied</span></td>
               <td>
                 <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editStudentModal"><i class="ri-edit-2-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="ri-delete-bin-5-fill"></i></button>
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDentistModal"><i class="ri-eye-fill"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editDentistModal"><i class="ri-edit-2-fill"></i></button>
+                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteDentistModal"><i class="ri-delete-bin-5-fill"></i></button>
                 </div>
               </td>
             </tr>

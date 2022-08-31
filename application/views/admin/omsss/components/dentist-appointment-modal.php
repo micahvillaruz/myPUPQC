@@ -1,5 +1,5 @@
-<!-- View Medical modal -->
-<div class="modal fade" id="viewMedicalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+<!-- View Dental modal -->
+<div class="modal fade" id="viewDentistModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
@@ -26,10 +26,10 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">Doctor</a></h5>
+                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">Dentist</a></h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">Dr. Melissa Sarappudin</div>
+                  <div class="d-flex fs-13 fw-medium">Rosanna Florencia A. Ulep, DMD, MPH</div>
                 </div>
               </div>
             </li>
@@ -51,7 +51,19 @@
                   <h5 class="fs-13 mb-1">Service</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">Covid</div>
+                  <div class="d-flex fs-13 fw-medium">Cleaning</div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1">Time</h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium">1:00 - 2:00PM</div>
                 </div>
               </div>
             </li>
@@ -96,7 +108,7 @@
 </div>
 
 <!-- Edit Medical modal -->
-<div id="editMedicalModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
+<div id="editDentistModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content border-0 overflow-hidden">
       <div class="modal-header p-3">
@@ -169,7 +181,7 @@
 </div>
 
 <!-- Delete Student modal -->
-<div class="modal fade zoomIn" id="deleteMedicalModal" tabindex="-1" aria-hidden="true">
+<div class="modal fade zoomIn" id="deleteDentistModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">

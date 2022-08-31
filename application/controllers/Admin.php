@@ -85,7 +85,7 @@ class Admin extends CI_Controller
     $this->load->view('partials/page-title', ["page_title" => "Dentist Appointment", "title" => "Dentist Appointment"]);
     $this->load->view('admin/omsss/dentist-appointment/dentist-appointment');
     $this->load->view('partials/footer');
-    $this->load->view('admin/omsss/medical-appointment/medical-appointment');
+    $this->load->view('admin/omsss/components/dentist-appointment-modal');
     $this->load->view('partials/foot-scripts');
     $this->load->view('admin/omsss/dentist-appointment/scripts/dentist-appointment-scripts');
   }
@@ -100,6 +100,7 @@ class Admin extends CI_Controller
     $this->load->view('partials/page-title', ["page_title" => "Guidance Appointment", "title" => "Guidance Appointment"]);
     $this->load->view('admin/omsss/guidance-appointment/guidance-appointment');
     $this->load->view('partials/footer');
+    $this->load->view('admin/omsss/components/guidance-appointment-modal');
     $this->load->view('partials/foot-scripts');
     $this->load->view('admin/omsss/guidance-appointment/scripts/guidance-appointment-scripts');
   }

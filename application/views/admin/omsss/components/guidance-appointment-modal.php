@@ -1,5 +1,5 @@
-<!-- View Medical modal -->
-<div class="modal fade" id="viewMedicalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+<!-- View Dental modal -->
+<div class="modal fade" id="viewGuidanceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
@@ -15,7 +15,7 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">Doctor No.</a></h5>
+                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">Guidance No.</a></h5>
                 </div>
                 <div class="col-8">
                   <div class="d-flex fs-13 fw-medium">00014414</div>
@@ -26,10 +26,10 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">Doctor</a></h5>
+                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">Guidance Counsellor</a></h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">Dr. Melissa Sarappudin</div>
+                  <div class="d-flex fs-13 fw-medium">Melanie F. Bactasa, MaED	</div>
                 </div>
               </div>
             </li>
@@ -51,7 +51,19 @@
                   <h5 class="fs-13 mb-1">Service</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">Covid</div>
+                  <div class="d-flex fs-13 fw-medium">Depression</div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1">Time</h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium">1:00 - 2:00PM</div>
                 </div>
               </div>
             </li>
@@ -96,11 +108,11 @@
 </div>
 
 <!-- Edit Medical modal -->
-<div id="editMedicalModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
+<div id="editGuidanceModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content border-0 overflow-hidden">
       <div class="modal-header p-3">
-        <h4 class="card-title mb-0">Edit Student Form</h4>
+        <h4 class="card-title mb-0">Edit Appointment Form</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 
@@ -169,7 +181,7 @@
 </div>
 
 <!-- Delete Student modal -->
-<div class="modal fade zoomIn" id="deleteMedicalModal" tabindex="-1" aria-hidden="true">
+<div class="modal fade zoomIn" id="deleteGuidanceModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">

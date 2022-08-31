@@ -32,9 +32,9 @@
               <td><span class="badge rounded-pill bg-success">Accept</span></td>
               <td>
                 <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editStudentModal"><i class="ri-edit-2-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="ri-delete-bin-5-fill"></i></button>
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalModal"><i class="ri-edit-2-fill"></i></button>
+                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteMedicalModal"><i class="ri-delete-bin-5-fill"></i></button>
                 </div>
               </td>
             </tr>
@@ -48,9 +48,9 @@
               <td><span class="badge rounded-pill bg-danger">Denied</span></td>
               <td>
                 <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editStudentModal"><i class="ri-edit-2-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="ri-delete-bin-5-fill"></i></button>
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalModal"><i class="ri-edit-2-fill"></i></button>
+                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteMedicalModal"><i class="ri-delete-bin-5-fill"></i></button>
                 </div>
               </td>
             </tr>
@@ -64,9 +64,9 @@
               <td><span class="badge rounded-pill bg-secondary">Pending</span></td>
               <td>
                 <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editStudentModal"><i class="ri-edit-2-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="ri-delete-bin-5-fill"></i></button>
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalModal"><i class="ri-edit-2-fill"></i></button>
+                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteMedicalModal"><i class="ri-delete-bin-5-fill"></i></button>
                 </div>
               </td>
             </tr>
@@ -80,9 +80,9 @@
               <td><span class="badge rounded-pill bg-success">Accept</span></td>
               <td>
                 <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editStudentModal"><i class="ri-edit-2-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="ri-delete-bin-5-fill"></i></button>
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalModal"><i class="ri-edit-2-fill"></i></button>
+                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteMedicalModal"><i class="ri-delete-bin-5-fill"></i></button>
                 </div>
               </td>
             </tr>
@@ -96,9 +96,9 @@
               <td><span class="badge rounded-pill bg-danger">Denied</span></td>
               <td>
                 <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editStudentModal"><i class="ri-edit-2-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="ri-delete-bin-5-fill"></i></button>
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalModal"><i class="ri-edit-2-fill"></i></button>
+                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteMedicalModal"><i class="ri-delete-bin-5-fill"></i></button>
                 </div>
               </td>
             </tr>
@@ -112,9 +112,9 @@
               <td><span class="badge rounded-pill bg-secondary">Pending</span></td>
               <td>
                 <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editStudentModal"><i class="ri-edit-2-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="ri-delete-bin-5-fill"></i></button>
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalModal"><i class="ri-edit-2-fill"></i></button>
+                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteMedicalModal"><i class="ri-delete-bin-5-fill"></i></button>
                 </div>
               </td>
             </tr>
@@ -128,9 +128,9 @@
               <td><span class="badge rounded-pill bg-success">Accept</span></td>
               <td>
                 <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editStudentModal"><i class="ri-edit-2-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="ri-delete-bin-5-fill"></i></button>
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalModal"><i class="ri-edit-2-fill"></i></button>
+                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteMedicalModal"><i class="ri-delete-bin-5-fill"></i></button>
                 </div>
               </td>
             </tr>
@@ -144,9 +144,9 @@
               <td><span class="badge rounded-pill bg-danger">Denied</span></td>
               <td>
                 <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editStudentModal"><i class="ri-edit-2-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="ri-delete-bin-5-fill"></i></button>
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalModal"><i class="ri-edit-2-fill"></i></button>
+                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteMedicalModal"><i class="ri-delete-bin-5-fill"></i></button>
                 </div>
               </td>
             </tr>
@@ -160,9 +160,9 @@
               <td><span class="badge rounded-pill bg-secondary">Pending</span></td>
               <td>
                 <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editStudentModal"><i class="ri-edit-2-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="ri-delete-bin-5-fill"></i></button>
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalModal"><i class="ri-edit-2-fill"></i></button>
+                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteMedicalModal"><i class="ri-delete-bin-5-fill"></i></button>
                 </div>
               </td>
             </tr>
@@ -176,9 +176,9 @@
               <td><span class="badge rounded-pill bg-success">Accept</span></td>
               <td>
                 <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editStudentModal"><i class="ri-edit-2-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="ri-delete-bin-5-fill"></i></button>
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalModal"><i class="ri-edit-2-fill"></i></button>
+                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteMedicalModal"><i class="ri-delete-bin-5-fill"></i></button>
                 </div>
               </td>
             </tr>
@@ -192,9 +192,9 @@
               <td><span class="badge rounded-pill bg-danger">Denied</span></td>
               <td>
                 <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editStudentModal"><i class="ri-edit-2-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="ri-delete-bin-5-fill"></i></button>
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalModal"><i class="ri-edit-2-fill"></i></button>
+                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteMedicalModal"><i class="ri-delete-bin-5-fill"></i></button>
                 </div>
               </td>
             </tr>
