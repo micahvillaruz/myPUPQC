@@ -41,16 +41,16 @@
 
                     <div class="mb-3">
                       <label for="user_no" class="form-label">Student / Employee Number <span class="text-danger">*</span></label>
-                      <input type="text" class="form-control" id="user_no" name="user_no" placeholder="Enter Student / Employee Number" required>
+                      <input type="text" class="form-control" id="user_no" name="user_no" placeholder="Enter User Number" required>
                       <div class="invalid-feedback">
-                        Please enter Student / Employee Number
+                        Please enter User Number
                       </div>
                     </div>
                     <div class="mb-3">
-                      <label class="form-label" for="password-input">Password <span class="text-danger">*</span></label>
+                      <label class="form-label" for="password">Password <span class="text-danger">*</span></label>
                       <div class="position-relative auth-pass-inputgroup">
-                        <input type="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Enter Password" id="password-input" required>
-                        <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+                        <input type="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Enter Password" id="password" name="password" required>
+                        <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-off-fill align-middle" id="toggle-password"></i></button>
                         <div class="invalid-feedback">
                           Please enter Password
                         </div>
