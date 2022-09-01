@@ -34,22 +34,48 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>admin/omsss/medical-appointment">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/user-management/students">
                 <i class="las la-user-graduate"></i>
+                <span>Students</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/user-management/pup-staffs">
+                <i class="las la-user-tie"></i>
+                <span>PUP Staffs</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/user-management/super-admins">
+                <i class="las la-user-lock"></i>
+                <span>Super Admins</span>
+              </a>
+            </li>
+
+            <li class="menu-title">
+              <i class="ri-more-fill"></i>
+              <span>Health and Well-Being</span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/omsss/medical-appointment">
+                <i class="mdi mdi-pill"></i>
                 <span>Medical Appointment</span>
               </a>
             </li>
 
             <li class="nav-item">
               <a class="nav-link menu-link" href="<?= base_url() ?>admin/omsss/dentist-appointment">
-                <i class="las la-user-tie"></i>
+                <i class="mdi mdi-tooth-outline"></i>
                 <span>Dental Appointment</span>
               </a>
             </li>
 
             <li class="nav-item">
               <a class="nav-link menu-link" href="<?= base_url() ?>admin/omsss/guidance-appointment">
-                <i class="las la-user-lock"></i>
+                <i class="mdi mdi-brain"></i>
                 <span>Guidance Appointment</span>
               </a>
             </li>
