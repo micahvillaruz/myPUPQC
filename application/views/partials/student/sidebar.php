@@ -275,23 +275,46 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link">
+              <a class="nav-link menu-link" href="#sidebarMedical" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMedical">
                 <i class="mdi mdi-pill"></i>
-                <span>Medical Service</span>
+                <span>Medical Services</span>
               </a>
+              <div class="collapse menu-dropdown" id="sidebarMedical">
+                <ul class="nav nav-sm flex-column">
+                  <li class="nav-item">
+                    <a href="<?= base_url() ?>student/omsss/medical-services/personal-info" class="nav-link"> Personal Information </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url() ?>student/omsss/medical-services/health-history" class="nav-link"> Health History </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url() ?>student/omsss/medical-services/immunization" class="nav-link"> Immunization </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url() ?>student/omsss/medical-services/medical-consultation" class="nav-link"> Medical Consultation </a>
+                  </li>
+                </ul>
+              </div>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link">
+              <a class="nav-link menu-link" href="<?= base_url() ?>student/omsss/dentist-services">
                 <i class="mdi mdi-tooth-outline"></i>
-                <span>Dental Service</span>
+                <span>Dental Services</span>
               </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link">
+              <a class="nav-link menu-link" href="<?= base_url() ?>student/omsss/guidance-services">
                 <i class="mdi mdi-brain"></i>
-                <span>Psychological Services</span>
+                <span>Guidance Services</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>student/omsss/medical-logs">
+                <i class="mdi mdi-history"></i>
+                <span>Medical Logs</span>
               </a>
             </li>
           </ul>
