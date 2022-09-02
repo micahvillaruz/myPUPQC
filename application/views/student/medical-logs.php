@@ -8,6 +8,7 @@
 <table class="table table-striped">
     <thead>
         <tr>
+            <th scope="col">Appointment ID.</th>
             <th scope="col">Doctor for Consultation</th>
             <th scope="col">Patient</th>
             <th scope="col">Service</th>
@@ -18,6 +19,7 @@
     </thead>
     <tbody>
         <tr>
+            <th>2468</th>
             <th>Dr. Melissa Sarappudin</th>
             <td>Grace Coles</td>
             <td>Diarrhea</td>
@@ -26,6 +28,7 @@
             <td><span class="badge bg-secondary">Pending</span></td>
         </tr>
         <tr>
+            <th>2468</th>
             <th>Rosanna Florencia A. Ulep, DMD, MPH</th>
             <td>Grace Coles</td>
             <td>Pasta</td>
@@ -34,6 +37,7 @@
             <td><span class="badge bg-secondary">Pending</span></td>
         </tr>
         <tr>
+            <th>2468</th>
             <th>Melanie F. Bactasa, MaED</th>
             <td>Grace Coles</td>
             <td>Phobias</td>

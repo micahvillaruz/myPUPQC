@@ -113,8 +113,9 @@
                                     <select id="ForminputDoctor" class="form-select">
                                         <option selected>Choose...</option>
                                         <option>Roman Catholic</option>
+                                        <option>Christian</option>
                                         <option>Muslim</option>
-                                        <option>INC</option>
+                                        <option>Iglesia Ni Cristo</option>
                                     </select>
                                 </div>
 								</div>
