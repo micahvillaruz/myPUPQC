@@ -196,10 +196,19 @@
 													                  id="exampleFormControlTextarea"
 													                  placeholder="Please use semi-colon (;) as seperator for ypur entries."
 													                  rows="3"></textarea>
+                                      </div>
+                                            <div class="col-lg-12">
+                                              <div class="hstack gap-2 justify-content-end">
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                                <button type="button" class="btn btn-light">Cancel</button>
+                                              </div>
+                                          </div>
+                                         <!--end col-->
                                       </div></br>
                                     </div>
                                       </div>
                                   </div>
+                                  
                                 </div>
                               </div>
                             </div>
