@@ -131,12 +131,12 @@
               </td>
               <td>
                 <div class="vstack gap-2">
-                  <button type="button" class="d-block btn btn-sm btn-primary text-start waves-effect waves-light"><i class="mdi mdi-file-download-outline label-icon align-middle me-2"></i> Claiming/Payment Voucher</button>
-                  <button type="button" class="btn btn-sm btn-success text-start waves-effect waves-light"><i class="mdi mdi-credit-card-outline label-icon align-middle me-2"></i> Pay Online (Link.BizPortal)</button>
+                  <a role="button" href="https://odrs.pup.edu.ph/Customer/PaymentVoucher.aspx?a=177059&b=773CEE8CDAA1F6969EAE2C287C1174C725F65D18" class="d-block btn btn-sm btn-primary text-start waves-effect waves-light"><i class="mdi mdi-file-download-outline label-icon align-middle me-2"></i> Claiming/Payment Voucher</a>
+                  <button type="button" id="pay-warning" class="btn btn-sm btn-success text-start waves-effect waves-light"><i class="mdi mdi-credit-card-outline label-icon align-middle me-2"></i> Pay Online (Link.BizPortal)</button>
                   <button type="button" class="btn btn-sm btn-warning text-start waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewPaymentOptions"><i class="mdi mdi-cash-multiple label-icon align-middle me-2"></i> Payment Options</button>
                 </div>
                 <div class="mt-4 d-grid">
-                  <button type="button" class="btn btn-sm btn-light waves-effect waves-light fw-medium"><i class="ri-close-fill label-icon align-middle me-2 fs-16"></i> Cancel</button>
+                  <button type="button" id="cancel-warning" class="btn btn-sm btn-light waves-effect waves-light fw-medium"><i class="ri-close-fill label-icon align-middle me-2 fs-16"></i> Cancel</button>
                 </div>
               </td>
             </tr>

@@ -88,11 +88,11 @@
                 </tr>
                 <tr>
                   <td>
-                    <a href="#!">Transcript of Records - For evaluation/reference (Undergraduate) 1st Year </a>
+                    <a href="#!">Transcript of Records - For evaluation/reference (Undergraduate) 3rd and 4th Year </a>
                   </td>
-                  <td class="text-end">₱ 150.00</td>
+                  <td class="text-end">₱ 300.00</td>
                   <td class="text-center">1</td>
-                  <td class="text-end">₱ 150.00</td>
+                  <td class="text-end">₱ 300.00</td>
                 </tr>
                 <tr class="border-top border-top-dashed">
                   <td colspan="2"></td>
@@ -101,7 +101,7 @@
                       <tbody>
                         <tr>
                           <td>Sub Total :</td>
-                          <td class="text-end">₱ 300.00</td>
+                          <td class="text-end">₱ 450.00</td>
                         </tr>
                         <tr>
                           <td>
@@ -112,7 +112,7 @@
                         </tr>
                         <tr class="border-top border-top-dashed">
                           <th scope="row">Total (PHP) :</th>
-                          <th class="text-end">₱ 360.00</th>
+                          <th class="text-end">₱ 510.00</th>
                         </tr>
                       </tbody>
                     </table>

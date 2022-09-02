@@ -10,8 +10,21 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
 
 		<script src="<?= base_url() ?>public/js/pages/datatables.init.js"></script>
+
+		<!-- ajax -->
+		<script src="<?= base_url() ?>public/js/ajax/student/requests.ajax.js"></script>
+
+		<!-- validation init -->
+		<script src="<?= base_url() ?>public/js/pages/form-validation.init.js"></script>
+		<!-- Sweet Alerts js -->
+		<script src="<?= base_url() ?>public/libs/sweetalert2/sweetalert2.min.js"></script>
+
+		<!-- Sweet alert init js-->
+		<script src="<?= base_url() ?>public/js/pages/sweetalerts.init.js"></script>
+
 		<!-- App js -->
 		<script src="<?= base_url() ?>public/js/app.js"></script>
+
 		</body>
 
 		</html>
