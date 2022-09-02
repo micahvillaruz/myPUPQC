@@ -2,22 +2,13 @@
     <div class="app-menu navbar-menu">
       <!-- LOGO -->
       <div class="navbar-brand-box">
-        <!-- Dark Logo-->
-        <a href="index.html" class="logo logo-dark">
-          <span class="logo-sm">
-            <img src="<?= base_url() ?>public/images/logo-sm.png" alt="" height="22" />
-          </span>
-          <span class="logo-lg">
-            <img src="<?= base_url() ?>public/images/mypupqc-logo.png" alt="" height="30" />
-          </span>
-        </a>
         <!-- Light Logo-->
         <a href="index.html" class="logo logo-light">
           <span class="logo-sm">
-            <img src="<?= base_url() ?>public/images/logo-sm.png" alt="" height="22" />
+            <img src="<?= base_url() ?>public/images/logo-sm.png" alt="" height="75" />
           </span>
           <span class="logo-lg">
-            <img src="<?= base_url() ?>public/images/mypupqc-logo.png" alt="" height="30" />
+            <img src="<?= base_url() ?>public/images/logo-light.png" alt="" height="40" />
           </span>
         </a>
         <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
@@ -176,26 +167,6 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link" href="#sidebarAdvanceUI" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAdvanceUI">
-                <i class="mdi mdi-file-document-multiple-outline"></i>
-                <span>Document Request</span>
-              </a>
-              <div class="collapse menu-dropdown" id="sidebarAdvanceUI">
-                <ul class="nav nav-sm flex-column">
-                  <li class="nav-item">
-                    <a href="advance-ui-sweetalerts.html" class="nav-link">Request a Document</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="advance-ui-scrollbar.html" class="nav-link">Requests List</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="advance-ui-animation.html" class="nav-link">Track Document Request</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-
-            <li class="nav-item">
               <a class="nav-link menu-link">
                 <i class="ri-honour-line"></i>
                 <span>Scholarships</span>
@@ -249,7 +220,7 @@
 
             <li class="nav-item">
               <a class="nav-link menu-link" href="widgets.html">
-                <i class="ri-hand-coin-line"></i>
+                <i class="mdi mdi-account-group-outline"></i>
                 <span>Organizations</span>
               </a>
             </li>
@@ -273,8 +244,34 @@
 
             <li class="nav-item">
               <a class="nav-link menu-link">
-                <i class="mdi mdi-account-supervisor-outline"></i>
+                <i class="ri-question-answer-line"></i>
                 <span>HelpDesk</span>
+              </a>
+            </li>
+
+            <li class="menu-title">
+              <i class="ri-more-fill"></i>
+              <span>Document Request</span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>student/odrs/new-request">
+                <i class="ri-file-add-line"></i>
+                <span>New Request</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>student/odrs/requests">
+                <i class="ri-file-copy-2-line"></i>
+                <span>Requests</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>student/odrs/transactions">
+                <i class="mdi mdi-archive-clock-outline"></i>
+                <span>Transactions</span>
               </a>
             </li>
 
@@ -284,23 +281,46 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link">
+              <a class="nav-link menu-link" href="#sidebarMedical" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMedical">
                 <i class="mdi mdi-pill"></i>
-                <span>Medical Service</span>
+                <span>Medical Services</span>
               </a>
+              <div class="collapse menu-dropdown" id="sidebarMedical">
+                <ul class="nav nav-sm flex-column">
+                  <li class="nav-item">
+                    <a href="<?= base_url() ?>student/omsss/medical-services/personal-info" class="nav-link"> Personal Information </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url() ?>student/omsss/medical-services/health-history" class="nav-link"> Health History </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url() ?>student/omsss/medical-services/immunization" class="nav-link"> Immunization </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url() ?>student/omsss/medical-services/medical-consultation" class="nav-link"> Medical Consultation </a>
+                  </li>
+                </ul>
+              </div>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link">
+              <a class="nav-link menu-link" href="<?= base_url() ?>student/omsss/dentist-services">
                 <i class="mdi mdi-tooth-outline"></i>
-                <span>Dental Service</span>
+                <span>Dental Services</span>
               </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link">
+              <a class="nav-link menu-link" href="<?= base_url() ?>student/omsss/guidance-services">
                 <i class="mdi mdi-brain"></i>
-                <span>Psychological Services</span>
+                <span>Guidance Services</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>student/omsss/medical-logs">
+                <i class="mdi mdi-history"></i>
+                <span>Medical Logs</span>
               </a>
             </li>
           </ul>
