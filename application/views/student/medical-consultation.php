@@ -48,7 +48,7 @@
                             <div class="col-4">
                                 <div class="mb-3">
                                     <label for="dateInput" class="form-label">Date</label>
-                                    <input type="tel" class="form-control" placeholder="Enter date appointment" id="dateInput">
+                                    <input type="date" class="form-control" id="exampleInputdate">
                                 </div>
                             </div>
                             <!--end col-->
