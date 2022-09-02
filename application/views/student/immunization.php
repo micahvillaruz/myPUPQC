@@ -28,9 +28,9 @@
               </div></td>
               <td>
                 <div class="dropdown d-inline-block">
-                      <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
-                      <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalModal"><i class="ri-edit-2-fill"></i></button>
-                      <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteMedicalModal"><i class="ri-delete-bin-5-fill"></i></button>
+                      <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewImmunizationModal"><i class="ri-eye-fill"></i></button>
+                      <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editImmunizationModal"><i class="ri-edit-2-fill"></i></button>
+                      <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteImmunizationModal"><i class="ri-delete-bin-5-fill"></i></button>
                 </div>
               </td>
             </tr>
@@ -46,9 +46,9 @@
                 </div></td>
                 <td>
                 <div class="dropdown d-inline-block">
-                      <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
-                      <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalModal"><i class="ri-edit-2-fill"></i></button>
-                      <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteMedicalModal"><i class="ri-delete-bin-5-fill"></i></button>
+                      <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewImmunizationModal"><i class="ri-eye-fill"></i></button>
+                      <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editImmunizationModal"><i class="ri-edit-2-fill"></i></button>
+                      <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteImmunizationModal"><i class="ri-delete-bin-5-fill"></i></button>
                     </div>
                 </td>
             </tr>
@@ -64,9 +64,9 @@
             </div></td>
             <td>
             <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalModal"><i class="ri-edit-2-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteMedicalModal"><i class="ri-delete-bin-5-fill"></i></button>
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewImmunizationModal"><i class="ri-eye-fill"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editImmunizationModal"><i class="ri-edit-2-fill"></i></button>
+                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteImmunizationModal"><i class="ri-delete-bin-5-fill"></i></button>
               </div>
               </td>
             </tr>
@@ -82,9 +82,9 @@
               </div></td>
               <td>
               <div class="dropdown d-inline-block">
-                    <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
-                    <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalModal"><i class="ri-edit-2-fill"></i></button>
-                    <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteMedicalModal"><i class="ri-delete-bin-5-fill"></i></button>
+                    <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewImmunizationModal"><i class="ri-eye-fill"></i></button>
+                    <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editImmunizationModal"><i class="ri-edit-2-fill"></i></button>
+                    <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteImmunizationModal"><i class="ri-delete-bin-5-fill"></i></button>
                  </div>
               </td>
           </tr>
@@ -119,9 +119,9 @@
               </div></td>
               <td>
               <div class="dropdown d-inline-block">
-                    <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
-                    <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalModal"><i class="ri-edit-2-fill"></i></button>
-                    <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteMedicalModal"><i class="ri-delete-bin-5-fill"></i></button>
+                    <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewImmunizationModal"><i class="ri-eye-fill"></i></button>
+                    <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editImmunizationModal"><i class="ri-edit-2-fill"></i></button>
+                    <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteImmunizationModal"><i class="ri-delete-bin-5-fill"></i></button>
                   </div>
               </td>
             </tr>

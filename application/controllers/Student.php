@@ -57,6 +57,7 @@ class Student extends CI_Controller
     $this->load->view('student/immunization');
     $this->load->view('partials/footer');
     $this->load->view('partials/foot-scripts');
+    $this->load->view('student/components/immunization-modal');
     $this->load->view('student/scripts/immunization-scripts');
   }
 
