@@ -107,6 +107,17 @@
 										<input type="text" class="form-control" id="ageInput" placeholder="Enter your Age" value="21" />
 									</div>
 								</div>
+								<div class="col-lg-6">
+								<div class="mb-3">
+                                    <label for="ForminputDoctor" class="form-label">Religion</label>
+                                    <select id="ForminputDoctor" class="form-select">
+                                        <option selected>Choose...</option>
+                                        <option>Roman Catholic</option>
+                                        <option>Muslim</option>
+                                        <option>INC</option>
+                                    </select>
+                                </div>
+								</div>
 								<!--end col-->
 								<div class="col-lg-6">
 									<div class="mb-3">
@@ -191,10 +202,14 @@
 										</div>
 										<!--end col-->
 										<div class="col-lg-6">
-											<div class="mb-3">
-												<label for="contactpersonInput" class="form-label">Relationship to Contact Person</label>
-												<input type="text" class="form-control" id="contactpersonInput" placeholder="Enter your Relationship to Contact Peson" value="" />
-											</div>
+										<div class="mb-3">
+                                    <label for="ForminputDoctor" class="form-label">Relationship to Contact Person</label>
+                                    <select id="ForminputDoctor" class="form-select">
+                                        <option selected>Choose...</option>
+                                        <option>Parent</option>
+                                        <option>Guardian</option>
+                                    </select>
+                                </div>
 										</div>
 										<!--end col-->
 										<div class="col-lg-6">
