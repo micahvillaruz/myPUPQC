@@ -136,6 +136,29 @@ $route['student/odrs/transactions'] = 'student/transactions';
 
 
 /*
+| --------------
+|     OMSSS
+| --------------
+*/
+
+// Medical Services
+$route['student/omsss/medical-services/personal-info'] = 'student/personal_information';
+$route['student/omsss/medical-services/health-history'] = 'student/health_history';
+$route['student/omsss/medical-services/immunization'] = 'student/immunization';
+$route['student/omsss/medical-services/medical-consultation'] = 'student/medical_consultation';
+
+
+// Dental Services
+$route['student/omsss/dentist-services'] = 'student/dental_consultation';
+
+// Guidance Services
+$route['student/omsss/guidance-services'] = 'student/guidance_consultation';
+
+
+// Medical Logs
+$route['student/omsss/medical-logs'] = 'student/medical_logs';
+
+/*
 | -------------------------------------------------------------------------
 | SUPER ADMIN ROUTES
 | -------------------------------------------------------------------------
