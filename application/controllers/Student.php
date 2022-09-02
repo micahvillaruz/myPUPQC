@@ -127,7 +127,7 @@ class Student extends CI_Controller
     $this->load->view('student/medical-appointment');
     $this->load->view('partials/footer');
     $this->load->view('partials/foot-scripts');
-    $this->load->view('student/scripts/med-consultation-scripts');
+    $this->load->view('student/scripts/medical-appointment-scripts');
   }
   public function dental_appointment()
   {
@@ -140,7 +140,7 @@ class Student extends CI_Controller
     $this->load->view('student/dental-appointment');
     $this->load->view('partials/footer');
     $this->load->view('partials/foot-scripts');
-    $this->load->view('student/scripts/dent-consultation-scripts');
+    $this->load->view('student/scripts/dental-appointment-scripts');
   }
   public function guidance_appointment()
   {
@@ -153,7 +153,7 @@ class Student extends CI_Controller
     $this->load->view('student/guidance-appointment');
     $this->load->view('partials/footer');
     $this->load->view('partials/foot-scripts');
-    $this->load->view('student/scripts/guide-consultation-scripts');
+    $this->load->view('student/scripts/guidance-appointment-scripts');
   }
   public function contact_omsss()
   {
