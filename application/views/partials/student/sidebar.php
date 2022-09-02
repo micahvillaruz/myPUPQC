@@ -258,21 +258,21 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>odrs/student/new-request">
+              <a class="nav-link menu-link" href="<?= base_url() ?>student/odrs/new-request">
                 <i class="ri-file-add-line"></i>
                 <span>New Request</span>
               </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>odrs/student/requests">
+              <a class="nav-link menu-link" href="<?= base_url() ?>student/odrs/requests">
                 <i class="ri-file-copy-2-line"></i>
                 <span>Requests</span>
               </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>odrs/student/transactions">
+              <a class="nav-link menu-link" href="<?= base_url() ?>student/odrs/transactions">
                 <i class="mdi mdi-archive-clock-outline"></i>
                 <span>Transactions</span>
               </a>

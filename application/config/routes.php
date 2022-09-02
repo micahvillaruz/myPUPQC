@@ -157,9 +157,9 @@ $route['student/omsss/contact-omsss'] = 'student/contact_omsss';
 
 
 // ODRS
-$route['odrs/student/new-request'] = 'odrs/new_request';
-$route['odrs/student/requests'] = 'odrs/requests';
-$route['odrs/student/transactions'] = 'odrs/transactions';
+$route['student/odrs/new-request'] = 'student/new_request';
+$route['student/odrs/requests'] = 'student/requests';
+$route['student/odrs/transactions'] = 'student/transactions';
 
 
 /*
