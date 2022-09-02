@@ -40,7 +40,7 @@
 			<div class="card-body">
 				<div class="d-flex align-items-center mb-4">
 					<div class="flex-grow-1">
-						<h5 class="card-title mb-0">Portfolio</h5>
+						<h5 class="card-title mb-0">Socials</h5>
 					</div>
 					<div class="flex-shrink-0">
 						<a href="javascript:void(0);" class="badge bg-light text-primary fs-12"><i class="ri-add-fill align-bottom me-1"></i> Add</a>
