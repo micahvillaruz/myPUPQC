@@ -155,10 +155,13 @@
                   <div class="col-lg-4">
                     <ul class="nav nav-sm flex-column">
                       <li class="nav-item">
-                        <a href="ui-alerts.html" class="nav-link">Request Appointment</a>
+                        <a href="<?= base_url() ?>student/appointments/medical-appointment" class="nav-link" class="nav-link">Medical Consultation</a>
                       </li>
                       <li class="nav-item">
-                        <a href="ui-badges.html" class="nav-link">Appointment History</a>
+                        <a href="<?= base_url() ?>student/appointments/dental-appointment" class="nav-link">Dental Consultation</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="<?= base_url() ?>student/appointments/guidance-appointment" class="nav-link">Guidance Counseling Consultation</a>
                       </li>
                     </ul>
                   </div>
@@ -312,10 +315,20 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>student/omsss/medical-logs">
-                <i class="mdi mdi-history"></i>
-                <span>Medical Logs</span>
+              <a class="nav-link menu-link" href="#sidebarMedical" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMedical">
+                <i class="mdi mdi-pill"></i>
+                <span>  Log and Contact OMSSS </span>
               </a>
+              <div class="collapse menu-dropdown" id="sidebarMedical">
+                <ul class="nav nav-sm flex-column">
+                  <li class="nav-item">
+                    <a href="<?= base_url() ?>student/omsss/medical-logs" class="nav-link">Medical Logs </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url() ?>student/omsss/contact-omsss" class="nav-link"> Contact OMSS</a>
+                  </li>
+                </ul>
+              </div>
             </li>
           </ul>
         </div>

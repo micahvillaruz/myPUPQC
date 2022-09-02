@@ -116,4 +116,56 @@ class Student extends CI_Controller
     $this->load->view('partials/foot-scripts');
     $this->load->view('student/scripts/medical-logs-scripts');
   }
+  public function medical_appointment()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/student/topbar');
+    $this->load->view('partials/student/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "Medical Consultation", "title" => " Medical Appointment"]);
+    $this->load->view('student/medical-appointment');
+    $this->load->view('partials/footer');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('student/scripts/med-consultation-scripts');
+  }
+  public function dental_appointment()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/student/topbar');
+    $this->load->view('partials/student/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "Dental Consultation", "title" => "Dental Appointment"]);
+    $this->load->view('student/dental-appointment');
+    $this->load->view('partials/footer');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('student/scripts/dent-consultation-scripts');
+  }
+  public function guidance_appointment()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/student/topbar');
+    $this->load->view('partials/student/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "Guidance Consultation", "title" => "Guidance Appointments"]);
+    $this->load->view('student/guidance-appointment');
+    $this->load->view('partials/footer');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('student/scripts/guide-consultation-scripts');
+  }
+  public function contact_omsss()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/student/topbar');
+    $this->load->view('partials/student/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "Contact Us", "title" => "Contact OMSSS"]);
+    $this->load->view('student/contact-omsss');
+    $this->load->view('partials/footer');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('student/scripts/contact-omsss-scripts');
+  }
 }

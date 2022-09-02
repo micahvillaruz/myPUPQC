@@ -128,6 +128,9 @@ $route['admission'] = 'home/admission';
 | -------------------------------------------------------------------------
 */
 $route['student/dashboard'] = 'student';
+$route['student/appointments/medical-appointment'] = 'student/medical_appointment';
+$route['student/appointments/dental-appointment'] = 'student/dental_appointment';
+$route['student/appointments/guidance-appointment'] = 'student/guidance_appointment';
 
 
 /*
@@ -149,9 +152,13 @@ $route['student/omsss/dentist-services'] = 'student/dental_consultation';
 // Guidance Services
 $route['student/omsss/guidance-services'] = 'student/guidance_consultation';
 
-
 // Medical Logs
 $route['student/omsss/medical-logs'] = 'student/medical_logs';
+
+// Contact OMSSS
+$route['student/omsss/contact-omsss'] = 'student/contact_omsss';
+
+
 
 /*
 | -------------------------------------------------------------------------
