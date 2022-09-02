@@ -20,8 +20,8 @@
             <div id="accor_borderedExamplecollapse1" class="accordion-collapse collapse show" aria-labelledby="accordionborderedExample1" data-bs-parent="#accordionBordered">
               <ol class="list-group list-group-numbered">
                 <li class="list-group-item">Print the <span class="fw-medium">Payment Voucher</span> after the submission of request.</li>
-                <li class="list-group-item">Pay at the Cashier's Office <small>(Rothlener Building, Ground Floor)</small></li>
-                <li class="list-group-item">Go to the <span class="fw-medium">Registrar's Office</span> for the <span class="fst-italic">Processing of Request/s</span> <small>(Rothlener Building, Second Floor)</small></li>
+                <li class="list-group-item">Pay at the <span class="fw-medium">Cashier's Office</span> <small>(Rothlener Building, Ground Floor)</small></li>
+                <li class="list-group-item">Go to the <span class="fw-medium">Registrar's Office</span> for the <span class="text-decoration-underline">Processing of Request/s</span> <small>(Rothlener Building, Second Floor)</small></li>
               </ol>
             </div>
           </div>
@@ -42,8 +42,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary ">Save Changes</button>
+        <button type="button" class="btn btn-danger btn-animation waves-effect waves-light" data-text="Close" data-bs-dismiss="modal"><span>Close</span></button>
       </div>
 
     </div><!-- /.modal-content -->
