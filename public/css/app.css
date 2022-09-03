@@ -1682,14 +1682,14 @@ File: Main Css File
   display: none;
 }
 [data-layout=horizontal] .navbar-nav .nav-item:hover > .nav-link {
-  color: var(--vz-topnav-item-color-active);
+  color: #ffbe00;
 }
 [data-layout=horizontal] .navbar-nav .nav-item:hover > .nav-link .icon-dual {
-  color: var(--vz-topnav-item-color-active);
+  color: #ffbe00;
   fill: rgba(112, 1, 1, 0.1);
 }
 [data-layout=horizontal] .navbar-nav .nav-item:hover > .nav-link:after {
-  color: var(--vz-topnav-item-color-active);
+  color: #ffbe00;
 }
 @media (min-width: 1024.1px) {
   [data-layout=horizontal] .navbar-nav .nav-item:hover > .menu-dropdown {
@@ -15355,11 +15355,28 @@ span.flatpickr-weekday {
 .navbar-light .navbar-nav .nav-item .nav-link {
   color: rgba(243, 246, 249, 0.75);
 }
+.navbar-light .navbar-nav .nav-item .collapse .nav-sm .nav-item .nav-link {
+  font-size: 16px;
+  font-weight: 500;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  font-family: "hkgrotesk", sans-serif;
+  color: var(--vz-dark);
+  padding: 14px;
+}
+@media (max-width: 991.98px) {
+  .navbar-light .navbar-nav .nav-item .collapse .nav-sm .nav-item .nav-link {
+    padding: 8px 0px;
+  }
+}
+.navbar-light .navbar-nav .nav-item .collapse .nav-sm .nav-item .nav-link:hover, .navbar-light .navbar-nav .nav-item .collapse .nav-sm .nav-item .nav-link.active, .navbar-light .navbar-nav .nav-item .collapse .nav-sm .nav-item .nav-link:focus {
+  color: #700101 !important;
+}
 .navbar-light.is-sticky .navbar-nav .nav-item .nav-link {
   color: var(--vz-dark);
 }
 .navbar-light.is-sticky .navbar-nav .nav-item .nav-link:hover, .navbar-light.is-sticky .navbar-nav .nav-item .nav-link.active, .navbar-light.is-sticky .navbar-nav .nav-item .nav-link:focus {
-  color: #700101 !important;
+  color: #ffbe00 !important;
 }
 .navbar-light.is-sticky .navbar-brand .card-logo-dark {
   display: block;
@@ -15539,6 +15556,16 @@ span.flatpickr-weekday {
   padding: 222px 0 150px 0;
 }
 .nft-hero .bg-overlay {
+  background-color: #05175f;
+  opacity: 0.85;
+}
+
+#explorecard-list .list-element {
+  display: none;
+}
+#explorecard-list .list-element:nth-child(-n+10) {
+  display: block;
+}t-hero .bg-overlay {
   background-color: #05175f;
   opacity: 0.85;
 }

@@ -5,8 +5,8 @@
     <!-- Start right Content here -->
     <!-- ============================================================== -->
     <div class="main-content ms-0 bg-light">
-      <div class="page-content pt-4">
-        <div class="container-fluid">
+      <div class="page-content pt-4 m-0">
+        <div class="container-boxed">
           <div class="profile-foreground position-relative mx-n4 mt-n4">
             <div class="profile-wid-bg">
               <img src="<?= base_url() ?>public/images/pupqc-bg.jpg" alt="" class="profile-wid-img" />

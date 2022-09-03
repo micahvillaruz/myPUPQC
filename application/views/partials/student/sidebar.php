@@ -240,8 +240,22 @@
             </ul>
           </div>
         </li>
-
         <li class="nav-item">
+          <a class="nav-link menu-link" href="<?= base_url() ?>student/omsss/medical-logs">
+            <i class="ri-refresh-line"></i>
+            <span>Medical Logs</span>
+          </a>
+        </li>
+        <li class="nav-item">
+        <!-- Default Modals -->
+        <u><button type="button" class="btn btn-ghost-primary wave-effect wave-light ms-4 fs-6 text-white wave-effect wave-light" data-bs-toggle="modal" data-bs-target="#myModal">Contact Us</u></button>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+        </li>
+
+        <!-- <li class="nav-item">
           <a class="nav-link menu-link" href="#sidebarLog" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarLog">
             <i class=" ri-refresh-line"></i>
             <span> Log and Contact OMSSS </span>
@@ -256,7 +270,7 @@
               </li>
             </ul>
           </div>
-        </li>
+        </li> -->
       </ul>
     </div>
     <!-- Sidebar -->

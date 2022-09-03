@@ -5,8 +5,8 @@
     <!-- Start right Content here -->
     <!-- ============================================================== -->
     <div class="main-content ms-0 bg-light">
-      <div class="page-content pt-4">
-        <div class="container-fluid">
+      <div class="page-content pt-4 m-0">
+        <div class="container-boxed">
           <div class="profile-foreground position-relative mx-n4 mt-n4">
             <div class="profile-wid-bg">
               <img src="<?= base_url() ?>public/images/pupqc-bg.jpg" alt="" class="profile-wid-img" />
@@ -96,68 +96,68 @@
                                 <td>Erica C. Cantos</td>
                               </tr>
                               <tr>
-                              <td>
+                                <td>
                                   <h5>Auditor</h5>
                                 </td>
                                 <td>Kate S. Culile</td>
                               </tr>
                               <tr>
-                              <td>
+                                <td>
                                   <h5>Legal Counseling Officer</h5>
                                 </td>
                                 <td>Shiena Mae Joan O. Francia</td>
                               </tr>
                               <tr>
-                              <td>
-                              <h5>Research & Development Officer</h5>
+                                <td>
+                                  <h5>Research & Development Officer</h5>
                                 </td>
                                 <td>Jane Samer B. Pajela</td>
                               </tr>
                               <tr>
-                              <td>
-                              <h5>Budget & Finance Officer</h5>
+                                <td>
+                                  <h5>Budget & Finance Officer</h5>
                                 </td>
                                 <td>Sophia Veinne B. Cerbo</td>
                               </tr>
                               <tr>
-                              <td>
-                              <h5>Internal Affair Officer</h5>
+                                <td>
+                                  <h5>Internal Affair Officer</h5>
                                 </td>
                                 <td>Jhazzmin Nera</td>
                               </tr>
                               <tr>
-                              <td>
-                              <h5>External Affair Officer</h5>
+                                <td>
+                                  <h5>External Affair Officer</h5>
                                 </td>
-                                <td>Angelo J. Legaspi</td> 
-                              </tr>
-                              <tr>
-                              <td>
-                              <h5>Technical Commitee</h5>
-                                </td>
-                                <td>Krisha T. Maldonado</td> 
+                                <td>Angelo J. Legaspi</td>
                               </tr>
                               <tr>
                                 <td>
-                              <h5>Technical Commitee</h5>
+                                  <h5>Technical Commitee</h5>
                                 </td>
-                                <td>Carl Marcus D. Aquino</td>  
+                                <td>Krisha T. Maldonado</td>
                               </tr>
                               <tr>
-                              <td>
-                              <h5>Technical Commitee</h5>
+                                <td>
+                                  <h5>Technical Commitee</h5>
                                 </td>
-                                <td>Jocy W. Zambrona</td>  
+                                <td>Carl Marcus D. Aquino</td>
                               </tr>
                               <tr>
-                              <td>
-                              <h5>Technical Commitee</h5>
+                                <td>
+                                  <h5>Technical Commitee</h5>
+                                </td>
+                                <td>Jocy W. Zambrona</td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <h5>Technical Commitee</h5>
                                 </td>
                                 <td>Adrian Owen G. Balanquit</td>
                               </tr>
                               <tr>
-                              <td>
-                              <h5>Public Affair Officer</h5>
+                                <td>
+                                  <h5>Public Affair Officer</h5>
                                 </td>
                                 <td>Ken Erika Godeloson</td>
                               </tr>
