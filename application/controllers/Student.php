@@ -188,6 +188,7 @@ class Student extends CI_Controller
     $this->load->view('student/omsss/log-and-contact-omsss/contact-omsss');
     $this->load->view('partials/footer');
     $this->load->view('partials/foot-scripts');
+    $this->load->view('student/omsss/components/modals/contact-omsss-modal');
     $this->load->view('student/omsss/log-and-contact-omsss/scripts/contact-omsss-scripts');
   }
 }
