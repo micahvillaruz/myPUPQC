@@ -54,22 +54,6 @@
                             <!--end col-->
                             <div class="col-4">
                                 <div class="mb-3">
-                                    <label for="ForminputTime" class="form-label">Time</label>
-                                    <select id="ForminputTime" class="form-select">
-                                        <option selected>Choose...</option>
-                                        <option>10:00 AM - 11:00 AM</option>
-                                        <option>11:00 AM - 12:00 PM</option>
-                                        <option>12:30 PM - 1:30 PM</option>
-                                        <option>1:30 PM - 2:30 PM</option>
-                                        <option>2:30 PM - 3:30 PM</option>
-                                        <option>3:30 PM - 4:30 PM</option>
-                                        <option>4:30 PM - 5:30 PM</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <!--end col-->
-                            <div class="col-6">
-                                <div class="mb-3">
                                     <label for="ForminputService" class="form-label">Service</label>
                                     <select id="ForminputService" class="form-select">
                                         <option selected>Choose...</option>
@@ -84,7 +68,7 @@
                                 </div>
                             </div>
                             <!--end col-->
-                            <div class="col-4">
+                            <div class="col-6">
                                 <div class="mb-3">
                                     <label for="otherInput" class="form-label">Other</label>
                                     <input type="tel" class="form-control" placeholder="Enter other service" id="otherInput">

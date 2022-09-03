@@ -279,8 +279,8 @@
 
             <li class="nav-item">
               <a class="nav-link menu-link" href="#sidebarMedical" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMedical">
-                <i class="mdi mdi-pill"></i>
-                <span>Medical Services</span>
+                <i class="ri-survey-line"></i>
+                <span>Health Information</span>
               </a>
               <div class="collapse menu-dropdown" id="sidebarMedical">
                 <ul class="nav nav-sm flex-column">
@@ -293,30 +293,33 @@
                   <li class="nav-item">
                     <a href="<?= base_url() ?>student/omsss/medical-services/immunization" class="nav-link"> Immunization </a>
                   </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="#sidebarAppointment" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAppointment">
+                <i class="ri-calendar-event-line"></i>
+                <span>Appointment</span>
+              </a>
+              <div class="collapse menu-dropdown" id="sidebarAppointment">
+                <ul class="nav nav-sm flex-column">
                   <li class="nav-item">
                     <a href="<?= base_url() ?>student/omsss/medical-services/medical-consultation" class="nav-link"> Medical Consultation </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url() ?>student/omsss/dentist-services" class="nav-link"> Dental Consultation</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url() ?>student/omsss/guidance-services" class="nav-link"> Guidance Consultation </a>
                   </li>
                 </ul>
               </div>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>student/omsss/dentist-services">
-                <i class="mdi mdi-tooth-outline"></i>
-                <span>Dental Services</span>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>student/omsss/guidance-services">
-                <i class="mdi mdi-brain"></i>
-                <span>Guidance Services</span>
-              </a>
-            </li>
-
-            <li class="nav-item">
               <a class="nav-link menu-link" href="#sidebarMedical" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMedical">
-                <i class="mdi mdi-pill"></i>
+                <i class=" ri-refresh-line"></i>
                 <span>  Log and Contact OMSSS </span>
               </a>
               <div class="collapse menu-dropdown" id="sidebarMedical">

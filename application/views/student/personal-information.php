@@ -62,41 +62,44 @@
 								<div class="col-lg-6">
 									<div class="mb-3">
 										<label for="firstnameInput" class="form-label">First Name</label>
-										<input type="text" class="form-control" id="firstnameInput" placeholder="Enter your firstname" value="Grace" />
+										<input type="text" class="form-control" id="ValidationCustom01" placeholder="Enter your firstname" value="" required >
+										<div class="valid-feedback"></div>
 									</div>
 								</div>
 								<!--end col-->
 								<div class="col-lg-6">
 									<div class="mb-3">
 										<label for="lastnameInput" class="form-label">Last Name</label>
-										<input type="text" class="form-control" id="lastnameInput" placeholder="Enter your lastname" value="Coles" />
+										<input type="text" class="form-control" id="ValidationCustom02" placeholder="Enter your lastname" value="" required>
+										<div class="valid-feedback"></div>
 									</div>
 								</div>
 								<!--end col-->
-								<div class="col-lg-6">
-									<div class="mb-3">
-										<label for="sexInput" class="form-label">Sex</label>
-										<input type="text" class="form-control" id="sexInput" placeholder="Enter your Sex" value="Female" />
-									</div>
+								<div class="col-lg-3">
+								<div class="mb-3">
+                    <label for="ForminputDoctor" class="form-label">Sex</label>
+                    <select class="form-select" id="ValidationCustom03" required>
+                          <option selected disabled value="">Choose...</option>
+                          <option>Female</option>
+                          <option>Male</option>
+                    </select>
+										<div class="invalid-feedback">Please select a valid information.</div>
+                  </div>
 								</div>
 								<!--end col-->
-								<div class="col-lg-6">
+								<div class="col-lg-3">
 									<div class="mb-3">
 										<label for="ageInput" class="form-label">Age</label>
-										<input type="text" class="form-control" id="ageInput" placeholder="Enter your Age" value="21" />
+										<input type="text" class="form-control" id="ValidationCustom05" placeholder="Enter your Age" value="" required >
+										<div class="invalid-feedback">Please enter age.</div>
 									</div>
 								</div>
+								<!--end col-->
 								<div class="col-lg-6">
-								<div class="mb-3">
-                                    <label for="ForminputDoctor" class="form-label">Religion</label>
-                                    <select id="ForminputDoctor" class="form-select">
-                                        <option selected>Choose...</option>
-                                        <option>Roman Catholic</option>
-                                        <option>Christian</option>
-                                        <option>Muslim</option>
-                                        <option>Iglesia Ni Cristo</option>
-                                    </select>
-                                </div>
+									<div class="mb-3">
+										<label for="phonenumberInput" class="form-label">Phone Number</label>
+										<input type="text" class="form-control" id="phonenumberInput" placeholder="Enter your phone number" value="09123456789" />
+									</div>
 								</div>
 								<!--end col-->
 								<div class="col-lg-6">
@@ -113,14 +116,20 @@
 									</div>
 								</div>
 								<!--end col-->
-								<div class="col-lg-6">
-									<div class="mb-3">
-										<label for="phonenumberInput" class="form-label">Phone Number</label>
-										<input type="text" class="form-control" id="phonenumberInput" placeholder="Enter your phone number" value="09123456789" />
-									</div>
+								<div class="col-lg-5">
+								<div class="mb-3">
+                    <label for="ForminputDoctor" class="form-label">Religion</label>
+                    <select id="ForminputDoctor" class="form-select">
+                          <option selected>Choose...</option>
+                          <option>Roman Catholic</option>
+                          <option>Christian</option>
+                          <option>Muslim</option>
+                          <option>Iglesia Ni Cristo</option>
+                    </select>
+                  </div>
 								</div>
 								<!--end col-->
-								<div class="col-lg-6">
+								<div class="col-lg-7">
 									<div class="mb-3">
 										<label for="emailInput" class="form-label">Email Address</label>
 										<input type="email" class="form-control" id="emailInput" placeholder="Enter your email" value="bladejatzas@iskolarngbayan.pup.edu.ph" />
@@ -203,6 +212,20 @@
 											<div class="mb-3">
 												<label for="contactaddressInput" class="form-label">Address</label>
 												<input type="text" class="form-control" id="contactaddressInput" placeholder="Enter Address" value="" />
+											</div>
+										</div>
+										<!--end col-->
+										<br></br>
+										<h5 class="mb-3 text-primary"> PhilHealth Information</h5>
+										<div class="col-lg-6">
+										<div class="mb-4">
+												<label for="philHealthInput" class="form-label">PhilHealth No.</label>
+												<input type="text" class="form-control" id="PhilHealthInput" placeholder="If none, please leave it blank" value="" />
+												<br></br>
+												<h6>Upload PhilHealth ID / Member Data Record (MDR)</h6>
+											<div>
+    										<input class="form-control form-control-sm" id="formFileSm" type="file">
+												</div>
 											</div>
 										</div>
 										<!--end col-->

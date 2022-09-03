@@ -139,23 +139,20 @@ $route['student/appointments/guidance-appointment'] = 'student/guidance_appointm
 | --------------
 */
 
-// Medical Services
+// Health Information
 $route['student/omsss/medical-services/personal-info'] = 'student/personal_information';
 $route['student/omsss/medical-services/health-history'] = 'student/health_history';
 $route['student/omsss/medical-services/immunization'] = 'student/immunization';
+
+
+
+// Appointment
 $route['student/omsss/medical-services/medical-consultation'] = 'student/medical_consultation';
-
-
-// Dental Services
 $route['student/omsss/dentist-services'] = 'student/dental_consultation';
-
-// Guidance Services
 $route['student/omsss/guidance-services'] = 'student/guidance_consultation';
 
-// Medical Logs
+// Logs and Contact OMSSS
 $route['student/omsss/medical-logs'] = 'student/medical_logs';
-
-// Contact OMSSS
 $route['student/omsss/contact-omsss'] = 'student/contact_omsss';
 
 
