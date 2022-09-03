@@ -45,104 +45,14 @@
 
             <li class="menu-title">
               <i class="ri-more-fill"></i>
-              <span>Academic</span>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link menu-link" href="#sidebarAuth" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAuth">
-                <i class="bx bxs-graduation"></i>
-                <span>Enrollment</span>
-              </a>
-              <div class="collapse menu-dropdown" id="sidebarAuth">
-                <ul class="nav nav-sm flex-column">
-                  <li class="nav-item">
-                    <a class="nav-link">
-                      Enroll Now
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#sidebarSignUp" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarSignUp">
-                      Change of Enrollment
-                    </a>
-                    <div class="collapse menu-dropdown" id="sidebarSignUp">
-                      <ul class="nav nav-sm flex-column">
-                        <li class="nav-item">
-                          <a href="auth-signup-basic.html" class="nav-link">
-                            Add Subject
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="auth-signup-cover.html" class="nav-link">
-                            Change Subject / Section
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link">
-                            Drop Subject
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-
-                  <li class="nav-item">
-                    <a class="nav-link">
-                      Request for Petition Subject
-                    </a>
-                  </li>
-
-                  <li class="nav-item">
-                    <a class="nav-link">
-                      Course Offering
-                    </a>
-                  </li>
-
-                  <li class="nav-item">
-                    <a class="nav-link">
-                      Registration Certificate
-                    </a>
-                  </li>
-
-                  <li class="nav-item">
-                    <a class="nav-link">
-                      Opt-Out Waiver
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link menu-link">
-                <i class="ri-file-list-3-line"></i>
-                <span>Statement of Accounts</span>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link menu-link">
-                <i class="bx bx-book-bookmark"></i>
-                <span>Schedule</span>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link menu-link">
-                <i class="mdi mdi-format-annotation-plus"></i>
-                <span>Grades</span>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link menu-link">
-                <i class="ri-survey-line"></i>
-                <span>Forms</span>
-              </a>
-            </li>
-
-            <li class="menu-title">
-              <i class="ri-more-fill"></i>
               <span>Online Services</span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link">
+                <i class="bx bxs-graduation"></i>
+                <span>PUP SIS</span>
+              </a>
             </li>
 
             <li class="nav-item">
@@ -168,15 +78,8 @@
 
             <li class="nav-item">
               <a class="nav-link menu-link">
-                <i class="ri-honour-line"></i>
-                <span>Scholarships</span>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link menu-link" href="widgets.html">
                 <i class="ri-hand-coin-line"></i>
-                <span>Financial Assistance</span>
+                <span>Scholarships</span>
               </a>
             </li>
 
@@ -202,20 +105,6 @@
                   </li>
                 </ul>
               </div>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link menu-link" href="widgets.html">
-                <i class="mdi mdi-flask"></i>
-                <span>Facilities</span>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link menu-link" href="widgets.html">
-                <i class="mdi mdi-office-building-cog-outline"></i>
-                <span>Venues</span>
-              </a>
             </li>
 
             <li class="nav-item">
@@ -246,6 +135,32 @@
               <a class="nav-link menu-link">
                 <i class="ri-question-answer-line"></i>
                 <span>HelpDesk</span>
+              </a>
+            </li>
+
+            <li class="menu-title">
+              <i class="ri-more-fill"></i>
+              <span>Venue Management System</span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="widgets.html">
+                <i class="bx bxs-school"></i>
+                <span>Reserve Venue</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="widgets.html">
+                <i class="ri-reserved-line"></i>
+                <span>View Reservations</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="widgets.html">
+                <i class="bx bx-history"></i>
+                <span>Reservation History</span>
               </a>
             </li>
 
