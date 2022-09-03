@@ -45,14 +45,104 @@
 
             <li class="menu-title">
               <i class="ri-more-fill"></i>
-              <span>Online Services</span>
+              <span>Academic</span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="#sidebarAuth" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAuth">
+                <i class="bx bxs-graduation"></i>
+                <span>Enrollment</span>
+              </a>
+              <div class="collapse menu-dropdown" id="sidebarAuth">
+                <ul class="nav nav-sm flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link">
+                      Enroll Now
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#sidebarSignUp" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarSignUp">
+                      Change of Enrollment
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarSignUp">
+                      <ul class="nav nav-sm flex-column">
+                        <li class="nav-item">
+                          <a href="auth-signup-basic.html" class="nav-link">
+                            Add Subject
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="auth-signup-cover.html" class="nav-link">
+                            Change Subject / Section
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link">
+                            Drop Subject
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link">
+                      Request for Petition Subject
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link">
+                      Course Offering
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link">
+                      Registration Certificate
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link">
+                      Opt-Out Waiver
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </li>
 
             <li class="nav-item">
               <a class="nav-link menu-link">
-                <i class="bx bxs-graduation"></i>
-                <span>PUP SIS</span>
+                <i class="ri-file-list-3-line"></i>
+                <span>Statement of Accounts</span>
               </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link">
+                <i class="bx bx-book-bookmark"></i>
+                <span>Schedule</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link">
+                <i class="mdi mdi-format-annotation-plus"></i>
+                <span>Grades</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link">
+                <i class="ri-survey-line"></i>
+                <span>Forms</span>
+              </a>
+            </li>
+
+            <li class="menu-title">
+              <i class="ri-more-fill"></i>
+              <span>Online Services</span>
             </li>
 
             <li class="nav-item">
@@ -80,9 +170,36 @@
             </li>
 
             <li class="nav-item">
+              <a class="nav-link menu-link" href="#sidebarAdvanceUI" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAdvanceUI">
+                <i class="mdi mdi-file-document-multiple-outline"></i>
+                <span>Document Request</span>
+              </a>
+              <div class="collapse menu-dropdown" id="sidebarAdvanceUI">
+                <ul class="nav nav-sm flex-column">
+                  <li class="nav-item">
+                    <a href="advance-ui-sweetalerts.html" class="nav-link">Request a Document</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="advance-ui-scrollbar.html" class="nav-link">Requests List</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="advance-ui-animation.html" class="nav-link">Track Document Request</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item">
               <a class="nav-link menu-link">
-                <i class="ri-hand-coin-line"></i>
+                <i class="ri-honour-line"></i>
                 <span>Scholarships</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="widgets.html">
+                <i class="ri-hand-coin-line"></i>
+                <span>Financial Assistance</span>
               </a>
             </li>
 
@@ -112,7 +229,21 @@
 
             <li class="nav-item">
               <a class="nav-link menu-link" href="widgets.html">
-                <i class="mdi mdi-account-group-outline"></i>
+                <i class="mdi mdi-flask"></i>
+                <span>Facilities</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="widgets.html">
+                <i class="mdi mdi-office-building-cog-outline"></i>
+                <span>Venues</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="widgets.html">
+                <i class="ri-hand-coin-line"></i>
                 <span>Organizations</span>
               </a>
             </li>
@@ -136,60 +267,8 @@
 
             <li class="nav-item">
               <a class="nav-link menu-link">
-                <i class="ri-question-answer-line"></i>
+                <i class="mdi mdi-account-supervisor-outline"></i>
                 <span>HelpDesk</span>
-              </a>
-            </li>
-
-            <li class="menu-title">
-              <i class="ri-more-fill"></i>
-              <span>Venue Management System</span>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link menu-link" href="widgets.html">
-                <i class="bx bxs-school"></i>
-                <span>Reserve Venue</span>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link menu-link" href="widgets.html">
-                <i class="ri-reserved-line"></i>
-                <span>View Reservations</span>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link menu-link" href="widgets.html">
-                <i class="bx bx-history"></i>
-                <span>Reservation History</span>
-              </a>
-            </li>
-
-            <li class="menu-title">
-              <i class="ri-more-fill"></i>
-              <span>Document Request</span>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>student/odrs/new-request">
-                <i class="ri-file-add-line"></i>
-                <span>New Request</span>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>student/odrs/requests">
-                <i class="ri-file-copy-2-line"></i>
-                <span>Requests</span>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>student/odrs/transactions">
-                <i class="mdi mdi-archive-clock-outline"></i>
-                <span>Transactions</span>
               </a>
             </li>
 
@@ -233,6 +312,9 @@
                   </li>
                   <li class="nav-item">
                     <a href="<?= base_url() ?>student/omsss/guidance-services" class="nav-link"> Guidance Consultation </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url() ?>student/omsss/medical-prescription" class="nav-link"> Medical Prescription </a>
                   </li>
                 </ul>
               </div>

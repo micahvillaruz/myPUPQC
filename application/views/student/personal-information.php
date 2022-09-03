@@ -63,7 +63,7 @@
 									<div class="mb-3">
 										<label for="firstnameInput" class="form-label">First Name</label>
 										<input type="text" class="form-control" id="ValidationCustom01" placeholder="Enter your firstname" value="" required >
-										<div class="valid-feedback"></div>
+										<div class="invalid-feedback">Missing</div>
 									</div>
 								</div>
 								<!--end col-->
@@ -71,7 +71,7 @@
 									<div class="mb-3">
 										<label for="lastnameInput" class="form-label">Last Name</label>
 										<input type="text" class="form-control" id="ValidationCustom02" placeholder="Enter your lastname" value="" required>
-										<div class="valid-feedback"></div>
+										<div class="valid-feedback">Seems alright</div>
 									</div>
 								</div>
 								<!--end col-->
@@ -118,7 +118,7 @@
 								<!--end col-->
 								<div class="col-lg-5">
 								<div class="mb-3">
-                    <label for="ForminputDoctor" class="form-label">Religion</label>
+                    <label for="ForminputDoctor" class="form-label" required>Religion</label>
                     <select id="ForminputDoctor" class="form-select">
                           <option selected>Choose...</option>
                           <option>Roman Catholic</option>
@@ -132,14 +132,14 @@
 								<div class="col-lg-7">
 									<div class="mb-3">
 										<label for="emailInput" class="form-label">Email Address</label>
-										<input type="email" class="form-control" id="emailInput" placeholder="Enter your email" value="bladejatzas@iskolarngbayan.pup.edu.ph" />
+										<input type="email" class="form-control" id="emailInput" placeholder="Enter your email" value="bladejatzas@iskolarngbayan.pup.edu.ph" required />
 									</div>
 								</div>
 								<!--end col-->
 								<div class="col-lg-6">
 									<div class="mb-3">
 										<label for="civilstatusInput" class="form-label">Civil Status</label>
-										<input type="text" class="form-control" id="civilstatusInput" placeholder="Enter your civil status" value="Single" />
+										<input type="text" class="form-control" id="civilstatusInput" placeholder="Enter your civil status" value="Single"  />
 									</div>
 								</div>
 								<!--end col-->
@@ -152,8 +152,8 @@
 								<!--end col-->
 								<div class="col-lg-12">
 									<div class="mb-3">
-										<label for="addressInput" class="form-label">Address</label>
-										<input type="text" class="form-control" id="addressInput" placeholder="Enter your address" value="" />
+										<label for="addressInput" class="form-label" >Address</label>
+										<input type="text" class="form-control" id="addressInput" placeholder="Enter your address" value=""required />
 									</div>
 								</div>
 								<!--end col-->
@@ -179,21 +179,21 @@
 										<div class="col-lg-6">
 											<div class="mb-3">
 												<label for="firstnameInput" class="form-label">First Name</label>
-												<input type="text" class="form-control" id="firstnameInput" placeholder="Enter your firstname" value="" />
+												<input type="text" class="form-control" id="firstnameInput" placeholder="Enter your firstname" value="" required />
 											</div>
 										</div>
 										<!--end col-->
 										<div class="col-lg-6">
 											<div class="mb-3">
 												<label for="lastnameInput" class="form-label">Last Name</label>
-												<input type="text" class="form-control" id="lastnameInput" placeholder="Enter your lastname" value="" />
+												<input type="text" class="form-control" id="lastnameInput" placeholder="Enter your lastname" value="" required/>
 											</div>
 										</div>
 										<!--end col-->
 										<div class="col-lg-6">
 										<div class="mb-3">
                                     <label for="ForminputDoctor" class="form-label">Relationship to Contact Person</label>
-                                    <select id="ForminputDoctor" class="form-select">
+                                    <select id="ForminputDoctor" class="form-select" required>
                                         <option selected>Choose...</option>
                                         <option>Parent</option>
                                         <option>Guardian</option>
@@ -204,14 +204,14 @@
 										<div class="col-lg-6">
 											<div class="mb-3">
 												<label for="contactNoInput" class="form-label">Primary Contact No.</label>
-												<input type="text" class="form-control" id="contactNoInput" placeholder="Enter Primary Contact No." value="" />
+												<input type="text" class="form-control" id="contactNoInput" placeholder="Enter Primary Contact No." value="" required />
 											</div>
 										</div>
 										<!--end col-->
 										<div class="col-lg-12">
 											<div class="mb-3">
 												<label for="contactaddressInput" class="form-label">Address</label>
-												<input type="text" class="form-control" id="contactaddressInput" placeholder="Enter Address" value="" />
+												<input type="text" class="form-control" id="contactaddressInput" placeholder="Enter Address" value="" required />
 											</div>
 										</div>
 										<!--end col-->

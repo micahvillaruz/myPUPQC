@@ -156,6 +156,9 @@ $route['student/omsss/medical-services/medical-consultation'] = 'student/medical
 $route['student/omsss/dentist-services'] = 'student/dental_consultation';
 $route['student/omsss/guidance-services'] = 'student/guidance_consultation';
 
+// Medical Prescription
+$route['student/omsss/medical-prescription'] = 'student/medical_prescription';
+
 // Logs and Contact OMSSS
 $route['student/omsss/medical-logs'] = 'student/medical_logs';
 $route['student/omsss/contact-omsss'] = 'student/contact_omsss';

@@ -9,28 +9,28 @@
                             <div class="col-6">
                                 <div class="mb-3">
                                     <label for="firstNameinput" class="form-label">First Name</label>
-                                    <input type="text" class="form-control" placeholder="Enter your firstname" id="firstNameinput">
+                                    <input type="text" class="form-control" placeholder="Enter your firstname" id="firstNameinput" required>
                                 </div>
                             </div>
                             <!--end col-->
                             <div class="col-6">
                                 <div class="mb-3">
                                     <label for="lastNameinput" class="form-label">Last Name</label>
-                                    <input type="text" class="form-control" placeholder="Enter your lastname" id="lastNameinput">
+                                    <input type="text" class="form-control" placeholder="Enter your lastname" id="lastNameinput" required>
                                 </div>
                             </div>
                             <!--end col-->
                             <div class="col-6">
                                 <div class="mb-3">
                                     <label for="contactnumberinput" class="form-label">Contact Number</label>
-                                    <input type="text" class="form-control" placeholder="Enter contact number" id="contactnumberinput">
+                                    <input type="text" class="form-control" placeholder="Enter contact number" id="contactnumberinput" required>
                                 </div>
                             </div>
                             <!--end col-->
                             <div class="col-6">
                                 <div class="mb-3">
                                     <label for="studentnumberInput" class="form-label">Student Number</label>
-                                    <input type="tel" class="form-control" placeholder="Enter student number" id="studentnumberInput">
+                                    <input type="tel" class="form-control" placeholder="Enter student number" id="studentnumberInput" required>
                                 </div>
                             </div>
                             <!--end col-->
@@ -48,7 +48,7 @@
                             <div class="col-4">
                                 <div class="mb-3">
                                     <label for="dateInput" class="form-label">Date</label>
-                                    <input type="date" class="form-control" id="exampleInputdate">
+                                    <input type="date" class="form-control" id="exampleInputdate" required>
                                 </div>
                             </div>
                             <!--end col-->
@@ -71,7 +71,7 @@
                             <div class="col-12">
                                 <div class="mb-3">
                                     <label for="serviceinput" class="form-label">Service</label>
-                                    <input type="text" class="form-control" placeholder="Enter Service Consultation" id="serviceinput">
+                                    <input type="text" class="form-control" placeholder="Enter Service Consultation" id="serviceinput" required>
                                 </div>
                             </div>
                             <!--end col-->
