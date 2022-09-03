@@ -7,6 +7,23 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
       </div>
       <div class="modal-body">
+        <div class="alert alert-info alert-dismissible alert-additional fade show" role="alert">
+          <div class="alert-body">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <div class="d-flex">
+              <div class="flex-shrink-0 me-3">
+                <i class="ri-user-smile-line fs-16 align-middle"></i>
+              </div>
+              <div class="flex-grow-1">
+                <h5 class="alert-heading">Notice!</h5>
+                <p class="mb-0">Submit the requirements needed for the request of this doocument. </p>
+              </div>
+            </div>
+          </div>
+          <div class="alert-content">
+            <p class="mb-0">Upload scanned copy of the requirement/s OR submit hard copy to the Student Records Section - Receiving Window after payment.</p>
+          </div>
+        </div>
         <table id="requirements-datatables" class="display table pt-3" style="width: 100%">
           <thead class="table-light">
             <tr>
@@ -122,7 +139,7 @@
                 <i class="ri-error-warning-line fs-16 align-middle"></i>
               </div>
               <div class="flex-grow-1">
-                <h5 class="alert-heading">Notice!</h5>
+                <h5 class="alert-heading">Warning!</h5>
                 <p class="mb-0">Only requests with complete and validated requirements shall be processed. </p>
               </div>
             </div>
