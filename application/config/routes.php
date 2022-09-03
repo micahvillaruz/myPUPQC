@@ -58,6 +58,7 @@ $route['translate_uri_dashes'] = FALSE;
 | AUTHENTICATION ROUTES
 | -------------------------------------------------------------------------
 */
+
 $route['signin'] = 'auth/signin';
 $route['forgot-password'] = 'auth/forgot_password';
 
@@ -127,12 +128,15 @@ $route['admission'] = 'home/admission';
 | STUDENT ROUTES
 | -------------------------------------------------------------------------
 */
-$route['student/dashboard'] = 'student';
-$route['student/appointments/medical-appointment'] = 'student/medical_appointment';
-$route['student/appointments/dental-appointment'] = 'student/dental_appointment';
-$route['student/appointments/guidance-appointment'] = 'student/guidance_appointment';
 
-// ODRS
+$route['student/dashboard'] = 'student';
+
+/*
+| --------------
+|     ODRS
+| --------------
+*/
+
 $route['student/odrs/new-request'] = 'student/new_request';
 $route['student/odrs/requests'] = 'student/requests';
 $route['student/odrs/transactions'] = 'student/transactions';
@@ -149,40 +153,40 @@ $route['student/omsss/medical-services/personal-info'] = 'student/personal_infor
 $route['student/omsss/medical-services/health-history'] = 'student/health_history';
 $route['student/omsss/medical-services/immunization'] = 'student/immunization';
 
-
-
 // Appointment
 $route['student/omsss/medical-services/medical-consultation'] = 'student/medical_consultation';
 $route['student/omsss/dentist-services'] = 'student/dental_consultation';
 $route['student/omsss/guidance-services'] = 'student/guidance_consultation';
-
-// Medical Prescription
 $route['student/omsss/medical-prescription'] = 'student/medical_prescription';
 
 // Logs and Contact OMSSS
 $route['student/omsss/medical-logs'] = 'student/medical_logs';
 $route['student/omsss/contact-omsss'] = 'student/contact_omsss';
 
-
-// ODRS
-$route['student/odrs/new-request'] = 'student/new_request';
-$route['student/odrs/requests'] = 'student/requests';
-$route['student/odrs/transactions'] = 'student/transactions';
-
-
 /*
 | -------------------------------------------------------------------------
 | SUPER ADMIN ROUTES
 | -------------------------------------------------------------------------
 */
+
 $route['admin/dashboard'] = 'admin';
 
-// User Management
+/*
+| ----------------------
+|     USER MANAGEMENT
+| ----------------------
+*/
+
 $route['admin/user-management/students'] = 'admin/user_students';
 $route['admin/user-management/pup-staffs'] = 'admin/user_pup_staffs';
 $route['admin/user-management/super-admins'] = 'admin/user_super_admins';
 
-// OMSSS
+/*
+| --------------
+|     OMSSS
+| --------------
+*/
+
 $route['admin/omsss/medical-appointment'] = 'admin/medical_appointment';
 $route['admin/omsss/dentist-appointment'] = 'admin/dentist_appointment';
 $route['admin/omsss/guidance-appointment'] = 'admin/guidance_appointment';
