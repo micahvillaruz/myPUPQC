@@ -59,6 +59,8 @@ class Student extends CI_Controller
     $this->load->view('partials/page-title', ["page_title" => "ODRS", "title" => "Transactions"]);
     $this->load->view('student/odrs/transactions');
     $this->load->view('partials/footer');
+    $this->load->view('student/odrs/components/view-transaction-details');
+    $this->load->view('student/odrs/components/view-schedule');
     $this->load->view('student/odrs/components/view-status-flow');
     $this->load->view('partials/foot-scripts');
     $this->load->view('student/odrs/scripts/transactions-scripts');
