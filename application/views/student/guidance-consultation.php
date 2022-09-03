@@ -54,7 +54,7 @@
                             <!--end col-->
                             <div class="col-4">
                                 <div class="mb-3">
-                                    <label for="ForminputService" class="form-label">Service</label>
+                                    <label for="ForminputService" class="form-label">Reason for Consultation</label>
                                     <select id="ForminputService" class="form-select">
                                         <option selected>Choose...</option>
                                         <option>Depression</option>
@@ -70,8 +70,8 @@
                             <!--end col-->
                             <div class="col-6">
                                 <div class="mb-3">
-                                    <label for="otherInput" class="form-label">Other</label>
-                                    <input type="tel" class="form-control" placeholder="Enter other service" id="otherInput">
+                                    <label for="otherInput" class="form-label">Other reasons for Consultation</label>
+                                    <input type="tel" class="form-control" placeholder="Enter reason" id="otherInput">
                                 </div>
                             </div>
                             <!--end col-->

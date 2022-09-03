@@ -70,7 +70,7 @@
                             <!--end col-->
                             <div class="col-6">
                                 <div class="mb-3">
-                                    <label for="ForminputService" class="form-label">Service</label>
+                                    <label for="ForminputService" class="form-label">Reason for Consultation</label>
                                     <select id="ForminputService" class="form-select">
                                         <option selected>Choose...</option>
                                         <option>Cleaning</option>

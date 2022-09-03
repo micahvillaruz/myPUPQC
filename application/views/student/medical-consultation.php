@@ -70,7 +70,7 @@
                             <!--end col-->
                             <div class="col-12">
                                 <div class="mb-3">
-                                    <label for="serviceinput" class="form-label">Service</label>
+                                    <label for="serviceinput" class="form-label">Reason for Consultation</label>
                                     <input type="text" class="form-control" placeholder="Enter Service Consultation" id="serviceinput" required>
                                 </div>
                             </div>
