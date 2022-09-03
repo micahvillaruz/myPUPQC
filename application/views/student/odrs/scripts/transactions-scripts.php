@@ -11,6 +11,12 @@
 
 		<script src="<?= base_url() ?>public/js/pages/datatables.init.js"></script>
 
+		<!-- Modern colorpicker bundle -->
+		<script src="<?= base_url() ?>public/libs/@simonwep/pickr/pickr.min.js"></script>
+
+		<!-- init js -->
+		<script src="<?= base_url() ?>public/js/pages/form-pickers.init.js"></script>
+
 		<!-- App js -->
 		<script src="<?= base_url() ?>public/js/app.js"></script>
 		</body>

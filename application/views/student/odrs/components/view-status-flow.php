@@ -1,5 +1,5 @@
 <div id="viewProcessStatusFlow" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title text-primary" id="myModalLabel">Process Status Flow</h5>
@@ -64,7 +64,7 @@
       </div>
       <div class="modal-footer">
         <div class="hstack flex-wrap gap-2 mb-3 mb-lg-0">
-          <button type="button" class="btn btn-primary btn-animation waves-effect waves-light" data-text="Close"><span>Close</span></button>
+          <button type="button" class="btn btn-primary btn-animation waves-effect waves-light" data-bs-dismiss="modal" data-text="Close"><span>Close</span></button>
         </div>
 
       </div><!-- /.modal-content -->
