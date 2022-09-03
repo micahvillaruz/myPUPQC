@@ -71,7 +71,7 @@
                             <div class="col-12">
                                 <div class="mb-3">
                                     <label for="serviceinput" class="form-label">Reason for Consultation</label>
-                                    <input type="text" class="form-control" placeholder="Enter Service Consultation" id="serviceinput" required>
+                                    <input type="text" class="form-control" placeholder="Enter reason for consultation" id="serviceinput" required>
                                 </div>
                             </div>
                             <!--end col-->

@@ -71,7 +71,7 @@
                             <div class="col-6">
                                 <div class="mb-3">
                                     <label for="otherInput" class="form-label">Other reasons for Consultation</label>
-                                    <input type="tel" class="form-control" placeholder="Enter reason" id="otherInput">
+                                    <input type="tel" class="form-control" placeholder="Enter other reason" id="otherInput">
                                 </div>
                             </div>
                             <!--end col-->
