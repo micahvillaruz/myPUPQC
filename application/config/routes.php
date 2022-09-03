@@ -132,6 +132,11 @@ $route['student/appointments/medical-appointment'] = 'student/medical_appointmen
 $route['student/appointments/dental-appointment'] = 'student/dental_appointment';
 $route['student/appointments/guidance-appointment'] = 'student/guidance_appointment';
 
+// ODRS
+$route['student/odrs/new-request'] = 'student/new_request';
+$route['student/odrs/requests'] = 'student/requests';
+$route['student/odrs/transactions'] = 'student/transactions';
+
 
 /*
 | --------------
