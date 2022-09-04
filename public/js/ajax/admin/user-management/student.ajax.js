@@ -3,9 +3,10 @@ $(function () {
 		e.preventDefault() // prevent page refresh
 		enrollStudent()
 	})
+	loadStudentTable()
 })
 
-var enrollStudent = () => {
+enrollStudent = () => {
 	// Enroll Student
 	if ($('#enrollStudentForm')[0].checkValidity()) {
 		// no validation error
@@ -60,6 +61,103 @@ var enrollStudent = () => {
 				buttonsStyling: !1,
 				showCloseButton: !0,
 			})
+		})
+	}
+}
+
+loadStudentTable = () => {
+	const dt = $('#students-datatable')
+
+	$.ajaxSetup({
+		headers: {
+			Accept: 'application/json',
+			Authorization: 'Bearer ' + TOKEN,
+			ContentType: 'application/x-www-form-urlencoded',
+		},
+	})
+
+	if (dt.length) {
+		dt.DataTable({
+			ajax: {
+				url: apiURL + 'super_admin/student/',
+				type: 'GET',
+				ContentType: 'application/x-www-form-urlencoded',
+			},
+			columns: [
+				// Customer No.
+				{
+					data: null,
+					render: (data) => {
+						const userNo = data.user_no
+						return `${userNo}`
+					},
+				},
+
+				// Full Name
+				{
+					data: null,
+					render: (data) => {
+						const fullName = data.user_profiles.full_name
+
+						return `${fullName}`
+					},
+				},
+
+				// Address
+				{
+					data: null,
+					render: (data) => {
+						const address = data.user_profiles.house_street
+						return `${address}`
+					},
+				},
+
+				// Birthday
+				{
+					data: null,
+					render: (data) => {
+						const birth_date = data.user_profiles.birth_date
+
+						return `${birth_date}`
+					},
+				},
+
+				// Contact Number
+				{
+					data: null,
+					render: (data) => {
+						const contact_number = data.user_profiles.contact_number
+
+						return `${contact_number}`
+					},
+				},
+
+				// Status
+				{
+					data: null,
+					render: (data) => {
+						return data.is_blacklist
+							? `<span class="badge rounded-pill bg-danger">Inactive</span>`
+							: `<span class="badge rounded-pill bg-success">Active</span>`
+					},
+				},
+
+				//Action
+				{
+					data: null,
+					class: 'text-center',
+					render: (data) => {
+						return `
+						<div class="dropdown d-inline-block">
+						<button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill"></i></button>
+						<button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editStudentModal"><i class="ri-edit-2-fill"></i></button>
+						<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="ri-delete-bin-5-fill"></i></button>
+					</div>
+						`
+					},
+				},
+			],
+			order: [[0, 'asc']],
 		})
 	}
 }
