@@ -1,6 +1,6 @@
 <!-- Add Student modal -->
 <div id="addStudentModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content border-0 overflow-hidden">
       <div class="modal-header p-3">
         <h4 class="card-title mb-0">Enroll Student Form</h4>
@@ -12,7 +12,7 @@
           <div class="mb-3">
             <div class="text-center">
               <div class="profile-user position-relative d-inline-block mx-auto mb-2">
-                <img src="../../public/images/users/user-dummy-img.jpg" class="rounded-circle avatar-lg img-thumbnail user-profile-image" alt="user-profile-image" />
+                <img src="<?= base_url() ?>public/images/users/user-dummy-img.jpg" class="rounded-circle avatar-lg img-thumbnail user-profile-image" alt="user-profile-image" />
                 <div class="avatar-xs p-0 rounded-circle profile-photo-edit">
                   <input id="profile-img-file-input" type="file" class="profile-img-file-input" accept="image/png, image/jpeg" />
                   <label for="profile-img-file-input" class="profile-photo-edit avatar-xs">
@@ -22,7 +22,7 @@
                   </label>
                 </div>
               </div>
-              <h6 class="fs-14">Profile Picture</h5>
+              <h6>Profile Picture</h6>
             </div>
           </div>
           <div class="mb-3">
@@ -61,9 +61,9 @@
             <label for="gender" class="form-label">Gender <span class="text-danger">*</span></label>
             <select class="form-select mb-3" id="gender" name="gender" required>
               <option selected disabled value="">Select Gender</option>
-              <option value="0">Male</option>
-              <option value="1">Female</option>
-              <option value="2">Others</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Others">Others</option>
             </select>
           </div>
           <div class="mb-3">
