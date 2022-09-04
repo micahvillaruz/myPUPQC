@@ -3,58 +3,91 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content border-0 overflow-hidden">
       <div class="modal-header p-3">
-        <h4 class="card-title mb-0">Add Student Form</h4>
+        <h4 class="card-title mb-0">Enroll Student Form</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 
       <div class="modal-body">
-        <form class="needs-validation" novalidate>
+        <form id="enrollStudentForm" class="needs-validation" novalidate>
           <div class="mb-3">
-            <label for="studentNo" class="form-label">Student No.</label>
-            <input type="text" class="form-control" id="studentNo" placeholder="Enter student no" required />
-          </div>
-          <div class="mb-3">
-            <label for="fullName" class="form-label">Name</label>
-            <input type="text" class="form-control" id="fullName" placeholder="Enter name" required />
-          </div>
-          <div class="mb-3">
-            <label for="emailInput" class="form-label">Email Address</label>
-            <div class="input-group">
-              <input class="form-control" id="emailInput" placeholder="Enter email" required />
-              <span class="input-group-text" id="basic-addon2">@iskolarngbayan.pup.edu.ph</span>
+            <div class="text-center">
+              <div class="profile-user position-relative d-inline-block mx-auto mb-2">
+                <img src="../../public/images/users/user-dummy-img.jpg" class="rounded-circle avatar-lg img-thumbnail user-profile-image" alt="user-profile-image" />
+                <div class="avatar-xs p-0 rounded-circle profile-photo-edit">
+                  <input id="profile-img-file-input" type="file" class="profile-img-file-input" accept="image/png, image/jpeg" />
+                  <label for="profile-img-file-input" class="profile-photo-edit avatar-xs">
+                    <span class="avatar-title rounded-circle bg-light text-body">
+                      <i class="ri-camera-fill"></i>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <h6 class="fs-14">Profile Picture</h5>
             </div>
           </div>
           <div class="mb-3">
-            <label for="program" class="form-label">Program</label>
-            <select id="program" class="form-select mb-3" required>
-              <option selected></option>
-              <option value="BBTLEDHE">BBTLEDHE</option>
-              <option value="BSBAHRM">BSBAHRM</option>
-              <option value="BSBA-MM">BSBA-MM</option>
-              <option value="BSENTREP">BSENTREP</option>
-              <option value="BSIT">BSIT</option>
-              <option value="BPAPFM">BPAPFM</option>
-              <option value="DOMTMOM">DOMTMOM</option>
+            <label for="user_no" class="form-label">Student Number <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="user_no" name="user_no" placeholder="Enter Student Number" required />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required />
+          </div>
+          <div class="mb-3">
+            <label for="first_name" class="form-label">First Name <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter First Name" required>
+          </div>
+          <div class="mb-3">
+            <label for="middle_name" class="form-label">Middle Name</label>
+            <input type="text" class="form-control" id="middle_name" name="middle_name" placeholder="Enter Middle Name">
+          </div>
+          <div class="mb-3">
+            <label for="last_name" class="form-label">Last Name <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter Last Name" required>
+          </div>
+          <div class="mb-3">
+            <label for="extension_name" class="form-label">Extension Name</label>
+            <input type="text" class="form-control" id="extension_name" name="extension_name" placeholder="Enter Extension Name" />
+          </div>
+          <div class="mb-3">
+            <label for="contact_number" class="form-label">Contact Number <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="contact_number" name="contact_number" placeholder="Enter Contact Number" required />
+          </div>
+          <div class="mb-3">
+            <label for="birth_date" class="form-label">Birth Date <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="birth_date" name="birth_date" data-provider="flatpickr" data-date-format="d M, Y" placeholder="Pick a Birth Date" required>
+          </div>
+          <div class="mb-3">
+            <label for="gender" class="form-label">Gender <span class="text-danger">*</span></label>
+            <select class="form-select mb-3" id="gender" name="gender" required>
+              <option selected disabled value="">Select Gender</option>
+              <option value="0">Male</option>
+              <option value="1">Female</option>
+              <option value="2">Others</option>
             </select>
           </div>
           <div class="mb-3">
-            <label for="yearSection" class="form-label">Year and Section</label>
-            <input type="text" class="form-control" id="yearSection" placeholder="Enter year and section" required />
+            <label for="house_street" class="form-label">Street <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="house_street" name="house_street" placeholder="Enter Street Number or Street Name" required>
           </div>
           <div class="mb-3">
-            <label for="enrolledDate" class="form-label">Date Enrolled</label>
-            <input id="enrolledDate" type="text" class="form-control" data-provider="flatpickr" data-date-format="d M, Y" placeholder="Pick date">
+            <label for="barangay" class="form-label">Barangay <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="barangay" name="barangay" placeholder="Enter Barangay" required>
           </div>
           <div class="mb-3">
-            <label for="enrollStatus" class="form-label">Enrollment Status</label>
-            <select class="form-select mb-3" id="enrollStatus" required>
-              <option selected></option>
-              <option value="1">Enrolled</option>
-              <option value="0">Not Enrolled</option>
-            </select>
+            <label for="municipality" class="form-label">Municipality <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="municipality" name="municipality" placeholder="Enter Municipality" required>
+          </div>
+          <div class="mb-3">
+            <label for="province" class="form-label">Province <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="province" name="province" placeholder="Enter Province" required>
+          </div>
+          <div class="mb-3">
+            <label for="region" class="form-label">Region <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="region" name="region" placeholder="Enter Region" required>
           </div>
           <div class="text-end">
-            <button type="submit" class="btn btn-primary">Add Student</button>
+            <button type="submit" class="btn btn-primary">Enroll Student</button>
           </div>
         </form>
       </div>
