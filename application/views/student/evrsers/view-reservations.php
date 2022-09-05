@@ -11,10 +11,10 @@
                 <table id="example" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
                     <thead>
                         <tr>
-                            <th>Doctor ID.</th>
-                            <th>Doctor for consultation</th>
-                            <th>Patient</th>
-                            <th>Service</th>
+                            <th>Reservation ID</th>
+                            <th>Event Title</th>
+                            <th>Event Details</th>
+                            <th>Venue</th>
                             <th>Date</th>
                             <th>Time</th>
                             <th>Status</th>
@@ -23,10 +23,10 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>00014414</td>
-                            <td>Dr. Melissa Sarappudin</td>
-                            <td>Shein</td>
-                            <td>Covid</td>
+                            <td>RES-00002</td>
+                            <td>Ligma Webinar</td>
+                            <td>Court</td>
+                            <td>Sponsored by Jhobart M. Xavier-Oxford III.</td>
                             <td>09-01-2022</td>
                             <td>1:00 - 2:00PM</td>
                             <td><span class="badge rounded-pill bg-success">Accept</span></td>
@@ -39,10 +39,10 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>00014414</td>
-                            <td>Dr. Melissa Sarappudin</td>
-                            <td>Shein</td>
-                            <td>Cancer</td>
+                            <td>RES-00003</td>
+                            <td>Mental Health Webinar</td>
+                            <td>Court</td>
+                            <td>Sponsored by Jhobart M. Xavier-Oxford III.</td>
                             <td>09-02-2022</td>
                             <td>2:00 - 3:00PM</td>
                             <td><span class="badge rounded-pill bg-danger">Denied</span></td>
@@ -55,10 +55,10 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>00014414</td>
-                            <td>Dr. Melissa Sarappudin</td>
-                            <td>Shein</td>
-                            <td>Fever</td>
+                            <td>RES-00004</td>
+                            <td>Joe M. Ma Webinar</td>
+                            <td>Chapel</td>
+                            <td>Sponsored by Jhobart M. Xavier-Oxford III.</td>
                             <td>09-03-2022</td>
                             <td>3:00 - 4:00PM</td>
                             <td><span class="badge rounded-pill bg-secondary">Pending</span></td>
@@ -71,10 +71,10 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>00014414</td>
-                            <td>Dr. Melissa Sarappudin</td>
-                            <td>Shein</td>
-                            <td>Diarrhea</td>
+                            <td>RES-00005</td>
+                            <td>CommITS General Assembly</td>
+                            <td>Chapel</td>
+                            <td>Sponsored by Jhobart M. Xavier-Oxford III.</td>
                             <td>09-04-2022</td>
                             <td>4:00 - 5:00PM</td>
                             <td><span class="badge rounded-pill bg-success">Accept</span></td>
@@ -87,10 +87,10 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>00014414</td>
-                            <td>Dr. Melissa Sarappudin</td>
-                            <td>Shein</td>
-                            <td>Allergy</td>
+                            <td>RES-00006</td>
+                            <td>Blockchain Project Expo</td>
+                            <td>Court</td>
+                            <td>Sponsored by Jhobart M. Xavier-Oxford III.</td>
                             <td>09-05-2022</td>
                             <td>10:00 AM - 11:00 AM</td>
                             <td><span class="badge rounded-pill bg-danger">Denied</span></td>
