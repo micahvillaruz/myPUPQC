@@ -108,8 +108,8 @@ loadStudentTable = () => {
 					class: 'text-center',
 					render: (data) => {
 						let activationBtn = data.is_blacklist
-							? '<button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="bx bxs-user-check fs-4"></i></button>'
-							: '<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="bx bxs-user-x fs-4"></i></button>'
+							? `<button type="button" class="btn btn-success btn-icon waves-effect waves-light" onclick="activateStudent('${data.user_id}')"><i class="bx bxs-user-check fs-4"></i></button>`
+							: `<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="deactivateStudent('${data.user_id}')"><i class="bx bxs-user-x fs-4"></i></button>`
 						return `
     <div class="dropdown d-inline-block">
     <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewStudentDetails('${data.user_id}')" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill fs-5"></i></button>
@@ -313,4 +313,156 @@ updateStudentAJAX = (user_id) => {
 			})
 		})
 	}
+}
+
+// Deactive Student
+deactivateStudent = (user_id) => {
+	$.ajaxSetup({
+		headers: {
+			Accept: 'application/json',
+			Authorization: 'Bearer ' + TOKEN,
+			ContentType: 'application/x-www-form-urlencoded',
+		},
+	})
+
+	Swal.fire({
+		html:
+			'<div class="mt-3">' +
+			'<lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f7b84b,secondary:#f06548" style="width:100px;height:100px"></lord-icon>' +
+			'<div class="mt-4 pt-2 fs-15 mx-5">' +
+			'<h4>Are you Sure ?</h4>' +
+			'<p class="text-muted mx-4 mb-0">Are you Sure You want to Deactivate this Student ?</p>' +
+			'</div>' +
+			'</div>',
+		showCancelButton: true,
+		confirmButtonClass: 'btn btn-primary w-xs me-2 mb-1',
+		confirmButtonText: 'Yes, Deactivate It!',
+		cancelButtonClass: 'btn btn-danger w-xs mb-1',
+		buttonsStyling: false,
+		showCloseButton: true,
+	}).then(function (result) {
+		if (result.value) {
+			$.ajax({
+				url: apiURL + 'super_admin/student/deactivate/' + user_id,
+				type: 'DELETE',
+				dataType: 'json',
+				success: (result) => {
+					if (result) {
+						Swal.fire({
+							html:
+								'<div class="mt-3">' +
+								'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
+								'<div class="mt-4 pt-2 fs-15">' +
+								'<h4>Well done !</h4>' +
+								'<p class="text-muted mx-4 mb-0">You have successfully deactivated a student!</p>' +
+								'</div>' +
+								'</div>',
+							showCancelButton: !0,
+							showConfirmButton: !1,
+							cancelButtonClass: 'btn btn-primary w-xs mb-1',
+							cancelButtonText: 'Ok',
+							buttonsStyling: !1,
+							showCloseButton: !0,
+						}).then(function () {
+							// Reload Student Datatable
+							loadStudentTable()
+						})
+					}
+				},
+			}).fail(() => {
+				Swal.fire({
+					html:
+						'<div class="mt-3">' +
+						'<lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon>' +
+						'<div class="mt-4 pt-2 fs-15">' +
+						'<h4>Something went Wrong !</h4>' +
+						'<p class="text-muted mx-4 mb-0">There was an error while deactivating a student. Please try again.</p>' +
+						'</div>' +
+						'</div>',
+					showCancelButton: !0,
+					showConfirmButton: !1,
+					cancelButtonClass: 'btn btn-primary w-xs mb-1',
+					cancelButtonText: 'Dismiss',
+					buttonsStyling: !1,
+					showCloseButton: !0,
+				})
+			})
+		}
+	})
+}
+
+// Activate Student
+activateStudent = (user_id) => {
+	$.ajaxSetup({
+		headers: {
+			Accept: 'application/json',
+			Authorization: 'Bearer ' + TOKEN,
+			ContentType: 'application/x-www-form-urlencoded',
+		},
+	})
+
+	Swal.fire({
+		html:
+			'<div class="mt-3">' +
+			'<lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:100px;height:100px"></lord-icon>' +
+			'<div class="mt-4 pt-2 fs-15 mx-5">' +
+			'<h4>Are you Sure ?</h4>' +
+			'<p class="text-muted mx-4 mb-0">Are you Sure You want to Reactivate this Student ?</p>' +
+			'</div>' +
+			'</div>',
+		showCancelButton: true,
+		confirmButtonClass: 'btn btn-success w-xs me-2 mb-1',
+		confirmButtonText: 'Yes, Reactivate It!',
+		cancelButtonClass: 'btn btn-danger w-xs mb-1',
+		buttonsStyling: false,
+		showCloseButton: true,
+	}).then(function (result) {
+		if (result.value) {
+			$.ajax({
+				url: apiURL + 'super_admin/student/deactivate/' + user_id,
+				type: 'DELETE',
+				dataType: 'json',
+				success: (result) => {
+					if (result) {
+						Swal.fire({
+							html:
+								'<div class="mt-3">' +
+								'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
+								'<div class="mt-4 pt-2 fs-15">' +
+								'<h4>Well done !</h4>' +
+								'<p class="text-muted mx-4 mb-0">You have successfully reactivated a student!</p>' +
+								'</div>' +
+								'</div>',
+							showCancelButton: !0,
+							showConfirmButton: !1,
+							cancelButtonClass: 'btn btn-primary w-xs mb-1',
+							cancelButtonText: 'Ok',
+							buttonsStyling: !1,
+							showCloseButton: !0,
+						}).then(function () {
+							// Reload Student Datatable
+							loadStudentTable()
+						})
+					}
+				},
+			}).fail(() => {
+				Swal.fire({
+					html:
+						'<div class="mt-3">' +
+						'<lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon>' +
+						'<div class="mt-4 pt-2 fs-15">' +
+						'<h4>Something went Wrong !</h4>' +
+						'<p class="text-muted mx-4 mb-0">There was an error while reactivating a student. Please try again.</p>' +
+						'</div>' +
+						'</div>',
+					showCancelButton: !0,
+					showConfirmButton: !1,
+					cancelButtonClass: 'btn btn-primary w-xs mb-1',
+					cancelButtonText: 'Dismiss',
+					buttonsStyling: !1,
+					showCloseButton: !0,
+				})
+			})
+		}
+	})
 }

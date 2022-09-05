@@ -193,4 +193,46 @@ class Student extends CI_Controller
     $this->load->view('student/omsss/components/modals/contact-omsss-modal');
     $this->load->view('student/omsss/log-and-contact-omsss/scripts/contact-omsss-scripts');
   }
+
+  public function new_reservation()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/student/topbar');
+    $this->load->view('partials/student/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "New Reservation"]);
+    $this->load->view('student/evrsers/new-reservation');
+    $this->load->view('partials/footer');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('student/evrsers/scripts/new-reservation-scripts');
+  }
+
+  public function view_reservations()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/student/topbar');
+    $this->load->view('partials/student/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "View Reservations"]);
+    $this->load->view('student/evrsers/view-reservations');
+    $this->load->view('partials/footer');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('student/evrsers/scripts/reservations-scripts');
+  }
+
+  public function reservation_history()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/student/topbar');
+    $this->load->view('partials/student/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "View Reservation History"]);
+    $this->load->view('student/evrsers/view-reservations');
+    $this->load->view('partials/footer');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('student/evrsers/scripts/reservations-scripts');
+  }
 }
