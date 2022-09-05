@@ -1,5 +1,5 @@
 <p align="right">
-  <input type="button" class="btn btn-primary" value="New Medical Case">
+  <input data-bs-target="#addDentalConsultationModal" data-bs-toggle="modal" type="button" class="btn btn-primary" value="New Dental Case">
 </p>
 <div class="row text-muted">
     <div>
