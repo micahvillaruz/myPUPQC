@@ -201,6 +201,10 @@ enrollStudent = () => {
 						showCloseButton: !0,
 					}).then(function () {
 						$('#addStudentModal').modal('hide')
+						$('form#enrollStudentForm')[0].reset()
+
+						// Reload Student Datatable
+						loadStudentTable()
 					})
 				}
 			},

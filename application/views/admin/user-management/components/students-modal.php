@@ -55,7 +55,7 @@
           </div>
           <div class="mb-3">
             <label for="birth_date" class="form-label">Birth Date <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="birth_date" name="birth_date" data-provider="flatpickr" data-date-format="d M, Y" placeholder="Pick a Birth Date" required>
+            <input type="text" class="form-control" id="birth_date" name="birth_date" data-provider="flatpickr" data-date-format="F j, Y" placeholder="Pick a Birth Date" required>
           </div>
           <div class="mb-3">
             <label for="gender" class="form-label">Gender <span class="text-danger">*</span></label>
