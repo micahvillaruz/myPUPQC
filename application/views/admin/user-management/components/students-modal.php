@@ -113,11 +113,8 @@
             <!-- end list item -->
             <li class="list-group-item">
               <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">Student No</a></h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">2020-18543-CM-0</div>
+                <div class="profile-user position-relative d-inline-block mx-auto mb-2">
+                  <img src="<?= base_url() ?>public/images/users/user-dummy-img.jpg" class="rounded-circle avatar-lg img-thumbnail user-profile-image" alt="user-profile-image" />
                 </div>
               </div>
             </li>
@@ -125,10 +122,10 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">Name</a></h5>
+                  <h5 class="fs-13 mb-1 fw-medium">Student No</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">Mary Rucker</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_student_no"></div>
                 </div>
               </div>
             </li>
@@ -136,10 +133,10 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1">Email Address</h5>
+                  <h5 class="fs-13 mb-1 fw-medium">Name</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">eykalutinx2@iskolarngbayan.pup.edu.ph</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_student_name"></div>
                 </div>
               </div>
             </li>
@@ -147,10 +144,10 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1">Program</h5>
+                  <h5 class="fs-13 mb-1">Full Address</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">BPAPFM</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_full_address"></div>
                 </div>
               </div>
             </li>
@@ -158,10 +155,10 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1">Year and Section</h5>
+                  <h5 class="fs-13 mb-1">Gender</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">2-2</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_gender"></div>
                 </div>
               </div>
             </li>
@@ -169,12 +166,10 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1">Date Enrolled</h5>
+                  <h5 class="fs-13 mb-1">Birthday</h5>
                 </div>
                 <div class="col-8">
-                  <div class="fw-medium">
-                    <span>14 Aug, 2021</span>
-                  </div>
+                  <div class="d-flex fs-13 fw-medium" id="view_bday"></div>
                 </div>
               </div>
             </li>
@@ -182,10 +177,10 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">Enrollment Status</a></h5>
+                  <h5 class="fs-13 mb-1">Contact Number</h5>
                 </div>
                 <div class="col-8">
-                  <span class="fs-12 badge rounded-pill bg-success">Enrolled</span>
+                  <div class="d-flex fs-13 fw-medium" id="view_contact_no"></div>
                 </div>
               </div>
             </li>
@@ -193,10 +188,9 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">Status</a></h5>
+                  <h5 class="fs-13 mb-1 fw-medium">Status</h5>
                 </div>
-                <div class="col-8">
-                  <span class="fs-12 badge rounded-pill bg-success">Active</span>
+                <div class="col-8" id="view_status">
                 </div>
               </div>
             </li>

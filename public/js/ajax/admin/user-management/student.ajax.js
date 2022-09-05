@@ -11,10 +11,10 @@ $(function () {
 
 		// pass data to API for updating of student's info
 		updateStudentAJAX($('#edit_user_id').val())
-		console.log($('#edit_user_id').val())
 	})
 })
 
+// Load datatables
 loadStudentTable = () => {
 	const dt = $('#students-datatable')
 
@@ -76,7 +76,7 @@ loadStudentTable = () => {
 				{
 					data: null,
 					render: (data) => {
-						const birth_date = data.user_profiles.birth_date
+						const birth_date = moment(data.user_profiles.birth_date).format('LL')
 
 						return `${birth_date}`
 					},
@@ -107,19 +107,56 @@ loadStudentTable = () => {
 					data: null,
 					class: 'text-center',
 					render: (data) => {
+						let activationBtn = data.is_blacklist
+							? '<button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="bx bxs-user-check fs-4"></i></button>'
+							: '<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="bx bxs-user-x fs-4"></i></button>'
 						return `
-						<div class="dropdown d-inline-block">
-						<button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill"></i></button>
-						<button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#updateStudentModal" onclick = "editStudentDetails('${data.user_id}')"><i class="ri-edit-2-fill"></i></button>
-						<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteStudentModal"><i class="ri-delete-bin-5-fill"></i></button>
-					</div>
-						`
+    <div class="dropdown d-inline-block">
+    <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewStudentDetails('${data.user_id}')" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill fs-5"></i></button>
+    <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#updateStudentModal" onclick = "editStudentDetails('${data.user_id}')"><i class="ri-edit-2-fill fs-5"></i></button>
+    ${activationBtn}
+  </div>
+    `
 					},
 				},
 			],
 			order: [[0, 'asc']],
 		})
 	}
+}
+
+// View Student details
+viewStudentDetails = (user_id) => {
+	$.ajaxSetup({
+		headers: {
+			Accept: 'application/json',
+			Authorization: 'Bearer ' + TOKEN,
+			ContentType: 'application/x-www-form-urlencoded',
+		},
+	})
+
+	$.ajax({
+		type: 'GET',
+		cache: false,
+		url: apiURL + `super_admin/student/${user_id}`,
+		dataType: 'json',
+		success: (result) => {
+			const userData = result.data
+			const userProfileData = result.data.user_profiles
+
+			$('#view_student_no').html(userData.user_no)
+			$('#view_student_name').html(userProfileData.full_name)
+			$('#view_full_address').html(userProfileData.full_address)
+			$('#view_gender').html(userProfileData.gender)
+			$('#view_bday').html(userProfileData.birth_date)
+			$('#view_contact_no').html(userProfileData.contact_number)
+			$('#view_status').html(
+				userData.is_blacklist
+					? '<span class="fs-12 badge rounded-pill bg-danger" >Inactive</span>'
+					: '<span class="fs-12 badge rounded-pill bg-success" >Active</span>',
+			)
+		},
+	})
 }
 
 enrollStudent = () => {
@@ -145,8 +182,6 @@ enrollStudent = () => {
 			province: form.get('province'),
 			region: form.get('region'),
 		}
-
-		console.log(gender)
 
 		$.ajax({
 			url: apiURL + 'super_admin/student/add',
@@ -193,7 +228,6 @@ getStudent = (user_id) => {
 				// Get data from result
 				const data = result.data
 				// $('#edit_image').val(data.user_profiles.image)
-				$('#edit_user_id').val(data.user_id)
 				$('#stud_num').val(data.user_no)
 				$('#stud_num').prop('disabled', true)
 
