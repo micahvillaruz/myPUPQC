@@ -75,7 +75,7 @@ class Student extends CI_Controller
     $this->load->view('partials/student/sidebar');
     $this->load->view('partials/page-title', ["page_title" => "Medical Services", "title" => "Personal Information"]);
     $this->load->view('student/omsss/health-information/personal-information');
-    $this->load->view('partials/footer');
+    $this->load->view('student/omsss/health-information/footer/health-information-footer');
     $this->load->view('partials/foot-scripts');
     $this->load->view('student/omsss/health-information/scripts/personal-information-scripts');
   }
@@ -103,7 +103,7 @@ class Student extends CI_Controller
     $this->load->view('partials/student/sidebar');
     $this->load->view('partials/page-title', ["page_title" => "Medical Services", "title" => "Immunization: Protect against viruses"]);
     $this->load->view('student/omsss/health-information/immunization');
-    $this->load->view('partials/footer');
+    $this->load->view('student/omsss/health-information/footer/immunization-footer');
     $this->load->view('partials/foot-scripts');
     $this->load->view('student/omsss/components/modals/immunization-modal');
     $this->load->view('student/omsss/health-information/scripts/immunization-scripts');
@@ -118,8 +118,9 @@ class Student extends CI_Controller
     $this->load->view('partials/student/sidebar');
     $this->load->view('partials/page-title', ["page_title" => "Medical Services", "title" => "Medical Consultation"]);
     $this->load->view('student/omsss/appointment/medical-consultation');
-    $this->load->view('partials/footer');
+    $this->load->view('student/omsss/appointment/footer/medical-consultation-footer');
     $this->load->view('partials/foot-scripts');
+    $this->load->view('student/omsss/components/modals/medical-consultation-modal');
     $this->load->view('student/omsss/appointment/scripts/medical-consultation-scripts');
   }
 
@@ -132,8 +133,9 @@ class Student extends CI_Controller
     $this->load->view('partials/student/sidebar');
     $this->load->view('partials/page-title', ["page_title" => "Dental Services", "title" => "Dental Consultation"]);
     $this->load->view('student/omsss/appointment/dental-consultation');
-    $this->load->view('partials/footer');
+    $this->load->view('student/omsss/appointment/footer/dental-consulation-footer');
     $this->load->view('partials/foot-scripts');
+    $this->load->view('student/omsss/components/modals/dental-consultation-modal');
     $this->load->view('student/omsss/appointment/scripts/dental-consultation-scripts');
   }
 
@@ -146,8 +148,10 @@ class Student extends CI_Controller
     $this->load->view('partials/student/sidebar');
     $this->load->view('partials/page-title', ["page_title" => "Guidance Services", "title" => "Guidance Consultation"]);
     $this->load->view('student/omsss/appointment/guidance-consultation');
-    $this->load->view('partials/footer');
+    $this->load->view('student/omsss/appointment/footer/guidance-consultation-footer');
     $this->load->view('partials/foot-scripts');
+    $this->load->view('student/omsss/components/modals/guidance-consultation-modal');
+    $this->load->view('student/omsss/components/modals/guidance-consultation-view-modal');
     $this->load->view('student/omsss/appointment/scripts/guidance-consultation-scripts');
   }
 
@@ -160,7 +164,7 @@ class Student extends CI_Controller
     $this->load->view('partials/student/sidebar');
     $this->load->view('partials/page-title', ["page_title" => "Medical Prescription", "title" => "Prescription"]);
     $this->load->view('student/omsss/appointment/medical_prescription');
-    $this->load->view('partials/footer');
+    $this->load->view('student/omsss/appointment/medical-prescription-footer');
     $this->load->view('partials/foot-scripts');
     $this->load->view('student/omsss/appointment/scripts/medical-prescription-scripts');
   }
@@ -174,7 +178,7 @@ class Student extends CI_Controller
     $this->load->view('partials/student/sidebar');
     $this->load->view('partials/page-title', ["page_title" => "Medical Logs", "title" => "Medical Logs"]);
     $this->load->view('student/omsss/log-and-contact-omsss/medical-logs');
-    $this->load->view('partials/footer');
+    $this->load->view('student/omsss/log-and-contact-omsss/footer/log-and-contact-omsss-footer');
     $this->load->view('partials/foot-scripts');
     $this->load->view('student/omsss/log-and-contact-omsss/scripts/medical-logs-scripts');
   }
