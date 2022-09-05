@@ -329,7 +329,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="pages-profile-settings.html"><span class="badge bg-soft-success text-success mt-1 float-end">New</span><i class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i>
                   <span class="align-middle">Settings</span></a>
-                <a class="dropdown-item" href="auth-logout-basic.html"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i>
+                <a class="dropdown-item" href="<?= base_url() ?>logout"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i>
                   <span class="align-middle" data-key="t-logout">Logout</span></a>
               </div>
             </div>

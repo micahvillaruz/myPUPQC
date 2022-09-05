@@ -35,7 +35,6 @@ class Auth extends CI_Controller
 
   public function signin()
   {
-    $this->session->sess_destroy();
     $this->load->view('partials/main');
     $this->load->view('partials/title-meta');
     $this->load->view('partials/head-css');
@@ -52,5 +51,15 @@ class Auth extends CI_Controller
     $this->load->view('access/forgot-password');
     $this->load->view('partials/foot-scripts');
     $this->load->view('access/scripts/forgot-password-scripts');
+  }
+
+  public function logout()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('access/logout');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('access/scripts/logout-scripts');
   }
 }
