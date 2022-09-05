@@ -247,6 +247,10 @@
             </div>
           </div>
           <div class="mb-3">
+            <label for="stud_num" class="form-label">Student Number <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="stud_num" name="stud_num" required>
+          </div>
+          <div class="mb-3">
             <label for="edit_first_name" class="form-label">First Name <span class="text-danger">*</span></label>
             <input type="text" class="form-control" id="edit_first_name" name="edit_first_name" placeholder="Enter First Name" required>
           </div>
@@ -268,15 +272,15 @@
           </div>
           <div class="mb-3">
             <label for="edit_birth_date" class="form-label">Birth Date <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="edit_birth_date" name="edit_birth_date" data-provider="flatpickr" data-date-format="d M, Y" placeholder="Pick a Birth Date" required>
+            <input type="text" class="form-control" id="edit_birth_date" name="edit_birth_date" data-provider="flatpickr" data-date-format="F j, Y" placeholder="Pick a Birth Date" required>
           </div>
           <div class="mb-3">
             <label for="edit_gender" class="form-label">Gender <span class="text-danger">*</span></label>
             <select class="form-select mb-3" id="edit_gender" name="edit_gender" required>
               <option selected disabled value="">Select Gender</option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-              <option value="Others">Others</option>
+              <option value="MALE">Male</option>
+              <option value="FEMALE">Female</option>
+              <option value="OTHERS">Others</option>
             </select>
           </div>
           <div class="mb-3">

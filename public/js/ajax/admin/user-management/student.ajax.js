@@ -189,16 +189,18 @@ getStudent = (user_id) => {
 			if (result) {
 				// Get data from result
 				const data = result.data
-
-				$('#edit_user_id').val(data.user_id)
 				// $('#edit_image').val(data.user_profiles.image)
-				$('#edit_user_no').val(data.user_no)
+				$('#stud_num').val(data.user_no)
+				$('#stud_num').prop('disabled', true)
+
 				$('#edit_first_name').val(data.user_profiles.first_name)
 				$('#edit_middle_name').val(data.user_profiles.middle_name)
 				$('#edit_last_name').val(data.user_profiles.last_name)
 				$('#edit_extension_name').val(data.user_profiles.extension_name)
 				$('#edit_contact_number').val(data.user_profiles.contact_number)
-				$('#edit_birth_date').val(data.user_profiles.birth_date)
+				const birth_date = data.user_profiles.birth_date
+				let birthDateFormatted = `${moment(birth_date).format('LL')}`
+				$('#edit_birth_date').val(birthDateFormatted)
 				$('#edit_gender').val(data.user_profiles.gender)
 				$('#edit_house_street').val(data.user_profiles.house_street)
 				$('#edit_barangay').val(data.user_profiles.barangay)
