@@ -46,20 +46,6 @@ class Admin extends CI_Controller
     $this->load->view('partials/foot-scripts');
     $this->load->view('admin/user-management/scripts/pup-staffs-scripts');
   }
-  public function user_super_admins()
-  {
-    $this->load->view('partials/main');
-    $this->load->view('partials/title-meta');
-    $this->load->view('partials/head-css');
-    $this->load->view('partials/admin/topbar');
-    $this->load->view('partials/admin/sidebar');
-    $this->load->view('partials/page-title', ["page_title" => "User Management", "title" => "Super Admin"]);
-    $this->load->view('admin/user-management/super-admins');
-    $this->load->view('partials/footer');
-    $this->load->view('admin/user-management/components/super-admins-modal');
-    $this->load->view('partials/foot-scripts');
-    $this->load->view('admin/user-management/scripts/super-admins-scripts');
-  }
 
   public function medical_appointment()
   {
