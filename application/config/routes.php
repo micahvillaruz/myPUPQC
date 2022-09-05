@@ -190,3 +190,11 @@ $route['admin/user-management/super-admins'] = 'admin/user_super_admins';
 $route['admin/omsss/medical-appointment'] = 'admin/medical_appointment';
 $route['admin/omsss/dentist-appointment'] = 'admin/dentist_appointment';
 $route['admin/omsss/guidance-appointment'] = 'admin/guidance_appointment';
+
+/*
+| -------------------------------------------------------------------------
+| PUP STAFF ROUTES
+| -------------------------------------------------------------------------
+*/
+
+$route['pup-staff/dashboard'] = 'pupstaff';
