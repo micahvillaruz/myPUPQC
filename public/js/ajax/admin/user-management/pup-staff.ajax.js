@@ -1,9 +1,17 @@
 $(function () {
+	loadStaffsTable()
+
 	$('#addPUPStaffForm').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
 		addPUPStaff()
 	})
-	loadStaffsTable()
+
+	$('#updateStaffForm').on('submit', function (e) {
+		e.preventDefault() // prevent page refresh
+
+		// pass data to API for updating of student's info
+		updateStaffAJAX($('#edit_user_id').val())
+	})
 })
 
 addPUPStaff = () => {
@@ -222,6 +230,7 @@ getStaff = (user_id) => {
 				// Get data from result
 				const data = result.data
 				// $('#edit_image').val(data.user_profiles.image)
+				$('#edit_user_id').val(data.user_id)
 				$('#stud_num').val(data.user_no)
 				$('#stud_num').prop('disabled', true)
 
@@ -277,6 +286,7 @@ updateStaffAJAX = (user_id) => {
 			dataType: 'json',
 			headers: AJAX_HEADERS,
 			success: (result) => {
+				console.log(result)
 				if (result) {
 					Swal.fire({
 						html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully updated a staff!</p></div></div>',
@@ -291,7 +301,7 @@ updateStaffAJAX = (user_id) => {
 						$('#updateStaffModal').modal('hide')
 
 						// Reload Staff Datatable
-						loadStaffTable()
+						loadStaffsTable()
 					})
 				}
 			},

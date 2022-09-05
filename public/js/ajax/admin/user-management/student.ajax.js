@@ -228,6 +228,7 @@ getStudent = (user_id) => {
 				// Get data from result
 				const data = result.data
 				// $('#edit_image').val(data.user_profiles.image)
+				$('#edit_user_id').val(data.user_id)
 				$('#stud_num').val(data.user_no)
 				$('#stud_num').prop('disabled', true)
 
