@@ -47,16 +47,9 @@
               </a>
             </li>
 
-            <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>admin/user-management/super-admins">
-                <i class="las la-user-lock"></i>
-                <span>Super Admins</span>
-              </a>
-            </li>
-
             <li class="menu-title">
               <i class="ri-more-fill"></i>
-              <span>Health and Well-Being</span>
+              <span>OMSSS</span>
             </li>
 
             <li class="nav-item">
