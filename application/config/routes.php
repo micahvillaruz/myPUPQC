@@ -164,6 +164,21 @@ $route['student/omsss/medical-logs'] = 'student/medical_logs';
 $route['student/omsss/contact-omsss'] = 'student/contact_omsss';
 
 /*
+| --------------
+|     EVRSERS
+| --------------
+*/
+
+// If no organizer status
+
+// Apply as Organizer
+
+// Reservations
+$route['student/evrsers/new-reservation'] = 'student/new_reservation';
+$route['student/evrsers/view-reservations'] = 'student/view_reservations';
+$route['student/evrsers/reservation-history'] = 'student/reservation_history';
+
+/*
 | -------------------------------------------------------------------------
 | SUPER ADMIN ROUTES
 | -------------------------------------------------------------------------
