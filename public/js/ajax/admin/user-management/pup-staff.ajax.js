@@ -57,6 +57,8 @@ addPUPStaff = () => {
 					}).then(function () {
 						$('#addStaffModal').modal('hide')
 						$('form#addPUPStaffForm')[0].reset()
+
+						// Reload Staff Datatable
 						loadStaffsTable()
 					})
 				}
