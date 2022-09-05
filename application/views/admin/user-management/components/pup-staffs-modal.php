@@ -209,3 +209,101 @@
   </div>
   <!-- /.modal-dialog -->
 </div>
+
+<!-- Update Staff modal -->
+<div id="updateStaffModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 overflow-hidden">
+      <div class="modal-header p-3">
+        <h4 class="card-title mb-0">Update Staff Form</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <form id="updateStaffForm" class="needs-validation" novalidate>
+          <div class="mb-3">
+            <input type="hidden" id="edit_user_id" name="edit_user_id">
+          </div>
+          <div class="mb-3">
+            <div class="text-center">
+              <div class="profile-user position-relative d-inline-block mx-auto mb-2">
+                <img src="<?= base_url() ?>public/images/users/user-dummy-img.jpg" class="rounded-circle avatar-lg img-thumbnail user-profile-image" alt="user-profile-image" />
+                <div class="avatar-xs p-0 rounded-circle profile-photo-edit">
+                  <input id="edit_image" name="edit_image" type="file" class="profile-img-file-input" accept="image/png, image/jpeg" />
+                  <label for="edit_image" class="profile-photo-edit avatar-xs">
+                    <span class="avatar-title rounded-circle bg-light text-body">
+                      <i class="ri-camera-fill"></i>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <h6>Profile Picture</h6>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="stud_num" class="form-label">Staff Number <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="stud_num" name="stud_num" required>
+          </div>
+          <div class="mb-3">
+            <label for="edit_first_name" class="form-label">First Name <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="edit_first_name" name="edit_first_name" placeholder="Enter First Name" required>
+          </div>
+          <div class="mb-3">
+            <label for="edit_middle_name" class="form-label">Middle Name</label>
+            <input type="text" class="form-control" id="edit_middle_name" name="edit_middle_name" placeholder="Enter Middle Name">
+          </div>
+          <div class="mb-3">
+            <label for="edit_last_name" class="form-label">Last Name <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="edit_last_name" name="edit_last_name" placeholder="Enter Last Name" required>
+          </div>
+          <div class="mb-3">
+            <label for="edit_extension_name" class="form-label">Extension Name</label>
+            <input type="text" class="form-control" id="edit_extension_name" name="edit_extension_name" placeholder="Enter Extension Name" />
+          </div>
+          <div class="mb-3">
+            <label for="edit_contact_number" class="form-label">Contact Number <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="edit_contact_number" name="edit_contact_number" placeholder="Enter Contact Number" required />
+          </div>
+          <div class="mb-3">
+            <label for="edit_birth_date" class="form-label">Birth Date <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="edit_birth_date" name="edit_birth_date" data-provider="flatpickr" data-date-format="F j, Y" placeholder="Pick a Birth Date" required>
+          </div>
+          <div class="mb-3">
+            <label for="edit_gender" class="form-label">Gender <span class="text-danger">*</span></label>
+            <select class="form-select mb-3" id="edit_gender" name="edit_gender" required>
+              <option selected disabled value="">Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Others">Others</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="edit_house_street" class="form-label">Street <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="edit_house_street" name="edit_house_street" placeholder="Enter Street Number or Street Name" required>
+          </div>
+          <div class="mb-3">
+            <label for="edit_barangay" class="form-label">Barangay <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="edit_barangay" name="edit_barangay" placeholder="Enter Barangay" required>
+          </div>
+          <div class="mb-3">
+            <label for="edit_municipality" class="form-label">Municipality <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="edit_municipality" name="edit_municipality" placeholder="Enter Municipality" required>
+          </div>
+          <div class="mb-3">
+            <label for="edit_province" class="form-label">Province <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="edit_province" name="edit_province" placeholder="Enter Province" required>
+          </div>
+          <div class="mb-3">
+            <label for="edit_region" class="form-label">Region <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="edit_region" name="edit_region" placeholder="Enter Region" required>
+          </div>
+          <div class="text-end">
+            <button type="submit" class="btn btn-primary">Update Staff</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
