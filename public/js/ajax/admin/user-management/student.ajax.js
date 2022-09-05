@@ -57,8 +57,17 @@ loadStudentTable = () => {
 				{
 					data: null,
 					render: (data) => {
-						const address = data.user_profiles.house_street
+						const address = data.user_profiles.full_address
 						return `${address}`
+					},
+				},
+
+				// Gender
+				{
+					data: null,
+					render: (data) => {
+						const igender = data.user_profiles.gender
+						return `${igender}`
 					},
 				},
 

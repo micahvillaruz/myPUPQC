@@ -14,6 +14,7 @@
               <th>Student No.</th>
               <th>Full Name</th>
               <th>Address</th>
+              <th>Gender</th>
               <th>Birthday</th>
               <th>Contact Number</th>
               <th>Status</th>
