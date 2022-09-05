@@ -4,7 +4,7 @@
       <div class="card-header d-flex align-items-center">
         <h5 class="card-title mb-0 flex-grow-1 fw-bold text-primary">Dental Case</h5>
         <div>
-          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addStudentModal">New Dental Case</button>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addDentalModal">New Dental Case</button>
         </div>
       </div>
       <div class="card-body">
@@ -14,7 +14,7 @@
               <th>Case Details</th>
               <th>Date Creared</th>
               <th>Status</th>
-              <th>Attending Doctor</th>
+              <th>Attending Dentist</th>
               <th>Schedule</th>
               <th>Action</th>
             </tr>
@@ -26,7 +26,7 @@
               <th></th>
               <th>
                 <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDentalModal"><i class="ri-eye-fill"></i></button>
                 </div>
               </th>
             </tr>

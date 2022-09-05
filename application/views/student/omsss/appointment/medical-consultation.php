@@ -4,7 +4,7 @@
       <div class="card-header d-flex align-items-center">
         <h5 class="card-title mb-0 flex-grow-1 fw-bold text-primary">Medical Case</h5>
         <div>
-          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addStudentModal">New Medical Case</button>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addMedicalModal">New Medical Case</button>
         </div>
       </div>
       <div class="card-body">
@@ -14,7 +14,7 @@
               <th>Case Details</th>
               <th>Date Creared</th>
               <th>Status</th>
-              <th>Attending Doctor</th>
+              <th>Attending Consultant</th>
               <th>Schedule</th>
               <th>Action</th>
             </tr>

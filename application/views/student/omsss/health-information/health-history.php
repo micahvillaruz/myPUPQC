@@ -199,10 +199,6 @@
                                       </div>
                                     </div>
                                 </div>
-                                  </div>
-                                </div>
-                                <div class="card">
-                                <div class="card-body">
                                 <h3 class="ms-4 text-primary">Medications</h3>
                                       <div class="mx-5">
                                       <div class="row">
@@ -217,15 +213,16 @@
 													                  placeholder="Please use semi-colon (;) as seperator for ypur entries."
 													                  rows="3"></textarea>
                                       </div>
-                                            <div class="col-lg-12">
+                                  </div>
+                                </div>
+                                            <div class="col-lg-11">
                                               <div class="hstack gap-2 justify-content-end">
                                                 <button type="submit" class="btn btn-primary">Submit</button>
                                                 <button type="button" class="btn btn-light">Cancel</button>
                                               </div>
                                           </div>
                                          <!--end col-->
-                                      </div></br>
-                                    </div>
+                                        </br>
                                       </div>
                                   </div>
                                   </div>

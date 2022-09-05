@@ -151,7 +151,6 @@ class Student extends CI_Controller
     $this->load->view('student/omsss/appointment/footer/guidance-consultation-footer');
     $this->load->view('partials/foot-scripts');
     $this->load->view('student/omsss/components/modals/guidance-consultation-modal');
-    $this->load->view('student/omsss/components/modals/guidance-consultation-view-modal');
     $this->load->view('student/omsss/appointment/scripts/guidance-consultation-scripts');
   }
 

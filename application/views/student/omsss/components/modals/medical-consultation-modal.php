@@ -1,5 +1,5 @@
-<!-- Add Student modal -->
-<div id="addStudentModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
+<!-- Add Consultation modal -->
+<div id="addMedicalModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content border-0 overflow-hidden">
       <div class="modal-header p-3">
@@ -15,7 +15,7 @@
             <input type="text" class="form-control" id="ReasonInput" placeholder="Enter your reason" required>
           </div>
           <div class="mb-3">
-            <label for="nameInput" class="form-label"> Enter name <span class="text-danger">*</span></label>
+            <label for="nameInput" class="form-label"> Enter Consultant <span class="text-danger">*</span></label>
             <input type="text" class="form-control" id="nameInput" name="first_name last_name" placeholder="Enter your name" required>
           </div>
           <div class="mb-3">
@@ -28,6 +28,35 @@
             <label for="exampleInputdate" class="form-label"> Schedule date for Consultation </label>
             <input type="date" class="form-control" id="exampleInputdate">
           </div>
+          <label for="exampleInputdate" class="form-label"> Time </label>
+          <div class="mx-5">
+                    <div class="row align-item-start">
+                      <!-- 1st Column -->
+                      <div class="col-6">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <label class="form-check-label" for="flexCheckDefault">7:00 AM - 9:00 AM</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">11:00 - 1:00 PM</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">3:00 PM - 5:00 PM</label>
+                        </div>
+                        </div>
+                        <!-- 2nd Column -->
+                        <div class="col-6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">9:00 AM - 11:00 AM</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">1:00 PM - 3:00 PM</label>
+                        </div> 
+                      </div>
           <br></br>
           <div class="text-center">
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -42,7 +71,7 @@
 
 
 <!-- View Student modal -->
-<div class="modal fade" id="viewStudentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+<div class="modal fade" id="viewMedicalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
