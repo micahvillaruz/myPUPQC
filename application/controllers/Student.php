@@ -89,7 +89,7 @@ class Student extends CI_Controller
     $this->load->view('partials/student/sidebar');
     $this->load->view('partials/page-title', ["page_title" => "Medical Services", "title" => "Health History"]);
     $this->load->view('student/omsss/health-information/health-history');
-    $this->load->view('partials/footer');
+    $this->load->view('student/omsss/health-information/footer/health-history-footer');
     $this->load->view('partials/foot-scripts');
     $this->load->view('student/omsss/health-information/scripts/health-history-scripts');
   }

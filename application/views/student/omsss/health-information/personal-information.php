@@ -30,8 +30,98 @@
 							</label>
 						</div>
 					</div>
-					<h5 class="fs-16 mb-1">Grace Coles</h5>
+					<h5 class="fs-16 mb-1">Juan Dela Cruz</h5>
 					<p class="text-muted mb-0">STUDENT</p>
+					<li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-5">
+                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">Sex: </a></h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium">Male</div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-5">
+                  <h5 class="fs-13 mb-1">Birthdate:</h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium">01/11/2001</div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-5">
+                  <h5 class="fs-13 mb-1">Full Address: </h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium">123 Don Fabian Q.C.</div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-5">
+                  <h5 class="fs-13 mb-1">Civil Status: </h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium">In a Relationship</div>
+                </div>
+              </div>
+            </li>
+						<!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-5">
+                  <h5 class="fs-13 mb-1">Citizenship: </h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium">Filipino</div>
+                </div>
+              </div>
+            </li>
+						<!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-5">
+                  <h5 class="fs-13 mb-1">Religion: </h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium">Roman Catholic</div>
+                </div>
+              </div>
+            </li>
+						<br>
+						<!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-5">
+                  <h5 class="fs-13 mb-1">Program: </h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium">BSIT</div>
+                </div>
+              </div>
+            </li>
+						<!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-5">
+                  <h5 class="fs-13 mb-1">Year and Section: </h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium">3-1</div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+          </ul>
 				</div>
 			</div>
 		</div>
