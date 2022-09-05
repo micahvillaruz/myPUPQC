@@ -49,6 +49,7 @@ addPUPStaff = () => {
 					}).then(function () {
 						$('#addStaffModal').modal('hide')
 						$('form#addPUPStaffForm')[0].reset()
+						loadStaffsTable()
 					})
 				}
 			},
@@ -164,7 +165,7 @@ loadStaffsTable = () => {
 							: `<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="deactivateStudent('${data.user_id}')"><i class="bx bxs-user-x fs-4"></i></button>`
 						return `
     <div class="dropdown d-inline-block">
-    <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewStaffDetails('${data.user_id}')" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill fs-5"></i></button>
+    <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewStaffDetails('${data.user_id}')" data-bs-toggle="modal" data-bs-target="#viewStaffModal"><i class="ri-eye-fill fs-5"></i></button>
     <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#updateStudentModal" onclick = "editStudentDetails('${data.user_id}')"><i class="ri-edit-2-fill fs-5"></i></button>
     ${activationBtn}
   </div>
@@ -175,4 +176,38 @@ loadStaffsTable = () => {
 			order: [[0, 'asc']],
 		})
 	}
+}
+
+// View Staff details
+viewStaffDetails = (user_id) => {
+	$.ajaxSetup({
+		headers: {
+			Accept: 'application/json',
+			Authorization: 'Bearer ' + TOKEN,
+			ContentType: 'application/x-www-form-urlencoded',
+		},
+	})
+
+	$.ajax({
+		type: 'GET',
+		cache: false,
+		url: apiURL + `super_admin/pup_staff/${user_id}`,
+		dataType: 'json',
+		success: (result) => {
+			const userData = result.data
+			const userProfileData = result.data.user_profiles
+
+			$('#view_staff_no').html(userData.user_no)
+			$('#view_staff_name').html(userProfileData.full_name)
+			$('#view_full_address').html(userProfileData.full_address)
+			$('#view_gender').html(userProfileData.gender)
+			$('#view_bday').html(userProfileData.birth_date)
+			$('#view_contact_no').html(userProfileData.contact_number)
+			$('#view_status').html(
+				userData.is_blacklist
+					? '<span class="fs-12 badge rounded-pill bg-danger" >Inactive</span>'
+					: '<span class="fs-12 badge rounded-pill bg-success" >Active</span>',
+			)
+		},
+	})
 }
