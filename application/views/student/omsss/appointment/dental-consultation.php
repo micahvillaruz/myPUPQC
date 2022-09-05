@@ -1,45 +1,41 @@
-<p align="right">
-  <input data-bs-target="#addDentalConsultationModal" data-bs-toggle="modal" type="button" class="btn btn-primary" value="New Dental Case">
-</p>
-<div class="row text-muted">
-    <div>
-      <div class="card">
-      <h5 class="card-header mb-3 text-white p-3 bg-primary">Dental Cases: Monday to Friday @ 08:00 AM - 05:00 PM</h5>
-        <div class="card-body">
-        <div class="">
-            <p>You can onle make <u> <span class="fw-bold">face to face conditions</span></u> during the schedule shown above.</p>
-          <table class="table table-striped">
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-header d-flex align-items-center">
+        <h5 class="card-title mb-0 flex-grow-1 fw-bold text-primary">Dental Case</h5>
+        <div>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addStudentModal">New Dental Case</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <table id="students-datatable" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
           <thead>
             <tr>
-              <th scope="col">Case Details</th>
-              <th scope="col">Date Created</th>
-              <th scope="col">Status</th>
-              <th scope="col">Attending Doctor</th>
-              <th scope="col">Schedule</th>
-              <th scope="col">Action</th>
+              <th>Case Details</th>
+              <th>Date Creared</th>
+              <th>Status</th>
+              <th>Attending Doctor</th>
+              <th>Schedule</th>
+              <th>Action</th>
+            </tr>
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th>
+                <div class="dropdown d-inline-block">
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
+                </div>
+              </th>
             </tr>
           </thead>
           <tbody>
-          <tr>
-              <td></td>
-              <td></td>
-              <td><span class="badge rounded-pill"></span></td>
-              <td></td>
-              <td></td>
-              <td>
-                <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewGuidanceModal"><i class="ri-eye-fill"></i></button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-          </div>
-        </div>
-        <!--end card-body-->
+          </tbody>
+        </table>
       </div>
-      <!-- end card -->
     </div>
   </div>
   <!--end col-->
 </div>
-<!--end row-->
