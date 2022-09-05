@@ -234,11 +234,14 @@
               <li class="nav-item">
                 <a href="<?= base_url() ?>student/omsss/guidance-services" class="nav-link"> Guidance Consultation </a>
               </li>
-              <li class="nav-item">
-                <a href="<?= base_url() ?>student/omsss/medical-prescription" class="nav-link"> Medical Prescription </a>
-              </li>
             </ul>
           </div>
+        </li>
+        <li class="nav-item">
+            <a href="<?= base_url() ?>student/omsss/medical-prescription" class="nav-link">
+            <i class="las la-file-prescription"></i>
+            <span>Medical Prescription</span>
+          </a>
         </li>
         <li class="nav-item">
           <a class="nav-link menu-link" href="<?= base_url() ?>student/omsss/medical-logs">

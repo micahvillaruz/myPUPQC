@@ -2,10 +2,10 @@
   <div class="col-lg-12">
     <div>
       <div class="card">
+      <h5 class="card-header mb-3 text-white p-3 bg-primary">Medical History</h5>
         <div class="card-body">
-          <div class="ms-2 mt-4">
-            <break><h3 class="mb-3 text-primary">Medical History</h3>
-              <p>Please <strong>check</strong> the items that apply to you.</p>
+          <div class="">
+              <p>Please <span>check</span> the items that apply to you.</p>
                 <p> </p>
                   <div class="mx-5">
                     <div class="row align-item-start">
@@ -166,12 +166,12 @@
                                   </div>
                                 </div>
                                   <br><h3 class="mb-3 text-primary">Allergy</h3>
-                                      <div class="mx-5">
+                                      <div class="mx-4">
                                         <div class="row align-item-start">
                                       <div class="col-6">
                                         Please indicate your allergies. (e.g. medicine, food, etc.)
                                       </div> 
-                                      <div class="mb-3 pb-2">
+                                      <div class="mb-1 pb-1">
 											                  <label for="exampleFormControlTextarea" class="form-label"></label>
 												                  <textarea
 													                  class="form-control"
@@ -183,6 +183,26 @@
                                 </div>
                                   </div>
                                 </div></br>
+                                <h3 class="ms-4 text-primary">Family History</h3>
+                                      <div class="mx-5">
+                                        <div class="row align-item-start">
+                                      <div class="col-6">
+                                      Please List any significant family medication history (heart disease, diabetes, stroke, bleeding disorder, asthma, etc.)
+                                      </div> 
+                                      <div class="mb-5 pb-2">
+											                  <label for="exampleFormControlTextarea" class="form-label"></label>
+												                  <textarea
+													                  class="form-control"
+													                  id="exampleFormControlTextarea"
+													                  placeholder="Please use semi-colon (;) as seperator for ypur entries."
+													                  rows="3"></textarea>
+                                      </div>
+                                    </div>
+                                </div>
+                                  </div>
+                                </div>
+                                <div class="card">
+                                <div class="card-body">
                                 <h3 class="ms-4 text-primary">Medications</h3>
                                       <div class="mx-5">
                                       <div class="row">
@@ -208,7 +228,7 @@
                                     </div>
                                       </div>
                                   </div>
-                                  
+                                  </div>
                                 </div>
                               </div>
                             </div>
