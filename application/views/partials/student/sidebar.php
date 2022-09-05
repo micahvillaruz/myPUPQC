@@ -246,14 +246,10 @@
             <span>Medical Logs</span>
           </a>
         </li>
-        <li class="nav-item">
+        <!--<li class="nav-item">
         <!-- Default Modals -->
-        <u><button type="button" class="btn btn-ghost-primary wave-effect wave-light ms-4 fs-6 text-white wave-effect wave-light" data-bs-toggle="modal" data-bs-target="#myModal">Contact Us</u></button>
+        <!--<u><button type="button" class="btn btn-ghost-primary wave-effect wave-light ms-4 fs-6 text-white wave-effect wave-light" data-bs-toggle="modal" data-bs-target="#myModal">Contact Us</u></button>
 
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-        </li>
 
         <!-- <li class="nav-item">
           <a class="nav-link menu-link" href="#sidebarLog" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarLog">
