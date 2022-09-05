@@ -76,65 +76,41 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content border-0 overflow-hidden">
       <div class="modal-header p-3">
-        <h4 class="card-title mb-0">Edit Student Form</h4>
+        <h4 class="card-title mb-0">Edit</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 
-      <div class="modal-body">
-        <form class="needs-validation" novalidate>
-          <div class="mb-3">
-            <label for="studentNo" class="form-label">Student No.</label>
-            <input type="text" class="form-control" id="studentNo" placeholder="Enter student no" />
-          </div>
-          <div class="mb-3">
-            <label for="fullName" class="form-label">Name</label>
-            <input type="text" class="form-control" id="fullName" placeholder="Enter name" />
-          </div>
-          <div class="mb-3">
-            <label for="emailInput" class="form-label">Email Address</label>
-            <div class="input-group">
-              <input type="email" class="form-control" id="emailInput" placeholder="Enter email" />
-              <span class="input-group-text" id="basic-addon2">@iskolarngbayan.pup.edu.ph</span>
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="program" class="form-label">Program</label>
-            <select class="form-select mb-3" name="state">
-              <option value="BBTLEDHE">BBTLEDHE</option>
-              <option value="BSBAHRM">BSBAHRM</option>
-              <option value="BSBA-MM">BSBA-MM</option>
-              <option value="BSENTREP">BSENTREP</option>
-              <option value="BSIT">BSIT</option>
-              <option value="BPAPFM">BPAPFM</option>
-              <option value="DOMTMOM">DOMTMOM</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="yearSection" class="form-label">Year and Section</label>
-            <input type="text" class="form-control" id="yearSection" placeholder="Enter year and section" />
-          </div>
-          <div class="mb-3">
-            <label for="enrolledDate" class="form-label">Date Enrolled</label>
-            <input id="enrolledDate" type="text" class="form-control" data-provider="flatpickr" data-date-format="d M, Y" placeholder="Pick date">
-          </div>
-          <div class="mb-3">
-            <label for="enrollStatus" class="form-label">Enrollment Status</label>
-            <select class="form-select mb-3" id="enrollStatus">
-              <option selected>Select enrollment status</option>
-              <option value="1">Enrolled</option>
-              <option value="0">Not Enrolled</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="studentStatus" class="form-label">Status</label>
-            <select class="form-select mb-3" id="studentStatus">
-              <option selected>Select status</option>
-              <option value="1">Active</option>
-              <option value="0">Inactive</option>
-            </select>
+      <div class="row">
+							<div class="col-lg-18">
+								</div>
+								<div class="row">
+									<div class="col-lg-18">
+										<div class="card">
+											<div class="card-header">
+											</div>
+											<!-- end card header -->
+
+											<div class="card-body">
+												<p class="text-muted">
+												</p>
+												<input
+													type="file"
+													class="filepond filepond-input-multiple"
+													multiple
+													name="filepond"
+													data-allow-reorder="true"
+													data-max-file-size="3MB"
+													data-max-files="3" />
+											</div>
+											<!-- end card body -->
+										</div>
+										<!-- end card -->
+									</div>
+									<!-- end col -->
           </div>
           <div class="text-end">
-            <button type="submit" class="btn btn-primary">Edit Student</button>
+            <button type="submit" class="btn btn-primary">Edit</button>
+            <button type="submit" class="btn btn-light">Cancel</button>
           </div>
         </form>
       </div>
