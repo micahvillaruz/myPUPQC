@@ -39,3 +39,117 @@
   </div>
   <!-- /.modal-dialog -->
 </div>
+
+
+<!-- View Student modal -->
+<div class="modal fade" id="viewStudentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle">
+          Student Information
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div data-simplebar class="mx-n3">
+          <ul class="list list-group list-group-flush mb-0">
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="profile-user position-relative d-inline-block mx-auto mb-2">
+                  <img src="<?= base_url() ?>public/images/users/user-dummy-img.jpg" class="rounded-circle avatar-lg img-thumbnail user-profile-image" alt="user-profile-image" />
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1 fw-medium">Student No</h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium" id="view_student_no"></div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1 fw-medium">Name</h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium" id="view_student_name"></div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1">Full Address</h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium" id="view_full_address"></div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1">Gender</h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium" id="view_gender"></div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1">Birthday</h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium" id="view_bday"></div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1">Contact Number</h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium" id="view_contact_no"></div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1 fw-medium">Status</h5>
+                </div>
+                <div class="col-8" id="view_status">
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+          </ul>
+          <!-- end ul list -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
