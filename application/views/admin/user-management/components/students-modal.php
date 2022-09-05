@@ -278,9 +278,9 @@
             <label for="edit_gender" class="form-label">Gender <span class="text-danger">*</span></label>
             <select class="form-select mb-3" id="edit_gender" name="edit_gender" required>
               <option selected disabled value="">Select Gender</option>
-              <option value="MALE">Male</option>
-              <option value="FEMALE">Female</option>
-              <option value="OTHERS">Others</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Others">Others</option>
             </select>
           </div>
           <div class="mb-3">

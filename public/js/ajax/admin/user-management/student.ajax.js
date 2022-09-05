@@ -11,6 +11,7 @@ $(function () {
 
 		// pass data to API for updating of student's info
 		updateStudentAJAX($('#edit_user_id').val())
+		console.log($('#edit_user_id').val())
 	})
 })
 
@@ -145,6 +146,8 @@ enrollStudent = () => {
 			region: form.get('region'),
 		}
 
+		console.log(gender)
+
 		$.ajax({
 			url: apiURL + 'super_admin/student/add',
 			type: 'POST',
@@ -190,6 +193,7 @@ getStudent = (user_id) => {
 				// Get data from result
 				const data = result.data
 				// $('#edit_image').val(data.user_profiles.image)
+				$('#edit_user_id').val(data.user_id)
 				$('#stud_num').val(data.user_no)
 				$('#stud_num').prop('disabled', true)
 
