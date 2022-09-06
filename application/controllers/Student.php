@@ -31,6 +31,19 @@ class Student extends CI_Controller
     $this->load->view('student/scripts/profile-scripts');
   }
 
+  public function settings()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/student/topbar');
+    $this->load->view('partials/student/sidebar');
+    $this->load->view('student/settings');
+    $this->load->view('partials/footer');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('student/scripts/settings-scripts');
+  }
+
 
   public function new_request()
   {
