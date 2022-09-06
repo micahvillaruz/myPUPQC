@@ -3,7 +3,7 @@ $(function () {
 
 	$('#profileSettingsForm').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
-		// pass data to API for updating of student's info
+		// pass data to API for updating of admin's info
 		editProfileAJAX()
 	})
 })
@@ -78,6 +78,8 @@ editProfileAJAX = () => {
 						cancelButtonText: 'Ok',
 						buttonsStyling: !1,
 						showCloseButton: !0,
+					}).then(function () {
+						loadProfile()
 					})
 				}
 			},
