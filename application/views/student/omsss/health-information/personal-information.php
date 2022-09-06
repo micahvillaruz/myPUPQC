@@ -71,7 +71,7 @@
                   <h5 class="fs-13 mb-1">Civil Status: </h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">In a Relationship</div>
+                  <div class="d-flex fs-13 fw-medium">Single</div>
                 </div>
               </div>
             </li>
@@ -191,7 +191,7 @@
             		<label for="emailInput" class="form-label">Email</label>
         		</div>
         			<div class="col-lg-9">
-            		<input type="email" class="form-control" id="emailInput" placeholder="Enter your email">
+            		<input type="email" class="form-control" id="emailInput" placeholder="Enter email">
         			</div>
     				</div>
 						<!-- Base Example -->

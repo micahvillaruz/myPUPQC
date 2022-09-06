@@ -14,23 +14,21 @@
         <table id="example" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
           <thead>
             <tr>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
+              <th>Case Control No.</th>
+              <th>Attending Doctor</th>
+              <th>Expiry Date</th>
+              <th>Prescription</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <th>2022-MED-0001</th>
+              <th>Melissa P. Sarapuddin, MD</th>
+              <th>15-02-2022</th>
+              <th>
+                <span class="badge bg-danger">EXPIRED</span>
+              </th>
               <td>
                 <div class="dropdown d-inline-block">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalPrescriptionModal"><i class="ri-eye-fill"></i></button>

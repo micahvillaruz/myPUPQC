@@ -2,7 +2,7 @@
   <div class="col-lg-12">
     <div class="card">
       <div class="card-header d-flex align-items-center">
-        <h5 class="card-title mb-0 flex-grow-1 fw-bold text-primary">Medical Case</h5>
+        <h5 class="card-title mb-0 flex-grow-1 fw-bold text-primary">Medical Case: Monday to Friday @ 08:00 AM - 05:00 PM</h5>
         <div>
           <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addMedicalModal">New Medical Case</button>
         </div>
@@ -12,18 +12,18 @@
           <thead>
             <tr>
               <th>Case Details</th>
-              <th>Date Creared</th>
+              <th>Start date of Symptoms</th>
               <th>Status</th>
               <th>Attending Consultant</th>
               <th>Schedule</th>
               <th>Action</th>
             </tr>
             <tr>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
+              <th>2022-MED-0003</th>
+              <th>06-09-2022</th>
+              <th>Melissa P. Sarapuddin, MD</th>
+              <th><span class="badge bg-warning">PENDING</span></th>
+              <th>11-09-2022</th>
               <th>
                 <div class="dropdown d-inline-block">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>

@@ -18,7 +18,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Reason for consultation</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_guidance_no"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_reasonCon"> Fever</div>
                 </div>
               </div>
             </li>
@@ -29,7 +29,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Doctor</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_guidance_no"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_doctor_name">Melissa P. Sarapuddin, MD</div>
                 </div>
               </div>
             </li>
@@ -40,7 +40,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Date of start of symptoms</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_guidance_name"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_start_symptoms">09-09-2022</div>
                 </div>
               </div>
             </li>
@@ -51,7 +51,7 @@
                   <h5 class="fs-13 mb-1">Scheduled Date</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_scheduled_date"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_scheduled_date">11-09-2022</div>
                 </div>
               </div>
             </li>
@@ -62,7 +62,17 @@
                   <h5 class="fs-13 mb-1">Time</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_time"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_time">1:00 PM - 3:00 PM</div>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1">Status</h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium" id="view_status" value=""><span class="badge bg-warning">PENDING</span></div>
                 </div>
               </div>
             </li>

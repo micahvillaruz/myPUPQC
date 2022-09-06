@@ -11,8 +11,8 @@
           <h4 class="fs-semibold">You are about to delete an appointment?</h4>
           <p class="text-muted fs-14 mb-4 pt-1">Deleting your appointment will remove all of your information from our database.</p>
           <div class="hstack gap-2 justify-content-center remove">
-            <button class="btn btn-link link-success fw-medium text-decoration-none" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Close</button>
-            <button class="btn btn-danger" id="delete-record">Yes, Delete It!!</button>
+          <button class="btn btn-danger" id="delete-record">Yes, Delete It!!</button>
+            <button class="btn btn-light fw-medium text-decoration-none" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Close</button>
           </div>
         </div>
       </div>
@@ -40,7 +40,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Reason for consultation</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_guidance_no" value=""></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_guidance_reason" value="">Anxiety</div>
                 </div>
               </div>
             </li>
@@ -48,10 +48,10 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Attending Doctor</h5>
+                  <h5 class="fs-13 mb-1 fw-medium">Attending Psychologist</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_guidance_no" value=""></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_guidance_name" value="">Melanie F. Bactasa, MAED</div>
                 </div>
               </div>
             </li>
@@ -59,10 +59,10 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Start Date of Symptoms</h5>
+                  <h5 class="fs-13 mb-1 fw-medium">Date Created</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_guidance_name" value=""></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_date_created" value="">11-05-2022</div>
                 </div>
               </div>
             </li>
@@ -73,7 +73,7 @@
                   <h5 class="fs-13 mb-1">Scheduled Date for Consultation</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_scheduled_date" value=""></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_scheduled_date" value="">20-05-2022</div>
                 </div>
               </div>
             </li>
@@ -84,7 +84,7 @@
                   <h5 class="fs-13 mb-1">Time</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_time" value=""></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_time" value="">9:00 AM - 11:00 AM</div>
                 </div>
               </div>
             </li>
@@ -95,7 +95,7 @@
                   <h5 class="fs-13 mb-1">Status</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_time" value=""></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_status" value=""><span class="badge bg-warning">PENDING</span></div>
                 </div>
               </div>
             </li>
@@ -119,54 +119,37 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content border-0 overflow-hidden">
       <div class="modal-header p-3">
-        <h4 class="card-title mb-0">Edit Guidance Appointment</h4>
+      <h4 class="card-title mb-0">Edit Guidance Appointment</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form class="needs-validation" novalidate>
           <div class="mb-3">
-            <label for="studentNo" class="form-label">Reason for Consultation</label>
-            <input type="text" class="form-control" id="studentNo" placeholder="Enter reason" />
+            <label for="reasonCon" class="form-label">Reason for Consultation</label>
+            <input type="text" class="form-control" id="reasonCon" placeholder="" value="Anxiety" required/> 
           </div>
           <div class="mb-3">
-            <label for="fullName" class="form-label">Atending Doctor</label>
-            <input type="text" class="form-control" id="fullName" placeholder="Enter name of Doctor" />
+            <label for="fullName" class="form-label">Atending Psychologist</label>
+            <input type="text" class="form-control" id="fullName" placeholder="" value="Melanie F. Bactasa, MAED" required/>
           </div>
           <div class="mb-3">
-            <label for="emailInput" class="form-label">Start date of symptoms</label>
+            <label for="dateInput" class="form-label">Date Created</label>
             <div class="input-group">
-              <input type="email" class="form-control" id="emailInput" placeholder="Date of symptoms" />
+              <input type="text" class="form-control" id="dateInput" placeholder="" value="11-05-2022" required/>
             </div>
           </div>
-          <label for="exampleInputdate" class="form-label"> Time </label>
-              <div class="mx-5">
-                <div class="row align-item-start">
-                  <!-- 1st Column -->
-                  <div class="col-6">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">7:00 AM - 9:00 AM</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                      <label class="form-check-label" for="flexCheckChecked">11:00 - 1:00 PM</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">3:00 PM - 5:00 PM</label>
-                    </div>
-                  </div>
-                  <!-- 2nd Column -->
-                  <div class="col-6">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                      <label class="form-check-label" for="flexCheckChecked">9:00 AM - 11:00 AM</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">1:00 PM - 3:00 PM</label>
-                    </div>
-                  </div>
+          <div class="mb-3">
+            <label for="dateInput" class="form-label">Scheduled Date for Consultation</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="dateInput" placeholder="" value="20-05-2022" required/>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="timeInput" class="form-label">Time</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="timeInput" placeholder="" value="9:00 AM - 11:00 AM" required/>
+            </div>
+          </div>
           <div class="mb-5">
           <label for="studentStatus" class="form-label">Status</label>
             <select class="form-select mb-3" id="studentStatus">
@@ -176,9 +159,9 @@
               <option value="0">Denied</option>
             </select>
           </div>
-          </div>
           <div class="text-end">
             <button type="submit" class="btn btn-primary">Update Appointment</button>
+            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
           </div>
         </form>
       </div>

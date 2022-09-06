@@ -2,7 +2,7 @@
   <div class="col-lg-12">
     <div class="card">
       <div class="card-header d-flex align-items-center">
-        <h5 class="card-title mb-0 flex-grow-1">Dentist Appoinments</h5>
+        <h5 class="card-title mb-0 flex-grow-1">Dental Appoinments</h5>
         <div>
           <!-- <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addStaffModal">Add Faculty/Staff</button> -->
         </div>
@@ -12,8 +12,8 @@
           <thead>
             <tr>
               <th>Reason of Consultation</th>
-              <th>Attending Doctor</th>
-              <th>Start date of Symptoms</th>
+              <th>Attending Dentist</th>
+              <th>Date Created</th>
               <th>Schedule date for Consultation</th>
               <th>Time</th>
               <th>Status</th>
@@ -22,12 +22,12 @@
           </thead>
           <tbody>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>Cleaning</td>
+              <td>Rosanna Florencia A. Ulep, DMD, MPH</td>
+              <td>18-09-2022</td>
+              <td>20-09-2022</td>
+              <td>1:00 PM - 3:00 PM</td>
+              <td><span class="badge bg-warning">PENDING</span></td>
               <td>
                 <div class="dropdown d-inline-block">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDentistModal"><i class="ri-eye-fill"></i></button>

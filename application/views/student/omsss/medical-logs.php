@@ -4,8 +4,8 @@
       <div class="card">
         <div class="card-body">
         <div class="">
-<!-- Striped Rows -->
-<table class="table table-striped">
+        <div class="card-body">
+        <table id="example" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
     <thead>
         <tr>
             <th scope="col">Appointment ID.</th>

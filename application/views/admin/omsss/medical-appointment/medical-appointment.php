@@ -22,12 +22,12 @@
           </thead>
           <tbody>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>Fever</td>
+              <td>Melissa P. Sarapuddin, MD</td>
+              <td>09-09-2022</td>
+              <td>11-09-2022</td>
+              <td>1:00 PM - 3:00 PM</td>
+              <td><span class="badge bg-warning">PENDING</span></td>
               <td>
                 <div class="dropdown d-inline-block">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>

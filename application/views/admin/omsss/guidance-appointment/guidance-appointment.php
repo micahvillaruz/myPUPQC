@@ -12,8 +12,8 @@
           <thead>
             <tr>
               <th>Reason of Consultation</th>
-              <th>Attending Doctor</th>
-              <th>Start date of Symptoms</th>
+              <th>Attending Psychologist</th>
+              <th>Date Created</th>
               <th>Schedule date for Consultation</th>
               <th>Time</th>
               <th>Status</th>
@@ -22,12 +22,12 @@
           </thead>
           <tbody>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>Anxiety</td>
+              <td>Melanie F. Bactasa, MAED</td>
+              <td>11-05-2022</td>
+              <td>20-05-2022</td>
+              <td>9:00 AM - 11:00 AM</td>
+              <td><span class="badge bg-warning">PENDING</span></td>
               <td>
                 <div class="dropdown d-inline-block">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewGuidanceModal"><i class="ri-eye-fill"></i></button>

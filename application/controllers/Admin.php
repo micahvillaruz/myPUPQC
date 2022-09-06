@@ -67,7 +67,7 @@ class Admin extends CI_Controller
     $this->load->view('partials/head-css');
     $this->load->view('partials/admin/topbar');
     $this->load->view('partials/admin/sidebar');
-    $this->load->view('partials/page-title', ["page_title" => "Health and Well-Being", "title" => "Dentist Appointment"]);
+    $this->load->view('partials/page-title', ["page_title" => "Health and Well-Being", "title" => "Dental Appointment"]);
     $this->load->view('admin/omsss/dentist-appointment/dentist-appointment');
     $this->load->view('partials/footer');
     $this->load->view('admin/omsss/components/dentist-appointment-modal');

@@ -18,7 +18,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Reason for consultation</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_guidance_no"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_reasonCon">Anxiety</div>
                 </div>
               </div>
             </li>
@@ -29,7 +29,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Psychologist</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_guidance_no"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_psychologist_name">Melanie F. Bactasa, MAED</div>
                 </div>
               </div>
             </li>
@@ -37,10 +37,10 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Date of start of symptoms</h5>
+                  <h5 class="fs-13 mb-1 fw-medium">Date Created</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_guidance_name"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_date_created">11-05-2022</div>
                 </div>
               </div>
             </li>
@@ -51,7 +51,7 @@
                   <h5 class="fs-13 mb-1">Scheduled Date</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_scheduled_date"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_scheduled_date">20-05-2022</div>
                 </div>
               </div>
             </li>
@@ -62,7 +62,17 @@
                   <h5 class="fs-13 mb-1">Time</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_time"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_time">9:00 AM - 11:00 AM</div>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1">Status</h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium" id="view_status" value=""><span class="badge bg-warning">PENDING</span></div>
                 </div>
               </div>
             </li>
@@ -104,7 +114,7 @@
           </div>
           <div class="mb-3">
             <div>
-              <label for="exampleInputdate" class="form-label">Start date of Symptoms</label>
+              <label for="exampleInputdate" class="form-label">Date Created</label>
               <input type="date" class="form-control" id="exampleInputdate">
             </div>
             <div class="mb-3">

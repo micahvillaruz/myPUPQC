@@ -11,8 +11,8 @@
           <h4 class="fs-semibold">You are about to delete an appointment?</h4>
           <p class="text-muted fs-14 mb-4 pt-1">Deleting your appointment will remove all of your information from our database.</p>
           <div class="hstack gap-2 justify-content-center remove">
-            <button class="btn btn-link link-success fw-medium text-decoration-none" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Close</button>
             <button class="btn btn-danger" id="delete-record">Yes, Delete It!!</button>
+            <button class="btn btn-light fw-medium text-decoration-none" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Close</button>
           </div>
         </div>
       </div>
@@ -40,7 +40,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Reason for consultation</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_guidance_no" value=""></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_reason" value="">Fever</div>
                 </div>
               </div>
             </li>
@@ -51,7 +51,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Attending Doctor</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_guidance_no" value=""></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_doctor_name" value="">Melissa P. Sarapuddin, MD</div>
                 </div>
               </div>
             </li>
@@ -62,7 +62,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Start Date of Symptoms</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_guidance_name" value=""></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_date_symptoms" value="">09-09-2022</div>
                 </div>
               </div>
             </li>
@@ -73,7 +73,7 @@
                   <h5 class="fs-13 mb-1">Scheduled Date for Consultation</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_scheduled_date" value=""></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_scheduled_date" value="">11-09-2022</div>
                 </div>
               </div>
             </li>
@@ -84,7 +84,7 @@
                   <h5 class="fs-13 mb-1">Time</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_time" value=""></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_time" value="">1:00 PM - 3:00 PM</div>
                 </div>
               </div>
             </li>
@@ -95,8 +95,7 @@
                   <h5 class="fs-13 mb-1">Status</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_time" value=""></div>
-                </div>
+                <div class="d-flex fs-13 fw-medium" id="view_status" value=""><span class="badge bg-warning">PENDING</span></div>
               </div>
             </li>
             <!-- end list item -->
@@ -125,48 +124,29 @@
       <div class="modal-body">
         <form class="needs-validation" novalidate>
           <div class="mb-3">
-            <label for="studentNo" class="form-label">Reason for Consultation</label>
-            <input type="text" class="form-control" id="studentNo" placeholder="Enter reason" />
+            <label for="reasonCon" class="form-label">Reason for Consultation</label>
+            <input type="text" class="form-control" id="reasonCon" placeholder="" value="Fever" required>
           </div>
           <div class="mb-3">
             <label for="fullName" class="form-label">Atending Doctor</label>
-            <input type="text" class="form-control" id="fullName" placeholder="Enter name of Doctor" />
+            <input type="text" class="form-control" id="fullName" placeholder="" value="Melissa P. Sarapuddin, MD" required>
           </div>
           <div class="mb-3">
-            <label for="emailInput" class="form-label">Start date of symptoms</label>
+            <label for="dateInput" class="form-label">Start date of symptoms</label>
             <div class="input-group">
-              <input type="email" class="form-control" id="emailInput" placeholder="Date of symptoms" />
+              <input type="text" class="form-control" id="dateInput" placeholder="" value="09-09-2022" required>
             </div>
           </div>
-          <label for="exampleInputdate" class="form-label"> Time </label>
-              <div class="mx-5">
-                <div class="row align-item-start">
-                  <!-- 1st Column -->
-                  <div class="col-6">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">7:00 AM - 9:00 AM</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                      <label class="form-check-label" for="flexCheckChecked">11:00 - 1:00 PM</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">3:00 PM - 5:00 PM</label>
-                    </div>
-                  </div>
-                  <!-- 2nd Column -->
-                  <div class="col-6">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                      <label class="form-check-label" for="flexCheckChecked">9:00 AM - 11:00 AM</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">1:00 PM - 3:00 PM</label>
-                    </div>
-                  </div>
+          <div class="mb-3">
+            <label for="dateInput" class="form-label">Scheduled Date for Consultation</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="dateInput" placeholder="" value="11-09-2022" required>
+            </div>
+          </div>
+          <div>
+            <label for="timeInput" class="form-label"> Time </label>
+            <input type="text" class="form-control" id="timeInput" value="1:00 PM - 3:00 PM" required>
+          </div>
           <div class="mb-5">
           <label for="studentStatus" class="form-label">Status</label>
             <select class="form-select mb-3" id="studentStatus">
@@ -176,9 +156,9 @@
               <option value="0">Denied</option>
             </select>
           </div>
-          </div>
           <div class="text-end">
             <button type="submit" class="btn btn-primary">Update Appointment</button>
+            <button type="submit" class="btn btn-light">Close</button>
           </div>
         </form>
       </div>

@@ -1,25 +1,46 @@
-<div class="text-muted">
-  <div class="col-xxl-12">
+<div class="row">
+  <div class="col-lg-12">
     <div class="card">
-      <div class="card-body">
-        <h3 class="mb-3 text-primary">Medical Prescription</h3>
-        <h5 class="mb-3 text-white p-3 bg-primary rounded">Prescription List</h5>
-        <div class="mb-3">
-          <ul>
-            <li>Your medicine prescriptions from your <strong>Online Consultation</strong> cases are shown below.</li>
-            <li>View the medicine prescription by clicking the <strong>View Prescription </strong>icon.</li>
-            <li>All medicine prescriptions are valid only until a specific date (<strong>Valid Until</strong>). Once <strong>EXPIRED,</strong> you can <strong>no longer</strong> generate the prescription.</li>
-            <!-- <h5 class="ml-3 text-primary bg-dark p-3 rounded">No records found.</h5> -->
-            <ul>
-        </div>
-        <br>
-        <h5 class="mb-3 text-primary bg-soft-dark p-3  rounded">No records found.</h5>
+      <div class="card-header d-flex align-items-center">
+        <h5 class="card-title mb-0 fw-bold text-primary">Medical Prescription</h5>
       </div>
-      <!--end col-->
+      <div class="card-body">
+        <table id="example" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
+          <thead>
+            <tr>
+              <th>Case Control No.</th>
+              <th>Attending Doctor</th>
+              <th>Expiry Date</th>
+              <th>Prescription</th>
+            </tr>
+          <tbody>
+            <tr>
+              <th>2022-MED-0001</th>
+              <th>Melissa P. Sarapuddin, MD</th>
+              <th>09-15-20222</th>
+              <th>
+              <span class="badge bg-danger">EXPIRED</span>
+              </th>
+            </tr>
+            <tbody>
+            <tr>
+              <th>2022-MED-0002</th>
+              <th>Melissa P. Sarapuddin, MD</th>
+              <th>09-28-2022</th>
+              <th>
+                <div class="vstack gap-2">
+                <button type="button" class="btn btn-ghost-primary"><i class="ri-download-2-line label-icon align-middle me-2"></i> Download Medical Prescription</button>
+                </div>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
     </div>
-    <!--end row-->
-    </form>
   </div>
-</div>
-</div>
+  <!--end col-->
 </div>
