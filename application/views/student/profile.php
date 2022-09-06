@@ -10,17 +10,17 @@
         <div class="row g-4">
           <div class="col-auto">
             <div class="avatar-lg">
-              <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-woman-6.png" alt="user-img" class="img-thumbnail rounded-circle" />
+              <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-man-6.png" alt="user-img" class="img-thumbnail rounded-circle" />
             </div>
           </div>
           <!--end col-->
           <div class="col">
             <div class="p-2">
-              <h3 class="text-white mb-1" id="view_full_name">Micah M. Villaruz</h3>
+              <h3 class="text-white mb-1" id="view_full_name"></h3>
               <p class="text-white-75">Student</p>
               <div class="hstack text-white-50 gap-1">
                 <div class="me-2">
-                  <i class="bx bxs-school me-3 text-white-75 fs-16 align-middle"></i>Role
+                  <i class="bx bxs-school me-3 text-white-75 fs-16 align-middle"></i>Polytechic University of the Philippines Quezon City Branch
                 </div>
               </div>
             </div>
