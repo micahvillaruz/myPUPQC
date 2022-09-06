@@ -18,7 +18,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Reason for consultation</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_guidance_no">Anxiety</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_guidance_no" value=""></div>
                 </div>
               </div>
             </li>
@@ -29,7 +29,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Psychologist</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_guidance_no">Melanie Bactasa, RPsy</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_guidance_no" value=""></div>
                 </div>
               </div>
             </li>
@@ -40,7 +40,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Date of start of symptoms</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_guidance_name">09-11-2022</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_guidance_name" value=""></div>
                 </div>
               </div>
             </li>
@@ -51,7 +51,7 @@
                   <h5 class="fs-13 mb-1">Scheduled Date</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_scheduled_date">09-22-22</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_scheduled_date" value=""></div>
                 </div>
               </div>
             </li>
@@ -62,7 +62,7 @@
                   <h5 class="fs-13 mb-1">Time</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_time">7:00 AM - 9: 00 AM</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_time" value=""></div>
                 </div>
               </div>
             </li>

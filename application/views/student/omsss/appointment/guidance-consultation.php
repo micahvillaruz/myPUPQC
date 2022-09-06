@@ -2,7 +2,7 @@
   <div class="col-lg-12">
     <div class="card">
       <div class="card-header d-flex align-items-center">
-        <h5 class="card-title mb-0 flex-grow-1 fw-bold text-primary">Guidance Case</h5>
+        <h2 class="card-title mb-0 flex-grow-1 fw-bold text-primary">Guidance Case</h2>
         <div>
           <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addGuidanceModal">New Guidance Case</button>
         </div>
