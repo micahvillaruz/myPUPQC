@@ -56,27 +56,10 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link menu-link" href="#sidebarUI" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarUI">
-            <i class="mdi mdi-book-search-outline"></i>
-            <span>Appointments</span>
+          <a class="nav-link menu-link">
+            <i class="bx bx-notepad"></i>
+            <span>VASS</span>
           </a>
-          <div class="collapse menu-dropdown mega-dropdown-menu" id="sidebarUI">
-            <div class="row">
-              <div class="col-lg-4">
-                <ul class="nav nav-sm flex-column">
-                  <li class="nav-item">
-                    <a href="<?= base_url() ?>student/appointments/medical-appointment" class="nav-link" class="nav-link">Medical Consultation</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="<?= base_url() ?>student/appointments/dental-appointment" class="nav-link">Dental Consultation</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="<?= base_url() ?>student/appointments/guidance-appointment" class="nav-link">Guidance Counseling Consultation</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
         </li>
 
         <li class="nav-item">
@@ -238,7 +221,7 @@
           </div>
         </li>
         <li class="nav-item">
-            <a href="<?= base_url() ?>student/omsss/medical-prescription" class="nav-link">
+          <a href="<?= base_url() ?>student/omsss/medical-prescription" class="nav-link">
             <i class="las la-file-prescription"></i>
             <span>Medical Prescription</span>
           </a>
@@ -249,27 +232,6 @@
             <span>Medical Logs</span>
           </a>
         </li>
-        <!--<li class="nav-item">
-        <!-- Default Modals -->
-        <!--<u><button type="button" class="btn btn-ghost-primary wave-effect wave-light ms-4 fs-6 text-white wave-effect wave-light" data-bs-toggle="modal" data-bs-target="#myModal">Contact Us</u></button>
-
-
-        <!-- <li class="nav-item">
-          <a class="nav-link menu-link" href="#sidebarLog" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarLog">
-            <i class=" ri-refresh-line"></i>
-            <span> Log and Contact OMSSS </span>
-          </a>
-          <div class="collapse menu-dropdown" id="sidebarLog">
-            <ul class="nav nav-sm flex-column">
-              <li class="nav-item">
-                <a href="<?= base_url() ?>student/omsss/medical-logs" class="nav-link">Medical Logs </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?= base_url() ?>student/omsss/contact-omsss" class="nav-link"> Contact OMSS</a>
-              </li>
-            </ul>
-          </div>
-        </li> -->
       </ul>
     </div>
     <!-- Sidebar -->
