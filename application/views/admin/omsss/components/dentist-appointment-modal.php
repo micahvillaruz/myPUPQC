@@ -1,10 +1,31 @@
-<!-- View Medical Prescription modal -->
+<!-- Delete Dentist modal -->
+<div class="modal fade zoomIn" id="deleteDentistModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"></button>
+      </div>
+      <div class="modal-body p-5 text-center">
+        <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop" colors="primary:#405189,secondary:#f06548" style="width:90px;height:90px"></lord-icon>
+        <div class="mt-4 text-center">
+          <h4 class="fs-semibold">You are about to delete an appointment?</h4>
+          <p class="text-muted fs-14 mb-4 pt-1">Deleting your appointment will remove all of your information from our database.</p>
+          <div class="hstack gap-2 justify-content-center remove">
+            <button class="btn btn-link link-success fw-medium text-decoration-none" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Close</button>
+            <button class="btn btn-danger" id="delete-record">Yes, Delete It!!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- View Dentist modal -->
 <div class="modal fade" id="viewDentistModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalScrollableTitle">
-          Medical Prescription
+          Dentist Appointment
         </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -97,7 +118,7 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content border-0 overflow-hidden">
       <div class="modal-header p-3">
-        <h4 class="card-title mb-0">Edit Student Form</h4>
+        <h4 class="card-title mb-0">Edit Dentist Appointment</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -167,25 +188,5 @@
 </div>
 
 
-<!-- Delete Medical modal -->
-<div class="modal fade zoomIn" id="deleteMedicalModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"></button>
-      </div>
-      <div class="modal-body p-5 text-center">
-        <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop" colors="primary:#405189,secondary:#f06548" style="width:90px;height:90px"></lord-icon>
-        <div class="mt-4 text-center">
-          <h4 class="fs-semibold">You are about to delete an appointment?</h4>
-          <p class="text-muted fs-14 mb-4 pt-1">Deleting your appointment will remove all of your information from our database.</p>
-          <div class="hstack gap-2 justify-content-center remove">
-            <button class="btn btn-link link-success fw-medium text-decoration-none" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Close</button>
-            <button class="btn btn-danger" id="delete-record">Yes, Delete It!!</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 
