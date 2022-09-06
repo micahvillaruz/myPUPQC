@@ -8,7 +8,7 @@ $(function () {
 	})
 })
 
-// Edit Admin Details
+// Edit Student Details
 editProfile = () => {
 	$.ajax({
 		url: apiURL + `student/info`,
@@ -36,7 +36,7 @@ editProfile = () => {
 				$('#region').val(data.region)
 			}
 		},
-	}).fail(() => console.error('There was an error in retrieving admin data'))
+	}).fail(() => console.error('There was an error in retrieving student data'))
 }
 
 // Edit Admin AJAX
