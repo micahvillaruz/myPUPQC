@@ -131,6 +131,7 @@ $route['admission'] = 'home/admission';
 */
 
 $route['student/dashboard'] = 'student';
+$route['student/profile'] = 'student/profile';
 
 /*
 | --------------
