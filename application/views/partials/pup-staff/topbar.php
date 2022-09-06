@@ -39,9 +39,9 @@
             <div class="dropdown ms-sm-3 header-item topbar-user">
               <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="d-flex align-items-center">
-                  <img class="rounded-circle header-profile-user" src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-man-3.png" alt="Header Avatar" />
+                  <img class="rounded-circle header-profile-user" src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-woman-9.png" alt="user-img" class="img-thumbnail rounded-circle" alt="Header Avatar" />
                   <span class="text-start ms-xl-2">
-                    <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Sinuck Tan Que</span>
+                    <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Demelyn E. Monzon</span>
                     <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">PUP Staff</span>
                   </span>
                 </span>

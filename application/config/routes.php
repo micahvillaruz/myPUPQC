@@ -218,4 +218,6 @@ $route['admin/omsss/medical-prescription'] = 'admin/medical_prescription';
 | -------------------------------------------------------------------------
 */
 
-$route['pup-staff/dashboard'] = 'pupstaff';
+$route['pupstaff/dashboard'] = 'pupstaff';
+$route['pupstaff/profile'] = 'pupstaff/profile';
+$route['pupstaff/profile/settings'] = 'pupstaff/settings';
