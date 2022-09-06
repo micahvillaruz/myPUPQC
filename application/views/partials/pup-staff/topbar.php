@@ -41,14 +41,14 @@
                 <span class="d-flex align-items-center">
                   <img class="rounded-circle header-profile-user" src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-woman-9.png" alt="user-img" class="img-thumbnail rounded-circle" alt="Header Avatar" />
                   <span class="text-start ms-xl-2">
-                    <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Demelyn E. Monzon</span>
+                    <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text" id="full_name"></span>
                     <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">PUP Staff</span>
                   </span>
                 </span>
               </button>
               <div class="dropdown-menu dropdown-menu-end">
                 <!-- item-->
-                <h6 class="dropdown-header">Welcome Sinuck!</h6>
+                <h6 class="dropdown-header" id="welcome"></h6>
                 <a class="dropdown-item" href="<?= base_url() ?>pupstaff/profile"><i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i>
                   <span class="align-middle">Profile</span></a>
                 <a class="dropdown-item" href="https://osssac.pup.edu.ph/"><i class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i>
@@ -64,3 +64,4 @@
         </div>
       </div>
     </header>
+    <script src="<?php echo base_url() ?>/public/js/ajax/pup-staff/profile.ajax.js"></script>
