@@ -8,6 +8,7 @@
         </div>
       </div>
       <div class="card-body">
+      <p>You can only make a <u><span class="fw-bold">face to face consultation</span></u> during the schedule shown above.</p>
         <table id="students-datatable" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
           <thead>
             <tr>
