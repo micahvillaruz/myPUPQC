@@ -18,7 +18,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Reason for consultation</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_guidance_no">Headache</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_guidance_no"></div>
                 </div>
               </div>
             </li>
@@ -26,10 +26,10 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Dentist</h5>
+                  <h5 class="fs-13 mb-1 fw-medium">Doctor</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_guidance_no">Dr. Melissa P. Sarappudin, MD</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_guidance_no"></div>
                 </div>
               </div>
             </li>
@@ -40,7 +40,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Date of start of symptoms</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_guidance_name">09-11-2022</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_guidance_name"></div>
                 </div>
               </div>
             </li>
@@ -51,7 +51,7 @@
                   <h5 class="fs-13 mb-1">Scheduled Date</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_scheduled_date">09-22-22</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_scheduled_date"></div>
                 </div>
               </div>
             </li>
@@ -62,7 +62,7 @@
                   <h5 class="fs-13 mb-1">Time</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_time">9:00 AM - 11: 00 AM</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_time"></div>
                 </div>
               </div>
             </li>
