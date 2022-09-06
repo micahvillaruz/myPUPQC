@@ -34,7 +34,7 @@
               <div class="row text text-white-50 text-center">
                 <div class="col-12">
                   <div class="p-2">
-                    <a href="<?= base_url() ?>profile/settings" class="btn btn-success"><i class="ri-edit-box-line align-bottom"></i> Edit Profile</a>
+                    <a href="<?= base_url() ?>student/profile/settings" class="btn btn-success"><i class="ri-edit-box-line align-bottom"></i> Edit Profile</a>
                   </div>
                 </div>
               </div>
