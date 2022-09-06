@@ -3,7 +3,7 @@
       <!-- LOGO -->
       <div class="navbar-brand-box">
         <!-- Light Logo-->
-        <a href="<?= base_url() ?>admin" class="logo logo-light">
+        <a href="<?= base_url() ?>pupstaff" class="logo logo-light">
           <span class="logo-sm">
             <img src="<?= base_url() ?>public/images/logo-sm.png" alt="" height="75" />
           </span>
@@ -22,7 +22,7 @@
           <ul class="navbar-nav" id="navbar-nav">
             <li class="menu-title"><span data-key="t-menu">Menu</span></li>
             <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>admin">
+              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff">
                 <i class="ri-dashboard-2-line"></i>
                 <span>Dashboard</span>
               </a>
