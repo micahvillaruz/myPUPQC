@@ -26,7 +26,7 @@ class Auth extends CI_Controller
         // Redirect to page according to user_type
         if ($user_type === 'Super Admin')   redirect(base_url('admin/dashboard'));
         if ($user_type === 'Student')       redirect(base_url('student/dashboard'));
-        if ($user_type === 'PUP Staff')     redirect(base_url('pup-staff/dashboard'));
+        if ($user_type === 'PUP Staff')     redirect(base_url('pupstaff/dashboard'));
       }
     } else {
       redirect(base_url('signin'));
