@@ -33,9 +33,9 @@
               <td></td>
               <td>
                 <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewGuidanceModal"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editGuidanceModal"><i class="ri-edit-2-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteGuidanceModal"><i class="ri-delete-bin-5-fill"></i></button>
+                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalPrescriptionModal"><i class="ri-eye-fill"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalPrescriptionModal"><i class="ri-edit-2-fill"></i></button>
+                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteMedicalPrescriptionModal"><i class="ri-delete-bin-5-fill"></i></button>
                 </div>
               </td>
             </tr>

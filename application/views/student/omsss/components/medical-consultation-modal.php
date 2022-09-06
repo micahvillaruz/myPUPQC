@@ -75,7 +75,7 @@
         <button type="button" class="btn btn-light" data-bs-dismiss="modal">
           Close
         </button>
-      </div>
+        </div>
     </div>
     <!-- /.modal-content -->
   </div>

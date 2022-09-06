@@ -71,7 +71,7 @@
   <!-- /.modal-dialog -->
 </div>
 
-<!-- Edit Immunization modal -->
+<!-- Edit Immunization modal
 <div id="editImmunizationModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content border-0 overflow-hidden">
@@ -88,7 +88,7 @@
 										<div class="card">
 											<div class="card-header">
 											</div>
-											<!-- end card header -->
+											end card header
 
 											<div class="card-body">
 												<p class="text-muted">
@@ -102,11 +102,11 @@
 													data-max-file-size="3MB"
 													data-max-files="3" />
 											</div>
-											<!-- end card body -->
+											end card body
 										</div>
-										<!-- end card -->
+										end card
 									</div>
-									<!-- end col -->
+									end col
           </div>
           <div class="text-end">
             <button type="submit" class="btn btn-primary">Edit</button>
@@ -115,10 +115,10 @@
         </form>
       </div>
     </div>
-    <!-- /.modal-content -->
+    /.modal-content
   </div>
-  <!-- /.modal-dialog -->
-</div>
+  /.modal-dialog
+</div> -->
 
 <!-- Delete Immunization modal -->
 <div class="modal fade zoomIn" id="deleteImmunizationModal" tabindex="-1" aria-hidden="true">
