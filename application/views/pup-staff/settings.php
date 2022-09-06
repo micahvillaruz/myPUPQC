@@ -29,7 +29,7 @@
             <div class="card-body p-4">
               <div class="tab-content">
                 <div class="tab-pane active" id="personalDetails" role="tabpanel">
-                  <form id="profile-settings">
+                  <form id="profileSettingsForm" class="needs-validation" novalidate>
                     <div class="row">
                       <div class="text-center">
                         <div class="profile-user position-relative d-inline-block mx-auto mb-4">
@@ -47,21 +47,27 @@
                       <div class="col-lg-3">
                         <div class="mb-3">
                           <label for="first_name" class="form-label">First Name <span class="text-danger">*</span></label>
-                          <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter your first name" value="Demelyn" />
+                          <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter your first name" required />
+                          <div class="invalid-feedback">
+                            Please enter your First Name.
+                          </div>
                         </div>
                       </div>
                       <!--end col-->
                       <div class="col-lg-3">
                         <div class="mb-3">
                           <label for="middle_name" class="form-label">Middle Name</label>
-                          <input type="text" class="form-control" id="middle_name" name="middle_name" placeholder="Enter your middle name" value="Escober" />
+                          <input type="text" class="form-control" id="middle_name" name="middle_name" placeholder="Enter your middle name" />
                         </div>
                       </div>
                       <!--end col-->
                       <div class="col-lg-3">
                         <div class="mb-3">
                           <label for="last_name" class="form-label">Last Name <span class="text-danger">*</span></label></label>
-                          <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter your last name" value="Monzon" />
+                          <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter your last name" required />
+                          <div class="invalid-feedback">
+                            Please enter your Last Name.
+                          </div>
                         </div>
                       </div>
                       <!--end col-->
@@ -75,60 +81,85 @@
                       <div class="col-lg-4">
                         <div class="mb-3">
                           <label for="birth_date" class="form-label">Birth Date <span class="text-danger">*</span></label>
-                          <input type="text" class="form-control" data-provider="flatpickr" id="birth_date" name="birth_date" data-date-format="F j, Y" data-deafult-date="October 7, 1935" placeholder="Select date" />
+                          <input type="text" class="form-control" data-provider="flatpickr" id="birth_date" name="birth_date" data-date-format="F j, Y" placeholder="Select date" required />
+                          <div class="invalid-feedback">
+                            Please select your Birth Date.
+                          </div>
                         </div>
                       </div>
                       <!--end col-->
                       <div class="col-lg-4">
                         <div class="mb-3">
                           <label for="gender" class="form-label">Gender <span class="text-danger">*</span></label>
-                          <select class="js-example-basic-single" id="gender" name="gender">
+                          <select class="form-select" id="gender" name="gender" required>
+                            <option value="" selected disabled>Choose Gender</option>
                             <option value="Male">Male</option>
-                            <option value="Female" selected>Female</option>
+                            <option value="Female">Female</option>
                             <option value="Others">Others</option>
                           </select>
+                          <div class="invalid-feedback">
+                            Please select your Gender.
+                          </div>
                         </div>
                       </div>
                       <!--end col-->
                       <div class="col-lg-4">
                         <div class="mb-3">
                           <label for="contact_number" class="form-label">Contact Number <span class="text-danger">*</span></label>
-                          <input type="text" class="form-control" id="contact_number" name="contact_number" placeholder="Enter your Contact Number" value="09182910291" />
+                          <input type="text" class="form-control" id="contact_number" name="contact_number" placeholder="Enter your Contact Number" required />
+                          <div class="invalid-feedback">
+                            Please enter your Contact Number.
+                          </div>
                         </div>
                       </div>
                       <!--end col-->
                       <div class="col-lg-6">
                         <div class="mb-3">
                           <label for="house_street" class="form-label">House, Block, Street <span class="text-danger">*</span></label>
-                          <input type="text" class="form-control" id="house_street" name="house_street" placeholder="Enter House No., Block, Street Name" value="Blk 9 Lot 12 D' Rising HOA, Katuparan St.," />
+                          <input type="text" class="form-control" id="house_street" name="house_street" placeholder="Enter House No., Block, Street Name" required />
+                          <div class="invalid-feedback">
+                            Please enter your House No., Block, Street Name.
+                          </div>
                         </div>
                       </div>
                       <!--end col-->
                       <div class="col-lg-6">
                         <div class="mb-3">
                           <label for="barangay" class="form-label">Barangay <span class="text-danger">*</span></label>
-                          <input type="text" class="form-control" id="barangay" name="barangay" placeholder="Enter Barangay" value="Commonwealth" />
+                          <input type="text" class="form-control" id="barangay" name="barangay" placeholder="Enter Barangay" required />
+                          <div class="invalid-feedback">
+                            Please enter your Barangay.
+                          </div>
                         </div>
                       </div>
                       <!--end col-->
                       <div class="col-lg-4">
                         <div class="mb-3">
                           <label for="municipality" class="form-label">Municipality <span class="text-danger">*</span></label>
-                          <input type="text" class="form-control" id="municipality" name="municipality" placeholder="Enter Municipality" value="Quezon City" />
+                          <input type="text" class="form-control" id="municipality" name="municipality" placeholder="Enter Municipality" required />
+                          <div class="invalid-feedback">
+                            Please enter your Municipality.
+                          </div>
                         </div>
                       </div>
                       <!--end col-->
                       <div class="col-lg-4">
                         <div class="mb-3">
                           <label for="province" class="form-label">Province <span class="text-danger">*</span></label>
-                          <input type="text" class="form-control" id="province" name="province" placeholder="Enter Province" value="Metro Manila" />
+                          <input type="text" class="form-control" id="province" name="province" placeholder="Enter Province" required />
+                          <div class="invalid-feedback">
+                            Please enter your Province.
+                          </div>
                         </div>
                       </div>
                       <!--end col-->
                       <div class="col-lg-4">
                         <div class="mb-3">
                           <label for="region" class="form-label">Region <span class="text-danger">*</span></label>
-                          <input type="text" class="form-control" id="region" name="region" placeholder="Enter Region" value="National Capital Region" />
+                          <input type="text" class="form-control" id="region" name="region" placeholder="Enter Region" required />
+                          <div class="invalid-feedback">
+                            Please enter your Region.
+                          </div>
                         </div>
                       </div>
                       <!--end col-->
