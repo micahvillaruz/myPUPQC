@@ -49,14 +49,14 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link menu-link">
+          <a class="nav-link menu-link" href="https://sisstudents.pup.edu.ph/">
             <i class="bx bxs-graduation"></i>
             <span>PUP SIS</span>
           </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link menu-link">
+          <a class="nav-link menu-link" href="http://apps.pup.edu.ph/appointment/">
             <i class="bx bx-notepad"></i>
             <span>VASS</span>
           </a>
