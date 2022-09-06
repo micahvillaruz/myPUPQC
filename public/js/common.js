@@ -1,5 +1,5 @@
 const baseURL = 'http://localhost/myPUPQC/'
-const apiURL = 'http://localhost:3600/mypupqc/v1/'
+const apiURL = 'https://mypupqc-api.azurewebsites.net/mypupqc/v1/'
 // Token
 const TOKEN = localStorage.getItem('TOKEN')
 
