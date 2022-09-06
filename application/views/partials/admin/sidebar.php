@@ -54,14 +54,14 @@
 
             <li class="nav-item">
               <a class="nav-link menu-link" href="<?= base_url() ?>admin/omsss/medical-appointment">
-                <i class="mdi mdi-pill"></i>
+              <i class="las la-first-aid"></i>
                 <span>Medical Appointment</span>
               </a>
             </li>
 
             <li class="nav-item">
               <a class="nav-link menu-link" href="<?= base_url() ?>admin/omsss/dentist-appointment">
-                <i class="mdi mdi-tooth-outline"></i>
+                <i class="las la-tooth"></i>
                 <span>Dental Appointment</span>
               </a>
             </li>
@@ -74,7 +74,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link menu-link" href="<?= base_url() ?>admin/omsss/medical-prescription">
-                <i class="mdi mdi-brain"></i>
+                <i class="las la-file-prescription"></i>
                 <span>Medical Prescription</span>
               </a>
             </li>

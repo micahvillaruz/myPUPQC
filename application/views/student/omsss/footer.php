@@ -19,7 +19,7 @@
           </span>
           <div class="vr"></div>
           <span class="fw-bold text-primary">
-            <i class="las la-user-friends text-primary fw-bold me-2"></i>
+            <i class="mdi mdi-brain text-primary fw-bold me-2"></i>
             guidance_placement.qc@pup.edu.ph
           </span>
         </div>
