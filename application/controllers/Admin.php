@@ -89,4 +89,18 @@ class Admin extends CI_Controller
     $this->load->view('partials/foot-scripts');
     $this->load->view('admin/omsss/guidance-appointment/scripts/guidance-appointment-scripts');
   }
+  public function medical_prescription()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/admin/topbar');
+    $this->load->view('partials/admin/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "Health and Well-Being", "title" => "Medical Prescription"]);
+    $this->load->view('admin/omsss/medical-prescription/medical-prescription');
+    $this->load->view('partials/footer');
+    $this->load->view('admin/omsss/components/medical-prescription-modal');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('admin/omsss/medical-prescription/scripts/medical-prescription-scripts');
+  }
 }

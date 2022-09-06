@@ -72,6 +72,12 @@
                 <span>Guidance Appointment</span>
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/omsss/medical-prescription">
+                <i class="mdi mdi-brain"></i>
+                <span>Medical Prescription</span>
+              </a>
+            </li>
 
 
           </ul>
