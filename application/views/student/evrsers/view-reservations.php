@@ -13,8 +13,8 @@
                         <tr>
                             <th>Reservation ID</th>
                             <th>Event Title</th>
-                            <th>Event Details</th>
                             <th>Venue</th>
+                            <th>Event Details</th>
                             <th>Date</th>
                             <th>Time</th>
                             <th>Status</th>
@@ -29,7 +29,7 @@
                             <td>Sponsored by Jhobart M. Xavier-Oxford III.</td>
                             <td>09-01-2022</td>
                             <td>1:00 - 2:00PM</td>
-                            <td><span class="badge rounded-pill bg-success">Accept</span></td>
+                            <td><span class="badge rounded-pill bg-success">Approved</span></td>
                             <td>
                                 <div class="dropdown d-inline-block">
                                     <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
@@ -77,7 +77,7 @@
                             <td>Sponsored by Jhobart M. Xavier-Oxford III.</td>
                             <td>09-04-2022</td>
                             <td>4:00 - 5:00PM</td>
-                            <td><span class="badge rounded-pill bg-success">Accept</span></td>
+                            <td><span class="badge rounded-pill bg-success">Approved</span></td>
                             <td>
                                 <div class="dropdown d-inline-block">
                                     <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>

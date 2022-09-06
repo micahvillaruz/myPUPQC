@@ -3,7 +3,7 @@
   <!-- LOGO -->
   <div class="navbar-brand-box">
     <!-- Light Logo-->
-    <a href="index.html" class="logo logo-light">
+    <a href="<?= base_url() ?>student" class="logo logo-light">
       <span class="logo-sm">
         <img src="<?= base_url() ?>public/images/logo-sm.png" alt="" height="75" />
       </span>
@@ -22,13 +22,12 @@
       <ul class="navbar-nav" id="navbar-nav">
         <li class="menu-title"><span data-key="t-menu">Menu</span></li>
         <li class="nav-item">
-          <a class="nav-link menu-link">
+          <a class="nav-link menu-link" href="<?= base_url() ?>student">
             <i class="ri-dashboard-2-line"></i>
             <span>Dashboard</span>
           </a>
         </li>
-        <!-- end Dashboard Menu -->
-        <li class="nav-item">
+        <!--         <li class="nav-item">
           <a class="nav-link menu-link">
             <i class="ri-calendar-todo-fill"></i>
             <span>Calendar</span>
@@ -40,8 +39,7 @@
             <i class="ri-customer-service-2-fill"></i>
             <span>Announcements</span>
           </a>
-        </li>
-        <!-- end Dashboard Menu -->
+        </li> -->
 
         <li class="menu-title">
           <i class="ri-more-fill"></i>
@@ -62,7 +60,7 @@
           </a>
         </li>
 
-        <li class="nav-item">
+        <!--         <li class="nav-item">
           <a class="nav-link menu-link">
             <i class="ri-hand-coin-line"></i>
             <span>Scholarships</span>
@@ -115,11 +113,11 @@
               </li>
             </ul>
           </div>
-        </li>
+        </li> -->
 
         <li class="nav-item">
-          <a class="nav-link menu-link">
-            <i class="ri-question-answer-line"></i>
+          <a class="nav-link menu-link" href="https://osssac.pup.edu.ph/">
+            <i class=" ri-question-answer-line"></i>
             <span>HelpDesk</span>
           </a>
         </li>

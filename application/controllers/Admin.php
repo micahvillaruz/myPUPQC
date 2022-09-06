@@ -17,6 +17,32 @@ class Admin extends CI_Controller
     $this->load->view('admin/scripts/dashboard-scripts');
   }
 
+  public function profile()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/admin/topbar');
+    $this->load->view('partials/admin/sidebar');
+    $this->load->view('admin/profile');
+    $this->load->view('partials/footer');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('admin/scripts/profile-scripts');
+  }
+
+  public function settings()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/admin/topbar');
+    $this->load->view('partials/admin/sidebar');
+    $this->load->view('admin/settings');
+    $this->load->view('partials/footer');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('admin/scripts/settings-scripts');
+  }
+
   public function user_students()
   {
     $this->load->view('partials/main');
@@ -31,6 +57,7 @@ class Admin extends CI_Controller
     $this->load->view('partials/foot-scripts');
     $this->load->view('admin/user-management/scripts/students-scripts');
   }
+
   public function user_pup_staffs()
   {
     $this->load->view('partials/main');
@@ -60,6 +87,7 @@ class Admin extends CI_Controller
     $this->load->view('partials/foot-scripts');
     $this->load->view('admin/omsss/medical-appointment/scripts/medical-appointment-scripts');
   }
+
   public function dentist_appointment()
   {
     $this->load->view('partials/main');
@@ -89,6 +117,7 @@ class Admin extends CI_Controller
     $this->load->view('partials/foot-scripts');
     $this->load->view('admin/omsss/guidance-appointment/scripts/guidance-appointment-scripts');
   }
+
   public function medical_prescription()
   {
     $this->load->view('partials/main');

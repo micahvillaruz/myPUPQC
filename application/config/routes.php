@@ -132,6 +132,7 @@ $route['admission'] = 'home/admission';
 
 $route['student/dashboard'] = 'student';
 $route['student/profile'] = 'student/profile';
+$route['student/profile/settings'] = 'student/settings';
 
 /*
 | --------------
@@ -187,6 +188,8 @@ $route['student/evrsers/reservation-history'] = 'student/reservation_history';
 */
 
 $route['admin/dashboard'] = 'admin';
+$route['admin/profile'] = 'admin/profile';
+$route['admin/profile/settings'] = 'admin/settings';
 
 /*
 | ----------------------
@@ -215,4 +218,6 @@ $route['admin/omsss/medical-prescription'] = 'admin/medical_prescription';
 | -------------------------------------------------------------------------
 */
 
-$route['pup-staff/dashboard'] = 'pupstaff';
+$route['pupstaff/dashboard'] = 'pupstaff';
+$route['pupstaff/profile'] = 'pupstaff/profile';
+$route['pupstaff/profile/settings'] = 'pupstaff/settings';
