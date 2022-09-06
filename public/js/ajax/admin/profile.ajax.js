@@ -19,7 +19,9 @@ loadProfile = () => {
 			$('#view_full_name').html(data.full_name)
 			$('#view_name').html(data.full_name)
 			$('#view_contact').html(data.contact_number)
-			$('#view_bday').html(data.birth_date)
+			const birth_date = data.birth_date
+			let birthDateFormatted = `${moment(birth_date).format('LL')}`
+			$('#view_bday').html(birthDateFormatted)
 			$('#view_gender').html(data.gender)
 			$('#view_full_address').html(data.full_address)
 		},

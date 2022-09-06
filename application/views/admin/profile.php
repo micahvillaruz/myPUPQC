@@ -60,7 +60,7 @@
                       </div>
                       <div class="flex-grow-1 overflow-hidden">
                         <p class="mb-1 text-primary fw-medium">User Number :</p>
-                        <h6 class="text-truncate mb-0" id="view_user_no">admin@pup.edu.ph</h6>
+                        <h6 class="text-truncate mb-0" id="view_user_no"></h6>
                       </div>
                     </div>
                     <div class="d-flex mt-4">
@@ -71,7 +71,7 @@
                       </div>
                       <div class="flex-grow-1 overflow-hidden">
                         <p class="mb-1 text-primary fw-medium">Full Name :</p>
-                        <h6 class="text-truncate mb-0" id="view_name">Jaime P. Gutierrez Jr.</h6>
+                        <h6 class="text-truncate mb-0" id="view_name"></h6>
                       </div>
                     </div>
                     <div class="d-flex mt-4">
@@ -82,7 +82,7 @@
                       </div>
                       <div class="flex-grow-1 overflow-hidden">
                         <p class="mb-1 text-primary fw-medium">Contact Number :</p>
-                        <h6 class="text-truncate mb-0" id="view_contact">09172910282</h6>
+                        <h6 class="text-truncate mb-0" id="view_contact"></h6>
                       </div>
                     </div>
                     <div class="d-flex mt-4">
@@ -93,7 +93,7 @@
                       </div>
                       <div class="flex-grow-1 overflow-hidden">
                         <p class="mb-1 text-primary fw-medium">Birth Date :</p>
-                        <h6 class="text-truncate mb-0" id="view_bday">June 17, 1992</h6>
+                        <h6 class="text-truncate mb-0" id="view_bday"></h6>
                       </div>
                     </div>
                     <div class="d-flex mt-4">
@@ -104,7 +104,7 @@
                       </div>
                       <div class="flex-grow-1 overflow-hidden">
                         <p class="mb-1 text-primary fw-medium">Gender :</p>
-                        <h6 class="text-truncate mb-0" id="view_gender">Male</h6>
+                        <h6 class="text-truncate mb-0" id="view_gender"></h6>
                       </div>
                     </div>
                     <div class="d-flex mt-4">
@@ -115,7 +115,7 @@
                       </div>
                       <div class="flex-grow-1 overflow-hidden">
                         <p class="mb-1 text-primary fw-medium">Address :</p>
-                        <h6 class="text-truncate mb-0" id="view_full_address">PUP Quezon City Branch Don Fabian St., Commonwealth Quezon City</h6>
+                        <h6 class="text-truncate mb-0" id="view_full_address"></h6>
                       </div>
                     </div>
                   </div>
