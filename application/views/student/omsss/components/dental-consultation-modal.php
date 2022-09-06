@@ -4,7 +4,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalScrollableTitle">
-          Student Information
+          Dental Case
         </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -14,19 +14,11 @@
             <!-- end list item -->
             <li class="list-group-item">
               <div class="d-flex align-items-center">
-                <div class="profile-user position-relative d-inline-block mx-auto mb-2">
-                  <img src="<?= base_url() ?>public/images/users/user-dummy-img.jpg" class="rounded-circle avatar-lg img-thumbnail user-profile-image" alt="user-profile-image" />
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Student No</h5>
+                  <h5 class="fs-13 mb-1 fw-medium">Reason for consultation</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_student_no"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_guidance_no">Cleaning</div>
                 </div>
               </div>
             </li>
@@ -34,10 +26,10 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Name</h5>
+                  <h5 class="fs-13 mb-1 fw-medium">Dentist</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_student_name"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_guidance_no">Rosanna Florencia A. Ulep, DMD, MPH</div>
                 </div>
               </div>
             </li>
@@ -45,10 +37,10 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1">Full Address</h5>
+                  <h5 class="fs-13 mb-1 fw-medium">Date of start of symptoms</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_full_address"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_guidance_name">09-11-2022</div>
                 </div>
               </div>
             </li>
@@ -56,10 +48,10 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1">Gender</h5>
+                  <h5 class="fs-13 mb-1">Scheduled Date</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_gender"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_scheduled_date">09-22-22</div>
                 </div>
               </div>
             </li>
@@ -67,31 +59,10 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1">Birthday</h5>
+                  <h5 class="fs-13 mb-1">Time</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_bday"></div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1">Contact Number</h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_contact_no"></div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Status</h5>
-                </div>
-                <div class="col-8" id="view_status">
+                  <div class="d-flex fs-13 fw-medium" id="view_time">9:00 AM - 11: 00 AM</div>
                 </div>
               </div>
             </li>
@@ -111,7 +82,7 @@
   <!-- /.modal-dialog -->
 </div>
 
-<!-- Add Consultation modal -->
+<!-- Add Dental modal -->
 <div id="addDentalModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content border-0 overflow-hidden">
@@ -129,7 +100,7 @@
           </div>
           <div class="mb-3">
             <label for="nameInput" class="form-label"> Enter Dentist <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="nameInput" name="first_name last_name" placeholder="Enter your name" required>
+            <input type="text" class="form-control" id="nameInput" name="first_name last_name" placeholder="Enter name of Dentist" required>
           </div>
           <div class="mb-3">
             <div>
