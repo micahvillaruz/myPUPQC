@@ -65,4 +65,4 @@
         </div>
       </div>
     </header>
-    <script src="<?php echo base_url() ?>/public/js/ajax/admin/topbar.ajax.js"></script>ublic/ass
+    <script src="<?php echo base_url() ?>/public/js/ajax/admin/topbar.ajax.js"></script>

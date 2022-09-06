@@ -188,6 +188,8 @@ $route['student/evrsers/reservation-history'] = 'student/reservation_history';
 */
 
 $route['admin/dashboard'] = 'admin';
+$route['admin/profile'] = 'admin/profile';
+$route['admin/profile/settings'] = 'admin/settings';
 
 /*
 | ----------------------
