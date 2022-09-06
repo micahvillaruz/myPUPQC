@@ -16,11 +16,11 @@
           <!--end col-->
           <div class="col">
             <div class="p-2">
-              <h3 class="text-white mb-1">Micah M. Villaruz</h3>
-              <p class="text-white-75">BS Information Technology</p>
+              <h3 class="text-white mb-1" id="view_full_name">Micah M. Villaruz</h3>
+              <p class="text-white-75">Student</p>
               <div class="hstack text-white-50 gap-1">
                 <div class="me-2">
-                  <i class="bx bxs-school me-3 text-white-75 fs-16 align-middle"></i>BSIT 3-1
+                  <i class="bx bxs-school me-3 text-white-75 fs-16 align-middle"></i>Role
                 </div>
               </div>
             </div>
@@ -34,7 +34,7 @@
               <div class="row text text-white-50 text-center">
                 <div class="col-12">
                   <div class="p-2">
-                    <a href="<?= base_url() ?>student/profile/settings" class="btn btn-success"><i class="ri-edit-box-line align-bottom"></i> Edit Profile</a>
+                    <a href="<?= base_url() ?>student/profile/settings" class="btn btn-secondary"><i class="ri-edit-box-line align-bottom"></i> Edit Profile</a>
                   </div>
                 </div>
               </div>
@@ -59,8 +59,8 @@
                         </div>
                       </div>
                       <div class="flex-grow-1 overflow-hidden">
-                        <p class="mb-1 text-primary fw-medium">Student Number :</p>
-                        <h6 class="text-truncate mb-0">2019-00025-CM-0</h6>
+                        <p class="mb-1 text-primary fw-medium">User Number :</p>
+                        <h6 class="text-truncate mb-0" id="view_user_no"></h6>
                       </div>
                     </div>
                     <div class="d-flex mt-4">
@@ -71,7 +71,7 @@
                       </div>
                       <div class="flex-grow-1 overflow-hidden">
                         <p class="mb-1 text-primary fw-medium">Full Name :</p>
-                        <h6 class="text-truncate mb-0">Micah M. Villaruz</h6>
+                        <h6 class="text-truncate mb-0" id="view_name"></h6>
                       </div>
                     </div>
                     <div class="d-flex mt-4">
@@ -82,7 +82,7 @@
                       </div>
                       <div class="flex-grow-1 overflow-hidden">
                         <p class="mb-1 text-primary fw-medium">Contact Number :</p>
-                        <h6 class="text-truncate mb-0">09561437674</h6>
+                        <h6 class="text-truncate mb-0" id="view_contact"></h6>
                       </div>
                     </div>
                     <div class="d-flex mt-4">
@@ -93,7 +93,7 @@
                       </div>
                       <div class="flex-grow-1 overflow-hidden">
                         <p class="mb-1 text-primary fw-medium">Birth Date :</p>
-                        <h6 class="text-truncate mb-0">April 28, 2000</h6>
+                        <h6 class="text-truncate mb-0" id="view_bday"></h6>
                       </div>
                     </div>
                     <div class="d-flex mt-4">
@@ -104,7 +104,7 @@
                       </div>
                       <div class="flex-grow-1 overflow-hidden">
                         <p class="mb-1 text-primary fw-medium">Gender :</p>
-                        <h6 class="text-truncate mb-0">Female</h6>
+                        <h6 class="text-truncate mb-0" id="view_gender"></h6>
                       </div>
                     </div>
                     <div class="d-flex mt-4">
@@ -115,7 +115,7 @@
                       </div>
                       <div class="flex-grow-1 overflow-hidden">
                         <p class="mb-1 text-primary fw-medium">Address :</p>
-                        <h6 class="text-truncate mb-0">Lot 21, Block 16, Molave Street, Violago Homes Parkwoods, Payatas B, Quezon City</h6>
+                        <h6 class="text-truncate mb-0" id="view_full_address"></h6>
                       </div>
                     </div>
                   </div>

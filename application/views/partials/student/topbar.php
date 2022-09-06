@@ -42,14 +42,14 @@
                 <span class="d-flex align-items-center">
                   <img class="rounded-circle header-profile-user" src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-man-6.png" alt="Header Avatar" />
                   <span class="text-start ms-xl-2">
-                    <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Jobart Montefalco Xavier III</span>
+                    <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text" id="full_name"></span>
                     <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">Student</span>
                   </span>
                 </span>
               </button>
               <div class="dropdown-menu dropdown-menu-end">
                 <!-- item-->
-                <h6 class="dropdown-header">Welcome Jobart!</h6>
+                <h6 class="dropdown-header" id="welcome"></h6>
                 <a class="dropdown-item" href="<?= base_url() ?>student/profile"><i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i>
                   <span class="align-middle">Profile</span></a>
                 <a class="dropdown-item" href="https://osssac.pup.edu.ph/"><i class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i>
@@ -65,3 +65,4 @@
         </div>
       </div>
     </header>
+    <script src="<?php echo base_url() ?>/public/js/ajax/student/profile.ajax.js"></script>
