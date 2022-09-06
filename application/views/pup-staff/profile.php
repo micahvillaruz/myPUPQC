@@ -20,7 +20,7 @@
               <p class="text-white-75">PUP Staff</p>
               <div class="hstack text-white-50 gap-1">
                 <div class="me-2">
-                  <i class="ri-map-pin-user-line me-1 text-white-75 fs-16 align-middle"></i>Role
+                  <i class="bx bxs-school me-3 text-white-75 fs-16 align-middle"></i>Polytechic University of the Philippines Quezon City Branch
                 </div>
               </div>
             </div>

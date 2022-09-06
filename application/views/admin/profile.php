@@ -20,7 +20,7 @@
               <p class="text-white-75">Super Admin</p>
               <div class="hstack text-white-50 gap-1">
                 <div>
-                  <i class="ri-building-line me-1 text-white-75 fs-16 align-middle"></i>Polytechnic University of the Philippines Quezon City Branch
+                  <i class="bx bxs-school me-3 text-white-75 fs-16 align-middle"></i>Polytechic University of the Philippines Quezon City Branch
                 </div>
               </div>
             </div>
