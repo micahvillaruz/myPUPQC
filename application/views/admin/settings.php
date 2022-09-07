@@ -176,26 +176,35 @@
                 </div>
                 <!--end tab-pane-->
                 <div class="tab-pane" id="changePassword" role="tabpanel">
-                  <form action="javascript:void(0);">
+                  <form id="changePasswordForm" class="needs-validation" novalidate>
                     <div class="row g-2">
                       <div class="col-lg-4">
                         <div>
                           <label for="oldpasswordInput" class="form-label">Old Password <span class="text-danger">*</span></label>
-                          <input type="password" class="form-control" id="oldpasswordInput" placeholder="Enter current password" />
+                          <input type="password" class="form-control" id="old-password-input" name="current_password" placeholder="Enter current password" required />
+                          <div class="invalid-feedback">
+                            Incorrect password
+                          </div>
                         </div>
                       </div>
                       <!--end col-->
                       <div class="col-lg-4">
                         <div>
                           <label for="newpasswordInput" class="form-label">New Password <span class="text-danger">*</span></label>
-                          <input type="password" class="form-control" id="newpasswordInput" placeholder="Enter new password" />
+                          <input type="password" class="form-control" id="password-input" name='new_password' placeholder="Enter new password" required />
+                          <div class="invalid-feedback">
+                            Please enter password
+                          </div>
                         </div>
                       </div>
                       <!--end col-->
                       <div class="col-lg-4">
                         <div>
                           <label for="confirmpasswordInput" class="form-label">Confirm Password <span class="text-danger">*</span></label>
-                          <input type="password" class="form-control" id="confirmpasswordInput" placeholder="Confirm password" />
+                          <input type="password" class="form-control" id="confirm-password-input" placeholder="Confirm password" required />
+                          <div class="invalid-feedback">
+                            Password don't match
+                          </div>
                         </div>
                       </div>
                       <!--end col-->

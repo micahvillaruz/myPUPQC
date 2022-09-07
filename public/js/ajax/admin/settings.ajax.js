@@ -6,6 +6,12 @@ $(function () {
 		// pass data to API for updating of admin's info
 		editProfileAJAX()
 	})
+
+	$('#changePasswordForm').on('submit', function (e) {
+		e.preventDefault() // prevent page refresh
+		validatePassword()
+		changePasswordAJAX()
+	})
 })
 
 // Edit Admin Details
@@ -95,4 +101,43 @@ editProfileAJAX = () => {
 			})
 		})
 	}
+}
+
+// Change Password AJAX
+changePasswordAJAX = () => {
+	if (!$('#changePasswordForm')[0].checkValidity()) return false
+
+	const form = new FormData($('#changePasswordForm')[0])
+
+	let data = {
+		current_password: form.get('current_password'),
+		new_password: form.get('new_password'),
+	}
+
+	$.ajax({
+		url: apiURL + `super_admin/info/change_password`,
+		type: 'PUT',
+		data: data,
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			console.log(result)
+			if (result) {
+				Swal.fire({
+					html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done!</h4><p class="text-muted mx-4 mb-0">You have successfully updated your password!</p></div></div>',
+					showCancelButton: !0,
+					showConfirmButton: !1,
+					cancelButtonClass: 'btn btn-primary w-xs mb-1',
+					cancelButtonText: 'Ok',
+					buttonsStyling: !1,
+					showCloseButton: !0,
+				}).then(function () {
+					window.location.reload()
+				})
+			}
+		},
+	}).fail(() => {
+		let password = document.getElementById('old-password-input')
+		password.setCustomValidity('Incorrect Password')
+	})
 }
