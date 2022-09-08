@@ -174,8 +174,6 @@ $route['student/omsss/contact-omsss'] = 'student/contact_omsss';
 
 // If no organizer status
 
-// Apply as Organizer
-
 // Reservations
 $route['student/evrsers/new-reservation'] = 'student/new_reservation';
 $route['student/evrsers/view-reservations'] = 'student/view_reservations';
@@ -211,6 +209,17 @@ $route['admin/omsss/medical-appointment'] = 'admin/medical_appointment';
 $route['admin/omsss/dentist-appointment'] = 'admin/dentist_appointment';
 $route['admin/omsss/guidance-appointment'] = 'admin/guidance_appointment';
 $route['admin/omsss/medical-prescription'] = 'admin/medical_prescription';
+
+/*
+| --------------
+|     EVRSERS
+| --------------
+*/
+
+// Reservations
+$route['student/evrsers/new-reservation'] = 'student/new_reservation';
+$route['student/evrsers/view-reservations'] = 'student/view_reservations';
+$route['student/evrsers/reservation-history'] = 'student/reservation_history';
 
 /*
 | -------------------------------------------------------------------------
