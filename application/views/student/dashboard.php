@@ -499,15 +499,8 @@
               <p class="text-muted mt-3">
                 Our experienced psychologist offer free and confidential counselling support to all PUPQC students. Talk to us now if you're having emotional or psychological issues.
               </p>
-<<<<<<< HEAD
               <div class="mt-5">
               <button type="button" class="mb-5 btn fs-5 btn-secondary waves-effect waves-light"> <i class=" mdi mdi-brain "></i> Book a Guidance Consultation Appointment</button>
-=======
-              <div class="mt-4 my-4 pb-2">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  Book a Guidance Consultation Appointment
-                </button>
->>>>>>> 14702be25b65c43d4c1cfa8e62e376afd649ca6c
               </div>
             </div>
           </div>
