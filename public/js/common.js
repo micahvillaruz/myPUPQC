@@ -16,5 +16,31 @@ const AJAX_HEADERS = {
 	Authorization: `Bearer ${TOKEN}`,
 }
 
-console.log(webEnv)
-console.log(apiEnv)
+function logout(page) {
+	Swal.fire({
+		html:
+			'<div class="mt-3">' +
+			'<lord-icon src="https://cdn.lordicon.com/moscwhoj.json" trigger="loop" colors="primary:#f7b84b,secondary:#f06548" style="width:100px;height:100px"></lord-icon>' +
+			'<h4>Are you sure you want to logout?</h4>' +
+			'</div>',
+		showCancelButton: true,
+		confirmButtonText: 'Yes!',
+		cancelButtonText: 'No, cancel!',
+		confirmButtonClass: 'btn btn-primary w-xs me-2 mt-2',
+		cancelButtonClass: 'btn btn-danger w-xs mt-2',
+		buttonsStyling: false,
+		showCloseButton: true,
+	}).then(function (result) {
+		if (!result.value) return false
+
+		localStorage.clear()
+
+		switch (page) {
+			case 'logout':
+				window.location.href = baseURL + 'logout'
+				break
+			default:
+				return false
+		}
+	})
+}
