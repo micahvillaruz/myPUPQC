@@ -73,19 +73,19 @@ class Admin extends CI_Controller
     $this->load->view('admin/user-management/scripts/pup-staffs-scripts');
   }
 
-  public function medical_appointment()
+  public function all_appointment()
   {
     $this->load->view('partials/main');
     $this->load->view('partials/title-meta');
     $this->load->view('partials/head-css');
     $this->load->view('partials/admin/topbar');
     $this->load->view('partials/admin/sidebar');
-    $this->load->view('partials/page-title', ["page_title" => "Health and Well-Being", "title" => "Medical Appointment"]);
-    $this->load->view('admin/omsss/medical-appointment/medical-appointment');
+    $this->load->view('partials/page-title', ["page_title" => "Health and Well-Being", "title" => "All Appointments"]);
+    $this->load->view('admin/omsss/all-appointment/all-appointment');
     $this->load->view('partials/footer');
-    $this->load->view('admin/omsss/components/medical-appointment-modal');
+    $this->load->view('admin/omsss/components/all-appointment-modal');
     $this->load->view('partials/foot-scripts');
-    $this->load->view('admin/omsss/medical-appointment/scripts/medical-appointment-scripts');
+    $this->load->view('admin/omsss/all-appointment/scripts/all-appointment-scripts');
   }
 
   public function dentist_appointment()
@@ -118,18 +118,18 @@ class Admin extends CI_Controller
     $this->load->view('admin/omsss/guidance-appointment/scripts/guidance-appointment-scripts');
   }
 
-  public function medical_prescription()
+  public function all_prescription()
   {
     $this->load->view('partials/main');
     $this->load->view('partials/title-meta');
     $this->load->view('partials/head-css');
     $this->load->view('partials/admin/topbar');
     $this->load->view('partials/admin/sidebar');
-    $this->load->view('partials/page-title', ["page_title" => "Health and Well-Being", "title" => "Medical Prescription"]);
-    $this->load->view('admin/omsss/medical-prescription/medical-prescription');
+    $this->load->view('partials/page-title', ["page_title" => "Health and Well-Being", "title" => "All Prescriptions"]);
+    $this->load->view('admin/omsss/medical-prescription/all-prescription');
     $this->load->view('partials/footer');
-    $this->load->view('admin/omsss/components/medical-prescription-modal');
+    $this->load->view('admin/omsss/components/all-prescription-modal');
     $this->load->view('partials/foot-scripts');
-    $this->load->view('admin/omsss/medical-prescription/scripts/medical-prescription-scripts');
+    $this->load->view('admin/omsss/medical-prescription/scripts/all-prescription-scripts');
   }
 }

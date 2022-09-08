@@ -53,29 +53,16 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>admin/omsss/medical-appointment">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/omsss/all-appointment">
               <i class="las la-first-aid"></i>
-                <span>Medical Appointment</span>
+                <span>All Appointments</span>
               </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>admin/omsss/dentist-appointment">
-                <i class="las la-tooth"></i>
-                <span>Dental Appointment</span>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>admin/omsss/guidance-appointment">
-                <i class="mdi mdi-brain"></i>
-                <span>Guidance Appointment</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>admin/omsss/medical-prescription">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/omsss/all-prescription">
                 <i class="las la-file-prescription"></i>
-                <span>Medical Prescription</span>
+                <span>All Prescriptions</span>
               </a>
             </li>
 
