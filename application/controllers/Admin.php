@@ -3,6 +3,20 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Admin extends CI_Controller
 {
+
+  function __construct()
+  {
+    parent::__construct();
+
+    if ($this->session->token == null) {
+      redirect(base_url('auth/signin'));
+    }
+
+    if ($this->session->user_type != 'Super Admin') {
+      $this->session->user_type == 'Student' ? redirect(base_url('student')) : redirect(base_url('pupstaff'));
+    }
+  }
+
   public function index()
   {
     $this->load->view('partials/main');

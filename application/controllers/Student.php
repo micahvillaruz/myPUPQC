@@ -4,6 +4,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Student extends CI_Controller
 {
 
+  function __construct()
+  {
+    parent::__construct();
+
+    if ($this->session->token == null) {
+      redirect(base_url('auth/signin'));
+    }
+
+    if ($this->session->user_type != 'Student') {
+      $this->session->user_type == 'Super Admin' ? redirect(base_url('admin')) : redirect(base_url('pupstaff'));
+    }
+  }
+
   public function index()
   {
     $this->load->view('partials/main');
