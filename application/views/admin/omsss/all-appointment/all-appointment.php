@@ -11,6 +11,7 @@
         <table id="example" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
           <thead>
             <tr>
+              <th>Case Details</th>
               <th>Reason of Consultation</th>
               <th>Attending Doctor</th>
               <th>Start date of Symptoms</th>
@@ -22,6 +23,7 @@
           </thead>
           <tbody>
             <tr>
+              <td>2022-MED-0003</td>
               <td>Fever</td>
               <td>Melissa P. Sarapuddin, MD</td>
               <td>09-09-2022</td>
@@ -37,6 +39,7 @@
               </td>
             </tr>
             <tr>
+              <td>2022-DEN-0004</td>
               <td>Cleaning</td>
               <td>Rosanna Florencia A. Ulep, DMD, MPH</td>
               <td>18-09-2022</td>
@@ -52,6 +55,7 @@
               </td>
             </tr>
             <tr>
+              <td>2022-GUD-0005</td>
               <td>Anxiety</td>
               <td>Melanie F. Bactasa, MAED</td>
               <td>11-05-2022</td>

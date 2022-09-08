@@ -37,6 +37,17 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
+                  <h5 class="fs-13 mb-1 fw-medium">Case Details</h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium" id="view_case_details" value="">2022-MED-0003</div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
                   <h5 class="fs-13 mb-1 fw-medium">Reason for consultation</h5>
                 </div>
                 <div class="col-8">
@@ -123,6 +134,10 @@
       </div>
       <div class="modal-body">
         <form class="needs-validation" novalidate>
+        <div class="mb-3">
+            <label for="reasonCon" class="form-label">Case Details</label>
+            <input type="text" class="form-control" id="caseDetails" placeholder="" value="2022-MED-0003" required>
+          </div>
           <div class="mb-3">
             <label for="reasonCon" class="form-label">Reason for Consultation</label>
             <input type="text" class="form-control" id="reasonCon" placeholder="" value="Fever" required>
@@ -204,6 +219,17 @@
       <div class="modal-body">
         <div data-simplebar class="mx-n3">
           <ul class="list list-group list-group-flush mb-0">
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1 fw-medium">Case Details</h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium" id="view_case_details" value="">2022-DEN-0004</div>
+                </div>
+              </div>
+            </li>
             <!-- end list item -->
             <li class="list-group-item">
               <div class="d-flex align-items-center">
@@ -295,7 +321,11 @@
       </div>
       <div class="modal-body">
         <form class="needs-validation" novalidate>
-          <div class="mb-3">
+        <div class="mb-3">
+            <label for="reasonCon" class="form-label">Case Details</label>
+            <input type="text" class="form-control" id="caseDetails" placeholder="" value="2022-DEN-0004" required/>
+          </div>  
+        <div class="mb-3">
             <label for="reasonCon" class="form-label">Reason for Consultation</label>
             <input type="text" class="form-control" id="reasonCon" placeholder="" value="Cleaning" required/>
           </div>
@@ -378,6 +408,17 @@
       <div class="modal-body">
         <div data-simplebar class="mx-n3">
           <ul class="list list-group list-group-flush mb-0">
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1 fw-medium">Case Details</h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium" id="view_case_details" value="">2022-GUD-0005</div>
+                </div>
+              </div>
+            </li>
             <!-- end list item -->
             <li class="list-group-item">
               <div class="d-flex align-items-center">
@@ -469,9 +510,13 @@
       </div>
       <div class="modal-body">
         <form class="needs-validation" novalidate>
+        <div class="mb-3">
+            <label for="reasonCon" class="form-label">Case Details</label>
+            <input type="text" class="form-control" id="reasonCon" placeholder="" value="Anxiety" required/> 
+          </div>
           <div class="mb-3">
             <label for="reasonCon" class="form-label">Reason for Consultation</label>
-            <input type="text" class="form-control" id="reasonCon" placeholder="" value="Anxiety" required/> 
+            <input type="text" class="form-control" id="caseDetails" placeholder="" value="2022-GUD-0005" required/> 
           </div>
           <div class="mb-3">
             <label for="fullName" class="form-label">Atending Psychologist</label>
