@@ -1,8 +1,5 @@
 <!-- validation init -->
 <script src="<?= base_url() ?>public/js/pages/form-validation.init.js"></script>
-<!-- Sweet Alerts js -->
-<script src="<?= base_url() ?>public/libs/sweetalert2/sweetalert2.min.js"></script>
-
 <!-- Sweet alert init js-->
 <script src="<?= base_url() ?>public/js/pages/sweetalerts.init.js"></script>
 <!-- ajax -->
