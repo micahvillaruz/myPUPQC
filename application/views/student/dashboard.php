@@ -265,9 +265,7 @@
                 With regular dental check-ups, our dentists can help and give you a perfect treatment plan towards a perfect beautiful smile.
               </p>
               <div class="mt-4">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  Book a Dental Consultation Appointment
-                </button>
+                <button type="button" class="mb-5 btn fs-5 btn-secondary waves-effect waves-light"> <i class=" las la-tooth "></i> Book a Dental Consultation Appointment</button>
               </div>
             </div>
           </div>
@@ -478,9 +476,7 @@
                 Expect the quality health care services as you conveniently book your appointments, and get e-prescriptions from our university doctor.
               </p>
               <div class="mt-4">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  Book a Medical Consultation Appointment
-                </button>
+              <button type="button" class="mb-5 btn fs-5 btn-secondary waves-effect waves-light"> <i class=" las la-first-aid"></i> Book a Medical Consultation Appointment</button>
               </div>
             </div>
           </div>
@@ -504,9 +500,7 @@
                 Our experienced psychologist offer free and confidential counselling support to all PUPQC students. Talk to us now if you're having emotional or psychological issues.
               </p>
               <div class="mt-5">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  Book a Guidance Consultation Appointment
-                </button>
+              <button type="button" class="mb-5 btn fs-5 btn-secondary waves-effect waves-light"> <i class=" mdi mdi-brain "></i> Book a Guidance Consultation Appointment</button>
               </div>
             </div>
           </div>
