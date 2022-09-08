@@ -54,14 +54,14 @@
 
             <li class="nav-item">
               <a class="nav-link menu-link" href="<?= base_url() ?>admin/omsss/all-appointment">
-              <i class="las la-first-aid"></i>
+              <i class=" ri-survey-line"></i>
                 <span>All Appointments</span>
               </a>
             </li>
 
             <li class="nav-item">
               <a class="nav-link menu-link" href="<?= base_url() ?>admin/omsss/all-prescription">
-                <i class="las la-file-prescription"></i>
+                <i class="mdi mdi-pill"></i>
                 <span>All Prescriptions</span>
               </a>
             </li>

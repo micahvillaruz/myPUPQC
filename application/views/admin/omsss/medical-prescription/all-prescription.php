@@ -2,7 +2,7 @@
   <div class="col-lg-12">
     <div class="card">
       <div class="card-header d-flex align-items-center">
-        <h5 class="card-title mb-0 flex-grow-1">Medical Prescription</h5>
+        <h5 class="card-title mb-0 flex-grow-1">All Prescriptions</h5>
           <div>
             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addMedicalPrescriptionModal">Add Medical Prescrition</button>
           </div>
