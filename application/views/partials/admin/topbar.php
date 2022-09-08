@@ -52,7 +52,7 @@
                 <h6 class="dropdown-header" id="welcome"></h6>
                 <a class="dropdown-item" href="<?= base_url() ?>admin/profile"><i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i>
                   <span class="align-middle">Profile</span></a>
-                <a class="dropdown-item" href="https://osssac.pup.edu.ph/"><i class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i>
+                <a class="dropdown-item" href="#" onclick="logout('osssac')"><i class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i>
                   <span class="align-middle">Help</span></a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="<?= base_url() ?>admin/profile/settings"><i class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i>

@@ -71,4 +71,22 @@ class Auth extends CI_Controller
     $this->load->view('partials/head-css');
     $this->load->view('errors/error-404');
   }
+
+  public function sis()
+  {
+    $this->session->sess_destroy();
+    redirect('https://sis2.pup.edu.ph/', 'refresh');
+  }
+
+  public function vass()
+  {
+    $this->session->sess_destroy();
+    redirect('https://apps.pup.edu.ph/appointment/', 'refresh');
+  }
+
+  public function osssac()
+  {
+    $this->session->sess_destroy();
+    redirect('https://osssac.pup.edu.ph/', 'refresh');
+  }
 }

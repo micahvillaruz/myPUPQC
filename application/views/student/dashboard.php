@@ -476,7 +476,7 @@
                 Expect the quality health care services as you conveniently book your appointments, and get e-prescriptions from our university doctor.
               </p>
               <div class="mt-4">
-              <button type="button" class="mb-5 btn fs-5 btn-secondary waves-effect waves-light"> <i class=" las la-first-aid"></i> Book a Medical Consultation Appointment</button>
+                <button type="button" class="mb-5 btn fs-5 btn-secondary waves-effect waves-light"> <i class=" las la-first-aid"></i> Book a Medical Consultation Appointment</button>
               </div>
             </div>
           </div>
@@ -500,7 +500,7 @@
                 Our experienced psychologist offer free and confidential counselling support to all PUPQC students. Talk to us now if you're having emotional or psychological issues.
               </p>
               <div class="mt-5">
-              <button type="button" class="mb-5 btn fs-5 btn-secondary waves-effect waves-light"> <i class=" mdi mdi-brain "></i> Book a Guidance Consultation Appointment</button>
+                <button type="button" class="mb-5 btn fs-5 btn-secondary waves-effect waves-light"> <i class=" mdi mdi-brain "></i> Book a Guidance Consultation Appointment</button>
               </div>
             </div>
           </div>
@@ -530,8 +530,7 @@
             </div>
           </div>
           <div class="d-flex justify-content-center">
-            <!-- <a href="https://sis2.pup.edu.ph/student/Authentication"> -->
-            <button type="button" class="mb-5 fw-medium btn btn-secondary waves-effect waves-light"> <i class=" ri-account-box-line me-2"></i> Check PUPSIS</button>
+            <button type="button" onclick="logout('sis')" class="mb-5 fw-medium btn btn-secondary waves-effect waves-light"> <i class=" ri-account-box-line me-2"></i> Check PUPSIS</button>
           </div>
         </div>
       </div>
@@ -547,8 +546,7 @@
             </div>
           </div>
           <div class="d-flex justify-content-center">
-            <!-- <a href="https://sis2.pup.edu.ph/student/Authentication"> -->
-            <button type="button" class="mb-5 btn fw-medium btn-secondary waves-effect waves-light"> <i class=" ri-building-4-line me-2"></i> Create an appointment with VASS</button>
+            <button type="button" onclick="logout('vass')" class="mb-5 btn fw-medium btn-secondary waves-effect waves-light"> <i class=" ri-building-4-line me-2"></i> Create an appointment with VASS</button>
           </div>
         </div>
       </div>
@@ -600,7 +598,7 @@
             </div>
           </div>
           <div class="d-flex justify-content-center">
-            <button type="button" class="mb-5 btn fw-medium btn-secondary waves-effect waves-light"> <i class=" ri-discuss-line me-2"></i> Visit Help Desk</button>
+            <button type="button" onclick="logout('osssac')" class="mb-5 btn fw-medium btn-secondary waves-effect waves-light"> <i class=" ri-discuss-line me-2"></i> Visit Help Desk</button>
           </div>
         </div>
       </div>

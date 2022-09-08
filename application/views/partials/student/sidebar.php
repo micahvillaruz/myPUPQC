@@ -47,14 +47,14 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link menu-link" href="https://sisstudents.pup.edu.ph/">
+          <a class="nav-link menu-link" href="#" onclick="logout('sis')">
             <i class="bx bxs-graduation"></i>
             <span>PUP SIS</span>
           </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link menu-link" href="http://apps.pup.edu.ph/appointment/">
+          <a class="nav-link menu-link" href="#" onclick="logout('vass')">
             <i class="bx bx-notepad"></i>
             <span>VASS</span>
           </a>
@@ -116,7 +116,7 @@
         </li> -->
 
         <li class="nav-item">
-          <a class="nav-link menu-link" href="https://osssac.pup.edu.ph/">
+          <a class="nav-link menu-link" href="#" onclick="logout('osssac')">
             <i class=" ri-question-answer-line"></i>
             <span>HelpDesk</span>
           </a>

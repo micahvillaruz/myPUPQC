@@ -33,11 +33,22 @@ function logout(page) {
 	}).then(function (result) {
 		if (!result.value) return false
 
-		localStorage.clear()
-
 		switch (page) {
 			case 'logout':
+				localStorage.clear()
 				window.location.href = baseURL + 'logout'
+				break
+			case 'sis':
+				localStorage.clear()
+				window.location.href = baseURL + 'sis'
+				break
+			case 'vass':
+				localStorage.clear()
+				window.location.href = baseURL + 'vass'
+				break
+			case 'osssac':
+				localStorage.clear()
+				window.location.href = baseURL + 'osssac'
 				break
 			default:
 				return false
