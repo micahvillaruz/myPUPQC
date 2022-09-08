@@ -496,11 +496,18 @@
           <div class="row justify-content-center">
             <div class="col-lg-9">
               <h4 class="mt-4 fw-semibold">Want to let Your Thoughts Out?</h4>
-              <p class="text-muted mt-4">
+              <p class="text-muted mt-3">
                 Our experienced psychologist offer free and confidential counselling support to all PUPQC students. Talk to us now if you're having emotional or psychological issues.
               </p>
+<<<<<<< HEAD
               <div class="mt-5">
               <button type="button" class="mb-5 btn fs-5 btn-secondary waves-effect waves-light"> <i class=" mdi mdi-brain "></i> Book a Guidance Consultation Appointment</button>
+=======
+              <div class="mt-4 my-4 pb-2">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Book a Guidance Consultation Appointment
+                </button>
+>>>>>>> 14702be25b65c43d4c1cfa8e62e376afd649ca6c
               </div>
             </div>
           </div>
@@ -522,49 +529,49 @@
 <div class="row">
   <div class="col-4">
     <div class="rounded" style="background: url('<?= base_url() ?>public/images/menu/img-1.jpg');background-size:cover;">
-      <div class="rounded bg-primary bg-opacity-50">
+      <div class="card rounded bg-primary bg-opacity-50">
         <div class="card-body">
           <div class="d-flex align-items-center">
             <div class="flex-grow-1">
-              <p class="pt-5 pb-3 text-white fs-3 align-center text-center text-uppercase">Check your account</p>
+              <h3 class="pt-5 pb-3 text-white fw-medium align-center text-center text-uppercase">Enrollment and Grades Concerns</h3>
             </div>
           </div>
           <div class="d-flex justify-content-center">
             <!-- <a href="https://sis2.pup.edu.ph/student/Authentication"> -->
-            <button type="button" class="mb-5 btn fs-5 btn-secondary waves-effect waves-light"> <i class=" ri-account-box-line me-2"></i> Visit PUPSIS</button>
+            <button type="button" class="mb-5 fw-medium btn btn-secondary waves-effect waves-light"> <i class=" ri-account-box-line me-2"></i> Check PUPSIS</button>
           </div>
         </div>
       </div>
     </div>
   </div>
   <div class="col-4">
-    <div class="rounded" style="background: url('<?= base_url() ?>public/images/menu/img-1.jpg');background-size:cover;">
-      <div class="card bg-primary bg-opacity-50 rounded ">
+    <div class="rounded" style="background: url('<?= base_url() ?>public/images/menu/img-10.jpg');background-size:cover;">
+      <div class="card rounded bg-primary bg-opacity-50">
         <div class="card-body">
           <div class="d-flex align-items-center">
             <div class="flex-grow-1">
-              <p class="pt-5 pb-3 text-white fs-3 align-center text-center text-uppercase">Want to visit PUPQC</p>
+              <h3 class="pt-5 pb-3 text-white align-center text-center text-uppercase">Schedule a Visit on PUPQC</h3>
             </div>
           </div>
           <div class="d-flex justify-content-center">
             <!-- <a href="https://sis2.pup.edu.ph/student/Authentication"> -->
-            <button type="button" class="mb-5 btn fs-5 btn-secondary waves-effect waves-light"> <i class=" ri-building-4-line me-2"></i> Create an appointment with VASS</button>
+            <button type="button" class="mb-5 btn fw-medium btn-secondary waves-effect waves-light"> <i class=" ri-building-4-line me-2"></i> Create an appointment with VASS</button>
           </div>
         </div>
       </div>
     </div>
   </div>
   <div class="col-4">
-    <div class=" rounded " style="background: url('<?= base_url() ?>public/images/menu/img-8.jpg');background-size:cover;">
-      <div class="card bg-primary bg-opacity-50 rounded ">
+    <div class="rounded" style="background: url('<?= base_url() ?>public/images/menu/img-8.jpg');background-size:cover;">
+      <div class="card rounded bg-primary bg-opacity-50">
         <div class="card-body">
           <div class="d-flex align-items-center">
             <div class="flex-grow-1">
-              <p class="pt-5 pb-3 text-white align-center fs-3 text-center text-uppercase">Check your clearance</p>
+              <h3 class="pt-5 pb-3 text-white align-center text-center text-uppercase">Check Property Accountabilities</h3>
             </div>
           </div>
           <div class="d-flex justify-content-center">
-            <button type="button" class="mb-5 btn btn-secondary fs-5 waves-effect waves-light"> <i class=" ri-file-paper-2-line me-2"></i> Visit eClearance</button>
+            <button type="button" class="mb-5 btn fw-medium btn-secondary waves-effect waves-light"> <i class=" ri-file-paper-2-line me-2"></i> Visit eClearance</button>
           </div>
         </div>
       </div>
@@ -576,15 +583,15 @@
 <div class="row">
   <div class="col-6">
     <div class="rounded" style="background: url('<?= base_url() ?>public/images/menu/img-4.jpg');background-size:cover;">
-      <div class="card bg-primary bg-opacity-50 rounded ">
+      <div class="card rounded bg-primary bg-opacity-50">
         <div class="card-body">
           <div class="d-flex align-items-center">
             <div class="flex-grow-1">
-              <p class="pt-5 pb-3 text-white fs-3 align-center text-center text-uppercase">Seen anything unusual around the campus?</p>
+              <h3 class="pt-5 pb-3 text-white align-center text-center text-uppercase">Report Academic Issues & Concerns</h3>
             </div>
           </div>
           <div class="d-flex justify-content-center">
-            <button type="button" class="mb-5 btn btn-secondary fs-5 waves-effect waves-light"> <i class="ri-eye-fill me-2"></i> Report to EyeUlat</button>
+            <button type="button" class="mb-5 btn fw-medium btn-secondary waves-effect waves-light"> <i class="ri-eye-fill me-2"></i> Go to EyeUlat</button>
           </div>
         </div>
       </div>
@@ -592,15 +599,15 @@
   </div>
   <div class="col-6">
     <div class=" rounded" style="background: url('<?= base_url() ?>public/images/menu/img-7.jpg');background-size:cover;">
-      <div class="card bg-primary bg-opacity-50 rounded ">
+      <div class="card rounded bg-primary bg-opacity-50">
         <div class="card-body">
           <div class="d-flex align-items-center">
             <div class="flex-grow-1">
-              <p class="pt-5 pb-3 text-white fs-3 align-center text-center text-uppercase">Need any help?</p>
+              <h3 class="pt-5 pb-3 text-white align-center text-center text-uppercase">Frequently Asked Questions</h3>
             </div>
           </div>
           <div class="d-flex justify-content-center">
-            <button type="button" class="mb-5 btn btn-secondary fs-5 waves-effect waves-light"> <i class=" ri-discuss-line me-2"></i> Visit Help Desk</button>
+            <button type="button" class="mb-5 btn fw-medium btn-secondary waves-effect waves-light"> <i class=" ri-discuss-line me-2"></i> Visit Help Desk</button>
           </div>
         </div>
       </div>
