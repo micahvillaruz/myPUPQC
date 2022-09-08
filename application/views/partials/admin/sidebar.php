@@ -49,6 +49,25 @@
 
             <li class="menu-title">
               <i class="ri-more-fill"></i>
+              <span>ODRS</span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/odrs/documents">
+                <i class="ri-file-copy-2-line"></i>
+                <span>Documents</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/odrs/transactions">
+                <i class="ri-archive-line"></i>
+                <span>Transactions</span>
+              </a>
+            </li>
+
+            <li class="menu-title">
+              <i class="ri-more-fill"></i>
               <span>OMSSS</span>
             </li>
 

@@ -87,6 +87,35 @@ class Admin extends CI_Controller
     $this->load->view('admin/user-management/scripts/pup-staffs-scripts');
   }
 
+  public function documents()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/admin/topbar');
+    $this->load->view('partials/admin/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "ODRS", "title" => "Documents"]);
+    $this->load->view('admin/odrs/documents');
+    $this->load->view('partials/footer');
+    $this->load->view('admin/odrs/components/documents-modal');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('admin/odrs/scripts/documents-scripts');
+  }
+
+  public function transactions()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/admin/topbar');
+    $this->load->view('partials/admin/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "ODRS", "title" => "Transactions"]);
+    $this->load->view('admin/transactions');
+    $this->load->view('partials/footer');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('admin/scripts/transactions-scripts');
+  }
+
   public function all_appointment()
   {
     $this->load->view('partials/main');

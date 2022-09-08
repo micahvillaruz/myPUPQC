@@ -200,7 +200,16 @@ $route['admin/profile/settings'] = 'admin/settings';
 
 $route['admin/user-management/students'] = 'admin/user_students';
 $route['admin/user-management/pup-staffs'] = 'admin/user_pup_staffs';
-$route['admin/user-management/super-admins'] = 'admin/user_super_admins';
+
+
+/*
+| --------------
+|     ODRS
+| --------------
+*/
+
+$route['admin/odrs/documents'] = 'admin/documents';
+$route['admin/odrs/transactions'] = 'admin/transactions';
 
 /*
 | --------------
