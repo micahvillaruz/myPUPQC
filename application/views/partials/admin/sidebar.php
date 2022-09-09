@@ -90,38 +90,25 @@
               <span>EVRSERS</span>
             </li>
 
-            <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>admin/evrsers/new-facility" class="nav-link">
-                <i class="bx bxs-building-house"></i>
-                <span>Add Facility</span>
-              </a>
-            </li>
 
             <li class="nav-item">
               <a class="nav-link menu-link" href="<?= base_url() ?>admin/evrsers/view-facilities" class="nav-link">
                 <i class="bx bx-buildings"></i>
-                <span>View Facilities</span>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>admin/evrsers/new-reservation" class="nav-link">
-                <i class="bx bxs-school"></i>
-                <span>Reserve Venue</span>
+                <span>Facilities</span>
               </a>
             </li>
 
             <li class="nav-item">
               <a class="nav-link menu-link" href="<?= base_url() ?>admin/evrsers/view-reservations" class="nav-link">
                 <i class="ri-reserved-line"></i>
-                <span>Manage Reservations</span>
+                <span>Reservations</span>
               </a>
             </li>
 
             <li class="nav-item">
               <a class="nav-link menu-link" href="<?= base_url() ?>admin/evrsers/reservation-history" class="nav-link">
                 <i class="bx bx-history"></i>
-                <span>Reservation History</span>
+                <span>Event History</span>
               </a>
             </li>
 
