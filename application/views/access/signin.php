@@ -59,12 +59,8 @@
 
                     <div class="mb-4">
                       <div class="row">
-                        <div class="col-6">
-                          <input class="form-check-input" type="checkbox" value="" id="auth-remember-check" />
-                          <label class="form-check-label" for="auth-remember-check">Remember me</label>
-                        </div>
 
-                        <div class="col-6 text-end">
+                        <div class="col-12 text-end">
                           <a href="<?= base_url() ?>forgot-password" class="fw-semibold text-info">Forgot password?</a>
                         </div>
                       </div>
