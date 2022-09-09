@@ -17,12 +17,38 @@ const AJAX_HEADERS = {
 }
 
 function logout(page) {
+	let msg = ''
+
+	switch (page) {
+		case 'logout':
+			msg = 'You will be redirected to Home page.'
+			break
+		case 'sis':
+			msg = 'You will be redirected to PUP SIS login page.'
+			break
+		case 'vass':
+			msg = 'You will be redirected to PUP VASS login page.'
+			break
+		case 'osssac':
+			msg = 'You will be redirected to PUP OSSSAC page.'
+			break
+		default:
+			return false
+	}
+
 	Swal.fire({
-		html:
-			'<div class="mt-3">' +
-			'<lord-icon src="https://cdn.lordicon.com/moscwhoj.json" trigger="loop" colors="primary:#f7b84b,secondary:#f06548" style="width:100px;height:100px"></lord-icon>' +
-			'<h4>Are you sure you want to logout?</h4>' +
-			'</div>',
+		html: `
+		<div class="mt-3">
+			<lord-icon
+				src="https://cdn.lordicon.com/moscwhoj.json"
+				trigger="loop"
+				colors="primary:#f7b84b,secondary:#f06548"
+				style="width:100px;height:100px"
+			></lord-icon>
+			<h4>Are you sure you want to logout?</h4>
+			<p class="mx-4 mb-0">${msg}</p>
+		</div>
+		`,
 		showCancelButton: true,
 		confirmButtonText: 'Yes!',
 		cancelButtonText: 'No, cancel!',
@@ -33,25 +59,7 @@ function logout(page) {
 	}).then(function (result) {
 		if (!result.value) return false
 
-		switch (page) {
-			case 'logout':
-				localStorage.clear()
-				window.location.href = baseURL + 'logout'
-				break
-			case 'sis':
-				localStorage.clear()
-				window.location.href = baseURL + 'sis'
-				break
-			case 'vass':
-				localStorage.clear()
-				window.location.href = baseURL + 'vass'
-				break
-			case 'osssac':
-				localStorage.clear()
-				window.location.href = baseURL + 'osssac'
-				break
-			default:
-				return false
-		}
+		localStorage.clear()
+		window.location.href = baseURL + page
 	})
 }
