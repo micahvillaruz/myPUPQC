@@ -102,20 +102,19 @@ class Admin extends CI_Controller
     $this->load->view('admin/odrs/scripts/documents-scripts');
   }
 
-  public function transactions()
+  public function requests()
   {
     $this->load->view('partials/main');
     $this->load->view('partials/title-meta');
     $this->load->view('partials/head-css');
     $this->load->view('partials/admin/topbar');
     $this->load->view('partials/admin/sidebar');
-    $this->load->view('partials/page-title', ["page_title" => "ODRS", "title" => "Transactions"]);
-    $this->load->view('admin/odrs/transactions');
+    $this->load->view('partials/page-title', ["page_title" => "ODRS", "title" => "Requests"]);
+    $this->load->view('admin/odrs/requests');
     $this->load->view('partials/footer');
-    $this->load->view('admin/odrs/components/view-transaction-details');
-    $this->load->view('admin/odrs/components/view-status-flow');
+    $this->load->view('admin/odrs/components/requests-modal');
     $this->load->view('partials/foot-scripts');
-    $this->load->view('admin/odrs/scripts/transactions-scripts');
+    $this->load->view('admin/odrs/scripts/requests-scripts');
   }
 
   public function all_appointment()

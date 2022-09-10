@@ -209,7 +209,7 @@ $route['admin/user-management/pup-staffs'] = 'admin/user_pup_staffs';
 */
 
 $route['admin/odrs/documents'] = 'admin/documents';
-$route['admin/odrs/transactions'] = 'admin/transactions';
+$route['admin/odrs/requests'] = 'admin/requests';
 
 /*
 | --------------
@@ -240,3 +240,12 @@ $route['student/evrsers/reservation-history'] = 'student/reservation_history';
 $route['pupstaff/dashboard'] = 'pupstaff';
 $route['pupstaff/profile'] = 'pupstaff/profile';
 $route['pupstaff/profile/settings'] = 'pupstaff/settings';
+
+/*
+| --------------
+|     ODRS
+| --------------
+*/
+
+$route['pupstaff/odrs/documents'] = 'pupstaff/documents';
+$route['pupstaff/odrs/requests'] = 'pupstaff/requests';

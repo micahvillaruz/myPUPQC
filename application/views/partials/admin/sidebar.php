@@ -60,9 +60,9 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>admin/odrs/transactions">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/odrs/requests">
                 <i class="ri-archive-line"></i>
-                <span>Transactions</span>
+                <span>Requests</span>
               </a>
             </li>
 

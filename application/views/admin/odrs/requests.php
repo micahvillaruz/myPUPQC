@@ -2,7 +2,7 @@
   <div class="col-lg-12">
     <div class="card">
       <div class="card-header">
-        <h5 class="card-title mb-0">Transactions</h5>
+        <h5 class="card-title mb-0">Requests</h5>
       </div>
       <div class="card-body">
         <table id="buttons-datatables" class="display dt-responsive table align-middle" style="width: 100%">

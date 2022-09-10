@@ -27,6 +27,25 @@
                 <span>Dashboard</span>
               </a>
             </li>
+
+            <li class="menu-title">
+              <i class="ri-more-fill"></i>
+              <span>ODRS</span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/odrs/documents">
+                <i class="ri-file-copy-2-line"></i>
+                <span>Documents</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/odrs/requests">
+                <i class="ri-archive-line"></i>
+                <span>Requests</span>
+              </a>
+            </li>
           </ul>
         </div>
         <!-- Sidebar -->
