@@ -105,6 +105,198 @@
   </div><!-- /.modal -->
 </div>
 
+<div id="viewRequest" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="viewRequest" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-primary" id="myLargeModalLabel">Request Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h2 class="text-center"><span id="control_no" class="badge badge-outline-primary text-center fw-bold">20220637-0029</span></h2>
+        <div class="row mt-4">
+          <div class="col-md">
+            <div class="row align-items-center g-3">
+              <div class="col-md-auto">
+                <div class="avatar-md">
+                  <div class="avatar-title bg-white rounded-circle">
+                    <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-woman-1.png" alt="" class="avatar-md" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md">
+                <div>
+                  <h5>Razal, Shane Jean Artuz</h5>
+                  <h6>2020-00501-CM-1</h6>
+                  <div class="hstack gap-3 flex-wrap">
+                    <div class="badge rounded-pill badge-soft-danger fs-12">BS Information Technology</div>
+                    <div class="vr"></div>
+                    <div class="d-flex align-items-center">
+                      <i class="bx bxs-school align-bottom me-2"></i>
+                      Undergraduate
+                    </div>
+                    <div class="vr"></div>
+                    <div>
+                      Email Address :
+                      <span class="fw-medium">razalshane@gmail.com</span>
+                    </div>
+                    <div class="vr"></div>
+                    <div>
+                      Mobile Number:
+                      <span class="fw-medium">09382918293</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <table class="mt-5 table table-bordered nowrap align-middle" style="width: 100%">
+          <thead>
+            <tr class="bg-light">
+              <th colspan="2" class="fst-italic">Requested Document/s:</th>
+            </tr>
+            <tr>
+              <th class="text-uppercase">Document</th>
+              <th class="text-uppercase">Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Certification of Subject Description</td>
+              <td class="text-center">1</td>
+            </tr>
+            <tr>
+              <td>Transcript of Records - Copy for (Undergraduate) 3rd and 4th Year</td>
+              <td class="text-center">1</td>
+            </tr>
+            <tr>
+              <td>Certification of Enrollment/Attendance</td>
+              <td class="text-center">1</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="mt-4">
+          <span class="badge rounded-pill bg-primary fs-12">Purpose of Request</span>
+          <div class="bg-soft-secondary ms-1 text-wrap">
+            <p class="p-2 fw-medium">Employment</p>
+          </div>
+        </div>
+        <div class="m-2 mt-4 mb-3">
+          <div class="h6 fs-15 text-primary">Status</div>
+          <div class="profile-timeline">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item border-0">
+                <div class="accordion-header" id="headingOne">
+                  <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <div class="d-flex align-items-center">
+                      <div class="flex-shrink-0 avatar-xs">
+                        <div class="avatar-title bg-warning rounded-circle">
+                          <i class="mdi mdi-progress-clock"></i>
+                        </div>
+                      </div>
+                      <div class="flex-grow-1 ms-3">
+                        <h6 class="fs-15 mb-0 fw-semibold">
+                          Pending for Clearance -
+                          <span class="fw-normal">Fri, 09 Sep 2022</span>
+                        </h6>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body ms-2 ps-5 pt-0">
+                    <h6 class="mb-1">The Document Request is pending for approval and is being reviewed by the PUP Staff.</h6>
+                    <p class="text-muted mb-0">Fri, 09 Sep 2022 - 11:00AM</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item border-0">
+                <div class="accordion-header" id="headingTwo">
+                  <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="false">
+                    <div class="d-flex align-items-center">
+                      <div class="flex-shrink-0 avatar-xs">
+                        <div class="avatar-title bg-light text-danger rounded-circle">
+                          <i class="mdi mdi-nfc-search-variant"></i>
+                        </div>
+                      </div>
+                      <div class="flex-grow-1 ms-3">
+                        <h6 class="fs-15 mb-0 fw-semibold">
+                          For Clearance
+                        </h6>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="accordion-item border-0">
+                <div class="accordion-header" id="headingThree">
+                  <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="false">
+                    <div class="d-flex align-items-center">
+                      <div class="flex-shrink-0 avatar-xs">
+                        <div class="avatar-title bg-light text-info rounded-circle">
+                          <i class="mdi mdi-file-sign"></i>
+                        </div>
+                      </div>
+                      <div class="flex-grow-1 ms-3">
+                        <h6 class="fs-15 mb-1 fw-semibold">
+                          For Evaluation / Processing
+                        </h6>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="accordion-item border-0">
+                <div class="accordion-header" id="headingFour">
+                  <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false">
+                    <div class="d-flex align-items-center">
+                      <div class="flex-shrink-0 avatar-xs">
+                        <div class="avatar-title bg-light text-dark rounded-circle">
+                          <i class="ri-user-received-2-line"></i>
+                        </div>
+                      </div>
+                      <div class="flex-grow-1 ms-3">
+                        <h6 class="fs-15 mb-1 fw-semibold">
+                          Ready for Pickup
+                        </h6>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="accordion-item border-0">
+                <div class="accordion-header" id="headingFive">
+                  <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFile" aria-expanded="false">
+                    <div class="d-flex align-items-center">
+                      <div class="flex-shrink-0 avatar-xs">
+                        <div class="avatar-title bg-light text-success rounded-circle">
+                          <i class="ri-checkbox-circle-fill"></i>
+                        </div>
+                      </div>
+                      <div class="flex-grow-1 ms-3">
+                        <h6 class="fs-14 mb-0 fw-semibold">Released</h6>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!--end accordion-->
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-animation waves-effect waves-light" data-text="Close" data-bs-dismiss="modal"><span>Close</span></button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+
+
+
 <div id="viewRequestDetails" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl modal-dialog-centered">
     <div class="modal-content">

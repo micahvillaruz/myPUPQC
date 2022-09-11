@@ -36,13 +36,13 @@
               <tbody>
                 <tr>
                   <td>
-                    <span class="text-primary fw-medium">20220770-0043</span>
+                    <span class="text-primary fw-medium">20220637-0029</span>
                   </td>
                   <td>
                     <div class="d-flex align-items-center fw-medium">
-                      <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-woman-7.png" class="avatar-xs rounded-circle me-2">
+                      <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-woman-1.png" class="avatar-xs rounded-circle me-2">
                       <div>
-                        <span class="d-block fw-medium">Zsyrhill Anne C. Soria</span>
+                        <span class="d-block fw-medium">Shane Jean A. Razal</span>
                         <i class="mdi mdi-gender-female text-danger"></i>
                         <small>Female</small>
                       </div>
@@ -51,7 +51,7 @@
                   <td>
                     <div class="d-flex align-items-center">
                       <i class="ri-calendar-todo-fill text-primary"></i>
-                      <span class="ms-2">08 Sep, 2022<small class="text-muted ms-1">06:15 PM</small></span>
+                      <span class="ms-2">09 Sep, 2022<small class="text-muted ms-1">11:00 AM</small></span>
                     </div>
                   </td>
                   <td>
@@ -73,7 +73,7 @@
                           <td>
                             <span class="fw-medium badge bg-dark me-1">Purpose: </span>
                           </td>
-                          <td>Scholarship</td>
+                          <td>Employment</td>
                         </tr>
                       </tbody>
                     </table>
@@ -91,8 +91,8 @@
                   </td>
                   <td class="text-center">
                     <div class="dropdown d-inline-block">
-                      <button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#approveRequest"><i class="ri-check-fill fs-5 fw-bold"></i></button>
-                      <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#cancelRequest">
+                      <button type="button" class="btn btn-success btn-icon waves-effect waves-light" onclick="approveRequest()"><i class="ri-check-fill fs-5 fw-bold"></i></button>
+                      <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="cancelRequest()">
                         <i class="ri-close-fill fs-5 fw-bold"></i>
                       </button>
                     </div>
@@ -100,13 +100,13 @@
                 </tr>
                 <tr>
                   <td>
-                    <span class="text-primary fw-medium">20220829-0067</span>
+                    <span class="text-primary fw-medium">20220668-0097</span>
                   </td>
                   <td>
                     <div class="d-flex align-items-center fw-medium">
-                      <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-man-6.png" class="avatar-xs rounded-circle me-2">
+                      <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-man-3.png" class="avatar-xs rounded-circle me-2">
                       <div>
-                        <span class="d-block fw-medium">James Paul L. Tulod</span>
+                        <span class="d-block fw-medium">Kim John C. Defiesta</span>
                         <i class="mdi mdi-gender-male text-info"></i>
                         <small>Male</small>
                       </div>
@@ -115,7 +115,7 @@
                   <td>
                     <div class="d-flex align-items-center">
                       <i class="ri-calendar-todo-fill text-primary"></i>
-                      <span class="ms-2">01 Sep, 2022<small class="text-muted ms-1">03:00 PM</small></span>
+                      <span class="ms-2">08 Sep, 2022<small class="text-muted ms-1">09:00 PM</small></span>
                     </div>
                   </td>
                   <td>
@@ -137,7 +137,7 @@
                           <td>
                             <span class="fw-medium badge bg-dark me-1">Purpose: </span>
                           </td>
-                          <td>Scholarship</td>
+                          <td>Readmission</td>
                         </tr>
                       </tbody>
                     </table>
@@ -155,8 +155,8 @@
                   </td>
                   <td class="text-center">
                     <div class="dropdown d-inline-block">
-                      <button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#approveRequest"><i class="ri-check-fill fs-5 fw-bold"></i></button>
-                      <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#cancelRequest">
+                      <button type="button" class="btn btn-success btn-icon waves-effect waves-light" onclick="approveRequest()"><i class="ri-check-fill fs-5 fw-bold"></i></button>
+                      <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="cancelRequest()">
                         <i class="ri-close-fill fs-5 fw-bold"></i>
                       </button>
                     </div>
@@ -164,22 +164,22 @@
                 </tr>
                 <tr>
                   <td>
-                    <span class="text-primary fw-medium">20220903-0043</span>
+                    <span class="text-primary fw-medium">20220815-0051</span>
                   </td>
                   <td>
                     <div class="d-flex align-items-center fw-medium">
-                      <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-woman-6.png" class="avatar-xs rounded-circle me-2">
+                      <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-man-1.png" class="avatar-xs rounded-circle me-2">
                       <div>
-                        <span class="d-block fw-medium">Micah M. Villaruz</span>
-                        <i class="mdi mdi-gender-female text-danger"></i>
-                        <small>Female</small>
+                        <span class="d-block fw-medium">Albert Angelo C. Lupo</span>
+                        <i class="mdi mdi-gender-male text-info"></i>
+                        <small>Male</small>
                       </div>
                     </div>
                   </td>
                   <td>
                     <div class="d-flex align-items-center">
                       <i class="ri-calendar-todo-fill text-primary"></i>
-                      <span class="ms-2">28 Aug, 2022<small class="text-muted ms-1">08:00 AM</small></span>
+                      <span class="ms-2">07 Sep, 2022<small class="text-muted ms-1">04:30 PM</small></span>
                     </div>
                   </td>
                   <td>
@@ -219,8 +219,8 @@
                   </td>
                   <td class="text-center">
                     <div class="dropdown d-inline-block">
-                      <button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#approveRequest"><i class="ri-check-fill fs-5 fw-bold"></i></button>
-                      <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#cancelRequest">
+                      <button type="button" class="btn btn-success btn-icon waves-effect waves-light" onclick="approveRequest()"><i class="ri-check-fill fs-5 fw-bold"></i></button>
+                      <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="cancelRequest()">
                         <i class="ri-close-fill fs-5 fw-bold"></i>
                       </button>
                     </div>
@@ -377,7 +377,7 @@
                 </tr>
                 <tr>
                   <td>
-                    <span class="text-primary fw-medium">20220903-0043</span>
+                    <span class="text-primary fw-medium">20220903-0088</span>
                   </td>
                   <td>
                     <div class="d-flex align-items-center fw-medium">
