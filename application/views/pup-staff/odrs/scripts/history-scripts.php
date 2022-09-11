@@ -11,18 +11,6 @@
 
 		<script src="<?= base_url() ?>public/js/pages/datatables.init.js"></script>
 
-		<!-- Modern colorpicker bundle -->
-		<script src="<?= base_url() ?>public/libs/@simonwep/pickr/pickr.min.js"></script>
-
-		<!-- init js -->
-		<script src="<?= base_url() ?>public/js/pages/form-pickers.init.js"></script>
-
-		<!-- Sweet Alerts js -->
-		<script src="<?= base_url() ?>public/libs/sweetalert2/sweetalert2.min.js"></script>
-
-		<!-- Sweet alert init js-->
-		<script src="<?= base_url() ?>public/js/pages/sweetalerts.init.js"></script>
-
 		<!-- App js -->
 		<script src="<?= base_url() ?>public/js/app.js"></script>
 		</body>

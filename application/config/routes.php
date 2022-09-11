@@ -249,3 +249,4 @@ $route['pupstaff/profile/settings'] = 'pupstaff/settings';
 
 $route['pupstaff/odrs/documents'] = 'pupstaff/documents';
 $route['pupstaff/odrs/requests'] = 'pupstaff/requests';
+$route['pupstaff/odrs/history'] = 'pupstaff/history';

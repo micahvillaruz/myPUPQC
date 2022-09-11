@@ -86,4 +86,19 @@ class PUPStaff extends CI_Controller
     $this->load->view('partials/foot-scripts');
     $this->load->view('pup-staff/odrs/scripts/requests-scripts');
   }
+
+  public function history()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/pup-staff/topbar');
+    $this->load->view('partials/pup-staff/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "ODRS", "title" => "History"]);
+    $this->load->view('pup-staff/odrs/history');
+    $this->load->view('partials/footer');
+    $this->load->view('pup-staff/odrs/components/history-modal');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('pup-staff/odrs/scripts/history-scripts');
+  }
 }

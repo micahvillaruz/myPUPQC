@@ -46,6 +46,15 @@
                 <span>Requests</span>
               </a>
             </li>
+
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/odrs/history">
+                <i class="mdi mdi-history"></i>
+                <span>History</span>
+              </a>
+            </li>
+
           </ul>
         </div>
         <!-- Sidebar -->
