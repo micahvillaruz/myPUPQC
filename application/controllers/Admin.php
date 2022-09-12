@@ -176,4 +176,48 @@ class Admin extends CI_Controller
     $this->load->view('partials/foot-scripts');
     $this->load->view('admin/omsss/medical-prescription/scripts/all-prescription-scripts');
   }
+
+  public function facilities()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/admin/topbar');
+    $this->load->view('partials/admin/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "Manage Facilities"]);
+    $this->load->view('admin/evrsers/facilities');
+    $this->load->view('partials/footer');
+    $this->load->view('admin/evrsers/components/reservation-modal');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('admin/evrsers/scripts/reservations-scripts');
+  }
+
+  public function manage_reservations()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/admin/topbar');
+    $this->load->view('partials/admin/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "Manage Reservations"]);
+    $this->load->view('admin/evrsers/manage-reservations');
+    $this->load->view('partials/footer');
+    $this->load->view('admin/evrsers/components/reservation-modal');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('admin/evrsers/scripts/reservations-scripts');
+  }
+
+  public function reservation_history()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/admin/topbar');
+    $this->load->view('partials/admin/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "Reservation History"]);
+    $this->load->view('admin/evrsers/reservation-history');
+    $this->load->view('partials/footer');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('admin/evrsers/scripts/reservations-scripts');
+  }
 }

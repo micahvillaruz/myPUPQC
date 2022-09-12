@@ -227,9 +227,9 @@ $route['admin/omsss/all-prescription'] = 'admin/all_prescription';
 */
 
 // Reservations
-$route['student/evrsers/new-reservation'] = 'student/new_reservation';
-$route['student/evrsers/view-reservations'] = 'student/view_reservations';
-$route['student/evrsers/reservation-history'] = 'student/reservation_history';
+$route['admin/evrsers/facilities'] = 'admin/facilities';
+$route['admin/evrsers/manage-reservations'] = 'admin/manage_reservations';
+$route['admin/evrsers/reservation-history'] = 'admin/reservation_history';
 
 /*
 | -------------------------------------------------------------------------

@@ -92,14 +92,14 @@
 
 
             <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>admin/evrsers/view-facilities" class="nav-link">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/evrsers/facilities" class="nav-link">
                 <i class="bx bx-buildings"></i>
                 <span>Facilities</span>
               </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>admin/evrsers/view-reservations" class="nav-link">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/evrsers/manage-reservations" class="nav-link">
                 <i class="ri-reserved-line"></i>
                 <span>Reservations</span>
               </a>
