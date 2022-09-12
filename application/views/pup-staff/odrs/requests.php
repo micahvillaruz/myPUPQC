@@ -22,7 +22,7 @@
         <!-- Tab panes -->
         <div class="tab-content text-muted">
           <div class="tab-pane active" id="pending" role="tabpanel">
-            <table id="model-datatables" class="display dt-responsive table align-middle" style="width: 100%">
+            <table id="pending-datatables" class="display dt-responsive table align-middle" style="width: 100%">
               <thead class="bg-light">
                 <tr>
                   <th>Control Number</th>
@@ -230,7 +230,7 @@
             </table>
           </div>
           <div class="tab-pane" id="approved" role="tabpanel">
-            <table id="buttons-datatables" class="display dt-responsive table align-middle" style="width: 100%">
+            <table id="approved-datatables" class="display dt-responsive table align-middle" style="width: 100%">
               <thead class="bg-light">
                 <tr>
                   <th>Control Number</th>
@@ -274,24 +274,28 @@
                       <tbody>
                         <tr>
                           <td>
-                            <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Clearance: </span>
+                            <span class="fw-medium badge bg-dark me-1">Clearance: </span>
                           </td>
-                          <td>Graduated Student</td>
+                          <td>Graduate Student</td>
                         </tr>
                         <tr>
                           <td>
-                            <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Course: </span>
+                            <span class="fw-medium badge bg-dark me-1">Course: </span>
                           </td>
                           <td>BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY</td>
                         </tr>
                         <tr>
                           <td>
-                            <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Purpose: </span>
+                            <span class="fw-medium badge bg-dark me-1">Purpose: </span>
                           </td>
                           <td>Further Studies</td>
                         </tr>
                       </tbody>
                     </table>
+                    <div class="mt-3 d-flex flex-column justify-content-end">
+                      <button type="button" class="btn btn-sm btn-info bg-gradient waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails">View Details</button>
+                      <small class="d-block fst-italic text-center">Always "View Details" for more information</small>
+                    </div>
                   </td>
                   <td>
                     <div class="mt-2 d-grid badge badge-soft-danger position-relative">
@@ -301,12 +305,9 @@
                     </div>
                   </td>
                   <td class="text-center">
-                    <div class="dropdown d-inline-block">
-                      <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails"><i class="ri-eye-fill"></i></button>
-                      <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#updateRequestStatus">
-                        <i class="ri-edit-2-fill fs-5"></i>
-                      </button>
-                    </div>
+                    <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="forEvaluation()">
+                      <i class="mdi mdi-file-sign fs-5"></i>
+                    </button>
                   </td>
                 </tr>
                 <tr>
@@ -340,24 +341,28 @@
                       <tbody>
                         <tr>
                           <td>
-                            <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Clearance: </span>
+                            <span class="fw-medium badge bg-dark me-1">Clearance: </span>
                           </td>
                           <td>Undergraduate Student</td>
                         </tr>
                         <tr>
                           <td>
-                            <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Course: </span>
+                            <span class="fw-medium badge bg-dark me-1">Course: </span>
                           </td>
                           <td>BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY</td>
                         </tr>
                         <tr>
                           <td>
-                            <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Purpose: </span>
+                            <span class="fw-medium badge bg-dark me-1">Purpose: </span>
                           </td>
                           <td>Scholarship</td>
                         </tr>
                       </tbody>
                     </table>
+                    <div class="mt-3 d-flex flex-column justify-content-end">
+                      <button type="button" class="btn btn-sm btn-info bg-gradient waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails">View Details</button>
+                      <small class="d-block fst-italic text-center">Always "View Details" for more information</small>
+                    </div>
                   </td>
                   <td>
                     <div class="mt-2 d-grid badge badge-soft-info position-relative">
@@ -367,12 +372,9 @@
                     </div>
                   </td>
                   <td class="text-center">
-                    <div class="dropdown d-inline-block">
-                      <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails"><i class="ri-eye-fill"></i></button>
-                      <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#updateRequestStatus">
-                        <i class="ri-edit-2-fill fs-5"></i>
-                      </button>
-                    </div>
+                    <button type="button" class="btn btn-dark btn-icon waves-effect waves-light" onclick="forPickup()">
+                      <i class="ri-user-received-2-line fs-5"></i>
+                    </button>
                   </td>
                 </tr>
                 <tr>
@@ -406,24 +408,28 @@
                       <tbody>
                         <tr>
                           <td>
-                            <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Clearance: </span>
+                            <span class="fw-medium badge bg-dark me-1">Clearance: </span>
                           </td>
                           <td>Undergraduate Student</td>
                         </tr>
                         <tr>
                           <td>
-                            <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Course: </span>
+                            <span class="fw-medium badge bg-dark me-1">Course: </span>
                           </td>
                           <td>BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY</td>
                         </tr>
                         <tr>
                           <td>
-                            <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Purpose: </span>
+                            <span class="fw-medium badge bg-dark me-1">Purpose: </span>
                           </td>
                           <td>Transfer to another school</td>
                         </tr>
                       </tbody>
                     </table>
+                    <div class="mt-3 d-flex flex-column justify-content-end">
+                      <button type="button" class="btn btn-sm btn-info bg-gradient waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails">View Details</button>
+                      <small class="d-block fst-italic text-center">Always "View Details" for more information</small>
+                    </div>
                   </td>
                   <td>
                     <div class="mt-2 d-grid badge badge-soft-dark position-relative">
@@ -433,12 +439,9 @@
                     </div>
                   </td>
                   <td class="text-center">
-                    <div class="dropdown d-inline-block">
-                      <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails"><i class="ri-eye-fill"></i></button>
-                      <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#updateRequestStatus">
-                        <i class="ri-edit-2-fill fs-5"></i>
-                      </button>
-                    </div>
+                    <button type="button" class="btn btn-success btn-icon waves-effect waves-light" onclick="released()">
+                      <i class="ri-checkbox-circle-line fs-5"></i>
+                    </button>
                   </td>
                 </tr>
               </tbody>
