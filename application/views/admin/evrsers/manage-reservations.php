@@ -34,7 +34,6 @@
                                 <div class="dropdown d-inline-block">
                                     <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
                                     <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalModal"><i class="ri-edit-2-fill"></i></button>
-                                    <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteMedicalModal"><i class="ri-delete-bin-5-fill"></i></button>
                                 </div>
                             </td>
                         </tr>
@@ -50,7 +49,6 @@
                                 <div class="dropdown d-inline-block">
                                     <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
                                     <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalModal"><i class="ri-edit-2-fill"></i></button>
-                                    <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteMedicalModal"><i class="ri-delete-bin-5-fill"></i></button>
                                 </div>
                             </td>
                         </tr>
@@ -64,9 +62,9 @@
                             <td><span class="badge rounded-pill bg-secondary">Pending</span></td>
                             <td>
                                 <div class="dropdown d-inline-block">
+                                    <button type="button" class="btn btn-primary btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-checkbox-multiple-fill"></i></button>
                                     <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
                                     <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalModal"><i class="ri-edit-2-fill"></i></button>
-                                    <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteMedicalModal"><i class="ri-delete-bin-5-fill"></i></button>
                                 </div>
                             </td>
                         </tr>
@@ -82,7 +80,6 @@
                                 <div class="dropdown d-inline-block">
                                     <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
                                     <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalModal"><i class="ri-edit-2-fill"></i></button>
-                                    <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteMedicalModal"><i class="ri-delete-bin-5-fill"></i></button>
                                 </div>
                             </td>
                         </tr>
@@ -98,7 +95,69 @@
                                 <div class="dropdown d-inline-block">
                                     <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
                                     <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalModal"><i class="ri-edit-2-fill"></i></button>
-                                    <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteMedicalModal"><i class="ri-delete-bin-5-fill"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>RES-00007</td>
+                            <td>CommITS General Assembly</td>
+                            <td>Chapel</td>
+                            <td>Sponsored by Willie B. Revillame.</td>
+                            <td>09-15-2022</td>
+                            <td>4:00 - 5:00PM</td>
+                            <td><span class="badge rounded-pill bg-secondary">Pending</span></td>
+                            <td>
+                                <div class="dropdown d-inline-block">
+                                    <button type="button" class="btn btn-primary btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-checkbox-multiple-fill"></i></button>
+                                    <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
+                                    <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalModal"><i class="ri-edit-2-fill"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>RES-00008</td>
+                            <td>Blockchain Project Expo</td>
+                            <td>Court</td>
+                            <td>Sponsored by Jhobart M. Xavier-Oxford III.</td>
+                            <td>09-05-2022</td>
+                            <td>10:00 AM - 11:00 AM</td>
+                            <td><span class="badge rounded-pill bg-secondary">Pending</span></td>
+                            <td>
+                                <div class="dropdown d-inline-block">
+                                    <button type="button" class="btn btn-primary btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-checkbox-multiple-fill"></i></button>
+                                    <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
+                                    <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalModal"><i class="ri-edit-2-fill"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>RES-00009</td>
+                            <td>CommITS General Assembly</td>
+                            <td>Chapel</td>
+                            <td>Sponsored by Jhobart M. Xavier-Oxford III.</td>
+                            <td>09-04-2022</td>
+                            <td>4:00 - 5:00PM</td>
+                            <td><span class="badge rounded-pill bg-secondary">Pending</span></td>
+                            <td>
+                                <div class="dropdown d-inline-block">
+                                    <button type="button" class="btn btn-primary btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-checkbox-multiple-fill"></i></button>
+                                    <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
+                                    <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalModal"><i class="ri-edit-2-fill"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>RES-00010</td>
+                            <td>Blockchain Project Expo</td>
+                            <td>Court</td>
+                            <td>Sponsored by Jhobart M. Xavier-Oxford III.</td>
+                            <td>09-05-2022</td>
+                            <td>10:00 AM - 11:00 AM</td>
+                            <td><span class="badge rounded-pill bg-danger">Denied</span></td>
+                            <td>
+                                <div class="dropdown d-inline-block">
+                                    <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill"></i></button>
+                                    <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editMedicalModal"><i class="ri-edit-2-fill"></i></button>
                                 </div>
                             </td>
                         </tr>

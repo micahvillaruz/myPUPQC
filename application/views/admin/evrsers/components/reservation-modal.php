@@ -4,7 +4,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalScrollableTitle">
-          Appointment Information
+          Reservation Information
         </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -15,10 +15,10 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">Doctor No.</a></h5>
+                  <h5 class="fs-13 mb-1 fw-medium text-dark">Reservation No.</a></h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">00014414</div>
+                  <div class="d-flex fs-13 fw-medium">RES-00002</div>
                 </div>
               </div>
             </li>
@@ -26,10 +26,10 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">Doctor</a></h5>
+                  <h5 class="fs-13 mb-1 fw-medium text-dark">Event Title</a></h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">Dr. Melissa Sarappudin</div>
+                  <div class="d-flex fs-13 fw-medium">Ligma Webinar</div>
                 </div>
               </div>
             </li>
@@ -37,33 +37,11 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1">Patient</h5>
+                  <h5 class="fs-13 mb-1 fw-medium text-dark">Event Details</a></h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">Shein</div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1">Service</h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">Covid</div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1">Date</h5>
-                </div>
-                <div class="col-8">
-                  <div class="fw-medium">
-                    <span>09-01-2022</span>
+                  <div class="d-flex fs-13 fw-medium">
+                    Health & Wellness webinar regarding the physical implications of Ligma. This is a free webinar open to all PUP students and staff.
                   </div>
                 </div>
               </div>
@@ -72,7 +50,42 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">Status</a></h5>
+                  <h5 class="fs-13 mb-1 fw-medium text-dark">Venue</h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium">Court</div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1 fw-medium text-dark">Date</h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium">09-01-2022</div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1 fw-medium text-dark">Time</h5>
+                </div>
+                <div class="col-8">
+                  <div class="fw-medium">
+                    <span>1:00 - 2:00PM</span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1 fw-medium text-dark">Status</a></h5>
                 </div>
                 <div class="col-8">
                   <span class="fs-12 badge rounded-pill bg-success">Accepted</span>
