@@ -19,73 +19,13 @@
           <tbody>
             <tr>
               <td>
-                <span class="text-primary fw-medium">20220770-0043</span>
+                <span class="text-primary fw-medium">20220340-0012</span>
               </td>
               <td>
                 <div class="d-flex align-items-center fw-medium">
-                  <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-woman-7.png" class="avatar-xs rounded-circle me-2">
+                  <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-man-5.png" class="avatar-xs rounded-circle me-2">
                   <div>
-                    <span class="d-block fw-medium">Zsyrhill Anne C. Soria</span>
-                    <i class="mdi mdi-gender-female text-danger"></i>
-                    <small>Female</small>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div class="d-flex align-items-center">
-                  <i class="ri-calendar-todo-fill text-primary"></i>
-                  <span class="ms-2">08 Sep, 2022<small class="text-muted ms-1">06:15 PM</small></span>
-                </div>
-              </td>
-              <td>
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Clearance: </span>
-                      </td>
-                      <td>Graduated Student</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Course: </span>
-                      </td>
-                      <td>BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Purpose: </span>
-                      </td>
-                      <td>Further Studies</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-              <td>
-                <div class="mt-2 d-grid fw-bolder badge badge-soft-success position-relative">
-                  <i class="m-2 ri-checkbox-circle-line fs-13"></i>
-                  <span class="pb-2 text-uppercase">Released</span>
-                  <button type="button" class="btn btn-sm btn-secondary bg-gradient waves-effect waves-light rounded-circle position-absolute top-0 start-100 translate-middle" data-bs-toggle="modal" data-bs-target="#viewProcessStatusFlow">?</button>
-                </div>
-              </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteRequest">
-                    <i class="mdi mdi-trash-can fs-5 fw-bold"></i>
-                  </button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <span class="text-primary fw-medium">20220829-0067</span>
-              </td>
-              <td>
-                <div class="d-flex align-items-center fw-medium">
-                  <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-man-6.png" class="avatar-xs rounded-circle me-2">
-                  <div>
-                    <span class="d-block fw-medium">James Paul L. Tulod</span>
+                    <span class="d-block fw-medium">Rein Joseph B. Ruivivar</span>
                     <i class="mdi mdi-gender-male text-info"></i>
                     <small>Male</small>
                   </div>
@@ -94,7 +34,7 @@
               <td>
                 <div class="d-flex align-items-center">
                   <i class="ri-calendar-todo-fill text-primary"></i>
-                  <span class="ms-2">01 Sep, 2022<small class="text-muted ms-1">03:00 PM</small></span>
+                  <span class="ms-2">30 Jul, 2022<small class="text-muted ms-1">09:11 AM</small></span>
                 </div>
               </td>
               <td>
@@ -102,19 +42,74 @@
                   <tbody>
                     <tr>
                       <td>
-                        <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Clearance: </span>
+                        <span class="fw-medium badge bg-dark me-1">Clearance: </span>
                       </td>
-                      <td>Graduated Student</td>
+                      <td>Undergraduate Student</td>
                     </tr>
                     <tr>
                       <td>
-                        <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Course: </span>
+                        <span class="fw-medium badge bg-dark me-1">Course: </span>
                       </td>
                       <td>BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY</td>
                     </tr>
                     <tr>
                       <td>
-                        <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Purpose: </span>
+                        <span class="fw-medium badge bg-dark me-1">Purpose: </span>
+                      </td>
+                      <td>Transfer to another school</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+              <td>
+                <div class="mt-2 d-grid fw-bolder badge badge-soft-success position-relative">
+                  <i class="m-2 ri-checkbox-circle-line fs-13"></i>
+                  <span class="pb-2 text-uppercase">Released</span>
+                  <button type="button" class="btn btn-sm btn-secondary bg-gradient waves-effect waves-light rounded-circle position-absolute top-0 start-100 translate-middle" data-bs-toggle="modal" data-bs-target="#viewProcessStatusFlow">?</button>
+                </div>
+              </td>
+              <td class="text-center">
+                <button type="button" class="btn btn-info btn-sm bg-gradient waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails">View</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="text-primary fw-medium">20220475-0125</span>
+              </td>
+              <td>
+                <div class="d-flex align-items-center fw-medium">
+                  <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-man-9.png" class="avatar-xs rounded-circle me-2">
+                  <div>
+                    <span class="d-block fw-medium">Josiah Alether G. Fallesgon</span>
+                    <i class="mdi mdi-gender-male text-info"></i>
+                    <small>Male</small>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="d-flex align-items-center">
+                  <i class="ri-calendar-todo-fill text-primary"></i>
+                  <span class="ms-2">15 Jul, 2022<small class="text-muted ms-1">07:30 AM</small></span>
+                </div>
+              </td>
+              <td>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <span class="fw-medium badge bg-dark me-1">Clearance: </span>
+                      </td>
+                      <td>Graduate Student</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="fw-medium badge bg-dark me-1">Course: </span>
+                      </td>
+                      <td>BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="fw-medium badge bg-dark me-1">Purpose: </span>
                       </td>
                       <td>Further Studies</td>
                     </tr>
@@ -129,32 +124,27 @@
                 </div>
               </td>
               <td class="text-center">
-                <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteRequest">
-                    <i class="mdi mdi-trash-can fs-5 fw-bold"></i>
-                  </button>
-                </div>
+                <button type="button" class="btn btn-info btn-sm bg-gradient waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails">View</button>
               </td>
             </tr>
             <tr>
               <td>
-                <span class="text-primary fw-medium">20220903-0043</span>
+                <span class="text-primary fw-medium">20220877-0031</span>
               </td>
               <td>
                 <div class="d-flex align-items-center fw-medium">
-                  <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-woman-6.png" class="avatar-xs rounded-circle me-2">
+                  <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-man-8.png" class="avatar-xs rounded-circle me-2">
                   <div>
-                    <span class="d-block fw-medium">Micah M. Villaruz</span>
-                    <i class="mdi mdi-gender-female text-danger"></i>
-                    <small>Female</small>
+                    <span class="d-block fw-medium">Allan G. Rosemblot</span>
+                    <i class="mdi mdi-gender-male text-info"></i>
+                    <small>Male</small>
                   </div>
                 </div>
               </td>
               <td>
                 <div class="d-flex align-items-center">
                   <i class="ri-calendar-todo-fill text-primary"></i>
-                  <span class="ms-2">28 Aug, 2022<small class="text-muted ms-1">08:00 AM</small></span>
+                  <span class="ms-2">06 Jun, 2022<small class="text-muted ms-1">10:15 AM</small></span>
                 </div>
               </td>
               <td>
@@ -162,21 +152,21 @@
                   <tbody>
                     <tr>
                       <td>
-                        <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Clearance: </span>
+                        <span class="fw-medium badge bg-dark me-1">Clearance: </span>
                       </td>
-                      <td>Graduated Student</td>
+                      <td>Graduate Student</td>
                     </tr>
                     <tr>
                       <td>
-                        <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Course: </span>
+                        <span class="fw-medium badge bg-dark me-1">Course: </span>
                       </td>
                       <td>BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY</td>
                     </tr>
                     <tr>
                       <td>
-                        <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Purpose: </span>
+                        <span class="fw-medium badge bg-dark me-1">Purpose: </span>
                       </td>
-                      <td>Further Studies</td>
+                      <td>Board/Licensure Examination</td>
                     </tr>
                   </tbody>
                 </table>
@@ -189,12 +179,7 @@
                 </div>
               </td>
               <td class="text-center">
-                <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails"><i class="ri-eye-fill"></i></button>
-                  <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteRequest">
-                    <i class="mdi mdi-trash-can fs-5 fw-bold"></i>
-                  </button>
-                </div>
+                <button type="button" class="btn btn-info btn-sm bg-gradient waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails">View</button>
               </td>
             </tr>
           </tbody>
