@@ -230,7 +230,7 @@ class Student extends CI_Controller
     $this->load->view('student/evrsers/new-reservation');
     $this->load->view('partials/footer');
     $this->load->view('partials/foot-scripts');
-    $this->load->view('student/evrsers/scripts/new-reservation-scripts');
+    $this->load->view('student/evrsers/scripts/reservations-scripts');
   }
 
   public function view_reservations()
