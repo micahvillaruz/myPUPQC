@@ -1,16 +1,3 @@
-		<!-- filepond js -->
-		<script src="<?= base_url() ?>public/libs/filepond/filepond.min.js"></script>
-		<script src="<?= base_url() ?>public/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.js"></script>
-		<script src="<?= base_url() ?>public/libs/filepond-plugin-file-validate-size/filepond-plugin-file-validate-size.min.js"></script>
-		<script src="<?= base_url() ?>public/libs/filepond-plugin-image-exif-orientation/filepond-plugin-image-exif-orientation.min.js"></script>
-		<script src="<?= base_url() ?>public/libs/filepond-plugin-file-encode/filepond-plugin-file-encode.min.js"></script>
-
-		<!--nft create init js-->
-		<script src="<?= base_url() ?>public/js/pages/apps-nft-create.init.js"></script>
-
-		<!-- prismjs plugin -->
-		<script src="<?= base_url() ?>public/libs/prismjs/prism.js"></script>
-
 		<!--datatable js-->
 		<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 		<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
