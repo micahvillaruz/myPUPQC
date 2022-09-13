@@ -82,28 +82,24 @@ class Student extends CI_Controller
     $this->load->view('partials/page-title', ["page_title" => "ODRS", "title" => "Requests"]);
     $this->load->view('student/odrs/requests');
     $this->load->view('partials/footer');
-    $this->load->view('student/odrs/components/view-request-details');
-    $this->load->view('student/odrs/components/view-requirements');
-    $this->load->view('student/odrs/components/view-payment-options');
+    $this->load->view('student/odrs/components/requests-modal');
     $this->load->view('partials/foot-scripts');
     $this->load->view('student/odrs/scripts/requests-scripts');
   }
 
-  public function transactions()
+  public function history()
   {
     $this->load->view('partials/main');
     $this->load->view('partials/title-meta');
     $this->load->view('partials/head-css');
     $this->load->view('partials/student/topbar');
     $this->load->view('partials/student/sidebar');
-    $this->load->view('partials/page-title', ["page_title" => "ODRS", "title" => "Transactions"]);
-    $this->load->view('student/odrs/transactions');
+    $this->load->view('partials/page-title', ["page_title" => "ODRS", "title" => "History"]);
+    $this->load->view('student/odrs/history');
     $this->load->view('partials/footer');
-    $this->load->view('student/odrs/components/view-transaction-details');
-    $this->load->view('student/odrs/components/view-schedule');
-    $this->load->view('student/odrs/components/view-status-flow');
+    $this->load->view('student/odrs/components/history-modal');
     $this->load->view('partials/foot-scripts');
-    $this->load->view('student/odrs/scripts/transactions-scripts');
+    $this->load->view('student/odrs/scripts/history-scripts');
   }
 
   public function personal_information()

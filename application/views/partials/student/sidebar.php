@@ -162,15 +162,15 @@
 
         <li class="nav-item">
           <a class="nav-link menu-link" href="<?= base_url() ?>student/odrs/requests">
-            <i class="ri-file-copy-2-line"></i>
+            <i class="ri-archive-line"></i>
             <span>Requests</span>
           </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link menu-link" href="<?= base_url() ?>student/odrs/transactions">
-            <i class="mdi mdi-archive-clock-outline"></i>
-            <span>Transactions</span>
+          <a class="nav-link menu-link" href="<?= base_url() ?>student/odrs/history">
+            <i class="mdi mdi-history"></i>
+            <span>History</span>
           </a>
         </li>
 

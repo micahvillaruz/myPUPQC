@@ -2,7 +2,7 @@
   <div class="col-lg-12">
     <div class="card">
       <div class="card-header align-items-xl-center d-xl-flex">
-        <h5 class="card-title mb-0">Requests</h5>
+        <h5 class="card-title mb-0">History</h5>
       </div>
       <div class="card-body">
         <table id="model-datatables" class="display dt-responsive table align-middle" style="width: 100%">
@@ -10,8 +10,8 @@
             <tr>
               <th>Control Number</th>
               <th>Date Filed</th>
-              <th>Payment Status</th>
               <th>Details</th>
+              <th>Date Released</th>
               <th>Request Status</th>
               <th>Action</th>
             </tr>
@@ -19,18 +19,12 @@
           <tbody>
             <tr>
               <td>
-                <span class="text-primary fw-medium">20220903-0088</span>
+                <span class="text-primary fw-medium">20220967-0103</span>
               </td>
               <td>
                 <div class="d-flex align-items-center">
                   <i class="ri-calendar-todo-fill text-primary"></i>
-                  <span class="ms-2">28 Aug, 2022<small class="text-muted ms-1">08:00 AM</small></span>
-                </div>
-              </td>
-              <td>
-                <div class="d-block badge badge-soft-warning align-items-center">
-                  <i class="me-2 mdi mdi-cash-fast fs-13"></i>
-                  <span class="text-uppercase">Pending</span>
+                  <span class="ms-2">15 Jan, 2022<small class="text-muted ms-1">07:30 AM</small></span>
                 </div>
               </td>
               <td>
@@ -52,25 +46,26 @@
                       <td>
                         <span class="fw-medium badge bg-dark me-1">Purpose: </span>
                       </td>
-                      <td>Transfer to another school</td>
+                      <td>Scholarship</td>
                     </tr>
                   </tbody>
                 </table>
               </td>
               <td>
-                <div class="mt-2 d-grid badge badge-soft-danger position-relative">
-                  <i class="m-2  mdi mdi-nfc-search-variant fs-13"></i>
-                  <span class="pb-2 text-uppercase">For Clearance</span>
+                <div class="d-flex align-items-center">
+                  <i class="ri-calendar-todo-fill text-primary"></i>
+                  <span class="ms-2">21 Jan, 2022<small class="text-muted ms-1">11:00 AM</small></span>
+                </div>
+              </td>
+              <td>
+                <div class="mt-2 d-grid badge badge-soft-success position-relative">
+                  <i class="m-2 ri-checkbox-circle-line fs-13"></i>
+                  <span class="pb-2 text-uppercase">Released</span>
                   <button type="button" class="btn btn-sm btn-secondary bg-gradient waves-effect waves-light rounded-circle position-absolute top-0 start-100 translate-middle" data-bs-toggle="modal" data-bs-target="#viewProcessStatusFlow">?</button>
                 </div>
               </td>
               <td class="text-center">
-                <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails"><i class="mdi mdi-eye fs-5 fw-bold"></i></button>
-                  <a type="button" class="btn btn-success btn-icon waves-effect waves-light" href="<?= base_url() ?>Public/file/Request-Form.pdf" download="Request-Form">
-                    <i class="mdi mdi-download fs-5 fw-bold"></i>
-                  </a>
-                </div>
+                <button type="button" class="btn btn-info btn-sm bg-gradient waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails">View</button>
               </td>
             </tr>
           </tbody>
