@@ -64,12 +64,13 @@
                   <button type="button" class="btn btn-sm btn-secondary bg-gradient waves-effect waves-light rounded-circle position-absolute top-0 start-100 translate-middle" data-bs-toggle="modal" data-bs-target="#viewProcessStatusFlow">?</button>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails"><i class="mdi mdi-eye fs-5 fw-bold"></i></button>
-                  <a type="button" class="btn btn-success btn-icon waves-effect waves-light" href="<?= base_url() ?>Public/file/Request-Form.pdf" download="Request-Form">
-                    <i class="mdi mdi-download fs-5 fw-bold"></i>
-                  </a>
+              <td>
+                <div class="vstack gap-2">
+                  <button type="button" class="btn btn-sm btn-info text-start waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails"><i class="mdi mdi-eye label-icon align-middle me-2"></i> View Details</button>
+                  <a type="button" class="btn btn-sm btn-success text-start waves-effect waves-light" href="<?= base_url() ?>Public/file/Request-Form.pdf" download="Request-Form"><i class="mdi mdi-download label-icon align-middle me-2"></i> Download Request Form</a>
+                </div>
+                <div class="mt-4 d-grid">
+                  <button type="button" class="btn btn-sm btn-light waves-effect waves-light" onclick="cancelRequest()"><i class="ri-close-fill label-icon align-middle me-2"></i> Cancel</button>
                 </div>
               </td>
             </tr>
