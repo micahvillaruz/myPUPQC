@@ -7,11 +7,11 @@ $(function () {
 	})
 
 		// pass data to API for updating of student's info
-		updateStaffAJAX($('#edit_user_id').val())
+		updateMedicalAJAX($('#edit_user_id').val())
 	})
 
 addNewMedicalCase = () => {
-	// Add PUP Staff
+	// New Medical Case
 	if ($('#addNewMedicalCaseForm')[0].checkValidity()) {
 		// no validation error
 		const form = new FormData($('#addNewMedicalCaseForm')[0])
@@ -45,7 +45,7 @@ addNewMedicalCase = () => {
 						$('form#addPUPStaffForm')[0].reset()
 
 						// Reload Staff Datatable
-						loadStaffsTable()
+						loadMedicalTable()
 					})
 				}
 			},
@@ -64,7 +64,7 @@ addNewMedicalCase = () => {
 }
 
 // Load datatables
-loadStaffsTable = () => {
+loadMedicalTable = () => {
 	const dt = $('#medical-datatable')
 
 	$.ajaxSetup({
@@ -136,7 +136,7 @@ loadStaffsTable = () => {
 	}
 }
 
-// View Staff details
+// View Medical Consultation details
 viewMedicalDetails = (user_id) => {
 	$.ajaxSetup({
 		headers: {
