@@ -18,7 +18,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Reason for consultation</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_reasonCon">Anxiety</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_consultation_reason"></div>
                 </div>
               </div>
             </li>
@@ -29,7 +29,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Psychologist</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_psychologist_name">Melanie F. Bactasa, MAED</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_health_physcian"></div>
                 </div>
               </div>
             </li>
@@ -40,7 +40,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Date Created</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_date_created">11-05-2022</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_date_of_symptoms"></div>
                 </div>
               </div>
             </li>
@@ -51,7 +51,7 @@
                   <h5 class="fs-13 mb-1">Scheduled Date</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_scheduled_date">20-05-2022</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_consultation_date"></div>
                 </div>
               </div>
             </li>
@@ -62,17 +62,16 @@
                   <h5 class="fs-13 mb-1">Time</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_time">9:00 AM - 11:00 AM</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_consultation_time"></div>
                 </div>
               </div>
             </li>
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1">Status</h5>
+                  <h5 class="fs-13 mb-1 fw-medium">Status</h5>
                 </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_status" value=""><span class="badge bg-warning">PENDING</span></div>
+                <div class="col-8" id="view_status">
                 </div>
               </div>
             </li>
@@ -103,24 +102,24 @@
 
 
       <div class="modal-body">
-        <form id="chiefComplainttForm" class="needs-validation" novalidate>
+        <form id="NewGuidanceCaseForm" class="needs-validation" novalidate>
           <div class="mb-3">
             <label for="reasonInput" class="form-label"> Reason for consultation <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="ReasonInput" placeholder="Enter your reason" required>
+            <input type="text" class="form-control" id="consultation_reason" placeholder="Enter your reason" required>
           </div>
           <div class="mb-3">
             <label for="nameInput" class="form-label"> Enter Psychologist <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="nameInput" name="first_name last_name" placeholder="Enter name of Psychologist" required>
+            <input type="text" class="form-control" id="health_appointment_assigned_to_physician" name="first_name last_name" placeholder="Enter name of Psychologist" required>
           </div>
           <div class="mb-3">
             <div>
-              <label for="exampleInputdate" class="form-label">Date Created</label>
-              <input type="date" class="form-control" id="exampleInputdate">
+              <label for="exampleInputdate" class="form-label">Start date of Symptoms</label>
+              <input type="date" class="form-control" id="symptoms_date">
             </div>
             <div class="mb-3">
               <div>
                 <label for="exampleInputdate" class="form-label"> Schedule date for Consultation </label>
-                <input type="date" class="form-control" id="exampleInputdate">
+                <input type="date" class="form-control" id="consultation_date">
               </div>
               <label for="exampleInputdate" class="form-label"> Time </label>
               <div class="mx-5">
@@ -128,26 +127,26 @@
                   <!-- 1st Column -->
                   <div class="col-6">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <input class="form-check-input" type="checkbox" value="" id="consultation_time">
                       <label class="form-check-label" for="flexCheckDefault">7:00 AM - 9:00 AM</label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                      <input class="form-check-input" type="checkbox" value="" id="consultation_time">
                       <label class="form-check-label" for="flexCheckChecked">11:00 - 1:00 PM</label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <input class="form-check-input" type="checkbox" value="" id="consultation_time">
                       <label class="form-check-label" for="flexCheckDefault">3:00 PM - 5:00 PM</label>
                     </div>
                   </div>
                   <!-- 2nd Column -->
                   <div class="col-6">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                      <input class="form-check-input" type="checkbox" value="" id="consultation_time">
                       <label class="form-check-label" for="flexCheckChecked">9:00 AM - 11:00 AM</label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <input class="form-check-input" type="checkbox" value="" id="consultation_time">
                       <label class="form-check-label" for="flexCheckDefault">1:00 PM - 3:00 PM</label>
                     </div>
                   </div>

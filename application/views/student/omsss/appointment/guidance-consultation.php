@@ -9,7 +9,7 @@
       </div>
       <div class="card-body">
       <p>You can only make a <u><span class="fw-bold">face to face consultation</span></u> during the schedule shown above.</p>
-        <table id="students-datatable" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
+        <table id="guidance-datatable" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
           <thead>
             <tr>
               <th>Case Details</th>
@@ -18,18 +18,6 @@
               <th>Attending Psychologist</th>
               <th>Schedule</th>
               <th>Action</th>
-            </tr>
-            <tr>
-              <th>2022-GUD-0005</th>
-              <th>11-05-2022</th>
-              <th><span class="badge bg-warning">PENDING</span></th>
-              <th>Melanie F. Bactasa, MAED</th>
-              <th>20-05-2022</th>
-              <th>
-                <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewGuidanceModal"><i class="ri-eye-fill"></i></button>
-                </div>
-              </th>
             </tr>
           </thead>
           <tbody>

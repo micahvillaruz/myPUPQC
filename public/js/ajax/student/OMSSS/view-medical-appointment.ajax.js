@@ -5,10 +5,7 @@ $(function () {
 		e.preventDefault() // prevent page refresh
 		addNewMedicalCase()
 	})
-
-		// pass data to API for updating of student's info
-		updateMedicalAJAX($('#edit_user_id').val())
-	})
+})
 
 addNewMedicalCase = () => {
 	// New Medical Case
@@ -41,10 +38,10 @@ addNewMedicalCase = () => {
 						buttonsStyling: !1,
 						showCloseButton: !0,
 					}).then(function () {
-						$('#addStaffModal').modal('hide')
-						$('form#addPUPStaffForm')[0].reset()
+						$('#addMedicalModal').modal('hide')
+						$('form#addNewMedicalCaseForm')[0].reset()
 
-						// Reload Staff Datatable
+						// Reload Medical Consultation Datatable
 						loadMedicalTable()
 					})
 				}
@@ -88,7 +85,7 @@ loadMedicalTable = () => {
 				{
 					data: null,
 					render: (data) => {
-						const caseNo = data.health_appointment_id
+						const caseNo = data.case_control_number
 						return `${caseNo}`
 					},
 				},
@@ -155,8 +152,8 @@ viewMedicalDetails = (user_id) => {
 			const userData = result.data
 			const userProfileData = result.data.user_profiles
 
-			$('#view_case_details').html(userData.health_appointment_id)
-      $('view_consultation_reason').html(userData.consultation_reason)
+			$('#view_case_details').html(userData.case_control_number)
+      $('#view_consultation_reason').html(userData.consultation_reason)
 			$('#view_health_physcian').html(userProfileData.full_name)
       $('#view_date_of_symptoms').html(userData.symptoms_date)
 			$('#view_consultation_date').html(userData.consultation_date)
