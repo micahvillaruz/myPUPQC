@@ -181,23 +181,3 @@ viewMedicalDetails = (user_id) => {
 		},
 	})
 }
-getMedical = (user_id) => {
-	$.ajax({
-		url: apiURL + `omsss/student/view_medical_appointment${user_id}`,
-		type: 'GET',
-		headers: AJAX_HEADERS,
-		success: (result) => {
-			if (result) {
-				// Get data from result
-				const data = result.data
-				$('#edit_case_details').val(data.case_control_number)
-
-				$('#edit_consultation_reason').val(data.consultation_reason)
-				$('#edit_health_physcian').val(data.user_profiles.full_name)
-				$('#edit_date_of_symptoms').val(data.symptoms_date)
-				$('#edit_consultation_date').val(data.consultation_date)
-				$('#edit_consultation_time').val(data.consultation_time)
-			}
-		},
-	}).fail(() => console.error('There was an error in retrieving medical consultation data'))
-}
