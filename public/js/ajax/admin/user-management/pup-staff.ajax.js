@@ -36,6 +36,10 @@ addPUPStaff = () => {
 			municipality: form.get('municipality'),
 			province: form.get('province'),
 			region: form.get('region'),
+			email_address: form.get('email_address'),
+			civil_status: form.get('civil_status'),
+			citizenship: form.get('citizenship'),
+			religion: form.get('religion'),
 		}
 
 		$.ajax({

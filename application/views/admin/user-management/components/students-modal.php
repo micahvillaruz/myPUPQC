@@ -50,6 +50,10 @@
             <input type="text" class="form-control" id="extension_name" name="extension_name" placeholder="Enter Extension Name" />
           </div>
           <div class="mb-3">
+            <label for="email_address" class="form-label">Email Address <span class="text-danger">*</span></label>
+            <input type="email" class="form-control" id="email_address" name="email_address" placeholder="Enter Email Address" required />
+          </div>
+          <div class="mb-3">
             <label for="contact_number" class="form-label">Contact Number <span class="text-danger">*</span></label>
             <input type="text" class="form-control" id="contact_number" name="contact_number" placeholder="Enter Contact Number" required />
           </div>
@@ -85,6 +89,25 @@
           <div class="mb-3">
             <label for="region" class="form-label">Region <span class="text-danger">*</span></label>
             <input type="text" class="form-control" id="region" name="region" placeholder="Enter Region" required>
+          </div>
+          <div class="mb-3">
+            <label for="civil_status" class="form-label">Civil Status <span class="text-danger">*</span></label>
+            <select class="form-select mb-3" id="civil_status" name="civil_status" required>
+              <option selected disabled value="">Select Civil Status</option>
+              <option value="Single">Single</option>
+              <option value="Married">Married</option>
+              <option value="Widowed">Widowed</option>
+              <option value="Separated">Separated</option>
+              <option value="Divorced">Divorced</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="citizenship" class="form-label">Citizenship <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="citizenship" name="citizenship" placeholder="Enter Citizenship" required>
+          </div>
+          <div class="mb-3">
+            <label for="religion" class="form-label">Religion <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="religion" name="religion" placeholder="Enter Religion" required>
           </div>
           <div class="text-end">
             <button type="submit" class="btn btn-primary">Enroll Student</button>
