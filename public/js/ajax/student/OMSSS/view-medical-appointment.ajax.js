@@ -127,6 +127,21 @@ loadMedicalTable = () => {
 						return `${consultation}`
 					},
 				},
+       //Action
+       {
+        data: null,
+        class: 'text-center',
+        render: (data) => {
+            let activationBtn = data.is_blacklist ?
+                `<button type="button" class="btn btn-success btn-icon waves-effect waves-light" onclick="activateStudent('${data.user_id}')"><i class="bx bxs-user-check fs-4"></i></button>` :
+                `<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="deactivateStudent('${data.user_id}')"><i class="bx bxs-user-x fs-4"></i></button>`
+            return `
+        <div class="dropdown d-inline-block">
+        <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewMedicalDetails('${data.user_id}')" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill fs-5"></i></button>
+        ${activationBtn}
+        </div>`
+        },
+       },
 			],
 			order: [[0, 'asc']],
 		})
@@ -165,4 +180,24 @@ viewMedicalDetails = (user_id) => {
 			)
 		},
 	})
+}
+getMedical = (user_id) => {
+	$.ajax({
+		url: apiURL + `omsss/student/view_medical_appointment${user_id}`,
+		type: 'GET',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			if (result) {
+				// Get data from result
+				const data = result.data
+				$('#edit_case_details').val(data.case_control_number)
+
+				$('#edit_consultation_reason').val(data.consultation_reason)
+				$('#edit_health_physcian').val(data.user_profiles.full_name)
+				$('#edit_date_of_symptoms').val(data.symptoms_date)
+				$('#edit_consultation_date').val(data.consultation_date)
+				$('#edit_consultation_time').val(data.consultation_time)
+			}
+		},
+	}).fail(() => console.error('There was an error in retrieving medical consultation data'))
 }
