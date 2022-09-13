@@ -22,8 +22,8 @@
             <tr>
               <th>2022-MED-0003</th>
               <th>06-09-2022</th>
-              <th>Melissa P. Sarapuddin, MD</th>
               <th><span class="badge bg-warning">PENDING</span></th>
+              <th>Melissa P. Sarapuddin, MD</th>
               <th>11-09-2022</th>
               <th>
                 <div class="dropdown d-inline-block">
