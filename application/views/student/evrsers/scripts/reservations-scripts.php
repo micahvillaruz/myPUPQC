@@ -17,6 +17,9 @@
 		<!-- init js -->
 		<script src="<?= base_url() ?>public/js/pages/form-pickers.init.js"></script>
 
+		<!-- Own Reservation List -->
+		<script src="<?= base_url() ?>public/js/ajax/student/evrsers/evrsers.ajax.js"></script>
+
 		<!-- App js -->
 		<script src="<?= base_url() ?>public/js/app.js"></script>
 		</body>
