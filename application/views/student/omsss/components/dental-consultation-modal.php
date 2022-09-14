@@ -40,7 +40,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Start date of Symptoms</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_date_of_symptoms"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_symptoms_date"></div>
                 </div>
               </div>
             </li>

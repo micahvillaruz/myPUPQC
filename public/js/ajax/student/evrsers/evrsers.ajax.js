@@ -1,6 +1,23 @@
-// Load datatables
-loadStudentTable = () => {
-    const dt = $('#students-datatable')
+$(function() {
+    ownReservationsTable()
+
+    // $('#enrollStudentForm').on('submit', function (e) {
+    // 	e.preventDefault() // prevent page refresh
+    // 	enrollStudent()
+    // })
+
+    // $('#updateStudentForm').on('submit', function (e) {
+    // 	e.preventDefault() // prevent page refresh
+
+    // 	// pass data to API for updating of student's info
+    // 	updateStudentAJAX($('#edit_user_id').val())
+    // })
+})
+
+// Load datatables (individual reservations)
+
+ownReservationsTable = () => {
+    const dt = $('#reservations-datatable')
 
     $.ajaxSetup({
         headers: {
@@ -9,100 +26,89 @@ loadStudentTable = () => {
             ContentType: 'application/x-www-form-urlencoded',
         },
     })
-
     if (dt.length) {
         dt.DataTable({
             bDestroy: true,
             ajax: {
-                url: apiURL + 'super_admin/student/',
+                url: apiURL + 'evrsers/student/view_reservations',
                 type: 'GET',
                 ContentType: 'application/x-www-form-urlencoded',
             },
             columns: [
-                // Customer No.
+                // Reservation ID
                 {
                     data: null,
                     render: (data) => {
-                        const userNo = data.user_no
-                        return `${userNo}`
+                        const reservation_number = data.reservation_number
+                        return `${reservation_number}`
+                    },
+                },
+                // Event Title
+                {
+                    data: null,
+                    render: (data) => {
+                        const event_title = data.event_title
+                        return `${event_title}`
                     },
                 },
 
-                // Full Name
+                // Venue
                 {
                     data: null,
                     render: (data) => {
-                        const fullName = data.user_profiles.full_name
-
-                        return `${fullName}`
+                        const facility_name = data.facilities_assigned_to_reservation.facility_name
+                        return `${facility_name}`
                     },
                 },
 
-                // Address
+                // Event Details
                 {
                     data: null,
                     render: (data) => {
-                        const address = data.user_profiles.full_address
-                        return `${address}`
+                        const event_details = data.event_details
+                        return `${event_details}`
                     },
                 },
 
-                // Gender
+                // Date
                 {
                     data: null,
                     render: (data) => {
-                        const igender = data.user_profiles.gender
-                        return `${igender}`
+                        const reserve_date = moment(data.reserve_date).format('LL')
+
+                        return `${reserve_date}`
                     },
                 },
 
-                // Birthday
+                // Time
                 {
                     data: null,
                     render: (data) => {
-                        const birth_date = moment(data.user_profiles.birth_date).format('LL')
-
-                        return `${birth_date}`
-                    },
-                },
-
-                // Contact Number
-                {
-                    data: null,
-                    render: (data) => {
-                        const contact_number = data.user_profiles.contact_number
-
-                        return `${contact_number}`
+                        const time_from = data.time_from
+                        const time_to = data.time_to
+                        return `${time_from + ' - ' + time_to}`
                     },
                 },
 
                 // Status
                 {
                     data: null,
+                    class: 'text-center',
                     render: (data) => {
-                        return data.is_blacklist ?
-                            `<span class="badge rounded-pill bg-danger">Inactive</span>` :
-                            `<span class="badge rounded-pill bg-success">Active</span>`
+                        const reserve_status = data.reserve_status
+                            // return `${reserve_status}`
+                        if (reserve_status == 'Pending') {
+                            return `<span class="badge rounded-pill bg-warning">${reserve_status}</span>`
+                        } else if (reserve_status == 'Approved') {
+                            return `<span class="badge rounded-pill bg-success">${reserve_status}</span>`
+                        } else if (reserve_status == 'Declined') {
+                            return `<span class="badge rounded-pill bg-danger">${reserve_status}</span>`
+                        } else if (reserve_status == 'Cancelled') {
+                            return `<span class="badge rounded-pill bg-info">${reserve_status}</span>`
+                        }
                     },
                 },
 
-                //Action
-                {
-                    data: null,
-                    class: 'text-center',
-                    render: (data) => {
-                        let activationBtn = data.is_blacklist ?
-                            `<button type="button" class="btn btn-success btn-icon waves-effect waves-light" onclick="activateStudent('${data.user_id}')"><i class="bx bxs-user-check fs-4"></i></button>` :
-                            `<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="deactivateStudent('${data.user_id}')"><i class="bx bxs-user-x fs-4"></i></button>`
-                        return `
-    <div class="dropdown d-inline-block">
-    <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewStudentDetails('${data.user_id}')" data-bs-toggle="modal" data-bs-target="#viewStudentModal"><i class="ri-eye-fill fs-5"></i></button>
-    <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#updateStudentModal" onclick = "editStudentDetails('${data.user_id}')"><i class="ri-edit-2-fill fs-5"></i></button>
-    ${activationBtn}
-  </div>
-    `
-                    },
-                },
             ],
             order: [
                 [0, 'asc']

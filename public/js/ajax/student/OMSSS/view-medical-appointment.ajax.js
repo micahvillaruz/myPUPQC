@@ -128,7 +128,7 @@ loadMedicalTable = () => {
 					render: (data) => {
 						const consultation_date = moment(data.consultation_date).format('LL')
 						const consultation_time = data.consultation_time
-						return `${consultation_date} (${consultation_time})`
+						return `${consultation_date}\n${consultation_time}`
 					},
 				},
 				//Action
