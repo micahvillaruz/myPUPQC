@@ -190,7 +190,6 @@ viewDentalDetails = (health_appointment_id) => {
 
 // Cancel Dental Consultation
 cancelDental = (health_appointment_id) => {
-	console.log(health_appointment_id)
 	$.ajaxSetup({
 		headers: {
 			Accept: 'application/json',
