@@ -105,7 +105,7 @@
         <form id="NewDentalCaseForm" class="needs-validation" novalidate>
           <div class="mb-3">
             <label for="reasonInput" class="form-label"> Reason for consultation <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="consultation_reason" placeholder="Enter your reason" required>
+            <input type="text" class="form-control" id="consultation_reason" name="consultation_reason" placeholder="Enter your reason" required>
           </div>
           <div class="mb-3">
             <label for="nameInput" class="form-label"> Enter Dentist <span class="text-danger">*</span></label>
@@ -114,12 +114,12 @@
           <div class="mb-3">
             <div>
               <label for="exampleInputdate" class="form-label">Start date of Symptoms</label>
-              <input type="date" class="form-control" id=symptoms_date">
+              <input type="date" class="form-control" id=symptoms_date" name="symptoms_date">
             </div>
             <div class="mb-3">
               <div>
                 <label for="exampleInputdate" class="form-label"> Schedule date for Consultation </label>
-                <input type="date" class="form-control" id="'consultation_date">
+                <input type="date" class="form-control" id="'consultation_date" name="consultation_date">
               </div>
               <label for="exampleInputdate" class="form-label"> Time </label>
               <div class="mx-5">
@@ -127,32 +127,32 @@
                   <!-- 1st Column -->
                   <div class="col-6">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="consultation_time">
-                      <label class="form-check-label" for="flexCheckDefault">7:00 AM - 9:00 AM</label>
+                      <input class="form-check-input" type="radio" value="7:00AM-9:00AM" id="consultation_time" name="consultation_time">
+                      <label class="form-check-label" for="flexCheckDefault">7:00AM-9:00AM</label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="consultation_time">
-                      <label class="form-check-label" for="flexCheckChecked">11:00 - 1:00 PM</label>
+                      <input class="form-check-input" type="radio" value="11:00AM-1:00PM" id="consultation_time" name="consultation_time">
+                      <label class="form-check-label" for="flexCheckChecked">11:00AM-1:00PM</label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="consultation_time">
-                      <label class="form-check-label" for="flexCheckDefault">3:00 PM - 5:00 PM</label>
+                      <input class="form-check-input" type="radio" value="3:00PM-5:00PM" id="consultation_time" name="consultation_time">
+                      <label class="form-check-label" for="flexCheckDefault">3:00PM-5:00PM</label>
                     </div>
                   </div>
                   <!-- 2nd Column -->
                   <div class="col-6">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="consultation_time">
-                      <label class="form-check-label" for="flexCheckChecked">9:00 AM - 11:00 AM</label>
+                      <input class="form-check-input" type="radio" value="9:00AM-11:00A" id="consultation_time" name="consultation_time">
+                      <label class="form-check-label" for="flexCheckChecked">9:00AM-11:00AM</label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="consultation_time">
-                      <label class="form-check-label" for="flexCheckDefault">1:00 PM - 3:00 PM</label>
+                      <input class="form-check-input" type="radio" value="1:00PM-3:00PM" id="consultation_time" name="consultation_time">
+                      <label class="form-check-label" for="flexCheckDefault">1:00PM-3:00PM</label>
                     </div>
                   </div>
                   <br></br>
                   <div class="text-center">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" id="addDentalCase">Submit</button>
                   </div>
         </form>
       </div>
