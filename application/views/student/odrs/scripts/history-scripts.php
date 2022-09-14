@@ -14,6 +14,9 @@
 		<!-- Sweet alert init js-->
 		<script src="<?= base_url() ?>public/js/pages/sweetalerts.init.js"></script>
 
+		<!-- History ajax -->
+		<script src="<?= base_url() ?>public/js/ajax/student/odrs/history.ajax.js"></script>
+
 		<!-- App js -->
 		<script src="<?= base_url() ?>public/js/app.js"></script>
 
