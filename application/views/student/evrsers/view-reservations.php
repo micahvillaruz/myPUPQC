@@ -8,16 +8,16 @@
                 </div>
             </div>
             <div class="card-body">
-                <table id="reservations-datatable" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
+                <table id="reservations-datatable" class="table table-bordered table-responsive dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
                     <thead>
                         <tr>
-                            <th>Reservation ID</th>
+                            <th>Reservation Control #</th>
                             <th>Event Title</th>
                             <th>Venue</th>
-                            <th>Event Details</th>
                             <th>Date</th>
                             <th>Time</th>
                             <th>Status</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>

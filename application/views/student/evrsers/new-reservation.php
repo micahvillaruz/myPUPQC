@@ -9,7 +9,7 @@
                     <div class="row g-3">
                         <div class="col-lg-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="fullnamefloatingInput" placeholder="Student Full Name" disabled value="Josha G. Galga">
+                                <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Student Full Name" disabled>
                                 <label for="fullnamefloatingInput">Full Name</label>
                             </div>
                         </div>
