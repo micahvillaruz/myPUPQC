@@ -115,7 +115,7 @@ loadStaffsTable = () => {
 				{
 					data: null,
 					render: (data) => {
-						const fullName = data.user_profiles.full_name
+						const fullName = data.user_profiles[0].full_name
 
 						return `${fullName}`
 					},
@@ -125,7 +125,7 @@ loadStaffsTable = () => {
 				{
 					data: null,
 					render: (data) => {
-						const address = data.user_profiles.full_address
+						const address = data.user_profiles[0].full_address
 						return `${address}`
 					},
 				},
@@ -134,7 +134,7 @@ loadStaffsTable = () => {
 				{
 					data: null,
 					render: (data) => {
-						const igender = data.user_profiles.gender
+						const igender = data.user_profiles[0].gender
 						return `${igender}`
 					},
 				},
@@ -143,7 +143,7 @@ loadStaffsTable = () => {
 				{
 					data: null,
 					render: (data) => {
-						const birth_date = moment(data.user_profiles.birth_date).format('LL')
+						const birth_date = moment(data.user_profiles[0].birth_date).format('LL')
 
 						return `${birth_date}`
 					},
@@ -153,7 +153,7 @@ loadStaffsTable = () => {
 				{
 					data: null,
 					render: (data) => {
-						const contact_number = data.user_profiles.contact_number
+						const contact_number = data.user_profiles[0].contact_number
 
 						return `${contact_number}`
 					},
@@ -209,7 +209,7 @@ viewStaffDetails = (user_id) => {
 		dataType: 'json',
 		success: (result) => {
 			const userData = result.data
-			const userProfileData = result.data.user_profiles
+			const userProfileData = result.data.user_profiles[0]
 
 			$('#view_staff_no').html(userData.user_no)
 			$('#view_staff_name').html(userProfileData.full_name)
@@ -235,25 +235,25 @@ getStaff = (user_id) => {
 			if (result) {
 				// Get data from result
 				const data = result.data
-				// $('#edit_image').val(data.user_profiles.image)
+				// $('#edit_image').val(data.user_profiles[0].image)
 				$('#edit_user_id').val(data.user_id)
 				$('#stud_num').val(data.user_no)
 				$('#stud_num').prop('disabled', true)
 
-				$('#edit_first_name').val(data.user_profiles.first_name)
-				$('#edit_middle_name').val(data.user_profiles.middle_name)
-				$('#edit_last_name').val(data.user_profiles.last_name)
-				$('#edit_extension_name').val(data.user_profiles.extension_name)
-				$('#edit_contact_number').val(data.user_profiles.contact_number)
-				const birth_date = data.user_profiles.birth_date
+				$('#edit_first_name').val(data.user_profiles[0].first_name)
+				$('#edit_middle_name').val(data.user_profiles[0].middle_name)
+				$('#edit_last_name').val(data.user_profiles[0].last_name)
+				$('#edit_extension_name').val(data.user_profiles[0].extension_name)
+				$('#edit_contact_number').val(data.user_profiles[0].contact_number)
+				const birth_date = data.user_profiles[0].birth_date
 				let birthDateFormatted = `${moment(birth_date).format('LL')}`
 				$('#edit_birth_date').val(birthDateFormatted)
-				$('#edit_gender').val(data.user_profiles.gender)
-				$('#edit_house_street').val(data.user_profiles.house_street)
-				$('#edit_barangay').val(data.user_profiles.barangay)
-				$('#edit_municipality').val(data.user_profiles.municipality)
-				$('#edit_province').val(data.user_profiles.province)
-				$('#edit_region').val(data.user_profiles.region)
+				$('#edit_gender').val(data.user_profiles[0].gender)
+				$('#edit_house_street').val(data.user_profiles[0].house_street)
+				$('#edit_barangay').val(data.user_profiles[0].barangay)
+				$('#edit_municipality').val(data.user_profiles[0].municipality)
+				$('#edit_province').val(data.user_profiles[0].province)
+				$('#edit_region').val(data.user_profiles[0].region)
 			}
 		},
 	}).fail(() => console.error('There was an error in retrieving staff data'))
