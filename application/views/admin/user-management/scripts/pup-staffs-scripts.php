@@ -13,8 +13,20 @@
 
 <script src="<?= base_url() ?>public/js/pages/datatables.init.js"></script>
 
+<!-- validation init -->
+<script src="<?= base_url() ?>public/js/pages/form-validation.init.js"></script>
+
 <!-- flatpickr.js -->
 <script type='text/javascript' src='<?= base_url() ?>public/libs/flatpickr/flatpickr.min.js'></script>
+
+<!-- form wizard init -->
+<script src="<?= base_url() ?>public/js/pages/form-wizard.init.js"></script>
+
+<!-- Sweet alert init js-->
+<script src="<?= base_url() ?>public/js/pages/sweetalerts.init.js"></script>
+
+<!-- pup staff ajax -->
+<script src="<?= base_url() ?>public/js/ajax/admin/user-management/pup-staff.ajax.js"></script>
 
 <!-- App js -->
 <script src="<?= base_url() ?>public/js/app.js"></script>

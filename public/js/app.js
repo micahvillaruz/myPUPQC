@@ -1172,7 +1172,8 @@
 				  (t = e.attributes)['data-date-format'] &&
 						(n.dateFormat = t['data-date-format'].value.toString()),
 				  t['data-enable-time'] &&
-						((n.enableTime = !0), (n.dateFormat = t['data-date-format'].value.toString() + ' H:i')),
+						((n.enableTime = !0),
+						(n.dateFormat = t['data-date-format'].value.toString() + ' h:i K')),
 				  t['data-altFormat'] &&
 						((n.altInput = !0), (n.altFormat = t['data-altFormat'].value.toString())),
 				  t['data-minDate'] &&

@@ -26,7 +26,7 @@ class Auth extends CI_Controller
         // Redirect to page according to user_type
         if ($user_type === 'Super Admin')   redirect(base_url('admin/dashboard'));
         if ($user_type === 'Student')       redirect(base_url('student/dashboard'));
-        if ($user_type === 'PUP Staff')     redirect(base_url('pup-staff/dashboard'));
+        if ($user_type === 'PUP Staff')     redirect(base_url('pupstaff/dashboard'));
       }
     } else {
       redirect(base_url('signin'));
@@ -35,7 +35,6 @@ class Auth extends CI_Controller
 
   public function signin()
   {
-    $this->session->sess_destroy();
     $this->load->view('partials/main');
     $this->load->view('partials/title-meta');
     $this->load->view('partials/head-css');
@@ -52,5 +51,42 @@ class Auth extends CI_Controller
     $this->load->view('access/forgot-password');
     $this->load->view('partials/foot-scripts');
     $this->load->view('access/scripts/forgot-password-scripts');
+  }
+
+  public function logout()
+  {
+    $this->session->sess_destroy();
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('access/logout');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('access/scripts/logout-scripts');
+  }
+
+  public function error_message()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('errors/error-404');
+  }
+
+  public function sis()
+  {
+    $this->session->sess_destroy();
+    redirect('https://sis2.pup.edu.ph/', 'refresh');
+  }
+
+  public function vass()
+  {
+    $this->session->sess_destroy();
+    redirect('https://apps.pup.edu.ph/appointment/', 'refresh');
+  }
+
+  public function osssac()
+  {
+    $this->session->sess_destroy();
+    redirect('https://osssac.pup.edu.ph/', 'refresh');
   }
 }

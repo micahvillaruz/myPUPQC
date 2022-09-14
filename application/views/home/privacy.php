@@ -5,8 +5,8 @@
     <!-- Start right Content here -->
     <!-- ============================================================== -->
     <div class="main-content ms-0 bg-light">
-      <div class="page-content pt-4">
-        <div class="container-fluid">
+      <div class="page-content pt-4 m-0">
+        <div class="container-boxed">
           <div class="profile-foreground position-relative mx-n4 mt-n4">
             <div class="profile-wid-bg">
               <img src="<?= base_url() ?>public/images/pupqc-bg.jpg" alt="" class="profile-wid-img" />
@@ -49,20 +49,20 @@
                         <div class="m-3">
                           <div class="row">
                             <p>
-                            The Polytechnic University of the Philippines (“PUP” or “University”) provides you access to its online services, including its official Website (www.pup.edu.ph), apps (Web, mobile and desktop), social media channels, associated media, digital materials, online/electronic documentation, and University information (collectively referred to as "Services"). The Services, its updates, enhancements, new features, and/or the addition of any new online service are subject to this privacy statement.
+                              The Polytechnic University of the Philippines (“PUP” or “University”) provides you access to its online services, including its official Website (www.pup.edu.ph), apps (Web, mobile and desktop), social media channels, associated media, digital materials, online/electronic documentation, and University information (collectively referred to as "Services"). The Services, its updates, enhancements, new features, and/or the addition of any new online service are subject to this privacy statement.
                             </p>
                             <p>
-                            PUP is very much aware in protecting your privacy and personal information. This privacy statement discloses the data we collect from you and how we use it.
+                              PUP is very much aware in protecting your privacy and personal information. This privacy statement discloses the data we collect from you and how we use it.
                             </p>
                             <p>
-                            This privacy statement only applies to the Services. Other sites or apps that has a link from the Services may have a separate privacy statement.
+                              This privacy statement only applies to the Services. Other sites or apps that has a link from the Services may have a separate privacy statement.
                             </p>
                             <h3 class="mb-3 text-primary">Collection of Personal Data</h3>
                             <p>
-                            PUP collects data to operate effectively and provide you the best experiences with our Services. You provide some of this data directly, such as when you register for an entrance test/exam online, submit a search query to the PUPWebSite, send us feedback online, upload media to the PUP Media Gallery, participate in the PUP Online Survey, purchase a book from the PUP Bookstore, sign up for PUP WebMail or Office 365, or contact us for inquiries and technical support. We get some of it by recording how you interact with our Services by, for example, using technologies like cookies, and receiving error reports or usage data from Services running on your device.
+                              PUP collects data to operate effectively and provide you the best experiences with our Services. You provide some of this data directly, such as when you register for an entrance test/exam online, submit a search query to the PUPWebSite, send us feedback online, upload media to the PUP Media Gallery, participate in the PUP Online Survey, purchase a book from the PUP Bookstore, sign up for PUP WebMail or Office 365, or contact us for inquiries and technical support. We get some of it by recording how you interact with our Services by, for example, using technologies like cookies, and receiving error reports or usage data from Services running on your device.
                             </p>
                             <p>
-                            We also obtain data from third parties. We protect data obtained from third parties according to the practices described in this statement and any additional restrictions imposed by the source of the data. These third-party sources vary over time, but have included:
+                              We also obtain data from third parties. We protect data obtained from third parties according to the practices described in this statement and any additional restrictions imposed by the source of the data. These third-party sources vary over time, but have included:
                             </p>
                             <ul class="mx-4">
                               <li> Social network when you grant permission to PUP Services to access your data on one or more networks,</li>
@@ -71,25 +71,25 @@
                               <li> Publicly-available sources such as open government databases or other data in the public domain.</li>
                             </ul>
                             <p>
-                            You have choices about the data we collect. When you are asked to provide personal data, you may decline. But if you choose not to provide data that is necessary to provide a service or feature, you may not be able to use the Services
+                              You have choices about the data we collect. When you are asked to provide personal data, you may decline. But if you choose not to provide data that is necessary to provide a service or feature, you may not be able to use the Services
                             </p>
                             <p>
-                            The data we collect depends on the Services you use, and can include the following:
+                              The data we collect depends on the Services you use, and can include the following:
                             </p>
                             <p>
-                            <span class="fw-medium">Name and contact information.</span>We collect your first, middle and last name, and (if available) name prefixes and suffixes (based on your Philippine Statistics Office birth certificate), email address, postal and mailing address, phone and mobile number/s, and other similar contact information.
+                              <span class="fw-medium">Name and contact information.</span>We collect your first, middle and last name, and (if available) name prefixes and suffixes (based on your Philippine Statistics Office birth certificate), email address, postal and mailing address, phone and mobile number/s, and other similar contact information.
                             </p>
                             <p>
-                            <span class="fw-medium">Credentials.</span>We collect student numbers, passwords, password hints, and similar security information used for authentication and account access.
+                              <span class="fw-medium">Credentials.</span>We collect student numbers, passwords, password hints, and similar security information used for authentication and account access.
                             </p>
                             <p>
-                            <span class="fw-medium">Demographic data.</span>We collect data about you such as your date of birth, age, sex, country, religion, written and spoken language/s, and occupation (if applicable).
+                              <span class="fw-medium">Demographic data.</span>We collect data about you such as your date of birth, age, sex, country, religion, written and spoken language/s, and occupation (if applicable).
                             </p>
                             <p>
-                            <span class="fw-medium">Payment data.</span>We collect data necessary to process your payment if you pay fees online, such as your payment instrument number (such as a reference number), and the security code associated with your payment instrument. The University uses LANDBANK's Electronic Payment System for its PUP Online Payment. LANDBANK collects data necessary to process your payment, such as your payment instrument number (such as a ATM number), and the security code associated with your payment instrument.
+                              <span class="fw-medium">Payment data.</span>We collect data necessary to process your payment if you pay fees online, such as your payment instrument number (such as a reference number), and the security code associated with your payment instrument. The University uses LANDBANK's Electronic Payment System for its PUP Online Payment. LANDBANK collects data necessary to process your payment, such as your payment instrument number (such as a ATM number), and the security code associated with your payment instrument.
                             </p>
                             <p>
-                            <span class="fw-medium">Device and Usage data.</span>We collect data about your device and how you and your device interact with our Services. For example, we collect:
+                              <span class="fw-medium">Device and Usage data.</span>We collect data about your device and how you and your device interact with our Services. For example, we collect:
                             </p>
                             <ul class="mx-4">
                               <li><span class="fw-medium"> Service use data. </span> We collect data about the features you use, the items you purchase, and the web pages you visit inside the Services. This data includes your search queries or commands used in the Services.</li>
@@ -98,10 +98,10 @@
                               <li><span class="fw-medium"> Technical Support Data. When you engage PUP for technical support, we collect data about you and your hardware, software, and other details related to the support incident. Such data includes contact or authentication data, the content of your message and other communications with PUP support, data about the condition of the machine and the application when the fault occurred and during diagnostics, and system data about software installations and hardware configurations.</span> </li>
                             </ul>
                             <p>
-                            <span class="fw-medium"> Third-party technologies. </span> Third-party apps/services, such as Facebook, Twitter, YouTube, Office 365, etc., may collect data about your interests and favorites. In addition to those you explicitly provide, your interests and favorites may also be inferred or derived from other data they collect. Third-party apps/services may collect data about your contacts and relationships if you use their services to manage contacts, or to communicate or interact with other people or organizations. As such, you must read their terms and privacy statement.
+                              <span class="fw-medium"> Third-party technologies. </span> Third-party apps/services, such as Facebook, Twitter, YouTube, Office 365, etc., may collect data about your interests and favorites. In addition to those you explicitly provide, your interests and favorites may also be inferred or derived from other data they collect. Third-party apps/services may collect data about your contacts and relationships if you use their services to manage contacts, or to communicate or interact with other people or organizations. As such, you must read their terms and privacy statement.
                             </p>
                             <p>
-                            <span class="fw-medium"> Office 365. </span>  The University uses Office 365 for its PUP WebMail service. Office 365 collects the content of your files and communications when necessary to provide you with the products you use. For example, if you receive an email using Outlook or Exchange Online, Office 365 needs to collect the content of that email to deliver it to your inbox, display it to you, enable you to reply to it, and store it for you until you choose to delete it. Examples of this data include: the content of your documents, photos, music, or videos you upload to a Office 365 service such as OneDrive, as well as the content of your communications sent or received using Office 365 products such as Office 365, Outlook.com or Skype, including the:
+                              <span class="fw-medium"> Office 365. </span> The University uses Office 365 for its PUP WebMail service. Office 365 collects the content of your files and communications when necessary to provide you with the products you use. For example, if you receive an email using Outlook or Exchange Online, Office 365 needs to collect the content of that email to deliver it to your inbox, display it to you, enable you to reply to it, and store it for you until you choose to delete it. Examples of this data include: the content of your documents, photos, music, or videos you upload to a Office 365 service such as OneDrive, as well as the content of your communications sent or received using Office 365 products such as Office 365, Outlook.com or Skype, including the:
                             </p>
                             <ul class="mx-4">
                               <li> subject line and body of an email,</li>
@@ -110,27 +110,27 @@
                               <li> audio recording and transcript of a voice message you receive or a text message you dictate</li>
                             </ul>
                             <p>
-                            <span class="fw-medium"> Content. </span> We also collect the content of messages you send to us, such as feedback and reviews you write, or questions and information you provide for technical support. When you contact us, such as for technical support, messages during sessions with our offices and/or employees may be monitored and recorded.
+                              <span class="fw-medium"> Content. </span> We also collect the content of messages you send to us, such as feedback and reviews you write, or questions and information you provide for technical support. When you contact us, such as for technical support, messages during sessions with our offices and/or employees may be monitored and recorded.
                             </p>
                             <p>
-                            <span class="fw-medium"> Physical appearance. </span> If you enter the University premises or other facilities, your image may be captured by our security cameras. Furthermore, your recent photo may be required when registering for an entrance test or exam, and when applying for a PUP ID.
+                              <span class="fw-medium"> Physical appearance. </span> If you enter the University premises or other facilities, your image may be captured by our security cameras. Furthermore, your recent photo may be required when registering for an entrance test or exam, and when applying for a PUP ID.
                             </p>
-                                                        <h3 class="mb-3 text-primary">Use of Personal Data</h3>
+                            <h3 class="mb-3 text-primary">Use of Personal Data</h3>
                             <p>
-                            PUP uses the data we collect for three (3) fundamental purposes:
+                              PUP uses the data we collect for three (3) fundamental purposes:
                             </p>
                             <div class="my-3">
-                            <ol>
-                              <li> To operate as a higher education institution (HEI) and provide (including improving and customizing) the services we offer,</li>
-                              <li> To send communication, including informative communication, and</li>
-                              <li> Promote the University, whether in our Services or in third-party services supported by advertising.</li>
-                            </ol>
+                              <ol>
+                                <li> To operate as a higher education institution (HEI) and provide (including improving and customizing) the services we offer,</li>
+                                <li> To send communication, including informative communication, and</li>
+                                <li> Promote the University, whether in our Services or in third-party services supported by advertising.</li>
+                              </ol>
                             </div>
                             <p>
-                            In carrying out these purposes, we combine data we collect to give you a more seamless, consistent and customized experience. However, to enhance privacy, we have safety measures designed to prevent certain data combinations. For example, when you are not yet authenticated (or not signed in), we store data we collect from you separately from any account information that directly identifies you (such as your name, email address or contact number).
+                              In carrying out these purposes, we combine data we collect to give you a more seamless, consistent and customized experience. However, to enhance privacy, we have safety measures designed to prevent certain data combinations. For example, when you are not yet authenticated (or not signed in), we store data we collect from you separately from any account information that directly identifies you (such as your name, email address or contact number).
                             </p>
                             <p>
-                            <span class="fw-medium">Providing and improving our Services. </span> We use data to provide and improve the Services we offer and perform essential HEI operations. This includes operating the Services, maintaining and improving the performance of the Services, including developing new features, research, and providing technical support. Examples of such uses include the following.
+                              <span class="fw-medium">Providing and improving our Services. </span> We use data to provide and improve the Services we offer and perform essential HEI operations. This includes operating the Services, maintaining and improving the performance of the Services, including developing new features, research, and providing technical support. Examples of such uses include the following.
                             </p>
                             <ul class="mx-4">
                               <li><span class="fw-medium"> Providing the Services. </span> We use data to carry out your transactions with the University and to provide our Services to you.</li>
@@ -140,13 +140,13 @@
                               <li><span class="fw-medium"> University operations.</span> We use data to make aggregate analysis and business intelligence that enable the University to operate, protect, make informed decisions, and report on the performance of our Services</li>
                             </ul>
                             <p>
-                            <span class="fw-medium">communications. </span> We use data we collect to deliver and personalize our communication with you. For example, we may contact you by email or other means to inform or remind you of announcements and advisories that are specific to user types (student, alumni, applicant, faculty and/or employee), let you know when updates in the Services are available, update you or inquire about a technical support or repair request, invite you to participate in PUP Online Survey, or tell you that you need to take action to keep your account secured and active. Furthermore, you can sign up for email subscriptions from the University's official social media channels (Facebook, Twitter, YouTube, etc.) and choose whether you wish to receive communications from PUP's social media channels.
+                              <span class="fw-medium">communications. </span> We use data we collect to deliver and personalize our communication with you. For example, we may contact you by email or other means to inform or remind you of announcements and advisories that are specific to user types (student, alumni, applicant, faculty and/or employee), let you know when updates in the Services are available, update you or inquire about a technical support or repair request, invite you to participate in PUP Online Survey, or tell you that you need to take action to keep your account secured and active. Furthermore, you can sign up for email subscriptions from the University's official social media channels (Facebook, Twitter, YouTube, etc.) and choose whether you wish to receive communications from PUP's social media channels.
                             </p>
                             <p>
-                            <span class="fw-medium">Advertising. </span> Some of our Services are supported by advertising. We share the data we collect with third parties such as Office 365 (PUP WebMail), and social media channels (Facebook, Twitter, YouTube, etc.) so that they can select and deliver some of the ads you see on their sites and apps, as well as other sites and apps serviced by these solution providers. The ads that you see may be selected based on your current location, search query, or the content you are viewing. Other ads are targeted based on your likely interests or other information learned about you over time using demographic data, search queries, interests and favorites, usage data from our own sites and apps and the sites and apps of their advertisers and partners, and location data - which they refer to as "interest-based advertising" in this statement. To provide interest-based advertising, they combine cookies placed on your device using information that they may collect (such as IP address) when your browser interacts with their websites. If you opt out of receiving interest-based advertising, data associated with these cookies will not be used. PUP and third-party technologies used in our Services does not use what you say in email, chat, video calls or voice mail, or your documents, photos or other personal files to target ads to you. You can opt out of receiving interest-based advertising from third parties by visiting their Website.
+                              <span class="fw-medium">Advertising. </span> Some of our Services are supported by advertising. We share the data we collect with third parties such as Office 365 (PUP WebMail), and social media channels (Facebook, Twitter, YouTube, etc.) so that they can select and deliver some of the ads you see on their sites and apps, as well as other sites and apps serviced by these solution providers. The ads that you see may be selected based on your current location, search query, or the content you are viewing. Other ads are targeted based on your likely interests or other information learned about you over time using demographic data, search queries, interests and favorites, usage data from our own sites and apps and the sites and apps of their advertisers and partners, and location data - which they refer to as "interest-based advertising" in this statement. To provide interest-based advertising, they combine cookies placed on your device using information that they may collect (such as IP address) when your browser interacts with their websites. If you opt out of receiving interest-based advertising, data associated with these cookies will not be used. PUP and third-party technologies used in our Services does not use what you say in email, chat, video calls or voice mail, or your documents, photos or other personal files to target ads to you. You can opt out of receiving interest-based advertising from third parties by visiting their Website.
                             </p>
                             <p>
-                            Please note that some of our Services include links to third-party products and services whose privacy practices differ from the University. If you provide personal data to third-party services, your data is governed by their privacy statements. For more information on how third parties protect your privacy, here are the links to their privacy statement:
+                              Please note that some of our Services include links to third-party products and services whose privacy practices differ from the University. If you provide personal data to third-party services, your data is governed by their privacy statements. For more information on how third parties protect your privacy, here are the links to their privacy statement:
                             </p>
                             <ul class="mx-4">
                               <li> Facebook: <a class="" href="https://www.facebook.com/privacy/policy/?entry_point=data_policy_redirect&entry=0">https://www.facebook.com/policy.php</a></li>
@@ -161,35 +161,35 @@
 
                             <h3 class="mb-3 text-primary">Rationale in Sharing Personal Data</h3>
                             <p>
-                            We share your personal data with your consent or when necessary to complete any transaction or provide services you have requested or authorized. For example, we share your content with third parties when you tell us to do so, such as when you send an email using Office 365, share photos and documents on OneDrive and/or SharePoint, or link accounts with third-party services. When you provide data, such as your name, to pay your tuition or application fee using PUP Online Payment, we will share that data with our partner bank/s and other entities that process online payment transactions, and for fraud prevention and risk reduction.
+                              We share your personal data with your consent or when necessary to complete any transaction or provide services you have requested or authorized. For example, we share your content with third parties when you tell us to do so, such as when you send an email using Office 365, share photos and documents on OneDrive and/or SharePoint, or link accounts with third-party services. When you provide data, such as your name, to pay your tuition or application fee using PUP Online Payment, we will share that data with our partner bank/s and other entities that process online payment transactions, and for fraud prevention and risk reduction.
                             </p>
                             <p>
-                            In addition, we share personal data with partners working on our behalf for the purposes described in this statement. For example, third parties and/or partners that provides technology support or assist in protecting and securing our systems and services, or provide career opportunities for students and alumni may need access to personal data to provide those functions. In such cases, these companies must abide by our data privacy and security requirements and are not allowed to use personal data they receive from us for any other purpose.
+                              In addition, we share personal data with partners working on our behalf for the purposes described in this statement. For example, third parties and/or partners that provides technology support or assist in protecting and securing our systems and services, or provide career opportunities for students and alumni may need access to personal data to provide those functions. In such cases, these companies must abide by our data privacy and security requirements and are not allowed to use personal data they receive from us for any other purpose.
                             </p>
                             <p>
-                            Finally, we will access, transfer, disclose, and preserve personal data, including your content (such as the content of your emails in PUP WebMail, Outlook.com, or files in private folders on OneDrive), when we have a good faith belief that doing so is necessary to:
+                              Finally, we will access, transfer, disclose, and preserve personal data, including your content (such as the content of your emails in PUP WebMail, Outlook.com, or files in private folders on OneDrive), when we have a good faith belief that doing so is necessary to:
                             </p>
                             <div class="my-3">
-                            <ol>
-                              <li> Comply with applicable law or respond to valid legal process, including from law enforcement or other government agencies,</li>
-                              <li> Protect our stakeholders, for example to prevent spam or attempts to defraud users of third-party products or services, or to help prevent the loss of life or serious injury of anyone,</li>
-                              <li> Operate and maintain the security of our Services, including prevention or stopping an attack on our computer systems, networks, IT infrastructure, or</li>
-                              <li> Protect the rights or property of PUP, including enforcing the terms governing the use of the Services - however, if we receive information indicating that someone is using our Services to traffic in stolen intellectual or physical property of PUP, we will not inspect a user's private content ourselves, but we may refer the matter to law enforcement.</li>
-                            </ol>
+                              <ol>
+                                <li> Comply with applicable law or respond to valid legal process, including from law enforcement or other government agencies,</li>
+                                <li> Protect our stakeholders, for example to prevent spam or attempts to defraud users of third-party products or services, or to help prevent the loss of life or serious injury of anyone,</li>
+                                <li> Operate and maintain the security of our Services, including prevention or stopping an attack on our computer systems, networks, IT infrastructure, or</li>
+                                <li> Protect the rights or property of PUP, including enforcing the terms governing the use of the Services - however, if we receive information indicating that someone is using our Services to traffic in stolen intellectual or physical property of PUP, we will not inspect a user's private content ourselves, but we may refer the matter to law enforcement.</li>
+                              </ol>
                             </div>
 
                             <h3 class="mb-3 text-primary">Accessing Your Personal Data</h3>
                             <p>
-                            <span class="fw-medium">PUP Student Information System (PUP SIS). </span> If you are currently enrolled and have an active account in the PUP SIS, you can always go to the PUP Office of the University Registrar or PUP Branch/Campus Registrar to have your personal information updated. As such, you are required to present your PUP ID and required supporting documents.
+                              <span class="fw-medium">PUP Student Information System (PUP SIS). </span> If you are currently enrolled and have an active account in the PUP SIS, you can always go to the PUP Office of the University Registrar or PUP Branch/Campus Registrar to have your personal information updated. As such, you are required to present your PUP ID and required supporting documents.
                             </p>
                             <p>
-                            <span class="fw-medium">PUP Human Resource Information System (PUP HRIS). </span> If you are currently employed, you can always go to the PUP HRIS 201 module to have your personal information updated. All changes made will undergo validation and approval from your supervisor and the PUP Human Resource Management Department (PUP HRMD). As such, you are required to present your PUP ID and required supporting documents.
+                              <span class="fw-medium">PUP Human Resource Information System (PUP HRIS). </span> If you are currently employed, you can always go to the PUP HRIS 201 module to have your personal information updated. All changes made will undergo validation and approval from your supervisor and the PUP Human Resource Management Department (PUP HRMD). As such, you are required to present your PUP ID and required supporting documents.
                             </p>
                             <p>
-                            <span class="fw-medium">PUP Online Document Request System (PUP ODRS). </span> If you have an active account in the PUP ODRS, you can always go to the PUP ODRS profile module to have your personal information updated.
+                              <span class="fw-medium">PUP Online Document Request System (PUP ODRS). </span> If you have an active account in the PUP ODRS, you can always go to the PUP ODRS profile module to have your personal information updated.
                             </p>
                             <p>
-                            <span class="fw-medium">PUP iApply.  </span>  If you registered online for an entrance test/exam of the University, (for PUP Sta. Mesa, Manila) you can always go to the PUP ICT Office Helpdesk or (for PUP Branches and Campuses) go to the PUP Office of the Branch/Campus Registrar and Admissions to have your personal information updated. As such, you are required to present a valid ID (school ID or any government-issued ID) and required supporting documents.
+                              <span class="fw-medium">PUP iApply. </span> If you registered online for an entrance test/exam of the University, (for PUP Sta. Mesa, Manila) you can always go to the PUP ICT Office Helpdesk or (for PUP Branches and Campuses) go to the PUP Office of the Branch/Campus Registrar and Admissions to have your personal information updated. As such, you are required to present a valid ID (school ID or any government-issued ID) and required supporting documents.
                             </p>
                             <span class="fw-medium">Third-party product and services </span>
                             <p>You can view or edit your personal data online for third-party products and services. You can also make choices about third-party's collection and use of your data. How you can access or control your personal data will depend on which products and services you use. For example:</p>
@@ -202,10 +202,10 @@
                               <li><span class="fw-medium"> Protection from Tracking. </span> Most modern Web browsers allow you to block third-party content, including cookies, from any site. By limiting access to these sites, the Web browser will limit the information these third-party sites can collect about you.</li>
                               <li><span class="fw-medium"> Protection from Tracking. </span> Most modern Web browsers have "Do Not Track" (DNT) features that can send a signal to the Web sites you visit indicating you do not wish to be tracked.</li>
                             </ul>
-                            
+
                             <h3 class="mb-3 text-primary">Cookies and Similar Technologies</h3>
                             <p>
-                            The Services use cookies (small text files placed on your device) and similar technologies to provide information to our Web sites and Services, and to help collect data. The text in a cookie often consists of a string of numbers, letters and special characters that uniquely identifies your device, but it can contain other information as well. Third-party technologies use other identifiers for similar purposes, and many of our Services and third-party providers also contain web beacons or other similar technologies, as described below.
+                              The Services use cookies (small text files placed on your device) and similar technologies to provide information to our Web sites and Services, and to help collect data. The text in a cookie often consists of a string of numbers, letters and special characters that uniquely identifies your device, but it can contain other information as well. Third-party technologies use other identifiers for similar purposes, and many of our Services and third-party providers also contain web beacons or other similar technologies, as described below.
                             </p>
                             <span class="fw-medium">Our Use of Cookies and Similar Technologies </span>
                             <p>The Services uses cookies and similar technologies for several purposes, which includes:</p>
@@ -216,35 +216,35 @@
                               <li><span class="fw-medium"> Analytics. </span> In order to provide services, cookies and other identifiers are used to gather usage and performance data. For example, cookies are used to count the number of unique visitors to a Service and used as statistics about the operations of the Services.</li>
                             </ul>
                             <p>
-                            In addition to the cookies set when you use Services, third-party providers may also set cookies when you use and/or interact with the Services. In some instances, because the University uses third-party technologies to provide services on our behalf, such as online storage, webmail and site analytics. In other instances, it is because our Services contain content or ads from third parties, such as videos, news content or ads delivered by other ad networks. Because your device connects to those third parties' app servers to retrieve that content, those third parties are able to set or read their own cookies on your device and may collect information about your online activities across online services.
+                              In addition to the cookies set when you use Services, third-party providers may also set cookies when you use and/or interact with the Services. In some instances, because the University uses third-party technologies to provide services on our behalf, such as online storage, webmail and site analytics. In other instances, it is because our Services contain content or ads from third parties, such as videos, news content or ads delivered by other ad networks. Because your device connects to those third parties' app servers to retrieve that content, those third parties are able to set or read their own cookies on your device and may collect information about your online activities across online services.
                             </p>
                             <span class="fw-medium">How to Control Cookies </span>
                             <p>Most modern Web browsers automatically accept cookies and provide controls that allow you to block or delete them. Instructions for blocking or deleting cookies may be available in each Web browser's privacy or help documentation (see: <a class="" href="https://www.wikihow.com/Disable-Cookies">https://www.wikihow.com/Disable-Cookies</a>) </p>
                             <p>
-                            Certain features of the Services depend on cookies. Please be mindful that if you choose to block or disable cookies, you may not be able to sign in or use specific features, and preferences that are dependent on cookies may be gone. If you choose to delete or disable cookies, preferences and settings controlled by those cookies will be deleted and may need to be created again.
+                              Certain features of the Services depend on cookies. Please be mindful that if you choose to block or disable cookies, you may not be able to sign in or use specific features, and preferences that are dependent on cookies may be gone. If you choose to delete or disable cookies, preferences and settings controlled by those cookies will be deleted and may need to be created again.
                             </p>
                             <p>
-                            Additional privacy controls that can impact cookies, including the Tracking Protection feature of Web browsers, are described in the <span class="fw-medium">Accessing Your Personal Data </span>section of this privacy statement.
+                              Additional privacy controls that can impact cookies, including the Tracking Protection feature of Web browsers, are described in the <span class="fw-medium">Accessing Your Personal Data </span>section of this privacy statement.
                             </p>
                             <span class="fw-medium">Web Beacons and Analytics Services </span>
                             <p>
-                            Third-party providers may contain electronic images known as web beacons (also called single-pixel gifs) that are used to help deliver cookies on our Services, count users who have visited those Services and deliver co-branded services. Web beacons are also included in their promotional email messages or newsletters to determine whether you open and act on them.
+                              Third-party providers may contain electronic images known as web beacons (also called single-pixel gifs) that are used to help deliver cookies on our Services, count users who have visited those Services and deliver co-branded services. Web beacons are also included in their promotional email messages or newsletters to determine whether you open and act on them.
                             </p>
                             <p>
-                            Services often contain web beacons or similar technologies from third-party analytics providers, which help compile aggregated statistics about the effectiveness of service and operations. These technologies enable the analytics providers to set or read their own cookies or other identifiers on your device, through which they can collect information about your online activities across Services. However, these analytics providers are prohibited from using web beacons on our Services to collect or access information that directly identifies you (such as your name or email address). You can opt out of data collection or use by our analytics provider by going to Google Analytics: <a class="" href="https://tools.google.com/dlpage/gaoptout">tools.google.com/dlpage/gaoptout</a> (this requires you to install a browser add-on)
+                              Services often contain web beacons or similar technologies from third-party analytics providers, which help compile aggregated statistics about the effectiveness of service and operations. These technologies enable the analytics providers to set or read their own cookies or other identifiers on your device, through which they can collect information about your online activities across Services. However, these analytics providers are prohibited from using web beacons on our Services to collect or access information that directly identifies you (such as your name or email address). You can opt out of data collection or use by our analytics provider by going to Google Analytics: <a class="" href="https://tools.google.com/dlpage/gaoptout">tools.google.com/dlpage/gaoptout</a> (this requires you to install a browser add-on)
                             </p>
                             <span class="fw-medium">Other Similar Technologies </span>
                             <p>
-                            In addition to standard cookies and web beacons, the Services or third-party providers may use other similar technologies to store and read data files on your device. This is typically done to maintain your preferences or to improve speed and performance by storing certain files locally. But, like standard cookies, these technologies can also be used to store a unique identifier for your device, which can then be used to track behavior. These technologies may include Local Shared Objects (or "Flash cookies").
+                              In addition to standard cookies and web beacons, the Services or third-party providers may use other similar technologies to store and read data files on your device. This is typically done to maintain your preferences or to improve speed and performance by storing certain files locally. But, like standard cookies, these technologies can also be used to store a unique identifier for your device, which can then be used to track behavior. These technologies may include Local Shared Objects (or "Flash cookies").
                             </p>
                             <p>
                               <span class="fw-medium">Local Shared Objects or "Flash cookies."</span> Third-party providers that utilizes Adobe Flash technologies use Local Shared Objects or "Flash cookies" to store data on your device. To manage or block Flash cookies, go to
                               <a class="" href="http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager.html">www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager.html.</a>
                             </p>
-                            
+
                             <h3 class="mb-3 text-primary">User Account</h3>
                             <p>
-                            With a user account, you can sign into the Services. Signing into your account enables access to specific services, permits you to access and use third-party services. When you sign into your account to access a Service, that is recorded and maintained. If you sign into a third-party service with your user account, you may be asked to consent to share the account data required by that service. With your @pup.edu.ph account, you can sign into third-party services such as Office 365 and OneDrive. We also refer to your user account as a work or school account.
+                              With a user account, you can sign into the Services. Signing into your account enables access to specific services, permits you to access and use third-party services. When you sign into your account to access a Service, that is recorded and maintained. If you sign into a third-party service with your user account, you may be asked to consent to share the account data required by that service. With your @pup.edu.ph account, you can sign into third-party services such as Office 365 and OneDrive. We also refer to your user account as a work or school account.
                             </p>
                             <p><span class="fw-medium"> Creating and using your user account. </span> When we create your work or school account, you will be asked for certain personal data and required documents as proof of your current status in PUP (currently employed or enrolled), and a unique ID number will be generated to identify your account and associated information. Services require a real and complete name. Some data in your user account, such as your display name, email address and phone number, can be used to assist others find and connect with you within the Services. For example, people who know your display name, email address or phone number can use it to search for you on Office 365 and send you an invite to connect with them. Note that when you are using your work or school email address, the University manages that account.</p>
                             <p><span class="fw-medium"> Signing in. </span> When you sign into the Services, we create a record of your sign-in, which includes the date and time, information about the Service you signed into, your sign-in name, the unique number assigned to your account, a unique identifier assigned to your device, your IP address, your operating system and Web browser version.</p>
@@ -253,18 +253,18 @@
                             <p><span class="fw-medium"> Connecting your work or school account to your social network accounts.</span> You may connect your work or school account to your accounts on social networks such as Facebook, Twitter, or LinkedIn in order to access data from those social networks from within the Services. If you choose to do so, Office 365 will store data about your social network accounts on their servers so that they can display updated data from your social network account.</p>
                             <h3 class="mb-3 text-primary">Security of Personal Data</h3>
                             <p>
-                            PUP is committed to protecting the security of your personal data. We use a variety of security technologies and procedures to help protect your personal data from unauthorized access, use or disclosure. For example, we store the personal data you provide on computer systems that have limited access and are in controlled facilities. When we transmit highly confidential data (such as your name or password) over the Internet, we protect it through the use of encryption.
+                              PUP is committed to protecting the security of your personal data. We use a variety of security technologies and procedures to help protect your personal data from unauthorized access, use or disclosure. For example, we store the personal data you provide on computer systems that have limited access and are in controlled facilities. When we transmit highly confidential data (such as your name or password) over the Internet, we protect it through the use of encryption.
                             </p>
                             <h3 class="mb-3 text-primary">Location where your Personal Data is Stored and Processed</h3>
                             <p>
-                            Personal data collected by the PUP through the Services are stored and processed in the University data center, in your region or in any other country where PUP or its service providers maintain facilities. Office 365 maintains data centers in the United States, Canada, Brazil, Ireland, the Netherlands, Austria, Finland, India, Singapore, Malaysia, Hong Kong, Japan, and Australia. Typically, the primary storage location of your personal data is in the Philippines, often with a backup to a data center in another region. The storage location(s) are chosen by Office 365 in order to operate efficiently, to improve performance, and to create redundancies in order to protect the data in the event of an outage or other problem. We ensure that the data we collect via the Services are processed according to the provisions of this privacy statement and the requirements of applicable law.
+                              Personal data collected by the PUP through the Services are stored and processed in the University data center, in your region or in any other country where PUP or its service providers maintain facilities. Office 365 maintains data centers in the United States, Canada, Brazil, Ireland, the Netherlands, Austria, Finland, India, Singapore, Malaysia, Hong Kong, Japan, and Australia. Typically, the primary storage location of your personal data is in the Philippines, often with a backup to a data center in another region. The storage location(s) are chosen by Office 365 in order to operate efficiently, to improve performance, and to create redundancies in order to protect the data in the event of an outage or other problem. We ensure that the data we collect via the Services are processed according to the provisions of this privacy statement and the requirements of applicable law.
                             </p>
                             <p>
-                            When applicable, if third-party providers transfer personal data to other countries, some of which have not been determined to have an adequate level of data protection, they might use a variety of legal mechanisms, including contracts, to help ensure protections travel with your data.
+                              When applicable, if third-party providers transfer personal data to other countries, some of which have not been determined to have an adequate level of data protection, they might use a variety of legal mechanisms, including contracts, to help ensure protections travel with your data.
                             </p>
                             <h3 class="mb-3 text-primary">Retention of Personal Data</h3>
                             <p>
-                            The University retains personal data for as long as necessary to provide the services and fulfill the transactions you have requested or may request in the future, or for other essential purposes such as complying with our commitments, legal obligations, resolving disputes, and enforcing our agreements. Because these needs can vary for different data types in the context of different products, actual retention periods can vary significantly. The criteria used to determine the retention periods include:
+                              The University retains personal data for as long as necessary to provide the services and fulfill the transactions you have requested or may request in the future, or for other essential purposes such as complying with our commitments, legal obligations, resolving disputes, and enforcing our agreements. Because these needs can vary for different data types in the context of different products, actual retention periods can vary significantly. The criteria used to determine the retention periods include:
                             </p>
                             <ul class="mx-4">
                               <li><span class="fw-medium"> How long is the personal data needed to provide the services operated by the University?</span> This includes such things as maintaining and improving the performance of those services, keeping our systems secure, and maintaining appropriate academic, student, and financial records. This is the general rule that establishes the baseline for most data retention periods.</li>
@@ -273,34 +273,33 @@
                             </ul>
                             <h3 class="mb-3 text-primary">Collection of Data from Minors</h3>
                             <p>
-                            The University collects data from applicants or users below 18 years of age, which is necessary to provide the Services (particularly for Junior and Senior High School).
+                              The University collects data from applicants or users below 18 years of age, which is necessary to provide the Services (particularly for Junior and Senior High School).
                             </p>
                             <p>
-                            Their user account is treated much like any other account. The minor may have access to communication services like email, instant messaging and online message boards and may be able to communicate freely with other users of all ages.
+                              Their user account is treated much like any other account. The minor may have access to communication services like email, instant messaging and online message boards and may be able to communicate freely with other users of all ages.
                             </p>
                             <h3 class="mb-3 text-primary">Preview and Beta Releases</h3>
                             <p>
-                            The Services offer preview, beta or other pre-released versions and features ("Previews") to enable you to evaluate them while providing feedback, including performance and usage data, to the University or the third-party provider. As a result, previews can automatically collect additional data, provide fewer controls, and otherwise employ different privacy and security measures than those typically present in the Services. If you participate in previews, we may contact you about your feedback or your interest in continuing to use the particular online service after general release.
+                              The Services offer preview, beta or other pre-released versions and features ("Previews") to enable you to evaluate them while providing feedback, including performance and usage data, to the University or the third-party provider. As a result, previews can automatically collect additional data, provide fewer controls, and otherwise employ different privacy and security measures than those typically present in the Services. If you participate in previews, we may contact you about your feedback or your interest in continuing to use the particular online service after general release.
                             </p>
                             <h3 class="mb-3 text-primary">Enforcement of this Privacy Statement</h3>
                             <p>
-                            In our quest to uphold our commitment to protecting the privacy of your Personal Information, the University discloses its information practices, and to have its privacy practices reviewed for compliance. If you have questions regarding this statement, you can contact us by e-mail: dataprivacy@pup.edu.ph
+                              In our quest to uphold our commitment to protecting the privacy of your Personal Information, the University discloses its information practices, and to have its privacy practices reviewed for compliance. If you have questions regarding this statement, you can contact us by e-mail: dataprivacy@pup.edu.ph
                             </p>
                             <h3 class="mb-3 text-primary">Changes to this Privacy Statement</h3>
                             <p>
-                            We will update this privacy statement when necessary. When we make changes to this statement, we will revise the "last updated" date at the top of the statement. For material changes to the statement, or in how PUP will use personal data, we will post notifications in the PUPWebSite and official PUP social media channels. We encourage you to periodically review this privacy statement to learn how the University is protecting your information.
+                              We will update this privacy statement when necessary. When we make changes to this statement, we will revise the "last updated" date at the top of the statement. For material changes to the statement, or in how PUP will use personal data, we will post notifications in the PUPWebSite and official PUP social media channels. We encourage you to periodically review this privacy statement to learn how the University is protecting your information.
                             </p>
                             <h3 class="mb-3 text-primary">Contact Information</h3>
                             <p>
-                            The University welcomes your input and suggestions regarding this privacy statement, or if you have a data privacy concern or a question for the PUP Data Privacy Officer, please contact us by e-mail.
+                              The University welcomes your input and suggestions regarding this privacy statement, or if you have a data privacy concern or a question for the PUP Data Privacy Officer, please contact us by e-mail.
                             </p>
                             <p><span class="fw-medium"> PUP Online Services Privacy Statement</span>
-                            <br>Polytechnic University of the Philippines</br>
-                            Information and Communications Technology Office<
-                            </p>
-                            <p>
-                            dataprivacy@pup.edu.ph
-                            </p>
+                              <br>Polytechnic University of the Philippines</br>
+                              Information and Communications Technology Office< </p>
+                                <p>
+                                  dataprivacy@pup.edu.ph
+                                </p>
 
                           </div>
                         </div>

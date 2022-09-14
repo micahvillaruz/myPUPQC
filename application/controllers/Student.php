@@ -4,6 +4,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Student extends CI_Controller
 {
 
+  function __construct()
+  {
+    parent::__construct();
+
+    if ($this->session->token == null) {
+      redirect(base_url('auth/signin'));
+    }
+
+    if ($this->session->user_type != 'Student') {
+      $this->session->user_type == 'Super Admin' ? redirect(base_url('admin')) : redirect(base_url('pupstaff'));
+    }
+  }
+
   public function index()
   {
     $this->load->view('partials/main');
@@ -18,6 +31,33 @@ class Student extends CI_Controller
     $this->load->view('student/scripts/dashboard-scripts');
   }
 
+  public function profile()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/student/topbar');
+    $this->load->view('partials/student/sidebar');
+    $this->load->view('student/profile');
+    $this->load->view('partials/footer');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('student/scripts/profile-scripts');
+  }
+
+  public function settings()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/student/topbar');
+    $this->load->view('partials/student/sidebar');
+    $this->load->view('student/settings');
+    $this->load->view('partials/footer');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('student/scripts/settings-scripts');
+  }
+
+
   public function new_request()
   {
     $this->load->view('partials/main');
@@ -26,10 +66,11 @@ class Student extends CI_Controller
     $this->load->view('partials/student/topbar');
     $this->load->view('partials/student/sidebar');
     $this->load->view('partials/page-title', ["page_title" => "ODRS", "title" => "New Request"]);
-    $this->load->view('student/new-request');
+    $this->load->view('student/odrs/new-request');
     $this->load->view('partials/footer');
+    $this->load->view('student/odrs/components/new-request-modal');
     $this->load->view('partials/foot-scripts');
-    $this->load->view('student/scripts/new-request-scripts');
+    $this->load->view('student/odrs/scripts/new-request-scripts');
   }
 
   public function requests()
@@ -40,27 +81,26 @@ class Student extends CI_Controller
     $this->load->view('partials/student/topbar');
     $this->load->view('partials/student/sidebar');
     $this->load->view('partials/page-title', ["page_title" => "ODRS", "title" => "Requests"]);
-    $this->load->view('student/requests');
+    $this->load->view('student/odrs/requests');
     $this->load->view('partials/footer');
-    $this->load->view('student/components/modals/view-request-details');
-    $this->load->view('student/components/modals/view-requirements');
-    $this->load->view('student/components/modals/view-payment-options');
+    $this->load->view('student/odrs/components/requests-modal');
     $this->load->view('partials/foot-scripts');
-    $this->load->view('student/scripts/requests-scripts');
+    $this->load->view('student/odrs/scripts/requests-scripts');
   }
 
-  public function transactions()
+  public function history()
   {
     $this->load->view('partials/main');
     $this->load->view('partials/title-meta');
     $this->load->view('partials/head-css');
     $this->load->view('partials/student/topbar');
     $this->load->view('partials/student/sidebar');
-    $this->load->view('partials/page-title', ["page_title" => "ODRS", "title" => "Transactions"]);
-    $this->load->view('student/transactions');
+    $this->load->view('partials/page-title', ["page_title" => "ODRS", "title" => "History"]);
+    $this->load->view('student/odrs/history');
     $this->load->view('partials/footer');
+    $this->load->view('student/odrs/components/history-modal');
     $this->load->view('partials/foot-scripts');
-    $this->load->view('student/scripts/transactions-scripts');
+    $this->load->view('student/odrs/scripts/history-scripts');
   }
 
   public function personal_information()
@@ -71,10 +111,10 @@ class Student extends CI_Controller
     $this->load->view('partials/student/topbar');
     $this->load->view('partials/student/sidebar');
     $this->load->view('partials/page-title', ["page_title" => "Medical Services", "title" => "Personal Information"]);
-    $this->load->view('student/personal-information');
-    $this->load->view('partials/footer');
+    $this->load->view('student/omsss/health-information/personal-information');
+    $this->load->view('student/omsss/footer');
     $this->load->view('partials/foot-scripts');
-    $this->load->view('student/scripts/personal-information-scripts');
+    $this->load->view('student/omsss/health-information/scripts/personal-information-scripts');
   }
 
   public function health_history()
@@ -85,10 +125,10 @@ class Student extends CI_Controller
     $this->load->view('partials/student/topbar');
     $this->load->view('partials/student/sidebar');
     $this->load->view('partials/page-title', ["page_title" => "Medical Services", "title" => "Health History"]);
-    $this->load->view('student/health-history');
-    $this->load->view('partials/footer');
+    $this->load->view('student/omsss/health-information/health-history');
+    $this->load->view('student/omsss/footer');
     $this->load->view('partials/foot-scripts');
-    $this->load->view('student/scripts/health-history-scripts');
+    $this->load->view('student/omsss/health-information/scripts/health-history-scripts');
   }
 
   public function immunization()
@@ -99,11 +139,11 @@ class Student extends CI_Controller
     $this->load->view('partials/student/topbar');
     $this->load->view('partials/student/sidebar');
     $this->load->view('partials/page-title', ["page_title" => "Medical Services", "title" => "Immunization: Protect against viruses"]);
-    $this->load->view('student/immunization');
-    $this->load->view('partials/footer');
+    $this->load->view('student/omsss/health-information/immunization');
+    $this->load->view('student/omsss/footer');
+    $this->load->view('student/omsss/components/immunization-modal');
     $this->load->view('partials/foot-scripts');
-    $this->load->view('student/components/immunization-modal');
-    $this->load->view('student/scripts/immunization-scripts');
+    $this->load->view('student/omsss/health-information/scripts/immunization-scripts');
   }
 
   public function medical_consultation()
@@ -114,10 +154,11 @@ class Student extends CI_Controller
     $this->load->view('partials/student/topbar');
     $this->load->view('partials/student/sidebar');
     $this->load->view('partials/page-title', ["page_title" => "Medical Services", "title" => "Medical Consultation"]);
-    $this->load->view('student/medical-consultation');
-    $this->load->view('partials/footer');
+    $this->load->view('student/omsss/appointment/medical-consultation');
+    $this->load->view('student/omsss/footer');
+    $this->load->view('student/omsss/components/medical-consultation-modal');
     $this->load->view('partials/foot-scripts');
-    $this->load->view('student/scripts/medical-consultation-scripts');
+    $this->load->view('student/omsss/appointment/scripts/medical-consultation-scripts');
   }
 
   public function dental_consultation()
@@ -128,10 +169,11 @@ class Student extends CI_Controller
     $this->load->view('partials/student/topbar');
     $this->load->view('partials/student/sidebar');
     $this->load->view('partials/page-title', ["page_title" => "Dental Services", "title" => "Dental Consultation"]);
-    $this->load->view('student/dental-consultation');
-    $this->load->view('partials/footer');
+    $this->load->view('student/omsss/appointment/dental-consultation');
+    $this->load->view('student/omsss/footer');
+    $this->load->view('student/omsss/components/dental-consultation-modal');
     $this->load->view('partials/foot-scripts');
-    $this->load->view('student/scripts/dental-consultation-scripts');
+    $this->load->view('student/omsss/appointment/scripts/dental-consultation-scripts');
   }
 
   public function guidance_consultation()
@@ -142,10 +184,25 @@ class Student extends CI_Controller
     $this->load->view('partials/student/topbar');
     $this->load->view('partials/student/sidebar');
     $this->load->view('partials/page-title', ["page_title" => "Guidance Services", "title" => "Guidance Consultation"]);
-    $this->load->view('student/guidance-consultation');
-    $this->load->view('partials/footer');
+    $this->load->view('student/omsss/appointment/guidance-consultation');
+    $this->load->view('student/omsss/footer');
+    $this->load->view('student/omsss/components/guidance-consultation-modal');
     $this->load->view('partials/foot-scripts');
-    $this->load->view('student/scripts/guidance-consultation-scripts');
+    $this->load->view('student/omsss/appointment/scripts/guidance-consultation-scripts');
+  }
+
+  public function medical_prescription()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/student/topbar');
+    $this->load->view('partials/student/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "Medical Prescription", "title" => "Prescription"]);
+    $this->load->view('student/omsss/medical_prescription');
+    $this->load->view('student/omsss/footer');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('student/omsss/scripts/medical-prescription-scripts');
   }
 
   public function medical_logs()
@@ -156,9 +213,52 @@ class Student extends CI_Controller
     $this->load->view('partials/student/topbar');
     $this->load->view('partials/student/sidebar');
     $this->load->view('partials/page-title', ["page_title" => "Medical Logs", "title" => "Medical Logs"]);
-    $this->load->view('student/medical-logs');
+    $this->load->view('student/omsss/medical-logs');
+    $this->load->view('student/omsss/footer');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('student/omsss/scripts/medical-logs-scripts');
+  }
+
+  public function new_reservation()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/student/topbar');
+    $this->load->view('partials/student/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "New Reservation"]);
+    $this->load->view('student/evrsers/new-reservation');
     $this->load->view('partials/footer');
     $this->load->view('partials/foot-scripts');
-    $this->load->view('student/scripts/medical-logs-scripts');
+    $this->load->view('student/evrsers/scripts/reservations-scripts');
+  }
+
+  public function view_reservations()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/student/topbar');
+    $this->load->view('partials/student/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "View Reservations"]);
+    $this->load->view('student/evrsers/view-reservations');
+    $this->load->view('partials/footer');
+    $this->load->view('student/evrsers/components/reservation-modal');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('student/evrsers/scripts/reservations-scripts');
+  }
+
+  public function reservation_history()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/student/topbar');
+    $this->load->view('partials/student/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "View Reservation History"]);
+    $this->load->view('student/evrsers/reservation-history');
+    $this->load->view('partials/footer');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('student/evrsers/scripts/reservations-scripts');
   }
 }

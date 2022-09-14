@@ -50,7 +50,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'home';
-$route['404_override'] = '';
+$route['404_override'] = 'auth/error_message';
 $route['translate_uri_dashes'] = FALSE;
 
 /*
@@ -58,8 +58,13 @@ $route['translate_uri_dashes'] = FALSE;
 | AUTHENTICATION ROUTES
 | -------------------------------------------------------------------------
 */
+
 $route['signin'] = 'auth/signin';
 $route['forgot-password'] = 'auth/forgot_password';
+$route['logout'] = 'auth/logout';
+$route['sis'] = 'auth/sis';
+$route['vass'] = 'auth/vass';
+$route['osssac'] = 'auth/osssac';
 
 /*
 | -------------------------------------------------------------------------
@@ -127,12 +132,20 @@ $route['admission'] = 'home/admission';
 | STUDENT ROUTES
 | -------------------------------------------------------------------------
 */
-$route['student/dashboard'] = 'student';
 
-// ODRS
+$route['student/dashboard'] = 'student';
+$route['student/profile'] = 'student/profile';
+$route['student/profile/settings'] = 'student/settings';
+
+/*
+| --------------
+|     ODRS
+| --------------
+*/
+
 $route['student/odrs/new-request'] = 'student/new_request';
 $route['student/odrs/requests'] = 'student/requests';
-$route['student/odrs/transactions'] = 'student/transactions';
+$route['student/odrs/history'] = 'student/history';
 
 
 /*
@@ -141,36 +154,99 @@ $route['student/odrs/transactions'] = 'student/transactions';
 | --------------
 */
 
-// Medical Services
+// Health Information
 $route['student/omsss/medical-services/personal-info'] = 'student/personal_information';
 $route['student/omsss/medical-services/health-history'] = 'student/health_history';
 $route['student/omsss/medical-services/immunization'] = 'student/immunization';
+
+// Appointment
 $route['student/omsss/medical-services/medical-consultation'] = 'student/medical_consultation';
-
-
-// Dental Services
 $route['student/omsss/dentist-services'] = 'student/dental_consultation';
-
-// Guidance Services
 $route['student/omsss/guidance-services'] = 'student/guidance_consultation';
+$route['student/omsss/medical-prescription'] = 'student/medical_prescription';
 
-
-// Medical Logs
+// Logs and Contact OMSSS
 $route['student/omsss/medical-logs'] = 'student/medical_logs';
+$route['student/omsss/contact-omsss'] = 'student/contact_omsss';
+
+/*
+| --------------
+|     EVRSERS
+| --------------
+*/
+
+// If no organizer status
+
+// Reservations
+$route['student/evrsers/new-reservation'] = 'student/new_reservation';
+$route['student/evrsers/view-reservations'] = 'student/view_reservations';
+$route['student/evrsers/reservation-history'] = 'student/reservation_history';
 
 /*
 | -------------------------------------------------------------------------
 | SUPER ADMIN ROUTES
 | -------------------------------------------------------------------------
 */
-$route['admin/dashboard'] = 'admin';
 
-// User Management
+$route['admin/dashboard'] = 'admin';
+$route['admin/profile'] = 'admin/profile';
+$route['admin/profile/settings'] = 'admin/settings';
+
+/*
+| ----------------------
+|     USER MANAGEMENT
+| ----------------------
+*/
+
 $route['admin/user-management/students'] = 'admin/user_students';
 $route['admin/user-management/pup-staffs'] = 'admin/user_pup_staffs';
-$route['admin/user-management/super-admins'] = 'admin/user_super_admins';
 
-// OMSSS
-$route['admin/omsss/medical-appointment'] = 'admin/medical_appointment';
-$route['admin/omsss/dentist-appointment'] = 'admin/dentist_appointment';
-$route['admin/omsss/guidance-appointment'] = 'admin/guidance_appointment';
+
+/*
+| --------------
+|     ODRS
+| --------------
+*/
+
+$route['admin/odrs/documents'] = 'admin/documents';
+$route['admin/odrs/requests'] = 'admin/requests';
+
+/*
+| --------------
+|     OMSSS
+| --------------
+*/
+
+$route['admin/omsss/all-appointment'] = 'admin/all_appointment';
+$route['admin/omsss/all-prescription'] = 'admin/all_prescription';
+
+/*
+| --------------
+|     EVRSERS
+| --------------
+*/
+
+// Reservations
+$route['admin/evrsers/facilities'] = 'admin/facilities';
+$route['admin/evrsers/manage-reservations'] = 'admin/manage_reservations';
+$route['admin/evrsers/reservation-history'] = 'admin/reservation_history';
+
+/*
+| -------------------------------------------------------------------------
+| PUP STAFF ROUTES
+| -------------------------------------------------------------------------
+*/
+
+$route['pupstaff/dashboard'] = 'pupstaff';
+$route['pupstaff/profile'] = 'pupstaff/profile';
+$route['pupstaff/profile/settings'] = 'pupstaff/settings';
+
+/*
+| --------------
+|     ODRS
+| --------------
+*/
+
+$route['pupstaff/odrs/documents'] = 'pupstaff/documents';
+$route['pupstaff/odrs/requests'] = 'pupstaff/requests';
+$route['pupstaff/odrs/history'] = 'pupstaff/history';

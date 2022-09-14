@@ -6,7 +6,7 @@ class Home extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('home/landing');
@@ -17,7 +17,7 @@ class Home extends CI_Controller
 
 	public function about()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -29,7 +29,7 @@ class Home extends CI_Controller
 
 	public function vm()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -41,7 +41,7 @@ class Home extends CI_Controller
 
 	public function history()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -53,7 +53,7 @@ class Home extends CI_Controller
 
 	public function facilities()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -65,7 +65,7 @@ class Home extends CI_Controller
 
 	public function offices()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -77,7 +77,7 @@ class Home extends CI_Controller
 
 	public function personnel()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -89,7 +89,7 @@ class Home extends CI_Controller
 
 	public function faculty()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -101,7 +101,7 @@ class Home extends CI_Controller
 
 	public function logo_symbols()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -113,7 +113,7 @@ class Home extends CI_Controller
 
 	public function hymn()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -125,7 +125,7 @@ class Home extends CI_Controller
 
 	public function annual_reports()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -137,7 +137,7 @@ class Home extends CI_Controller
 
 	public function contact_us()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -149,7 +149,7 @@ class Home extends CI_Controller
 
 	public function maps()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -161,7 +161,7 @@ class Home extends CI_Controller
 
 	public function code()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -173,7 +173,7 @@ class Home extends CI_Controller
 
 	public function memorandum_orders()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -185,7 +185,7 @@ class Home extends CI_Controller
 
 	public function executive_orders()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -197,7 +197,7 @@ class Home extends CI_Controller
 
 	public function codi_manual()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -209,7 +209,7 @@ class Home extends CI_Controller
 
 	public function citizens_charter()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -221,7 +221,7 @@ class Home extends CI_Controller
 
 	public function programs()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -233,7 +233,7 @@ class Home extends CI_Controller
 
 	public function ous()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -245,7 +245,7 @@ class Home extends CI_Controller
 
 	public function library()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -257,7 +257,7 @@ class Home extends CI_Controller
 
 	public function ovpaa()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -269,7 +269,7 @@ class Home extends CI_Controller
 
 	public function student_services()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -281,7 +281,7 @@ class Home extends CI_Controller
 
 	public function organizations()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -293,7 +293,7 @@ class Home extends CI_Controller
 
 	public function student_publications()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -305,7 +305,7 @@ class Home extends CI_Controller
 
 	public function student_council()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -317,7 +317,7 @@ class Home extends CI_Controller
 
 	public function student_handbook()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -329,7 +329,7 @@ class Home extends CI_Controller
 
 	public function downloads()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -341,7 +341,7 @@ class Home extends CI_Controller
 
 	public function researches()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -353,7 +353,7 @@ class Home extends CI_Controller
 
 	public function extensions()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -365,7 +365,7 @@ class Home extends CI_Controller
 
 	public function intellectual_property()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -377,7 +377,7 @@ class Home extends CI_Controller
 
 	public function research_ethics()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -389,7 +389,7 @@ class Home extends CI_Controller
 
 	public function applicants()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -401,7 +401,7 @@ class Home extends CI_Controller
 
 	public function events()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -413,7 +413,7 @@ class Home extends CI_Controller
 
 	public function documents()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -425,7 +425,7 @@ class Home extends CI_Controller
 
 	public function scholarships()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -437,7 +437,7 @@ class Home extends CI_Controller
 
 	public function calendar()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -449,7 +449,7 @@ class Home extends CI_Controller
 
 	public function admission()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -461,7 +461,7 @@ class Home extends CI_Controller
 
 	public function terms()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');
@@ -473,7 +473,7 @@ class Home extends CI_Controller
 
 	public function privacy()
 	{
-		$this->load->view('partials/main');
+		$this->load->view('partials/main-home');
 		$this->load->view('partials/title-meta');
 		$this->load->view('partials/head-css');
 		$this->load->view('partials/home/home-header');

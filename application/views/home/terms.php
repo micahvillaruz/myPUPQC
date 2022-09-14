@@ -5,8 +5,8 @@
     <!-- Start right Content here -->
     <!-- ============================================================== -->
     <div class="main-content ms-0 bg-light">
-      <div class="page-content pt-4">
-        <div class="container-fluid">
+      <div class="page-content pt-4 m-0">
+        <div class="container-boxed">
           <div class="profile-foreground position-relative mx-n4 mt-n4">
             <div class="profile-wid-bg">
               <img src="<?= base_url() ?>public/images/pupqc-bg.jpg" alt="" class="profile-wid-img" />
@@ -49,24 +49,24 @@
                         <div class="m-3">
                           <div class="row">
                             <p>
-                            Thank you for using the Polytechnic University of the Philippines (“PUP” or “University”) online services. This is provided by the University with main operations located at Anonas Street, Santa Mesa, Manila, Philippines 1016.
+                              Thank you for using the Polytechnic University of the Philippines (“PUP” or “University”) online services. This is provided by the University with main operations located at Anonas Street, Santa Mesa, Manila, Philippines 1016.
                             </p>
                             <p>
-                            By using our online services, you are agreeing to these terms. Please read carefully.
+                              By using our online services, you are agreeing to these terms. Please read carefully.
                             </p>
                             <h3 class="mb-3 text-primary">Acceptance of Terms</h3>
                             <p>
-                            The online services that PUP provides to you are subject to the following Terms of Use ("Terms"). This is an agreement between you (either an individual or a single entity) and the University. By visiting, browsing and/or interacting with our online services, you agree to be bound by this Terms.
+                              The online services that PUP provides to you are subject to the following Terms of Use ("Terms"). This is an agreement between you (either an individual or a single entity) and the University. By visiting, browsing and/or interacting with our online services, you agree to be bound by this Terms.
                             </p>
                             <p>
-                            PUP reserves the right to update the Terms at any time without notice to you. The most current version of the Terms can be viewed by clicking on the "Terms of Use" hypertext link located at the bottom of our Web pages and online services.
+                              PUP reserves the right to update the Terms at any time without notice to you. The most current version of the Terms can be viewed by clicking on the "Terms of Use" hypertext link located at the bottom of our Web pages and online services.
                             </p>
                             <p>
-                            The University offers various online services wherein additional terms or requirements may apply. As such, these terms will be available to relevant online services, and those additional terms become part of your agreement with the University if you use those online services.
+                              The University offers various online services wherein additional terms or requirements may apply. As such, these terms will be available to relevant online services, and those additional terms become part of your agreement with the University if you use those online services.
                             </p>
                             <h3 class="mb-3 text-primary">Description of Services</h3>
                             <p>
-                            The University provides you access to its online services, including its official Website (www.pup.edu.ph), portals (intranet and learning), apps (Web, mobile and desktop), social media channels, associated media, digital materials, online/electronic documentation, and University information (collectively referred to as "Services"). The Services, its updates, enhancements, new features, and/or the addition of any new online service are subject to this Terms.
+                              The University provides you access to its online services, including its official Website (www.pup.edu.ph), portals (intranet and learning), apps (Web, mobile and desktop), social media channels, associated media, digital materials, online/electronic documentation, and University information (collectively referred to as "Services"). The Services, its updates, enhancements, new features, and/or the addition of any new online service are subject to this Terms.
                             </p>
                             <h3 class="mb-3 text-primary">Limitation of Use</h3>
                             <p>The Services are for your academic, non-profit and non-commercial use. PUP grants you conditional access to visit, browse, and interact with the Services as long as you abide with this Terms on your computers running validly licensed copies of software for which the Services were designed.</p>
@@ -106,16 +106,16 @@
                               <li> Use or register to the Services if you are below eighteen (18) years of age without parental consent. Philippine laws require minors to first obtain parental consent before engaging with any transactions.</li>
                             </ul>
                             <p>
-                            PUP, its developers and third-party providers have no obligation to monitor the Communication Services. However, PUP, its developers and third-party providers reserve the right to review materials posted to the Communication Services and to remove any materials (including, by way of example, and not limited to, posts and comments that violate standards of civility) in its sole discretion, without notice, for any reason whatsoever. PUP and third-party providers reserve the right to terminate your access to any or all of the Communication Services at any time, without notice, for any reason whatsoever.
+                              PUP, its developers and third-party providers have no obligation to monitor the Communication Services. However, PUP, its developers and third-party providers reserve the right to review materials posted to the Communication Services and to remove any materials (including, by way of example, and not limited to, posts and comments that violate standards of civility) in its sole discretion, without notice, for any reason whatsoever. PUP and third-party providers reserve the right to terminate your access to any or all of the Communication Services at any time, without notice, for any reason whatsoever.
                             </p>
                             <p>
-                            PUP reserves the right at all times to disclose any information as PUP deems necessary to comply with any applicable law, regulation, legal process or governmental request, or to edit, refuse to post or to remove any information or materials, in whole or in part, in PUP's sole discretion, without notice, for any reason whatsoever. 
+                              PUP reserves the right at all times to disclose any information as PUP deems necessary to comply with any applicable law, regulation, legal process or governmental request, or to edit, refuse to post or to remove any information or materials, in whole or in part, in PUP's sole discretion, without notice, for any reason whatsoever.
                             </p>
                             <p>
-                            Always use caution when giving out any personally identifiable information about yourself, your family or your children in any Communication Services. PUP, its developers and third-party providers do not control or endorse the content, messages or information found in any Communication Services and, therefore, PUP, its developers and third-party providers specifically disclaims any liability with regards to the Communication Services and any actions resulting from your participation in any Communication Services. Site managers and hosts are not authorized PUP spokespersons, and their views do not necessarily reflect those of PUP.
+                              Always use caution when giving out any personally identifiable information about yourself, your family or your children in any Communication Services. PUP, its developers and third-party providers do not control or endorse the content, messages or information found in any Communication Services and, therefore, PUP, its developers and third-party providers specifically disclaims any liability with regards to the Communication Services and any actions resulting from your participation in any Communication Services. Site managers and hosts are not authorized PUP spokespersons, and their views do not necessarily reflect those of PUP.
                             </p>
                             <p>
-                            Materials uploaded to the Communication Services may be subject to posted limitations on usage, reproduction and/or dissemination; you are responsible for adhering to such limitations if you download the materials.
+                              Materials uploaded to the Communication Services may be subject to posted limitations on usage, reproduction and/or dissemination; you are responsible for adhering to such limitations if you download the materials.
                             </p>
                           </div>
                         </div>
