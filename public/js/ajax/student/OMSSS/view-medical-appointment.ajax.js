@@ -1,7 +1,7 @@
 $(function () {
 	loadMedicalTable()
 
-	$('#addNewMedicalCaseForm').on('submit', function (e) {
+	$('#NewMedicalCaseForm').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
 		addNewMedicalCase()
 	})
@@ -9,15 +9,12 @@ $(function () {
 
 addNewMedicalCase = () => {
 	// New Medical Case
-	if ($('#addNewMedicalCaseForm')[0].checkValidity()) {
+	if ($('#NewMedicalCaseForm')[0].checkValidity()) {
 		// no validation error
-		const form = new FormData($('#addNewMedicalCaseForm')[0])
-
+		const form = new FormData($('#NewMedicalCaseForm')[0])
 		data = {
+			appointment_type: 'Medical',
 			consultation_reason: form.get('consultation_reason'),
-			health_appointment_assigned_to_physician: form.get(
-				'health_appointment_assigned_to_physician',
-			),
 			symptoms_date: form.get('symptoms_date'),
 			consultation_date: form.get('consultation_date'),
 			consultation_time: form.get('consultation_time'),
@@ -106,7 +103,7 @@ loadMedicalTable = () => {
 				{
 					data: null,
 					render: (data) => {
-						return data.is_blacklist
+						return data.consultation_status == 'Pending'
 							? `<span class="badge rounded-pill bg-warning">Pending</span>`
 							: `<span class="badge rounded-pill bg-success">Approved</span>`
 					},
@@ -116,8 +113,11 @@ loadMedicalTable = () => {
 				{
 					data: null,
 					render: (data) => {
-						const healthPhysician =
-							data.health_appointment_assigned_to_physician.user_profiles[0].full_name
+						if (data.health_appointment_assigned_to_physician) {
+							const healthPhysician =
+								data.health_appointment_assigned_to_physician.user_profiles[0].full_name
+						}
+						const healthPhysician = 'N/A'
 						return `${healthPhysician}`
 					},
 				},
@@ -128,7 +128,7 @@ loadMedicalTable = () => {
 					render: (data) => {
 						const consultation_date = moment(data.consultation_date).format('LL')
 						const consultation_time = data.consultation_time
-						return `${consultation_date}\n${consultation_time}`
+						return `${consultation_date}\ (${consultation_time})`
 					},
 				},
 				//Action
@@ -166,16 +166,19 @@ viewMedicalDetails = (health_appointment_id) => {
 		success: (result) => {
 			console.log(result)
 			const userData = result.data
-			const userProfileData = result.data.health_appointment_assigned_to_physician.user_profiles[0]
+			if (result.data.health_appointment_assigned_to_physician) {
+				const userProfileData = data.health_appointment_assigned_to_physician.user_profiles[0]
+			}
+			const userProfileData = null
 
 			$('#view_case_details').html(userData.case_control_number)
 			$('#view_consultation_reason').html(userData.consultation_reason)
-			$('#view_health_physcian').html(userProfileData.full_name)
+			$('#view_health_physcian').html(userProfileData != null ? userProfileData.full_name : 'N/A')
 			$('#view_date_of_symptom').html(moment(userData.symptoms_date).format('LL'))
 			$('#view_consultation_date').html(moment(userData.consultation_date).format('LL'))
 			$('#view_consultation_time').html(userData.consultation_time)
 			$('#view_status').html(
-				userData.is_blacklist
+				userData.consultation_status == 'Pending'
 					? '<span class="fs-12 badge rounded-pill bg-warning" >Pending</span>'
 					: '<span class="fs-12 badge rounded-pill bg-success" >Approved</span>',
 			)
