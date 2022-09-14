@@ -12,7 +12,6 @@ loadRequestsTable = () => {
 			ajax: {
 				url: `${apiURL}/odrs/student/view_requests`,
 				type: 'GET',
-				ContentType: 'application/x-www-form-urlencoded',
 				headers: AJAX_HEADERS,
 			},
 			columns: [
@@ -204,10 +203,8 @@ loadRequestsTable = () => {
 viewRequestDetails = (request_id) => {
 	$.ajax({
 		type: 'GET',
-		cache: false,
 		url: `${apiURL}/odrs/student/view_request/${request_id}`,
 		dataType: 'json',
-		ContentType: 'application/x-www-form-urlencoded',
 		headers: AJAX_HEADERS,
 		success: (result) => {
 			const data = result.data
@@ -643,8 +640,6 @@ cancelRequest = (request_id) => {
 			$.ajax({
 				type: 'PUT',
 				url: `${apiURL}/odrs/student/update_request_status/Cancelled/${request_id}`,
-				ContentType: 'application/x-www-form-urlencoded',
-				cache: false,
 				dataType: 'json',
 				headers: AJAX_HEADERS,
 				success: (result) => {

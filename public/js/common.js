@@ -14,6 +14,7 @@ const TOKEN = localStorage.getItem('TOKEN')
 const AJAX_HEADERS = {
 	Accept: 'application/json',
 	Authorization: `Bearer ${TOKEN}`,
+	ContentType: 'application/x-www-form-urlencoded',
 }
 
 function logout(page) {

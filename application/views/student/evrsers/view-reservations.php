@@ -8,7 +8,7 @@
                 </div>
             </div>
             <div class="card-body">
-                <table id="example" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
+                <table id="reservations-datatable" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
                     <thead>
                         <tr>
                             <th>Reservation ID</th>
@@ -18,7 +18,6 @@
                             <th>Date</th>
                             <th>Time</th>
                             <th>Status</th>
-                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
