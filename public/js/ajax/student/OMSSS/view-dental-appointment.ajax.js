@@ -1,7 +1,7 @@
 $(function () {
 	loadDentalTable()
 
-	$('#addNewDentalCaseForm').on('submit', function (e) {
+	$('#NewDentalCaseForm').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
 		addNewDentalCase()
 	})
@@ -9,15 +9,12 @@ $(function () {
 
 addNewDentalCase = () => {
 	// New Dental Case
-	if ($('#addNewDentalCaseForm')[0].checkValidity()) {
+	if ($('#NewDentalCaseForm')[0].checkValidity()) {
 		// no validation error
-		const form = new FormData($('#addNewDentalCaseForm')[0])
-
+		const form = new FormData($('#NewDentalCaseForm')[0])
 		data = {
+			appointment_type: 'Dental',
 			consultation_reason: form.get('consultation_reason'),
-			health_appointment_assigned_to_physician: form.get(
-				'health_appointment_assigned_to_physician',
-			),
 			symptoms_date: form.get('symptoms_date'),
 			consultation_date: form.get('consultation_date'),
 			consultation_time: form.get('consultation_time'),

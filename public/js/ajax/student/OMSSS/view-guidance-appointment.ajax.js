@@ -1,7 +1,7 @@
 $(function () {
 	loadGuidanceTable()
 
-	$('#addNewGuidanceCaseForm').on('submit', function (e) {
+	$('#NewGuidanceCaseForm').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
 		addNewGuidanceCase()
 	})
@@ -9,16 +9,12 @@ $(function () {
 
 addNewGuidanceCase = () => {
 	// New Dental Case
-	if ($('#addNewGuidanceCaseForm')[0].checkValidity()) {
+	if ($('#NewGuidanceCaseForm')[0].checkValidity()) {
 		// no validation error
-		const form = new FormData($('#addNewGuidanceCaseForm')[0])
-
+		const form = new FormData($('#NewGuidanceCaseForm')[0])
 		data = {
+			appointment_type: 'Guidance',
 			consultation_reason: form.get('consultation_reason'),
-			health_appointment_assigned_to_physician: form.get(
-				'health_appointment_assigned_to_physician',
-			),
-			symptoms_date: form.get('symptoms_date'),
 			consultation_date: form.get('consultation_date'),
 			consultation_time: form.get('consultation_time'),
 		}
