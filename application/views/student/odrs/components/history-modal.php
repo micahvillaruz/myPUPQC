@@ -1,8 +1,8 @@
-<div id="viewProcessStatusFlow" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+<div id="viewProcessStatusFlow" class="modal fade" tabindex="-1" aria-labelledby="processStatusFlow" aria-hidden="true" style="display: none;">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title text-primary" id="myModalLabel">Process Status Flow</h5>
+        <h5 class="modal-title text-primary" id="processStatusFlow">Process Status Flow</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
       </div>
       <div class="modal-body">
@@ -90,7 +90,7 @@
             </div>
             <br>
             <span class="mt-2 fs-12">
-              The document request has been deleted and will not be visible on the student's and Administrative Staff's side.
+              The document request has been deleted and will not be visible on the Student's and Administrative Staff's side.
             </span>
           </li>
         </ul>
@@ -99,17 +99,16 @@
         <div class="hstack flex-wrap gap-2 mb-3 mb-lg-0">
           <button type="button" class="btn btn-primary btn-animation waves-effect waves-light" data-bs-dismiss="modal" data-text="Close"><span>Close</span></button>
         </div>
-
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
 </div>
 
-<div id="viewRequestDetails" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div id="viewRequestDetails" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="requestDetails" aria-hidden="true">
   <div class="modal-dialog modal-xl modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title text-primary" id="myLargeModalLabel">Request Details</h5>
+        <h5 class="modal-title text-primary" id="requestDetails">Request Details</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -126,7 +125,7 @@
               <th>Release Date</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="documents">
             <tr>
               <td>Certificate of Good Moral Character</td>
               <td class="text-center">1</td>
@@ -138,14 +137,14 @@
         <div class="mt-4">
           <span class="badge rounded-pill bg-primary fs-12">Purpose of Request</span>
           <div class="bg-soft-secondary ms-1 text-wrap">
-            <p class="p-2 fw-medium">Scholarship</p>
+            <p id="purpose_of_request" class="p-2 fw-medium">Scholarship</p>
           </div>
         </div>
         <div class="m-2 mt-4 mb-3">
           <div class="h6 fs-15 text-primary">Status</div>
           <div class="profile-timeline">
             <div class="accordion accordion-flush" id="accordionFlushExample">
-              <div class="accordion-item border-0">
+              <div id="pending_for_clearance" class="accordion-item border-0">
                 <div class="accordion-header" id="headingOne">
                   <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     <div class="d-flex align-items-center">
@@ -170,7 +169,7 @@
                   </div>
                 </div>
               </div>
-              <div class="accordion-item border-0">
+              <div id="for_clearance" class="accordion-item border-0">
                 <div class="accordion-header" id="headingTwo">
                   <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <div class="d-flex align-items-center">
@@ -195,7 +194,7 @@
                   </div>
                 </div>
               </div>
-              <div class="accordion-item border-0">
+              <div id="for_evaluation" class="accordion-item border-0">
                 <div class="accordion-header" id="headingThree">
                   <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                     <div class="d-flex align-items-center">
@@ -220,7 +219,7 @@
                   </div>
                 </div>
               </div>
-              <div class="accordion-item border-0">
+              <div id="ready_for_pickup" class="accordion-item border-0">
                 <div class="accordion-header" id="headingFour">
                   <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                     <div class="d-flex align-items-center">
@@ -245,7 +244,7 @@
                   </div>
                 </div>
               </div>
-              <div class="accordion-item border-0">
+              <div id="released" class="accordion-item border-0">
                 <div class="accordion-header" id="headingFive">
                   <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                     <div class="d-flex align-items-center">
@@ -274,7 +273,7 @@
             <!--end accordion-->
           </div>
         </div>
-        <div class="mt-4 mb-3">
+        <div id="remarks" class="mt-4 mb-3">
           <div class="h6 fs-15 text-primary">Remarks</div>
           <div class="list-group">
             <div class="list-group-item list-group-item-action">

@@ -15,7 +15,9 @@ addNewMedicalCase = () => {
 
 		data = {
 			consultation_reason: form.get('consultation_reason'),
-			health_appointment_assigned_to_physician: form.get('health_appointment_assigned_to_physician'),
+			health_appointment_assigned_to_physician: form.get(
+				'health_appointment_assigned_to_physician',
+			),
 			symptoms_date: form.get('symptoms_date'),
 			consultation_date: form.get('consultation_date'),
 			consultation_time: form.get('consultation_time'),
@@ -78,7 +80,7 @@ loadMedicalTable = () => {
 			ajax: {
 				url: apiURL + 'omsss/student/view_medical_appointment',
 				type: 'GET',
-				ContentType: 'application/x-www-form-urlencoded',
+				// ContentType: 'application/x-www-form-urlencoded',
 			},
 			columns: [
 				// Case Control No.
@@ -94,7 +96,7 @@ loadMedicalTable = () => {
 				{
 					data: null,
 					render: (data) => {
-						const sympDate = data.symptoms_date
+						const sympDate = moment(data.symptoms_date).format('LL')
 
 						return `${sympDate}`
 					},
@@ -114,7 +116,8 @@ loadMedicalTable = () => {
 				{
 					data: null,
 					render: (data) => {
-						const healthPhysician = data.user_profiles.full_name
+						const healthPhysician =
+							data.health_appointment_assigned_to_physician.user_profiles[0].full_name
 						return `${healthPhysician}`
 					},
 				},
@@ -123,8 +126,20 @@ loadMedicalTable = () => {
 				{
 					data: null,
 					render: (data) => {
-						const consultation = moment(data.consultation_date + data.consultation_date).format('LL')
-						return `${consultation}`
+						const consultation_date = moment(data.consultation_date).format('LL')
+						const consultation_time = data.consultation_time
+						return `${consultation_date}\n${consultation_time}`
+					},
+				},
+				//Action
+				{
+					data: null,
+					class: 'text-center',
+					render: (data) => {
+						return `
+        <div class="dropdown d-inline-block">
+        <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewMedicalDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill fs-5"></i></button>
+        </div>`
 					},
 				},
 			],
@@ -134,7 +149,7 @@ loadMedicalTable = () => {
 }
 
 // View Medical Consultation details
-viewMedicalDetails = (user_id) => {
+viewMedicalDetails = (health_appointment_id) => {
 	$.ajaxSetup({
 		headers: {
 			Accept: 'application/json',
@@ -146,19 +161,20 @@ viewMedicalDetails = (user_id) => {
 	$.ajax({
 		type: 'GET',
 		cache: false,
-		url: apiURL + `omsss/student/view_medical_appointment${user_id}`,
+		url: apiURL + `omsss/student/view_appointment/${health_appointment_id}`,
 		dataType: 'json',
 		success: (result) => {
+			console.log(result)
 			const userData = result.data
-			const userProfileData = result.data.user_profiles
+			const userProfileData = result.data.health_appointment_assigned_to_physician.user_profiles[0]
 
 			$('#view_case_details').html(userData.case_control_number)
-      $('#view_consultation_reason').html(userData.consultation_reason)
+			$('#view_consultation_reason').html(userData.consultation_reason)
 			$('#view_health_physcian').html(userProfileData.full_name)
-      $('#view_date_of_symptoms').html(userData.symptoms_date)
-			$('#view_consultation_date').html(userData.consultation_date)
+			$('#view_date_of_symptom').html(moment(userData.symptoms_date).format('LL'))
+			$('#view_consultation_date').html(moment(userData.consultation_date).format('LL'))
 			$('#view_consultation_time').html(userData.consultation_time)
-      $('#view_status').html(
+			$('#view_status').html(
 				userData.is_blacklist
 					? '<span class="fs-12 badge rounded-pill bg-warning" >Pending</span>'
 					: '<span class="fs-12 badge rounded-pill bg-success" >Approved</span>',
