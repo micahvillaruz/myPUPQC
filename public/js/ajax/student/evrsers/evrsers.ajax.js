@@ -1,5 +1,6 @@
 $(function() {
     ownReservationsTable()
+    ownReservationsHistory()
 
     $('#addNewReservation').on('submit', function(e) {
         e.preventDefault() // prevent page refresh
