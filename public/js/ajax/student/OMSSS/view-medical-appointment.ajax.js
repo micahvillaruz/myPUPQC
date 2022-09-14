@@ -188,7 +188,7 @@ viewMedicalDetails = (health_appointment_id) => {
 }
 
 // Cancel Medical Consultation
-cancelMedical = (user_id) => {
+cancelMedical = (health_appointment_id) => {
 	$.ajaxSetup({
 		headers: {
 			Accept: 'application/json',
@@ -215,8 +215,8 @@ cancelMedical = (user_id) => {
 	}).then(function (result) {
 		if (result.value) {
 			$.ajax({
-				url: apiURL + 'omsss/student/cancel_appointment/' + user_id,
-				type: 'DELETE',
+				url: apiURL + 'omsss/student/cancel_appointment/' + health_appointment_id,
+				type: 'PUT',
 				dataType: 'json',
 				success: (result) => {
 					if (result) {

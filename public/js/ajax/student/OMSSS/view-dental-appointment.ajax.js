@@ -189,7 +189,8 @@ viewDentalDetails = (health_appointment_id) => {
 }
 
 // Cancel Dental Consultation
-cancelDental = (user_id) => {
+cancelDental = (health_appointment_id) => {
+	console.log(health_appointment_id)
 	$.ajaxSetup({
 		headers: {
 			Accept: 'application/json',
@@ -216,8 +217,8 @@ cancelDental = (user_id) => {
 	}).then(function (result) {
 		if (result.value) {
 			$.ajax({
-				url: apiURL + 'omsss/student/cancel_appointment/' + user_id,
-				type: 'DELETE',
+				url: apiURL + 'omsss/student/cancel_appointment/' + health_appointment_id,
+				type: 'PUT',
 				dataType: 'json',
 				success: (result) => {
 					if (result) {

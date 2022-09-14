@@ -178,7 +178,7 @@ viewGuidanceDetails = (health_appointment_id) => {
 }
 
 // Cancel Guidance Consultation
-cancelGuidance = (user_id) => {
+cancelGuidance = (health_appointment_id) => {
 	$.ajaxSetup({
 		headers: {
 			Accept: 'application/json',
@@ -205,8 +205,8 @@ cancelGuidance = (user_id) => {
 	}).then(function (result) {
 		if (result.value) {
 			$.ajax({
-				url: apiURL + 'omsss/student/cancel_appointment/' + user_id,
-				type: 'DELETE',
+				url: apiURL + 'omsss/student/cancel_appointment/' + health_appointment_id,
+				type: 'PUT',
 				dataType: 'json',
 				success: (result) => {
 					if (result) {
