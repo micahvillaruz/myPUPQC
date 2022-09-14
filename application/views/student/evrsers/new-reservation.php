@@ -2,14 +2,14 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-header">
-                <h5 class="card-title mb-0 text-primary">New Reservation</h5>
+                <h5 class="card-title mb-0 text-dark">New Reservation</h5>
             </div>
             <div class="card-body">
                 <form id="addNewReservation" class="needs-validation" novalidate>
                     <div class="row g-3">
                         <div class="col-lg-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Student Full Name" disabled>
+                                <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Student Full Name" disabled value="Josha G. Galga">
                                 <label for="fullnamefloatingInput">Full Name</label>
                             </div>
                         </div>
@@ -23,8 +23,8 @@
                             <div class="form-floating">
                                 <select class="form-select" id="timeFromfloatingInput" placeholder="" required>
                                     <option selected disabled>- Select Venue -</option>
-                                    <option>PUP QC Gymnasium</option>
-                                    <option>Chapel</option>
+                                    <option>PUPQC Gymnasium</option>
+                                    <option>PUPQC Chapel</option>
                                     <option>Audio-Visual Room</option>
                                     <option>Computer Lab</option>
                                 </select>
@@ -108,7 +108,7 @@
                             </div>
                         </div>
                         <div class="col-lg-12">
-                                <button type="submit" class="btn btn-primary btn-md waves-effect waves-light btn-md float-end fs-6">Submit</button>
+                                <button type="submit" class="btn btn-primary btn-md waves-effect waves-light btn-md float-end fs-6" onclick="addNewReservation()">Submit</button>
                         </div>
                     </div>
                 </form>
