@@ -133,11 +133,11 @@ loadMedicalTable = () => {
         class: 'text-center',
         render: (data) => {
             let activationBtn = data.is_blacklist ?
-                `<button type="button" class="btn btn-success btn-icon waves-effect waves-light" onclick="activateStudent('${data.health_appointment_id}')"><i class="bx bxs-user-check fs-4"></i></button>` :
-                `<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="deactivateStudent('${data.health_appointment_id}')"><i class="bx bxs-user-x fs-4"></i></button>`
+                `<button type="button" class="btn btn-success btn-icon waves-effect waves-light" onclick="activateMedical('${data.user_id}')"><i class="bx bxs-user-check fs-4"></i></button>` :
+                `<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="deactivateMedical('${data.user_id}')"><i class="bx bxs-user-x fs-4"></i></button>`
             return `
         <div class="dropdown d-inline-block">
-        <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewMedicalDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill fs-5"></i></button>
+        <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewMedicalDetails('${data.user_id}')" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill fs-5"></i></button>
         ${activationBtn}
         </div>`
         },
