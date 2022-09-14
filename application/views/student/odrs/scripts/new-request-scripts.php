@@ -26,6 +26,9 @@
 
 		<script src="<?= base_url() ?>public/js/pages/select2.init.js"></script>
 
+		<!-- Requests ajax -->
+		<script src="<?= base_url() ?>public/js/ajax/student/odrs/new-requests.ajax.js"></script>
+
 		<!-- App js -->
 		<script src="<?= base_url() ?>public/js/app.js"></script>
 		</body>
