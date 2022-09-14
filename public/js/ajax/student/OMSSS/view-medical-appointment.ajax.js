@@ -96,8 +96,8 @@ loadMedicalTable = () => {
 				{
 					data: null,
 					render: (data) => {
-						const sympDate = moment(data.symptoms_date).format('LL')
-
+						const sympDate = adjustTime(`'${data.symptoms_date}'`)
+						console.log(sympDate)
 						return `${sympDate}`
 					},
 				},

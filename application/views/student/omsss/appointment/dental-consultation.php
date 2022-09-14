@@ -13,7 +13,7 @@
           <thead>
             <tr>
               <th>Case Details</th>
-              <th>Date Created</th>
+              <th>Start date of Symptoms</th>
               <th>Status</th>
               <th>Attending Dentist</th>
               <th>Schedule</th>

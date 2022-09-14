@@ -87,6 +87,7 @@ loadDentalTable = () => {
 				{
 					data: null,
 					render: (data) => {
+						console.log(data)
 						const caseNo = data.case_control_number
 						return `${caseNo}`
 					},
@@ -96,8 +97,7 @@ loadDentalTable = () => {
 				{
 					data: null,
 					render: (data) => {
-						const sympDate = moment(data.symptoms_date).format('LL')
-
+						const sympDate = moment(data.symptoms_date).utc().format('LL')
 						return `${sympDate}`
 					},
 				},
@@ -106,7 +106,7 @@ loadDentalTable = () => {
 				{
 					data: null,
 					render: (data) => {
-						return data.is_blacklist
+						return data.consultation_status == 'Pending'
 							? `<span class="badge rounded-pill bg-warning">Pending</span>`
 							: `<span class="badge rounded-pill bg-success">Approved</span>`
 					},
@@ -116,8 +116,11 @@ loadDentalTable = () => {
 				{
 					data: null,
 					render: (data) => {
-						const healthPhysician =
-							data.health_appointment_assigned_to_physician.user_profiles[0].full_name
+						if (data.health_appointment_assigned_to_physician) {
+							const healthPhysician =
+								data.health_appointment_assigned_to_physician.user_profiles[0].full_name
+						}
+						const healthPhysician = 'N/A'
 						return `${healthPhysician}`
 					},
 				},
@@ -128,7 +131,7 @@ loadDentalTable = () => {
 					render: (data) => {
 						const consultation_date = moment(data.consultation_date).format('LL')
 						const consultation_time = data.consultation_time
-						return `${consultation_date}\n${consultation_time}`
+						return `${consultation_date} (${consultation_time})`
 					},
 				},
 				//Action
@@ -138,7 +141,7 @@ loadDentalTable = () => {
 					render: (data) => {
 						return `
         <div class="dropdown d-inline-block">
-        <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewDentalDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="viewDentalModal"><i class="ri-eye-fill fs-5"></i></button>
+        <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewDentalDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewDentalModal"><i class="ri-eye-fill fs-5"></i></button>
         </div>`
 					},
 				},
@@ -166,16 +169,19 @@ viewDentalDetails = (health_appointment_id) => {
 		success: (result) => {
 			console.log(result)
 			const userData = result.data
-			const userProfileData = result.data.health_appointment_assigned_to_physician.user_profiles[0]
+			if (result.data.health_appointment_assigned_to_physician) {
+				const userProfileData = data.health_appointment_assigned_to_physician.user_profiles[0]
+			}
+			const userProfileData = null
 
 			$('#view_case_details').html(userData.case_control_number)
 			$('#view_consultation_reason').html(userData.consultation_reason)
-			$('#view_health_physcian').html(userProfileData.full_name)
-			$('#view_date_of_symptom').html(moment(userData.symptoms_date).format('LL'))
+			$('#view_health_physcian').html(userProfileData != null ? userProfileData.full_name : 'N/A')
+			$('#view_symptoms_date').html(moment(userData.symptoms_date).utc().format('LL'))
 			$('#view_consultation_date').html(moment(userData.consultation_date).format('LL'))
 			$('#view_consultation_time').html(userData.consultation_time)
 			$('#view_status').html(
-				userData.is_blacklist
+				userData.consultation_status == 'Pending'
 					? '<span class="fs-12 badge rounded-pill bg-warning" >Pending</span>'
 					: '<span class="fs-12 badge rounded-pill bg-success" >Approved</span>',
 			)

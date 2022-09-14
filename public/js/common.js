@@ -63,3 +63,13 @@ function logout(page) {
 		window.location.href = baseURL + page
 	})
 }
+
+function adjustTime(date) {
+	// Tanginang time time to, eto reference: https://stackoverflow.com/questions/7556591/is-the-javascript-date-object-always-one-day-off
+	date = new Date(date)
+	const year = date.getFullYear()
+	const month = date.getMonth() + 1
+	const day = date.getDate()
+	var newDate = new Date(`${year}/${month}/${day} PST`) // PST is the timezone of the server
+	return new Date(newDate.getTime() + Math.abs(newDate.getTimezoneOffset() * 60000))
+}
