@@ -139,7 +139,9 @@ loadDentalTable = () => {
 						return `
         <div class="dropdown d-inline-block">
         <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewDentalDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewDentalModal"><i class="ri-eye-fill fs-5"></i></button>
-        </div>`
+				<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="cancelDental('${data.health_appointment_id}')"><i class="bx bxs-user-x fs-4"></i></button>
+
+				</div>`
 					},
 				},
 			],
@@ -183,5 +185,81 @@ viewDentalDetails = (health_appointment_id) => {
 					: '<span class="fs-12 badge rounded-pill bg-success" >Approved</span>',
 			)
 		},
+	})
+}
+
+// Cancel Dental Consultation
+cancelDental = (user_id) => {
+	$.ajaxSetup({
+		headers: {
+			Accept: 'application/json',
+			Authorization: 'Bearer ' + TOKEN,
+			ContentType: 'application/x-www-form-urlencoded',
+		},
+	})
+
+	Swal.fire({
+		html:
+			'<div class="mt-3">' +
+			'<lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f7b84b,secondary:#f06548" style="width:100px;height:100px"></lord-icon>' +
+			'<div class="mt-4 pt-2 fs-15 mx-5">' +
+			'<h4>Are you Sure ?</h4>' +
+			'<p class="text-muted mx-4 mb-0">Are you Sure You want to Cancel it?</p>' +
+			'</div>' +
+			'</div>',
+		showCancelButton: true,
+		confirmButtonClass: 'btn btn-primary w-xs me-2 mb-1',
+		confirmButtonText: 'Yes, Cancel It!',
+		cancelButtonClass: 'btn btn-danger w-xs mb-1',
+		buttonsStyling: false,
+		showCloseButton: true,
+	}).then(function (result) {
+		if (result.value) {
+			$.ajax({
+				url: apiURL + 'omsss/student/cancel_appointment/' + user_id,
+				type: 'DELETE',
+				dataType: 'json',
+				success: (result) => {
+					if (result) {
+						Swal.fire({
+							html:
+								'<div class="mt-3">' +
+								'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
+								'<div class="mt-4 pt-2 fs-15">' +
+								'<h4>Well done !</h4>' +
+								'<p class="text-muted mx-4 mb-0">You have successfully Cancel Appointment!</p>' +
+								'</div>' +
+								'</div>',
+							showCancelButton: !0,
+							showConfirmButton: !1,
+							cancelButtonClass: 'btn btn-primary w-xs mb-1',
+							cancelButtonText: 'Ok',
+							buttonsStyling: !1,
+							showCloseButton: !0,
+						}).then(function () {
+							// Reload Staff Datatable
+							loadStaffsTable()
+						})
+					}
+				},
+			}).fail(() => {
+				Swal.fire({
+					html:
+						'<div class="mt-3">' +
+						'<lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon>' +
+						'<div class="mt-4 pt-2 fs-15">' +
+						'<h4>Something went Wrong !</h4>' +
+						'<p class="text-muted mx-4 mb-0">There was an error while canceling. Please try again.</p>' +
+						'</div>' +
+						'</div>',
+					showCancelButton: !0,
+					showConfirmButton: !1,
+					cancelButtonClass: 'btn btn-primary w-xs mb-1',
+					cancelButtonText: 'Dismiss',
+					buttonsStyling: !1,
+					showCloseButton: !0,
+				})
+			})
+		}
 	})
 }

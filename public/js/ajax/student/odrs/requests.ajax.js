@@ -493,125 +493,111 @@ viewRequestDetails = (request_id) => {
 			}
 			$('#released').html(released)
 
-			if (data.remarks !== null) {
-				if (data.status_of_request === 'For Clearance') {
-					remarks = `
-						<div class="h6 fs-15 text-primary">Remarks</div>
-						<div class="list-group">
-							<div class="list-group-item list-group-item-action">
-								<div class="d-flex mb-2 align-items-center">
-									<div class="flex-shrink-0">
-										<img src="${baseURL}public/images/officials/img-25.png" alt="" class="avatar-sm rounded-circle" />
-									</div>
-									<div class="flex-grow-1 ms-3">
-										<h5 class="list-title fs-15 mb-1">Hernando Liberato</h5>
-										<p class="list-text mb-0 fs-12">Administrative Staff</p>
-									</div>
-								</div>
-								<p>The Document Request is now approved. You must download the Request form by clicking the
-									<button type="button" class="btn btn-success btn-icon btn-sm waves-effect waves-light my-1">
-										<i class="mdi mdi-download fs-5 fw-bold"></i>
-									</button>
-									button and bring it together with the requirements as listed below. You have to <b>Request an Appointment</b> on the <a href="https://apps.pup.edu.ph/appointment" class="link-primary fw-medium">Visitors Appointment Scheduling System (VASS)</a> for your desired date and time in processing the requirements at PUP QC. After your appointment is approved, you are required to present a <b>Gate Pass</b> before being allowed to enter the PUP QC premises. You must bring the requirements at the Rothlener Building where the documents passed will be validated and the corresponding request fee will be paid.
-								</p>
-								<p>Please bring the following requirements:</p>
-								<ul class="list-unstyled mb-0">
-						`
-
-					data.documents_assigned_to_request.forEach((document) => {
-						if (document.document_information[0].document_requirements !== null) {
-							remarks += `
-								<li class="mb-2">
-									<i class="mdi mdi-check-decagram text-info me-1"></i>
-									${document.document_information[0].document_requirements}
-								</li>
-							`
-						}
-					})
-					remarks += `
-										<li class="mb-2">
-											<i class="mdi mdi-check-decagram text-info me-1"></i>
-											Request Form
-										</li>
-									</ul>
-									<p class="mt-4 fw-medium">${data.remarks}</p>
-								</div>
-							</div>
-						</div>
-					`
-					$('#remarks').html(remarks)
-				} else {
-					remarks = `
+			if (data.status_of_request === 'For Clearance') {
+				remarks = `
 					<div class="h6 fs-15 text-primary">Remarks</div>
-						<div class="list-group">
-							<div class="list-group-item list-group-item-action">
-								<div class="d-flex mb-2 align-items-center">
-									<div class="flex-shrink-0">
-										<img src="${baseURL}public/images/officials/img-25.png" alt="" class="avatar-sm rounded-circle" />
-									</div>
-									<div class="flex-grow-1 ms-3">
-										<h5 class="list-title fs-15 mb-1">Hernando Liberato</h5>
-										<p class="list-text mb-0 fs-12">Administrative Staff</p>
-									</div>
+					<div class="list-group">
+						<div class="list-group-item list-group-item-action">
+							<div class="d-flex mb-2 align-items-center">
+								<div class="flex-shrink-0">
+									<img src="${baseURL}public/images/officials/img-25.png" alt="" class="avatar-sm rounded-circle" />
 								</div>
-								<p>${data.remarks}</p>
+								<div class="flex-grow-1 ms-3">
+									<h5 class="list-title fs-15 mb-1">Hernando Liberato</h5>
+									<p class="list-text mb-0 fs-12">Administrative Staff</p>
+								</div>
 							</div>
-							</div>
+							<p>The Document Request is now approved. You must download the Request form by clicking the
+								<button type="button" class="btn btn-success btn-icon btn-sm waves-effect waves-light my-1">
+									<i class="mdi mdi-download fs-5 fw-bold"></i>
+								</button>
+								button and bring it together with the requirements as listed below. You have to <b>Request an Appointment</b> on the <a href="https://apps.pup.edu.ph/appointment" class="link-primary fw-medium">Visitors Appointment Scheduling System (VASS)</a> for your desired date and time in processing the requirements at PUP QC. After your appointment is approved, you are required to present a <b>Gate Pass</b> before being allowed to enter the PUP QC premises. You must bring the requirements at the Rothlener Building where the documents passed will be validated and the corresponding request fee will be paid.
+							</p>
+							<p>Please bring the following requirements:</p>
+							<ul class="list-unstyled mb-0">
+					`
+
+				data.documents_assigned_to_request.forEach((document) => {
+					if (document.document_information[0].document_requirements !== null) {
+						remarks += `
+							<li class="mb-2">
+								<i class="mdi mdi-check-decagram text-info me-1"></i>
+								${document.document_information[0].document_requirements}
+							</li>
+						`
+					}
+				})
+
+				remarks += `
+						<li class="mb-2">
+							<i class="mdi mdi-check-decagram text-info me-1"></i>
+							Request Form
+						</li>
+					</ul>
+				`
+
+				if (data.remarks !== null) {
+					remarks += `
+						<p class="mt-4 fw-medium">${data.remarks}</p>
+					`
+				}
+
+				remarks += `
+						</div>
 						</div>
 					</div>
-					`
-					$('#remarks').html(remarks)
-				}
-			} else {
-				if (data.status_of_request === 'For Clearance') {
-					remarks = `
-							<div class="h6 fs-15 text-primary">Remarks</div>
-							<div class="list-group">
-								<div class="list-group-item list-group-item-action">
-									<div class="d-flex mb-2 align-items-center">
-										<div class="flex-shrink-0">
-											<img src="${baseURL}public/images/officials/img-25.png" alt="" class="avatar-sm rounded-circle" />
-										</div>
-										<div class="flex-grow-1 ms-3">
-											<h5 class="list-title fs-15 mb-1">Hernando Liberato</h5>
-											<p class="list-text mb-0 fs-12">Administrative Staff</p>
-										</div>
-									</div>
-									<p>The Document Request is now approved. You must download the Request form by clicking the
-										<button type="button" class="btn btn-success btn-icon btn-sm waves-effect waves-light my-1">
-											<i class="mdi mdi-download fs-5 fw-bold"></i>
-										</button>
-										button and bring it together with the requirements as listed below. You have to <b>Request an Appointment</b> on the <a href="https://apps.pup.edu.ph/appointment" class="link-primary fw-medium">Visitors Appointment Scheduling System (VASS)</a> for your desired date and time in processing the requirements at PUP QC. After your appointment is approved, you are required to present a <b>Gate Pass</b> before being allowed to enter the PUP QC premises. You must bring the requirements at the Rothlener Building where the documents passed will be validated and the corresponding request fee will be paid.
-									</p>
-									<p>Please bring the following requirements:</p>
-									<ul class="list-unstyled mb-0">
-							`
-
-					data.documents_assigned_to_request.forEach((document) => {
-						if (document.document_information[0].document_requirements !== null) {
-							remarks += `
-									<li class="mb-2">
-										<i class="mdi mdi-check-decagram text-info me-1"></i>
-										${document.document_information[0].document_requirements}
-									</li>
-								`
-						}
-					})
-					remarks += `
-											<li class="mb-2">
-												<i class="mdi mdi-check-decagram text-info me-1"></i>
-												Request Form
-											</li>
-										</ul>
-									</div>
+				`
+				$('#remarks').html(remarks)
+			} else if (data.status_of_request === 'Ready for Pickup') {
+				remarks = `
+					<div class="h6 fs-15 text-primary">Remarks</div>
+					<div class="list-group">
+						<div class="list-group-item list-group-item-action">
+							<div class="d-flex mb-2 align-items-center">
+								<div class="flex-shrink-0">
+									<img src="${baseURL}public/images/officials/img-25.png" alt="" class="avatar-sm rounded-circle" />
+								</div>
+								<div class="flex-grow-1 ms-3">
+									<h5 class="list-title fs-15 mb-1">Hernando Liberato</h5>
+									<p class="list-text mb-0 fs-12">Administrative Staff</p>
 								</div>
 							</div>
-						`
-					$('#remarks').html(remarks)
-				} else {
-					remarks = ''
-					$('#remarks').html(remarks)
+							<p>Good Day! Please be informed that your requested credential/s is/are scheduled for pick-up and can now be claimed at the Records Section, Rothlener Building, PUP Quezon City. Please <b>Request an Appointment</b> on the <a href="https://apps.pup.edu.ph/appointment" class="link-primary fw-medium">Visitors Appointment Scheduling System (VASS)</a> for your desired date and time in claiming the documents. You are required to present your <b>Gate Pass</b> generated from <b>Approved Appointments</b> on VASS before being allowed to enter the PUP QC premises. If you are unable to come on your scheduled date, you will need to re-schedule another date on VAAS to pick-up your documents. Thank you.</p>
+				`
+
+				if (data.remarks !== null) {
+					remarks += `
+						<p class="mt-4 fw-medium">${data.remarks}</p>
+					`
 				}
+
+				remarks += `
+						</div>
+					</div>
+				`
+				$('#remarks').html(remarks)
+			} else if (data.remarks !== null) {
+				remarks = `
+					<div class="h6 fs-15 text-primary">Remarks</div>
+					<div class="list-group">
+						<div class="list-group-item list-group-item-action">
+							<div class="d-flex mb-2 align-items-center">
+								<div class="flex-shrink-0">
+									<img src="${baseURL}public/images/officials/img-25.png" alt="" class="avatar-sm rounded-circle" />
+								</div>
+								<div class="flex-grow-1 ms-3">
+									<h5 class="list-title fs-15 mb-1">Hernando Liberato</h5>
+									<p class="list-text mb-0 fs-12">Administrative Staff</p>
+								</div>
+							</div>
+							<p>${data.remarks}</p>
+						</div>
+					</div>
+				`
+				$('#remarks').html(remarks)
+			} else {
+				remarks = ''
+				$('#remarks').html(remarks)
 			}
 		},
 	})
