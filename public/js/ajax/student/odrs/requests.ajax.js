@@ -2,63 +2,6 @@ $(function () {
 	loadRequestsTable()
 })
 
-// Cancel Request
-cancelRequest = () => {
-	Swal.fire({
-		html:
-			'<div class="mt-3">' +
-			'<lord-icon src="https://cdn.lordicon.com/puvaffet.json" trigger="loop" colors="primary:#f7b84b,secondary:#f06548" style="width:100px;height:100px"></lord-icon>' +
-			'<div class="mt-4 pt-2 fs-15 mx-5">' +
-			'<h4>Are you sure?</h4>' +
-			'<p class="text-muted mx-4 mb-0">Do you want to cancel this request?</p>' +
-			'</div>' +
-			'</div>',
-		showCancelButton: true,
-		confirmButtonClass: 'btn btn-danger w-xs me-2 mb-1',
-		confirmButtonText: 'Yes, Cancel It!',
-		cancelButtonClass: 'btn btn-ghost-danger w-xs mb-1',
-		cancelButtonText: 'Dismiss',
-		buttonsStyling: false,
-		showCloseButton: true,
-	}).then(function (result) {
-		if (result.value) {
-			Swal.fire({
-				html:
-					'<div class="mt-3">' +
-					'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
-					'<div class="mt-4 pt-2 fs-15">' +
-					'<h4>Well done!</h4>' +
-					'<p class="text-muted mx-4 mb-0">You have successfully cancelled this request!</p>' +
-					'</div>' +
-					'</div>',
-				showCancelButton: !0,
-				showConfirmButton: !1,
-				cancelButtonClass: 'btn btn-primary w-xs mb-1',
-				cancelButtonText: 'Back',
-				buttonsStyling: !1,
-				showCloseButton: !0,
-			}).fail(() => {
-				Swal.fire({
-					html:
-						'<div class="mt-3">' +
-						'<lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon>' +
-						'<div class="mt-4 pt-2 fs-15">' +
-						'<h4>Something went Wrong!</h4>' +
-						'<p class="text-muted mx-4 mb-0">There was an error while cancelling this request. Please try again.</p>' +
-						'</div>' +
-						'</div>',
-					showCancelButton: !0,
-					showConfirmButton: !1,
-					cancelButtonClass: 'btn btn-primary w-xs mb-1',
-					cancelButtonText: 'Dismiss',
-					buttonsStyling: !1,
-					showCloseButton: !0,
-				})
-			})
-		}
-	})
-}
-
 // Load Requests Table
 loadRequestsTable = () => {
 	const dt = $('#requests-datatable')
@@ -67,7 +10,7 @@ loadRequestsTable = () => {
 		dt.DataTable({
 			bDestroy: true,
 			ajax: {
-				url: apiURL + 'odrs/student/view_requests',
+				url: `${apiURL}/odrs/student/view_requests`,
 				type: 'GET',
 				ContentType: 'application/x-www-form-urlencoded',
 				headers: AJAX_HEADERS,
@@ -229,23 +172,23 @@ loadRequestsTable = () => {
 							return `
 							<div class="vstack gap-2">
 								<button type="button" class="btn btn-sm btn-info text-center waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails" onclick = "viewRequestDetails('${data.request_id}')"><i class="mdi mdi-eye label-icon align-middle me-2"></i> View Details</button>
-								<button type="button" class="btn btn-sm btn-light waves-effect waves-light" onclick="cancelRequest()"><i class="ri-close-fill label-icon align-middle me-2"></i> Cancel</button>
+								<button type="button" class="btn btn-sm btn-light waves-effect waves-light" onclick="cancelRequest('${data.request_id}')"><i class="ri-close-fill label-icon align-middle me-2"></i> Cancel</button>
 							</div>
 							`
 						} else if (requestStatus === 'For Clearance') {
 							return `
 								<div class="vstack gap-2">
-									<button type="button" class="btn btn-sm btn-info text-center waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails" onclick = "viewRequestDetails('${data.request_id}')"><i class="mdi mdi-eye label-icon align-middle me-2"></i> View Details</button>
+									<button type="button" class="btn btn-sm btn-info text-center waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails" onclick="viewRequestDetails('${data.request_id}')"><i class="mdi mdi-eye label-icon align-middle me-2"></i> View Details</button>
 									<a type="button" class="btn btn-sm btn-success text-center waves-effect waves-light" href="${baseURL}public/file/Request-Form.pdf" download="Request-Form"><i class="mdi mdi-download label-icon align-middle me-2"></i> Download Request Form</a>
 								</div>
 								<div class="mt-4 d-grid">
-									<button type="button" class="btn btn-sm btn-light waves-effect waves-light" onclick="cancelRequest()"><i class="ri-close-fill label-icon align-middle me-2"></i> Cancel</button>
+									<button type="button" class="btn btn-sm btn-light waves-effect waves-light" onclick="cancelRequest('${data.request_id}')"><i class="ri-close-fill label-icon align-middle me-2"></i> Cancel</button>
 								</div>
 							`
 						} else {
 							return `
 							<div class="vstack">
-								<button type="button" class="btn btn-sm btn-info text-center waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails"  onclick = "viewRequestDetails('${data.request_id}')"><i class="mdi mdi-eye label-icon align-middle me-2"></i> View Details</button>
+								<button type="button" class="btn btn-sm btn-info text-center waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails"  onclick="viewRequestDetails('${data.request_id}')"><i class="mdi mdi-eye label-icon align-middle me-2"></i> View Details</button>
 							</div>
 							`
 						}
@@ -262,7 +205,7 @@ viewRequestDetails = (request_id) => {
 	$.ajax({
 		type: 'GET',
 		cache: false,
-		url: apiURL + `odrs/student/view_request/${request_id}`,
+		url: `${apiURL}/odrs/student/view_request/${request_id}`,
 		dataType: 'json',
 		ContentType: 'application/x-www-form-urlencoded',
 		headers: AJAX_HEADERS,
@@ -674,5 +617,78 @@ viewRequestDetails = (request_id) => {
 				}
 			}
 		},
+	})
+}
+
+// Cancel Request
+cancelRequest = (request_id) => {
+	Swal.fire({
+		html:
+			'<div class="mt-3">' +
+			'<lord-icon src="https://cdn.lordicon.com/puvaffet.json" trigger="loop" colors="primary:#f7b84b,secondary:#f06548" style="width:100px;height:100px"></lord-icon>' +
+			'<div class="mt-4 pt-2 fs-15 mx-5">' +
+			'<h4>Are you sure?</h4>' +
+			'<p class="text-muted mx-4 mb-0">Do you want to cancel this request?</p>' +
+			'</div>' +
+			'</div>',
+		showCancelButton: true,
+		confirmButtonClass: 'btn btn-danger w-xs me-2 mb-1',
+		confirmButtonText: 'Yes, Cancel It!',
+		cancelButtonClass: 'btn btn-ghost-danger w-xs mb-1',
+		cancelButtonText: 'Dismiss',
+		buttonsStyling: false,
+		showCloseButton: true,
+	}).then(function (result) {
+		if (result.value) {
+			$.ajax({
+				type: 'PUT',
+				url: `${apiURL}/odrs/student/update_request_status/Cancelled/${request_id}`,
+				ContentType: 'application/x-www-form-urlencoded',
+				cache: false,
+				dataType: 'json',
+				headers: AJAX_HEADERS,
+				success: (result) => {
+					if (result) {
+						Swal.fire({
+							html:
+								'<div class="mt-3">' +
+								'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
+								'<div class="mt-4 pt-2 fs-15">' +
+								'<h4>Well done !</h4>' +
+								'<p class="text-muted mx-4 mb-0">You have successfully cancelled a request!</p>' +
+								'</div>' +
+								'</div>',
+							showCancelButton: !0,
+							showConfirmButton: !1,
+							cancelButtonClass: 'btn btn-primary w-xs mb-1',
+							cancelButtonText: 'Ok',
+							buttonsStyling: !1,
+							showCloseButton: !0,
+						}).then(function () {
+							// Reload Requests Datatable
+							// Cancelled Requests will go to History Page
+							loadRequestsTable()
+						})
+					}
+				},
+			}).fail(() => {
+				Swal.fire({
+					html:
+						'<div class="mt-3">' +
+						'<lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon>' +
+						'<div class="mt-4 pt-2 fs-15">' +
+						'<h4>Something went Wrong !</h4>' +
+						'<p class="text-muted mx-4 mb-0">There was an error while cancelling a request. Please try again.</p>' +
+						'</div>' +
+						'</div>',
+					showCancelButton: !0,
+					showConfirmButton: !1,
+					cancelButtonClass: 'btn btn-primary w-xs mb-1',
+					cancelButtonText: 'Dismiss',
+					buttonsStyling: !1,
+					showCloseButton: !0,
+				})
+			})
+		}
 	})
 }
