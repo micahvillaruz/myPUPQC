@@ -108,12 +108,12 @@
           <div class="mb-3">
             <div>
               <label for="exampleInputdate" class="form-label">Start date of Symptoms</label>
-              <input type="date" class="form-control" id="symptoms_date" name="symptoms_date">
+              <input type="date" class="form-control" id="symptoms_date" name="symptoms_date" required>
             </div>
             <div class="mb-3">
               <div>
                 <label for="exampleInputdate" class="form-label"> Schedule date for Consultation </label>
-                <input type="date" class="form-control" id="consultation_date" name="consultation_date">
+                <input type="date" class="form-control" id="consultation_date" name="consultation_date" required>
               </div>
               <label for="exampleInputdate" class="form-label"> Time </label>
               <div class="mx-5">

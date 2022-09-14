@@ -108,18 +108,14 @@
             <input type="text" class="form-control" id="consultation_reason" name="consultation_reason" placeholder="Enter your reason" required>
           </div>
           <div class="mb-3">
-            <label for="nameInput" class="form-label"> Enter Dentist <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="health_appointment_assigned_to_physician" name="first_name last_name" placeholder="Enter name of Dentist" required>
-          </div>
-          <div class="mb-3">
-            <div>
+          <div>
               <label for="exampleInputdate" class="form-label">Start date of Symptoms</label>
-              <input type="date" class="form-control" id=symptoms_date" name="symptoms_date">
+              <input type="date" class="form-control" id="symptoms_date" name="symptoms_date" required>
             </div>
             <div class="mb-3">
               <div>
                 <label for="exampleInputdate" class="form-label"> Schedule date for Consultation </label>
-                <input type="date" class="form-control" id="'consultation_date" name="consultation_date">
+                <input type="date" class="form-control" id="consultation_date" name="consultation_date" required>
               </div>
               <label for="exampleInputdate" class="form-label"> Time </label>
               <div class="mx-5">
