@@ -10,7 +10,7 @@ loadRequestsTable = () => {
 		dt.DataTable({
 			bDestroy: true,
 			ajax: {
-				url: `${apiURL}/odrs/student/view_requests`,
+				url: `${apiURL}odrs/student/view_requests`,
 				type: 'GET',
 				headers: AJAX_HEADERS,
 			},
@@ -203,7 +203,7 @@ loadRequestsTable = () => {
 viewRequestDetails = (request_id) => {
 	$.ajax({
 		type: 'GET',
-		url: `${apiURL}/odrs/student/view_request/${request_id}`,
+		url: `${apiURL}odrs/student/view_request/${request_id}`,
 		dataType: 'json',
 		headers: AJAX_HEADERS,
 		success: (result) => {
@@ -625,7 +625,7 @@ cancelRequest = (request_id) => {
 		if (result.value) {
 			$.ajax({
 				type: 'PUT',
-				url: `${apiURL}/odrs/student/update_request_status/Cancelled/${request_id}`,
+				url: `${apiURL}odrs/student/update_request_status/Cancelled/${request_id}`,
 				dataType: 'json',
 				headers: AJAX_HEADERS,
 				success: (result) => {

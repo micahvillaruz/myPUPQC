@@ -10,7 +10,7 @@ loadHistoryTable = () => {
 		dt.DataTable({
 			bDestroy: true,
 			ajax: {
-				url: `${apiURL}/odrs/student/requests_history`,
+				url: `${apiURL}odrs/student/requests_history`,
 				type: 'GET',
 				headers: AJAX_HEADERS,
 			},
@@ -145,7 +145,7 @@ loadHistoryTable = () => {
 viewRequestDetails = (request_id) => {
 	$.ajax({
 		type: 'GET',
-		url: `${apiURL}/odrs/student/view_request/${request_id}`,
+		url: `${apiURL}odrs/student/view_request/${request_id}`,
 		dataType: 'json',
 		headers: AJAX_HEADERS,
 		success: (result) => {
