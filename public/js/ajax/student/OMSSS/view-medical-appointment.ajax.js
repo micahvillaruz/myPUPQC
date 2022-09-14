@@ -96,7 +96,7 @@ loadMedicalTable = () => {
 				{
 					data: null,
 					render: (data) => {
-						const sympDate = moment(data.symptoms_date).format('LL')
+						const sympDate = moment(data.symptoms_date).utc().format('LL')
 
 						return `${sympDate}`
 					},
@@ -128,7 +128,7 @@ loadMedicalTable = () => {
 					render: (data) => {
 						const consultation_date = moment(data.consultation_date).format('LL')
 						const consultation_time = data.consultation_time
-						return `${consultation_date}\n${consultation_time}`
+						return `${consultation_date} (${consultation_time})`
 					},
 				},
 				//Action

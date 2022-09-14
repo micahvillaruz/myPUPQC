@@ -37,17 +37,6 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Date Created</h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_date_of_symptoms"></div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
                   <h5 class="fs-13 mb-1">Scheduled Date</h5>
                 </div>
                 <div class="col-8">
@@ -111,11 +100,6 @@
             <label for="nameInput" class="form-label"> Enter Psychologist <span class="text-danger">*</span></label>
             <input type="text" class="form-control" id="health_appointment_assigned_to_physician" name="first_name last_name" placeholder="Enter name of Psychologist" required>
           </div>
-          <div class="mb-3">
-            <div>
-              <label for="exampleInputdate" class="form-label">Start date of Symptoms</label>
-              <input type="date" class="form-control" id="symptoms_date">
-            </div>
             <div class="mb-3">
               <div>
                 <label for="exampleInputdate" class="form-label"> Schedule date for Consultation </label>

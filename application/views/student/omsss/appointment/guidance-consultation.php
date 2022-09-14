@@ -13,7 +13,6 @@
           <thead>
             <tr>
               <th>Case Details</th>
-              <th>Date Creared</th>
               <th>Status</th>
               <th>Attending Psychologist</th>
               <th>Schedule</th>
