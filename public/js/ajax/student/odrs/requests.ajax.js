@@ -648,7 +648,7 @@ cancelRequest = (request_id) => {
 						}).then(function () {
 							// Reload Requests Datatable
 							// Cancelled Requests will go to History Page
-							loadRequestsTable()
+							window.location.href = `${baseURL}student/history`
 						})
 					}
 				},
