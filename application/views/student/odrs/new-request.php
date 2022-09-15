@@ -45,86 +45,13 @@
                 </li>
               </ul>
               <!-- Tab panes -->
-              <div class="tab-content text-muted">
-                <div class="tab-pane active" id="tor" role="tabpanel">
-                  <table class="table dt-responsive nowrap align-middle" id="documentsTOR" style="width: 100%">
-                    <thead>
-                      <tr>
-                        <th scope="col">
-                        </th>
-                        <th data-ordering="false">
-                          Document (Click the document/s you want to request)</th>
-                        <th>Quantity</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="tab-pane" id="certificates" role="tabpanel">
-                  <table class="table dt-responsive nowrap align-middle" id="documentsCert" style="width: 100%">
-                    <thead>
-                      <tr>
-                        <th scope="col">
-                        </th>
-                        <th data-ordering="false">
-                          Document (Click the document/s you want to request)</th>
-                        <th>Quantity</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="tab-pane" id="unclaimed" role="tabpanel">
-                  <table class="table dt-responsive nowrap align-middle" id="documentsUncl" style="width: 100%">
-                    <thead>
-                      <tr>
-                        <th scope="col">
-                        </th>
-                        <th data-ordering="false">
-                          Document (Click the document/s you want to request)</th>
-                        <th>Quantity</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="tab-pane" id="cav" role="tabpanel">
-                  <table class="table dt-responsive nowrap align-middle" id="documentsCAV" style="width: 100%">
-                    <thead>
-                      <tr>
-                        <th scope="col">
-                        </th>
-                        <th data-ordering="false">
-                          Document (Click the document/s you want to request)</th>
-                        <th>Quantity</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                  </table>
-                </div>
+              <div class="tab-content text-muted" id="tabpanes">
               </div>
             </div>
             <!--end col-->
             <div class="col-lg-12">
               <label for="discription" class="form-label">Purpose of Request</label>
               <textarea class="form-control mt-3" id="purpose" rows="3" placeholder="Readmission, Employment, Transfer to other school, Board / Licensure Examination, Further Studies, Scholarship or Other Purpose" required></textarea>
-            </div>
-            <!--end col-->
-            <div class="col-lg-12">
-              <div>
-                <div class="form-check form-check-block">
-                  <input class="form-check-input" type="checkbox" value="option1" />
-                  <p class="form-check-label" for="inlineCheckbox2">I agree to the Office of the University Registrar's <a href="" class="link-primary fw-medium">Terms and Conditions</a></p>
-                </div>
-                <div class="form-check form-check-block">
-                  <input class="form-check-input" type="checkbox" value="option2" />
-                  <p class="form-check-label" for="inlineCheckbox3">I checked ALL the documents I need to request <small>(Kindly check ALL the documents you need before clicking "Submit")</small></p>
-                </div>
-              </div>
             </div>
             <!--end col-->
             <div class="col-lg-12 mt-4">
