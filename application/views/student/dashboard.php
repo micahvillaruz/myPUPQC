@@ -6,8 +6,8 @@
           <i class="mdi mdi-clock-time-four-outline text-primary me-2 fs-20"></i>
           <span class="fw-medium">Digital Clock</span>
         </div>
-        <div class="row align-items-end py-3">
-          <div class="col-sm-4 p-3">
+        <div class="row align-items-center py-4">
+          <div class="col-sm-4">
             <div class="circle">
               <div class="face">
                 <div id="hour" class="hour"></div>
@@ -17,17 +17,15 @@
             </div>
           </div>
           <div class="col-sm-5">
-            <div class="p-3">
-              <div class="d-flex align-items-center">
-                <h1 id="clockTime" class="display-6 fw-medium"></h1>
-                <span id="clockSession" class="ms-2 fs-3"></span>
-              </div>
-              <p id="clockDate" class="fs-4"></p>
-              <span class="badge bg-primary fs-13">PHILIPPINE STANDARD TIME</span>
+            <div class="d-flex align-items-center">
+              <h1 id="clockTime" class="display-6 fw-medium"></h1>
+              <span id="clockSession" class="ms-2 fs-3"></span>
             </div>
+            <p id="clockDate" class="fs-4"></p>
+            <span class="badge bg-primary fs-13">PHILIPPINE STANDARD TIME</span>
           </div>
-          <div class="col-sm-3">
-            <div class="px-3">
+          <div class="col-sm-3 align-self-end">
+            <div class="pe-3">
               <img src="<?= base_url() ?>public/images/user-illustarator-2.png" class="img-fluid" alt="" />
             </div>
           </div>
@@ -35,8 +33,7 @@
       </div>
       <!-- end card-body-->
     </div>
-
-    <blockquote class="blockquote custom-blockquote blockquote-outline blockquote-primary rounded">
+    <blockquote class="blockquote custom-blockquote blockquote-outline blockquote-primary rounded py-4">
       <div class="row g-0">
         <div class="col-md-4">
           <img id="background" class="rounded-start img-fluid h-100 object-cover" src="https://theysaidso.com/img/qod/qod-inspire.jpg" alt="Card image" />
@@ -57,16 +54,203 @@
         </div>
       </div>
     </blockquote>
+  </div>
+  <div class="col-6">
+    <div class="card card-animate mb-3">
+      <div class="card-header align-items-center d-flex">
+        <h4 class="card-title mb-0 flex-grow-1">EVRSERS TRACKER - <span class="fs-15">Upcoming Events</span>
+        </h4>
+        <div class="flex-shrink-0">
+          <div class="dropdown card-header-dropdown">
+            <a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="text-muted fs-18"><i class="mdi mdi-dots-vertical"></i></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end">
+              <a class="dropdown-item" href="#">Edit</a>
+              <a class="dropdown-item" href="#">Remove</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end card header -->
+      <div class="card-body pt-0">
+        <ul class="list-group list-group-flush border-dashed">
+          <li class="list-group-item ps-0">
+            <div class="row align-items-center g-3">
+              <div class="col-auto mini-stats-wid">
+                <div class="avatar-sm p-1 py-2 h-auto bg-light rounded-3 mini-stat-icon bg-soft-success">
+                  <div class="text-center">
+                    <h5 class="mb-0">25</h5>
+                    <div class="text-muted">Tue</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div>
+                    <h5 class="text-muted mt-0 mb-1 fs-13">12:00am - 03:30pm</h5>
+                    <a href="#" class="text-reset fs-14 mb-0">Level Up: An Interactive Webinar in Information & Database Management</a>
+                  </div>
+                  <span class="badge badge-outline-info fs-12">
+                    <i class="mdi mdi-laptop me-1"></i>
+                    COMMITS
+                  </span>
+                </div>
+              </div>
+            </div>
+            <!-- end row -->
+          </li>
+          <!-- end -->
+          <li class="list-group-item ps-0">
+            <div class="row align-items-center g-3">
+              <div class="col-auto mini-stats-wid">
+                <div class="avatar-sm p-1 py-2 h-auto bg-light rounded-3 mini-stat-icon bg-soft-success">
+                  <div class="text-center">
+                    <h5 class="mb-0">20</h5>
+                    <div class="text-muted">Wed</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div>
+                    <h5 class="text-muted mt-0 mb-1 fs-13">02:00pm - 03:45pm</h5>
+                    <a href="#" class="text-reset fs-14 mb-0">#UNFILTERED: Behind the Scenes of Content Creation in Social Media Marketing</a>
+                  </div>
+                  <span class="badge badge-outline-success fs-12">
+                    <i class="mdi mdi-bank me-1"></i>
+                    JMS
+                  </span>
+                </div>
+              </div>
+            </div>
+            <!-- end row -->
+          </li>
+          <!-- end -->
+          <li class="list-group-item ps-0">
+            <div class="row align-items-center g-3">
+              <div class="col-auto mini-stats-wid">
+                <div class="avatar-sm p-1 py-2 h-auto bg-light rounded-3 mini-stat-icon bg-soft-success">
+                  <div class="text-center">
+                    <h5 class="mb-0">17</h5>
+                    <div class="text-muted">Wed</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div>
+                    <h5 class="text-muted mt-0 mb-1 fs-13">04:30pm - 07:15pm</h5>
+                    <a href="#" class="text-reset fs-14 mb-0">INTELLIGENTES Meet 2022</a>
+                  </div>
+                  <span class="badge badge-outline-danger fs-12">
+                    <i class="mdi mdi-school me-1"></i>
+                    KATAGA
+                  </span>
+                </div>
+              </div>
+            </div>
+            <!-- end row -->
+          </li>
+          <!-- end -->
+          <li class="list-group-item ps-0">
+            <div class="row align-items-center g-3">
+              <div class="col-auto mini-stats-wid">
+                <div class="avatar-sm p-1 py-2 h-auto bg-light rounded-3 mini-stat-icon bg-soft-success">
+                  <div class="text-center">
+                    <h5 class="mb-0">12</h5>
+                    <div class="text-muted">Tue</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div>
+                    <h5 class="text-muted mt-0 mb-1 fs-13">10:30am - 01:15pm</h5>
+                    <a href="#" class="text-reset fs-14 mb-0">In-house Leadership Training and Capacity-Building Program</a>
+                  </div>
+                  <span class="badge badge-outline-dark fs-12">
+                    <i class="mdi mdi-account-group me-1"></i>
+                    SSC
+                  </span>
+                </div>
+              </div>
+              <!-- end row -->
+            </div>
+          </li>
+          <!-- end -->
+          <li class="list-group-item ps-0">
+            <div class="row align-items-center g-3">
+              <div class="col-auto mini-stats-wid">
+                <div class="avatar-sm p-1 py-2 h-auto bg-light rounded-3 mini-stat-icon bg-soft-success">
+                  <div class="text-center">
+                    <h5 class="mb-0">05</h5>
+                    <div class="text-muted">Thu</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div>
+                    <h5 class="text-muted mt-0 mb-1 fs-13">08:00am - 1:30pm</h5>
+                    <a href="#" class="text-reset fs-14 mb-0">Start, Generate, and Evaluate Your Business</a>
+                  </div>
+                  <span class="badge badge-outline-primary fs-12">
+                    <i class="bx bxs-school me-1"></i>
+                    PUPQC
+                  </span>
+                </div>
+              </div>
+              <!-- end row -->
+            </div>
+          </li>
+          <!-- end -->
+        </ul>
+        <!-- end -->
+        <div class="align-items-center mt-1 row text-center text-sm-start">
+          <div class="col-sm">
+            <div class="text-muted">
+              Showing<span class="fw-semibold ms-1">4</span> of
+              <span class="fw-semibold">125</span> Results
+            </div>
+          </div>
+          <div class="col-sm-auto">
+            <ul class="pagination pagination-separated pagination-sm justify-content-center justify-content-sm-start mb-0">
+              <li class="page-item disabled">
+                <a href="#" class="page-link">←</a>
+              </li>
+              <li class="page-item">
+                <a href="#" class="page-link">1</a>
+              </li>
+              <li class="page-item active">
+                <a href="#" class="page-link">2</a>
+              </li>
+              <li class="page-item">
+                <a href="#" class="page-link">3</a>
+              </li>
+              <li class="page-item">
+                <a href="#" class="page-link">→</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- end card body -->
+    </div>
+    <!-- end card -->
+  </div>
+</div>
 
+<div class="row">
+  <div class="col-6">
     <div class="card card-animate">
       <div class="card-header">
         <h4 class="card-title mb-0">Announcements and Advisories</h4>
       </div>
       <!-- end card header -->
-
       <div class="card-body">
         <div class="mx-n3">
-          <div data-simplebar data-simplebar-auto-hide="false" data-simplebar-track="warning" style="max-height: 277px">
+          <div data-simplebar data-simplebar-auto-hide="false" data-simplebar-track="warning" style="max-height: 253px">
             <a href="https://www.facebook.com/sscpupquezoncity/videos/1919189238471683/" class="text-reset notification-item d-block dropdown-item" class="text-reset notification-item d-block dropdown-item active">
               <div class="d-flex">
                 <div class="flex-shrink-0 avatar-xs me-3">
@@ -254,218 +438,8 @@
         </div>
       </div>
     </div>
-    <!-- end card -->
-    <div class="card card-animate">
-      <div class="card-body">
-        <div class="text-center">
-          <div class="row justify-content-center">
-            <div class="col-lg-9">
-              <h4 class="mt-4 fw-semibold">Do You Have a Tooth Decay?</h4>
-              <p class="text-muted mt-3">
-                With regular dental check-ups, our dentists can help and give you a perfect treatment plan towards a perfect beautiful smile.
-              </p>
-              <div class="mt-4">
-                <button type="button" class="mb-5 btn fs-5 btn-secondary waves-effect waves-light"> <i class=" las la-tooth "></i> Book a Dental Consultation Appointment</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="row justify-content-center mt-5 mb-3">
-            <div class="col-sm-7 col-8">
-              <img src="<?= base_url() ?>public/images/dentist.png" alt="" class="img-fluid" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--end card-->
   </div>
-
-
   <div class="col-6">
-    <div class="card card-animate mb-3">
-      <div class="card-header align-items-center d-flex">
-        <h4 class="card-title mb-0 flex-grow-1">EVRSERS TRACKER - <span class="fs-15">Upcoming Events</span>
-        </h4>
-        <div class="flex-shrink-0">
-          <div class="dropdown card-header-dropdown">
-            <a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="text-muted fs-18"><i class="mdi mdi-dots-vertical"></i></span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-end">
-              <a class="dropdown-item" href="#">Edit</a>
-              <a class="dropdown-item" href="#">Remove</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end card header -->
-      <div class="card-body pt-0">
-        <ul class="list-group list-group-flush border-dashed">
-          <li class="list-group-item ps-0">
-            <div class="row align-items-center g-3">
-              <div class="col-auto mini-stats-wid">
-                <div class="avatar-sm p-1 py-2 h-auto bg-light rounded-3 mini-stat-icon bg-soft-success">
-                  <div class="text-center">
-                    <h5 class="mb-0">25</h5>
-                    <div class="text-muted">Tue</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="d-flex align-items-center justify-content-between">
-                  <div>
-                    <h5 class="text-muted mt-0 mb-1 fs-13">12:00am - 03:30pm</h5>
-                    <a href="#" class="text-reset fs-14 mb-0">Level Up: An Interactive Webinar in Information & Database Management</a>
-                  </div>
-                  <span class="badge badge-outline-info fs-12">
-                    <i class="mdi mdi-laptop me-1"></i>
-                    COMMITS
-                  </span>
-                </div>
-              </div>
-            </div>
-            <!-- end row -->
-          </li>
-          <!-- end -->
-          <li class="list-group-item ps-0">
-            <div class="row align-items-center g-3">
-              <div class="col-auto mini-stats-wid">
-                <div class="avatar-sm p-1 py-2 h-auto bg-light rounded-3 mini-stat-icon bg-soft-success">
-                  <div class="text-center">
-                    <h5 class="mb-0">20</h5>
-                    <div class="text-muted">Wed</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="d-flex align-items-center justify-content-between">
-                  <div>
-                    <h5 class="text-muted mt-0 mb-1 fs-13">02:00pm - 03:45pm</h5>
-                    <a href="#" class="text-reset fs-14 mb-0">#UNFILTERED: Behind the Scenes of Content Creation in Social Media Marketing</a>
-                  </div>
-                  <span class="badge badge-outline-success fs-12">
-                    <i class="mdi mdi-bank me-1"></i>
-                    JMS
-                  </span>
-                </div>
-              </div>
-            </div>
-            <!-- end row -->
-          </li>
-          <!-- end -->
-          <li class="list-group-item ps-0">
-            <div class="row align-items-center g-3">
-              <div class="col-auto mini-stats-wid">
-                <div class="avatar-sm p-1 py-2 h-auto bg-light rounded-3 mini-stat-icon bg-soft-success">
-                  <div class="text-center">
-                    <h5 class="mb-0">17</h5>
-                    <div class="text-muted">Wed</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="d-flex align-items-center justify-content-between">
-                  <div>
-                    <h5 class="text-muted mt-0 mb-1 fs-13">04:30pm - 07:15pm</h5>
-                    <a href="#" class="text-reset fs-14 mb-0">INTELLIGENTES Meet 2022</a>
-                  </div>
-                  <span class="badge badge-outline-danger fs-12">
-                    <i class="mdi mdi-school me-1"></i>
-                    KATAGA
-                  </span>
-                </div>
-              </div>
-            </div>
-            <!-- end row -->
-          </li>
-          <!-- end -->
-          <li class="list-group-item ps-0">
-            <div class="row align-items-center g-3">
-              <div class="col-auto mini-stats-wid">
-                <div class="avatar-sm p-1 py-2 h-auto bg-light rounded-3 mini-stat-icon bg-soft-success">
-                  <div class="text-center">
-                    <h5 class="mb-0">12</h5>
-                    <div class="text-muted">Tue</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="d-flex align-items-center justify-content-between">
-                  <div>
-                    <h5 class="text-muted mt-0 mb-1 fs-13">10:30am - 01:15pm</h5>
-                    <a href="#" class="text-reset fs-14 mb-0">In-house Leadership Training and Capacity-Building Program</a>
-                  </div>
-                  <span class="badge badge-outline-dark fs-12">
-                    <i class="mdi mdi-account-group me-1"></i>
-                    SSC
-                  </span>
-                </div>
-              </div>
-              <!-- end row -->
-            </div>
-          </li>
-          <!-- end -->
-          <li class="list-group-item ps-0">
-            <div class="row align-items-center g-3">
-              <div class="col-auto mini-stats-wid">
-                <div class="avatar-sm p-1 py-2 h-auto bg-light rounded-3 mini-stat-icon bg-soft-success">
-                  <div class="text-center">
-                    <h5 class="mb-0">05</h5>
-                    <div class="text-muted">Thu</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="d-flex align-items-center justify-content-between">
-                  <div>
-                    <h5 class="text-muted mt-0 mb-1 fs-13">08:00am - 1:30pm</h5>
-                    <a href="#" class="text-reset fs-14 mb-0">Start, Generate, and Evaluate Your Business</a>
-                  </div>
-                  <span class="badge badge-outline-primary fs-12">
-                    <i class="bx bxs-school me-1"></i>
-                    PUPQC
-                  </span>
-                </div>
-              </div>
-              <!-- end row -->
-            </div>
-          </li>
-          <!-- end -->
-        </ul>
-        <!-- end -->
-        <div class="align-items-center mt-1 row text-center text-sm-start">
-          <div class="col-sm">
-            <div class="text-muted">
-              Showing<span class="fw-semibold ms-1">4</span> of
-              <span class="fw-semibold">125</span> Results
-            </div>
-          </div>
-          <div class="col-sm-auto">
-            <ul class="pagination pagination-separated pagination-sm justify-content-center justify-content-sm-start mb-0">
-              <li class="page-item disabled">
-                <a href="#" class="page-link">←</a>
-              </li>
-              <li class="page-item">
-                <a href="#" class="page-link">1</a>
-              </li>
-              <li class="page-item active">
-                <a href="#" class="page-link">2</a>
-              </li>
-              <li class="page-item">
-                <a href="#" class="page-link">3</a>
-              </li>
-              <li class="page-item">
-                <a href="#" class="page-link">→</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- end card body -->
-    </div>
-    <!-- end card -->
-
     <div class="card card-animate">
       <div class="card-body">
         <div class="text-center">
@@ -475,13 +449,12 @@
               <p class="text-muted mt-3">
                 Expect the quality health care services as you conveniently book your appointments, and get e-prescriptions from our university doctor.
               </p>
-              <div class="mt-4">
-                <button type="button" class="mb-5 btn fs-5 btn-secondary waves-effect waves-light"> <i class=" las la-first-aid"></i> Book a Medical Consultation Appointment</button>
+              <div class="my-4">
+                <button type="button" class="btn fw-medium btn-secondary waves-effect waves-light"> <i class="las la-first-aid me-2"></i> Book a Medical Consultation Appointment</button>
               </div>
             </div>
           </div>
-
-          <div class="row justify-content-center mt-5 mb-3">
+          <div class="row justify-content-center mt-3">
             <div class="col-sm-7 col-8">
               <img src="<?= base_url() ?>public/images/doctor.png" alt="" class="img-fluid" />
             </div>
@@ -490,6 +463,37 @@
       </div>
     </div>
     <!--end card-->
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-6">
+    <div class="card card-animate">
+      <div class="card-body">
+        <div class="text-center">
+          <div class="row justify-content-center">
+            <div class="col-lg-9">
+              <h4 class="mt-4 fw-semibold">Do You Have a Tooth Decay?</h4>
+              <p class="text-muted mt-3">
+                With regular dental check-ups, our dentists can help and give you a perfect treatment plan towards a perfect beautiful smile.
+              </p>
+              <div class="my-4">
+                <button type="button" class="btn fw-medium btn-secondary waves-effect waves-light"> <i class="las la-tooth me-2"></i> Book a Dental Consultation Appointment</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center mt-3">
+            <div class="col-sm-7 col-8">
+              <img src="<?= base_url() ?>public/images/dentist.png" alt="" class="img-fluid" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end card-->
+  </div>
+  <div class="col-6">
     <div class="card card-animate">
       <div class="card-body">
         <div class="text-center">
@@ -499,25 +503,23 @@
               <p class="text-muted mt-3">
                 Our experienced psychologist offer free and confidential counselling support to all PUPQC students. Talk to us now if you're having emotional or psychological issues.
               </p>
-              <div class="mt-5">
-                <button type="button" class="mb-5 btn fs-5 btn-secondary waves-effect waves-light"> <i class=" mdi mdi-brain "></i> Book a Guidance Consultation Appointment</button>
+              <div class="my-4">
+                <button type="button" class="btn fw-medium btn-secondary waves-effect waves-light"> <i class="mdi mdi-brain me-2"></i> Book a Guidance Consultation Appointment</button>
               </div>
             </div>
           </div>
 
-          <div class="row justify-content-center mt-5 mb-4">
+          <div class="row justify-content-center mt-3">
             <div class="col-sm-7 col-8">
-              <img src="<?= base_url() ?>public/images/guidance.png" alt="" class="img-fluid" />
+              <img src="<?= base_url() ?>public/images/guidance.jpg" alt="" class="img-fluid" />
             </div>
           </div>
         </div>
       </div>
     </div>
     <!--end card-->
-
   </div>
 </div>
-<!-- end row -->
 
 <div class="row">
   <div class="col-4">
@@ -569,7 +571,6 @@
     </div>
   </div>
 </div>
-<!-- end row -->
 
 <div class="row">
   <div class="col-6">
