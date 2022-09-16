@@ -3,6 +3,7 @@
     <div class="card">
       <div class="card-header d-flex align-items-center justify-content-between">
         <h5 class="card-title mb-0">Documents</h5>
+        <button class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#addDocumentModal">Add Document</button>
       </div>
       <div class="card-body">
         <table id="model-datatables" class="table nowrap align-middle" style="width: 100%">
