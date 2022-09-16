@@ -5,135 +5,136 @@
       <h5 class="card-header mb-3 text-white p-3 bg-primary">Medical History</h5>
         <div class="card-body">
           <div class="">
+          <form action="javascript:void(0);" id="medicalHistoryForm">
               <p>Please <span>check</span> the items that apply to you.</p>
                 <p> </p>
                   <div class="mx-5">
                     <div class="row align-item-start">
                       <div class="col-6">
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                           <label class="form-check-label" for="flexCheckDefault">Arthritis</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckChecked">Bleeding Disorder</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckDefault">COVID-19</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckChecked">Hepatitis A</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckDefault">Chickenpox</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" value="" iid="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckChecked">High Blood Pressure  / Hypertension</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckDefault">High Risk Pregnancy</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckChecked">History of seious allergic reaction</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckDefault">Kidney Disease</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckChecked">Lung Disease</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckDefault">Mumps</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckChecked">Obesity</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckDefault">Poorly controlled HIV / AIDS</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckChecked">Tuberculosis</label>
                         </div>
                         <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                              <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                               <label class="form-check-label" for="flexCheckDefault">Use of immunosuppresant drugs (i.e Prednisone) / immunity lowering medication</label>
                         </div>
                         </div>
                         <div class="col-6">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckChecked">Asthma</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckDefault">Bone Marrow Transplant</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckChecked">Cancer</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckDefault">Chronic Obstructive Pulmonary Disease (COPD)</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckChecked">Diabetes</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckChecked">Hematologic Disease</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckChecked">Hepatitis B</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckChecked">High Colesterol</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckChecked">History of Organ Transplant</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckChecked">Immunodeficiency Disease</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckChecked">Liver Disease</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckChecked">Measles</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckChecked">Neurological Disease</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckChecked">On-going Dialysis</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckChecked">Prolonged use of steroids</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" value="" id="#medical_history" name="#medical_history">
                             <label class="form-check-label" for="flexCheckChecked">Typhoid</label> 
                         </div>
                       </div>
@@ -141,7 +142,8 @@
 											    <label for="exampleFormControlTextarea" class="form-label">Others:</label>
 												    <textarea
 													    class="form-control"
-													    id="exampleFormControlTextarea"
+													    id="#medical_history" 
+                              name="#medical_history"
 													    placeholder="Please use semi-colon (;) as seperator for ypur entries."
 													    rows="3"></textarea>
                             </div>
@@ -154,14 +156,14 @@
                                     <p>Please <span class="fw-bold">check</span> the items that apply to you.</p>
                                   </div> 
                                   <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                      <input class="form-check-input" type="checkbox" value="" id="social_history">
                                       <label class="form-check-label" for="flexCheckDefault">Are you a smoker?</label>
-                                      <input class="form-control" type="text" placeholder="If yes, how many sticks?">
+                                      <input class="form-control" type="text" name="social_history" placeholder="If yes, how many sticks?">
                                   </div>
                                   <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                      <input class="form-check-input" type="checkbox" value="" id="social_history">
                                       <label class="form-check-label" for="flexCheckChecked">Do you drink alcohol?</label>
-                                      <input class="form-control" type="text" placeholder="If yes, how many bottles per week?">
+                                      <input class="form-control" type="text" name="social_history" placeholder="If yes, how many bottles per week?">
                                   </div>
                                   </div>
                                 </div>
@@ -175,7 +177,8 @@
 											                  <label for="exampleFormControlTextarea" class="form-label"></label>
 												                  <textarea
 													                  class="form-control"
-													                  id="exampleFormControlTextarea"
+													                  id="allergy"
+                                            name="allergy"
 													                  placeholder="Please use semi-colon (;) as seperator for ypur entries."
 													                  rows="3"></textarea>
                                       </div>
@@ -193,7 +196,8 @@
 											                  <label for="exampleFormControlTextarea" class="form-label"></label>
 												                  <textarea
 													                  class="form-control"
-													                  id="exampleFormControlTextarea"
+													                  id="family_history"
+                                            name="family_history"
 													                  placeholder="Please use semi-colon (;) as seperator for ypur entries."
 													                  rows="3"></textarea>
                                       </div>
@@ -209,7 +213,8 @@
 											                  <label for="exampleFormControlTextarea" class="form-label"></label>
 												                  <textarea
 													                  class="form-control"
-													                  id="exampleFormControlTextarea"
+													                  id="medications"
+                                            name="medications"
 													                  placeholder="Please use semi-colon (;) as seperator for ypur entries."
 													                  rows="3"></textarea>
                                       </div>
@@ -218,7 +223,7 @@
                                             <div class="col-lg-11">
                                               <div class="hstack gap-2 justify-content-end">
                                                 <button type="submit" class="btn btn-primary">Submit</button>
-                                                <button type="button" class="btn btn-light">Cancel</button>
+                                                <button type="button" class="btn btn-ghost-primary waves-effect waves-light">Cancel</button>
                                               </div>
                                           </div>
                                          <!--end col-->

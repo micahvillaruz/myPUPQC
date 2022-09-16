@@ -32,13 +32,13 @@ loadMedicalLogsTable = () => {
 					},
 				},
 
-				// Status
+				// Symptoms Date
 				{
 					data: null,
 					render: (data) => {
-						return data.consultation_status == 'Pending'
-							? `<span class="badge rounded-pill bg-warning">Pending</span>`
-							: `<span class="badge rounded-pill bg-success">Approved</span>`
+						const sympDate = moment(data.symptoms_date).utc().format('LL')
+
+						return `${sympDate}`
 					},
 				},
 
@@ -63,6 +63,16 @@ loadMedicalLogsTable = () => {
 						const consultation_date = moment(data.consultation_date).format('LL')
 						const consultation_time = data.consultation_time
 						return `${consultation_date} (${consultation_time})`
+					},
+				},
+
+				// Status
+				{
+					data: null,
+					render: (data) => {
+						return data.consultation_status == 'Cancelled'
+							? `<span class="badge rounded-pill text-dark bg-soft-dark ">Cancelled</span>`
+							: `<span class="badge rounded-pill bg-success">Done</span>`
 					},
 				},
 			],

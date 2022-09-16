@@ -1,6 +1,5 @@
 $(function () {
-	loadMedicalHistory()
-	editMedicalHistoryInput()
+	editMedicalHistory()
 
 	$('#medicalHistoryForm').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
@@ -10,7 +9,7 @@ $(function () {
 })
 
 // Edit Medical History
-editMedicalHistoryInput = () => {
+editMedicalHistory = () => {
 	$.ajax({
 		url: apiURL + `omsss/student/medical_history`,
 		type: 'GET',
@@ -19,23 +18,14 @@ editMedicalHistoryInput = () => {
 			if (result) {
 				// Get data from result
 				const data = result.data
-				console.log(data)
-				$('#primary_contact_no').val(
-					data.patient_info_assigned_to_user.user_profiles[0].contact_number,
-				)
-				$('#primary_email').val(data.patient_info_assigned_to_user.user_profiles[0].email_address)
-				$('#facebook_username').val(data.facebook_username)
-				$('#emergency_contact_name').val(data.emergency_contact_name)
-				$('#emergency_contact_number').val(data.emergency_contact_number)
-				$('#email').val(data.emergency_contact_email)
-				$('#emergency_contact_address').val(
-					data.patient_info_assigned_to_user.user_profiles[0].full_address,
-				)
-				$('#philhealth_number').val(data.philhealth_number)
-				$('#philhealth_id_image').val(data.philhealth_id_image)
+				$('#medical_history').val(data.medical_history)
+				$('#social_history').val(data.social_history)
+				$('allergy').val(data.allergy)
+				$('#family_history').val(data.family_history)
+				$('#medications').val(data.medications)
 			}
 		},
-	}).fail(() => console.error('There was an error in retrieving student health history data'))
+	}).fail(() => console.error('There was an error in retrieving health history data'))
 }
 
 // Edit Admin AJAX
@@ -44,15 +34,12 @@ editMedicalHistoryAJAX = () => {
 	if ($('#medicalHistoryForm')[0]) {
 		// no validation error
 		const form = new FormData($('#medicalHistoryForm')[0])
-
 		data = {
-			facebook_username: form.get('facebook_username'),
-			emergency_contact_name: form.get('emergency_contact_name'),
-			emergency_contact_number: form.get('emergency_contact_number'),
-			emergency_contact_email: form.get('emergency_contact_email'),
-			emergency_contact_address: form.get('emergency_contact_address'),
-			philhealth_number: form.get('philhealth_number'),
-			philhealth_id_image: form.get('philhealth_id_image'),
+			medical_history: form.get('#medical_history'),
+			social_history: form.get('social_history'),
+			allergy: form.get('allergy'),
+			family_history: form.get('family_history'),
+			medications: form.get('medications'),
 		}
 
 		$.ajax({
