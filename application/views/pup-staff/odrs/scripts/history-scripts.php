@@ -11,6 +11,9 @@
 
 		<script src="<?= base_url() ?>public/js/pages/datatables.init.js"></script>
 
+		<!-- History ajax -->
+		<script src="<?= base_url() ?>public/js/ajax/pup-staff/odrs/history.ajax.js"></script>
+
 		<!-- App js -->
 		<script src="<?= base_url() ?>public/js/app.js"></script>
 		</body>
