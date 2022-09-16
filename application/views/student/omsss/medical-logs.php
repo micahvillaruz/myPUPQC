@@ -5,7 +5,7 @@
         <div class="card-body">
             <div class="">
               <div class="card-body">
-                <table id="example" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
+                <table id="medical-logs-datatable" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
                   <thead>
                     <tr>
                       <th>Case Details</th>

@@ -1,10 +1,10 @@
 $(function () {
-	loadGuidanceTable()
+	loadMedicalLogsTable()
 })
 
 // Load datatables
-loadGuidanceTable = () => {
-	const dt = $('#guidance-datatable')
+loadMedicalLogsTable = () => {
+	const dt = $('#medical-logs-datatable')
 
 	$.ajaxSetup({
 		headers: {
@@ -18,7 +18,7 @@ loadGuidanceTable = () => {
 		dt.DataTable({
 			bDestroy: true,
 			ajax: {
-				url: apiURL + 'omsss/student/view_guidance_appointment',
+				url: apiURL + 'omsss/student/appointment_logs',
 				type: 'GET',
 				// ContentType: 'application/x-www-form-urlencoded',
 			},
@@ -63,19 +63,6 @@ loadGuidanceTable = () => {
 						const consultation_date = moment(data.consultation_date).format('LL')
 						const consultation_time = data.consultation_time
 						return `${consultation_date} (${consultation_time})`
-					},
-				},
-
-				//Action
-				{
-					data: null,
-					class: 'text-center',
-					render: (data) => {
-						return `
-        <div class="dropdown d-inline-block">
-        <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewGuidanceDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewGuidanceModal"><i class="ri-eye-fill fs-5"></i></button>
-				<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="cancelGuidance('${data.health_appointment_id}')"><i class="bx bxs-user-x fs-4"></i></button>
-				</div>`
 					},
 				},
 			],
