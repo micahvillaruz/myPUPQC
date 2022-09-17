@@ -408,7 +408,7 @@ viewRequestDetails = (request_id) => {
 							</div>
 						</a>
 					</div>
-					<div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingFives" data-bs-parent="#accordionExample">
+					<div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
 						<div class="accordion-body ms-2 ps-5 pt-0">
 							<h6 class="mb-1">The requested documents has been cancelled.</h6>
 							<p class="text-muted mb-0">
