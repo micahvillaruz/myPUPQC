@@ -122,7 +122,7 @@ addNewGuidanceCase = () => {
 						$('form#NewGuidanceCaseForm')[0].reset()
 
 						// Reload Guidance Consultation Datatable
-						loadGuidanceTable()
+						window.location.reload()
 					})
 				}
 			},
@@ -227,7 +227,7 @@ cancelGuidance = (health_appointment_id) => {
 							showCloseButton: !0,
 						}).then(function () {
 							// Reload Staff Datatable
-							loadStaffsTable()
+							window.location.reload()
 						})
 					}
 				},

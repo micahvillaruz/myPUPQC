@@ -30,15 +30,15 @@
 							</label>
 						</div>
 					</div>
-					<h5 class="fs-16 mb-1">Juan Dela Cruz</h5>
+					<h5 class="fs-16 mb-1" id="view_full_name"></h5>
 					<p class="text-muted mb-0">STUDENT</p>
 					<li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-5">
-                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">Sex: </a></h5>
+                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark" >Sex: </a></h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">Male</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_sex"></div>
                 </div>
               </div>
             </li>
@@ -49,7 +49,7 @@
                   <h5 class="fs-13 mb-1">Birthdate:</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">01/11/2001</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_birth_date"></div>
                 </div>
               </div>
             </li>
@@ -60,7 +60,7 @@
                   <h5 class="fs-13 mb-1">Full Address: </h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">123 Don Fabian Q.C.</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_full_address"></div>
                 </div>
               </div>
             </li>
@@ -71,7 +71,7 @@
                   <h5 class="fs-13 mb-1">Civil Status: </h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">Single</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_civil_status"></div>
                 </div>
               </div>
             </li>
@@ -82,7 +82,7 @@
                   <h5 class="fs-13 mb-1">Citizenship: </h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">Filipino</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_citizenship"></div>
                 </div>
               </div>
             </li>
@@ -93,34 +93,10 @@
                   <h5 class="fs-13 mb-1">Religion: </h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">Roman Catholic</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_religion"></div>
                 </div>
               </div>
             </li>
-						<br>
-						<!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-5">
-                  <h5 class="fs-13 mb-1">Program: </h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">BSIT</div>
-                </div>
-              </div>
-            </li>
-						<!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-5">
-                  <h5 class="fs-13 mb-1">Year and Section: </h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">3-1</div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
           </ul>
 				</div>
 			</div>
@@ -142,22 +118,21 @@
 			<div class="card-body p-4">
 				<div class="tab-content">
 					<div class="tab-pane active" id="personalDetails" role="tabpanel">
-						<form action="javascript:void(0);">
-						<form action="">
+						<form action="javascript:void(0);" id="patientInformationForm">
 						<div class="row mb-3">
         			<div class="col-lg-3">
-            		<label for="contactNumber" class="form-label">Primary Contact No.</label>
+            		<label for="disabledInput" class="form-label">Primary Contact No.</label>
         					</div>
 									<div class="col-lg-9">
-            				<input type="number" class="form-control" id="contactInput" placeholder="Enter your primary contact No.">
+            				<input type="number" class="form-control" id="primary_contact_no" placeholder="Enter your primary contact No." disabled>
         					</div>
     						</div>
     					<div class="row mb-3">
         				<div class="col-lg-3">
-            		<label for="emailInput" class="form-label">Email</label>
+            		<label for="disabledInput" class="form-label">Email</label>
         		</div>
         			<div class="col-lg-9">
-            		<input type="email" class="form-control" id="emailInput" placeholder="Enter your email">
+            		<input type="email" class="form-control" id="primary_email" placeholder="Enter your email" disabled>
         			</div>
     				</div>
 						<div class="row mb-3">
@@ -165,7 +140,7 @@
             		<label for="fbInput" class="form-label">Facebook Username</label>
         		</div>
         			<div class="col-lg-9">
-            		<input type="facebook" class="form-control" id="fbInput" placeholder="Enter your facebook username">
+            		<input type="facebook" class="form-control" id="facebook_username" name="facebook_username" placeholder="Enter your facebook username">
         			</div>
     				</div>
 								<br>
@@ -175,7 +150,7 @@
             		<label for="contactpersonNumber" class="form-label">Contact Person</label>
         					</div>
 									<div class="col-lg-9">
-            				<input type="text" class="form-control" id="contactpersonInput" placeholder="Enter your contact person">
+            				<input type="text" class="form-control" id="emergency_contact_name" name="emergency_contact_name" placeholder="Enter your contact person">
         					</div>
     						</div>
 								<div class="row mb-3">
@@ -183,7 +158,7 @@
             		<label for="contactNumber" class="form-label">Primary Contact No.</label>
         		</div>
         			<div class="col-lg-9">
-            		<input type="number" class="form-control" id="contactInput" placeholder="Enter primary contact no.">
+            		<input type="number" class="form-control" id="emergency_contact_number" name="emergency_contact_number" placeholder="Enter primary contact no.">
         			</div>
     				</div>
 								<div class="row mb-3">
@@ -191,15 +166,15 @@
             		<label for="emailInput" class="form-label">Email</label>
         		</div>
         			<div class="col-lg-9">
-            		<input type="email" class="form-control" id="emailInput" placeholder="Enter email">
+            		<input type="email" class="form-control" id="emergency_contact_email" name="emergency_contact_email" placeholder="Enter email">
         			</div>
     				</div>
 						<!-- Base Example -->
 						<div class="form-check mb-2">
-    					<input class="form-check-input" type="checkbox" id="formCheck1">
+    					<input class="form-check-input" type="checkbox" id="formCheck1" checked="true">
     					<label class="form-check-label" for="formCheck1">Is the Address the same as your address?</label>
 						</div>
-						<input type="text" class="form-control" id="contactaddressInput" placeholder="Enter Address"/>
+						<input type="text" class="form-control" id="emergency_contact_address" name="emergency_contact_address" placeholder="Enter Address">
 						<br>
 						<h4 class="fw-bold text-primary"> PhilHealth Information</h4></br>
 						<div class="row mb-3">
@@ -207,7 +182,7 @@
             		<label for="philHealthInput" class="form-label">PhilHealth No.</label>
         		</div>
         			<div class="col-lg-9">
-            		<input type="text" class="form-control" id="philHealthInput" placeholder="If none, please leave it blank">
+            		<input type="text" class="form-control" id="philhealth_number" name="philHealth_number" placeholder="If none, please leave it blank">
         			</div>
     				</div>
 						<div class="row mb-3">
@@ -215,7 +190,7 @@
             		<label for="uploadphilHealthInput" class="form-label">Upload PhilHealth ID / Member Data Record (MDR)</label>
         		</div>
         			<div class="col-lg-9">
-							<input class="form-control form-control-sm" id="formFileSm" type="file">
+							<input class="form-control form-control-sm" id="philhealth_id_image'" name="philHealth_id_image" type="file">
         			</div>
     				</div>
     							<div class="text-end">

@@ -19,5 +19,8 @@
 <!-- flatpickr.js -->
 <script type='text/javascript' src='<?= base_url() ?>public/libs/flatpickr/flatpickr.min.js'></script>
 
+<!-- medical consultation ajax -->
+<script src="<?= base_url() ?>public/js/ajax/student/OMSSS/medical-logs.ajax.js"></script>
+
 <!-- App js -->
 <script src="<?= base_url() ?>public/js/app.js"></script>

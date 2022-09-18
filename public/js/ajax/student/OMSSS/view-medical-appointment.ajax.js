@@ -236,7 +236,7 @@ cancelMedical = (health_appointment_id) => {
 							showCloseButton: !0,
 						}).then(function () {
 							// Reload Staff Datatable
-							loadStaffsTable()
+							window.location.reload()
 						})
 					}
 				},

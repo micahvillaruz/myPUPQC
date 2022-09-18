@@ -4,13 +4,13 @@ $(function () {
 
 // Load History Table
 loadHistoryTable = () => {
-	const dt = $('#history-datatable')
+	const dt = $('#staff-history-datatable')
 
 	if (dt.length) {
 		dt.DataTable({
 			bDestroy: true,
 			ajax: {
-				url: `${apiURL}odrs/student/requests_history`,
+				url: `${apiURL}odrs/pup_staff/requests_history`,
 				type: 'GET',
 				headers: AJAX_HEADERS,
 			},
@@ -20,6 +20,39 @@ loadHistoryTable = () => {
 					data: null,
 					render: (data) => {
 						return `<span class="text-primary fw-medium">${data.control_no}</span>`
+					},
+				},
+
+				// Student
+				{
+					data: null,
+					render: (data) => {
+						const gender = data.user_assigned_to_request.user_profiles[0].gender
+						const fullName = data.user_assigned_to_request.user_profiles[0].full_name
+
+						if (gender == 'Male') {
+							return `
+                <div class="d-flex align-items-center fw-medium">
+                  <img src="${baseURL}public/images/profile/flat-faces-icons-circle-man-6.png" class="avatar-xs rounded-circle me-2">
+                  <div>
+                    <span class="d-block fw-medium">${fullName}</span>
+                    <i class="mdi mdi-gender-male text-info"></i>
+                    <small>${gender}</small>
+                  </div>
+                </div>
+								`
+						} else {
+							return `
+                <div class="d-flex align-items-center fw-medium">
+                  <img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-1.png" class="avatar-xs rounded-circle me-2">
+                  <div>
+                    <span class="d-block fw-medium">${fullName}</span>
+                    <i class="mdi mdi-gender-female text-danger"></i>
+                    <small>${gender}</small>
+                  </div>
+                </div>
+								`
+						}
 					},
 				},
 
@@ -73,34 +106,6 @@ loadHistoryTable = () => {
 					},
 				},
 
-				// Date Released/Cancelled
-				{
-					data: null,
-					render: (data) => {
-						if (data.status_of_request === 'Released') {
-							const date = moment(data.date_of_release).format('DD, MMM. YYYY')
-							const time = moment(data.date_of_release).format('hh:mm A')
-
-							return `
-                <div class="d-flex align-items-center">
-                  <i class="ri-calendar-todo-fill text-primary"></i>
-                  <span class="ms-2">${date}<small class="text-muted ms-1">${time}</small></span>
-                </div>
-              `
-						} else {
-							const date = moment(data.date_of_cancelled).format('DD, MMM. YYYY')
-							const time = moment(data.date_of_cancelled).format('hh:mm A')
-
-							return `
-                <div class="d-flex align-items-center">
-                  <i class="ri-calendar-todo-fill text-primary"></i>
-                  <span class="ms-2">${date}<small class="text-muted ms-1">${time}</small></span>
-                </div>
-              `
-						}
-					},
-				},
-
 				// Request Status
 				{
 					data: null,
@@ -136,7 +141,7 @@ loadHistoryTable = () => {
 					},
 				},
 			],
-			order: [[3, 'desc']],
+			order: [[0, 'desc']],
 		})
 	}
 }
@@ -145,13 +150,43 @@ loadHistoryTable = () => {
 viewRequestDetails = (request_id) => {
 	$.ajax({
 		type: 'GET',
-		url: `${apiURL}odrs/student/view_request/${request_id}`,
+		url: `${apiURL}odrs/pup_staff/view_request/${request_id}`,
 		dataType: 'json',
 		headers: AJAX_HEADERS,
 		success: (result) => {
 			const data = result.data
 
 			$('#control_no').html(data.control_no)
+
+			const gender = data.user_assigned_to_request.user_profiles[0].gender
+			const fullName = data.user_assigned_to_request.user_profiles[0].full_name
+
+			let profile_picture = ''
+			if (gender === 'Male') {
+				profile_picture += `
+          <img src="${baseURL}public/images/profile/flat-faces-icons-circle-man-6.png" class="avatar-md" />
+        `
+			} else {
+				profile_picture += `
+          <img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-1.png" class="avatar-md" />
+        `
+			}
+
+			$('#fullName').html(fullName)
+
+			$('#image').html(profile_picture)
+
+			$('#user_no').html(data.user_assigned_to_request.user_no)
+
+			const course = data.user_assigned_to_request.education_profile.course_when_admitted
+			const education_status = data.user_assigned_to_request.education_profile.education_status
+			const email_address = data.user_assigned_to_request.user_profiles[0].email_address
+			const contact_number = data.user_assigned_to_request.user_profiles[0].contact_number
+
+			$('#course').html(course)
+			$('#education_status').html(education_status)
+			$('#email_address').html(email_address)
+			$('#contact_number').html(contact_number)
 
 			if (data.status_of_request === 'Released') {
 				$('#completion_date').html('Date Released')
@@ -187,21 +222,21 @@ viewRequestDetails = (request_id) => {
 					const time = moment(data.date_of_release).format('hh:mm A')
 
 					documentsList += `
-            <td>
-              <span class="ms-2">${date}<small class="text-muted ms-1">${time}</small></span>
-            </td>
-          </tr>
-        `
+			      <td>
+			        <span class="ms-2">${date}<small class="text-muted ms-1">${time}</small></span>
+			      </td>
+			    </tr>
+			  `
 				} else {
 					const date = moment(data.date_of_cancelled).format('DD, MMM. YYYY')
 					const time = moment(data.date_of_cancelled).format('hh:mm A')
 
 					documentsList += `
-            <td>
-              <span class="ms-2">${date}<small class="text-muted ms-1">${time}</small></span>
-            </td>
-          </tr>
-        `
+			      <td>
+			        <span class="ms-2">${date}<small class="text-muted ms-1">${time}</small></span>
+			      </td>
+			    </tr>
+			  `
 				}
 			})
 			$('#documents').html(documentsList)
@@ -370,7 +405,7 @@ viewRequestDetails = (request_id) => {
 							</div>
 						</a>
 					</div>
-					<div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingFives" data-bs-parent="#accordionExample">
+					<div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
 						<div class="accordion-body ms-2 ps-5 pt-0">
 							<h6 class="mb-1">The requested documents has been successfully claimed by the student.</h6>
 							<p class="text-muted mb-0">
@@ -408,7 +443,7 @@ viewRequestDetails = (request_id) => {
 							</div>
 						</a>
 					</div>
-					<div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+					<div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingFives" data-bs-parent="#accordionExample">
 						<div class="accordion-body ms-2 ps-5 pt-0">
 							<h6 class="mb-1">The requested documents has been cancelled.</h6>
 							<p class="text-muted mb-0">
