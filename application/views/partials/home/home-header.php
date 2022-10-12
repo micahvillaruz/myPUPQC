@@ -98,9 +98,6 @@
                     <a class="nav-link" href="<?= base_url() ?>student/organizations">Student Organizations</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url() ?>student/publications">Student Publications</a>
-                  </li>
-                  <li class="nav-item">
                     <a class="nav-link" href="<?= base_url() ?>student/council">Student Council</a>
                   </li>
                   <li class="nav-item">
