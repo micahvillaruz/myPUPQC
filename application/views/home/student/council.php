@@ -75,91 +75,67 @@
                                 <td>
                                   <h5>President</h5>
                                 </td>
-                                <td>Jennylyn M. Balaoro</td>
+                                <td>Kevin Bautista</td>
                               </tr>
                               <tr>
                                 <td>
                                   <h5> Vice President</h5>
                                 </td>
-                                <td>Kristine Joy M. Baldovizo</td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <h5>Deputy Secretary</h5>
-                                </td>
-                                <td>Johnric P. Delos Reyes</td>
+                                <td>Vince Darison</td>
                               </tr>
                               <tr>
                                 <td>
                                   <h5>Secretary General</h5>
                                 </td>
-                                <td>Erica C. Cantos</td>
+                                <td>Ellen Joy Cahutay</td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <h5>Treasurer</h5>
+                                </td>
+                                <td>Joachim Lapresca</td>
                               </tr>
                               <tr>
                                 <td>
                                   <h5>Auditor</h5>
                                 </td>
-                                <td>Kate S. Culile</td>
+                                <td>Jamaica Zeah Poblete</td>
                               </tr>
                               <tr>
                                 <td>
-                                  <h5>Legal Counseling Officer</h5>
+                                  <h5>Financial Management Committee</h5>
                                 </td>
-                                <td>Shiena Mae Joan O. Francia</td>
+                                <td>Christian Bustillo</td>
                               </tr>
                               <tr>
                                 <td>
-                                  <h5>Research & Development Officer</h5>
+                                  <h5>Student Rights & Welfare Committee</h5>
                                 </td>
-                                <td>Jane Samer B. Pajela</td>
+                                <td>Christine Cortes</td>
                               </tr>
                               <tr>
                                 <td>
-                                  <h5>Budget & Finance Officer</h5>
+                                  <h5>Academic Research Commitee</h5>
                                 </td>
-                                <td>Sophia Veinne B. Cerbo</td>
+                                <td>Rhea Delos Santos</td>
                               </tr>
                               <tr>
                                 <td>
-                                  <h5>Internal Affair Officer</h5>
+                                  <h5>Gender & Development Committee</h5>
                                 </td>
-                                <td>Jhazzmin Nera</td>
+                                <td>Luan Barilli</td>
                               </tr>
                               <tr>
                                 <td>
-                                  <h5>External Affair Officer</h5>
+                                  <h5>External Affair & Partnership Committee</h5>
                                 </td>
-                                <td>Angelo J. Legaspi</td>
+                                <td>Owie Peña</td>
                               </tr>
                               <tr>
                                 <td>
-                                  <h5>Technical Commitee</h5>
+                                  <h5>Creative & Technical Commitee</h5>
                                 </td>
-                                <td>Krisha T. Maldonado</td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <h5>Technical Commitee</h5>
-                                </td>
-                                <td>Carl Marcus D. Aquino</td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <h5>Technical Commitee</h5>
-                                </td>
-                                <td>Jocy W. Zambrona</td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <h5>Technical Commitee</h5>
-                                </td>
-                                <td>Adrian Owen G. Balanquit</td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <h5>Public Affair Officer</h5>
-                                </td>
-                                <td>Ken Erika Godeloson</td>
+                                <td>Ace Marvel Vizoro</td>
                               </tr>
                             </tbody>
                           </table>
