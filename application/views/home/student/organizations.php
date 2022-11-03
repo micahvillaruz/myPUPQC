@@ -267,13 +267,27 @@
                                                 </div>
                                                 <div>
                                                     <ul class="list-group list-group-flush">
-                                                        <li class="list-group-item">PUP Quezon City Branch</li>
-                                                        <li class="list-group-item">History</li>
-                                                        <li class="list-group-item">Facilities</li>
-                                                        <li class="list-group-item">Offices</li>
-                                                        <li class="list-group-item">Officials and Staff</li>
-                                                        <li class="list-group-item">Faculty</li>
-                                                        <li class="list-group-item">Contact Information</li>
+                                                        <li class="list-group-item">
+                                                            <a class="text-muted" href="<?= base_url() ?>about">PUP Quezon City Branch</a>
+                                                        </li>
+                                                        <li class="list-group-item text-muted">
+                                                            <a class="text-muted" href="<?= base_url() ?>about/history">History</a>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <a class="text-muted" href="<?= base_url() ?>facilities">Facilities</a>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <a class="text-muted" href="<?= base_url() ?>offices">Offices</a>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <a class="text-muted" href="<?= base_url() ?>personnel">Officials and Staff</a>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                             <a class="text-muted" href="<?= base_url() ?>faculty">Faculty</a>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <a class="text-muted" href="<?= base_url() ?>about/contact-us">Contact Information</a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
