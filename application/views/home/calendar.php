@@ -253,7 +253,7 @@
                               <td class="">25</td>
                               <td>EDSA Revolution Anniversary</td>
                             </tr>
-                            tr>
+                            <tr>
                               <td class="text-primary">&nbsp;</td>
                               <td class=""><strong>26</strong></td>
                               <td>First Semester ends</td>
