@@ -351,6 +351,30 @@ class Home extends CI_Controller
 		$this->load->view('home/scripts/extensions-scripts');
 	}
 
+	public function objectives()
+	{
+		$this->load->view('partials/main-home');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/research/objectives');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/objectives-scripts');
+	}
+
+	public function services()
+	{
+		$this->load->view('partials/main-home');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/research/services');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/services-scripts');
+	}
+
 	public function intellectual_property()
 	{
 		$this->load->view('partials/main-home');
