@@ -105,22 +105,22 @@
                         <div>
                           <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                              <a class="text-muted" href="#!">Research Management Office</a>
+                              <a class="text-muted" href="<?= base_url() ?>research/researches">Research Management Office</a>
                             </li>
                             <li class="list-group-item text-muted">
-                              <a class="text-muted" href="#!">Objectives</a>
+                              <a class="text-muted" href="<?= base_url() ?>objectives">Objectives</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="#!">Logo</a>
+                              <a class="text-muted" href="<?= base_url() ?>about/logo-and-symbols">Logo</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="#!">Services and Regular Capacity <br> Building Programs / Projects</a>
+                              <a class="text-muted" href="<?= base_url() ?>services-and-regular-capacity">Services and Regular Capacity <br> Building Programs / Projects</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="#!">Officials and Staffs</a>
+                              <a class="text-muted" href="<?= base_url() ?>personnel">Officials and Staffs</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="#!">Contact Information</a>
+                              <a class="text-muted" href="<?= base_url() ?>about/contact-us">Contact Information</a>
                             </li>
                           </ul>
                         </div>
