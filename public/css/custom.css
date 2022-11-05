@@ -17,10 +17,6 @@ File: Custom Css File
 	object-fit: cover;
 }
 
-.menu-row {
-	height: 500px;
-}
-
 .menu-overlay {
 	position: absolute;
 	height: 100%;
@@ -29,13 +25,36 @@ File: Custom Css File
 	bottom: 0;
 	right: 0;
 	top: 0;
-	opacity: 0.7;
-	background: #800;
+	opacity: 0.8;
+	background: #731111;
 }
 
-.card-bottom-overlay {
+.card .card-img-overlay a .more-info {
+	display: none;
+}
+
+.card:hover .menu-overlay {
+	background: transparent;
+}
+
+.card:hover .card-img-overlay a .service-bottom {
+	display: none;
+}
+
+.card:hover .card-img-overlay a .more-info {
+	display: inline;
+}
+
+.card:hover .card-bottom-overlay {
 	opacity: 1;
-	background: rgba(128, 0, 0, 0.77);
+	background: #000000e0;
+}
+
+.service-bottom {
+	height: 130px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .memo-img {
@@ -114,4 +133,46 @@ File: Custom Css File
 .second {
 	margin: -40% -1px 0 0;
 	padding: 40% 1px 0;
+}
+
+@media (min-width: 0) {
+	.menu-row {
+		height: 130px;
+	}
+	.card-bottom-overlay {
+		background: transparent;
+		height: 100%;
+		opacity: 0.8;
+	}
+}
+
+@media (min-width: 992px) {
+	.col-services {
+		flex: 0 0 auto;
+		width: 16.3%;
+	}
+
+	.menu-row {
+		height: 500px;
+	}
+
+	.card-bottom-overlay {
+		height: auto;
+		opacity: 0.75;
+		background: #590808;
+	}
+}
+
+@media (min-width: 1200px) {
+	.col-services {
+		flex: 0 0 auto;
+		width: 16.3%;
+	}
+}
+
+@media (min-width: 1400px) {
+	.col-services {
+		flex: 0 0 auto;
+		width: 16.3%;
+	}
 }

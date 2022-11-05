@@ -225,97 +225,115 @@
 		<section class="section bg-light" id="student-services">
 			<div class="container">
 				<div class="row hstack gap-1">
-					<div class="col px-0">
-						<div class="card card-overlay menu-row card-animate">
+					<div class="col-services px-0">
+						<div class="card card-overlay menu-row card-animate mb-0">
 							<div class="menu-overlay"></div>
 							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-1.jpg" alt="Card image"></a>
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
 								<a href="https://sisstudents.pup.edu.ph/">
-									<div class="card-body px-1">
-										<p class="card-text text-white text-center mb-2">Portal for PUP Students, view class schedule and grades</p>
+									<div class="more-info">
+										<p class="text-white fw-normal text-center mt-3 mx-3 mb-0">Portal for PUP Students, view class schedule and grades</p>
+										<div class="d-grid">
+											<button type="button" class="mx-2 my-3 btn btn-outline-light waves-effect waves-light text-uppercase fw-normal">More Info</button>
+										</div>
 									</div>
-									<div class="card-footer bg-transparent">
-										<h4 class="card-title text-white mb-0 text-center">PUP Student Portal</h4>
+									<div class="card-body service-bottom">
+										<h4 class="text-white fw-normal mb-0 text-center">PUP Student Portal</h4>
 									</div>
 								</a>
 							</div>
 						</div>
 					</div>
-					<div class="col px-0">
-						<div class="card card-overlay menu-row card-animate">
+					<div class="col-services px-0">
+						<div class="card card-overlay menu-row card-animate mb-0">
 							<div class="menu-overlay"></div>
 							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-2.jpg" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
 								<a href="<?= base_url() ?>scholarships">
-									<div class="card-body px-1">
-										<p class="card-text text-white text-center mb-2">Access to educational opportunities in terms of scholarship and financial assistance to students</p>
+									<div class="more-info">
+										<p class="text-white fw-normal text-center mt-3 mx-3 mb-0">Access to educational opportunities in terms of scholarship and financial assistance to students</p>
+										<div class="d-grid">
+											<button type="button" class="mx-2 my-3 btn btn-outline-light waves-effect waves-light text-uppercase fw-normal">More Info</button>
+										</div>
 									</div>
-									<div class="card-footer bg-transparent">
-										<h4 class="card-title text-white mb-0 text-center">Scholarships</h4>
+									<div class="card-body service-bottom">
+										<h4 class="text-white fw-normal mb-0 text-center">Scholarships</h4>
 									</div>
 								</a>
 							</div>
 						</div>
 					</div>
-					<div class="col px-0">
-						<div class="card card-overlay menu-row card-animate">
+					<div class="col-services px-0">
+						<div class="card card-overlay menu-row card-animate mb-0">
 							<div class="menu-overlay"></div>
 							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-3.jpg" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
 								<a href="<?= base_url() ?>docu-request">
-									<div class="card-body px-1">
-										<p class="card-text text-white text-center mb-2">Transcript of record, certification, clearance, honorable dismissal and diploma</p>
+									<div class="more-info">
+										<p class="text-white fw-normal text-center mt-3 mx-3 mb-0">Transcript of record, certification, clearance, honorable dismissal and diploma</p>
+										<div class="d-grid">
+											<button type="button" class="mx-2 my-3 btn btn-outline-light waves-effect waves-light text-uppercase fw-normal">More Info</button>
+										</div>
 									</div>
-									<div class="card-footer bg-transparent">
-										<h4 class="card-title text-white mb-0 text-center">Documents Processing</h4>
+									<div class="card-body service-bottom">
+										<h4 class="text-white fw-normal mb-0 text-center">Documents Processing</h4>
 									</div>
 								</a>
 							</div>
 						</div>
 					</div>
-					<div class="col px-0">
-						<div class="card card-overlay menu-row card-animate">
+					<div class="col-services px-0">
+						<div class="card card-overlay menu-row card-animate mb-0">
 							<div class="menu-overlay"></div>
 							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-4.jpg" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
 								<a href="<?= base_url() ?>student/organizations">
-									<div class="card-body px-1">
-										<p class="card-text text-white text-center mb-2">Get to know different student organizations</p>
+									<div class="more-info">
+										<p class="text-white fw-normal text-center mt-3 mx-3 mb-0">Get to know different student organizations</p>
+										<div class="d-grid">
+											<button type="button" class="mx-2 my-3 btn btn-outline-light waves-effect waves-light text-uppercase fw-normal">More Info</button>
+										</div>
 									</div>
-									<div class="card-footer bg-transparent">
-										<h4 class="card-title text-white mb-0 text-center">Student Organizations</h4>
+									<div class="card-body service-bottom">
+										<h4 class="text-white fw-normal mb-0 text-center">Student Organizations</h4>
 									</div>
 								</a>
 							</div>
 						</div>
 					</div>
-					<div class="col px-0">
-						<div class="card card-overlay menu-row card-animate">
+					<div class="col-services px-0">
+						<div class="card card-overlay menu-row card-animate mb-0">
 							<div class="menu-overlay"></div>
 							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-5.jpg" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
 								<a href="https://osssac.pup.edu.ph">
-									<div class="card-body px-1">
-										<p class="card-text text-white text-center mb-2">Online service dedicated to answer queries and reports of the students concerning admission, enrollment, library processes and more</p>
+									<div class="more-info">
+										<p class="text-white fw-normal text-center mt-3 mx-3 mb-0">Online service dedicated to answer queries and reports of the students concerning admission, enrollment, library processes and more</p>
+										<div class="d-grid">
+											<button type="button" class="mx-2 my-3 btn btn-outline-light waves-effect waves-light text-uppercase fw-normal">More Info</button>
+										</div>
 									</div>
-									<div class="card-footer bg-transparent">
-										<h4 class="card-title text-white mb-0 text-center">Student Support</h4>
+									<div class="card-body service-bottom">
+										<h4 class="text-white fw-normal mb-0 text-center">Student Support</h4>
 									</div>
 								</a>
 							</div>
 						</div>
 					</div>
-					<div class="col px-0">
-						<div class="card card-overlay menu-row card-animate">
+					<div class="col-services px-0">
+						<div class="card card-overlay menu-row card-animate mb-0">
 							<div class="menu-overlay"></div>
 							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-6.jpg" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
 								<a href="<?= base_url() ?>calendar">
-									<div class="card-body px-1">
-										<p class="card-text text-white text-center mb-2">University Calendar for Academic Year 2021-2022</p>
+									<div class="more-info">
+										<p class="text-white fw-normal text-center mt-3 mx-3 mb-0">University Calendar for Academic Year 2022-2023</p>
+										<div class="d-grid">
+											<button type="button" class="mx-2 my-3 btn btn-outline-light waves-effect waves-light text-uppercase fw-normal">More Info</button>
+										</div>
 									</div>
-									<div class="card-footer bg-transparent">
-										<h4 class="card-title text-white mb-0 text-center">Academic Calendar</h4>
+									<div class="card-body service-bottom">
+										<h4 class="text-white fw-normal mb-0 text-center">Academic Calendar</h4>
 									</div>
 								</a>
 							</div>
