@@ -115,20 +115,20 @@
                               <a class="text-muted" href="<?= base_url() ?>research/researches">Research Management Office</a>
                             </li>
                             <li class="list-group-item text-muted">
-                              <a class="text-muted" href="<?= base_url() ?>objectives">Objectives</a>
+                              <a class="text-muted" href="<?= base_url() ?>research/objectives">Objectives</a>
                             </li>
-                             <li class="list-group-item">
-                               <a class="text-muted" href="<?= base_url() ?>about/logo-and-symbols">Logo</a>
-                             </li>
-                             <li class="list-group-item">
-                               <a class="text-muted" href="<?= base_url() ?>services-and-regular-capacity">Services and Regular Capacity <br> Building Programs / Projects</a>
-                             </li>
-                              <li class="list-group-item">
-                                <a class="text-muted" href="<?= base_url() ?>personnel">Officials and Staffs</a>
-                              </li>
-                              <li class="list-group-item">
-                                <a class="text-muted" href="<?= base_url() ?>about/contact-us">Contact Information</a>
-                              </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/logo-and-symbols">Logo</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>research/services">Services and Regular Capacity <br> Building Programs / Projects</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>personnel">Officials and Staffs</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/contact-us">Contact Information</a>
+                            </li>
                           </ul>
                         </div>
                       </div>
