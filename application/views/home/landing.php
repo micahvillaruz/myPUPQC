@@ -347,7 +347,7 @@
 		<section class="section" id="updates">
 			<div class="container">
 				<div class="row d-flex">
-					<div class="col-xl-4 col-lg-6">
+					<div class="col-xl-4 col-lg-4 col-xs-1">
 						<div class="card">
 							<div class="card-header">
 								<h4 class="card-title mb-0 fw-medium text-primary">Announcements and Advisories</h4>
@@ -464,7 +464,7 @@
 						</div><!-- end card -->
 					</div>
 					<!-- end col -->
-					<div class="col-xl-6 col-lg-6">
+					<div class="col-xl-6 col-lg-5 col-xs-1">
 						<div class="card">
 							<div class="card-header">
 								<h4 class="card-title mb-0 fw-medium text-primary">Latest News from the University</h4>
@@ -504,7 +504,7 @@
 						</div><!-- end card -->
 					</div>
 					<!--end col-->
-					<div class="col-xl-2 col-lg-6">
+					<div class="col-xl-2 col-lg-3 col-xs-1 links">
 						<div class="mb-2">
 							<a href="https://www.pup.edu.ph/goodgovernance/transparency/2022/" target="_blank">
 								<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-1.jpg">
@@ -638,17 +638,15 @@
 		<section class="section bg-light" id="sns">
 			<div class="bg-overlay bg-overlay-pattern"></div>
 			<div class="container">
-				<div class="row gy-4">
-					<div class="col-lg-6">
-						<div class="fb-page" data-href="https://www.facebook.com/sscpupquezoncity" data-show-posts="true" data-width="500" data-height="575" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-							<blockquote cite="https://www.facebook.com/sscpupquezoncity" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/sscpupquezoncity">PUPQC Supreme Student Council</a></blockquote>
-						</div>
+				<div class="row">
+					<div class="col-xs-12 col-md-7 col-lg-6 overflow-auto">
+						<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FThePUPQCBranchOfficial&show_posts=true&width=500&height=575&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="500" height="575" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
 					</div>
 					<!--end col-->
-					<div class="col-lg-6">
-						<div class="row gap-4">
+					<div class="col-xs-12 col-md-5 col-lg-6">
+						<div class="row">
 							<div class="col-lg-12">
-								<iframe width="100%" height="315" src="https://www.youtube.com/embed/NPKPqbmXPaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								<iframe width="100%" height="340" src="https://www.youtube.com/embed/NPKPqbmXPaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							</div>
 							<div class="col-lg-12">
 								<iframe style="border-radius:12px" src="https://open.spotify.com/embed/show/6x7hlv9qZX8VpwMIRAAiRb?utm_source=generator" width="100%" height="232" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>

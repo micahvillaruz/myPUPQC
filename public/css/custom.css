@@ -152,6 +152,24 @@ File: Custom Css File
 	}
 }
 
+@media (max-width: 465px) {
+	.links {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		gap: 0.25rem !important;
+	}
+}
+
+@media (min-width: 465px) and (max-width: 992px) {
+	.links {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		gap: 1.5rem !important;
+	}
+}
+
 @media (min-width: 992px) {
 	.col-services {
 		flex: 0 0 auto;
