@@ -74,3 +74,26 @@ function adjustTime(date) {
 	var newDate = new Date(`${year}/${month}/${day} PST`) // PST is the timezone of the server
 	return new Date(newDate.getTime() + Math.abs(newDate.getTimezoneOffset() * 60000))
 }
+
+const navAboutPUP = document.querySelector('#navAboutPUP')
+const navAcademic = document.querySelector('#navAcademic')
+const navStudents = document.querySelector('#navStudents')
+const navResearch = document.querySelector('#navResearch')
+
+function mediaQuery(x) {
+	if (x.matches) {
+		navAboutPUP.classList.remove('menu-dropdown')
+		navAcademic.classList.remove('menu-dropdown')
+		navStudents.classList.remove('menu-dropdown')
+		navResearch.classList.remove('menu-dropdown')
+	} else {
+		navAboutPUP.classList.add('menu-dropdown')
+		navAcademic.classList.add('menu-dropdown')
+		navStudents.classList.add('menu-dropdown')
+		navResearch.classList.add('menu-dropdown')
+	}
+}
+
+let media = window.matchMedia('(max-width: 990px)')
+mediaQuery(media)
+media.addListener(mediaQuery)
