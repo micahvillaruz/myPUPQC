@@ -17,6 +17,12 @@ File: Custom Css File
 	object-fit: cover;
 }
 
+.news-img {
+	width: 100%;
+	height: 435px;
+	object-fit: cover;
+}
+
 .menu-overlay {
 	position: absolute;
 	height: 100%;
