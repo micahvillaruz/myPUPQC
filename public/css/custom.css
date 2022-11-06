@@ -141,17 +141,6 @@ File: Custom Css File
 	padding: 40% 1px 0;
 }
 
-@media (min-width: 0) {
-	.menu-row {
-		height: 130px;
-	}
-	.card-bottom-overlay {
-		background: transparent;
-		height: 100%;
-		opacity: 0.8;
-	}
-}
-
 @media (max-width: 465px) {
 	.links {
 		display: flex;
@@ -167,6 +156,67 @@ File: Custom Css File
 		flex-wrap: wrap;
 		justify-content: space-evenly;
 		gap: 1.5rem !important;
+	}
+}
+
+@media (min-width: 0) {
+	.menu-row {
+		height: 130px;
+	}
+	.card-bottom-overlay {
+		background: transparent;
+		height: 100%;
+		opacity: 0.8;
+	}
+
+	.digital-clock {
+		display: none;
+	}
+	.illustration {
+		display: none;
+	}
+}
+
+@media (min-width: 420px) {
+	.analog-clock {
+		display: none;
+	}
+	.digital-clock {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+@media (min-width: 576px) {
+	.analog-clock {
+		display: inline;
+	}
+	.digital-clock {
+		align-items: flex-start;
+	}
+}
+
+@media (min-width: 611px) {
+	.clock {
+		margin-right: 2px !important;
+	}
+}
+
+@media (min-width: 900px) {
+	.analog-clock {
+		flex: 0 0 auto;
+		width: 33.33333333%;
+	}
+	.digital-clock {
+		flex: 0 0 auto;
+		width: 33.33333333%;
+	}
+	.illustration {
+		display: inline;
+		flex: 0 0 auto;
+		width: 33.33333333%;
 	}
 }
 

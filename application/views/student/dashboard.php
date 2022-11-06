@@ -1,13 +1,13 @@
 <div class="row">
-  <div class="col-6">
+  <div class="col-xs-12 col-xxl-6">
     <div class="card card-animate">
       <div class="card-body p-0">
         <div class="alert alert-primary border-0 rounded-top rounded-0 m-0 d-flex align-items-center" role="alert">
           <i class="mdi mdi-clock-time-four-outline text-primary me-2 fs-20"></i>
           <span class="fw-medium">Digital Clock</span>
         </div>
-        <div class="row align-items-center py-4">
-          <div class="col-sm-4">
+        <div class="row py-3 clock">
+          <div class="col-xs-12 col-sm-6 analog-clock">
             <div class="circle">
               <div class="face">
                 <div id="hour" class="hour"></div>
@@ -16,15 +16,15 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-5">
-            <div class="d-flex align-items-center">
+          <div class="col-xs-12 col-sm-6 digital-clock">
+            <div class="d-flex align-items-center  flex-wrap">
               <h1 id="clockTime" class="display-6 fw-medium"></h1>
               <span id="clockSession" class="ms-2 fs-3"></span>
             </div>
             <p id="clockDate" class="fs-4"></p>
             <span class="badge bg-primary fs-13">PHILIPPINE STANDARD TIME</span>
           </div>
-          <div class="col-sm-3 align-self-end">
+          <div class="col-lg-3 align-self-end illustration">
             <div class="pe-3">
               <img src="<?= base_url() ?>public/images/user-illustarator-2.png" class="img-fluid" alt="" />
             </div>
@@ -34,7 +34,7 @@
       <!-- end card-body-->
     </div>
   </div>
-  <div class="col-6">
+  <div class="col-xs-12 col-xxl-6">
     <blockquote class="blockquote custom-blockquote blockquote-outline blockquote-primary rounded py-4">
       <div class="row g-0">
         <div class="col-md-4">
@@ -42,16 +42,15 @@
         </div>
         <div class="col-md-8">
           <div class="card-header">
-            <h3 class="mb-3 mt-1 fw-medium text-primary"> <i class="mdi mdi-clover text-primary me-2"></i> Quote of the Day!</h3>
+            <h3 class="fw-medium text-primary"> <i class="mdi mdi-clover text-primary me-2"></i> Quote of the Day!</h3>
           </div>
-          <div class="card-body my-4">
-            <p class="card-text mb-1">
+          <div class="card-body">
+            <p class="card-text">
               <i class="bx bxs-quote-alt-left text-primary align-middle me-1"></i>
-              <span id="quote" class="fs-5">
-              </span>
+              <span id="quote"></span>
               <i class="bx bxs-quote-alt-right text-primary align-middle ms-1"></i>
             </p>
-            <footer id="author" class="text-end blockquote-footer mt-4 mb-0 fs-6"></footer>
+            <footer id="author" class="text-end blockquote-footer mt-4 mb-0"></footer>
           </div>
         </div>
       </div>
@@ -462,8 +461,8 @@
 <div class="row">
   <div class="col-12">
     <div class="rounded mb-4" style="background: url('<?= base_url() ?>public/images/menu/img-3.jpg');background-size:cover;">
-      <div class="rounded bg-primary bg-opacity-50">
-        <h1 class="pt-5 pb-3 text-white fw-medium align-center text-center text-uppercase">Online Document Request System</h1>
+      <div class="rounded bg-primary bg-opacity-50 d-flex justify-content-center align-items-center flex-column" style="height: 300px;">
+        <h1 class="pb-4 text-white fw-medium align-center text-center text-uppercase">Online Document Request System</h1>
         <div class="d-flex justify-content-center">
           <button type="button" class="mb-5 btn btn-secondary waves-effect waves-light"> <i class="ri-article-line me-2"></i> Request a document</button>
         </div>
