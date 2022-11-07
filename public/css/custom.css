@@ -175,6 +175,9 @@ File: Custom Css File
 	.illustration {
 		display: none;
 	}
+	.quote-image {
+		display: none;
+	}
 }
 
 @media (min-width: 420px) {
@@ -201,6 +204,41 @@ File: Custom Css File
 @media (min-width: 611px) {
 	.clock {
 		margin-right: 2px !important;
+	}
+}
+
+@media (min-width: 694px) {
+	.quote-image {
+		display: inline;
+		flex: 0 0 auto;
+		width: 33.33333333%;
+	}
+	.qotd {
+		flex: 0 0 auto;
+		width: 66.66666667%;
+	}
+}
+
+@media (min-width: 768px) {
+	.quote-image {
+		display: none;
+	}
+	.qotd {
+		flex: 0 0 auto;
+		width: 100%;
+	}
+}
+
+@media (min-width: 786px) {
+	.quote-image {
+		display: inline;
+		flex: 0 0 auto;
+		width: 33.33333333%;
+	}
+	.qotd {
+		display: inline;
+		flex: 0 0 auto;
+		width: 66.66666667%;
 	}
 }
 
@@ -245,8 +283,41 @@ File: Custom Css File
 }
 
 @media (min-width: 1400px) {
-	.col-services {
+	.illustration {
+		display: none;
+	}
+	.digital-clock {
 		flex: 0 0 auto;
-		width: 16.3%;
+		width: 50%;
+	}
+	.analog-clock {
+		flex: 0 0 auto;
+		width: 50%;
+	}
+	.quote-image {
+		display: inline;
+		flex: 0 0 auto;
+		width: 33.33333333%;
+	}
+	.qotd {
+		display: inline;
+		flex: 0 0 auto;
+		width: 66.66666667%;
+	}
+}
+
+@media (min-width: 1669px) {
+	.analog-clock {
+		flex: 0 0 auto;
+		width: 33.33333333%;
+	}
+	.digital-clock {
+		flex: 0 0 auto;
+		width: 33.33333333%;
+	}
+	.illustration {
+		display: inline;
+		flex: 0 0 auto;
+		width: 33.33333333%;
 	}
 }

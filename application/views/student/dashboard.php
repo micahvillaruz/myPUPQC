@@ -35,22 +35,22 @@
     </div>
   </div>
   <div class="col-xs-12 col-xxl-6">
-    <blockquote class="blockquote custom-blockquote blockquote-outline blockquote-primary rounded py-4">
+    <blockquote class="blockquote custom-blockquote blockquote-outline blockquote-primary rounded py-3">
       <div class="row g-0">
-        <div class="col-md-4">
+        <div class="col-lg-4 quote-image">
           <img id="background" class="rounded-start img-fluid h-100 object-cover" src="https://theysaidso.com/img/qod/qod-inspire.jpg" alt="Card image" />
         </div>
-        <div class="col-md-8">
+        <div class="col-xs-12 col-lg-8 qotd">
           <div class="card-header">
             <h3 class="fw-medium text-primary"> <i class="mdi mdi-clover text-primary me-2"></i> Quote of the Day!</h3>
           </div>
           <div class="card-body">
             <p class="card-text">
               <i class="bx bxs-quote-alt-left text-primary align-middle me-1"></i>
-              <span id="quote"></span>
+              <span id="quote">The human mind and body are truly extraordinary. They are the quintessence of excellence in motion. We talk, touch, see, hear, taste, smell, and feel. We dream, aspire, and become. All that we are is mind and body and spirit-that is our universe. </span>
               <i class="bx bxs-quote-alt-right text-primary align-middle ms-1"></i>
             </p>
-            <footer id="author" class="text-end blockquote-footer mt-4 mb-0"></footer>
+            <footer id="author" class="text-end blockquote-footer mt-4 mb-0">Lorii Myers</footer>
           </div>
         </div>
       </div>
