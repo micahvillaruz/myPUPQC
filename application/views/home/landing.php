@@ -126,9 +126,6 @@
 							<div id="navResearch" class="nav-links collapse menu-dropdown">
 								<ul class="nav nav-sm flex-column">
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about">University Profile</a>
-									</li>
-									<li class="nav-item">
 										<a class="nav-link" href="<?= base_url() ?>research/researches">Researches</a>
 									</li>
 									<li class="nav-item">
