@@ -75,22 +75,17 @@ function adjustTime(date) {
 	return new Date(newDate.getTime() + Math.abs(newDate.getTimezoneOffset() * 60000))
 }
 
-const navAboutPUP = document.querySelector('#navAboutPUP')
-const navAcademic = document.querySelector('#navAcademic')
-const navStudents = document.querySelector('#navStudents')
-const navResearch = document.querySelector('#navResearch')
+const navLinks = document.querySelectorAll('.nav-links')
 
 function mediaQuery(x) {
 	if (x.matches) {
-		navAboutPUP.classList.remove('menu-dropdown')
-		navAcademic.classList.remove('menu-dropdown')
-		navStudents.classList.remove('menu-dropdown')
-		navResearch.classList.remove('menu-dropdown')
+		navLinks.forEach((link) => {
+			link.classList.remove('menu-dropdown')
+		})
 	} else {
-		navAboutPUP.classList.add('menu-dropdown')
-		navAcademic.classList.add('menu-dropdown')
-		navStudents.classList.add('menu-dropdown')
-		navResearch.classList.add('menu-dropdown')
+		navLinks.forEach((link) => {
+			link.classList.add('menu-dropdown')
+		})
 	}
 }
 

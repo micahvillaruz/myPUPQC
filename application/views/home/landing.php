@@ -21,7 +21,7 @@
 							<a class="nav-link menu-link collapsed" href="#navAboutPUP" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="navAboutPUP">
 								<i class=" bx bxs-school me-2"></i><span>About PUP</span>
 							</a>
-							<div id="navAboutPUP" class="collapse menu-dropdown">
+							<div id="navAboutPUP" class="nav-links collapse menu-dropdown">
 								<ul class="nav nav-sm flex-column">
 									<li class="nav-item">
 										<a class="nav-link" href="<?= base_url() ?>about">University Profile</a>
@@ -69,7 +69,7 @@
 							<a class="nav-link menu-link collapsed" href="#navAcademic" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="navAcademic">
 								<i class="bx bxs-book me-2"></i><span>Academic</span>
 							</a>
-							<div id="navAcademic" class="collapse menu-dropdown">
+							<div id="navAcademic" class="nav-links collapse menu-dropdown">
 								<ul class="nav nav-sm flex-column">
 									<li class="nav-item">
 										<a class="nav-link" href="<?= base_url() ?>academic/programs">Academic Programs</a>
@@ -90,7 +90,7 @@
 							<a class="nav-link menu-link collapsed" href="#navStudents" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="navStudents">
 								<i class="bx bxs-graduation me-2"></i><span>Students</span>
 							</a>
-							<div id="navStudents" class="collapse menu-dropdown">
+							<div id="navStudents" class="nav-links collapse menu-dropdown">
 								<ul class="nav nav-sm flex-column">
 									<li class="nav-item">
 										<a class="nav-link" href="<?= base_url() ?>#student-services">Student Services</a>
@@ -123,7 +123,7 @@
 							<a class="nav-link menu-link collapsed" href="#navResearch" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="navResearch">
 								<i class="bx bxs-search me-2"></i><span>Research</span>
 							</a>
-							<div id="navResearch" class="collapse menu-dropdown">
+							<div id="navResearch" class="nav-links collapse menu-dropdown">
 								<ul class="nav nav-sm flex-column">
 									<li class="nav-item">
 										<a class="nav-link" href="<?= base_url() ?>about">University Profile</a>
