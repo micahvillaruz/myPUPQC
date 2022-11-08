@@ -9,6 +9,7 @@ loadRequestsTable = () => {
 	if (dt.length) {
 		dt.DataTable({
 			bDestroy: true,
+			scrollX: true,
 			ajax: {
 				url: `${apiURL}odrs/student/view_requests`,
 				type: 'GET',
@@ -213,7 +214,6 @@ viewRequestDetails = (request_id) => {
 
 			let documentsList = ''
 			data.documents_assigned_to_request.forEach((document) => {
-				console.log(document)
 				documentsList += `
 					<tr>
 						<td>

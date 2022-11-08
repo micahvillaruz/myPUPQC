@@ -5,7 +5,7 @@
         <h5 class="card-title mb-0">Requests</h5>
       </div>
       <div class="card-body">
-        <table id="requests-datatable" class="display dt-responsive table align-middle" style="width: 100%">
+        <table id="requests-datatable" class="table nowrap align-middle" style="width: 100%">
           <thead class="bg-light">
             <tr>
               <th>Control Number</th>

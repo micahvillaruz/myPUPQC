@@ -113,14 +113,14 @@
       </div>
       <div class="modal-body">
         <h2 class="text-center"><span id="control_no" class="badge badge-outline-primary text-center fw-bold"></span></h2>
-        <table class="mt-4 table dt-responsive table-bordered nowrap align-middle" style="width: 100%">
+        <table class="mt-4 table dt-responsive table-bordered align-middle" style="width: 100%">
           <thead>
             <tr class="bg-light">
               <th colspan="4" class="fst-italic">Requested Document/s:</th>
             </tr>
             <tr>
               <th>Document</th>
-              <th>Quantity</th>
+              <th>Qty</th>
               <th>Payment Status</th>
               <th id="completion_date"></th>
             </tr>
