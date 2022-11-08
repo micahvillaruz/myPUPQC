@@ -6,7 +6,7 @@
         <button class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#addDocumentModal">Add Document</button>
       </div>
       <div class="card-body">
-        <table id="model-datatables" class="table nowrap align-middle" style="width: 100%">
+        <table id="scroll-horizontal" class="table no-wrap align-middle" style="width: 100%">
           <thead class="bg-light">
             <tr>
               <th class="text-uppercase">Document Name</th>
@@ -25,8 +25,8 @@
                   <span class="text-uppercase">Transcript of Records</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
@@ -46,8 +46,8 @@
                   <span class="text-uppercase">Transcript of Records</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
@@ -67,8 +67,8 @@
                   <span class="text-uppercase">Transcript of Records</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
@@ -88,8 +88,8 @@
                   <span class="text-uppercase">Transcript of Records</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
@@ -110,8 +110,8 @@
                   <span class="text-uppercase">Transcript of Records</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
@@ -132,8 +132,8 @@
                   <span class="text-uppercase">Transcript of Records</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
@@ -154,8 +154,8 @@
                   <span class="text-uppercase">Transcript of Records</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
@@ -176,8 +176,8 @@
                   <span class="text-uppercase">Transcript of Records</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
@@ -198,8 +198,8 @@
                   <span class="text-uppercase">Transcript of Records</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
@@ -219,8 +219,8 @@
                   <span class="text-uppercase">Certifications</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
@@ -241,8 +241,8 @@
                   <span class="text-uppercase">Certifications</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
@@ -262,8 +262,8 @@
                   <span class="text-uppercase">Certifications</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
@@ -283,8 +283,8 @@
                   <span class="text-uppercase">Certifications</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
@@ -304,8 +304,8 @@
                   <span class="text-uppercase">Certifications</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
@@ -325,8 +325,8 @@
                   <span class="text-uppercase">Certifications</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
@@ -346,8 +346,8 @@
                   <span class="text-uppercase">Certifications</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
@@ -367,8 +367,8 @@
                   <span class="text-uppercase">Certifications</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
@@ -387,8 +387,8 @@
                   <span class="text-uppercase">Certifications</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
@@ -409,8 +409,8 @@
                   <span class="text-uppercase">Certifications</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
@@ -431,8 +431,8 @@
                   <span class="text-uppercase">Certifications</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
@@ -453,8 +453,8 @@
                   <span class="text-uppercase">Certifications</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
@@ -474,8 +474,8 @@
                   <span class="text-uppercase">Certifications</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
@@ -495,8 +495,8 @@
                   <span class="text-uppercase">Unclaimed</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
@@ -517,8 +517,8 @@
                   <span class="text-uppercase">CAV (CHED/DFA/WES/CES)</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
@@ -539,8 +539,8 @@
                   <span class="text-uppercase">CAV (CHED/DFA/WES/CES)</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
@@ -561,8 +561,8 @@
                   <span class="text-uppercase">CAV (CHED/DFA/WES/CES)</span>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
+              <td>
+                <div class="d-flex gap-1 justify-content-center">
                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
                     <i class="ri-eye-fill fs-5"></i>
                   </button>
