@@ -24,43 +24,43 @@
 							<div id="navAboutPUP" class="nav-links collapse menu-dropdown">
 								<ul class="nav nav-sm flex-column">
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about">University Profile</a>
+										<a class="nav-link" href="<?= base_url() ?>about"><i class="ri-arrow-right-s-line"></i> University Profile</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about/vm">Vision and Mission</a>
+										<a class="nav-link" href="<?= base_url() ?>about/vm"><i class="ri-arrow-right-s-line"></i> Vision and Mission</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about/history">History</a>
+										<a class="nav-link" href="<?= base_url() ?>about/history"><i class="ri-arrow-right-s-line"></i> History</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about/logo-and-symbols">Logo and Symbols</a>
+										<a class="nav-link" href="<?= base_url() ?>about/logo-and-symbols"><i class="ri-arrow-right-s-line"></i> Logo and Symbols</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about/hymn">Hymn</a>
+										<a class="nav-link" href="<?= base_url() ?>about/hymn"><i class="ri-arrow-right-s-line"></i> Hymn</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about/annual-reports">Annual Reports</a>
+										<a class="nav-link" href="<?= base_url() ?>about/annual-reports"><i class="ri-arrow-right-s-line"></i> Annual Reports</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about/contact-us">Contact us</a>
+										<a class="nav-link" href="<?= base_url() ?>about/contact-us"><i class="ri-arrow-right-s-line"></i> Contact us</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about/maps">Maps</a>
+										<a class="nav-link" href="<?= base_url() ?>about/maps"><i class="ri-arrow-right-s-line"></i> Maps</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about/code">University Code</a>
+										<a class="nav-link" href="<?= base_url() ?>about/code"><i class="ri-arrow-right-s-line"></i> University Code</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about/memorandum-orders">Memorandum Orders</a>
+										<a class="nav-link" href="<?= base_url() ?>about/memorandum-orders"><i class="ri-arrow-right-s-line"></i> Memorandum Orders</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about/executive-orders">Executive Orders</a>
+										<a class="nav-link" href="<?= base_url() ?>about/executive-orders"><i class="ri-arrow-right-s-line"></i> Executive Orders</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about/codi-manual">CODI Manual</a>
+										<a class="nav-link" href="<?= base_url() ?>about/codi-manual"><i class="ri-arrow-right-s-line"></i> CODI Manual</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about/citizens-charter">Citizens Charter</a>
+										<a class="nav-link" href="<?= base_url() ?>about/citizens-charter"><i class="ri-arrow-right-s-line"></i> Citizens Charter</a>
 									</li>
 								</ul>
 							</div>
@@ -72,16 +72,16 @@
 							<div id="navAcademic" class="nav-links collapse menu-dropdown">
 								<ul class="nav nav-sm flex-column">
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>academic/programs">Academic Programs</a>
+										<a class="nav-link" href="<?= base_url() ?>academic/programs"><i class="ri-arrow-right-s-line"></i> Academic Programs</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>academic/ous">Open University System</a>
+										<a class="nav-link" href="<?= base_url() ?>academic/ous"><i class="ri-arrow-right-s-line"></i> Open University System</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="https://www.pup.edu.ph/nallrc/" target="_blank">Library Services</a>
+										<a class="nav-link" href="https://www.pup.edu.ph/nallrc/" target="_blank"><i class="ri-arrow-right-s-line"></i> Library Services</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>academic/ovpaa">OVPAA Advisories</a>
+										<a class="nav-link" href="<?= base_url() ?>academic/ovpaa"><i class="ri-arrow-right-s-line"></i> OVPAA Advisories</a>
 									</li>
 								</ul>
 							</div>
@@ -93,28 +93,28 @@
 							<div id="navStudents" class="nav-links collapse menu-dropdown">
 								<ul class="nav nav-sm flex-column">
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>#student-services">Student Services</a>
+										<a class="nav-link" href="<?= base_url() ?>#student-services"><i class="ri-arrow-right-s-line"></i> Student Services</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>student/organizations">Student Organizations</a>
+										<a class="nav-link" href="<?= base_url() ?>student/organizations"><i class="ri-arrow-right-s-line"></i> Student Organizations</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>student/council">Student Council</a>
+										<a class="nav-link" href="<?= base_url() ?>student/council"><i class="ri-arrow-right-s-line"></i> Student Council</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>student/handbook">Student Handbook</a>
+										<a class="nav-link" href="<?= base_url() ?>student/handbook"><i class="ri-arrow-right-s-line"></i> Student Handbook</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="https://sisstudents.pup.edu.ph/">PUP Student Information System</a>
+										<a class="nav-link" href="https://sisstudents.pup.edu.ph/"><i class="ri-arrow-right-s-line"></i> PUP Student Information System</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="https://odrs.pup.edu.ph/">PUP Online Document Request System</a>
+										<a class="nav-link" href="https://odrs.pup.edu.ph/"><i class="ri-arrow-right-s-line"></i> PUP Online Document Request System</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="https://apps.pup.edu.ph/books/">PUP Bookstore</a>
+										<a class="nav-link" href="https://apps.pup.edu.ph/books/"><i class="ri-arrow-right-s-line"></i> PUP Bookstore</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>student/downloads">Downloadable Forms</a>
+										<a class="nav-link" href="<?= base_url() ?>student/downloads"><i class="ri-arrow-right-s-line"></i> Downloadable Forms</a>
 									</li>
 								</ul>
 							</div>
@@ -126,22 +126,22 @@
 							<div id="navResearch" class="nav-links collapse menu-dropdown">
 								<ul class="nav nav-sm flex-column">
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>research/researches">Researches</a>
+										<a class="nav-link" href="<?= base_url() ?>research/researches"><i class="ri-arrow-right-s-line"></i> Researches</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>research/extensions">Extensions</a>
+										<a class="nav-link" href="<?= base_url() ?>research/extensions"><i class="ri-arrow-right-s-line"></i> Extensions</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>research/research-ethics">Research Ethics</a>
+										<a class="nav-link" href="<?= base_url() ?>research/research-ethics"><i class="ri-arrow-right-s-line"></i> Research Ethics</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>research/intellectual-property">Intellectual Property</a>
+										<a class="nav-link" href="<?= base_url() ?>research/intellectual-property"><i class="ri-arrow-right-s-line"></i> Intellectual Property</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="https://apps.pup.edu.ph/ojs/">PUP Online Journal System</a>
+										<a class="nav-link" href="https://apps.pup.edu.ph/ojs/"><i class="ri-arrow-right-s-line"></i> PUP Online Journal System</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="https://drive.google.com/open?id=0B1BuDAuN0r8SMFpBYWNGckhUWkE">University Thesis and Dissertation Manual</a>
+										<a class="nav-link" href="https://drive.google.com/open?id=0B1BuDAuN0r8SMFpBYWNGckhUWkE"><i class="ri-arrow-right-s-line"></i> University Thesis and Dissertation Manual</a>
 									</li>
 								</ul>
 							</div>
