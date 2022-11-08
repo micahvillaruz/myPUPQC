@@ -51,7 +51,7 @@
                           </div>
                           <p>
                             The Supreme Student Council, also known as SSC, is the highest policy-making and student-governing body of PUP Quezon City Branch that upholds a nationalist, scientific, and mass-oriented system of education.
-                            As we welcome the new Academic Year 2021-2022 in Polytechnic University of the Philippines Quezon City Branch, the new and well-represented student council is now ready to stand and fight for the students' rights, interests, and welfare at all costs. A student council that is committed to facing the challenges amidst these trying times and affirmed to have an HONEST, COMMITTED, and DATA-DRIVEN governance which will all be useful to uphold not just academic excellence but also bring forth sociopolitical consciousness among PUPQC students.
+                            As we welcome the new Academic Year 2022-2023 in Polytechnic University of the Philippines Quezon City Branch, the new and well-represented student council is now ready to stand and fight for the students' rights, interests, and welfare at all costs. A student council that is committed to facing the challenges amidst these trying times and affirmed to have an HONEST, COMMITTED, and DATA-DRIVEN governance which will all be useful to uphold not just academic excellence but also bring forth sociopolitical consciousness among PUPQC students.
                             The new set of SSC-Executive Board Officers comprise of student-leaders from different academic programs, students who have diverse personalities, raised in different cultures within and outside the university, students who have answered the call of duty to lead, and have chosen to be the voice of our fellow Iskolars ng Bayan.
                           </p>
                           <p>
@@ -179,7 +179,7 @@
                           </div>
                         </div>
                         <div>
-                        <ul class="list-group list-group-flush">
+                          <ul class="list-group list-group-flush">
                             <li class="list-group-item">
                               <a class="text-muted" href="<?= base_url() ?>about">PUP Quezon City Branch</a>
                             </li>
