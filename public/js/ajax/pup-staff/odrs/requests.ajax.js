@@ -1,3 +1,13 @@
+$(function () {
+	$('a[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
+		$('#pending-datatables').DataTable().columns.adjust().responsive.recalc()
+		$('#approved-datatables').DataTable().columns.adjust().responsive.recalc()
+	})
+
+	$('#pending-datatables').DataTable().columns.adjust().responsive.recalc()
+	$('#approved-datatables').DataTable().columns.adjust().responsive.recalc()
+})
+
 // Approve Request
 approveRequest = () => {
 	Swal.fire({
