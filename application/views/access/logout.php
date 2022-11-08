@@ -68,7 +68,8 @@
                 <script>
                   document.write(new Date().getFullYear())
                 </script>
-                BSIT 3-1 Capstone
+                POLYTECHNIC UNIVERSITY OF THE PHILIPPINES - QUEZON CITY BRANCH
+
               </p>
             </div>
           </div>
