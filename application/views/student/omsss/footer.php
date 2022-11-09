@@ -1,27 +1,23 @@
-<footer class="footer">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="d-flex justify-content-between align-items-center">
-        <div>
-          <span class="fw-medium">
-            For questions and comments, contact us at:
-          </span>
+<footer class="footer pt-0">
+  <div class="container">
+    <div class=" d-flex align-items-center justify-content-between">
+      <span class="fw-medium d-none d-sm-block">
+        For queries, contact us at:
+      </span>
+      <div>
+        <div class="d-flex text-primary fw-bold">
+          <i class="las la-first-aid me-1"></i>
+          <span> medical.qc@pup.edu.ph</span>
         </div>
-        <div class="hstack gap-3">
-          <span class="fw-bold text-primary">
-            <i class="las la-first-aid text-primary fw-bold me-2"></i>
-            medical.qc@pup.edu.ph
-          </span>
-          <div class="vr"></div>
-          <span class="fw-bold text-primary">
-            <i class="las la-tooth text-primary fw-bold me-2"></i>
-            dental.qc@pup.edu.ph
-          </span>
-          <div class="vr"></div>
-          <span class="fw-bold text-primary">
-            <i class="mdi mdi-brain text-primary fw-bold me-2"></i>
-            guidance_placement.qc@pup.edu.ph
-          </span>
+        <div class="d-flex text-primary fw-bold">
+          <i class="las la-tooth me-1"></i>
+          <span>dental.qc@pup.edu.ph</span>
         </div>
+        <span class="d-flex text-primary fw-bold">
+          <i class="mdi mdi-brain me-1"></i>
+          <span>guidance_placement.qc@pup.edu.ph</span>
+        </span>
       </div>
     </div>
+  </div>
+</footer>

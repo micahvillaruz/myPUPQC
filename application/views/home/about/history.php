@@ -92,7 +92,8 @@
                               <li> Doris B. Gatan, MBA (1998-2004)</li>
                               <li> Pascualito B. Gatan, MBA (2004-2015)</li>
                               <li> Firmo A. Esguerra, MBA (2015-2018)</li>
-                              <li> Edgardo S. Delmo, MGM, MBA (2019-Present)</li>
+                              <li> Edgardo S. Delmo, MGM, MBA (2019-2022)</li>
+                              <li> Jaime P. Gutierrez, Jr., MPS (2022-Present)</li>
                             </ul>
                             <p>President Rodrigo R. Duterte signed Republic Act No. 11347, also known as the PUP Quezon City Campus Act, knowing its existence last June 25, 2019. It is made possible in the 17th Congress House Bill No. 7734 through the sponsorship of the 2nd District of Quezon City Representative, Hon. Winston “Winnie” T. Castelo in the House of Representatives and the Chair of Committee on Education, Arts and Culture of the Senate, Hon. Francis “Chiz” G. Escudero.</p>
                           </div>

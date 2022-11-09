@@ -1,3 +1,13 @@
+$(function () {
+	$('a[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
+		$('#pending-datatables').DataTable().columns.adjust().responsive.recalc()
+		$('#approved-datatables').DataTable().columns.adjust().responsive.recalc()
+	})
+
+	$('#pending-datatables').DataTable().columns.adjust().responsive.recalc()
+	$('#approved-datatables').DataTable().columns.adjust().responsive.recalc()
+})
+
 // Approve Request
 approveRequest = () => {
 	Swal.fire({
@@ -49,8 +59,8 @@ approveRequest = () => {
 							'</div>',
 						showCancelButton: !0,
 						showConfirmButton: !1,
-						cancelButtonClass: 'btn btn-primary w-xs mb-1',
-						cancelButtonText: 'Back',
+						cancelButtonClass: 'btn btn-success w-xs mb-1',
+						cancelButtonText: 'Ok',
 						buttonsStyling: !1,
 						showCloseButton: !0,
 					}).fail(() => {
@@ -65,7 +75,7 @@ approveRequest = () => {
 								'</div>',
 							showCancelButton: !0,
 							showConfirmButton: !1,
-							cancelButtonClass: 'btn btn-primary w-xs mb-1',
+							cancelButtonClass: 'btn btn-danger w-xs mb-1',
 							cancelButtonText: 'Dismiss',
 							buttonsStyling: !1,
 							showCloseButton: !0,
@@ -128,8 +138,8 @@ cancelRequest = () => {
 							'</div>',
 						showCancelButton: !0,
 						showConfirmButton: !1,
-						cancelButtonClass: 'btn btn-primary w-xs mb-1',
-						cancelButtonText: 'Back',
+						cancelButtonClass: 'btn btn-success w-xs mb-1',
+						cancelButtonText: 'Ok',
 						buttonsStyling: !1,
 						showCloseButton: !0,
 					}).fail(() => {
@@ -144,7 +154,7 @@ cancelRequest = () => {
 								'</div>',
 							showCancelButton: !0,
 							showConfirmButton: !1,
-							cancelButtonClass: 'btn btn-primary w-xs mb-1',
+							cancelButtonClass: 'btn btn-danger w-xs mb-1',
 							cancelButtonText: 'Dismiss',
 							buttonsStyling: !1,
 							showCloseButton: !0,
@@ -207,8 +217,8 @@ forEvaluation = () => {
 							'</div>',
 						showCancelButton: !0,
 						showConfirmButton: !1,
-						cancelButtonClass: 'btn btn-primary w-xs mb-1',
-						cancelButtonText: 'Back',
+						cancelButtonClass: 'btn btn-success w-xs mb-1',
+						cancelButtonText: 'Ok',
 						buttonsStyling: !1,
 						showCloseButton: !0,
 					}).fail(() => {
@@ -223,7 +233,7 @@ forEvaluation = () => {
 								'</div>',
 							showCancelButton: !0,
 							showConfirmButton: !1,
-							cancelButtonClass: 'btn btn-primary w-xs mb-1',
+							cancelButtonClass: 'btn btn-danger w-xs mb-1',
 							cancelButtonText: 'Dismiss',
 							buttonsStyling: !1,
 							showCloseButton: !0,
@@ -286,8 +296,8 @@ forPickup = () => {
 							'</div>',
 						showCancelButton: !0,
 						showConfirmButton: !1,
-						cancelButtonClass: 'btn btn-primary w-xs mb-1',
-						cancelButtonText: 'Back',
+						cancelButtonClass: 'btn btn-success w-xs mb-1',
+						cancelButtonText: 'Ok',
 						buttonsStyling: !1,
 						showCloseButton: !0,
 					}).fail(() => {
@@ -302,7 +312,7 @@ forPickup = () => {
 								'</div>',
 							showCancelButton: !0,
 							showConfirmButton: !1,
-							cancelButtonClass: 'btn btn-primary w-xs mb-1',
+							cancelButtonClass: 'btn btn-danger w-xs mb-1',
 							cancelButtonText: 'Dismiss',
 							buttonsStyling: !1,
 							showCloseButton: !0,
@@ -365,8 +375,8 @@ released = () => {
 							'</div>',
 						showCancelButton: !0,
 						showConfirmButton: !1,
-						cancelButtonClass: 'btn btn-primary w-xs mb-1',
-						cancelButtonText: 'Back',
+						cancelButtonClass: 'btn btn-success w-xs mb-1',
+						cancelButtonText: 'Ok',
 						buttonsStyling: !1,
 						showCloseButton: !0,
 					}).fail(() => {
@@ -381,7 +391,7 @@ released = () => {
 								'</div>',
 							showCancelButton: !0,
 							showConfirmButton: !1,
-							cancelButtonClass: 'btn btn-primary w-xs mb-1',
+							cancelButtonClass: 'btn btn-danger w-xs mb-1',
 							cancelButtonText: 'Dismiss',
 							buttonsStyling: !1,
 							showCloseButton: !0,

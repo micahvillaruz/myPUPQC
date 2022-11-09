@@ -5,8 +5,8 @@
         <!-- Start right Content here -->
         <!-- ============================================================== -->
         <div class="main-content ms-0 bg-light">
-            <div class="page-content pt-4">
-                <div class="container-fluid">
+            <div class="page-content pt-4 m-0">
+                <div class="container-boxed">
                     <div class="profile-foreground position-relative mx-n4 mt-n4">
                         <div class="profile-wid-bg">
                             <img src="<?= base_url() ?>public/images/pupqc-bg.jpg" alt="" class="profile-wid-img" />
@@ -587,44 +587,8 @@
                     <!-- end card -->
                 </div>
                 <!--end col-->
-                <!-- <div class="col-lg-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-4">
-                                <div class="flex-grow-1">
-                                    <h5 class="card-title mb-0 text-primary">Contents</h5>
-                                </div>
-                            </div>
-                            <div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">PUP Quezon City Branch</li>
-                                    <li class="list-group-item">History</li>
-                                    <li class="list-group-item">Facilities</li>
-                                    <li class="list-group-item">Offices</li>
-                                    <li class="list-group-item">Officials and Staff</li>
-                                    <li class="list-group-item">Faculty</li>
-                                    <li class="list-group-item">Contact Information</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- end card body -->
-                    </div>
-                    <!--end card-->
-                </div>
-                <!--end col -->
             </div>
-            <!--end row-->
+            <!--end card-->
         </div>
+        <!--end col -->
     </div>
-    <!--end col-->
-    </div>
-    <!--end row-->
-    </div>
-    <!-- container-fluid -->
-    </div>
-    <!-- End Page-content -->
-    </div>
-    <!-- end main content-->
-    </div>
-    <!-- END layout-wrapper -->
-</body>

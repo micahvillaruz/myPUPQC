@@ -102,7 +102,7 @@
                               <div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
                                 <a href="<?= base_url() ?>calendar">
                                   <div class="card-body px-1">
-                                    <p class="card-text text-white text-center mb-2">University Calendar for Academic Year 2021-2022</p>
+                                    <p class="card-text text-white text-center mb-2">University Calendar for Academic Year 2022-2023</p>
                                   </div>
                                   <div class="card-footer bg-transparent">
                                     <h4 class="card-title text-white mb-0 text-center">Academic Calendar</h4>

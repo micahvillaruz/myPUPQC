@@ -2,7 +2,7 @@
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0" nonce="KOSJDxRE"></script>
 	<!-- Begin page -->
 	<div class="layout-wrapper landing">
-		<nav class="navbar navbar-expand-lg navbar-landing navbar-light fixed-top" id="navbar">
+		<nav class="navbar navbar-expand-lg navbar-landing" id="navbar">
 			<div class="container">
 				<a class="navbar-brand" href="<?= base_url() ?>">
 					<img src="<?= base_url() ?>public/images/mypupqc-logo.png" class="card-logo card-logo-dark" alt="myPUPQC logo" height="25">
@@ -11,148 +11,142 @@
 				<button class="navbar-toggler py-0 fs-20 text-body" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<i class="mdi mdi-menu"></i>
 				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+				<div class="collapse navbar-collapse align-middle" id="navbarSupportedContent">
 					<ul class="navbar-nav mx-auto mt-2 mt-lg-0 text-primary" id="navbar-nav">
 						<li class="nav-item">
 							<a class="nav-link" aria-expanded="false" href="<?= base_url() ?>"><i class="bx bxs-home me-2"></i><span>Home</span></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">
-								<i class="bx bxs-school me-2"></i><span>About PUP</span>
+							<a class="nav-link menu-link collapsed" href="#navAboutPUP" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="navAboutPUP">
+								<i class=" bx bxs-school me-2"></i><span>About PUP</span>
 							</a>
-							<div class="collapse menu-dropdown">
-								<ul class="nav nav-sm flex-column ">
+							<div id="navAboutPUP" class="nav-links collapse menu-dropdown">
+								<ul class="nav nav-sm flex-column">
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about">University Profile</a>
+										<a class="nav-link" href="<?= base_url() ?>about"><i class="ri-arrow-right-s-line"></i> University Profile</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about/vm">Vision and Mission</a>
+										<a class="nav-link" href="<?= base_url() ?>about/vm"><i class="ri-arrow-right-s-line"></i> Vision and Mission</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about/history">History</a>
+										<a class="nav-link" href="<?= base_url() ?>about/history"><i class="ri-arrow-right-s-line"></i> History</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about/logo-and-symbols">Logo and Symbols</a>
+										<a class="nav-link" href="<?= base_url() ?>about/logo-and-symbols"><i class="ri-arrow-right-s-line"></i> Logo and Symbols</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about/hymn">Hymn</a>
+										<a class="nav-link" href="<?= base_url() ?>about/hymn"><i class="ri-arrow-right-s-line"></i> Hymn</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about/annual-reports">Annual Reports</a>
+										<a class="nav-link" href="<?= base_url() ?>about/annual-reports"><i class="ri-arrow-right-s-line"></i> Annual Reports</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about/contact-us">Contact us</a>
+										<a class="nav-link" href="<?= base_url() ?>about/contact-us"><i class="ri-arrow-right-s-line"></i> Contact us</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about/maps">Maps</a>
+										<a class="nav-link" href="<?= base_url() ?>about/maps"><i class="ri-arrow-right-s-line"></i> Maps</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about/code">University Code</a>
+										<a class="nav-link" href="<?= base_url() ?>about/code"><i class="ri-arrow-right-s-line"></i> University Code</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about/memorandum-orders">Memorandum Orders</a>
+										<a class="nav-link" href="<?= base_url() ?>about/memorandum-orders"><i class="ri-arrow-right-s-line"></i> Memorandum Orders</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about/executive-orders">Executive Orders</a>
+										<a class="nav-link" href="<?= base_url() ?>about/executive-orders"><i class="ri-arrow-right-s-line"></i> Executive Orders</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about/codi-manual">CODI Manual</a>
+										<a class="nav-link" href="<?= base_url() ?>about/codi-manual"><i class="ri-arrow-right-s-line"></i> CODI Manual</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about/citizens-charter">Citizens Charter</a>
+										<a class="nav-link" href="<?= base_url() ?>about/citizens-charter"><i class="ri-arrow-right-s-line"></i> Citizens Charter</a>
 									</li>
 								</ul>
 							</div>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">
+							<a class="nav-link menu-link collapsed" href="#navAcademic" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="navAcademic">
 								<i class="bx bxs-book me-2"></i><span>Academic</span>
 							</a>
-							<div class="collapse menu-dropdown">
+							<div id="navAcademic" class="nav-links collapse menu-dropdown">
 								<ul class="nav nav-sm flex-column">
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>academic/programs">Academic Programs</a>
+										<a class="nav-link" href="<?= base_url() ?>academic/programs"><i class="ri-arrow-right-s-line"></i> Academic Programs</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>academic/ous">Open University System</a>
+										<a class="nav-link" href="<?= base_url() ?>academic/ous"><i class="ri-arrow-right-s-line"></i> Open University System</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="https://www.pup.edu.ph/nallrc/" target="_blank">Library Services</a>
+										<a class="nav-link" href="https://www.pup.edu.ph/nallrc/" target="_blank"><i class="ri-arrow-right-s-line"></i> Library Services</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>academic/ovpaa">OVPAA Advisories</a>
+										<a class="nav-link" href="<?= base_url() ?>academic/ovpaa"><i class="ri-arrow-right-s-line"></i> OVPAA Advisories</a>
 									</li>
 								</ul>
 							</div>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">
+							<a class="nav-link menu-link collapsed" href="#navStudents" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="navStudents">
 								<i class="bx bxs-graduation me-2"></i><span>Students</span>
 							</a>
-							<div class="collapse menu-dropdown">
+							<div id="navStudents" class="nav-links collapse menu-dropdown">
 								<ul class="nav nav-sm flex-column">
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>#student-services">Student Services</a>
+										<a class="nav-link" href="<?= base_url() ?>#student-services"><i class="ri-arrow-right-s-line"></i> Student Services</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>student/organizations">Student Organizations</a>
+										<a class="nav-link" href="<?= base_url() ?>student/organizations"><i class="ri-arrow-right-s-line"></i> Student Organizations</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>student/publications">Student Publications</a>
+										<a class="nav-link" href="<?= base_url() ?>student/council"><i class="ri-arrow-right-s-line"></i> Student Council</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>student/council">Student Council</a>
+										<a class="nav-link" href="<?= base_url() ?>student/handbook"><i class="ri-arrow-right-s-line"></i> Student Handbook</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>student/handbook">Student Handbook</a>
+										<a class="nav-link" href="https://sisstudents.pup.edu.ph/"><i class="ri-arrow-right-s-line"></i> PUP Student Information System</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="https://sisstudents.pup.edu.ph/">PUP Student Information System</a>
+										<a class="nav-link" href="https://odrs.pup.edu.ph/"><i class="ri-arrow-right-s-line"></i> PUP Online Document Request System</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="https://odrs.pup.edu.ph/">PUP Online Document Request System</a>
+										<a class="nav-link" href="https://apps.pup.edu.ph/books/"><i class="ri-arrow-right-s-line"></i> PUP Bookstore</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="https://apps.pup.edu.ph/books/">PUP Bookstore</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>student/downloads">Downloadable Forms</a>
+										<a class="nav-link" href="<?= base_url() ?>student/downloads"><i class="ri-arrow-right-s-line"></i> Downloadable Forms</a>
 									</li>
 								</ul>
 							</div>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">
+							<a class="nav-link menu-link collapsed" href="#navResearch" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="navResearch">
 								<i class="bx bxs-search me-2"></i><span>Research</span>
 							</a>
-							<div class="collapse menu-dropdown">
+							<div id="navResearch" class="nav-links collapse menu-dropdown">
 								<ul class="nav nav-sm flex-column">
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>about">University Profile</a>
+										<a class="nav-link" href="<?= base_url() ?>research/researches"><i class="ri-arrow-right-s-line"></i> Researches</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>research/researches">Researches</a>
+										<a class="nav-link" href="<?= base_url() ?>research/extensions"><i class="ri-arrow-right-s-line"></i> Extensions</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>research/extensions">Extensions</a>
+										<a class="nav-link" href="<?= base_url() ?>research/research-ethics"><i class="ri-arrow-right-s-line"></i> Research Ethics</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>research/research-ethics">Research Ethics</a>
+										<a class="nav-link" href="<?= base_url() ?>research/intellectual-property"><i class="ri-arrow-right-s-line"></i> Intellectual Property</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url() ?>research/intellectual-property">Intellectual Property</a>
+										<a class="nav-link" href="https://apps.pup.edu.ph/ojs/"><i class="ri-arrow-right-s-line"></i> PUP Online Journal System</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="https://apps.pup.edu.ph/ojs/">PUP Online Journal System</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="https://drive.google.com/open?id=0B1BuDAuN0r8SMFpBYWNGckhUWkE">University Thesis and Dissertation Manual</a>
+										<a class="nav-link" href="https://drive.google.com/open?id=0B1BuDAuN0r8SMFpBYWNGckhUWkE"><i class="ri-arrow-right-s-line"></i> University Thesis and Dissertation Manual</a>
 									</li>
 								</ul>
 							</div>
 						</li>
 					</ul>
-
 					<div class="">
 						<a href="<?= base_url() ?>signin" class="btn btn-primary">Log In</a>
 					</div>
@@ -160,7 +154,7 @@
 
 			</div>
 		</nav>
-		<div class="bg-overlay bg-overlay-pattern"></div>
+		<!-- <div class="bg-overlay bg-overlay-pattern"></div> -->
 		<!-- end navbar -->
 
 		<!-- start hero section -->
@@ -191,28 +185,27 @@
 			</div>
 		</section><!-- end hero section -->
 
-		<!-- start Work Process -->
 		<section class="section">
 			<div class="container">
 				<div class="row text-center">
 					<div class="col-lg-12">
-						<div class="text-center mt-5">
+						<div class="text-center">
 							<div class="row">
 								<div class="col-3">
-									<a href="<?= base_url() ?>applicants"><i class="bx bx-edit border border-primary border-3 rounded-circle h2 p-3 text-primary"></i></a>
-									<span class="d-block text-primary fw-medium">Enroll Now</span>
+									<a href="<?= base_url() ?>applicants"><i class="bx bx-edit border border-primary border-3 rounded-circle h1 p-3 text-primary mb-3"></i></a>
+									<span class="d-block text-primary fw-semibold">Enroll Now</span>
 								</div>
 								<div class="col-3">
-									<a href="<?= base_url() ?>events"><i class="bx bx-calendar-event border border-primary border-3 rounded-circle h2 p-3 text-primary"></i></a>
-									<span class="d-block text-primary fw-medium">Attend an Event</span>
+									<a href="<?= base_url() ?>events"><i class="bx bx-calendar-event border border-primary border-3 rounded-circle h1 p-3 text-primary mb-3"></i></a>
+									<span class="d-block text-primary fw-semibold">Attend an Event</span>
 								</div>
 								<div class="col-3">
-									<a href="<?= base_url() ?>docu-request"><i class="bx bx-file border border-primary border-3 rounded-circle h2 p-3 text-primary"></i></a>
-									<span class="d-block text-primary fw-medium">Request Document</span>
+									<a href="<?= base_url() ?>student/odrs/new-request"><i class="bx bx-file border border-primary border-3 rounded-circle h1 p-3 text-primary mb-3"></i></a>
+									<span class="d-block text-primary fw-semibold">Request Document</span>
 								</div>
 								<div class="col-3">
-									<a href="https://apps.pup.edu.ph/appointment/"><i class="bx bxs-school border border-primary border-3 rounded-circle h2 p-3 text-primary"></i></a>
-									<span class="d-block text-primary fw-medium">Schedule Appointment</span>
+									<a href="https://apps.pup.edu.ph/appointment/"><i class="bx bxs-school border border-primary border-3 rounded-circle h1 p-3 text-primary mb-3"></i></a>
+									<span class="d-block text-primary fw-semibold">Schedule Appointment</span>
 								</div>
 							</div>
 						</div>
@@ -222,103 +215,119 @@
 			</div>
 			<!-- end container -->
 		</section>
-		<!-- end Work Process -->
 
-		<!-- start team -->
 		<section class="section bg-light" id="student-services">
 			<div class="container">
 				<div class="row hstack gap-1">
-					<div class="col px-0">
-						<div class="card card-overlay menu-row card-animate">
+					<div class="col-services px-0">
+						<div class="card card-overlay menu-row card-animate mb-0">
 							<div class="menu-overlay"></div>
 							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-1.jpg" alt="Card image"></a>
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
 								<a href="https://sisstudents.pup.edu.ph/">
-									<div class="card-body px-1">
-										<p class="card-text text-white text-center mb-2">Portal for PUP Students, view class schedule and grades</p>
+									<div class="more-info">
+										<p class="text-white fw-normal text-center mt-3 mx-3 mb-0">Portal for PUP Students, view class schedule and grades</p>
+										<div class="d-grid">
+											<button type="button" class="mx-2 my-3 btn btn-outline-light waves-effect waves-light text-uppercase fw-normal">More Info</button>
+										</div>
 									</div>
-									<div class="card-footer bg-transparent">
-										<h4 class="card-title text-white mb-0 text-center">PUP Student Portal</h4>
+									<div class="card-body service-bottom">
+										<h4 class="text-white fw-normal mb-0 text-center">PUP Student Portal</h4>
 									</div>
 								</a>
 							</div>
 						</div>
 					</div>
-					<div class="col px-0">
-						<div class="card card-overlay menu-row card-animate">
+					<div class="col-services px-0">
+						<div class="card card-overlay menu-row card-animate mb-0">
 							<div class="menu-overlay"></div>
 							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-2.jpg" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
 								<a href="<?= base_url() ?>scholarships">
-									<div class="card-body px-1">
-										<p class="card-text text-white text-center mb-2">Access to educational opportunities in terms of scholarship and financial assistance to students</p>
+									<div class="more-info">
+										<p class="text-white fw-normal text-center mt-3 mx-3 mb-0">Access to educational opportunities in terms of scholarship and financial assistance to students</p>
+										<div class="d-grid">
+											<button type="button" class="mx-2 my-3 btn btn-outline-light waves-effect waves-light text-uppercase fw-normal">More Info</button>
+										</div>
 									</div>
-									<div class="card-footer bg-transparent">
-										<h4 class="card-title text-white mb-0 text-center">Scholarships</h4>
+									<div class="card-body service-bottom">
+										<h4 class="text-white fw-normal mb-0 text-center">Scholarships</h4>
 									</div>
 								</a>
 							</div>
 						</div>
 					</div>
-					<div class="col px-0">
-						<div class="card card-overlay menu-row card-animate">
+					<div class="col-services px-0">
+						<div class="card card-overlay menu-row card-animate mb-0">
 							<div class="menu-overlay"></div>
 							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-3.jpg" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
 								<a href="<?= base_url() ?>docu-request">
-									<div class="card-body px-1">
-										<p class="card-text text-white text-center mb-2">Transcript of record, certification, clearance, honorable dismissal and diploma</p>
+									<div class="more-info">
+										<p class="text-white fw-normal text-center mt-3 mx-3 mb-0">Transcript of record, certification, clearance, honorable dismissal and diploma</p>
+										<div class="d-grid">
+											<button type="button" class="mx-2 my-3 btn btn-outline-light waves-effect waves-light text-uppercase fw-normal">More Info</button>
+										</div>
 									</div>
-									<div class="card-footer bg-transparent">
-										<h4 class="card-title text-white mb-0 text-center">Documents Processing</h4>
+									<div class="card-body service-bottom">
+										<h4 class="text-white fw-normal mb-0 text-center">Documents Processing</h4>
 									</div>
 								</a>
 							</div>
 						</div>
 					</div>
-					<div class="col px-0">
-						<div class="card card-overlay menu-row card-animate">
+					<div class="col-services px-0">
+						<div class="card card-overlay menu-row card-animate mb-0">
 							<div class="menu-overlay"></div>
 							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-4.jpg" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
 								<a href="<?= base_url() ?>student/organizations">
-									<div class="card-body px-1">
-										<p class="card-text text-white text-center mb-2">Get to know different student organizations</p>
+									<div class="more-info">
+										<p class="text-white fw-normal text-center mt-3 mx-3 mb-0">Get to know different student organizations</p>
+										<div class="d-grid">
+											<button type="button" class="mx-2 my-3 btn btn-outline-light waves-effect waves-light text-uppercase fw-normal">More Info</button>
+										</div>
 									</div>
-									<div class="card-footer bg-transparent">
-										<h4 class="card-title text-white mb-0 text-center">Student Organizations</h4>
+									<div class="card-body service-bottom">
+										<h4 class="text-white fw-normal mb-0 text-center">Student Organizations</h4>
 									</div>
 								</a>
 							</div>
 						</div>
 					</div>
-					<div class="col px-0">
-						<div class="card card-overlay menu-row card-animate">
+					<div class="col-services px-0">
+						<div class="card card-overlay menu-row card-animate mb-0">
 							<div class="menu-overlay"></div>
 							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-5.jpg" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
 								<a href="https://osssac.pup.edu.ph">
-									<div class="card-body px-1">
-										<p class="card-text text-white text-center mb-2">Online service dedicated to answer queries and reports of the students concerning admission, enrollment, library processes and more</p>
+									<div class="more-info">
+										<p class="text-white fw-normal text-center mt-3 mx-3 mb-0">Online service dedicated to answer queries and reports of the students concerning admission, enrollment, library processes and more</p>
+										<div class="d-grid">
+											<button type="button" class="mx-2 my-3 btn btn-outline-light waves-effect waves-light text-uppercase fw-normal">More Info</button>
+										</div>
 									</div>
-									<div class="card-footer bg-transparent">
-										<h4 class="card-title text-white mb-0 text-center">Student Support</h4>
+									<div class="card-body service-bottom">
+										<h4 class="text-white fw-normal mb-0 text-center">Student Support</h4>
 									</div>
 								</a>
 							</div>
 						</div>
 					</div>
-					<div class="col px-0">
-						<div class="card card-overlay menu-row card-animate">
+					<div class="col-services px-0">
+						<div class="card card-overlay menu-row card-animate mb-0">
 							<div class="menu-overlay"></div>
 							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-6.jpg" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
 								<a href="<?= base_url() ?>calendar">
-									<div class="card-body px-1">
-										<p class="card-text text-white text-center mb-2">University Calendar for Academic Year 2021-2022</p>
+									<div class="more-info">
+										<p class="text-white fw-normal text-center mt-3 mx-3 mb-0">University Calendar for Academic Year 2022-2023</p>
+										<div class="d-grid">
+											<button type="button" class="mx-2 my-3 btn btn-outline-light waves-effect waves-light text-uppercase fw-normal">More Info</button>
+										</div>
 									</div>
-									<div class="card-footer bg-transparent">
-										<h4 class="card-title text-white mb-0 text-center">Academic Calendar</h4>
+									<div class="card-body service-bottom">
+										<h4 class="text-white fw-normal mb-0 text-center">Academic Calendar</h4>
 									</div>
 								</a>
 							</div>
@@ -331,13 +340,11 @@
 			</div>
 			<!-- end container -->
 		</section>
-		<!-- end team -->
 
-		<!-- start services -->
-		<section class="section" id="services">
+		<section class="section" id="updates">
 			<div class="container">
 				<div class="row d-flex">
-					<div class="col-xl-4 col-lg-6">
+					<div class="col-xl-4 col-lg-4 col-xs-1">
 						<div class="card">
 							<div class="card-header">
 								<h4 class="card-title mb-0 fw-medium text-primary">Announcements and Advisories</h4>
@@ -345,109 +352,108 @@
 
 							<div class="card-body">
 								<div class="mx-n3">
-									<div data-simplebar data-simplebar-auto-hide="false" data-simplebar-track="primary" style="max-height: 494px;">
-										<a href="https://www.facebook.com/sscpupquezoncity/videos/1919189238471683/" class="text-reset notification-item d-block dropdown-item">
-											<div class="d-flex align-items-start">
-												<div class="flex-grow-1 overflow-hidden">
-													<h5 class="text-truncate fs-14 mb-1 text-primary">E-REPORT: Safe Space for PUPQC Students' Academic Issues & Concerns</h5>
-													<p class="text-truncate text-muted mb-0">Posted: <span class="fs-13">23 Nov, 2021,</span>
-														<small class="text-muted">02:21 AM</small>
-													</p>
+									<div data-simplebar data-simplebar-auto-hide="false" data-simplebar-track="primary" style="max-height: 536px;">
+										<div class="list-group list-group-flush">
+											<a href="https://www.facebook.com/sscpupquezoncity/videos/1919189238471683/" class="text-reset notification-item d-block dropdown-item list-group-item py-4">
+												<div class="d-flex align-items-start">
+													<div class="flex-grow-1 overflow-hidden">
+														<h5 class="fw-normal mb-1 text-primary">E-REPORT: Safe Space for PUPQC Students' Academic Issues & Concerns</h5>
+														<p class="mb-0 fs-6">Posted: <span>23 Nov, 2021,</span>
+															<small>02:21 AM</small>
+														</p>
+													</div>
 												</div>
-											</div>
-										</a>
-										<a href="https://www.facebook.com/sscpupquezoncity/posts/pfbid0pJgkKFiqPrTVLvev4KCJk894vhgzipEJ1tccAySHAGoiYbKW5RmBnwjkY1rf1bB7l" class="text-reset notification-item d-block dropdown-item active">
-											<div class="d-flex align-items-start">
-												<div class="flex-grow-1 overflow-hidden">
-													<h5 class="text-truncate fs-14 mb-1 text-primary">A Resolution Recognizing the Newly Established Student Commission on Election (COMELEC) in the Polytechnic University of the Philippines Quezon City Branch</h5>
-													<p class="text-truncate text-muted mb-0">Posted: <span class="fs-13">13 Aug, 2022,</span>
-														<small class="text-muted">02:36 PM</small>
-													</p>
+											</a>
+											<a href="https://www.facebook.com/sscpupquezoncity/posts/pfbid0pJgkKFiqPrTVLvev4KCJk894vhgzipEJ1tccAySHAGoiYbKW5RmBnwjkY1rf1bB7l" class="text-reset notification-item d-block dropdown-item list-group-item py-4">
+												<div class="d-flex align-items-start">
+													<div class="flex-grow-1 overflow-hidden">
+														<h5 class="fw-normal mb-1 text-primary">A Resolution Recognizing the Newly Established Student Commission on Election (COMELEC)</h5>
+														<p class="mb-0 fs-6">Posted: <span>13 Aug, 2022,</span>
+															<small class="text-muted">02:36 PM</small>
+														</p>
+													</div>
 												</div>
-											</div>
-										</a>
-										<a href="https://www.facebook.com/sscpupquezoncity/posts/pfbid02wRAw94xJTYpbSXkT72qoTiqaCoyPUZ6xhRA8zjHqu742KjWCEYNe37Fpf2CWLBywl" class="text-reset notification-item d-block dropdown-item">
-											<div class="d-flex align-items-start">
-												<div class="flex-grow-1 overflow-hidden">
-													<h5 class="text-truncate fs-14 mb-1 text-primary">A Resolution Adopting the Amendments to the Constitution and By-Laws of the PUP Quezon City Supreme Student Council</h5>
-													<p class="text-truncate text-muted mb-0">Posted: <span class="fs-13">04 Apr, 2022,</span>
-														<small class="text-muted">02:21 AM</small>
-													</p>
+											</a>
+											<a href="https://www.facebook.com/sscpupquezoncity/posts/pfbid02wRAw94xJTYpbSXkT72qoTiqaCoyPUZ6xhRA8zjHqu742KjWCEYNe37Fpf2CWLBywl" class="text-reset notification-item d-block dropdown-item list-group-item py-4">
+												<div class="d-flex align-items-start">
+													<div class="flex-grow-1 overflow-hidden">
+														<h5 class="fw-normal mb-1 text-primary">A Resolution Adopting the Amendments to the Constitution and By-Laws of the SSC</h5>
+														<p class="mb-0 fs-6">Posted: <span>04 Apr, 2022,</span>
+															<small class="text-muted">02:21 AM</small>
+														</p>
+													</div>
 												</div>
-											</div>
-										</a>
-										<a href="https://www.facebook.com/ThePUPOfficial/posts/pfbid0EMX2xx6XxvW2JZ9Cf9rxDRoYsnVCVr5ACieVxtYsmFjSsZRViD7X4YUTTagRWcuXl" class="text-reset notification-item d-block dropdown-item">
-											<div class="d-flex align-items-start">
-												<div class="flex-grow-1 overflow-hidden">
-													<h5 class="text-truncate fs-14 mb-1 text-primary"> Printing of Certificate of Candidacy (COC) will end on August 15, 2022</h5>
-													<p class="text-truncate text-muted mb-0">Posted: <span class="fs-13">11 Aug, 2022,</span>
-														<small class="text-muted">10:52 AM</small>
-													</p>
+											</a>
+											<a href="https://www.facebook.com/ThePUPOfficial/posts/pfbid0EMX2xx6XxvW2JZ9Cf9rxDRoYsnVCVr5ACieVxtYsmFjSsZRViD7X4YUTTagRWcuXl" class="text-reset notification-item d-block dropdown-item list-group-item py-4">
+												<div class="d-flex align-items-start">
+													<div class="flex-grow-1 overflow-hidden">
+														<h5 class="fw-normal mb-1 text-primary">Printing of Certificate of Candidacy (COC) will end on August 15, 2022</h5>
+														<p class="mb-0 fs-6">Posted: <span>11 Aug, 2022,</span>
+															<small class="text-muted">10:52 AM</small>
+														</p>
+													</div>
 												</div>
-											</div>
-										</a>
-										<a href="https://www.facebook.com/ThePUPOfficial/posts/pfbid0riNCN2XSpZV67VN4ynkr6JvAPJLPShndGJmy8vQvXVCHdzBt9e9o9GAyfxjYWozul" class="text-reset notification-item d-block dropdown-item">
-											<div class="d-flex align-items-start">
-												<div class="flex-grow-1 overflow-hidden">
-													<h5 class="text-truncate fs-14 mb-1 text-primary">Freshmen Students, submission of credentials is extended until August 31, 2022.</h5>
-													<p class="text-truncate text-muted mb-0">Posted: <span class="fs-13">17 Aug, 2022,</span>
-														<small class="text-muted">02:43 PM</small>
-													</p>
+											</a>
+											<a href="https://www.facebook.com/ThePUPOfficial/posts/pfbid0riNCN2XSpZV67VN4ynkr6JvAPJLPShndGJmy8vQvXVCHdzBt9e9o9GAyfxjYWozul" class="text-reset notification-item d-block dropdown-item list-group-item py-4">
+												<div class="d-flex align-items-start">
+													<div class="flex-grow-1 overflow-hidden">
+														<h5 class="fw-normal mb-1 text-primary">Freshmen Students, submission of credentials is extended until August 31, 2022.</h5>
+														<p class="mb-0 fs-6">Posted: <span>17 Aug, 2022,</span>
+															<small class="text-muted">02:43 PM</small>
+														</p>
+													</div>
 												</div>
-											</div>
-										</a>
-										<a href="https://www.facebook.com/voxnovapupqc/posts/pfbid02v1vGtiw7i41YvzqwqhhiVwzwkdmYbzvhY76TRni8v5QKBLy6VsHVoVLwTgtfiQmBl" class="text-reset notification-item d-block dropdown-item">
-											<div class="d-flex align-items-start">
-												<div class="flex-grow-1 overflow-hidden">
-													<h5 class="text-truncate fs-14 mb-1 text-primary">BREAKING: CAEPUPQC RESULTS SET TO RELEASE TODAY THROUGH iAPPLY</h5>
-													<p class="text-truncate text-muted mb-0">Posted: <span class="fs-13">24 Jun, 2022,</span>
-														<small class="text-muted">05:18 PM</small>
-													</p>
+											</a>
+											<a href="https://www.facebook.com/voxnovapupqc/posts/pfbid02v1vGtiw7i41YvzqwqhhiVwzwkdmYbzvhY76TRni8v5QKBLy6VsHVoVLwTgtfiQmBl" class="text-reset notification-item d-block dropdown-item list-group-item py-4">
+												<div class="d-flex align-items-start">
+													<div class="flex-grow-1 overflow-hidden">
+														<h5 class="fw-normal mb-1 text-primary">BREAKING: CAEPUPQC results set to release today through iApply</h5>
+														<p class="mb-0 fs-6">Posted: <span>24 Jun, 2022,</span>
+															<small class="text-muted">05:18 PM</small>
+														</p>
+													</div>
 												</div>
-											</div>
-										</a>
-										<a href="https://www.facebook.com/ThePUPOfficial/posts/pfbid02GuwAAiNxECZY5orgSMBcHBLjmbqJxk4U2qUAmxDmyRaxATWi1q7n9nqx15Je8XFrl" class="text-reset notification-item d-block dropdown-item">
-											<div class="d-flex align-items-start">
-												<div class="flex-grow-1 overflow-hidden">
-													<h5 class="text-truncate fs-14 mb-1 text-primary">Re-opening of the Application for Year-End Graduation AY 2021-2022 for the Main Campus and Branches and Campuses</h5>
-													<p class="text-truncate text-muted mb-0">Posted: <span class="fs-13">08 Jun, 2022,</span>
-														<small class="text-muted">03:19 PM</small>
-													</p>
+											</a>
+											<a href="https://www.facebook.com/ThePUPOfficial/posts/pfbid02GuwAAiNxECZY5orgSMBcHBLjmbqJxk4U2qUAmxDmyRaxATWi1q7n9nqx15Je8XFrl" class="text-reset notification-item d-block dropdown-item list-group-item py-4">
+												<div class="d-flex align-items-start">
+													<div class="flex-grow-1 overflow-hidden">
+														<h5 class="fw-normal mb-1 text-primary">Re-opening of the Application for Year-End Graduation AY 2021-2022</h5>
+														<p class="mb-0 fs-6">Posted: <span>08 Jun, 2022,</span>
+															<small class="text-muted">03:19 PM</small>
+														</p>
+													</div>
 												</div>
-											</div>
-										</a>
-										<a href="https://www.facebook.com/sscpupquezoncity/posts/pfbid02SCZLiiEYuLVwMz3pRe6yPd66H88DsW8uoVWPXqKtbXZtYgFdLqrEggD1NSmqJP5Pl" class="text-reset notification-item d-block dropdown-item">
-											<div class="d-flex align-items-start">
-												<div class="flex-grow-1 overflow-hidden">
-													<h5 class="text-truncate fs-14 mb-1 text-primary">The application for graduation is extended until June 15, 2022 as per Ms. Cherrylyn Esparagoza of Admission Office.</h5>
-													<p class="text-truncate text-muted mb-0">Posted: <span class="fs-13">02 Jun, 2022,</span>
-														<small class="text-muted">03:35 PM</small>
-													</p>
+											</a>
+											<a href="https://www.facebook.com/sscpupquezoncity/posts/pfbid02SCZLiiEYuLVwMz3pRe6yPd66H88DsW8uoVWPXqKtbXZtYgFdLqrEggD1NSmqJP5Pl" class="text-reset notification-item d-block dropdown-item list-group-item py-4">
+												<div class="d-flex align-items-start">
+													<div class="flex-grow-1 overflow-hidden">
+														<h5 class="fw-normal mb-1 text-primary">The application for graduation is extended until June 15, 2022</h5>
+														<p class="mb-0 fs-6">Posted: <span>02 Jun, 2022,</span>
+															<small class="text-muted">03:35 PM</small>
+														</p>
+													</div>
 												</div>
-											</div>
-										</a>
-										<a href="https://www.facebook.com/voxnovapupqc/posts/pfbid0QYZehnipJMkCkhBT7eVr2zgxCe3nmdTBLq19cdGJxia8uh5xYwDieAuehqPTeV6nl" class="text-reset notification-item d-block dropdown-item">
-											<div class="d-flex align-items-start">
-												<div class="flex-grow-1 overflow-hidden">
-													<h5 class="text-truncate fs-14 mb-1 text-primary">F2F Graduation in PUPQC for Academic Year 2021-2022 in Talks</h5>
-													<p class="text-truncate text-muted mb-0">Posted: <span class="fs-13">19 May, 2022,</span>
-														<small class="text-muted">12:35 PM</small>
-													</p>
+											</a>
+											<a href="https://www.facebook.com/voxnovapupqc/posts/pfbid0QYZehnipJMkCkhBT7eVr2zgxCe3nmdTBLq19cdGJxia8uh5xYwDieAuehqPTeV6nl" class="text-reset notification-item d-block dropdown-item list-group-item py-4">
+												<div class="d-flex align-items-start">
+													<div class="flex-grow-1 overflow-hidden">
+														<h5 class="fw-normal mb-1 text-primary">F2F Graduation in PUPQC for Academic Year 2021-2022 in Talks</h5>
+														<p class="mb-0 fs-6">Posted: <span>19 May, 2022,</span>
+															<small class="text-muted">12:35 PM</small>
+														</p>
+													</div>
 												</div>
-											</div>
-										</a>
-										<a href="https://www.facebook.com/voxnovapupqc/posts/pfbid0Rm1E452K9BacxHKmUrBkPoBUvvQYxeDb9bj2mCQJtBVFgCCaz3S2JssVsjiXx9kml" class="text-reset notification-item d-block dropdown-item">
-											<div class="d-flex align-items-start">
-												<div class="flex-grow-1 overflow-hidden">
-													<h5 class="text-truncate fs-14 mb-1 text-primary">PUPQC Admin Releases Graduating Students' Schedule for Second Semester</h5>
-													<p class="text-truncate text-muted mb-0">Posted: <span class="fs-13">05 May, 2022,</span>
-														<small class="text-muted">02:18 PM</small>
-													</p>
+											</a>
+											<a href="https://www.facebook.com/voxnovapupqc/posts/pfbid0Rm1E452K9BacxHKmUrBkPoBUvvQYxeDb9bj2mCQJtBVFgCCaz3S2JssVsjiXx9kml" class="text-reset notification-item d-block dropdown-item list-group-item py-4">
+												<div class="d-flex align-items-start">
+													<div class="flex-grow-1 overflow-hidden">
+														<h5 class="fw-normal mb-1 text-primary">PUPQC Admin Releases Graduating Students' Schedule for Second Semester</h5>
+														<p class="mb-0 fs-6">Posted: <span class="fs-13">05 May, 2022,</span>
+															<small class="text-muted">02:18 PM</small>
+														</p>
+													</div>
 												</div>
-											</div>
-										</a>
-										<div class="text-center my-2">
-											<a href="javascript:void(0);" class="text-success"><i class="mdi mdi-loading mdi-spin fs-20 align-middle me-2"></i> Load more </a>
+											</a>
 										</div>
 									</div>
 								</div>
@@ -455,7 +461,7 @@
 						</div><!-- end card -->
 					</div>
 					<!-- end col -->
-					<div class="col-xl-6 col-lg-6">
+					<div class="col-xl-6 col-lg-5 col-xs-1">
 						<div class="card">
 							<div class="card-header">
 								<h4 class="card-title mb-0 fw-medium text-primary">Latest News from the University</h4>
@@ -466,26 +472,26 @@
 									<div class="swiper-wrapper">
 										<div class="swiper-slide">
 											<a href="https://www.facebook.com/361074807312478/posts/5359676797452229/" target="_blank">
-												<img src="<?= base_url() ?>public/images/news/img-1.jpg" alt="" class="img-fluid mb-4" />
-												<h5 class="text-wrap fs-14 mb-1 text-primary">PUP President Muhi announces face-to-face recognition and graduation rites</h5>
+												<img src="<?= base_url() ?>public/images/news/img-1.jpg" class="img-fluid news-img" />
+												<h5 class="text-wrap mb-3 mt-4 text-primary">PUP President Muhi announces face-to-face recognition and graduation rites</h5>
 											</a>
-											<span class="fs-13">1 Aug, 2022,</span>
+											<span class="h5 fw-light">1 Aug, 2022,</span>
 											<small class="text-muted">09:48 AM</small>
 										</div>
 										<div class="swiper-slide">
 											<a href="https://www.facebook.com/361074807312478/posts/5308009152618994/" target="_blank">
-												<img src="<?= base_url() ?>public/images/news/img-2.jpg" alt="" class="img-fluid mb-4" />
-												<h5 class="text-wrap fs-14 mb-1 text-primary">Succession of new PUPQC Aministration Announced for Academic Year 22-23</h5>
+												<img src="<?= base_url() ?>public/images/news/img-2.jpg" class="img-fluid news-img" />
+												<h5 class="text-wrap mb-3 mt-4 text-primary">Succession of new PUPQC Aministration Announced for Academic Year 22-23</h5>
 											</a>
-											<span class="fs-13">13 Jul, 2022,</span>
+											<span class="h5 fw-light">13 Jul, 2022,</span>
 											<small class="text-muted">02:15 PM</small>
 										</div>
 										<div class="swiper-slide">
 											<a href="https://www.facebook.com/361074807312478/posts/5320818454671397/" target="_blank">
-												<img src="<?= base_url() ?>public/images/news/img-3.jpg" alt="" class="img-fluid mb-4" />
-												<h5 class="text-wrap fs-14 mb-1 text-primary">PUPQC Heralds its New Set of Leaders</h5>
+												<img src="<?= base_url() ?>public/images/news/img-3.jpg" class="img-fluid news-img" />
+												<h5 class="text-wrap mb-3 mt-4 text-primary">PUPQC Heralds its New Set of Leaders</h5>
 											</a>
-											<span class="fs-13">17 Jul, 2022,</span>
+											<span class="h5 fw-light">17 Jul, 2022,</span>
 											<small class="text-muted">03:29 PM</small>
 										</div>
 									</div>
@@ -495,25 +501,30 @@
 						</div><!-- end card -->
 					</div>
 					<!--end col-->
-					<div class="col-xl-2 col-lg-6">
-						<div class="mb-4">
+					<div class="col-xl-2 col-lg-3 col-xs-1 links">
+						<div class="mb-2">
 							<a href="https://www.pup.edu.ph/goodgovernance/transparency/2022/" target="_blank">
 								<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-1.jpg">
 							</a>
 						</div>
-						<div class="mb-4">
+						<div class="mb-2">
 							<a href="https://www.foi.gov.ph/requests?agency=PUP" target="_blank">
 								<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-2.jpg">
 							</a>
 						</div>
-						<div class="mb-4">
+						<div class="mb-2">
 							<a href="https://drive.google.com/file/d/1l4EAMMYbtJXTT2SilRas9LT_N8E39d4j/view?usp=sharing" target="_blank">
 								<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-3.jpg">
 							</a>
 						</div>
-						<div class="mb-4">
-							<a href="https://drive.google.com/open?id=14z_gxp97PYh7eLIAC6k4LqlGXNY_5xNa" target="_blank">
+						<div class="mb-2">
+							<a href="https://www.pup.edu.ph/gad/" target="_blank">
 								<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-4.jpg">
+							</a>
+						</div>
+						<div class="mb-2">
+							<a href="https://drive.google.com/open?id=14z_gxp97PYh7eLIAC6k4LqlGXNY_5xNa" target="_blank">
+								<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-5.jpg">
 							</a>
 						</div>
 					</div>
@@ -523,10 +534,8 @@
 			</div>
 			<!-- end container -->
 		</section>
-		<!-- end services -->
 
-		<!-- start review -->
-		<section class="section " id="reviews">
+		<section class="section " id="events">
 			<div class="bg-overlay bg-primary bg-overlay-pattern"></div>
 			<div class="container">
 				<div class="row justify-content-center">
@@ -622,23 +631,19 @@
 			</div>
 			<!-- end container -->
 		</section>
-		<!-- end review -->
 
-		<!-- start plan -->
-		<section class="section bg-light" id="plans">
+		<section class="section bg-light" id="sns">
 			<div class="bg-overlay bg-overlay-pattern"></div>
 			<div class="container">
-				<div class="row gy-4">
-					<div class="col-lg-6">
-						<div class="fb-page" data-href="https://www.facebook.com/sscpupquezoncity" data-tabs="timeline" data-width="500" data-height="575" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-							<blockquote cite="https://www.facebook.com/sscpupquezoncity" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/sscpupquezoncity">PUPQC Supreme Student Council</a></blockquote>
-						</div>
+				<div class="row">
+					<div class="col-xs-12 col-md-7 col-lg-6 overflow-auto">
+						<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FThePUPQCBranchOfficial&show_posts=true&width=500&height=575&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="500" height="575" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
 					</div>
 					<!--end col-->
-					<div class="col-lg-6">
-						<div class="row gap-4">
+					<div class="col-xs-12 col-md-5 col-lg-6">
+						<div class="row">
 							<div class="col-lg-12">
-								<iframe width="100%" height="315" src="https://www.youtube.com/embed/NPKPqbmXPaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								<iframe width="100%" height="340" src="https://www.youtube.com/embed/NPKPqbmXPaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							</div>
 							<div class="col-lg-12">
 								<iframe style="border-radius:12px" src="https://open.spotify.com/embed/show/6x7hlv9qZX8VpwMIRAAiRb?utm_source=generator" width="100%" height="232" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
@@ -651,9 +656,7 @@
 			</div>
 			<!-- end container -->
 		</section>
-		<!-- end plan -->
 
-		<!-- start contact -->
 		<section class="section" id="contact">
 			<div class="container">
 				<div class="row justify-content-center">
@@ -744,4 +747,3 @@
 			</div>
 			<!-- end container -->
 		</section>
-		<!-- end contact -->

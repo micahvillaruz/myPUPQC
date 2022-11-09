@@ -9,7 +9,7 @@
         </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body p-5">
+      <div class="modal-body px-5 py-4">
         <form id="addDocumentForm" class="needs-validation" novalidate>
           <div class="mb-3">
             <label for="document_name" class="form-label">Document Name <span class="text-danger">*</span></label>
@@ -38,6 +38,13 @@
               Please enter the Document Details.
             </div>
           </div>
+          <div class="mb-3">
+            <label for="document_requirements" class="form-label">Document Requirements <span class="text-danger">*</span></label>
+            <textarea id="document_requirements" name="document_requirements" class="form-control" rows="3" placeholder="Enter the requirements needed for the request of this document" required></textarea>
+            <div class="invalid-feedback">
+              Please enter the Document Requirements.
+            </div>
+          </div>
           <button type="submit" class="btn btn-primary w-100 mt-3">Submit</button>
         </form>
       </div>
@@ -49,22 +56,27 @@
 <!-- /.modal -->
 
 <!-- VIEW DOCUMENT MODAL -->
-<div class="modal fade" id="viewDocumentModal" tabindex="-1" role="dialog" aria-labelledby="viewDocumentTitle" aria-hidden="true">
+<div id="viewDocumentModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content border-0" style="background: url('<?= base_url() ?>public/images/chat-bg-pattern.png') rgb(255, 255, 255);">
-      <div class="modal-body text-center mt-5">
-        <h5 class="fs-20 mb-3">Informative Copy of Grades / Certified Copy of Grades</h5>
-        <div class="d-flex">
-          <div class="flex-grow-1 ms-2">
-            <p class="text-muted fs-15 mb-2">
-              (For transfer to other school or scholarship)
-            </p>
-          </div>
-        </div>
-        <div class="d-flex align-items-center justify-content-center">
-          <h6 class="d-inline my-3 me-2 fs-13">Document Type: </h6>
-          <span class="text-uppercase badge badge-soft-success"><i class="me-2 mdi mdi-certificate fs-13"></i>Certifications</span>
-        </div>
+    <div class="modal-content border-0 overflow-hidden" style="background: url('<?= base_url() ?>public/images/chat-bg-pattern.png') rgb(255, 255, 255);">
+      <div class="modal-body login-modal p-5">
+        <h5 class="text-white text-center fs-20" id="document_name">
+          Informative Copy of Grades / <br> Certified Copy of Grades
+        </h5>
+      </div>
+      <div class="modal-body px-5 pt-5">
+        <span class="badge badge-soft-dark fs-15 mb-3"> <i class="ri-file-list-3-line me-2"></i> Category</span>
+        <p class="mb-4 text-center" id="document_category">
+          <span class="text-uppercase badge bg-success fs-13"><i class="me-2 mdi mdi-certificate fs-13"></i>Certifications</span>
+        </p>
+        <span class="badge badge-soft-dark fs-15 mb-3"> <i class="ri-file-list-3-line me-2"></i> Details</span>
+        <p class="mb-4" id="document_details">
+          For transfer to other school or scholarship
+        </p>
+        <span class="badge badge-soft-dark fs-15 mb-3"> <i class=" ri-folder-4-line me-2"></i> Requirements</span>
+        <p id="document_requirements">
+          Photocopy of Student ID (Back to Back), Documentary Stamp, and Letter stating the purpose of the request
+        </p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger btn-animation waves-effect waves-light fs-13" data-text="Close" data-bs-dismiss="modal"><span>Close</span></button>
@@ -74,6 +86,7 @@
   </div>
   <!-- /.modal-dialog -->
 </div>
+<!-- /.modal -->
 <!-- /.modal -->
 
 <!-- UPDATE DOCUMENT MODAL -->
@@ -87,7 +100,7 @@
         </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body p-5">
+      <div class="modal-body px-5 py-4">
         <form id="editDocumentForm" class="needs-validation" novalidate>
           <div class="mb-3">
             <label for="edit_document_name" class="form-label">Document Name <span class="text-danger">*</span></label>
@@ -111,9 +124,16 @@
           </div>
           <div class="mb-3">
             <label for="edit_document_details" class="form-label">Document Details <span class="text-danger">*</span></label>
-            <textarea id="edit_document_details" name="edit_document_details" class="form-control" rows="3" placeholder="Enter additional details about the Document" required>(For transfer to other school or scholarship)</textarea>
+            <textarea id="edit_document_details" name="edit_document_details" class="form-control" rows="3" placeholder="Enter additional details about the Document" required>For transfer to other school or scholarship</textarea>
             <div class="invalid-feedback">
               Please enter the Document Details.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="edit_document_requirements" class="form-label">Document Requirements <span class="text-danger">*</span></label>
+            <textarea id="edit_document_requirements" name="edit_document_requirements" class="form-control" rows="3" placeholder="Enter the requirements needed for the request of this document" required>Photocopy of Student ID (Back to Back), Documentary Stamp, and Letter stating the purpose of the request</textarea>
+            <div class="invalid-feedback">
+              Please enter the Document Requirements.
             </div>
           </div>
           <button type="submit" class="btn btn-primary w-100 mt-3">Submit</button>

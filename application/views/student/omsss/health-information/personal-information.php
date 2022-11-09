@@ -193,7 +193,8 @@
 							<input class="form-control form-control-sm" id="philhealth_id_image'" name="philHealth_id_image" type="file">
         			</div>
     				</div>
-    							<div class="text-end">
+							<div class="col-lg-12 mt-4">
+                  <div class="text-center d-grid">
         							<button type="submit" class="btn btn-primary">Update</button>
     							</div>
 								</form>

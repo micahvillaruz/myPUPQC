@@ -5,8 +5,8 @@
         <!-- Start right Content here -->
         <!-- ============================================================== -->
         <div class="main-content ms-0 bg-light">
-            <div class="page-content pt-4">
-                <div class="container-fluid">
+            <div class="page-content pt-4 m-0">
+                <div class="container-boxed">
                     <div class="profile-foreground position-relative mx-n4 mt-n4">
                         <div class="profile-wid-bg">
                             <img src="<?= base_url() ?>public/images/pupqc-bg.jpg" alt="" class="profile-wid-img" />
@@ -63,7 +63,7 @@
                                                         <p><span class="fw-medium">Step 4.</span> BREB would issue and endorsement of every undergraduate research work to the Branch Research Management Office.</p>
                                                         <p><span class="fw-medium">Step 5.</span> The RMO would issue a clearance for every research work conducted inside the University.</p>
                                                     </div>
-                                                    
+
                                                 </div>
                                             </div>
                                             <!--end card-body-->
@@ -82,22 +82,22 @@
                                                 <div>
                                                     <ul class="list-group list-group-flush">
                                                         <li class="list-group-item">
-                                                            <a class="text-muted" href="#!">Research Management Office</a>
+                                                            <a class="text-muted" href="<?= base_url() ?>research/researches">Research Management Office</a>
                                                         </li>
                                                         <li class="list-group-item text-muted">
-                                                            <a class="text-muted" href="#!">Objectives</a>
+                                                            <a class="text-muted" href="<?= base_url() ?>research/objectives">Objectives</a>
                                                         </li>
                                                         <li class="list-group-item">
-                                                            <a class="text-muted" href="#!">Logo</a>
+                                                            <a class="text-muted" href="<?= base_url() ?>about/logo-and-symbols">Logo</a>
                                                         </li>
                                                         <li class="list-group-item">
-                                                            <a class="text-muted" href="#!">Services and Regular Capacity <br> Building Programs / Projects</a>
+                                                            <a class="text-muted" href="<?= base_url() ?>research/services">Services and Regular Capacity <br> Building Programs / Projects</a>
                                                         </li>
                                                         <li class="list-group-item">
-                                                            <a class="text-muted" href="#!">Officials and Staffs</a>
+                                                            <a class="text-muted" href="<?= base_url() ?>personnel">Officials and Staffs</a>
                                                         </li>
                                                         <li class="list-group-item">
-                                                            <a class="text-muted" href="#!">Contact Information</a>
+                                                            <a class="text-muted" href="<?= base_url() ?>about/contact-us">Contact Information</a>
                                                         </li>
                                                     </ul>
                                                 </div>

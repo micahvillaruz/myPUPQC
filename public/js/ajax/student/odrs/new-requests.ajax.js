@@ -46,16 +46,16 @@ loadDocuments = () => {
 
 		$('#tabpanes').append(`
 			<div class="tab-pane ${i === 0 ? 'active' : ''}" id="${typesID[i + 8]}" role="tabpanel">
-			<table class="table dt-responsive nowrap align-middle" id="${typesID[i]}" style="width: 100%">
-				<thead>
-					<tr>
-						<th data-ordering="false">Document (Click the document/s you want to request)</th>
-						<th>Quantity</th>
-					</tr>
-				</thead>
-				<tbody>
-				</tbody>
-			</table>
+				<table class="table dt-responsive align-middle" id="${typesID[i]}" style="width: 100%">
+					<thead>
+						<tr>
+							<th data-ordering="false">Document</th>
+							<th>Quantity</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
 			</div>
 		`)
 
@@ -81,19 +81,19 @@ loadDocuments = () => {
 							<div class="form-check me-3">
 								<input class="form-check-input fs-15" type="checkbox" name="checkAll" value="${data.document_id}" />
 							</div>
-            	<div class="d-flex flex-column">
-              	${data.document_name}
-            		<small> ${data.document_requirements === null ? '' : data.document_requirements}</small>
-            		<div class="mt-1">
-              		<button type="button" class="btn btn-sm btn-secondary btn-label waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentDetails" onclick="loadDocumentInfo('${
+							<div class="d-flex flex-column">
+								${data.document_name}
+								<small> ${data.document_requirements === null ? '' : data.document_requirements}</small>
+								<div class="mt-1">
+									<button type="button" class="btn btn-sm btn-info btn-label waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentDetails" onclick="loadDocumentInfo('${
 										data.document_id
 									}')">
-									<i class="mdi mdi-eye label-icon align-middle fs-13 me-2"></i> 
-									View Details </button>
+										<i class="mdi mdi-eye label-icon align-middle fs-13 me-2"></i> 
+										View Details
+									</button>
 								</div>
-            	</div>
-						</div>
-            `
+							</div>
+						</div>`
 					},
 				},
 				{
@@ -101,12 +101,12 @@ loadDocuments = () => {
 					class: 'text-end',
 					render: (data) => {
 						return `
-            <div class="input-step step-primary">
-              <button type="button" class="minus">–</button>
-              <input type="number" class="product-quantity" id="${data.document_id}" value="1" min="1" max="100" readonly/>
-              <button type="button" class="plus">+</button>
-            </div>
-            `
+						<div class="input-step step-primary">
+							<button type="button" class="minus">–</button>
+								<input type="number" class="product-quantity" id="${data.document_id}" value="1" min="1" max="100" readonly/>
+							<button type="button" class="plus">+</button>
+						</div>
+            			`
 					},
 				},
 			],
@@ -166,7 +166,7 @@ createRequest = () => {
 					html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully created a request!</p></div></div>',
 					showCancelButton: !0,
 					showConfirmButton: !1,
-					cancelButtonClass: 'btn btn-primary w-xs mb-1',
+					cancelButtonClass: 'btn btn-success w-xs mb-1',
 					cancelButtonText: 'Ok',
 					buttonsStyling: !1,
 					showCloseButton: !0,
@@ -184,7 +184,7 @@ createRequest = () => {
 			}</p></div></div>`,
 			showCancelButton: !0,
 			showConfirmButton: !1,
-			cancelButtonClass: 'btn btn-primary w-xs mb-1',
+			cancelButtonClass: 'btn btn-danger w-xs mb-1',
 			cancelButtonText: 'Dismiss',
 			buttonsStyling: !1,
 			showCloseButton: !0,

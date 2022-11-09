@@ -47,7 +47,7 @@
                         <h3 class="mb-3 text-primary">Open University</h3>
                         <p>The PUP Open University System (PUP OUS), also known as the "Pamantasang Bayan", is a fresh and innovative system of delivering higher educational services in a manner that differs from the formal, highly structured, and classroom-oriented traditional approach.</p>
                         <div class="text-center mb-4">
-                          <img src="<?= base_url() ?>public\images\sbOUS.jpg" alt="" height="300">
+                          <img src="<?= base_url() ?>public\images\sbOUS.jpg" class="img-fluid">
                         </div>
                         <h5 class="text-primary">Institute of Open and Distance Education / Transnational Education</h5>
                         <p>Distance education provides option in terms of where and when you learn. You may study independently, with the guidance of a teacher or a tutor who grades and comments on your work or you may study online, communicating with your teacher and other students in your “online” classroom.</p>

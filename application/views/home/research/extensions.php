@@ -71,22 +71,22 @@
                         <div>
                           <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                              <a class="text-muted" href="#!">Extension Management Office</a>
+                              <a class="text-muted" href="<?= base_url() ?>research/extensions">Extension Management Office</a>
                             </li>
                             <li class="list-group-item text-muted">
-                              <a class="text-muted" href="#!">Vision, Mission</a>
+                            <a class="text-muted" href="<?= base_url() ?>about/vm">Vision and Mission</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="#!">Services</a>
+                              <a class="text-muted" href="<?= base_url() ?>#student-services">Services</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="#!">Logo</a>
+                              <a class="text-muted" href="<?= base_url() ?>about/logo-and-symbols">Logo</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="#!">Officials and Staff</a>
+                            <a class="text-muted" href="<?= base_url() ?>personnel">Officials and Staff</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="#!">Contact Information</a>
+                            <a class="text-muted" href="<?= base_url() ?>about/contact-us">Contact Information</a>
                             </li>
                           </ul>
                         </div>

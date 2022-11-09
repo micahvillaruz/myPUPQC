@@ -51,7 +51,7 @@
                           </div>
                           <p>
                             The Supreme Student Council, also known as SSC, is the highest policy-making and student-governing body of PUP Quezon City Branch that upholds a nationalist, scientific, and mass-oriented system of education.
-                            As we welcome the new Academic Year 2021-2022 in Polytechnic University of the Philippines Quezon City Branch, the new and well-represented student council is now ready to stand and fight for the students' rights, interests, and welfare at all costs. A student council that is committed to facing the challenges amidst these trying times and affirmed to have an HONEST, COMMITTED, and DATA-DRIVEN governance which will all be useful to uphold not just academic excellence but also bring forth sociopolitical consciousness among PUPQC students.
+                            As we welcome the new Academic Year 2022-2023 in Polytechnic University of the Philippines Quezon City Branch, the new and well-represented student council is now ready to stand and fight for the students' rights, interests, and welfare at all costs. A student council that is committed to facing the challenges amidst these trying times and affirmed to have an HONEST, COMMITTED, and DATA-DRIVEN governance which will all be useful to uphold not just academic excellence but also bring forth sociopolitical consciousness among PUPQC students.
                             The new set of SSC-Executive Board Officers comprise of student-leaders from different academic programs, students who have diverse personalities, raised in different cultures within and outside the university, students who have answered the call of duty to lead, and have chosen to be the voice of our fellow Iskolars ng Bayan.
                           </p>
                           <p>
@@ -75,97 +75,73 @@
                                 <td>
                                   <h5>President</h5>
                                 </td>
-                                <td>Jennylyn M. Balaoro</td>
+                                <td>Kevin Bautista</td>
                               </tr>
                               <tr>
                                 <td>
                                   <h5> Vice President</h5>
                                 </td>
-                                <td>Kristine Joy M. Baldovizo</td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <h5>Deputy Secretary</h5>
-                                </td>
-                                <td>Johnric P. Delos Reyes</td>
+                                <td>Vince Darison</td>
                               </tr>
                               <tr>
                                 <td>
                                   <h5>Secretary General</h5>
                                 </td>
-                                <td>Erica C. Cantos</td>
+                                <td>Ellen Joy Cahutay</td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <h5>Treasurer</h5>
+                                </td>
+                                <td>Joachim Lapresca</td>
                               </tr>
                               <tr>
                                 <td>
                                   <h5>Auditor</h5>
                                 </td>
-                                <td>Kate S. Culile</td>
+                                <td>Jamaica Zeah Poblete</td>
                               </tr>
                               <tr>
                                 <td>
-                                  <h5>Legal Counseling Officer</h5>
+                                  <h5>Financial Management Committee</h5>
                                 </td>
-                                <td>Shiena Mae Joan O. Francia</td>
+                                <td>Christian Bustillo</td>
                               </tr>
                               <tr>
                                 <td>
-                                  <h5>Research & Development Officer</h5>
+                                  <h5>Student Rights & Welfare Committee</h5>
                                 </td>
-                                <td>Jane Samer B. Pajela</td>
+                                <td>Christine Cortes</td>
                               </tr>
                               <tr>
                                 <td>
-                                  <h5>Budget & Finance Officer</h5>
+                                  <h5>Academic Research Commitee</h5>
                                 </td>
-                                <td>Sophia Veinne B. Cerbo</td>
+                                <td>Rhea Delos Santos</td>
                               </tr>
                               <tr>
                                 <td>
-                                  <h5>Internal Affair Officer</h5>
+                                  <h5>Gender & Development Committee</h5>
                                 </td>
-                                <td>Jhazzmin Nera</td>
+                                <td>Luan Barilli</td>
                               </tr>
                               <tr>
                                 <td>
-                                  <h5>External Affair Officer</h5>
+                                  <h5>External Affair & Partnership Committee</h5>
                                 </td>
-                                <td>Angelo J. Legaspi</td>
+                                <td>Owie Peña</td>
                               </tr>
                               <tr>
                                 <td>
-                                  <h5>Technical Commitee</h5>
+                                  <h5>Creative & Technical Commitee</h5>
                                 </td>
-                                <td>Krisha T. Maldonado</td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <h5>Technical Commitee</h5>
-                                </td>
-                                <td>Carl Marcus D. Aquino</td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <h5>Technical Commitee</h5>
-                                </td>
-                                <td>Jocy W. Zambrona</td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <h5>Technical Commitee</h5>
-                                </td>
-                                <td>Adrian Owen G. Balanquit</td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <h5>Public Affair Officer</h5>
-                                </td>
-                                <td>Ken Erika Godeloson</td>
+                                <td>Ace Marvel Vizoro</td>
                               </tr>
                             </tbody>
                           </table>
                           </p>
                           <div class="mb-3 d-flex justify-content-center">
-                            <img src="<?= base_url() ?>public/images/about/student/studentcouncil.jpg" alt="" class="img-fluid">
+                            <img src="<?= base_url() ?>public/images/about/student/ssc.jpg" alt="" class="img-fluid">
                           </div>
                           <p>
                             <b><i>Honest. Committed. Data-driven.</i></b>
@@ -204,13 +180,27 @@
                         </div>
                         <div>
                           <ul class="list-group list-group-flush">
-                            <li class="list-group-item">PUP Quezon City Branch</li>
-                            <li class="list-group-item">History</li>
-                            <li class="list-group-item">Facilities</li>
-                            <li class="list-group-item">Offices</li>
-                            <li class="list-group-item">Officials and Staff</li>
-                            <li class="list-group-item">Faculty</li>
-                            <li class="list-group-item">Contact Information</li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about">PUP Quezon City Branch</a>
+                            </li>
+                            <li class="list-group-item text-muted">
+                              <a class="text-muted" href="<?= base_url() ?>about/history">History</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>facilities">Facilities</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>offices">Offices</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>personnel">Officials and Staff</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>faculty">Faculty</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="text-muted" href="<?= base_url() ?>about/contact-us">Contact Information</a>
+                            </li>
                           </ul>
                         </div>
                       </div>

@@ -108,6 +108,8 @@ $route['student/downloads'] = 'home/downloads';
 // Research
 $route['research/researches'] = 'home/researches';
 $route['research/extensions'] = 'home/extensions';
+$route['research/objectives'] = 'home/objectives';
+$route['research/services'] = 'home/services';
 $route['research/intellectual-property'] = 'home/intellectual_property';
 $route['research/research-ethics'] = 'home/research_ethics';
 

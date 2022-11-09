@@ -5,10 +5,10 @@
         <script>
           document.write(new Date().getFullYear())
         </script>
-        © Velzon.
+        © myPUPQC.
       </div>
       <div class="col-sm-6">
-        <div class="text-sm-end d-none d-sm-block">Design & Develop by BSIT 3-1 Group 3</div>
+        <div class="text-sm-end d-none d-sm-block">Design & Develop by BSIT 4-1 Group 3</div>
       </div>
     </div>
   </div>

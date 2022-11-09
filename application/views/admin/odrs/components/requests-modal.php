@@ -151,30 +151,24 @@
             </div>
           </div>
         </div>
-        <table class="mt-5 table table-bordered nowrap align-middle" style="width: 100%">
+        <table class="mt-5 table table-bordered dt-responsive align-middle" style="width: 100%">
           <thead>
             <tr class="bg-light">
               <th colspan="4" class="fst-italic">Requested Document/s:</th>
             </tr>
             <tr>
               <th>Document</th>
-              <th>Quantity</th>
-              <th>Payment Status</th>
-              <th>Tentative Release Date</th>
+              <th>Qty</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Informative Copy of Grades / Certified Copy of Grades</td>
               <td class="text-center">1</td>
-              <td class="text-center"><span class="badge bg-success">Paid</span></td>
-              <td><span class="ms-2">02 Sep, 2022<small class="text-muted ms-1">08:00 AM</small></span></td>
             </tr>
             <tr>
               <td>Transcript of Records - For evaluation/reference (Undergraduate) 3rd and 4th Year</td>
               <td class="text-center">1</td>
-              <td class="text-center"><span class="badge bg-success">Paid</span></td>
-              <td><span class="ms-2">02 Sep, 2022<small class="text-muted ms-1">08:00 AM</small></span></td>
             </tr>
           </tbody>
         </table>

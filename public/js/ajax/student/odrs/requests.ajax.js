@@ -9,6 +9,7 @@ loadRequestsTable = () => {
 	if (dt.length) {
 		dt.DataTable({
 			bDestroy: true,
+			scrollX: true,
 			ajax: {
 				url: `${apiURL}odrs/student/view_requests`,
 				type: 'GET',
@@ -171,17 +172,17 @@ loadRequestsTable = () => {
 							return `
 							<div class="vstack gap-2">
 								<button type="button" class="btn btn-sm btn-info text-center waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails" onclick = "viewRequestDetails('${data.request_id}')"><i class="mdi mdi-eye label-icon align-middle me-2"></i> View Details</button>
-								<button type="button" class="btn btn-sm btn-light waves-effect waves-light" onclick="cancelRequest('${data.request_id}')"><i class="ri-close-fill label-icon align-middle me-2"></i> Cancel</button>
+								<button type="button" class="btn btn-sm btn-danger waves-effect waves-light" onclick="cancelRequest('${data.request_id}')"><i class="ri-close-fill label-icon align-middle me-2"></i> Cancel</button>
 							</div>
 							`
 						} else if (requestStatus === 'For Clearance') {
 							return `
 								<div class="vstack gap-2">
 									<button type="button" class="btn btn-sm btn-info text-center waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails" onclick="viewRequestDetails('${data.request_id}')"><i class="mdi mdi-eye label-icon align-middle me-2"></i> View Details</button>
-									<a type="button" class="btn btn-sm btn-success text-center waves-effect waves-light" href="${baseURL}public/file/Request-Form.pdf" download="Request-Form"><i class="mdi mdi-download label-icon align-middle me-2"></i> Download Request Form</a>
+									<a type="button" class="btn btn-sm btn-primary text-center waves-effect waves-light" href="${baseURL}public/file/Request-Form.pdf" download="Request-Form"><i class="mdi mdi-download label-icon align-middle me-2"></i> Download Request Form</a>
 								</div>
 								<div class="mt-4 d-grid">
-									<button type="button" class="btn btn-sm btn-light waves-effect waves-light" onclick="cancelRequest('${data.request_id}')"><i class="ri-close-fill label-icon align-middle me-2"></i> Cancel</button>
+									<button type="button" class="btn btn-sm btn-danger waves-effect waves-light" onclick="cancelRequest('${data.request_id}')"><i class="ri-close-fill label-icon align-middle me-2"></i> Cancel</button>
 								</div>
 							`
 						} else {
@@ -213,7 +214,6 @@ viewRequestDetails = (request_id) => {
 
 			let documentsList = ''
 			data.documents_assigned_to_request.forEach((document) => {
-				console.log(document)
 				documentsList += `
 					<tr>
 						<td>
@@ -641,7 +641,7 @@ cancelRequest = (request_id) => {
 								'</div>',
 							showCancelButton: !0,
 							showConfirmButton: !1,
-							cancelButtonClass: 'btn btn-primary w-xs mb-1',
+							cancelButtonClass: 'btn btn-success w-xs mb-1',
 							cancelButtonText: 'Ok',
 							buttonsStyling: !1,
 							showCloseButton: !0,
@@ -664,7 +664,7 @@ cancelRequest = (request_id) => {
 						'</div>',
 					showCancelButton: !0,
 					showConfirmButton: !1,
-					cancelButtonClass: 'btn btn-primary w-xs mb-1',
+					cancelButtonClass: 'btn btn-danger w-xs mb-1',
 					cancelButtonText: 'Dismiss',
 					buttonsStyling: !1,
 					showCloseButton: !0,

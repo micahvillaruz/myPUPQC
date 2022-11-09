@@ -8,8 +8,8 @@
 	<script src="<?= base_url() ?>public/js/pages/sweetalerts.init.js"></script>
 
 	<!-- landing init -->
-	<script src="<?= base_url() ?>public/js/pages/nft-landing.init.js"></script>
-	<!-- <script src="<?= base_url() ?>public/js/pages/landing.init.js"></script> -->
+	<!-- <script src="<?= base_url() ?>public/js/pages/nft-landing.init.js"></script> -->
+	<script src="<?= base_url() ?>public/js/pages/landing.init.js"></script>
 
 	<!--Swiper slider js-->
 	<script src="<?= base_url() ?>public/libs/swiper/swiper-bundle.min.js"></script>
@@ -28,5 +28,7 @@
 
 	<script src="<?= base_url() ?>public/js/pages/form-validation.init.js"></script>
 
+	<!-- App js -->
+	<script src="<?= base_url() ?>public/js/app.js"></script>
 
 	</html>

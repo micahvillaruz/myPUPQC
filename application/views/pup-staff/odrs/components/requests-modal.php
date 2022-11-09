@@ -295,8 +295,6 @@
   <!-- /.modal-dialog -->
 </div>
 
-
-
 <div id="viewRequestDetails" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl modal-dialog-centered">
     <div class="modal-content">
@@ -350,9 +348,8 @@
             </tr>
             <tr>
               <th>Document</th>
-              <th>Quantity</th>
+              <th>Qty</th>
               <th>Payment Status</th>
-              <th>Tentative Release Date</th>
             </tr>
           </thead>
           <tbody>
@@ -360,13 +357,11 @@
               <td>Informative Copy of Grades / Certified Copy of Grades</td>
               <td class="text-center">1</td>
               <td class="text-center"><span class="badge bg-success">Paid</span></td>
-              <td><span class="ms-2">02 Sep, 2022<small class="text-muted ms-1">08:00 AM</small></span></td>
             </tr>
             <tr>
               <td>Transcript of Records - For evaluation/reference (Undergraduate) 3rd and 4th Year</td>
               <td class="text-center">1</td>
               <td class="text-center"><span class="badge bg-success">Paid</span></td>
-              <td><span class="ms-2">02 Sep, 2022<small class="text-muted ms-1">08:00 AM</small></span></td>
             </tr>
           </tbody>
         </table>

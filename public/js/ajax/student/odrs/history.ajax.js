@@ -9,6 +9,7 @@ loadHistoryTable = () => {
 	if (dt.length) {
 		dt.DataTable({
 			bDestroy: true,
+			scrollX: true,
 			ajax: {
 				url: `${apiURL}odrs/student/requests_history`,
 				type: 'GET',
@@ -184,21 +185,19 @@ viewRequestDetails = (request_id) => {
 
 				if (data.status_of_request === 'Released') {
 					const date = moment(data.date_of_release).format('DD, MMM. YYYY')
-					const time = moment(data.date_of_release).format('hh:mm A')
 
 					documentsList += `
             <td>
-              <span class="ms-2">${date}<small class="text-muted ms-1">${time}</small></span>
+              <span class="ms-2">${date}</span>
             </td>
           </tr>
         `
 				} else {
 					const date = moment(data.date_of_cancelled).format('DD, MMM. YYYY')
-					const time = moment(data.date_of_cancelled).format('hh:mm A')
 
 					documentsList += `
             <td>
-              <span class="ms-2">${date}<small class="text-muted ms-1">${time}</small></span>
+              <span class="ms-2">${date}</span>
             </td>
           </tr>
         `
