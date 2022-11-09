@@ -172,17 +172,17 @@ loadRequestsTable = () => {
 							return `
 							<div class="vstack gap-2">
 								<button type="button" class="btn btn-sm btn-info text-center waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails" onclick = "viewRequestDetails('${data.request_id}')"><i class="mdi mdi-eye label-icon align-middle me-2"></i> View Details</button>
-								<button type="button" class="btn btn-sm btn-light waves-effect waves-light" onclick="cancelRequest('${data.request_id}')"><i class="ri-close-fill label-icon align-middle me-2"></i> Cancel</button>
+								<button type="button" class="btn btn-sm btn-danger waves-effect waves-light" onclick="cancelRequest('${data.request_id}')"><i class="ri-close-fill label-icon align-middle me-2"></i> Cancel</button>
 							</div>
 							`
 						} else if (requestStatus === 'For Clearance') {
 							return `
 								<div class="vstack gap-2">
 									<button type="button" class="btn btn-sm btn-info text-center waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails" onclick="viewRequestDetails('${data.request_id}')"><i class="mdi mdi-eye label-icon align-middle me-2"></i> View Details</button>
-									<a type="button" class="btn btn-sm btn-success text-center waves-effect waves-light" href="${baseURL}public/file/Request-Form.pdf" download="Request-Form"><i class="mdi mdi-download label-icon align-middle me-2"></i> Download Request Form</a>
+									<a type="button" class="btn btn-sm btn-primary text-center waves-effect waves-light" href="${baseURL}public/file/Request-Form.pdf" download="Request-Form"><i class="mdi mdi-download label-icon align-middle me-2"></i> Download Request Form</a>
 								</div>
 								<div class="mt-4 d-grid">
-									<button type="button" class="btn btn-sm btn-light waves-effect waves-light" onclick="cancelRequest('${data.request_id}')"><i class="ri-close-fill label-icon align-middle me-2"></i> Cancel</button>
+									<button type="button" class="btn btn-sm btn-danger waves-effect waves-light" onclick="cancelRequest('${data.request_id}')"><i class="ri-close-fill label-icon align-middle me-2"></i> Cancel</button>
 								</div>
 							`
 						} else {

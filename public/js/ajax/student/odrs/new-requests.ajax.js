@@ -85,7 +85,7 @@ loadDocuments = () => {
 								${data.document_name}
 								<small> ${data.document_requirements === null ? '' : data.document_requirements}</small>
 								<div class="mt-1">
-									<button type="button" class="btn btn-sm btn-secondary btn-label waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentDetails" onclick="loadDocumentInfo('${
+									<button type="button" class="btn btn-sm btn-info btn-label waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentDetails" onclick="loadDocumentInfo('${
 										data.document_id
 									}')">
 										<i class="mdi mdi-eye label-icon align-middle fs-13 me-2"></i> 

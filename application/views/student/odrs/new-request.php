@@ -56,7 +56,7 @@
             <!--end col-->
             <div class="col-lg-12 mt-4">
               <div class="text-center d-grid">
-                <button class="btn btn-primary bg-gradient">Submit</button>
+                <button class="btn btn-success bg-gradient">Submit</button>
               </div>
             </div>
           </div>

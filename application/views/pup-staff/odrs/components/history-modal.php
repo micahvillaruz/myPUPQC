@@ -157,7 +157,7 @@
             </tr>
             <tr>
               <th>Document</th>
-              <th>Quantity</th>
+              <th>Qty</th>
               <th>Payment Status</th>
               <th id="completion_date"></th>
             </tr>
