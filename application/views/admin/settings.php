@@ -166,7 +166,7 @@
                       <div class="col-lg-12">
                         <div class="hstack gap-2 justify-content-end">
                           <button type="submit" class="btn btn-primary">Update</button>
-                          <button type="button" class="btn btn-ghost-primary waves-effect waves-light">Cancel</button>
+                          <button type="button" class="btn btn-light waves-effect waves-light">Cancel</button>
                         </div>
                       </div>
                       <!--end col-->

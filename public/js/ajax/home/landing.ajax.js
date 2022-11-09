@@ -17,8 +17,8 @@ $(function () {
 					'</div>',
 				showCancelButton: true,
 				showConfirmButton: false,
-				cancelButtonClass: 'btn btn-primary w-xs mb-1',
-				cancelButtonText: 'Back',
+				cancelButtonClass: 'btn btn-success w-xs mb-1',
+				cancelButtonText: 'Ok',
 				buttonsStyling: false,
 				showCloseButton: true,
 			})

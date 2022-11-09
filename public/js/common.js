@@ -54,7 +54,7 @@ function logout(page) {
 		confirmButtonText: 'Yes!',
 		cancelButtonText: 'No, cancel!',
 		confirmButtonClass: 'btn btn-success w-xs me-2 mt-2',
-		cancelButtonClass: 'btn btn-danger w-xs mt-2',
+		cancelButtonClass: 'btn btn-light w-xs mt-2',
 		buttonsStyling: false,
 		showCloseButton: true,
 	}).then(function (result) {

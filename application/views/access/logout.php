@@ -41,7 +41,7 @@
                     <span class="fw-semibold">myPUPQC</span>.
                   </p>
                   <div class="mt-4">
-                    <a href="<?= base_url() ?>signin" class="btn btn-success w-100">Sign In</a>
+                    <a href="<?= base_url() ?>signin" class="btn btn-primary w-100">Sign In</a>
                   </div>
                 </div>
               </div>
