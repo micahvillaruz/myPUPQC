@@ -220,10 +220,10 @@
                                       </div>
                                         </div>
                                          </div>
-                                            <div class="col-lg-11">
-                                              <div class="text-end">
-                                                <button type="submit" class="btn btn-primary w-lg">Submit</button>
-                                              </div>
+                                         <div class="col-lg-12 mt-4">
+                                          <div class="text-center d-grid">
+                                            <button class="btn btn-primary bg-gradient">Submit</button>
+                                            </div>
                                           </div>
                                          <!--end col-->
                                         </br>
