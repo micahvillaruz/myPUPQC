@@ -51,7 +51,7 @@
                             <h3 class="text-primary">Imno ng PUP</h3>
                             <p class="fst-italic">S. Calabig, S. Roldan, and R. Amaranto</p>
                             <div class="mx-4 mt-3">
-                              <iframe width="800" height="500" src="https://www.youtube.com/embed/Yib_s5UeGvc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                              <iframe width="100%" height="500" src="https://www.youtube.com/embed/Yib_s5UeGvc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                               <div class="mt-3">
                                 <p>
                                   Sintang Paaralan <br>

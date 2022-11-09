@@ -51,7 +51,7 @@
                         </div>
                         <h5 class="text-primary"><i class="ri-map-pin-2-line align-middle lh-1 me-2"></i> Vicinity Map</h5>
                         <div class="mx-4 mt-3">
-                          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2592.915227999825!2d121.08198542074837!3d14.699996365272696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ba7528549fb1%3A0x62d21f0cc60f364d!2sPolytechnic%20University%20of%20the%20Philippines%20Quezon%20City!5e1!3m2!1sen!2sus!4v1661005159653!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2592.915227999825!2d121.08198542074837!3d14.699996365272696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ba7528549fb1%3A0x62d21f0cc60f364d!2sPolytechnic%20University%20of%20the%20Philippines%20Quezon%20City!5e1!3m2!1sen!2sus!4v1661005159653!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                       </div>
                       <!--end card-body-->
@@ -68,7 +68,7 @@
                           </div>
                         </div>
                         <div>
-                           <ul class="list-group list-group-flush">
+                          <ul class="list-group list-group-flush">
                             <li class="list-group-item">
                               <a class="text-muted" href="<?= base_url() ?>about">PUP Quezon City Branch</a>
                             </li>
