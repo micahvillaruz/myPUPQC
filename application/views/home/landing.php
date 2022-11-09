@@ -200,7 +200,7 @@
 									<span class="d-block text-primary fw-semibold">Attend an Event</span>
 								</div>
 								<div class="col-3">
-									<a href="<?= base_url() ?>docu-request"><i class="bx bx-file border border-primary border-3 rounded-circle h1 p-3 text-primary mb-3"></i></a>
+									<a href="<?= base_url() ?>student/odrs/new-request"><i class="bx bx-file border border-primary border-3 rounded-circle h1 p-3 text-primary mb-3"></i></a>
 									<span class="d-block text-primary fw-semibold">Request Document</span>
 								</div>
 								<div class="col-3">
