@@ -74,21 +74,3 @@ function adjustTime(date) {
 	var newDate = new Date(`${year}/${month}/${day} PST`) // PST is the timezone of the server
 	return new Date(newDate.getTime() + Math.abs(newDate.getTimezoneOffset() * 60000))
 }
-
-const navLinks = document.querySelectorAll('.nav-links')
-
-function mediaQuery(x) {
-	if (x.matches) {
-		navLinks.forEach((link) => {
-			link.classList.remove('menu-dropdown')
-		})
-	} else {
-		navLinks.forEach((link) => {
-			link.classList.add('menu-dropdown')
-		})
-	}
-}
-
-let media = window.matchMedia('(max-width: 990px)')
-mediaQuery(media)
-media.addListener(mediaQuery)

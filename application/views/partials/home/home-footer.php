@@ -98,3 +98,23 @@
   <!-- end footer -->
   </div>
   <!-- end layout wrapper -->
+
+  <script>
+    const navLinks = document.querySelectorAll('.nav-links')
+
+    function mediaQuery(x) {
+      if (x.matches) {
+        navLinks.forEach((link) => {
+          link.classList.remove('menu-dropdown')
+        })
+      } else {
+        navLinks.forEach((link) => {
+          link.classList.add('menu-dropdown')
+        })
+      }
+    }
+
+    let media = window.matchMedia('(max-width: 990px)')
+    mediaQuery(media)
+    media.addListener(mediaQuery)
+  </script>
