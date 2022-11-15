@@ -1,5 +1,3 @@
-<!-- validation init -->
-<script src="<?= base_url() ?>public/js/pages/form-validation.init.js"></script>
 <!-- Sweet alert init js-->
 <script src="<?= base_url() ?>public/js/pages/sweetalerts.init.js"></script>
 <!-- ajax -->
