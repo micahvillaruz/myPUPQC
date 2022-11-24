@@ -22,6 +22,9 @@
 
 <!-- input spin init -->
 <script src="<?= base_url() ?>public/js/pages/form-input-spin.init.js"></script>
+
+<script src="<?= base_url() ?>public/js/pages/form-validation.init.js"></script>
+
 </body>
 
 </html>

@@ -6,13 +6,28 @@ $(() => {
 		e.preventDefault() // prevent page refresh
 		createRequest()
 	})
+
+	setTimeout(() => {
+		const checkbox = document.querySelectorAll('.docs')
+
+		checkbox.forEach((item) => {
+			item.addEventListener('change', (e) => {
+				if (e.target.checked) {
+					$('#not-visible').removeClass('d-none')
+				}
+				if ($('input:checkbox:checked').length === 0) {
+					$('#not-visible').addClass('d-none')
+				}
+			})
+		})
+	}, 3000)
 })
 
 // Load Educational Profile
 loadEducProfile = () => {
 	$.ajax({
 		type: 'GET',
-		url: apiURL + `odrs/student/view_educ_profile`,
+		url: apiURL + `student/educ_profile`,
 		headers: AJAX_HEADERS,
 		success: (result) => {
 			const data = result.data
@@ -79,7 +94,9 @@ loadDocuments = () => {
 						return `
 						<div class="d-flex">
 							<div class="form-check me-3">
-								<input class="form-check-input fs-15" type="checkbox" name="checkAll" value="${data.document_id}" />
+								<input class="form-check-input fs-15 docs" type="checkbox" name="checkAll" value="${
+									data.document_id
+								}" />
 							</div>
 							<div class="d-flex flex-column">
 								${data.document_name}
