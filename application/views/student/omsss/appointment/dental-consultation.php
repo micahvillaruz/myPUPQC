@@ -12,11 +12,11 @@
         <table id="dental-datatable" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
           <thead>
             <tr>
-              <th>Case Details</th>
-              <th>Start date of Symptoms</th>
+              <th>Appointment Code</th>
+              <th>Student Name</th>
               <th>Status</th>
-              <th>Attending Dentist</th>
-              <th>Schedule</th>
+              <th>Attending Consultant</th>
+              <th>Appointment Date</th>
               <th>Action</th>
             </tr>
           </thead>
