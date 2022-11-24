@@ -13,7 +13,6 @@
           <thead>
             <tr>
               <th>Appointment Code</th>
-              <th>Student Name</th>
               <th>Status</th>
               <th>Attending Consultant</th>
               <th>Appointment Date</th>

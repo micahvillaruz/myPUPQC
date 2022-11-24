@@ -38,15 +38,6 @@ loadDentalTable = () => {
 					},
 				},
 
-				// Symptoms Date
-				{
-					data: null,
-					render: (data) => {
-						const sympDate = moment(data.symptoms_date).utc().format('LL')
-						return `${sympDate}`
-					},
-				},
-
 				// Status
 				{
 					data: null,
@@ -106,7 +97,6 @@ addNewDentalCase = () => {
 		data = {
 			appointment_type: 'Dental',
 			consultation_reason: form.get('consultation_reason'),
-			symptoms_date: form.get('symptoms_date'),
 			consultation_date: form.get('consultation_date'),
 			consultation_time: form.get('consultation_time'),
 		}

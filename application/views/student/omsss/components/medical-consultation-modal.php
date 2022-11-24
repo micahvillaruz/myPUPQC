@@ -137,7 +137,7 @@
              <!-- Info Alert -->
              <div class="alert alert-info alert-border-left alert-dismissible fade show" role="alert">
               <h4><i class="las la-info me-3 align-middle fw-bold"></i>Data Privacy Act of 2012</h4>
-              <p>I hereby authorize PUPQC to collect and process the data indicate herein for purpose of effecting control of the covid-19 infection. I understand that any personal information is protected under Data Privacy Act of 2012, if needed, this may be used to facilitate contact tracing of PUPQC Medical Service and/or LGU and that I am required bt RA 11469 Bayanihan to Heal as One Act, to provide truthful information.</p>
+              <p>I hereby authorize PUPQC to collect and process the data indicate herein for purpose of effecting control of the covid-19 infection. I understand that any personal information is protected under Data Privacy Act of 2012, if needed, this may be used to facilitate contact tracing of PUPQC Medical Service and/or LGU and that I am required at RA 11469 Bayanihan to Heal as One Act, to provide truthful information.</p>
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div> 
               <br></br>
