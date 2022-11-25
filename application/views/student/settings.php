@@ -15,8 +15,13 @@
             <div class="card-header">
               <ul class="nav nav-tabs-custom rounded card-header-tabs border-bottom-0" role="tablist">
                 <li class="nav-item">
-                  <a class="nav-link active" data-bs-toggle="tab" href="#personalDetails" role="tab">
-                    <i class="fas fa-home"></i> Personal Details
+                  <a class="nav-link active" data-bs-toggle="tab" href="#personalInfo" role="tab">
+                    <i class="fas fa-home"></i> Personal Information
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#educationalInfo" role="tab">
+                    <i class="fas fa-home"></i> Educational Information
                   </a>
                 </li>
                 <li class="nav-item">
@@ -28,22 +33,9 @@
             </div>
             <div class="card-body p-4">
               <div class="tab-content">
-                <div class="tab-pane active" id="personalDetails" role="tabpanel">
-                  <form id="profileSettingsForm" class="needs-validation" novalidate>
+                <div class="tab-pane active" id="personalInfo" role="tabpanel">
+                  <form id="personalInfoForm" class="needs-validation" novalidate>
                     <div class="row">
-                      <div class="text-center">
-                        <div class="profile-user position-relative d-inline-block mx-auto mb-4">
-                          <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-man-6.png" class="rounded-circle avatar-xl img-thumbnail user-profile-image" alt="user-profile-image" />
-                          <div class="avatar-xs p-0 rounded-circle profile-photo-edit">
-                            <input id="profile-img-file-input" type="file" class="profile-img-file-input" />
-                            <label for="profile-img-file-input" class="profile-photo-edit avatar-xs">
-                              <span class="avatar-title rounded-circle bg-light text-body">
-                                <i class="ri-camera-fill"></i>
-                              </span>
-                            </label>
-                          </div>
-                        </div>
-                      </div>
                       <div class="col-lg-3">
                         <div class="mb-3">
                           <label for="first_name" class="form-label">First Name <span class="text-danger">*</span></label>
@@ -78,17 +70,7 @@
                         </div>
                       </div>
                       <!--end col-->
-                      <div class="col-lg-4">
-                        <div class="mb-3">
-                          <label for="birth_date" class="form-label">Birth Date <span class="text-danger">*</span></label>
-                          <input type="text" class="form-control" data-provider="flatpickr" id="birth_date" name="birth_date" data-date-format="F j, Y" placeholder="Select date" required />
-                          <div class="invalid-feedback">
-                            Please select your Birth Date.
-                          </div>
-                        </div>
-                      </div>
-                      <!--end col-->
-                      <div class="col-lg-4">
+                      <div class="col-lg-6">
                         <div class="mb-3">
                           <label for="gender" class="form-label">Gender <span class="text-danger">*</span></label>
                           <select class="form-select" id="gender" name="gender" required>
@@ -103,7 +85,54 @@
                         </div>
                       </div>
                       <!--end col-->
+                      <div class="col-lg-6">
+                        <div class="mb-3">
+                          <label for="birth_date" class="form-label">Date of Birth <span class="text-danger">*</span></label>
+                          <input type="text" class="form-control" data-provider="flatpickr" id="birth_date" name="birth_date" data-date-format="F j, Y" placeholder="Select date" required />
+                          <div class="invalid-feedback">
+                            Please select your Date of Birth.
+                          </div>
+                        </div>
+                      </div>
+                      <!--end col-->
                       <div class="col-lg-4">
+                        <div class="mb-3">
+                          <label for="civil_status" class="form-label">Civil Status <span class="text-danger">*</span></label>
+                          <select class="form-select" id="civil_status" name="civil_status" required>
+                            <option value="" selected disabled>Choose Civil Status</option>
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                            <option value="Widowed">Widowed</option>
+                            <option value="Separated">Separated</option>
+                            <option value="Divorced">Divorced</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please select your Civil Status.
+                          </div>
+                        </div>
+                      </div>
+                      <!--end col-->
+                      <div class="col-lg-4">
+                        <div class="mb-3">
+                          <label for="citizenship" class="form-label">Citizenship <span class="text-danger">*</span></label>
+                          <input type="text" class="form-control" id="citizenship" name="citizenship" placeholder="Enter your Citizenship" required />
+                          <div class="invalid-feedback">
+                            Please enter your Citizenship.
+                          </div>
+                        </div>
+                      </div>
+                      <!--end col-->
+                      <div class="col-lg-4">
+                        <div class="mb-3">
+                          <label for="religion" class="form-label">Religion <span class="text-danger">*</span></label>
+                          <input type="text" class="form-control" id="religion" name="religion" placeholder="Enter your Religion" required />
+                          <div class="invalid-feedback">
+                            Please enter your Religion.
+                          </div>
+                        </div>
+                      </div>
+                      <!--end col-->
+                      <div class="col-lg-6">
                         <div class="mb-3">
                           <label for="contact_number" class="form-label">Contact Number <span class="text-danger">*</span></label>
                           <input type="text" class="form-control" id="contact_number" name="contact_number" placeholder="Enter your Contact Number" required />
@@ -115,7 +144,17 @@
                       <!--end col-->
                       <div class="col-lg-6">
                         <div class="mb-3">
-                          <label for="house_street" class="form-label">House, Block, Street <span class="text-danger">*</span></label>
+                          <label for="email_address" class="form-label">Email Address <span class="text-danger">*</span></label>
+                          <input type="email" class="form-control" id="email_address" name="email_address" placeholder="Enter your Email Address" required />
+                          <div class="invalid-feedback">
+                            Please enter your Email Address.
+                          </div>
+                        </div>
+                      </div>
+                      <!--end col-->
+                      <div class="col-lg-6">
+                        <div class="mb-3">
+                          <label for="house_street" class="form-label">House No, Block, Street <span class="text-danger">*</span></label>
                           <input type="text" class="form-control" id="house_street" name="house_street" placeholder="Enter House No., Block, Street Name" required />
                           <div class="invalid-feedback">
                             Please enter your House No., Block, Street Name.
@@ -163,10 +202,107 @@
                         </div>
                       </div>
                       <!--end col-->
+
                       <div class="col-lg-12">
                         <div class="hstack gap-2 justify-content-end">
                           <button type="submit" class="btn btn-primary">Update</button>
-                          <button type="button" class="btn btn-ghost-primary waves-effect waves-light">Cancel</button>
+                          <a role="button" href="<?= base_url() ?>student/profile" class="btn btn-ghost-primary waves-effect waves-light">Cancel</a>
+                        </div>
+                      </div>
+                      <!--end col-->
+                    </div>
+                    <!--end row-->
+                  </form>
+                </div>
+                <!--end tab-pane-->
+                <div class="tab-pane" id="educationalInfo" role="tab">
+                  <form id="educationalInfoForm" class="needs-validation" novalidate>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="mb-3">
+                          <label for="student_no" class="form-label">Student Number <span class="text-danger">*</span></label>
+                          <input type="text" class="form-control" id="student_no" name="student_no" required disabled />
+                        </div>
+                      </div>
+                      <!--end col-->
+                      <div class="col-lg-6">
+                        <div class="mb-3">
+                          <label for="education_status" class="form-label">Status <span class="text-danger">*</span></label>
+                          <select class="form-select" id="education_status" name="education_status" required>
+                            <option value="Undergraduate">Undergraduate</option>
+                            <option value="Graduate">Graduate</option>
+                          </select>
+                        </div>
+                      </div>
+                      <!--end col-->
+                      <div class="col-lg-6">
+                        <div class="mb-3">
+                          <label for="status" class="form-label">School Year admitted <span class="text-danger">*</span></label>
+                          <select class="form-select year-dropdown" id="school_year_admitted" name="school_year_admitted" required>
+                          </select>
+                        </div>
+                      </div>
+                      <!--end col-->
+                      <div class="col-lg-12">
+                        <div class="mb-3">
+                          <label for="course_when_admitted" class="form-label">Course when admitted <span class="text-danger">*</span></label>
+                          <select class="form-select" id="course_when_admitted" name="course_when_admitted" required>
+                            <option value="Bachelor of Science in Business Administration Major in Entrepreneurship">Bachelor of Science in Business Administration Major in Entrepreneurship</option>
+                            <option value="Bachelor of Science in Business Administration Major in Human Resource Development Management">Bachelor of Science in Business Administration Major in Human Resource Development Management</option>
+                            <option value="Bachelor of Science in Business Administration Major in Marketing Management">Bachelor of Science in Business Administration Major in Marketing Management</option>
+                            <option value="Bachelor of Science in Business Teacher's Education">Bachelor of Science in Business Teacher's Education</option>
+                            <option value="Bachelor of Science in Information Technology">Bachelor of Science in Information Technology</option>
+                            <option value="Bachelor of Public Administration Major in Public Financial Management">Bachelor of Public Administration Major in Public Financial Management</option>
+                            <option value="Diploma in Information and Communication Technology">Diploma in Information and Communication Technology</option>
+                            <option value="Diploma in Office Management Technology">Diploma in Office Management Technology</option>
+                            <option value="Master in Educational Management">Master in Educational Management</option>
+                            <option value="Master in Information Technology">Master in Information Technology</option>
+                            <option value="Master in Public Administration">Master in Public Administration</option>
+                          </select>
+                        </div>
+                      </div>
+                      <!--end col-->
+                      <div class="col-lg-6">
+                        <div class="mb-3">
+                          <label for="high_school_graduated" class="form-label">Name of High School graduated from <span class="text-danger">*</span></label>
+                          <input type="text" class="form-control" id="high_school_graduated" name="high_school_graduated" placeholder="Enter the name of the High School where your graduated from" required />
+                          <div class="invalid-feedback">
+                            Please enter the name of the High School you graduated from.
+                          </div>
+                        </div>
+                      </div>
+                      <!--end col-->
+                      <div class="col-lg-6">
+                        <div class="mb-3">
+                          <label for="high_school_graduated_year" class="form-label">Year Graduated <span class="text-danger">*</span></label>
+                          <select class="form-select year-dropdown" id="high_school_graduated_year" name="high_school_graduated_year" required>
+                          </select>
+                        </div>
+                      </div>
+                      <!--end col-->
+                      <div class="col-lg-6">
+                        <div class="mb-3">
+                          <label for="elementary_graduated" class="form-label">Name of Elementary graduated from <span class="text-danger">*</span></label>
+                          <input type="text" class="form-control" id="elementary_graduated" name="elementary_graduated" placeholder="Enter the name of the Elementary School where your graduated from" required />
+                          <div class="invalid-feedback">
+                            Please enter the name of the Elementary School you graduated from.
+                          </div>
+                        </div>
+                      </div>
+                      <!--end col-->
+                      <div class="col-lg-6">
+                        <div class="mb-3">
+                          <label for="elementary_graduated_year" class="form-label">Year Graduated <span class="text-danger">*</span></label>
+                          <select class="form-select year-dropdown" id="elementary_graduated_year" name="elementary_graduated_year" required>
+                          </select>
+                        </div>
+                      </div>
+                      <!--end col-->
+
+                      <div class="col-lg-12">
+                        <div class="hstack gap-2 justify-content-end">
+                          <button type="submit" class="btn btn-primary">Update</button>
+                          <a role="button" href="<?= base_url() ?>student/profile" class="btn btn-ghost-primary waves-effect waves-light">Cancel</a>
                         </div>
                       </div>
                       <!--end col-->
