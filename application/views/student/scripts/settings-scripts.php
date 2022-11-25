@@ -18,6 +18,22 @@
 
 		<!-- App js -->
 		<script src="<?= base_url() ?>public/js/app.js"></script>
+
+		<script>
+			$(function() {
+				// Javascript to enable link to tab
+				var hash = location.hash.replace(/^#/, ''); // ^ means starting, meaning only match the first hash
+				if (hash) {
+					$('.nav-tabs-custom a[href="#' + hash + '"]').tab('show');
+				}
+
+				// Change hash for page-reload
+				$('.nav-tabs-custom a').on('shown.bs.tab', function(e) {
+					window.location.hash = e.target.hash;
+				})
+			})
+		</script>
+
 		</body>
 
 		</html>

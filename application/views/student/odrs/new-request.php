@@ -13,7 +13,7 @@
                 <select class="form-select" value="" id="course_when_admitted" name="course_when_admitted" disabled>
                   <option id="course" selected></option>
                 </select>
-                <button class="btn btn-outline-primary" type="button">Update</button>
+                <a class="btn btn-outline-primary" href="<?= base_url() ?>student/profile/settings#educationalInfo" type="button">Update</a>
                 <div class="invalid-feedback">
                   Please select your Program/Course.
                 </div>
@@ -26,7 +26,7 @@
                 <select class="form-select" value="" id="education_status" name="education_status" disabled required>
                   <option value="1" id="educ_status" selected></option>
                 </select>
-                <button class="btn btn-outline-primary" type="button">Update</button>
+                <a class="btn btn-outline-primary" href="<?= base_url() ?>student/profile/settings#educationalInfo" type="button">Update</a>
                 <div class="invalid-feedback">
                   Please select your Education Status.
                 </div>
