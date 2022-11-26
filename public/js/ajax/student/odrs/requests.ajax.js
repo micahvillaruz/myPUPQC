@@ -1,5 +1,17 @@
 $(function () {
 	loadRequestsTable()
+
+	// Get file from file name
+	file = new File(`${baseURL}/public/file/Request-Form.pdf`, 'Request-Form.pdf')
+
+	// Get length of file in bytes
+	fileSizeInBytes = file.length()
+	// Convert the bytes to Kilobytes (1 KB = 1024 Bytes)
+	fileSizeInKB = fileSizeInBytes / 1024
+	// Convert the KB to MegaBytes (1 MB = 1024 KBytes)
+	fileSizeInMB = fileSizeInKB / 1024
+
+	console.log(fileSizeInMB)
 })
 
 // Load Requests Table
@@ -179,7 +191,7 @@ loadRequestsTable = () => {
 							return `
 								<div class="vstack gap-2">
 									<button type="button" class="btn btn-sm btn-info text-center waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails" onclick="viewRequestDetails('${data.request_id}')"><i class="mdi mdi-eye label-icon align-middle me-2"></i> View Details</button>
-									<a type="button" class="btn btn-sm btn-primary text-center waves-effect waves-light" href="${baseURL}public/file/Request-Form.pdf" download="Request-Form"><i class="mdi mdi-download label-icon align-middle me-2"></i> Download Request Form</a>
+									<button type="button" class="btn btn-sm btn-primary text-center waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestRequirements"><i class="mdi mdi-download label-icon align-middle me-2"></i> Requirements</a>
 								</div>
 								<div class="mt-4 d-grid">
 									<button type="button" class="btn btn-sm btn-danger waves-effect waves-light" onclick="cancelRequest('${data.request_id}')"><i class="ri-close-fill label-icon align-middle me-2"></i> Cancel</button>

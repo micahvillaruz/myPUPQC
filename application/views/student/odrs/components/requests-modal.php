@@ -163,3 +163,93 @@
   </div>
   <!-- /.modal-dialog -->
 </div>
+
+<div id="viewRequestRequirements" class="modal fade" tabindex="-1" aria-labelledby="requestRequirements" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-primary" id="requestRequirements">Requirements</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-info" role="alert">
+          Submit hard copy of the requirement/s to the <strong> Records Section - OIC Student Records</strong>.
+        </div>
+
+        <!-- Table Head -->
+        <table class="table align-middle dt-responsive mb-0">
+          <thead class="table-light">
+            <tr>
+              <th scope="col">Request</th>
+              <th scope="col">Requirement</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CAV-DFA/Apostille - Red Ribbon (For Undergrad)</td>
+              <td>Photocopy of TOR (must capture the whole page including the signatories)</td>
+            </tr>
+            <tr>
+              <td>CAV-CHED (Commission on Higher Education)</td>
+              <td>Photocopy of TOR (must capture the whole page including the signatories)</td>
+            </tr>
+            <tr>
+              <td>CAV-CHED (Commission on Higher Education)</td>
+              <td>Photocopy of Diploma</td>
+            </tr>
+            <tr>
+              <td>CAV-CHED (Commission on Higher Education)</td>
+              <td>Letter format for CHED</td>
+            </tr>
+            <tr>
+              <td>WES Form, ICES Form, IQAS Form</td>
+              <td>Fully Accomplished WES/ICES/IQAS Form</td>
+            </tr>
+            <tr>
+              <td>For Overall Request</td>
+              <td>Request Form</td>
+            </tr>
+          </tbody>
+        </table>
+        <h6 class="mt-4 mb-2 fw-semibold text-uppercase">Download Attachment</h6>
+        <div class="row">
+          <div class="col-xxl-5 col-lg-6">
+            <div class="border rounded border-dashed p-2">
+              <div class="d-flex align-items-center">
+                <div class="flex-shrink-0 me-3">
+                  <div class="avatar-sm">
+                    <div class="avatar-title bg-light text-danger rounded fs-24">
+                      <i class="ri-file-pdf-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex-grow-1 overflow-hidden">
+                  <h5 class="fs-13 mb-1">
+                    <a href="<?= base_url() ?>public/file/Request-Form.pdf" class="text-body text-truncate d-block">Request Form.pdf</a>
+                  </h5>
+                  <div>624KB</div>
+                </div>
+                <div class="flex-shrink-0 ms-2">
+                  <div class="d-flex gap-1">
+                    <a href="<?= base_url() ?>public/file/Request-Form.pdf" download="Request Form" type="button" class="btn btn-icon text-muted btn-sm fs-18">
+                      <i class="ri-download-2-line"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-danger alert-border-left alert-dismissible fade show mt-4" role="alert">
+          <i class="ri-error-warning-line me-3 align-middle"></i> <strong>Notice</strong> - Only requests with complete requirements shall be processed. <br>
+          <small class="fst-italic">Please contact Hernando DR. Liberato (Sir Nandy) if you have any questions about the requirements or if the request status hasn't changed after 3 days from submission of requirements.</small>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
