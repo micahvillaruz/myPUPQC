@@ -529,15 +529,13 @@ viewRequestDetails = (request_id) => {
 							<ul class="list-unstyled mb-0">
 					`
 
-				data.documents_assigned_to_request.forEach((document) => {
-					if (document.document_information[0].document_requirements !== null) {
-						remarks += `
-							<li class="mb-2">
-								<i class="mdi mdi-check-decagram text-info me-1"></i>
-								${document.document_information[0].document_requirements}
-							</li>
-						`
-					}
+				getRequirements(data).forEach((requirement) => {
+					remarks += `
+						<li class="mb-2">
+							<i class="mdi mdi-check-decagram text-info me-1"></i>
+							${requirement.doc_req_name}
+						</li>
+					`
 				})
 
 				remarks += `
@@ -684,4 +682,16 @@ cancelRequest = (request_id) => {
 			})
 		}
 	})
+}
+
+function getRequirements(data) {
+	const requirements = []
+
+	data.documents_assigned_to_request.forEach((document) => {
+		document.document_information[0].document_requirements.forEach((requirement) => {
+			requirements.push(requirement)
+		})
+	})
+
+	return requirements
 }
