@@ -177,7 +177,7 @@
         </div>
 
         <!-- Table Head -->
-        <table class="table align-middle dt-responsive mb-0">
+        <table class="mx-3 table align-middle dt-responsive mb-0">
           <thead class="table-light">
             <tr>
               <th scope="col">Request</th>

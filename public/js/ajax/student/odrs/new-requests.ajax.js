@@ -99,7 +99,7 @@ loadDocuments = () => {
 							</div>
 							<div class="d-flex flex-column">
 								${data.document_name}
-								<small> ${data.document_requirements === null ? '' : data.document_requirements}</small>
+								<small> ${data.document_details === null ? '' : data.document_details}</small>
 								<div class="mt-1">
 									<button type="button" class="btn btn-sm btn-info btn-label waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentDetails" onclick="loadDocumentInfo('${
 										data.document_id
@@ -142,9 +142,16 @@ loadDocumentInfo = (document_id) => {
 
 			$('#document_name').html(data.document_name)
 			$('#document_details').html(data.document_details)
-			$('#document_requirements').html(
-				data.document_requirements === null ? 'None' : data.document_requirements,
-			)
+			$('#document_requirements').empty()
+			if (data.document_requirements.length === 0) {
+				$('#document_requirements').html('<i>No requirements are needed.</i>')
+			} else {
+				data.document_requirements.forEach((item) => {
+					$('#document_requirements').append(`
+						<li>${item.doc_req_name}</li>
+					`)
+				})
+			}
 		},
 	})
 }
