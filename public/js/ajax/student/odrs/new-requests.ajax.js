@@ -6,21 +6,6 @@ $(() => {
 		e.preventDefault() // prevent page refresh
 		createRequest()
 	})
-
-	setTimeout(() => {
-		const checkbox = document.querySelectorAll('.docs')
-
-		checkbox.forEach((item) => {
-			item.addEventListener('change', (e) => {
-				if (e.target.checked) {
-					$('#not-visible').removeClass('d-none')
-				}
-				if ($('input:checkbox:checked').length === 0) {
-					$('#not-visible').addClass('d-none')
-				}
-			})
-		})
-	}, 3000)
 })
 
 // Load Educational Profile
@@ -85,6 +70,20 @@ loadDocuments = () => {
 				type: 'GET',
 				ContentType: 'application/x-www-form-urlencoded',
 				headers: AJAX_HEADERS,
+				complete: function () {
+					const checkbox = document.querySelectorAll('.docs')
+
+					checkbox.forEach((item) => {
+						item.addEventListener('change', (e) => {
+							if (e.target.checked) {
+								$('#not-visible').removeClass('d-none')
+							}
+							if ($('input:checkbox:checked').length === 0) {
+								$('#not-visible').addClass('d-none')
+							}
+						})
+					})
+				},
 			},
 			dom: '',
 			columns: [
