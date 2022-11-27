@@ -1,17 +1,5 @@
 $(function () {
 	loadRequestsTable()
-
-	// Get file from file name
-	file = new File(`${baseURL}/public/file/Request-Form.pdf`, 'Request-Form.pdf')
-
-	// Get length of file in bytes
-	fileSizeInBytes = file.length()
-	// Convert the bytes to Kilobytes (1 KB = 1024 Bytes)
-	fileSizeInKB = fileSizeInBytes / 1024
-	// Convert the KB to MegaBytes (1 MB = 1024 KBytes)
-	fileSizeInMB = fileSizeInKB / 1024
-
-	console.log(fileSizeInMB)
 })
 
 // Load Requests Table
@@ -191,7 +179,7 @@ loadRequestsTable = () => {
 							return `
 								<div class="vstack gap-2">
 									<button type="button" class="btn btn-sm btn-info text-center waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails" onclick="viewRequestDetails('${data.request_id}')"><i class="mdi mdi-eye label-icon align-middle me-2"></i> View Details</button>
-									<button type="button" class="btn btn-sm btn-primary text-center waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestRequirements"><i class="mdi mdi-download label-icon align-middle me-2"></i> Requirements</a>
+									<button type="button" class="btn btn-sm btn-success text-center waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestRequirements" onclick="viewRequestRequirements('${data.request_id}')"><i class="mdi mdi-file-document-multiple label-icon align-middle me-2"></i> Requirements</a>
 								</div>
 								<div class="mt-4 d-grid">
 									<button type="button" class="btn btn-sm btn-danger waves-effect waves-light" onclick="cancelRequest('${data.request_id}')"><i class="ri-close-fill label-icon align-middle me-2"></i> Cancel</button>
@@ -609,6 +597,43 @@ viewRequestDetails = (request_id) => {
 				remarks = ''
 				$('#remarks').html(remarks)
 			}
+		},
+	})
+}
+
+// View Request Requirements
+viewRequestRequirements = (request_id) => {
+	$.ajax({
+		type: 'GET',
+		url: `${apiURL}odrs/student/document_requirements/${request_id}`,
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+		success: function (result) {
+			const data = result.data
+			let requirements = ''
+			data.forEach((document) => {
+				if (document.document_requirements) {
+					document.document_requirements.forEach((requirement) => {
+						requirements += `
+							<tr>
+								<td>${document.document_name}</td>
+								<td>${requirement.doc_req_name}</td>
+							</tr>
+						`
+						if (requirement.doc_req_name === 'Letter format for CHED') {
+							$('#ched-letter').removeClass('d-none')
+						}
+					})
+				}
+			})
+			requirements += `
+				<tr>
+					<td>For Overall Request</td>
+					<td>Request Form</td>
+				</tr>
+			`
+			console.log(requirements)
+			$('#requirements').html(requirements)
 		},
 	})
 }

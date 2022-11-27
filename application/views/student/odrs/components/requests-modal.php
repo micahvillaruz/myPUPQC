@@ -177,42 +177,44 @@
         </div>
 
         <!-- Table Head -->
-        <table class="mx-3 table align-middle dt-responsive mb-0">
+        <table class="table align-middle dt-responsive mb-0">
           <thead class="table-light">
             <tr>
               <th scope="col">Request</th>
               <th scope="col">Requirement</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>CAV-DFA/Apostille - Red Ribbon (For Undergrad)</td>
-              <td>Photocopy of TOR (must capture the whole page including the signatories)</td>
-            </tr>
-            <tr>
-              <td>CAV-CHED (Commission on Higher Education)</td>
-              <td>Photocopy of TOR (must capture the whole page including the signatories)</td>
-            </tr>
-            <tr>
-              <td>CAV-CHED (Commission on Higher Education)</td>
-              <td>Photocopy of Diploma</td>
-            </tr>
-            <tr>
-              <td>CAV-CHED (Commission on Higher Education)</td>
-              <td>Letter format for CHED</td>
-            </tr>
-            <tr>
-              <td>WES Form, ICES Form, IQAS Form</td>
-              <td>Fully Accomplished WES/ICES/IQAS Form</td>
-            </tr>
-            <tr>
-              <td>For Overall Request</td>
-              <td>Request Form</td>
-            </tr>
+          <tbody id="requirements">
           </tbody>
         </table>
-        <h6 class="mt-4 mb-2 fw-semibold text-uppercase">Download Attachment</h6>
+        <h6 class="mt-4 mb-2 fw-semibold text-uppercase">Download Attachment/s</h6>
         <div class="row">
+          <div id="ched-letter" class="col-xxl-5 col-lg-6 d-none">
+            <div class="border rounded border-dashed p-2">
+              <div class="d-flex align-items-center">
+                <div class="flex-shrink-0 me-3">
+                  <div class="avatar-sm">
+                    <div class="avatar-title bg-light text-info rounded fs-24">
+                      <i class="ri-file-text-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex-grow-1 overflow-hidden">
+                  <h5 class="fs-13 mb-1">
+                    <a href="<?= base_url() ?>public/file/Letter-Format-for-CHED.docx" download="Letter-Format-for-CHED" class="text-body text-truncate d-block">Letter for CHED.docx</a>
+                  </h5>
+                  <div>17KB</div>
+                </div>
+                <div class="flex-shrink-0 ms-2">
+                  <div class="d-flex gap-1">
+                    <a href="<?= base_url() ?>public/file/Letter-Format-for-CHED.docx" download="Letter-Format-for-CHED" type="button" class="btn btn-icon text-muted btn-sm fs-18">
+                      <i class="ri-download-2-line"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="col-xxl-5 col-lg-6">
             <div class="border rounded border-dashed p-2">
               <div class="d-flex align-items-center">
@@ -225,7 +227,7 @@
                 </div>
                 <div class="flex-grow-1 overflow-hidden">
                   <h5 class="fs-13 mb-1">
-                    <a href="<?= base_url() ?>public/file/Request-Form.pdf" class="text-body text-truncate d-block">Request Form.pdf</a>
+                    <a href="<?= base_url() ?>public/file/Request-Form.pdf" download="Request Form" class="text-body text-truncate d-block">Request Form.pdf</a>
                   </h5>
                   <div>624KB</div>
                 </div>
