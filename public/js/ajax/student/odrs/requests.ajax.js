@@ -179,7 +179,7 @@ loadRequestsTable = () => {
 							return `
 								<div class="vstack gap-2">
 									<button type="button" class="btn btn-sm btn-info text-center waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails" onclick="viewRequestDetails('${data.request_id}')"><i class="mdi mdi-eye label-icon align-middle me-2"></i> View Details</button>
-									<button type="button" class="btn btn-sm btn-success text-center waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestRequirements" onclick="viewRequestRequirements('${data.request_id}')"><i class="mdi mdi-file-document-multiple label-icon align-middle me-2"></i> Requirements</a>
+									<button type="button" class="btn btn-sm btn-success text-center waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestRequirements" onclick="viewRequestRequirements('${data.request_id}')"><i class="mdi mdi-file-document-multiple label-icon align-middle me-2"></i> Requirements</button>
 								</div>
 								<div class="mt-4 d-grid">
 									<button type="button" class="btn btn-sm btn-danger waves-effect waves-light" onclick="cancelRequest('${data.request_id}')"><i class="ri-close-fill label-icon align-middle me-2"></i> Cancel</button>
@@ -507,11 +507,9 @@ viewRequestDetails = (request_id) => {
 									<p class="list-text mb-0 fs-12">Administrative Staff</p>
 								</div>
 							</div>
-							<p>The Document Request is now approved. You must download the Request form by clicking the
-								<button type="button" class="btn btn-success btn-icon btn-sm waves-effect waves-light my-1">
-									<i class="mdi mdi-download fs-5 fw-bold"></i>
-								</button>
-								button and bring it together with the requirements as listed below. You have to <b>Request an Appointment</b> on the <a href="https://apps.pup.edu.ph/appointment" class="link-primary fw-medium">Visitors Appointment Scheduling System (VASS)</a> for your desired date and time in processing the requirements at PUP QC. After your appointment is approved, you are required to present a <b>Gate Pass</b> before being allowed to enter the PUP QC premises. You must bring the requirements at the Rothlener Building where the documents passed will be validated and the corresponding request fee will be paid.
+							<p>The Document Request is now approved. You must view the requirements and download the attachments by clicking the
+								<button type="button" class="btn btn-sm btn-success text-center waves-effect waves-light"><i class="mdi mdi-file-document-multiple label-icon align-middle me-2"></i> Requirements</button>
+							button. Bring the requirements at the Rothlener Building, Records Section where the documents passed will be validated and the corresponding request fee will be paid.
 							</p>
 							<p>Please bring the following requirements:</p>
 							<ul class="list-unstyled mb-0">
@@ -521,7 +519,7 @@ viewRequestDetails = (request_id) => {
 					remarks += `
 						<li class="mb-2">
 							<i class="mdi mdi-check-decagram text-info me-1"></i>
-							${requirement.doc_req_name}
+							${requirement}
 						</li>
 					`
 				})
@@ -714,9 +712,12 @@ function getRequirements(data) {
 
 	data.documents_assigned_to_request.forEach((document) => {
 		document.document_information[0].document_requirements.forEach((requirement) => {
-			requirements.push(requirement)
+			requirements.push(requirement.doc_req_name)
 		})
 	})
 
-	return requirements
+	const uniqueReqs = new Set(requirements)
+	uniqueReqsArray = [...uniqueReqs]
+
+	return uniqueReqsArray
 }
