@@ -93,17 +93,12 @@ loadDocuments = () => {
 						return `
 						<div class="d-flex">
 							<div class="form-check me-3">
-								<input class="form-check-input fs-15 docs" type="checkbox" name="checkAll" value="${
-									data.document_id
-								}" />
+								<input class="form-check-input fs-15 docs" type="checkbox" name="checkAll" value="${data.document_id}" />
 							</div>
 							<div class="d-flex flex-column">
 								${data.document_name}
-								<small> ${data.document_details === null ? '' : data.document_details}</small>
 								<div class="mt-1">
-									<button type="button" class="btn btn-sm btn-info btn-label waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentDetails" onclick="loadDocumentInfo('${
-										data.document_id
-									}')">
+									<button type="button" class="btn btn-sm btn-info btn-label waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentDetails" onclick="loadDocumentInfo('${data.document_id}')">
 										<i class="mdi mdi-eye label-icon align-middle fs-13 me-2"></i> 
 										View Details
 									</button>
