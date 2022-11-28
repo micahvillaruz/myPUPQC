@@ -101,4 +101,92 @@ class PUPStaff extends CI_Controller
     $this->load->view('partials/foot-scripts');
     $this->load->view('pup-staff/odrs/scripts/history-scripts');
   }
+  public function medical_requests()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/pup-staff/topbar');
+    $this->load->view('partials/pup-staff/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "OMSSS", "title" => "Medical Requests"]);
+    $this->load->view('pup-staff/omsss/medical-requests');
+    $this->load->view('partials/footer');
+    $this->load->view('pup-staff/omsss/components/medical-requests-modal');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('pup-staff/omsss/scripts/medical-requests-scripts');
+  }
+  public function medical_analytics()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/pup-staff/topbar');
+    $this->load->view('partials/pup-staff/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "OMSSS", "title" => "Analytics and History"]);
+    $this->load->view('pup-staff/omsss/medical-analytics');
+    $this->load->view('partials/footer');
+    $this->load->view('pup-staff/omsss/components/medical-analytics-modal');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('pup-staff/omsss/scripts/medical-analytics-scripts');
+  }
+
+  public function dental_requests()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/pup-staff/topbar');
+    $this->load->view('partials/pup-staff/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "OMSSS", "title" => "Dental Requests"]);
+    $this->load->view('pup-staff/omsss/dental-requests');
+    $this->load->view('partials/footer');
+    $this->load->view('pup-staff/omsss/components/dental-requests-modal');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('pup-staff/omsss/scripts/dental-requests-scripts');
+  }
+
+  public function dental_analytics()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/pup-staff/topbar');
+    $this->load->view('partials/pup-staff/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "OMSSS", "title" => "Analytics and History"]);
+    $this->load->view('pup-staff/omsss/dental-analytics');
+    $this->load->view('partials/footer');
+    $this->load->view('pup-staff/omsss/components/dental-analytics-modal');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('pup-staff/omsss/scripts/dental-analytics-scripts');
+  }
+
+  public function counsellor_requests()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/pup-staff/topbar');
+    $this->load->view('partials/pup-staff/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "OMSSS", "title" => "Counsellor Requests"]);
+    $this->load->view('pup-staff/omsss/counsellor-requests');
+    $this->load->view('partials/footer');
+    $this->load->view('pup-staff/omsss/components/counsellor-requests-modal');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('pup-staff/omsss/scripts/counsellor-requests-scripts');
+  }
+
+  public function counsellor_analytics()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/pup-staff/topbar');
+    $this->load->view('partials/pup-staff/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "OMSSS", "title" => "Analytics and History"]);
+    $this->load->view('pup-staff/omsss/counsellor-analytics');
+    $this->load->view('partials/footer');
+    $this->load->view('pup-staff/omsss/components/counsellor-analytics-modal');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('pup-staff/omsss/scripts/counsellor-analytics-scripts');
+  }
 }
