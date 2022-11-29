@@ -169,16 +169,16 @@ viewRequestDetails = (request_id) => {
 						</td>
 						<td class="text-center">${document.quantity}</td>
 				`
-				if (data.payment_status === 'Pending') {
+				if (data.payment_status === 'Cancelled') {
 					documentsList += `
 						<td class="text-center">
-							<span class="badge bg-warning text-dark">${data.payment_status}</span>
+							<span class="badge bg-danger">${data.payment_status}</span>
 						</td>
 					`
 				} else if (data.payment_status === 'Paid') {
 					documentsList += `
 						<td class="text-center">
-							<span class="badge bg-success">${data.payment_status}</span> <span class="badge badge-outline-dark">OR No. 0589069 </span>
+							<span class="badge bg-success">${data.payment_status}</span> <span class="badge badge-outline-dark">OR No. ${data.or_no} </span>
 						</td>
 					`
 				}
@@ -230,7 +230,7 @@ viewRequestDetails = (request_id) => {
         </div>
         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
           <div class="accordion-body ms-2 ps-5 pt-0">
-            <h6 class="mb-1">The Document Request is pending for approval and is being reviewed by the Administrative Staff.</h6>
+            <h6 class="mb-1">The Document Request is pending for approval and is being reviewed by the Officer in Charge of Student Records.</h6>
             <p class="text-muted mb-0">
               ${moment(data.date_of_filing).format('ddd')},
               ${moment(data.date_of_filing).format('DD, MMM. YYYY')} -
@@ -303,7 +303,7 @@ viewRequestDetails = (request_id) => {
           </div>
           <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
             <div class="accordion-body ms-2 ps-5 pt-0">
-              <h6 class="mb-1">The document request is now being processed by the Administrative Staff and signed by the signatories.</h6>
+              <h6 class="mb-1">The document request is now being processed by the OIC and signed by the signatories.</h6>
               <p class="text-muted mb-0">
                 ${moment(data.date_of_processing).format('ddd')},
                 ${moment(data.date_of_processing).format('DD, MMM. YYYY')} -
@@ -432,7 +432,7 @@ viewRequestDetails = (request_id) => {
 									</div>
 									<div class="flex-grow-1 ms-3">
 										<h5 class="list-title fs-15 mb-1">Hernando Liberato</h5>
-										<p class="list-text mb-0 fs-12">Administrative Staff</p>
+										<p class="list-text mb-0 fs-12">OIC, Student Records</p>
 									</div>
 								</div>
 								<p>${data.remarks}</p>
