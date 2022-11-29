@@ -48,7 +48,6 @@ loadEducationalInfo = () => {
 			$('#course').html(data.course_when_admitted)
 
 			// Load User Educational Information
-			$('#view_status').html(data.education_status)
 			$('#view_schoolyr').html(data.school_year_admitted)
 			$('#view_course').html(data.course_when_admitted)
 			$('#view_hs').html(data.high_school_graduated)

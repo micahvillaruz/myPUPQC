@@ -1,31 +1,10 @@
 $(function () {
 	editPersonalInfo()
-	editEducationalInfo()
-
-	let yearDropdown = document.querySelectorAll('.year-dropdown')
-
-	yearDropdown.forEach((year) => {
-		let currentYear = new Date().getFullYear()
-		let earliestYear = 1970
-		while (currentYear >= earliestYear) {
-			let dateOption = document.createElement('option')
-			dateOption.text = currentYear
-			dateOption.value = currentYear
-			year.add(dateOption)
-			currentYear -= 1
-		}
-	})
 
 	$('#personalInfoForm').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
 		// pass data to API for updating of student's personal information
 		editPersonalInfoAJAX()
-	})
-
-	$('#educationalInfoForm').on('submit', function (e) {
-		e.preventDefault() // prevent page refresh
-		// pass data to API for updating of student's educational information
-		editEducationalInfoAJAX()
 	})
 
 	$('#changePasswordForm').on('submit', function (e) {
@@ -97,9 +76,11 @@ editPersonalInfoAJAX = () => {
 			region: form.get('region'),
 		}
 
+		console.log(data)
+
 		$.ajax({
 			url: apiURL + `student/info`,
-			type: 'PUT',
+			type: 'PATCH',
 			data: data,
 			dataType: 'json',
 			headers: AJAX_HEADERS,
@@ -118,83 +99,11 @@ editPersonalInfoAJAX = () => {
 					})
 				}
 			},
-		}).fail(() => {
+		}).fail((xhr) => {
 			Swal.fire({
-				html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">There was an error while updating your details. Please try again.</p></div></div>',
-				showCancelButton: !0,
-				showConfirmButton: !1,
-				cancelButtonClass: 'btn btn-danger w-xs mb-1',
-				cancelButtonText: 'Dismiss',
-				buttonsStyling: !1,
-				showCloseButton: !0,
-			})
-		})
-	}
-}
-
-// Get Educational Information
-editEducationalInfo = () => {
-	$.ajax({
-		url: apiURL + `student/educ_profile`,
-		type: 'GET',
-		headers: AJAX_HEADERS,
-		success: (result) => {
-			if (result) {
-				// Get data from result
-				const data = result.data
-				$('#education_status').val(data.education_status)
-				$('#school_year_admitted').val(data.school_year_admitted)
-				$('#course_when_admitted').val(data.course_when_admitted)
-				$('#high_school_graduated').val(data.high_school_graduated)
-				$('#high_school_graduated_year').val(data.high_school_graduated_year)
-				$('#elementary_graduated').val(data.elementary_graduated)
-				$('#elementary_graduated_year').val(data.elementary_graduated_year)
-			}
-		},
-	}).fail(() => console.error('There was an error in retrieving student data'))
-}
-
-// Edit Educational Information AJAX
-editEducationalInfoAJAX = () => {
-	// Get data from form
-	if ($('#educationalInfoForm')[0].checkValidity()) {
-		// no validation error
-		const form = new FormData($('#educationalInfoForm')[0])
-
-		data = {
-			education_status: form.get('education_status'),
-			school_year_admitted: form.get('school_year_admitted'),
-			course_when_admitted: form.get('course_when_admitted'),
-			high_school_graduated: form.get('high_school_graduated'),
-			high_school_graduated_year: form.get('high_school_graduated_year'),
-			elementary_graduated: form.get('elementary_graduated'),
-			elementary_graduated_year: form.get('elementary_graduated_year'),
-		}
-
-		$.ajax({
-			url: apiURL + `student/educ_profile`,
-			type: 'PUT',
-			data: data,
-			dataType: 'json',
-			headers: AJAX_HEADERS,
-			success: (result) => {
-				if (result) {
-					Swal.fire({
-						html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully updated your information!</p></div></div>',
-						showCancelButton: !0,
-						showConfirmButton: !1,
-						cancelButtonClass: 'btn btn-success w-xs mb-1',
-						cancelButtonText: 'Ok',
-						buttonsStyling: !1,
-						showCloseButton: !0,
-					}).then(function () {
-						window.location.href = `${baseURL}student/profile`
-					})
-				}
-			},
-		}).fail(() => {
-			Swal.fire({
-				html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">There was an error while updating your details. Please try again.</p></div></div>',
+				html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">${
+					JSON.parse(xhr.responseText).message
+				}</p></div></div>`,
 				showCancelButton: !0,
 				showConfirmButton: !1,
 				cancelButtonClass: 'btn btn-danger w-xs mb-1',

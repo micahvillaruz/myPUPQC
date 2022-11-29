@@ -206,21 +206,6 @@
                               <div class="d-flex">
                                 <div class="flex-shrink-0 avatar-xs align-self-center me-3">
                                   <div class="avatar-title bg-primary rounded-circle fs-16 text-white">
-                                    <i class="ri-map-pin-user-fill"></i>
-                                  </div>
-                                </div>
-                                <div class="flex-grow-1 overflow-hidden">
-                                  <p class="mb-1 text-primary">Status :</p>
-                                  <h6 class="mb-0" id="view_status"></h6>
-                                </div>
-                              </div>
-                            </th>
-                          </tr>
-                          <tr>
-                            <th scope="row">
-                              <div class="d-flex">
-                                <div class="flex-shrink-0 avatar-xs align-self-center me-3">
-                                  <div class="avatar-title bg-primary rounded-circle fs-16 text-white">
                                     <i class="ri-calendar-todo-fill"></i>
                                   </div>
                                 </div>
