@@ -115,12 +115,12 @@
             <div class="form-check">
               <input class="form-check-input" type="radio" name="flexRadioDefault" id="followup_consultation" checked>
               <label class="form-check-label" for="followup_consultation">
-                Follow-up Consultation
+                Follow-up 
               </label>
             </div>
           </div>
           <div class="mb-3">
-            <label for="reasonInput" class="form-label"> Reason for consultation <span class="text-danger">*</span></label>
+            <label for="reasonInput" class="form-label"> Reason for Consultation <span class="text-danger">*</span></label>
             <input type="text" class="form-control" id="consultation_reason" name="consultation_reason" placeholder="Enter your reason" required>
           </div>
           <div class="mb-3">

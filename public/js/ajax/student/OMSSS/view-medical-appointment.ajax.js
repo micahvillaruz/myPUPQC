@@ -36,6 +36,16 @@ loadMedicalTable = () => {
 					},
 				},
 
+				// Symptoms Date
+				{
+					data: null,
+					render: (data) => {
+						const sympDate = moment(data.symptoms_date).utc().format('LL')
+
+						return `${sympDate}`
+					},
+				},
+
 				// Status
 				{
 					data: null,
@@ -55,7 +65,6 @@ loadMedicalTable = () => {
 								data.health_appointment_assigned_to_physician.user_profiles[0].full_name
 						}
 						const healthPhysician = 'N/A'
-
 						return `${healthPhysician}`
 					},
 				},
@@ -66,10 +75,9 @@ loadMedicalTable = () => {
 					render: (data) => {
 						const consultation_date = moment(data.consultation_date).format('LL')
 						const consultation_time = data.consultation_time
-						return `${consultation_date} (${consultation_time})`
+						return `${consultation_date}\ (${consultation_time})`
 					},
 				},
-
 				//Action
 				{
 					data: null,
@@ -77,9 +85,9 @@ loadMedicalTable = () => {
 					render: (data) => {
 						return `
         <div class="dropdown d-inline-block">
-        <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewGuidanceDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewGuidanceModal"><i class="ri-eye-fill fs-5"></i></button>
-				<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="cancelGuidance('${data.health_appointment_id}')"><i class="bx bxs-user-x fs-4"></i></button>
-				</div>`
+        <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewMedicalDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill fs-5"></i></button>
+				<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="cancelMedical('${data.health_appointment_id}')"><i class="bx bxs-user-x fs-4"></i></button>
+				</div`
 					},
 				},
 			],
