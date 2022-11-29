@@ -57,7 +57,7 @@ loadRequestsTable = () => {
 								<i class="me-2 mdi mdi-cash-check fs-13"></i>
 								<span class="text-uppercase">${data.payment_status}</span>
 							</div>
-							<span class="mt-1 d-block badge badge-soft-dark badge-border">OR No. 0589069 </span>
+							<span class="mt-1 d-block badge badge-soft-dark badge-border">OR No. ${data.or_no} </span>
               `
 						}
 					},
@@ -226,7 +226,7 @@ viewRequestDetails = (request_id) => {
 				} else if (data.payment_status === 'Paid') {
 					documentsList += `
 							<td class="text-center">
-								<span class="badge bg-success">${data.payment_status}</span> <span class="badge badge-outline-dark">OR No. 0589069 </span>
+								<span class="badge bg-success">${data.payment_status}</span> <span class="badge badge-outline-dark">OR No. ${data.or_no} </span>
 							</td>
 					</tr>
 					`
@@ -259,7 +259,7 @@ viewRequestDetails = (request_id) => {
 				</div>
 				<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
 					<div class="accordion-body ms-2 ps-5 pt-0">
-						<h6 class="mb-1">The Document Request is pending for approval and is being reviewed by the Administrative Staff.</h6>
+						<h6 class="mb-1">The Document Request is pending for approval and is being reviewed by the Officer-in-Charge of Student Records.</h6>
 						<p class="text-muted mb-0">
 							${moment(data.date_of_filing).format('ddd')},
 							${moment(data.date_of_filing).format('DD, MMM. YYYY')} -
@@ -351,7 +351,7 @@ viewRequestDetails = (request_id) => {
 					</div>
 					<div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
 						<div class="accordion-body ms-2 ps-5 pt-0">
-							<h6 class="mb-1">The document request is now being processed by the Administrative Staff and signed by the signatories.</h6>
+							<h6 class="mb-1">The document request is now being processed by the OIC and signed by the signatories.</h6>
 							<p class="text-muted mb-0">
 								${moment(data.date_of_processing).format('ddd')},
 								${moment(data.date_of_processing).format('DD, MMM. YYYY')} -
@@ -466,12 +466,12 @@ viewRequestDetails = (request_id) => {
 								</div>
 								<div class="flex-grow-1 ms-3">
 									<h5 class="list-title fs-15 mb-1">Hernando Liberato</h5>
-									<p class="list-text mb-0 fs-12">Administrative Staff</p>
+									<p class="list-text mb-0 fs-12">OIC, Student Records</p>
 								</div>
 							</div>
 							<p>The Document Request is now approved. You must view the requirements and download the attachments by clicking the
 								<button type="button" class="btn btn-sm btn-success text-center waves-effect waves-light"><i class="mdi mdi-file-document-multiple label-icon align-middle me-2"></i> Requirements</button>
-							button. Bring the requirements at the Rothlener Building, Records Section where the documents passed will be validated and the corresponding request fee will be paid.
+							button. Please be reminded that you can only process the requirements at PUP QC from Monday to Friday, 8AM to 5PM. Go straight to the Rothlener Building, Records Section where the requirements passed will be validated and the corresponding request fee will be paid. If no requirements has been passed, the request will be automatically cancelled after 7 days.
 							</p>
 							<p>Please bring the following requirements:</p>
 							<ul class="list-unstyled mb-0">
@@ -517,10 +517,11 @@ viewRequestDetails = (request_id) => {
 								</div>
 								<div class="flex-grow-1 ms-3">
 									<h5 class="list-title fs-15 mb-1">Hernando Liberato</h5>
-									<p class="list-text mb-0 fs-12">Administrative Staff</p>
+									<p class="list-text mb-0 fs-12">OIC, Student Records</p>
 								</div>
 							</div>
-							<p>Good Day! Please be informed that your requested credential/s is/are scheduled for pick-up and can now be claimed at the Records Section, Rothlener Building, PUP Quezon City. Please <b>Request an Appointment</b> on the <a href="https://apps.pup.edu.ph/appointment" class="link-primary fw-medium">Visitors Appointment Scheduling System (VASS)</a> for your desired date and time in claiming the documents. You are required to present your <b>Gate Pass</b> generated from <b>Approved Appointments</b> on VASS before being allowed to enter the PUP QC premises. If you are unable to come on your scheduled date, you will need to re-schedule another date on VAAS to pick-up your documents. Thank you.</p>
+							<p>Good Day! Please be informed that your requested credential/s is/are scheduled for pick-up and can now be claimed at the Records Section, Rothlener Building, PUP Quezon City. Please be guided that you can only claim the documents at PUP QC during Monday to Friday, 8AM to 5PM. Please present your Claim Stub upon claiming the documents. Thank you.</p>
+							<p>Reminder: If the  requested are not claimed after 90 days, the request will be automatically cancelled.</p>
 				`
 
 				if (data.remarks !== null) {
