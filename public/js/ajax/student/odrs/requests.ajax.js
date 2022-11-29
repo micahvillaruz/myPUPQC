@@ -57,6 +57,7 @@ loadRequestsTable = () => {
 								<i class="me-2 mdi mdi-cash-check fs-13"></i>
 								<span class="text-uppercase">${data.payment_status}</span>
 							</div>
+							<span class="mt-1 d-block badge badge-soft-dark badge-border">OR No. 0589069 </span>
               `
 						}
 					},
@@ -74,19 +75,13 @@ loadRequestsTable = () => {
 								<tbody>
 									<tr>
 										<td>
-											<span class="fw-medium badge bg-dark me-1">Clearance: </span>
-										</td>
-										<td>${educationStatus} Student</td>
-									</tr>
-									<tr>
-										<td>
-											<span class="fw-medium badge bg-dark me-1">Course: </span>
+											<span class="fw-medium badge bg-primary me-1">Course: </span>
 										</td>
 										<td><span class="text-uppercase">${course}</span></td>
 									</tr>
 									<tr>
 										<td>
-											<span class="fw-medium badge bg-dark me-1">Purpose: </span>
+											<span class="fw-medium badge bg-primary me-1">Purpose: </span>
 										</td>
 										<td>${purpose}</td>
 									</tr>
@@ -231,8 +226,8 @@ viewRequestDetails = (request_id) => {
 				} else if (data.payment_status === 'Paid') {
 					documentsList += `
 							<td class="text-center">
-							<span class="badge bg-success">${data.payment_status}</span>
-						</td>
+								<span class="badge bg-success">${data.payment_status}</span> <span class="badge badge-outline-dark">OR No. 0589069 </span>
+							</td>
 					</tr>
 					`
 				}
@@ -440,40 +435,7 @@ viewRequestDetails = (request_id) => {
 			$('#ready_for_pickup').html(readyforPickup)
 
 			let released = ''
-			if (data.date_of_release !== null) {
-				released += `
-					<div class="accordion-header" id="headingFive">
-						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-							<div class="d-flex align-items-center">
-								<div class="flex-shrink-0 avatar-xs">
-									<div class="avatar-title bg-success rounded-circle">
-										<i class="ri-checkbox-circle-fill"></i>
-									</div>
-								</div>
-								<div class="flex-grow-1 ms-3">
-									<h6 class="fs-15 mb-1 fw-semibold">
-										Released -
-										<span class="fw-normal">
-										${moment(data.date_of_release).format('ddd')},
-										${moment(data.date_of_release).format('DD, MMM. YYYY')}
-										</span>
-									</h6>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingFives" data-bs-parent="#accordionExample">
-						<div class="accordion-body ms-2 ps-5 pt-0">
-							<h6 class="mb-1">The requested documents has been successfully claimed by the student.</h6>
-							<p class="text-muted mb-0">
-								${moment(data.date_of_release).format('ddd')},
-								${moment(data.date_of_release).format('DD, MMM. YYYY')} -
-								${moment(data.date_of_release).format('hh:mm A')}
-							</p>
-						</div>
-					</div>
-				`
-			} else if (data.date_of_release === null) {
+			if (data.date_of_release === null) {
 				released += `
 					<div class="accordion-header" id="headingFive">
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false">

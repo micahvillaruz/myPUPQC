@@ -7,30 +7,16 @@
       <div class="card-body">
         <form id="createRequestForm" class="needs-validation" novalidate>
           <div class="row g-3">
+            <div class="alert alert-info alert-border-left alert-dismissible fade show d-flex align-items-center" role="alert">
+              <i class="ri-information-fill me-2 align-middle"></i> <strong>Advisory</strong> - If you shifted to another course, and it is not yet reflected on the Program/Course displayed below, please contact myPUPQC Admin at <u class="ms-1 fw-medium">mypupqc.odrs@pup.edu.ph</u>.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
             <div class="col-lg-12">
               <label for="course_when_admitted" class="form-label">Program / Course</label>
-              <div class="input-group has-validation">
-                <select class="form-select" value="" id="course_when_admitted" name="course_when_admitted" disabled>
-                  <option id="course" selected></option>
-                </select>
-                <a class="btn btn-outline-primary" href="<?= base_url() ?>student/profile/settings#educationalInfo" type="button">Update</a>
-                <div class="invalid-feedback">
-                  Please select your Program/Course.
-                </div>
-              </div>
-            </div>
-            <!--end col-->
-            <div class="col-lg-12">
-              <label for="education_status" class="form-label">Documents for</label>
-              <div class="input-group has-validation">
-                <select class="form-select" value="" id="education_status" name="education_status" disabled required>
-                  <option value="1" id="educ_status" selected></option>
-                </select>
-                <a class="btn btn-outline-primary" href="<?= base_url() ?>student/profile/settings#educationalInfo" type="button">Update</a>
-                <div class="invalid-feedback">
-                  Please select your Education Status.
-                </div>
-              </div>
+              <select class="form-select" value="" id="course_when_admitted" name="course_when_admitted" disabled>
+                <option id="course" selected></option>
+              </select>
             </div>
             <!--end col-->
             <div class="col-lg-12 mt-4">

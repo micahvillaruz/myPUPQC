@@ -52,19 +52,13 @@ loadHistoryTable = () => {
 								<tbody>
 									<tr>
 										<td>
-											<span class="fw-medium badge bg-dark me-1">Clearance: </span>
-										</td>
-										<td>${educationStatus} Student</td>
-									</tr>
-									<tr>
-										<td>
-											<span class="fw-medium badge bg-dark me-1">Course: </span>
+											<span class="fw-medium badge bg-primary me-1">Course: </span>
 										</td>
 										<td><span class="text-uppercase">${course}</span></td>
 									</tr>
 									<tr>
 										<td>
-											<span class="fw-medium badge bg-dark me-1">Purpose: </span>
+											<span class="fw-medium badge bg-primary me-1">Purpose: </span>
 										</td>
 										<td>${purpose}</td>
 									</tr>
@@ -114,7 +108,10 @@ loadHistoryTable = () => {
 									<button type="button" class="btn btn-sm btn-secondary bg-gradient waves-effect waves-light rounded-circle position-absolute top-0 start-100 translate-middle" data-bs-toggle="modal" data-bs-target="#viewProcessStatusFlow">?</button>
 								</div>
               `
-						} else if (data.status_of_request === 'Cancelled') {
+						} else if (
+							data.status_of_request === 'Cancelled by Student' ||
+							data.status_of_request === 'Cancelled by Staff'
+						) {
 							return `
 								<div class="mt-2 d-grid fw-bolder badge badge-soft-danger position-relative">
 									<i class="m-2 mdi mdi-cancel fs-13"></i>
@@ -156,7 +153,10 @@ viewRequestDetails = (request_id) => {
 
 			if (data.status_of_request === 'Released') {
 				$('#completion_date').html('Date Released')
-			} else if (data.status_of_request === 'Cancelled') {
+			} else if (
+				data.status_of_request === 'Cancelled by Student' ||
+				data.status_of_request === 'Cancelled by Staff'
+			) {
 				$('#completion_date').html('Date Cancelled')
 			}
 
@@ -178,7 +178,7 @@ viewRequestDetails = (request_id) => {
 				} else if (data.payment_status === 'Paid') {
 					documentsList += `
 						<td class="text-center">
-							<span class="badge bg-success">${data.payment_status}</span>
+							<span class="badge bg-success">${data.payment_status}</span> <span class="badge badge-outline-dark">OR No. 0589069 </span>
 						</td>
 					`
 				}
@@ -187,7 +187,7 @@ viewRequestDetails = (request_id) => {
 					const date = moment(data.date_of_release).format('DD, MMM. YYYY')
 
 					documentsList += `
-            <td>
+            <td class="text-center">
               <span class="ms-2">${date}</span>
             </td>
           </tr>
@@ -397,7 +397,7 @@ viewRequestDetails = (request_id) => {
 								</div>
 								<div class="flex-grow-1 ms-3">
 									<h6 class="fs-15 mb-1 fw-semibold">
-										Cancelled -
+										${data.status_of_request} -
 										<span class="fw-normal">
 										${moment(data.date_of_cancelled).format('ddd')},
 										${moment(data.date_of_cancelled).format('DD, MMM. YYYY')}
