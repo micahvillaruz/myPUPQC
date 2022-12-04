@@ -12,7 +12,8 @@
         <table id="guidance-datatable" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
           <thead>
             <tr>
-            <th>Appointment Code</th>
+              <th>Appointment Code</th>
+              <th>Consultation Type</th>
               <th>Status</th>
               <th>Attending Consultant</th>
               <th>Appointment Date</th>

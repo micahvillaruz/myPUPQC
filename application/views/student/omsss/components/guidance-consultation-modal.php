@@ -18,7 +18,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Consultation Type</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_consultation_reason"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_consultation_type"></div>
                 </div>
               </div>
             </li>
@@ -105,13 +105,13 @@
 
           <div class="d-flex gap-5 mb-3">
             <div class="form-check mb-2">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="new_consultation">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="consultation_type">
               <label class="form-check-label" for="new_consultation">
                 New Consultation
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="followup_consultation" checked>
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="consultation_type" checked>
               <label class="form-check-label" for="followup_consultation">
                 Follow-up
               </label>

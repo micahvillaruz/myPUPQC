@@ -95,13 +95,13 @@
 
           <div class="d-flex gap-5 mb-3">
             <div class="form-check mb-2">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="new_consultation">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="consultation_type">
               <label class="form-check-label" for="new_consultation">
                 New Consultation
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="followup_consultation" checked>
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="consultation_type" checked>
               <label class="form-check-label" for="followup_consultation">
                 Follow-up
               </label>

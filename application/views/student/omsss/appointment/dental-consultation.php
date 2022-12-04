@@ -13,6 +13,7 @@
           <thead>
             <tr>
               <th>Appointment Code</th>
+              <th>Consultation Type</th>
               <th>Status</th>
               <th>Attending Consultant</th>
               <th>Appointment Date</th>
