@@ -1,4 +1,4 @@
-<!-- View Medical modal -->
+<!-- View Reservation modal -->
 <div class="modal fade" id="viewOwnReservation" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
@@ -19,6 +19,17 @@
                 </div>
                 <div class="col-8">
                   <div class="d-flex fs-13 fw-medium" id="reservation_number"></div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1">Organizaton</h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium" id="organization"></div>
                 </div>
               </div>
             </li>
@@ -48,6 +59,17 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
+                  <h5 class="fs-13 mb-1">Event Details</h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium" id="event_details"></div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
                   <h5 class="fs-13 mb-1">Date</h5>
                 </div>
                 <div class="col-8">
@@ -60,6 +82,32 @@
               <div class="d-flex align-items-center">
                 <div class="col-4">
                   <h5 class="fs-13 mb-1">Time</h5>
+                </div>
+                <div class="col-8">
+                  <div class="fw-medium">
+                    <span id="time"></span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1">Attachments</h5>
+                </div>
+                <div class="col-8">
+                  <div class="fw-medium">
+                    <span id="time"></span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1">Remarks</h5>
                 </div>
                 <div class="col-8">
                   <div class="fw-medium">
@@ -95,18 +143,22 @@
 
 <!-- Edit Reservation modal -->
 <div id="editReservationModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
     <div class="modal-content border-0 overflow-hidden">
       <div class="modal-header p-3">
-        <h4 class="card-title mb-0">Edit Student Form</h4>
+        <h4 class="card-title mb-0">Edit Reservation</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 
       <div class="modal-body">
         <form class="needs-validation" novalidate>
+          <div class="row mb-3">
+            <h5 class="fs-13 fw-medium col-5"><a href="#" class="link text-dark">Reservation Control #:</a></h5>
+            <div class="d-flex fs-13 fw-medium col-5" id="reserve_number"></div>
+          </div>
           <div class="mb-3">
-            <label for="studentNo" class="form-label">Student No.</label>
-            <input type="text" class="form-control" id="studentNo" placeholder="Enter student no" />
+            <label for="organization" class="form-label">Organization</label>
+            <input type="text" class="form-control" id="organization" placeholder="Select " />
           </div>
           <div class="mb-3">
             <label for="fullName" class="form-label">Name</label>

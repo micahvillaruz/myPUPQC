@@ -3,7 +3,7 @@ $(function() {
 
     ownReservationsHistory()
 
-    viewReservationDetails()
+    // viewReservationDetails()
 
     loadFullName()
 
@@ -142,7 +142,62 @@ ownReservationsTable = () => {
 }
 
 // View Own Reservation details
-viewReservationDetails = (reservation_id) => {
+// viewReservationDetails = (reservation_id) => {
+//     $.ajaxSetup({
+//         headers: {
+//             Accept: 'application/json',
+//             Authorization: 'Bearer ' + TOKEN,
+//             ContentType: 'application/x-www-form-urlencoded',
+//         },
+//     })
+
+//     $.ajax({
+//         type: 'GET',
+//         cache: false,
+//         url: apiURL + `evrsers/student/view_reservation/${reservation_id}`,
+//         dataType: 'json',
+//         success: (result) => {
+//             console.log(result)
+//             const userData = result.data
+//             const venue = userData.facilities_assigned_to_reservation.facility_name
+
+//             $('#reservation_number').html(userData.reservation_number)
+//             $('#event_title').html(userData.event_title)
+//             $('#facility_name').html(venue)
+//             $('#reserve_date').html(moment(userData.reserve_date).format('LL'))
+//             const time = `${userData.time_from} - ${userData.time_to}`
+//             $('#time').html(time)
+//             let reservation_status = userData.reserve_status
+//             if (reservation_status == 'Pending') {
+//                 $('#reservation_status').html(`<span class="badge rounded-pill bg-secondary">${reservation_status}</span>`)
+//             } else if (reservation_status == 'Declined') {
+//                 $('#reservation_status').html(`<span class="badge rounded-pill bg-danger">${reservation_status}</span>`)
+//             } else if (reservation_status == 'Cancelled') {
+//                 $('#reservation_status').html(`<span class="badge rounded-pill bg-info">${reservation_status}</span>`)
+//             } else {
+//                 $('#reservation_status').html(`<span class="badge rounded-pill bg-success">${reservation_status}</span>`)
+//             }
+//         },
+//     })
+// }
+
+loadFullName = () => {
+    $.ajax({
+        type: 'GET',
+        url: apiURL + `student/info`,
+        headers: AJAX_HEADERS,
+        success: (result) => {
+            const data = result.data
+            const full_name = data.full_name
+            console.log(full_name)
+            document.getElementById('full_name').value = full_name
+        },
+        error: function() {}
+    })
+}
+
+// Edit Reservation
+editReservation = (reservation_id) => {
     $.ajaxSetup({
         headers: {
             Accept: 'application/json',
@@ -159,40 +214,8 @@ viewReservationDetails = (reservation_id) => {
         success: (result) => {
             console.log(result)
             const userData = result.data
-            const venue = userData.facilities_assigned_to_reservation.facility_name
-
-            $('#reservation_number').html(userData.reservation_number)
-            $('#event_title').html(userData.event_title)
-            $('#facility_name').html(venue)
-            $('#reserve_date').html(moment(userData.reserve_date).format('LL'))
-            const time = `${userData.time_from} - ${userData.time_to}`
-            $('#time').html(time)
-            let reservation_status = userData.reserve_status
-            if (reservation_status == 'Pending') {
-                $('#reservation_status').html(`<span class="badge rounded-pill bg-secondary">${reservation_status}</span>`)
-            } else if (reservation_status == 'Declined') {
-                $('#reservation_status').html(`<span class="badge rounded-pill bg-danger">${reservation_status}</span>`)
-            } else if (reservation_status == 'Cancelled') {
-                $('#reservation_status').html(`<span class="badge rounded-pill bg-info">${reservation_status}</span>`)
-            } else {
-                $('#reservation_status').html(`<span class="badge rounded-pill bg-success">${reservation_status}</span>`)
-            }
+            $('#reserve_number').html(userData.reservation_number)
         },
-    })
-}
-
-loadFullName = () => {
-    $.ajax({
-        type: 'GET',
-        url: apiURL + `student/info`,
-        headers: AJAX_HEADERS,
-        success: (result) => {
-            const data = result.data
-            const full_name = data.full_name
-            console.log(full_name)
-            document.getElementById('full_name').value = full_name
-        },
-        error: function() {}
     })
 }
 
