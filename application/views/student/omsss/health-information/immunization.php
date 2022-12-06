@@ -57,7 +57,7 @@
                   <div class="invalid-feedback">
                     You must read and acknowledge the Data Privacy Statement as declared above.
                   </div>
-                </div>
+                
               </div> 
           </li>
         </ul>
@@ -89,6 +89,7 @@
             </tr>
           </tbody>
         </table>
+      </div>
       </div>
     </div>
 </div>
