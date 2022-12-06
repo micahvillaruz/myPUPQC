@@ -1,5 +1,5 @@
 <!-- View Medical modal -->
-<div class="modal fade" id="viewMedicalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+<div class="modal fade" id="viewOwnReservation" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
@@ -96,7 +96,7 @@
 </div>
 
 <!-- Edit Medical modal -->
-<div id="editMedicalModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
+<div id="editReservationModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content border-0 overflow-hidden">
       <div class="modal-header p-3">
