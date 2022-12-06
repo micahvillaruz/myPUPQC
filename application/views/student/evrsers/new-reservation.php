@@ -9,14 +9,30 @@
                     <div class="row g-3">
                         <div class="col-lg-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Student Full Name" disabled value="Josha G. Galga">
+                                <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Student Full Name" disabled value="Albert P. Lupo">
                                 <label for="fullnamefloatingInput">Full Name</label>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="orgNamefloatingInput" placeholder="Student Organization" required>
-                                <label for="orgNamefloatingInput">Organization Name</label>
+                                <select class="form-select" id="orgfloatingInput" placeholder="" required>
+                                    <option selected disabled>- Select Organization -</option>
+                                    <option>SSC</option>
+                                    <option>CHRS</option>
+                                    <option>COL</option>
+                                    <option>COMMITS</option>
+                                    <option>DOMT.CS</option>
+                                    <option>FBTO</option>
+                                    <option>JMS</option>
+                                    <option>KATAGA</option>
+                                    <option>MUSA</option>
+                                    <option>PSC</option>
+                                    <option>SPAS</option>
+                                    <option>Vox Nova</option>
+                                    <option>YES</option>
+                                    <option>Other</option>
+                                </select>
+                                <label for="orgfloatingInput">Organization</label>
                             </div>
                         </div>
                         <div class="col-lg-2">
@@ -104,41 +120,63 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="myModalLabel">Event Request Attachments</h5>
+                                                <h5 class="modal-title text-primary" id="myModalLabel">Event Request Attachments</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
                                             </div>
                                             <div class="modal-body">
-                                                <h5 class="fs-15">
-                                                    1. Event Request
-                                                </h5>
-                                                <p class="text-muted">This should contain the information regarding the event and completed signatories from the following: <strong>Org President, SSC President, Adviser, Property Custodian, OSAS Head, Acad Head, & the Director.</strong></p>
-                                                <h5 class="fs-15">
-                                                    2. Concept Paper
-                                                </h5>
-                                                <p class="text-muted">The specific details regarding the event should be found here. This includes the venue, platform, number of participants included in the said event.</p>
-                                                <h5 class="fs-15">
-                                                    3. Other Files
-                                                </h5>
-                                                <p class="text-muted">Anything relevant to the creation of the event request should then be included here. <i>(Note that this could help your application to be approved faster.)</i></p>
+                                                <ul class="list-group">
+                                                    <li class="list-group-item"><b style="width: 15px; height: 15px;" class="bg-dark text-white rounded-pill me-2 align-middle"><span class="mx-2 fs-10">1</span></b>
+                                                        <div class="badge badge-soft-secondary">
+                                                            <i class="me-2 mdi mdi-file-document fs-13"></i>
+                                                            <span class="text-uppercase">Event Request</span>
+                                                        </div>
+                                                        <br><br>
+                                                        <span class="mt-3">
+                                                            This should contain the information regarding the event and completed signatories from the following: <strong>Org President, SSC President, Adviser, Property Custodian, OSAS Head, Acad Head, & the Director.</strong>
+                                                        </span>
+                                                    </li>
+                                                    <li class="list-group-item"><b style="width: 15px; height: 15px;" class="bg-dark text-white rounded-pill me-2 align-middle"><span class="mx-2 fs-10">2</span></b>
+                                                        <div class="badge badge-soft-info">
+                                                            <i class="me-2 mdi mdi-file-document fs-13"></i>
+                                                            <span class="text-uppercase">Concept Paper</span>
+                                                        </div>
+                                                        <br><br>
+                                                        <span class="mt-3">
+                                                            The specific details regarding the event should be found here. This includes the venue, platform, number of participants included in the said event.
+                                                        </span>
+                                                    </li>
+                                                    <li class="list-group-item"><b style="width: 15px; height: 15px;" class="bg-dark text-white rounded-pill me-2 align-middle"><span class="mx-2 fs-10">3</span></b>
+                                                        <div class="badge badge-soft-primary">
+                                                            <i class="me-2 mdi mdi-file-document-multiple fs-13"></i>
+                                                            <span class="text-uppercase">Others</span>
+                                                        </div>
+                                                        <br><br>
+                                                        <span class="mt-3">
+                                                        Anything relevant to the creation of the event request should then be included here. <br><br>
+                                                        </span>
+                                                        <span class="mt-4 fs-6">
+                                                        <i class="text-muted">*** Note that this could help your event request application to be processed faster.</i>
+                                                        </span>
+                                                    </li>
+                                                </ul>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
                                             </div>
-
                                         </div><!-- /.modal-content -->
                                     </div><!-- /.modal-dialog -->
                                 </div><!-- /.modal -->
                                 <div class="input-group mt-2">
-                                    <input type="file" class="form-control" id="inputGroupFile02">
-                                    <label class="input-group-text" for="inputGroupFile02">Event Request</label>
+                                    <input type="file" class="form-control" id="inputGroupFile01">
+                                    <label class="input-group-text" for="inputGroupFile01">Event Request</label>
                                 </div>
                                 <div class="input-group mt-2">
                                     <input type="file" class="form-control" id="inputGroupFile02">
                                     <label class="input-group-text" for="inputGroupFile02">Concept Paper</label>
                                 </div>
                                 <div class="input-group mt-2">
-                                    <input type="file" class="form-control" id="inputGroupFile02">
-                                    <label class="input-group-text" for="inputGroupFile02">Others</label>
+                                    <input type="file" class="form-control" id="inputGroupFile03">
+                                    <label class="input-group-text" for="inputGroupFile03">Others</label>
                                 </div>
                             </div>
                         </div>
