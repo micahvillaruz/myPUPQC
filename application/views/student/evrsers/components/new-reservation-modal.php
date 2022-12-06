@@ -3,12 +3,12 @@
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content border-0 overflow-hidden">
       <div class="modal-header p-3">
-        <h4 class="card-title mb-0">Enroll Student Form</h4>
+        <h4 class="card-title mb-0">Add New Reservation</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 
       <div class="modal-body">
-        <form id="enrollStudentForm" class="needs-validation" novalidate>
+        <form id="addNewReservation" class="needs-validation" novalidate>
           <div class="mb-3">
             <div class="text-center">
               <div class="profile-user position-relative d-inline-block mx-auto mb-2">

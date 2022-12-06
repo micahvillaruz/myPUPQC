@@ -186,12 +186,12 @@ loadFullName = () => {
         url: apiURL + `student/info`,
         headers: AJAX_HEADERS,
         success: (result) => {
-            const userData = result.data
-            const first_name = userData.first_name
-            const last_name = userData.last_name
-            const full_name = first_name + ' ' + last_name
+            const data = result.data
+            const full_name = data.full_name
+            console.log(full_name)
             document.getElementById('full_name').value = full_name
         },
+        error: function() {}
     })
 }
 
