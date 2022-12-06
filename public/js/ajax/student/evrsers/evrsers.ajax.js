@@ -214,7 +214,7 @@ editReservation = (reservation_id) => {
         success: (result) => {
             console.log(result)
             const userData = result.data
-            $('#reserve_number').html(userData.reservation_number)
+            $('#reserve-number').html(userData.reservation_number)
         },
     })
 }
