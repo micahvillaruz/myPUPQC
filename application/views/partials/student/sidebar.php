@@ -187,7 +187,7 @@
           <div class="collapse menu-dropdown" id="sidebarHealthInfo">
             <ul class="nav nav-sm flex-column">
               <li class="nav-item">
-                <a href="<?= base_url() ?>student/omsss/medical-services/personal-info" class="nav-link"> Personal Information </a>
+                <a href="<?= base_url() ?>student/omsss/medical-services/patient-info" class="nav-link"> Personal Information </a>
               </li>
               <li class="nav-item">
                 <a href="<?= base_url() ?>student/omsss/medical-services/health-history" class="nav-link"> Health History </a>

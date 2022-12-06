@@ -103,18 +103,18 @@ class Student extends CI_Controller
     $this->load->view('student/odrs/scripts/history-scripts');
   }
 
-  public function personal_information()
+  public function patient_info()
   {
     $this->load->view('partials/main');
     $this->load->view('partials/title-meta');
     $this->load->view('partials/head-css');
     $this->load->view('partials/student/topbar');
     $this->load->view('partials/student/sidebar');
-    $this->load->view('partials/page-title', ["page_title" => "Medical Services", "title" => "Personal Information"]);
-    $this->load->view('student/omsss/health-information/personal-information');
+    $this->load->view('partials/page-title', ["page_title" => "Medical Services", "title" => "Patient Information"]);
+    $this->load->view('student/omsss/health-information/patient-info');
     $this->load->view('student/omsss/footer');
     $this->load->view('partials/foot-scripts');
-    $this->load->view('student/omsss/health-information/scripts/personal-information-scripts');
+    $this->load->view('student/omsss/health-information/scripts/patient-info-scripts');
   }
 
   public function health_history()
@@ -215,6 +215,7 @@ class Student extends CI_Controller
     $this->load->view('partials/page-title', ["page_title" => "Medical Logs", "title" => "Medical Logs"]);
     $this->load->view('student/omsss/medical-logs');
     $this->load->view('student/omsss/footer');
+    $this->load->view('student/omsss/components/medical-logs-modal');
     $this->load->view('partials/foot-scripts');
     $this->load->view('student/omsss/scripts/medical-logs-scripts');
   }

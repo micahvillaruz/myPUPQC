@@ -20,7 +20,7 @@
 			<div class="card-body p-4">
 				<div class="text-center">
 					<div class="profile-user position-relative d-inline-block mx-auto mb-4">
-						<img src="<?= base_url() ?>public/images/user-illustarator-2.png" class="rounded-circle avatar-xl img-thumbnail user-profile-image" alt="user-profile-image" />
+					<img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-man-6.png" alt="user-img" class="rounded-circle avatar-xl img-thumbnail user-profile-image" />
 						<div class="avatar-xs p-0 rounded-circle profile-photo-edit">
 							<input id="profile-img-file-input" type="file" class="profile-img-file-input" />
 							<label for="profile-img-file-input" class="profile-photo-edit avatar-xs">
@@ -31,14 +31,15 @@
 						</div>
 					</div>
 					<h5 class="fs-16 mb-1" id="view_full_name"></h5>
-					<p class="text-muted mb-0">STUDENT</p>
+					<span><h5 class="text-muted mb-0">STUDENT</h5></span>
+					<br>
 					<li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-5">
-                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark" >Sex: </a></h5>
+                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark" >Student Name: </a></h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_sex"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_student_name"></div>
                 </div>
               </div>
             </li>
@@ -46,54 +47,10 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-5">
-                  <h5 class="fs-13 mb-1">Birthdate:</h5>
+                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark" >Student Number: </a></h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_birth_date"></div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-5">
-                  <h5 class="fs-13 mb-1">Full Address: </h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_full_address"></div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-5">
-                  <h5 class="fs-13 mb-1">Civil Status: </h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_civil_status"></div>
-                </div>
-              </div>
-            </li>
-						<!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-5">
-                  <h5 class="fs-13 mb-1">Citizenship: </h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_citizenship"></div>
-                </div>
-              </div>
-            </li>
-						<!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-5">
-                  <h5 class="fs-13 mb-1">Religion: </h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_religion"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_student_number"></div>
                 </div>
               </div>
             </li>
@@ -119,7 +76,7 @@
 				<div class="tab-content">
 					<div class="tab-pane active" id="personalDetails" role="tabpanel">
 						<form action="javascript:void(0);" id="patientInformationForm">
-						<div class="row mb-3">
+						<!-- <div class="row mb-3">
         			<div class="col-lg-3">
             		<label for="disabledInput" class="form-label">Primary Contact No.</label>
         					</div>
@@ -143,7 +100,7 @@
             		<input type="facebook" class="form-control" id="facebook_username" name="facebook_username" placeholder="Enter your facebook username">
         			</div>
     				</div>
-								<br>
+								<br> -->
 								<h4 class="fw-bold text-primary">Emergency Contact Information</h4></br>
     					<div class="row mb-3">
         			<div class="col-lg-3">
