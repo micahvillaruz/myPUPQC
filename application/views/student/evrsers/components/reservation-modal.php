@@ -141,6 +141,11 @@
   <!-- /.modal-dialog -->
 </div>
 
+<!-- 
+// * Still need to add the following:
+// * - Edit Reservation endpoints
+// * - Edit Reservation success modal
+-->
 <!-- Edit Reservation modal -->
 <div id="editReservationModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
   <div class="modal-dialog modal-dialog-centered modal-lg modal-fullscreen-md-down">
