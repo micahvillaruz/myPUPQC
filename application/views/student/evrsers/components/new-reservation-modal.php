@@ -1,4 +1,4 @@
-<!-- Add Student modal -->
+<!-- Add Reservations modal -->
 <div id="newReservation" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content border-0 overflow-hidden">
