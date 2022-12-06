@@ -11,6 +11,7 @@
                       <th>Appointment Code</th>
                       <th>Consultation Type</th>
                       <th>Attending Consultant</th>
+                      <th>Appointment Date</th>
                       <th>Status</th>
                       <th>Action</th>
                     </tr>
