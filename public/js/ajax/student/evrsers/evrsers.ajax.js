@@ -16,8 +16,45 @@ $(function() {
     // })
 })
 
-// Load datatables (individual reservations)
+// View Own Reservation details
+viewMedicalDetails = (reservation_id) => {
+    $.ajaxSetup({
+        headers: {
+            Accept: 'application/json',
+            Authorization: 'Bearer ' + TOKEN,
+            ContentType: 'application/x-www-form-urlencoded',
+        },
+    })
 
+    $.ajax({
+        type: 'GET',
+        cache: false,
+        url: apiURL + `evrsers/student/view_reservations/${reservation_id}`,
+        dataType: 'json',
+        success: (result) => {
+            console.log(result)
+            const userData = result.data
+            if (result.data.health_appointment_assigned_to_physician) {
+                const userProfileData = data.health_appointment_assigned_to_physician.user_profiles[0]
+            }
+            const userProfileData = null
+
+            $('#view_case_details').html(userData.case_control_number)
+            $('#view_consultaion_type').html(userData.consultation_type)
+            $('#view_consultation_reason').html(userData.consultation_reason)
+            $('#view_health_physcian').html(userProfileData != null ? userProfileData.full_name : 'N/A')
+            $('#view_date_of_symptom').html(moment(userData.symptoms_date).format('LL'))
+            $('#view_consultation_date').html(moment(userData.consultation_date).format('LL'))
+            $('#view_status').html(
+                userData.consultation_status == 'Pending' ?
+                '<span class="fs-12 badge rounded-pill bg-warning" >Pending</span>' :
+                '<span class="fs-12 badge rounded-pill bg-success" >Approved</span>',
+            )
+        },
+    })
+}
+
+//View All Own Reservations
 ownReservationsTable = () => {
     const dt = $('#reservations-datatable')
 
@@ -111,9 +148,9 @@ ownReservationsTable = () => {
                         if (reserve_status == 'Pending') {
                             return `
                             <div class="dropdown d-inline-block">
-                                <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewOwnReservation('${data.reservation_id}')" data-bs-toggle="modal" data-bs-target="#viewOwnReservation"><i class="ri-eye-fill fs-5"></i></button>
+                                <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewOwnReservation" onclick="viewOwnReservation('${data.reservation_id}')"><i class="ri-eye-fill fs-5"></i></button>
                                 <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editReservationModal" onclick = "editReservation('${data.reservation_id}')"><i class="ri-edit-2-fill fs-5"></i></button>
-                                <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="cancelReservation('${data.reservation_id}')"><i class="ri-close-fill fs-5"></i></button> 
+                                <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#cancelReservationModal" onclick="cancelReservation('${data.reservation_id}')"><i class="ri-close-fill fs-5"></i></button> 
                             </div>
                                 `
                         } else if (reserve_status == 'Declined') {
