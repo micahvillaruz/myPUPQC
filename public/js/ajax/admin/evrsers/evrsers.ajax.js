@@ -1,27 +1,12 @@
 $(function() {
-    ownReservationsTable()
-        // ownReservationsHistory()
+    allReservationsTable()
 
     viewReservationDetails()
 
-    loadFullName()
-
-    $('#addNewReservation').on('submit', function(e) {
-        e.preventDefault() // prevent page refresh
-        addNewReservation()
-    })
-
-
-    // $('#updateStudentForm').on('submit', function (e) {
-    // 	e.preventDefault() // prevent page refresh
-
-    // 	// pass data to API for updating of student's info
-    // 	updateStudentAJAX($('#edit_user_id').val())
-    // })
 })
 
-//View All Own Reservations
-ownReservationsTable = () => {
+//View All Reservations
+allReservationsTable = () => {
     const dt = $('#reservations-datatable')
 
     $.ajaxSetup({
@@ -35,7 +20,7 @@ ownReservationsTable = () => {
         dt.DataTable({
             bDestroy: true,
             ajax: {
-                url: apiURL + 'evrsers/student/view_reservations',
+                url: apiURL + 'evrsers/super_admin/view_list_reservation',
                 type: 'GET',
                 ContentType: 'application/x-www-form-urlencoded',
             },

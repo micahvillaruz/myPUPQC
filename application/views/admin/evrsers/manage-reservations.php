@@ -14,7 +14,6 @@
                             <th>Reservation Control #</th>
                             <th>Event Title</th>
                             <th>Venue</th>
-                            <th>Event Details</th>
                             <th>Date</th>
                             <th>Time</th>
                             <th>Status</th>
