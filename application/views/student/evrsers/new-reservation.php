@@ -60,19 +60,13 @@
                                 <label for="eventDetailsfloatingInput">Event Details</label>
                             </div>
                         </div>
-                        <div class="col-lg-3">
-                            <div class="form-floating">
-                                <input type="number" class="form-control" id="numberfloatingInput" placeholder="Number of Attendees" required>
-                                <label for="numberfloatingInput">Number of Attendees</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-5">
+                        <div class="col-lg-6">
                             <div class="form-floating">
                                 <input type="date" class="form-control" id="reserveDatefloatingInput" placeholder="Reservation Date / Event Date" required>
                                 <label for="reserveDatefloatingInput">Reserve Date</label>
                             </div>
                         </div>
-                        <div class="col-lg-2">
+                        <div class="col-lg-3">
                             <div class="form-floating">
                                 <select class="form-select" id="timeFromfloatingInput" placeholder="" required>
                                     <option selected disabled>- Select Time -</option>
@@ -92,7 +86,7 @@
                                 <label for="timeFromfloatingInput">Time From</label>
                             </div>
                         </div>
-                        <div class="col-lg-2">
+                        <div class="col-lg-3">
                             <div class="form-floating">
                                 <select class="form-select" id="timeTofloatingInput" placeholder="" required>
                                     <option selected disabled>- Select Time -</option>
