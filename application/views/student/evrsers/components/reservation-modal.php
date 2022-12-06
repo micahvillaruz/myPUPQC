@@ -93,7 +93,7 @@
   <!-- /.modal-dialog -->
 </div>
 
-<!-- Edit Medical modal -->
+<!-- Edit Reservation modal -->
 <div id="editReservationModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content border-0 overflow-hidden">

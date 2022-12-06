@@ -4,9 +4,10 @@ $(function() {
 
     viewReservationDetails()
 
+    loadFullName()
+
     $('#addNewReservation').on('submit', function(e) {
         e.preventDefault() // prevent page refresh
-            // loadFullName()
         addNewReservation()
     })
 
@@ -179,19 +180,20 @@ viewReservationDetails = (reservation_id) => {
     })
 }
 
-
-
-// loadFullName = () => {
-//     $.ajax({
-//         type: 'GET',
-//         url: apiURL + `student/info`,
-//         headers: AJAX_HEADERS,
-//         success: (result) => {
-//             const data = result.data
-//             document.getElementById('full_name').value = data.full_name
-//         },
-//     })
-// }
+loadFullName = () => {
+    $.ajax({
+        type: 'GET',
+        url: apiURL + `student/info`,
+        headers: AJAX_HEADERS,
+        success: (result) => {
+            const userData = result.data
+            const first_name = userData.first_name
+            const last_name = userData.last_name
+            const full_name = first_name + ' ' + last_name
+            document.getElementById('full_name').value = full_name
+        },
+    })
+}
 
 // addNewReservation = () => {
 //     // Create New Reservation
