@@ -4,7 +4,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalScrollableTitle">
-          Appointment Information
+          Reservation Information
         </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -18,7 +18,7 @@
                   <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">Reservation Control #:</a></h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id=""></div>
+                  <div class="d-flex fs-13 fw-medium" id="reservation_number"></div>
                 </div>
               </div>
             </li>
@@ -26,10 +26,10 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">Doctor</a></h5>
+                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">Event Title</a></h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">Dr. Melissa Sarappudin</div>
+                  <div class="d-flex fs-13 fw-medium" id="event_title"></div>
                 </div>
               </div>
             </li>
@@ -37,21 +37,10 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1">Patient</h5>
+                  <h5 class="fs-13 mb-1">Venue</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">Shein</div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1">Service</h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">Covid</div>
+                  <div class="d-flex fs-13 fw-medium" id="facility_name"></div>
                 </div>
               </div>
             </li>
@@ -62,8 +51,19 @@
                   <h5 class="fs-13 mb-1">Date</h5>
                 </div>
                 <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium" id="reserve_date"></div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1">Time</h5>
+                </div>
+                <div class="col-8">
                   <div class="fw-medium">
-                    <span>09-01-2022</span>
+                    <span id="time"></span>
                   </div>
                 </div>
               </div>
@@ -74,9 +74,7 @@
                 <div class="col-4">
                   <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">Status</a></h5>
                 </div>
-                <div class="col-8">
-                  <span class="fs-12 badge rounded-pill bg-success">Accepted</span>
-                </div>
+                <div class="col-8" id="reservation_status"></div>
               </div>
             </li>
             <!-- end list item -->
