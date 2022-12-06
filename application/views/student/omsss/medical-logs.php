@@ -11,7 +11,6 @@
                       <th>Appointment Code</th>
                       <th>Consultation Type</th>
                       <th>Attending Consultant</th>
-                      <th>Schedule</th>
                       <th>Status</th>
                       <th>Action</th>
                     </tr>
