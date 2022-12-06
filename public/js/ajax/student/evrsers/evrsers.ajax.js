@@ -2,11 +2,15 @@ $(function() {
     ownReservationsTable()
         // ownReservationsHistory()
 
+    viewReservationDetails()
+
+    loadFullName()
+
     $('#addNewReservation').on('submit', function(e) {
         e.preventDefault() // prevent page refresh
-            // loadFullName()
         addNewReservation()
     })
+
 
     // $('#updateStudentForm').on('submit', function (e) {
     // 	e.preventDefault() // prevent page refresh
@@ -16,8 +20,7 @@ $(function() {
     // })
 })
 
-// Load datatables (individual reservations)
-
+//View All Own Reservations
 ownReservationsTable = () => {
     const dt = $('#reservations-datatable')
 
@@ -37,7 +40,7 @@ ownReservationsTable = () => {
                 ContentType: 'application/x-www-form-urlencoded',
             },
             columns: [
-                // Reservation ID
+                // Reservation Control Number
                 {
                     data: null,
                     render: (data) => {
@@ -111,21 +114,21 @@ ownReservationsTable = () => {
                         if (reserve_status == 'Pending') {
                             return `
                             <div class="dropdown d-inline-block">
-                                <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewOwnReservation('${data.reservation_id}')" data-bs-toggle="modal" data-bs-target="#viewOwnReservation"><i class="ri-eye-fill fs-5"></i></button>
+                                <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewOwnReservation" onclick="viewReservationDetails('${data.reservation_id}')"><i class="ri-eye-fill fs-5"></i></button>
                                 <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editReservationModal" onclick = "editReservation('${data.reservation_id}')"><i class="ri-edit-2-fill fs-5"></i></button>
-                                <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="cancelReservation('${data.reservation_id}')"><i class="ri-close-fill fs-5"></i></button> 
+                                <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#cancelReservationModal" onclick="cancelReservation('${data.reservation_id}')"><i class="ri-close-fill fs-5"></i></button> 
                             </div>
                                 `
                         } else if (reserve_status == 'Declined') {
                             return `<div class = "dropdown d-inline-block">
-                                        <button type = "button" class = "btn btn-info btn-icon waves-effect waves-light" onclick = "viewReserveDetails('${data.reservation_id}')" data-bs-toggle = "modal" data-bs-target = "#viewOwnReservation" > <i class = "ri-eye-fill fs-5" > </i></button>
+                                        <button type = "button" class = "btn btn-info btn-icon waves-effect waves-light" onclick = "viewReservationDetails('${data.reservation_id}')" data-bs-toggle = "modal" data-bs-target = "#viewOwnReservation" > <i class = "ri-eye-fill fs-5" > </i></button>
                                     </div>`
                         } else if (reserve_status == 'Cancelled') {
                             return `<div class = "dropdown d-inline-block">
-                                        <button type = "button" class = "btn btn-info btn-icon waves-effect waves-light" onclick = "viewReserveDetails('${data.reservation_id}')" data-bs-toggle = "modal" data-bs-target = "#viewOwnReservation" > <i class = "ri-eye-fill fs-5" > </i></button>
+                                        <button type = "button" class = "btn btn-info btn-icon waves-effect waves-light" onclick = "viewReservationDetails('${data.reservation_id}')" data-bs-toggle = "modal" data-bs-target = "#viewOwnReservation" > <i class = "ri-eye-fill fs-5" > </i></button>
                                     </div>`
                         } else {
-                            return `<button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewReserveDetails('${data.reservation_id}')" data-bs-toggle="modal" data-bs-target="#viewOwnReservation"><i class="ri-eye-fill fs-5"></i></button>`
+                            return `<button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewReservationDetails('${data.reservation_id}')" data-bs-toggle="modal" data-bs-target="#viewOwnReservation"><i class="ri-eye-fill fs-5"></i></button>`
                         }
                     },
                 },
@@ -137,17 +140,60 @@ ownReservationsTable = () => {
     }
 }
 
-// loadFullName = () => {
-//     $.ajax({
-//         type: 'GET',
-//         url: apiURL + `student/info`,
-//         headers: AJAX_HEADERS,
-//         success: (result) => {
-//             const data = result.data
-//             document.getElementById('full_name').value = data.full_name
-//         },
-//     })
-// }
+// View Own Reservation details
+viewReservationDetails = (reservation_id) => {
+    $.ajaxSetup({
+        headers: {
+            Accept: 'application/json',
+            Authorization: 'Bearer ' + TOKEN,
+            ContentType: 'application/x-www-form-urlencoded',
+        },
+    })
+
+    $.ajax({
+        type: 'GET',
+        cache: false,
+        url: apiURL + `evrsers/student/view_reservation/${reservation_id}`,
+        dataType: 'json',
+        success: (result) => {
+            console.log(result)
+            const userData = result.data
+            const venue = userData.facilities_assigned_to_reservation.facility_name
+
+            $('#reservation_number').html(userData.reservation_number)
+            $('#event_title').html(userData.event_title)
+            $('#facility_name').html(venue)
+            $('#reserve_date').html(moment(userData.reserve_date).format('LL'))
+            const time = `${userData.time_from} - ${userData.time_to}`
+            $('#time').html(time)
+            let reservation_status = userData.reserve_status
+            if (reservation_status == 'Pending') {
+                $('#reservation_status').html(`<span class="badge rounded-pill bg-secondary">${reservation_status}</span>`)
+            } else if (reservation_status == 'Declined') {
+                $('#reservation_status').html(`<span class="badge rounded-pill bg-danger">${reservation_status}</span>`)
+            } else if (reservation_status == 'Cancelled') {
+                $('#reservation_status').html(`<span class="badge rounded-pill bg-info">${reservation_status}</span>`)
+            } else {
+                $('#reservation_status').html(`<span class="badge rounded-pill bg-success">${reservation_status}</span>`)
+            }
+        },
+    })
+}
+
+loadFullName = () => {
+    $.ajax({
+        type: 'GET',
+        url: apiURL + `student/info`,
+        headers: AJAX_HEADERS,
+        success: (result) => {
+            const userData = result.data
+            const first_name = userData.first_name
+            const last_name = userData.last_name
+            const full_name = first_name + ' ' + last_name
+            document.getElementById('full_name').value = full_name
+        },
+    })
+}
 
 // addNewReservation = () => {
 //     // Create New Reservation
@@ -241,4 +287,4 @@ addNewReservation = () => {
 //                 buttonsStyling: !1,
 //                 showCloseButton: !0,
 //             })
-//         })
+// })
