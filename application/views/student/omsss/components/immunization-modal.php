@@ -9,56 +9,9 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div data-simplebar class="mx-n3">
-          <ul class="list list-group list-group-flush mb-0">
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">1st Dose</a></h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">08-04-2021</div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">2nd Dose</a></h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">09-01-2021</div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1"> 1st Booster</h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">01-11-2022</div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1">2nd Booster</h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium">07-16-2022</div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-          </ul>
-          <!-- end ul list -->
-        </div>
+      <figure class="figure">
+    <img src="assets/images/small/img-4.jpg" class="figure-img img-fluid rounded" alt="...">
+    </figure>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-light" data-bs-dismiss="modal">
