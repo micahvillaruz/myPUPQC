@@ -12,15 +12,15 @@
       <div class="modal-body px-5 py-4">
         <form id="addDocumentForm" class="needs-validation" novalidate>
           <div class="mb-3">
-            <label for="document_name" class="form-label">Document Name <span class="text-danger">*</span></label>
-            <input type="text" id="document_name" name="document_name" class="form-control" placeholder="Enter the name of the Document" required>
+            <label for="add_document_name" class="form-label">Document Name <span class="text-danger">*</span></label>
+            <input type="text" id="add_document_name" name="document_name" class="form-control" placeholder="Enter the name of the Document" required>
             <div class="invalid-feedback">
               Please enter a Document Name.
             </div>
           </div>
           <div class="mb-3">
-            <label for="document_type" class="form-label">Document Type <span class="text-danger">*</span></label>
-            <select id="document_type" name="document_type" class="form-control js-example-basic-hide-search" required>
+            <label for="add_document_type" class="form-label">Document Type <span class="text-danger">*</span></label>
+            <select id="add_document_type" name="document_type" class="form-control js-example-basic-hide-search" required>
               <option value="" selected disabled>Please select a Document Type</option>
               <option value="Transcript of Records">Transcript of Records</option>
               <option value="Certifications">Certifications</option>
@@ -36,13 +36,6 @@
             <textarea id="document_details" name="document_details" class="form-control" rows="3" placeholder="Enter additional details about the Document" required></textarea>
             <div class="invalid-feedback">
               Please enter the Document Details.
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="document_requirements" class="form-label">Document Requirements <span class="text-danger">*</span></label>
-            <textarea id="document_requirements" name="document_requirements" class="form-control" rows="3" placeholder="Enter the requirements needed for the request of this document" required></textarea>
-            <div class="invalid-feedback">
-              Please enter the Document Requirements.
             </div>
           </div>
           <button type="submit" class="btn btn-primary w-100 mt-3">Submit</button>
@@ -103,8 +96,8 @@
             </div>
           </div>
           <div class="mb-3">
-            <label for="edit_document_type" class="form-label">Document Type <span class="text-danger">*</span></label>
-            <select id="edit_document_type" name="edit_document_type" class="form-control js-example-basic-hide-search" required>
+            <label for="edit_add_document_type" class="form-label">Document Type <span class="text-danger">*</span></label>
+            <select id="edit_add_document_type" name="edit_add_document_type" class="form-control js-example-basic-hide-search" required>
               <option value="" disabled>Please select a Document Type</option>
               <option value="Transcript of Records">Transcript of Records</option>
               <option value="Certifications" selected>Certifications</option>

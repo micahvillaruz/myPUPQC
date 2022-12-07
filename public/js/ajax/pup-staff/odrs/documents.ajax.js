@@ -1,5 +1,9 @@
 $(function () {
 	loadDocumentsTable()
+	$('#addDocumentForm').on('submit', function (e) {
+		e.preventDefault() // prevent page refresh
+		addDocument()
+	})
 })
 
 // Load Documents Table
@@ -93,5 +97,56 @@ loadDocumentInfo = (document_id) => {
 				})
 			}
 		},
+	})
+}
+
+// Add Document
+addDocument = () => {
+	// Add Documents
+	if (!$('#addDocumentForm')[0].checkValidity()) return ''
+
+	const form = new FormData($('#addDocumentForm')[0])
+
+	const data = {
+		document_name: form.get('document_name'),
+		document_details: form.get('document_details'),
+		document_type: form.get('document_type'),
+	}
+
+	$.ajax({
+		type: 'POST',
+		url: apiURL + `odrs/pup_staff/upload_document`,
+		headers: AJAX_HEADERS,
+		data: data,
+		dataType: 'json',
+		success: (result) => {
+			if (result) {
+				Swal.fire({
+					html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully added a document!</p></div></div>',
+					showCancelButton: !0,
+					showConfirmButton: !1,
+					cancelButtonClass: 'btn btn-success w-xs mb-1',
+					cancelButtonText: 'Ok',
+					buttonsStyling: !1,
+					showCloseButton: !0,
+				}).then(function () {
+					$('#addDocumentModal').modal('hide')
+					$('form#addDocumentForm')[0].reset()
+
+					// Reload Document Datatable
+					loadDocumentsTable()
+				})
+			}
+		},
+	}).fail(() => {
+		Swal.fire({
+			html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">There was an error while adding a document. Please try again.</p></div></div>',
+			showCancelButton: !0,
+			showConfirmButton: !1,
+			cancelButtonClass: 'btn btn-danger w-xs mb-1',
+			cancelButtonText: 'Dismiss',
+			buttonsStyling: !1,
+			showCloseButton: !0,
+		})
 	})
 }
