@@ -56,7 +56,7 @@ loadDocumentsTable = () => {
 				data: null,
 				render: (data) => {
 					return `<div class="d-flex gap-1 justify-content-center">
-					<button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal">
+					<button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal" onclick="loadDocumentInfo('${data.document_id}')">
 						<i class="ri-eye-fill fs-5"></i>
 					</button>
 					<button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#updateDocumentModal">
@@ -67,5 +67,31 @@ loadDocumentsTable = () => {
 			},
 		],
 		order: [[0, 'asc']],
+	})
+}
+
+// Load Document Information
+loadDocumentInfo = (document_id) => {
+	$.ajax({
+		type: 'GET',
+		url: apiURL + `odrs/pup_staff/view_document/` + document_id,
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			const data = result.data
+			console.log(data)
+
+			$('#view_document_name').html(data.document_name)
+			$('#view_document_details').html(data.document_details)
+			$('#view_document_requirements').empty()
+			if (data.document_requirements.length === 0) {
+				$('#view_document_requirements').html('<i>No requirements are needed.</i>')
+			} else {
+				data.document_requirements.forEach((item) => {
+					$('#view_document_requirements').append(`
+						<li>${item.doc_req_name}</li>
+					`)
+				})
+			}
+		},
 	})
 }
