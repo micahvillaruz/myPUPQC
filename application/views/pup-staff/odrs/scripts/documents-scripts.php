@@ -33,7 +33,7 @@
 				count++
 				var o = document.createElement('div'),
 					e =
-					'<div class="row"><div class="hstack gap-2 justify-content-end"><input type="text" id="add_document_req" name="document_name" class="form-control mb-2" placeholder="Enter one requirement of the Document"><a class="btn btn-primary" href="javascript:deleteEl(' +
+					'<div class="row"><div class="hstack gap-2 justify-content-end"><input type="text" name="document_requirement" class="form-control mb-2" placeholder="Enter one requirement of the Document"><a class="btn btn-primary" href="javascript:deleteEl(' +
 					(o.id = count) +
 					')">Delete</a></div></div>';
 				(o.innerHTML = document.getElementById('newForm').innerHTML + e),

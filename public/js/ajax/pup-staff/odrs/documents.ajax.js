@@ -107,10 +107,19 @@ addDocument = () => {
 
 	const form = new FormData($('#addDocumentForm')[0])
 
+	var values = $("input[name='document_requirement']")
+		.map(function () {
+			return $(this).val()
+		})
+		.get()
+
 	const data = {
 		document_name: form.get('document_name'),
 		document_details: form.get('document_details'),
 		document_type: form.get('document_type'),
+		document_requirements: values.map((item) => {
+			return { doc_req_name: item }
+		}),
 	}
 
 	$.ajax({
