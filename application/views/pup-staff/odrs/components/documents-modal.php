@@ -38,6 +38,15 @@
               Please enter the Document Details.
             </div>
           </div>
+          <div class="mb-3">
+            <label class="form-label">Document Requirements</label>
+            <div id="document_requirements_list">
+              <input type="text" id="1" name="document_name" class="form-control mb-2" placeholder="Enter one requirement of the Document">
+            </div>
+            <div id="newForm" style="display: none;">
+            </div>
+          </div>
+          <a href="javascript:new_link()" class="btn btn-primary">Add New</a>
           <button type="submit" class="btn btn-primary w-100 mt-3">Submit</button>
         </form>
       </div>
