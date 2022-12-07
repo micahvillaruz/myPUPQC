@@ -10,8 +10,7 @@
       </div>
       <div class="modal-body">
       <figure class="figure">
-    <img src="assets/images/small/img-4.jpg" class="figure-img img-fluid rounded" alt="...">
-    </figure>
+      <img src="<?= base_url() ?>" alt="" class="img-thumbnail" />
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-light" data-bs-dismiss="modal">
@@ -24,7 +23,7 @@
   <!-- /.modal-dialog -->
 </div>
 
-<!-- Edit Immunization modal
+<!-- Edit Immunization modal -->
 <div id="editImmunizationModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content border-0 overflow-hidden">
@@ -32,7 +31,6 @@
         <h4 class="card-title mb-0">Edit</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-
       <div class="row">
 							<div class="col-lg-18">
 								</div>
@@ -42,7 +40,6 @@
 											<div class="card-header">
 											</div>
 											end card header
-
 											<div class="card-body">
 												<p class="text-muted">
 												</p>
@@ -71,9 +68,9 @@
     /.modal-content
   </div>
   /.modal-dialog
-</div> -->
+</div>
 
-<!-- Delete Immunization modal -->
+<!-- Delete Immunization modal
 <div class="modal fade zoomIn" id="deleteImmunizationModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -93,4 +90,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->

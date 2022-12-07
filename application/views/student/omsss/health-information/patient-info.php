@@ -36,7 +36,7 @@
 					<li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-5">
-                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark" >Student Name: </a></h5>
+                  <h5 class="fs-13 mb-1 fw-medium" class="link text-dark" >Student Name: </a></h5>
                 </div>
                 <div class="col-8">
                   <div class="d-flex fs-13 fw-medium" id="view_student_name"></div>
@@ -47,7 +47,7 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-5">
-                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark" >Student Number: </a></h5>
+                  <h5 class="fs-13 mb-1 fw-medium" class="link text-dark" >Student Number: </a></h5>
                 </div>
                 <div class="col-8">
                   <div class="d-flex fs-13 fw-medium" id="view_student_number"></div>
@@ -131,7 +131,7 @@
     					<input class="form-check-input" type="checkbox" id="formCheck1" checked="true">
     					<label class="form-check-label" for="formCheck1">Is the Address the same as your address?</label>
 						</div>
-						<input type="text" class="form-control" id="emergency_contact_address" name="emergency_contact_address" placeholder="Enter Address">
+						<input type="text" class="form-control" id="view_full_address" name="emergency_contact_address" placeholder="Enter Address">
 						<br>
 						<h4 class="fw-bold text-primary"> PhilHealth Information</h4></br>
 						<div class="row mb-3">
