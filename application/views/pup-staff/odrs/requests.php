@@ -91,8 +91,8 @@
                   </td>
                   <td class="text-center">
                     <div class="dropdown d-inline-block">
-                      <button type="button" class="btn btn-success btn-icon waves-effect waves-light" onclick="approveRequest()"><i class="ri-check-fill fs-5 fw-bold"></i></button>
-                      <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="cancelRequest()">
+                      <button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#approveRequestModal"><i class="ri-check-fill fs-5 fw-bold"></i></button>
+                      <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#cancelRequestModal">
                         <i class="ri-close-fill fs-5 fw-bold"></i>
                       </button>
                     </div>
@@ -155,8 +155,8 @@
                   </td>
                   <td class="text-center">
                     <div class="dropdown d-inline-block">
-                      <button type="button" class="btn btn-success btn-icon waves-effect waves-light" onclick="approveRequest()"><i class="ri-check-fill fs-5 fw-bold"></i></button>
-                      <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="cancelRequest()">
+                      <button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#approveRequestModal"><i class="ri-check-fill fs-5 fw-bold"></i></button>
+                      <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#cancelRequestModal">
                         <i class="ri-close-fill fs-5 fw-bold"></i>
                       </button>
                     </div>
@@ -219,8 +219,8 @@
                   </td>
                   <td class="text-center">
                     <div class="dropdown d-inline-block">
-                      <button type="button" class="btn btn-success btn-icon waves-effect waves-light" onclick="approveRequest()"><i class="ri-check-fill fs-5 fw-bold"></i></button>
-                      <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="cancelRequest()">
+                      <button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#approveRequestModal"><i class="ri-check-fill fs-5 fw-bold"></i></button>
+                      <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#cancelRequestModal">
                         <i class="ri-close-fill fs-5 fw-bold"></i>
                       </button>
                     </div>
@@ -305,7 +305,7 @@
                     </div>
                   </td>
                   <td class="text-center">
-                    <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="forEvaluation()">
+                    <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#forProcessingModal">
                       <i class="mdi mdi-file-sign fs-5"></i>
                     </button>
                   </td>
@@ -372,7 +372,7 @@
                     </div>
                   </td>
                   <td class="text-center">
-                    <button type="button" class="btn btn-dark btn-icon waves-effect waves-light" onclick="forPickup()">
+                    <button type="button" class="btn btn-dark btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#readyforPickupModal">
                       <i class="ri-user-received-2-line fs-5"></i>
                     </button>
                   </td>
@@ -439,7 +439,7 @@
                     </div>
                   </td>
                   <td class="text-center">
-                    <button type="button" class="btn btn-success btn-icon waves-effect waves-light" onclick="released()">
+                    <button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#releasedModal">
                       <i class="ri-checkbox-circle-line fs-5"></i>
                     </button>
                   </td>
