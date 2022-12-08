@@ -621,7 +621,7 @@ cancelRequest = (request_id) => {
 		if (result.value) {
 			$.ajax({
 				type: 'PUT',
-				url: `${apiURL}odrs/student/update_request_status/Cancelled/${request_id}`,
+				url: `${apiURL}odrs/student/update_request_status/Cancelled by Student/${request_id}`,
 				dataType: 'json',
 				headers: AJAX_HEADERS,
 				success: (result) => {

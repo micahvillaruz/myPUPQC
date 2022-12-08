@@ -31,7 +31,7 @@ loadDocumentsTable = () => {
 			{
 				data: null,
 				render: (data) => {
-					if (data.document_type === 'Transcript of Records') {
+					if (data.document_type === 'CAV') {
 						return `<div class="d-block badge badge-soft-dark align-items-center">
 						<i class="me-2 bx bxs-institution fs-13"></i>
 						<span class="text-uppercase">CAV (CHED/DFA/WES/CES)</span>
@@ -46,7 +46,7 @@ loadDocumentsTable = () => {
 						<i class="me-2 mdi mdi-package-variant fs-13"></i>
 						<span class="text-uppercase">Unclaimed</span>
 					</div>`
-					} else if (data.document_type === 'CAV') {
+					} else if (data.document_type === 'Transcript of Records') {
 						return `<div class="d-block badge badge-soft-primary align-items-center">
 						<i class="me-2 mdi mdi-format-annotation-plus fs-13"></i>
 						<span class="text-uppercase">Transcript of Records</span>

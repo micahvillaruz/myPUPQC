@@ -41,7 +41,6 @@
           <div class="mb-3">
             <label class="form-label">Document Requirements</label>
             <div id="document_requirements_list">
-              <input type="text" id="1" name="document_requirement" class="form-control mb-2" placeholder="Enter one requirement of the Document">
             </div>
             <div id="newForm" style="display: none;">
             </div>
