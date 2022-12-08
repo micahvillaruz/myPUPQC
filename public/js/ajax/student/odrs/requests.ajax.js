@@ -28,8 +28,8 @@ loadRequestsTable = () => {
 				{
 					data: null,
 					render: (data) => {
-						const date = moment(data.date_of_filing).format('DD, MMM. YYYY')
-						const time = moment(data.date_of_filing).format('hh:mm A')
+						const date = moment(data.pending_for_clearance).format('DD, MMM. YYYY')
+						const time = moment(data.pending_for_clearance).format('hh:mm A')
 
 						return `
               <div class="d-flex align-items-center">
@@ -249,8 +249,8 @@ viewRequestDetails = (request_id) => {
 								<h6 class="fs-15 mb-0 fw-semibold">
 									Pending for Clearance -
 									<span class="fw-normal">
-										${moment(data.date_of_filing).format('ddd')},
-										${moment(data.date_of_filing).format('DD, MMM. YYYY')}
+										${moment(data.pending_for_clearance).format('ddd')},
+										${moment(data.pending_for_clearance).format('DD, MMM. YYYY')}
 									</span>
 								</h6>
 							</div>
@@ -261,9 +261,9 @@ viewRequestDetails = (request_id) => {
 					<div class="accordion-body ms-2 ps-5 pt-0">
 						<h6 class="mb-1">The Document Request is pending for approval and is being reviewed by the Officer-in-Charge of Student Records.</h6>
 						<p class="text-muted mb-0">
-							${moment(data.date_of_filing).format('ddd')},
-							${moment(data.date_of_filing).format('DD, MMM. YYYY')} -
-							${moment(data.date_of_filing).format('hh:mm A')}
+							${moment(data.pending_for_clearance).format('ddd')},
+							${moment(data.pending_for_clearance).format('DD, MMM. YYYY')} -
+							${moment(data.pending_for_clearance).format('hh:mm A')}
 						</p>
 					</div>
 				</div>
@@ -271,7 +271,7 @@ viewRequestDetails = (request_id) => {
 			$('#pending_for_clearance').html(pendingforClearance)
 
 			let forClearance = ''
-			if (data.date_of_visit !== null) {
+			if (data.for_clearance !== null) {
 				forClearance += `
 					<div class="accordion-header" id="headingTwo">
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
@@ -285,8 +285,8 @@ viewRequestDetails = (request_id) => {
 									<h6 class="fs-15 mb-0 fw-semibold">
 										For Clearance -
 										<span class="fw-normal">
-										${moment(data.date_of_visit).format('ddd')},
-										${moment(data.date_of_visit).format('DD, MMM. YYYY')}
+										${moment(data.for_clearance).format('ddd')},
+										${moment(data.for_clearance).format('DD, MMM. YYYY')}
 										</span>
 									</h6>
 								</div>
@@ -297,14 +297,14 @@ viewRequestDetails = (request_id) => {
 						<div class="accordion-body ms-2 ps-5 pt-0">
 							<h6 class="mb-1">The Document Request is approved. The student must submit the requirements and pay the request fees at PUP QC.</h6>
 							<p class="text-muted mb-0">
-							${moment(data.date_of_visit).format('ddd')},
-							${moment(data.date_of_visit).format('DD, MMM. YYYY')} -
-							${moment(data.date_of_visit).format('hh:mm A')}
+							${moment(data.for_clearance).format('ddd')},
+							${moment(data.for_clearance).format('DD, MMM. YYYY')} -
+							${moment(data.for_clearance).format('hh:mm A')}
 							</p>
 						</div>
 					</div>
 				`
-			} else if (data.date_of_visit === null) {
+			} else if (data.for_clearance === null) {
 				forClearance += `
 					<div class="accordion-header" id="headingTwo">
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="false">
@@ -327,7 +327,7 @@ viewRequestDetails = (request_id) => {
 			$('#for_clearance').html(forClearance)
 
 			let forEvaluation = ''
-			if (data.date_of_processing !== null) {
+			if (data.for_evaluation !== null) {
 				forEvaluation += `
 					<div class="accordion-header" id="headingThree">
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -341,8 +341,8 @@ viewRequestDetails = (request_id) => {
 									<h6 class="fs-15 mb-1 fw-semibold">
 										For Evaluation / Processing -
 										<span class="fw-normal">
-											${moment(data.date_of_processing).format('ddd')},
-											${moment(data.date_of_processing).format('DD, MMM. YYYY')}
+											${moment(data.for_evaluation).format('ddd')},
+											${moment(data.for_evaluation).format('DD, MMM. YYYY')}
 										</span>
 									</h6>
 								</div>
@@ -353,14 +353,14 @@ viewRequestDetails = (request_id) => {
 						<div class="accordion-body ms-2 ps-5 pt-0">
 							<h6 class="mb-1">The document request is now being processed by the OIC and signed by the signatories.</h6>
 							<p class="text-muted mb-0">
-								${moment(data.date_of_processing).format('ddd')},
-								${moment(data.date_of_processing).format('DD, MMM. YYYY')} -
-								${moment(data.date_of_processing).format('hh:mm A')}
+								${moment(data.for_evaluation).format('ddd')},
+								${moment(data.for_evaluation).format('DD, MMM. YYYY')} -
+								${moment(data.for_evaluation).format('hh:mm A')}
 							</p>
 						</div>
 					</div>
 				`
-			} else if (data.date_of_processing === null) {
+			} else if (data.for_evaluation === null) {
 				forEvaluation += `
 					<div class="accordion-header" id="headingThree">
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="false">
@@ -381,7 +381,7 @@ viewRequestDetails = (request_id) => {
 			$('#for_evaluation').html(forEvaluation)
 
 			let readyforPickup = ''
-			if (data.date_of_pickup !== null) {
+			if (data.ready_for_pickup !== null) {
 				readyforPickup += `
 					<div class="accordion-header" id="headingFour">
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
@@ -395,8 +395,8 @@ viewRequestDetails = (request_id) => {
 									<h6 class="fs-15 mb-1 fw-semibold">
 										Ready for Pickup -
 										<span class="fw-normal">
-											${moment(data.date_of_pickup).format('ddd')},
-											${moment(data.date_of_pickup).format('DD, MMM. YYYY')}
+											${moment(data.ready_for_pickup).format('ddd')},
+											${moment(data.ready_for_pickup).format('DD, MMM. YYYY')}
 										</span>
 									</h6>
 								</div>
@@ -407,14 +407,14 @@ viewRequestDetails = (request_id) => {
 						<div class="accordion-body ms-2 ps-5 pt-0">
 							<h6 class="mb-1">The requested documents is now ready for pickup. The student must claim the request at PUP QC.</h6>
 							<p class="text-muted mb-0">
-								${moment(data.date_of_pickup).format('ddd')},
-								${moment(data.date_of_pickup).format('DD, MMM. YYYY')} -
-								${moment(data.date_of_pickup).format('hh:mm A')}
+								${moment(data.ready_for_pickup).format('ddd')},
+								${moment(data.ready_for_pickup).format('DD, MMM. YYYY')} -
+								${moment(data.ready_for_pickup).format('hh:mm A')}
 							</p>
 						</div>
 					</div>
 				`
-			} else if (data.date_of_pickup === null) {
+			} else if (data.ready_for_pickup === null) {
 				readyforPickup += `
 					<div class="accordion-header" id="headingFour">
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false">
@@ -435,7 +435,7 @@ viewRequestDetails = (request_id) => {
 			$('#ready_for_pickup').html(readyforPickup)
 
 			let released = ''
-			if (data.date_of_release === null) {
+			if (data.released === null) {
 				released += `
 					<div class="accordion-header" id="headingFive">
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false">
