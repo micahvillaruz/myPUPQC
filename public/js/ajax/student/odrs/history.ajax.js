@@ -181,6 +181,12 @@ viewRequestDetails = (request_id) => {
 							<span class="badge bg-success">${data.payment_status}</span> <span class="badge badge-outline-dark">OR No. ${data.or_no} </span>
 						</td>
 					`
+				} else if (data.payment_status === 'Pending') {
+					documentsList += `
+						<td class="text-center">
+							<span class="badge bg-warning">${data.payment_status}</span> <span class="badge badge-outline-dark">OR No. ${data.or_no} </span>
+						</td>
+					`
 				}
 
 				if (data.status_of_request === 'Released') {
