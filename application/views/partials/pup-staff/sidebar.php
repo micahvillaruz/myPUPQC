@@ -55,6 +55,65 @@
               </a>
             </li>
 
+          <!--OMSS -->
+          <li class="menu-title">
+              <i class="ri-more-fill"></i>
+              <span>OMSS - DOCTOR </span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/omsss/doctor/medical-requests">
+                <i class="las la-clipboard-list"></i>
+                <span>Medical Requests</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/omsss/doctor/analytics-and-history">
+                <i class="las la-history"></i>
+                <span>Analytics and History</span>
+              </a>
+            </li>
+
+            <li class="menu-title">
+              <i class="ri-more-fill"></i>
+              <span>OMSS - DENTIST </span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/omsss/dentist/dental-requests">
+                <i class="las la-tooth"></i>
+                <span>Dental Requests</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/omsss/dentist/analytics-and-history">
+                <i class="las la-history"></i>
+                <span>Analytics and History</span>
+              </a>
+            </li>
+
+            <li class="menu-title">
+              <i class="ri-more-fill"></i>
+              <span>OMSS - GUIDANCE COUNSELLOR </span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/omsss/counsellor/counsel-requests">
+                <i class="mdi mdi-brain me-1"></i>
+                <span>Counselling Requests</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/omsss/counsellor/analytics-and-history">
+                <i class="las la-history"></i>
+                <span>Analytics and History</span>
+              </a>
+            </li>
+
+
           </ul>
         </div>
         <!-- Sidebar -->

@@ -10,7 +10,7 @@
         <p class="mb-4" id="document_details">
         </p>
         <span class="badge badge-soft-dark fs-15 mb-3"> <i class=" ri-folder-4-line me-2"></i> Requirements</span>
-        <p id="document_requirements"> </p>
+        <p id="document_requirements" class="mx-3"></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger btn-animation waves-effect waves-light fs-13" data-text="Close" data-bs-dismiss="modal"><span>Close</span></button>

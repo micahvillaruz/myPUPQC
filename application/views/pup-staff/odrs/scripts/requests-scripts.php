@@ -26,6 +26,8 @@
 		<!-- Request ajax -->
 		<script src="<?= base_url() ?>public/js/ajax/pup-staff/odrs/requests.ajax.js"></script>
 
+		<script src="<?= base_url() ?>public/js/pages/form-validation.init.js"></script>
+
 		<!-- App js -->
 		<script src="<?= base_url() ?>public/js/app.js"></script>
 		</body>

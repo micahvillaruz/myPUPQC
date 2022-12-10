@@ -12,15 +12,15 @@
       <div class="modal-body px-5 py-4">
         <form id="addDocumentForm" class="needs-validation" novalidate>
           <div class="mb-3">
-            <label for="document_name" class="form-label">Document Name <span class="text-danger">*</span></label>
-            <input type="text" id="document_name" name="document_name" class="form-control" placeholder="Enter the name of the Document" required>
+            <label for="add_document_name" class="form-label">Document Name <span class="text-danger">*</span></label>
+            <input type="text" id="add_document_name" name="document_name" class="form-control" placeholder="Enter the name of the Document" required>
             <div class="invalid-feedback">
               Please enter a Document Name.
             </div>
           </div>
           <div class="mb-3">
-            <label for="document_type" class="form-label">Document Type <span class="text-danger">*</span></label>
-            <select id="document_type" name="document_type" class="form-control js-example-basic-hide-search" required>
+            <label for="add_document_type" class="form-label">Document Type <span class="text-danger">*</span></label>
+            <select id="add_document_type" name="document_type" class="form-control js-example-basic-hide-search" required>
               <option value="" selected disabled>Please select a Document Type</option>
               <option value="Transcript of Records">Transcript of Records</option>
               <option value="Certifications">Certifications</option>
@@ -39,12 +39,13 @@
             </div>
           </div>
           <div class="mb-3">
-            <label for="document_requirements" class="form-label">Document Requirements <span class="text-danger">*</span></label>
-            <textarea id="document_requirements" name="document_requirements" class="form-control" rows="3" placeholder="Enter the requirements needed for the request of this document" required></textarea>
-            <div class="invalid-feedback">
-              Please enter the Document Requirements.
+            <label class="form-label">Document Requirements</label>
+            <div id="document_requirements_list">
+            </div>
+            <div id="newForm" style="display: none;">
             </div>
           </div>
+          <a href="javascript:new_link()" class="btn btn-primary">Add New</a>
           <button type="submit" class="btn btn-primary w-100 mt-3">Submit</button>
         </form>
       </div>
@@ -60,23 +61,15 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content border-0 overflow-hidden" style="background: url('<?= base_url() ?>public/images/chat-bg-pattern.png') rgb(255, 255, 255);">
       <div class="modal-body login-modal p-5">
-        <h5 class="text-white text-center fs-20" id="document_name">
-          Informative Copy of Grades / <br> Certified Copy of Grades
+        <h5 class="text-white text-center fs-20" id="view_document_name">
         </h5>
       </div>
       <div class="modal-body px-5 pt-5">
-        <span class="badge badge-soft-dark fs-15 mb-3"> <i class="ri-file-list-3-line me-2"></i> Category</span>
-        <p class="mb-4 text-center" id="document_category">
-          <span class="text-uppercase badge bg-success fs-13"><i class="me-2 mdi mdi-certificate fs-13"></i>Certifications</span>
-        </p>
         <span class="badge badge-soft-dark fs-15 mb-3"> <i class="ri-file-list-3-line me-2"></i> Details</span>
-        <p class="mb-4" id="document_details">
-          For transfer to other school or scholarship
+        <p class="mb-4" id="view_document_details">
         </p>
         <span class="badge badge-soft-dark fs-15 mb-3"> <i class=" ri-folder-4-line me-2"></i> Requirements</span>
-        <p id="document_requirements">
-          Photocopy of Student ID (Back to Back), Documentary Stamp, and Letter stating the purpose of the request
-        </p>
+        <p id="view_document_requirements" class="mx-3"></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger btn-animation waves-effect waves-light fs-13" data-text="Close" data-bs-dismiss="modal"><span>Close</span></button>
@@ -86,6 +79,7 @@
   </div>
   <!-- /.modal-dialog -->
 </div>
+<!-- /.modal -->
 <!-- /.modal -->
 <!-- /.modal -->
 
@@ -110,8 +104,8 @@
             </div>
           </div>
           <div class="mb-3">
-            <label for="edit_document_type" class="form-label">Document Type <span class="text-danger">*</span></label>
-            <select id="edit_document_type" name="edit_document_type" class="form-control js-example-basic-hide-search" required>
+            <label for="edit_add_document_type" class="form-label">Document Type <span class="text-danger">*</span></label>
+            <select id="edit_add_document_type" name="edit_add_document_type" class="form-control js-example-basic-hide-search" required>
               <option value="" disabled>Please select a Document Type</option>
               <option value="Transcript of Records">Transcript of Records</option>
               <option value="Certifications" selected>Certifications</option>

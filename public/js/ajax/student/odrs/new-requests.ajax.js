@@ -12,7 +12,7 @@ $(() => {
 loadEducProfile = () => {
 	$.ajax({
 		type: 'GET',
-		url: apiURL + `odrs/student/view_educ_profile`,
+		url: apiURL + `student/educ_profile`,
 		headers: AJAX_HEADERS,
 		success: (result) => {
 			const data = result.data
@@ -70,6 +70,20 @@ loadDocuments = () => {
 				type: 'GET',
 				ContentType: 'application/x-www-form-urlencoded',
 				headers: AJAX_HEADERS,
+				complete: function () {
+					const checkbox = document.querySelectorAll('.docs')
+
+					checkbox.forEach((item) => {
+						item.addEventListener('change', (e) => {
+							if (e.target.checked) {
+								$('#not-visible').removeClass('d-none')
+							}
+							if ($('input:checkbox:checked').length === 0) {
+								$('#not-visible').addClass('d-none')
+							}
+						})
+					})
+				},
 			},
 			dom: '',
 			columns: [
@@ -79,15 +93,12 @@ loadDocuments = () => {
 						return `
 						<div class="d-flex">
 							<div class="form-check me-3">
-								<input class="form-check-input fs-15" type="checkbox" name="checkAll" value="${data.document_id}" />
+								<input class="form-check-input fs-15 docs" type="checkbox" name="checkAll" value="${data.document_id}" />
 							</div>
 							<div class="d-flex flex-column">
 								${data.document_name}
-								<small> ${data.document_requirements === null ? '' : data.document_requirements}</small>
 								<div class="mt-1">
-									<button type="button" class="btn btn-sm btn-info btn-label waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentDetails" onclick="loadDocumentInfo('${
-										data.document_id
-									}')">
+									<button type="button" class="btn btn-sm btn-info btn-label waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentDetails" onclick="loadDocumentInfo('${data.document_id}')">
 										<i class="mdi mdi-eye label-icon align-middle fs-13 me-2"></i> 
 										View Details
 									</button>
@@ -126,9 +137,16 @@ loadDocumentInfo = (document_id) => {
 
 			$('#document_name').html(data.document_name)
 			$('#document_details').html(data.document_details)
-			$('#document_requirements').html(
-				data.document_requirements === null ? 'None' : data.document_requirements,
-			)
+			$('#document_requirements').empty()
+			if (data.document_requirements.length === 0) {
+				$('#document_requirements').html('<i>No requirements are needed.</i>')
+			} else {
+				data.document_requirements.forEach((item) => {
+					$('#document_requirements').append(`
+						<li>${item.doc_req_name}</li>
+					`)
+				})
+			}
 		},
 	})
 }

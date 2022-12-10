@@ -28,8 +28,8 @@ loadHistoryTable = () => {
 				{
 					data: null,
 					render: (data) => {
-						const date = moment(data.date_of_filing).format('DD, MMM. YYYY')
-						const time = moment(data.date_of_filing).format('hh:mm A')
+						const date = moment(data.pending_for_clearance).format('DD, MMM. YYYY')
+						const time = moment(data.pending_for_clearance).format('hh:mm A')
 
 						return `
               <div class="d-flex align-items-center">
@@ -52,19 +52,13 @@ loadHistoryTable = () => {
 								<tbody>
 									<tr>
 										<td>
-											<span class="fw-medium badge bg-dark me-1">Clearance: </span>
-										</td>
-										<td>${educationStatus} Student</td>
-									</tr>
-									<tr>
-										<td>
-											<span class="fw-medium badge bg-dark me-1">Course: </span>
+											<span class="fw-medium badge bg-primary me-1">Course: </span>
 										</td>
 										<td><span class="text-uppercase">${course}</span></td>
 									</tr>
 									<tr>
 										<td>
-											<span class="fw-medium badge bg-dark me-1">Purpose: </span>
+											<span class="fw-medium badge bg-primary me-1">Purpose: </span>
 										</td>
 										<td>${purpose}</td>
 									</tr>
@@ -79,8 +73,8 @@ loadHistoryTable = () => {
 					data: null,
 					render: (data) => {
 						if (data.status_of_request === 'Released') {
-							const date = moment(data.date_of_release).format('DD, MMM. YYYY')
-							const time = moment(data.date_of_release).format('hh:mm A')
+							const date = moment(data.released).format('DD, MMM. YYYY')
+							const time = moment(data.released).format('hh:mm A')
 
 							return `
                 <div class="d-flex align-items-center">
@@ -89,8 +83,8 @@ loadHistoryTable = () => {
                 </div>
               `
 						} else {
-							const date = moment(data.date_of_cancelled).format('DD, MMM. YYYY')
-							const time = moment(data.date_of_cancelled).format('hh:mm A')
+							const date = moment(data.cancelled).format('DD, MMM. YYYY')
+							const time = moment(data.cancelled).format('hh:mm A')
 
 							return `
                 <div class="d-flex align-items-center">
@@ -114,7 +108,10 @@ loadHistoryTable = () => {
 									<button type="button" class="btn btn-sm btn-secondary bg-gradient waves-effect waves-light rounded-circle position-absolute top-0 start-100 translate-middle" data-bs-toggle="modal" data-bs-target="#viewProcessStatusFlow">?</button>
 								</div>
               `
-						} else if (data.status_of_request === 'Cancelled') {
+						} else if (
+							data.status_of_request === 'Cancelled by Student' ||
+							data.status_of_request === 'Cancelled by Staff'
+						) {
 							return `
 								<div class="mt-2 d-grid fw-bolder badge badge-soft-danger position-relative">
 									<i class="m-2 mdi mdi-cancel fs-13"></i>
@@ -156,7 +153,10 @@ viewRequestDetails = (request_id) => {
 
 			if (data.status_of_request === 'Released') {
 				$('#completion_date').html('Date Released')
-			} else if (data.status_of_request === 'Cancelled') {
+			} else if (
+				data.status_of_request === 'Cancelled by Student' ||
+				data.status_of_request === 'Cancelled by Staff'
+			) {
 				$('#completion_date').html('Date Cancelled')
 			}
 
@@ -169,31 +169,37 @@ viewRequestDetails = (request_id) => {
 						</td>
 						<td class="text-center">${document.quantity}</td>
 				`
-				if (data.payment_status === 'Pending') {
+				if (data.payment_status === 'Cancelled') {
 					documentsList += `
 						<td class="text-center">
-							<span class="badge bg-warning text-dark">${data.payment_status}</span>
+							<span class="badge bg-danger">${data.payment_status}</span>
 						</td>
 					`
 				} else if (data.payment_status === 'Paid') {
 					documentsList += `
 						<td class="text-center">
-							<span class="badge bg-success">${data.payment_status}</span>
+							<span class="badge bg-success">${data.payment_status}</span> <span class="badge badge-outline-dark">OR No. ${data.or_no} </span>
+						</td>
+					`
+				} else if (data.payment_status === 'Pending') {
+					documentsList += `
+						<td class="text-center">
+							<span class="badge bg-warning">${data.payment_status}</span> <span class="badge badge-outline-dark">OR No. ${data.or_no} </span>
 						</td>
 					`
 				}
 
 				if (data.status_of_request === 'Released') {
-					const date = moment(data.date_of_release).format('DD, MMM. YYYY')
+					const date = moment(data.released).format('DD, MMM. YYYY')
 
 					documentsList += `
-            <td>
+            <td class="text-center">
               <span class="ms-2">${date}</span>
             </td>
           </tr>
         `
 				} else {
-					const date = moment(data.date_of_cancelled).format('DD, MMM. YYYY')
+					const date = moment(data.cancelled).format('DD, MMM. YYYY')
 
 					documentsList += `
             <td>
@@ -220,8 +226,8 @@ viewRequestDetails = (request_id) => {
                 <h6 class="fs-15 mb-0 fw-semibold">
                   Pending for Clearance -
                   <span class="fw-normal">
-                    ${moment(data.date_of_filing).format('ddd')},
-                    ${moment(data.date_of_filing).format('DD, MMM. YYYY')}
+                    ${moment(data.pending_for_clearance).format('ddd')},
+                    ${moment(data.pending_for_clearance).format('DD, MMM. YYYY')}
                   </span>
                 </h6>
               </div>
@@ -230,11 +236,11 @@ viewRequestDetails = (request_id) => {
         </div>
         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
           <div class="accordion-body ms-2 ps-5 pt-0">
-            <h6 class="mb-1">The Document Request is pending for approval and is being reviewed by the Administrative Staff.</h6>
+            <h6 class="mb-1">The Document Request is pending for approval and is being reviewed by the Officer in Charge of Student Records.</h6>
             <p class="text-muted mb-0">
-              ${moment(data.date_of_filing).format('ddd')},
-              ${moment(data.date_of_filing).format('DD, MMM. YYYY')} -
-              ${moment(data.date_of_filing).format('hh:mm A')}
+              ${moment(data.pending_for_clearance).format('ddd')},
+              ${moment(data.pending_for_clearance).format('DD, MMM. YYYY')} -
+              ${moment(data.pending_for_clearance).format('hh:mm A')}
             </p>
           </div>
         </div>
@@ -259,8 +265,8 @@ viewRequestDetails = (request_id) => {
                   <h6 class="fs-15 mb-0 fw-semibold">
                     For Clearance -
                     <span class="fw-normal">
-                    ${moment(data.date_of_visit).format('ddd')},
-                    ${moment(data.date_of_visit).format('DD, MMM. YYYY')}
+                    ${moment(data.for_clearance).format('ddd')},
+                    ${moment(data.for_clearance).format('DD, MMM. YYYY')}
                     </span>
                   </h6>
                 </div>
@@ -271,9 +277,9 @@ viewRequestDetails = (request_id) => {
             <div class="accordion-body ms-2 ps-5 pt-0">
               <h6 class="mb-1">The Document Request is approved. The student must submit the requirements and pay the request fees at PUP QC.</h6>
               <p class="text-muted mb-0">
-              ${moment(data.date_of_visit).format('ddd')},
-              ${moment(data.date_of_visit).format('DD, MMM. YYYY')} -
-              ${moment(data.date_of_visit).format('hh:mm A')}
+              ${moment(data.for_clearance).format('ddd')},
+              ${moment(data.for_clearance).format('DD, MMM. YYYY')} -
+              ${moment(data.for_clearance).format('hh:mm A')}
               </p>
             </div>
           </div>
@@ -293,8 +299,8 @@ viewRequestDetails = (request_id) => {
                   <h6 class="fs-15 mb-1 fw-semibold">
                     For Evaluation / Processing -
                     <span class="fw-normal">
-                      ${moment(data.date_of_processing).format('ddd')},
-                      ${moment(data.date_of_processing).format('DD, MMM. YYYY')}
+                      ${moment(data.for_evaluation).format('ddd')},
+                      ${moment(data.for_evaluation).format('DD, MMM. YYYY')}
                     </span>
                   </h6>
                 </div>
@@ -303,11 +309,11 @@ viewRequestDetails = (request_id) => {
           </div>
           <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
             <div class="accordion-body ms-2 ps-5 pt-0">
-              <h6 class="mb-1">The document request is now being processed by the Administrative Staff and signed by the signatories.</h6>
+              <h6 class="mb-1">The document request is now being processed by the OIC and signed by the signatories.</h6>
               <p class="text-muted mb-0">
-                ${moment(data.date_of_processing).format('ddd')},
-                ${moment(data.date_of_processing).format('DD, MMM. YYYY')} -
-                ${moment(data.date_of_processing).format('hh:mm A')}
+                ${moment(data.for_evaluation).format('ddd')},
+                ${moment(data.for_evaluation).format('DD, MMM. YYYY')} -
+                ${moment(data.for_evaluation).format('hh:mm A')}
               </p>
             </div>
           </div>
@@ -327,8 +333,8 @@ viewRequestDetails = (request_id) => {
                   <h6 class="fs-15 mb-1 fw-semibold">
                     Ready for Pickup -
                     <span class="fw-normal">
-                      ${moment(data.date_of_pickup).format('ddd')},
-                      ${moment(data.date_of_pickup).format('DD, MMM. YYYY')}
+                      ${moment(data.ready_for_pickup).format('ddd')},
+                      ${moment(data.ready_for_pickup).format('DD, MMM. YYYY')}
                     </span>
                   </h6>
                 </div>
@@ -339,9 +345,9 @@ viewRequestDetails = (request_id) => {
             <div class="accordion-body ms-2 ps-5 pt-0">
               <h6 class="mb-1">The requested documents is now ready for pickup. The student must claim the request at PUP QC.</h6>
               <p class="text-muted mb-0">
-                ${moment(data.date_of_pickup).format('ddd')},
-                ${moment(data.date_of_pickup).format('DD, MMM. YYYY')} -
-                ${moment(data.date_of_pickup).format('hh:mm A')}
+                ${moment(data.ready_for_pickup).format('ddd')},
+                ${moment(data.ready_for_pickup).format('DD, MMM. YYYY')} -
+                ${moment(data.ready_for_pickup).format('hh:mm A')}
               </p>
             </div>
           </div>
@@ -361,8 +367,8 @@ viewRequestDetails = (request_id) => {
 									<h6 class="fs-15 mb-1 fw-semibold">
 										Released -
 										<span class="fw-normal">
-										${moment(data.date_of_release).format('ddd')},
-										${moment(data.date_of_release).format('DD, MMM. YYYY')}
+										${moment(data.released).format('ddd')},
+										${moment(data.released).format('DD, MMM. YYYY')}
 										</span>
 									</h6>
 								</div>
@@ -373,9 +379,9 @@ viewRequestDetails = (request_id) => {
 						<div class="accordion-body ms-2 ps-5 pt-0">
 							<h6 class="mb-1">The requested documents has been successfully claimed by the student.</h6>
 							<p class="text-muted mb-0">
-								${moment(data.date_of_release).format('ddd')},
-								${moment(data.date_of_release).format('DD, MMM. YYYY')} -
-								${moment(data.date_of_release).format('hh:mm A')}
+								${moment(data.released).format('ddd')},
+								${moment(data.released).format('DD, MMM. YYYY')} -
+								${moment(data.released).format('hh:mm A')}
 							</p>
 						</div>
 					</div>
@@ -397,10 +403,10 @@ viewRequestDetails = (request_id) => {
 								</div>
 								<div class="flex-grow-1 ms-3">
 									<h6 class="fs-15 mb-1 fw-semibold">
-										Cancelled -
+										${data.status_of_request} -
 										<span class="fw-normal">
-										${moment(data.date_of_cancelled).format('ddd')},
-										${moment(data.date_of_cancelled).format('DD, MMM. YYYY')}
+										${moment(data.cancelled).format('ddd')},
+										${moment(data.cancelled).format('DD, MMM. YYYY')}
 										</span>
 									</h6>
 								</div>
@@ -411,9 +417,9 @@ viewRequestDetails = (request_id) => {
 						<div class="accordion-body ms-2 ps-5 pt-0">
 							<h6 class="mb-1">The requested documents has been cancelled.</h6>
 							<p class="text-muted mb-0">
-								${moment(data.date_of_cancelled).format('ddd')},
-								${moment(data.date_of_cancelled).format('DD, MMM. YYYY')} -
-								${moment(data.date_of_cancelled).format('hh:mm A')}
+								${moment(data.cancelled).format('ddd')},
+								${moment(data.cancelled).format('DD, MMM. YYYY')} -
+								${moment(data.cancelled).format('hh:mm A')}
 							</p>
 						</div>
 					</div>
@@ -432,7 +438,7 @@ viewRequestDetails = (request_id) => {
 									</div>
 									<div class="flex-grow-1 ms-3">
 										<h5 class="list-title fs-15 mb-1">Hernando Liberato</h5>
-										<p class="list-text mb-0 fs-12">Administrative Staff</p>
+										<p class="list-text mb-0 fs-12">OIC, Student Records</p>
 									</div>
 								</div>
 								<p>${data.remarks}</p>

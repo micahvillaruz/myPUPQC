@@ -28,8 +28,8 @@ loadRequestsTable = () => {
 				{
 					data: null,
 					render: (data) => {
-						const date = moment(data.date_of_filing).format('DD, MMM. YYYY')
-						const time = moment(data.date_of_filing).format('hh:mm A')
+						const date = moment(data.pending_for_clearance).format('DD, MMM. YYYY')
+						const time = moment(data.pending_for_clearance).format('hh:mm A')
 
 						return `
               <div class="d-flex align-items-center">
@@ -57,6 +57,7 @@ loadRequestsTable = () => {
 								<i class="me-2 mdi mdi-cash-check fs-13"></i>
 								<span class="text-uppercase">${data.payment_status}</span>
 							</div>
+							<span class="mt-1 d-block badge badge-soft-dark badge-border">OR No. ${data.or_no} </span>
               `
 						}
 					},
@@ -74,19 +75,13 @@ loadRequestsTable = () => {
 								<tbody>
 									<tr>
 										<td>
-											<span class="fw-medium badge bg-dark me-1">Clearance: </span>
-										</td>
-										<td>${educationStatus} Student</td>
-									</tr>
-									<tr>
-										<td>
-											<span class="fw-medium badge bg-dark me-1">Course: </span>
+											<span class="fw-medium badge bg-primary me-1">Course: </span>
 										</td>
 										<td><span class="text-uppercase">${course}</span></td>
 									</tr>
 									<tr>
 										<td>
-											<span class="fw-medium badge bg-dark me-1">Purpose: </span>
+											<span class="fw-medium badge bg-primary me-1">Purpose: </span>
 										</td>
 										<td>${purpose}</td>
 									</tr>
@@ -179,7 +174,7 @@ loadRequestsTable = () => {
 							return `
 								<div class="vstack gap-2">
 									<button type="button" class="btn btn-sm btn-info text-center waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails" onclick="viewRequestDetails('${data.request_id}')"><i class="mdi mdi-eye label-icon align-middle me-2"></i> View Details</button>
-									<a type="button" class="btn btn-sm btn-primary text-center waves-effect waves-light" href="${baseURL}public/file/Request-Form.pdf" download="Request-Form"><i class="mdi mdi-download label-icon align-middle me-2"></i> Download Request Form</a>
+									<button type="button" class="btn btn-sm btn-success text-center waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestRequirements" onclick="viewRequestRequirements('${data.request_id}')"><i class="mdi mdi-file-document-multiple label-icon align-middle me-2"></i> Requirements</button>
 								</div>
 								<div class="mt-4 d-grid">
 									<button type="button" class="btn btn-sm btn-danger waves-effect waves-light" onclick="cancelRequest('${data.request_id}')"><i class="ri-close-fill label-icon align-middle me-2"></i> Cancel</button>
@@ -231,8 +226,8 @@ viewRequestDetails = (request_id) => {
 				} else if (data.payment_status === 'Paid') {
 					documentsList += `
 							<td class="text-center">
-							<span class="badge bg-success">${data.payment_status}</span>
-						</td>
+								<span class="badge bg-success">${data.payment_status}</span> <span class="badge badge-outline-dark">OR No. ${data.or_no} </span>
+							</td>
 					</tr>
 					`
 				}
@@ -254,8 +249,8 @@ viewRequestDetails = (request_id) => {
 								<h6 class="fs-15 mb-0 fw-semibold">
 									Pending for Clearance -
 									<span class="fw-normal">
-										${moment(data.date_of_filing).format('ddd')},
-										${moment(data.date_of_filing).format('DD, MMM. YYYY')}
+										${moment(data.pending_for_clearance).format('ddd')},
+										${moment(data.pending_for_clearance).format('DD, MMM. YYYY')}
 									</span>
 								</h6>
 							</div>
@@ -264,11 +259,11 @@ viewRequestDetails = (request_id) => {
 				</div>
 				<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
 					<div class="accordion-body ms-2 ps-5 pt-0">
-						<h6 class="mb-1">The Document Request is pending for approval and is being reviewed by the Administrative Staff.</h6>
+						<h6 class="mb-1">The Document Request is pending for approval and is being reviewed by the Officer-in-Charge of Student Records.</h6>
 						<p class="text-muted mb-0">
-							${moment(data.date_of_filing).format('ddd')},
-							${moment(data.date_of_filing).format('DD, MMM. YYYY')} -
-							${moment(data.date_of_filing).format('hh:mm A')}
+							${moment(data.pending_for_clearance).format('ddd')},
+							${moment(data.pending_for_clearance).format('DD, MMM. YYYY')} -
+							${moment(data.pending_for_clearance).format('hh:mm A')}
 						</p>
 					</div>
 				</div>
@@ -276,7 +271,7 @@ viewRequestDetails = (request_id) => {
 			$('#pending_for_clearance').html(pendingforClearance)
 
 			let forClearance = ''
-			if (data.date_of_visit !== null) {
+			if (data.for_clearance !== null) {
 				forClearance += `
 					<div class="accordion-header" id="headingTwo">
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
@@ -290,8 +285,8 @@ viewRequestDetails = (request_id) => {
 									<h6 class="fs-15 mb-0 fw-semibold">
 										For Clearance -
 										<span class="fw-normal">
-										${moment(data.date_of_visit).format('ddd')},
-										${moment(data.date_of_visit).format('DD, MMM. YYYY')}
+										${moment(data.for_clearance).format('ddd')},
+										${moment(data.for_clearance).format('DD, MMM. YYYY')}
 										</span>
 									</h6>
 								</div>
@@ -302,14 +297,14 @@ viewRequestDetails = (request_id) => {
 						<div class="accordion-body ms-2 ps-5 pt-0">
 							<h6 class="mb-1">The Document Request is approved. The student must submit the requirements and pay the request fees at PUP QC.</h6>
 							<p class="text-muted mb-0">
-							${moment(data.date_of_visit).format('ddd')},
-							${moment(data.date_of_visit).format('DD, MMM. YYYY')} -
-							${moment(data.date_of_visit).format('hh:mm A')}
+							${moment(data.for_clearance).format('ddd')},
+							${moment(data.for_clearance).format('DD, MMM. YYYY')} -
+							${moment(data.for_clearance).format('hh:mm A')}
 							</p>
 						</div>
 					</div>
 				`
-			} else if (data.date_of_visit === null) {
+			} else if (data.for_clearance === null) {
 				forClearance += `
 					<div class="accordion-header" id="headingTwo">
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="false">
@@ -332,7 +327,7 @@ viewRequestDetails = (request_id) => {
 			$('#for_clearance').html(forClearance)
 
 			let forEvaluation = ''
-			if (data.date_of_processing !== null) {
+			if (data.for_evaluation !== null) {
 				forEvaluation += `
 					<div class="accordion-header" id="headingThree">
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -346,8 +341,8 @@ viewRequestDetails = (request_id) => {
 									<h6 class="fs-15 mb-1 fw-semibold">
 										For Evaluation / Processing -
 										<span class="fw-normal">
-											${moment(data.date_of_processing).format('ddd')},
-											${moment(data.date_of_processing).format('DD, MMM. YYYY')}
+											${moment(data.for_evaluation).format('ddd')},
+											${moment(data.for_evaluation).format('DD, MMM. YYYY')}
 										</span>
 									</h6>
 								</div>
@@ -356,16 +351,16 @@ viewRequestDetails = (request_id) => {
 					</div>
 					<div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
 						<div class="accordion-body ms-2 ps-5 pt-0">
-							<h6 class="mb-1">The document request is now being processed by the Administrative Staff and signed by the signatories.</h6>
+							<h6 class="mb-1">The document request is now being processed by the OIC and signed by the signatories.</h6>
 							<p class="text-muted mb-0">
-								${moment(data.date_of_processing).format('ddd')},
-								${moment(data.date_of_processing).format('DD, MMM. YYYY')} -
-								${moment(data.date_of_processing).format('hh:mm A')}
+								${moment(data.for_evaluation).format('ddd')},
+								${moment(data.for_evaluation).format('DD, MMM. YYYY')} -
+								${moment(data.for_evaluation).format('hh:mm A')}
 							</p>
 						</div>
 					</div>
 				`
-			} else if (data.date_of_processing === null) {
+			} else if (data.for_evaluation === null) {
 				forEvaluation += `
 					<div class="accordion-header" id="headingThree">
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="false">
@@ -386,7 +381,7 @@ viewRequestDetails = (request_id) => {
 			$('#for_evaluation').html(forEvaluation)
 
 			let readyforPickup = ''
-			if (data.date_of_pickup !== null) {
+			if (data.ready_for_pickup !== null) {
 				readyforPickup += `
 					<div class="accordion-header" id="headingFour">
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
@@ -400,8 +395,8 @@ viewRequestDetails = (request_id) => {
 									<h6 class="fs-15 mb-1 fw-semibold">
 										Ready for Pickup -
 										<span class="fw-normal">
-											${moment(data.date_of_pickup).format('ddd')},
-											${moment(data.date_of_pickup).format('DD, MMM. YYYY')}
+											${moment(data.ready_for_pickup).format('ddd')},
+											${moment(data.ready_for_pickup).format('DD, MMM. YYYY')}
 										</span>
 									</h6>
 								</div>
@@ -412,14 +407,14 @@ viewRequestDetails = (request_id) => {
 						<div class="accordion-body ms-2 ps-5 pt-0">
 							<h6 class="mb-1">The requested documents is now ready for pickup. The student must claim the request at PUP QC.</h6>
 							<p class="text-muted mb-0">
-								${moment(data.date_of_pickup).format('ddd')},
-								${moment(data.date_of_pickup).format('DD, MMM. YYYY')} -
-								${moment(data.date_of_pickup).format('hh:mm A')}
+								${moment(data.ready_for_pickup).format('ddd')},
+								${moment(data.ready_for_pickup).format('DD, MMM. YYYY')} -
+								${moment(data.ready_for_pickup).format('hh:mm A')}
 							</p>
 						</div>
 					</div>
 				`
-			} else if (data.date_of_pickup === null) {
+			} else if (data.ready_for_pickup === null) {
 				readyforPickup += `
 					<div class="accordion-header" id="headingFour">
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false">
@@ -440,40 +435,7 @@ viewRequestDetails = (request_id) => {
 			$('#ready_for_pickup').html(readyforPickup)
 
 			let released = ''
-			if (data.date_of_release !== null) {
-				released += `
-					<div class="accordion-header" id="headingFive">
-						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-							<div class="d-flex align-items-center">
-								<div class="flex-shrink-0 avatar-xs">
-									<div class="avatar-title bg-success rounded-circle">
-										<i class="ri-checkbox-circle-fill"></i>
-									</div>
-								</div>
-								<div class="flex-grow-1 ms-3">
-									<h6 class="fs-15 mb-1 fw-semibold">
-										Released -
-										<span class="fw-normal">
-										${moment(data.date_of_release).format('ddd')},
-										${moment(data.date_of_release).format('DD, MMM. YYYY')}
-										</span>
-									</h6>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingFives" data-bs-parent="#accordionExample">
-						<div class="accordion-body ms-2 ps-5 pt-0">
-							<h6 class="mb-1">The requested documents has been successfully claimed by the student.</h6>
-							<p class="text-muted mb-0">
-								${moment(data.date_of_release).format('ddd')},
-								${moment(data.date_of_release).format('DD, MMM. YYYY')} -
-								${moment(data.date_of_release).format('hh:mm A')}
-							</p>
-						</div>
-					</div>
-				`
-			} else if (data.date_of_release === null) {
+			if (data.released === null) {
 				released += `
 					<div class="accordion-header" id="headingFive">
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false">
@@ -504,28 +466,24 @@ viewRequestDetails = (request_id) => {
 								</div>
 								<div class="flex-grow-1 ms-3">
 									<h5 class="list-title fs-15 mb-1">Hernando Liberato</h5>
-									<p class="list-text mb-0 fs-12">Administrative Staff</p>
+									<p class="list-text mb-0 fs-12">OIC, Student Records</p>
 								</div>
 							</div>
-							<p>The Document Request is now approved. You must download the Request form by clicking the
-								<button type="button" class="btn btn-success btn-icon btn-sm waves-effect waves-light my-1">
-									<i class="mdi mdi-download fs-5 fw-bold"></i>
-								</button>
-								button and bring it together with the requirements as listed below. You have to <b>Request an Appointment</b> on the <a href="https://apps.pup.edu.ph/appointment" class="link-primary fw-medium">Visitors Appointment Scheduling System (VASS)</a> for your desired date and time in processing the requirements at PUP QC. After your appointment is approved, you are required to present a <b>Gate Pass</b> before being allowed to enter the PUP QC premises. You must bring the requirements at the Rothlener Building where the documents passed will be validated and the corresponding request fee will be paid.
+							<p>The Document Request is now approved. You must view the requirements and download the attachments by clicking the
+								<button type="button" class="btn btn-sm btn-success text-center waves-effect waves-light"><i class="mdi mdi-file-document-multiple label-icon align-middle me-2"></i> Requirements</button>
+							button. Please be reminded that you can only process the requirements at PUP QC from Monday to Friday, 8AM to 5PM. Go straight to the Rothlener Building, Records Section where the requirements passed will be validated and the corresponding request fee will be paid. If no requirements has been passed, the request will be automatically cancelled after 7 days.
 							</p>
 							<p>Please bring the following requirements:</p>
 							<ul class="list-unstyled mb-0">
 					`
 
-				data.documents_assigned_to_request.forEach((document) => {
-					if (document.document_information[0].document_requirements !== null) {
-						remarks += `
-							<li class="mb-2">
-								<i class="mdi mdi-check-decagram text-info me-1"></i>
-								${document.document_information[0].document_requirements}
-							</li>
-						`
-					}
+				getRequirements(data).forEach((requirement) => {
+					remarks += `
+						<li class="mb-2">
+							<i class="mdi mdi-check-decagram text-info me-1"></i>
+							${requirement}
+						</li>
+					`
 				})
 
 				remarks += `
@@ -559,10 +517,11 @@ viewRequestDetails = (request_id) => {
 								</div>
 								<div class="flex-grow-1 ms-3">
 									<h5 class="list-title fs-15 mb-1">Hernando Liberato</h5>
-									<p class="list-text mb-0 fs-12">Administrative Staff</p>
+									<p class="list-text mb-0 fs-12">OIC, Student Records</p>
 								</div>
 							</div>
-							<p>Good Day! Please be informed that your requested credential/s is/are scheduled for pick-up and can now be claimed at the Records Section, Rothlener Building, PUP Quezon City. Please <b>Request an Appointment</b> on the <a href="https://apps.pup.edu.ph/appointment" class="link-primary fw-medium">Visitors Appointment Scheduling System (VASS)</a> for your desired date and time in claiming the documents. You are required to present your <b>Gate Pass</b> generated from <b>Approved Appointments</b> on VASS before being allowed to enter the PUP QC premises. If you are unable to come on your scheduled date, you will need to re-schedule another date on VAAS to pick-up your documents. Thank you.</p>
+							<p>Good Day! Please be informed that your requested credential/s is/are scheduled for pick-up and can now be claimed at the Records Section, Rothlener Building, PUP Quezon City. Please be guided that you can only claim the documents at PUP QC during Monday to Friday, 8AM to 5PM. Please present your Claim Stub upon claiming the documents. Thank you.</p>
+							<p>Reminder: If the  requested are not claimed after 90 days, the request will be automatically cancelled.</p>
 				`
 
 				if (data.remarks !== null) {
@@ -603,6 +562,43 @@ viewRequestDetails = (request_id) => {
 	})
 }
 
+// View Request Requirements
+viewRequestRequirements = (request_id) => {
+	$.ajax({
+		type: 'GET',
+		url: `${apiURL}odrs/student/document_requirements/${request_id}`,
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+		success: function (result) {
+			const data = result.data
+			let requirements = ''
+			data.forEach((document) => {
+				if (document.document_requirements) {
+					document.document_requirements.forEach((requirement) => {
+						requirements += `
+							<tr>
+								<td>${document.document_name}</td>
+								<td>${requirement.doc_req_name}</td>
+							</tr>
+						`
+						if (requirement.doc_req_name === 'Letter format for CHED') {
+							$('#ched-letter').removeClass('d-none')
+						}
+					})
+				}
+			})
+			requirements += `
+				<tr>
+					<td>For Overall Request</td>
+					<td>Request Form</td>
+				</tr>
+			`
+			console.log(requirements)
+			$('#requirements').html(requirements)
+		},
+	})
+}
+
 // Cancel Request
 cancelRequest = (request_id) => {
 	Swal.fire({
@@ -625,7 +621,7 @@ cancelRequest = (request_id) => {
 		if (result.value) {
 			$.ajax({
 				type: 'PUT',
-				url: `${apiURL}odrs/student/update_request_status/Cancelled/${request_id}`,
+				url: `${apiURL}odrs/student/update_request_status/Cancelled by Student/${request_id}`,
 				dataType: 'json',
 				headers: AJAX_HEADERS,
 				success: (result) => {
@@ -672,4 +668,19 @@ cancelRequest = (request_id) => {
 			})
 		}
 	})
+}
+
+function getRequirements(data) {
+	const requirements = []
+
+	data.documents_assigned_to_request.forEach((document) => {
+		document.document_information[0].document_requirements.forEach((requirement) => {
+			requirements.push(requirement.doc_req_name)
+		})
+	})
+
+	const uniqueReqs = new Set(requirements)
+	uniqueReqsArray = [...uniqueReqs]
+
+	return uniqueReqsArray
 }

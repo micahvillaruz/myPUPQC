@@ -27,7 +27,7 @@ loadMedicalTable = () => {
 				// ContentType: 'application/x-www-form-urlencoded',
 			},
 			columns: [
-				// Case Control No.
+				// Appointment Code/Case Control No.
 				{
 					data: null,
 					render: (data) => {
@@ -36,13 +36,12 @@ loadMedicalTable = () => {
 					},
 				},
 
-				// Symptoms Date
+				// Consultation Type
 				{
 					data: null,
 					render: (data) => {
-						const sympDate = moment(data.symptoms_date).utc().format('LL')
-
-						return `${sympDate}`
+						const consType = data.consultation_type
+						return `${consType}`
 					},
 				},
 
@@ -69,15 +68,15 @@ loadMedicalTable = () => {
 					},
 				},
 
-				// Schedule
+				// Appointment Date
 				{
 					data: null,
 					render: (data) => {
 						const consultation_date = moment(data.consultation_date).format('LL')
-						const consultation_time = data.consultation_time
-						return `${consultation_date}\ (${consultation_time})`
+						return `${consultation_date}`
 					},
 				},
+
 				//Action
 				{
 					data: null,
@@ -103,10 +102,10 @@ addNewMedicalCase = () => {
 		const form = new FormData($('#NewMedicalCaseForm')[0])
 		data = {
 			appointment_type: 'Medical',
+			consultation_type: form.get('consultation_type'),
 			consultation_reason: form.get('consultation_reason'),
 			symptoms_date: form.get('symptoms_date'),
 			consultation_date: form.get('consultation_date'),
-			consultation_time: form.get('consultation_time'),
 		}
 
 		$.ajax({
@@ -172,11 +171,11 @@ viewMedicalDetails = (health_appointment_id) => {
 			const userProfileData = null
 
 			$('#view_case_details').html(userData.case_control_number)
+			$('#view_consultaion_type').html(userData.consultation_type)
 			$('#view_consultation_reason').html(userData.consultation_reason)
 			$('#view_health_physcian').html(userProfileData != null ? userProfileData.full_name : 'N/A')
 			$('#view_date_of_symptom').html(moment(userData.symptoms_date).format('LL'))
 			$('#view_consultation_date').html(moment(userData.consultation_date).format('LL'))
-			$('#view_consultation_time').html(userData.consultation_time)
 			$('#view_status').html(
 				userData.consultation_status == 'Pending'
 					? '<span class="fs-12 badge rounded-pill bg-warning" >Pending</span>'

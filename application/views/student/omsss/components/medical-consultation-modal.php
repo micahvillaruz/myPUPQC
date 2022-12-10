@@ -1,4 +1,4 @@
-<!-- View Dental modal -->
+<!-- View Medical modal -->
 <div class="modal fade" id="viewMedicalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
@@ -15,7 +15,18 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Reason for consultation</h5>
+                  <h5 class="fs-13 mb-1 fw-medium">Consultation Type</h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium" id="view_consultaion_type"></div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1 fw-medium">Reason consultation</h5>
                 </div>
                 <div class="col-8">
                   <div class="d-flex fs-13 fw-medium" id="view_consultation_reason"></div>
@@ -48,7 +59,7 @@
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
-                  <h5 class="fs-13 mb-1">Scheduled Date</h5>
+                  <h5 class="fs-13 mb-1">Appointment Date</h5>
                 </div>
                 <div class="col-8">
                   <div class="d-flex fs-13 fw-medium" id="view_consultation_date"></div>
@@ -56,16 +67,6 @@
               </div>
             </li>
             <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1">Time</h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_consultation_time"></div>
-                </div>
-              </div>
-            </li>
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
@@ -84,7 +85,7 @@
         <button type="button" class="btn btn-light" data-bs-dismiss="modal">
           Close
         </button>
-        </div>
+      </div>
     </div>
     <!-- /.modal-content -->
   </div>
@@ -101,53 +102,51 @@
       </div>
       <div class="modal-body">
         <form id="NewMedicalCaseForm" class="needs-validation" novalidate>
+          <!-- Base Radios -->
+          <label for="consultationType" class="form-label"> Consultation Type </label><span class="text-danger">*</span></label>
+
+          <div class="d-flex gap-5 mb-3">
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="onsultation_type">
+              <label class="form-check-label" for="new_consultation">
+                New Consultation
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="consultation_type" checked>
+              <label class="form-check-label" for="followup_consultation">
+                Follow-up 
+              </label>
+            </div>
+          </div>
           <div class="mb-3">
-            <label for="reasonInput" class="form-label"> Reason for consultation <span class="text-danger">*</span></label>
+            <label for="reasonInput" class="form-label"> Reason for Consultation <span class="text-danger">*</span></label>
             <input type="text" class="form-control" id="consultation_reason" name="consultation_reason" placeholder="Enter your reason" required>
           </div>
           <div class="mb-3">
             <div>
-              <label for="exampleInputdate" class="form-label">Start date of Symptoms</label>
+              <label for="exampleInputdate" class="form-label">Start date of Symptoms</label><span class="text-danger">*</span></label>
               <input type="date" class="form-control" id="symptoms_date" name="symptoms_date" required>
             </div>
-            <div class="mb-3">
-              <div>
-                <label for="exampleInputdate" class="form-label"> Schedule date for Consultation </label>
-                <input type="date" class="form-control" id="consultation_date" name="consultation_date" required>
-              </div>
-              <label for="exampleInputdate" class="form-label"> Time </label>
-              <div class="mx-5">
-                <div class="row align-item-start">
-                  <!-- 1st Column -->
-                  <div class="col-6">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" value="7:00AM-9:00AM" id="consultation_time" name="consultation_time">
-                      <label class="form-check-label" for="flexCheckDefault">7:00AM-9:00AM</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" value="11:00AM-1:00PM" id="consultation_time" name="consultation_time">
-                      <label class="form-check-label" for="flexCheckChecked">11:00AM-1:00PM</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" value="3:00PM-5:00PM" id="consultation_time" name="consultation_time">
-                      <label class="form-check-label" for="flexCheckDefault">3:00PM-5:00PM</label>
-                    </div>
-                  </div>
-                  <!-- 2nd Column -->
-                  <div class="col-6">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" value="9:00AM-11:00A" id="consultation_time" name="consultation_time">
-                      <label class="form-check-label" for="flexCheckChecked">9:00AM-11:00AM</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" value="1:00PM-3:00PM" id="consultation_time" name="consultation_time">
-                      <label class="form-check-label" for="flexCheckDefault">1:00PM-3:00PM</label>
-                    </div>
-                  </div>
-                  <br></br>
-                  <div class="text-center">
-                    <button type="submit" class="btn btn-primary" id="addMedicalCase">Submit</button>
-                  </div>
+          </div>
+          <div class="mb-4">
+            <div>
+              <label for="exampleInputdate" class="form-label"> Appointment Date </label><span class="text-danger">*</span></label>
+              <input type="date" class="form-control" id="consultation_date" name="consultation_date" required>
+            </div>
+          </div>
+          <!-- Info Alert -->
+          <div class="alert alert-info alert-border-left fade show mb-0" role="alert">
+            <div class="d-flex align-items-center">
+              <i class="ri-error-warning-line me-3 align-middle fw-bold h4"></i>
+              <h4>Data Privacy Act of 2012</h4>
+            </div>
+            <p>I hereby authorize PUPQC to collect and process the data indicate herein for purpose of effecting control of the covid-19 infection. I understand that any personal information is protected under Data Privacy Act of 2012, if needed, this may be used to facilitate contact tracing of PUPQC Medical Service and/or LGU and that I am required at RA 11469 Bayanihan to Heal as One Act, to provide truthful information.</p>
+          </div>
+          <br></br>
+          <div class="d-grid text-center">
+            <button type="submit" class="btn btn-primary" id="addMedicalCase">Submit</button>
+          </div>
         </form>
       </div>
     </div>

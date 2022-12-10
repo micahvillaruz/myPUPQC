@@ -157,7 +157,7 @@ $route['student/odrs/history'] = 'student/history';
 */
 
 // Health Information
-$route['student/omsss/medical-services/personal-info'] = 'student/personal_information';
+$route['student/omsss/medical-services/patient-info'] = 'student/patient_info';
 $route['student/omsss/medical-services/health-history'] = 'student/health_history';
 $route['student/omsss/medical-services/immunization'] = 'student/immunization';
 
@@ -242,6 +242,12 @@ $route['admin/evrsers/reservation-history'] = 'admin/reservation_history';
 $route['pupstaff/dashboard'] = 'pupstaff';
 $route['pupstaff/profile'] = 'pupstaff/profile';
 $route['pupstaff/profile/settings'] = 'pupstaff/settings';
+$route['pupstaff/omsss/doctor/medical-requests'] = 'pupstaff/medical_requests';
+$route['pupstaff/omsss/doctor/analytics-and-history'] = 'pupstaff/medical_analytics';
+$route['pupstaff/omsss/dentist/dental-requests'] = 'pupstaff/dental_requests';
+$route['pupstaff/omsss/dentist/analytics-and-history'] = 'pupstaff/dental_analytics';
+$route['pupstaff/omsss/counsellor/counsel-requests'] = 'pupstaff/counsellor_requests';
+$route['pupstaff/omsss/counsellor/analytics-and-history'] = 'pupstaff/counsellor_analytics';
 
 /*
 | --------------

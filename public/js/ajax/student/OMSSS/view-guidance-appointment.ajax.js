@@ -37,6 +37,15 @@ loadGuidanceTable = () => {
 					},
 				},
 
+				// Consultation Type
+				{
+					data: null,
+					render: (data) => {
+						const consType = data.consultation_type
+						return `${consType}`
+					},
+				},
+
 				// Status
 				{
 					data: null,
@@ -66,8 +75,7 @@ loadGuidanceTable = () => {
 					data: null,
 					render: (data) => {
 						const consultation_date = moment(data.consultation_date).format('LL')
-						const consultation_time = data.consultation_time
-						return `${consultation_date} (${consultation_time})`
+						return `${consultation_date}`
 					},
 				},
 
@@ -96,9 +104,9 @@ addNewGuidanceCase = () => {
 		const form = new FormData($('#NewGuidanceCaseForm')[0])
 		data = {
 			appointment_type: 'Guidance',
+			consultation_type: form.get('consultation_type'),
 			consultation_reason: form.get('consultation_reason'),
 			consultation_date: form.get('consultation_date'),
-			consultation_time: form.get('consultation_time'),
 		}
 
 		$.ajax({
@@ -110,10 +118,14 @@ addNewGuidanceCase = () => {
 			success: (result) => {
 				if (result) {
 					Swal.fire({
-						html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully added a Guidance Case!</p></div></div>',
+						html:
+							'<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !/h4><p class="text-muted mx-4 mb-0">You have successfully added a Guidance Case!</p>' +
+							'<br><span><h5> Click Ok Button to proceed </h5></span>' +
+							'</div>' +
+							'</div>',
 						showCancelButton: !0,
 						showConfirmButton: !1,
-						cancelButtonClass: 'btn btn-success w-xs mb-1',
+						cancelButtonClass: 'btn btn-danger w-xs mb-1',
 						cancelButtonText: 'Ok',
 						buttonsStyling: !1,
 						showCloseButton: !0,
@@ -128,7 +140,10 @@ addNewGuidanceCase = () => {
 			},
 		}).fail(() => {
 			Swal.fire({
-				html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">There was an error while adding a Guidance Case. Please try again.</p></div></div>',
+				html:
+					'<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">There was an error while adding a Guidance Case. Please try again.</p>' +
+					'</div>' +
+					'</div>',
 				showCancelButton: !0,
 				showConfirmButton: !1,
 				cancelButtonClass: 'btn btn-danger w-xs mb-1',
@@ -163,11 +178,11 @@ viewGuidanceDetails = (health_appointment_id) => {
 			const userProfileData = null
 
 			$('#view_case_details').html(userData.case_control_number)
+			$('#view_consultaion_type').html(userData.consultation_type)
 			$('#view_consultation_reason').html(userData.consultation_reason)
 			$('#view_health_physcian').html(userProfileData != null ? userProfileData.full_name : 'N/A')
 			// $('#view_date_of_symptoms').html(moment(userData.symptoms_date).format('LL'))
 			$('#view_consultation_date').html(moment(userData.consultation_date).format('LL'))
-			$('#view_consultation_time').html(userData.consultation_time)
 			$('#view_status').html(
 				userData.consultation_status == 'Pending'
 					? '<span class="fs-12 badge rounded-pill bg-warning" >Pending</span>'
