@@ -22,6 +22,8 @@
 		<!-- Sweet alert init js-->
 		<script src="<?= base_url() ?>public/js/pages/sweetalerts.init.js"></script>
 
+		<script src="<?= base_url() ?>public/js/pages/form-validation.init.js"></script>
+
 		<!-- Documents ajax -->
 		<script src="<?= base_url() ?>public/js/ajax/pup-staff/odrs/documents.ajax.js"></script>
 
@@ -33,7 +35,7 @@
 				count++
 				var o = document.createElement('div'),
 					e =
-					'<div class="row"><div class="hstack gap-2 justify-content-end"><input type="text" name="document_requirement" class="form-control mb-2" placeholder="Enter one requirement of the Document"><a class="btn btn-primary" href="javascript:deleteEl(' +
+					'<div class="row"><div class="hstack gap-2 justify-content-end mb-3"><input type="text" name="document_requirement" class="form-control" placeholder="Enter a requirement for this Document"><a class="btn btn-danger rounded-pill" href="javascript:deleteEl(' +
 					(o.id = count) +
 					')">Delete</a></div></div>';
 				(o.innerHTML = document.getElementById('newForm').innerHTML + e),

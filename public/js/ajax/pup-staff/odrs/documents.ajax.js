@@ -22,14 +22,16 @@ loadDocumentsTable = () => {
 		columns: [
 			{
 				data: null,
+				width: '70%',
 				render: (data) => {
-					return `<a href="#!">${data.document_name}</a><br><small>${
-						data.document_requirements == null ? '' : data.document_requirements
+					return `<a href="#!" class="fw-medium">${data.document_name}</a><br><small>${
+						data.document_details == null ? '' : data.document_details
 					}</small>`
 				},
 			},
 			{
 				data: null,
+				width: '20%',
 				render: (data) => {
 					if (data.document_type === 'CAV') {
 						return `<div class="d-block badge badge-soft-dark align-items-center">
@@ -58,8 +60,9 @@ loadDocumentsTable = () => {
 			},
 			{
 				data: null,
+				width: '10%',
 				render: (data) => {
-					return `<div class="d-flex gap-1 justify-content-center">
+					return `<div class="d-flex gap-2 justify-content-center">
 					<button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentModal" onclick="loadDocumentInfo('${data.document_id}')">
 						<i class="ri-eye-fill fs-5"></i>
 					</button>
@@ -84,6 +87,9 @@ loadDocumentInfo = (document_id) => {
 			const data = result.data
 			console.log(data)
 
+			$('#view_document_type').html(
+				data.document_type === 'CAV' ? 'CAV (CHED/DFA/WES/CES)' : data.document_type,
+			)
 			$('#view_document_name').html(data.document_name)
 			$('#view_document_details').html(data.document_details)
 			$('#view_document_requirements').empty()
