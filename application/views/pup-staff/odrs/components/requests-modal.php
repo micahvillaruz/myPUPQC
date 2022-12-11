@@ -286,34 +286,33 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <h2 class="text-center"><span id="control_no" class="badge badge-outline-primary text-center fw-bold">20220903-0043</span></h2>
+        <h2 class="text-center"><span id="view_control_no" class="badge badge-outline-primary text-center fw-bold"></span></h2>
         <div class="row mt-4">
           <div class="col-md">
             <div class="row align-items-center g-3">
               <div class="col-md-auto">
                 <div class="avatar-md">
-                  <div id="image" class="avatar-title bg-white rounded-circle">
-                    <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-woman-6.png" alt="" class="avatar-md" />
+                  <div id="view_picture" class="avatar-title bg-white rounded-circle">
                   </div>
                 </div>
               </div>
               <div class="col-md">
                 <div>
-                  <h5 id="student_full_name">Villaruz, Micah Matorre</h5>
-                  <h6 id="user_no">2019-00025-CM-0</h6>
+                  <h5 id="view_student_name"></h5>
+                  <h6 id="view_user_no"></h6>
                   <div class="hstack gap-3 flex-wrap">
-                    <div id="course" class="badge rounded-pill badge-soft-danger fs-12">BS Information Technology</div>
+                    <div id="view_course" class="badge rounded-pill badge-soft-danger fs-12"></div>
                     <div class="vr"></div>
                     <div>
                       <i class="ri-mail-fill align-bottom text-info me-2"></i>
                       <span>Email Address :</span>
-                      <span id="email_address" class="fw-medium">micahmvillaruz@gmail.com</span>
+                      <span id="view_email_address" class="fw-medium"></span>
                     </div>
                     <div class="vr"></div>
                     <div>
                       <i class="ri-phone-fill align-bottom text-success me-2"></i>
                       <span>Mobile Number:</span>
-                      <span id="contact_number" class="fw-medium">09561437674</span>
+                      <span id="view_contact_number" class="fw-medium"></span>
                     </div>
                   </div>
                 </div>
@@ -332,23 +331,13 @@
               <th>Payment Status</th>
             </tr>
           </thead>
-          <tbody id="documents">
-            <tr>
-              <td>Informative Copy of Grades / Certified Copy of Grades</td>
-              <td class="text-center">1</td>
-              <td class="text-center"><span class="badge bg-success">Paid</span></td>
-            </tr>
-            <tr>
-              <td>Transcript of Records - For evaluation/reference (Undergraduate) 3rd and 4th Year</td>
-              <td class="text-center">1</td>
-              <td class="text-center"><span class="badge bg-success">Paid</span></td>
-            </tr>
+          <tbody id="view_documents">
           </tbody>
         </table>
         <div class="mt-4">
           <span class="badge rounded-pill bg-primary fs-12">Purpose of Request</span>
           <div class="bg-soft-secondary ms-1 text-wrap">
-            <p id="purpose_of_request" class="p-2 fw-medium">Transfer to another school</p>
+            <p id="view_purpose" class="p-2 fw-medium"></p>
           </div>
         </div>
         <div class="m-2 mt-4 mb-3">
@@ -367,7 +356,7 @@
                       <div class="flex-grow-1 ms-3">
                         <h6 class="fs-15 mb-0 fw-semibold">
                           Pending for Clearance -
-                          <span id="pending_for_clearance_date" class="fw-normal">Sun, 28 Aug 2022</span>
+                          <span id="pending_date" class="fw-normal"></span>
                         </h6>
                       </div>
                     </div>
@@ -376,11 +365,11 @@
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                   <div class="accordion-body ms-2 ps-5 pt-0">
                     <h6 class="mb-1">The Document Request is Pending for Approval and is being reviewed by the Officer-in-Charge, Student Records.</h6>
-                    <p id="pending_for_clearance_datetime" class="text-muted mb-0">Sun, 28 Aug 2022 - 8:00AM</p>
+                    <p id="pending_datetime" class="text-muted mb-0"></p>
                   </div>
                 </div>
               </div>
-              <div id="for_clearance" class="accordion-item border-0">
+              <div class="accordion-item border-0">
                 <div class="accordion-header" id="headingTwo">
                   <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <div class="d-flex align-items-center">
@@ -392,7 +381,7 @@
                       <div class="flex-grow-1 ms-3">
                         <h6 class="fs-15 mb-0 fw-semibold">
                           For Clearance -
-                          <span class="fw-normal">Mon, 29 Aug 2022</span>
+                          <span id="for_clearance_date" class="fw-normal"></span>
                         </h6>
                       </div>
                     </div>
@@ -401,59 +390,13 @@
                 <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                   <div class="accordion-body ms-2 ps-5 pt-0">
                     <h6 class="mb-1">The Document Request is now Approved. The student must go to PUP QC to submit the requirements and pay the processing fees.</h6>
-                    <p class="text-muted mb-0">Mon, 29 Aug 2022 - 10:20AM</p>
+                    <p id="for_clearance_datetime" class="text-muted mb-0"></p>
                   </div>
                 </div>
               </div>
               <div id="for_evaluation" class="accordion-item border-0">
-                <div class="accordion-header" id="headingThree">
-                  <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    <div class="d-flex align-items-center">
-                      <div class="flex-shrink-0 avatar-xs">
-                        <div class="avatar-title bg-info rounded-circle">
-                          <i class="mdi mdi-file-sign"></i>
-                        </div>
-                      </div>
-                      <div class="flex-grow-1 ms-3">
-                        <h6 class="fs-15 mb-1 fw-semibold">
-                          For Evaluation / Processing -
-                          <span class="fw-normal">Wed, 31 Aug 2022</span>
-                        </h6>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                  <div class="accordion-body ms-2 ps-5 pt-0">
-                    <h6 class="mb-1">The Document/s are Paid and the Request is now being Processed for signature, documentary stamp and school dry seal.</h6>
-                    <p class="text-muted mb-0">Wed, 31 Aug 2022 - 5:48PM</p>
-                  </div>
-                </div>
               </div>
               <div id="ready_for_pickup" class="accordion-item border-0">
-                <div class="accordion-header" id="headingFour">
-                  <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    <div class="d-flex align-items-center">
-                      <div class="flex-shrink-0 avatar-xs">
-                        <div class="avatar-title bg-dark rounded-circle">
-                          <i class="ri-user-received-2-line"></i>
-                        </div>
-                      </div>
-                      <div class="flex-grow-1 ms-3">
-                        <h6 class="fs-15 mb-1 fw-semibold">
-                          Ready for Pickup -
-                          <span class="fw-normal">Thu, 01 Sep 2022</span>
-                        </h6>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                  <div class="accordion-body ms-2 ps-5 pt-0">
-                    <h6 class="mb-1">The Requested Document/s can now be claimed at PUP QC. The student must bring the claim stub and other requirements, if necessary.</h6>
-                    <p class="text-muted mb-0">Thu, 01 Sep 2022 - 4.54PM</p>
-                  </div>
-                </div>
               </div>
               <div class="accordion-item border-0">
                 <div class="accordion-header" id="headingFive">
@@ -475,46 +418,7 @@
             <!--end accordion-->
           </div>
         </div>
-        <div class="mt-4">
-          <div class="h6 fs-15 text-primary">Remarks</div>
-          <div class="list-group">
-            <a href="javascript:void(0);" class="list-group-item list-group-item-action">
-              <div class="d-flex mb-2 align-items-center">
-                <div class="flex-shrink-0">
-                  <img src="<?= base_url() ?>public/images/officials/img-25.png" alt="" class="avatar-sm rounded-circle" />
-                </div>
-                <div class="flex-grow-1 ms-3">
-                  <h5 class="list-title fs-15 mb-1">Hernando Liberato</h5>
-                  <p class="list-text mb-0 fs-12">Officer-in-Charge, Student Records</p>
-                </div>
-              </div>
-              <p>The Document Request is now approved. You must view the requirements needed for each of the document/s requested and download the attachments by clicking the
-                <button type="button" class="btn btn-sm btn-success text-center waves-effect waves-light"><i class="mdi mdi-file-document-multiple label-icon align-middle me-2"></i> Requirements</button>
-                button. You must go to PUP QC and bring the downloaded attachments and requirements as listed below.
-              </p>
-              <ol class="mb-3 list-group list-group-numbered">
-                <li class="list-group-item">Photocopy of Student ID (Back to Back)</li>
-                <li class="list-group-item">Documentary Stamp</li>
-                <li class="list-group-item">Letter stating the purpose of the request</li>
-              </ol>
-              <p>Please be reminded that you can only process the requirements at PUP QC from <b>Monday to Friday, 8AM to 5PM</b>. Go straight to the Rothlener Building, Records Section where the requirements you will submit is validated and the corresponding processing fee is paid.</p>
-              <p class="fw-medium text-danger">Reminder: If the requirements for this request are not submitted at PUP QC after 90 days, the request will be automatically cancelled.</p>
-            </a>
-            <a href="javascript:void(0);" class="list-group-item list-group-item-action">
-              <div class="d-flex mb-2 align-items-center">
-                <div class="flex-shrink-0">
-                  <img src="<?= base_url() ?>public/images/officials/img-25.png" alt="" class="avatar-sm rounded-circle" />
-                </div>
-                <div class="flex-grow-1 ms-3">
-                  <h5 class="list-title fs-15 mb-1">Hernando Liberato</h5>
-                  <p class="list-text mb-0 fs-12">Officer-in-Charge, Student Records</p>
-                </div>
-              </div>
-              <p>Good Day! Please be informed that your requested credential/s is/are scheduled for pick-up and can now be claimed at the Records Section, Rothlener Building in PUP Quezon City.</p>
-              <p>Please be guided that you can only claim the documents at PUP QC during <b>Monday to Friday, 8AM to 5PM</b>. Please present your Claim Stub upon claiming the documents. Thank you.</p>
-              <p class="fw-medium text-danger">Reminder: If the requested documents are not claimed at PUP QC after 90 days, the request will be automatically cancelled.</p>
-            </a>
-          </div>
+        <div id="remarks" class="mt-4 mb-3">
         </div>
       </div>
       <div class="modal-footer">
