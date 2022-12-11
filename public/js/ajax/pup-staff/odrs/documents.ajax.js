@@ -5,6 +5,7 @@ $(function () {
 		addDocument()
 	})
 })
+var count = 0
 
 // Load Documents Table
 loadDocumentsTable = () => {
@@ -147,7 +148,8 @@ addDocument = () => {
 				}).then(function () {
 					$('#addDocumentModal').modal('hide')
 					$('form#addDocumentForm')[0].reset()
-
+					$('#document_requirements_list').empty()
+					count = 0
 					// Reload Document Datatable
 					loadDocumentsTable()
 				})
@@ -164,4 +166,19 @@ addDocument = () => {
 			showCloseButton: !0,
 		})
 	})
+}
+
+function new_link(val) {
+	count++
+	var o = document.createElement('div'),
+		e = `<div class="row"><div class="hstack gap-2 justify-content-end mb-3"><input type="text" name="document_requirement" class="form-control" placeholder="Enter a requirement for this Document" required><a class="btn btn-danger rounded-pill" href="javascript:deleteEl(${(o.id =
+			count)}, '${val}')">Delete</a></div><div class="invalid-feedback">Please select the Document Requirement.</div></div>`
+	;(o.innerHTML = document.getElementById(`${val}_newForm`).innerHTML + e),
+		document.getElementById(`${val}_document_requirements_list`).appendChild(o)
+}
+
+function deleteEl(o, val) {
+	d = document
+	o = d.getElementById(o)
+	d.getElementById(`${val}_document_requirements_list`).removeChild(o)
 }

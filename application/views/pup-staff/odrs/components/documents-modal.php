@@ -41,11 +41,11 @@
           <div class="mb-3">
             <div class="d-flex justify-content-between align-items-center mb-3">
               <label class="form-label mb-0">Document Requirements</label>
-              <a href="javascript:new_link()" class="btn btn-success py-1 rounded-pill">Add New</a>
+              <a href="javascript:new_link('add')" class="btn btn-success py-1 rounded-pill">Add New</a>
             </div>
-            <div id="document_requirements_list">
+            <div id="add_document_requirements_list">
             </div>
-            <div id="newForm" style="display: none;">
+            <div id="add_newForm" style="display: none;">
             </div>
           </div>
           <button type="submit" class="btn btn-primary w-100 mt-3 bg-gradient">Submit</button>
@@ -127,11 +127,11 @@
           <div class="mb-3">
             <div class="d-flex justify-content-between align-items-center mb-3">
               <label class="form-label mb-0">Document Requirements</label>
-              <a href="javascript:new_link()" class="btn btn-success py-1 rounded-pill">Add New</a>
+              <a href="javascript:new_link('edit')" class="btn btn-success py-1 rounded-pill">Add New</a>
             </div>
-            <div id="document_requirements_list">
+            <div id="edit_document_requirements_list">
             </div>
-            <div id="newForm" style="display: none;">
+            <div id="edit_newForm" style="display: none;">
             </div>
           </div>
           <button type="submit" class="btn btn-primary w-100 mt-3 bg-gradient">Submit</button>
