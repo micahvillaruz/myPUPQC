@@ -33,7 +33,8 @@ $(function () {
 
 	$('#releasedRequestForm').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
-		releasedRequest()
+		const requestID = $('#release_request_id').val()
+		releasedRequest(requestID)
 	})
 })
 
@@ -358,7 +359,7 @@ loadApprovedRequests = () => {
 							`
 						} else if (requestStatus === 'Ready for Pickup') {
 							return `
-								<button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#releasedModal">
+								<button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#releasedModal" onclick="addId('${data.request_id}', 'release_request')">
 									<i class="ri-checkbox-circle-line fs-5"></i>
 								</button>
 							`
@@ -991,31 +992,50 @@ readyforPickupRequest = (request_id) => {
 	}
 }
 
-// Released
-releasedRequest = () => {
-	if (!$('#releasedRequestForm')[0].checkValidity()) return
+// Change Status to Released
+releasedRequest = (request_id) => {
+	if ($('#releasedRequestForm')[0].checkValidity()) {
+		// no validation error
+		const form = new FormData($('#readyForPickupRequestForm')[0])
 
-	Swal.fire({
-		html:
-			'<div class="mt-3">' +
-			'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
-			'<div class="mt-4 pt-2 fs-15">' +
-			'<h4>Well done!</h4>' +
-			'<p class="text-muted mx-4 mb-0">You have successfully set the status of this request to Released!</p>' +
-			'</div>' +
-			'</div>',
-		showCancelButton: !0,
-		showConfirmButton: !1,
-		cancelButtonClass: 'btn btn-success w-xs mb-1',
-		cancelButtonText: 'Ok',
-		buttonsStyling: !1,
-		showCloseButton: !0,
-	})
-		.then(function () {
-			$('#releasedModal').modal('hide')
-			$('form#releasedRequestForm')[0].reset()
-		})
-		.fail(() => {
+		data = {
+			remarks: null,
+		}
+
+		$.ajax({
+			url: `${apiURL}odrs/pup_staff/update_request_status/Released/${request_id}`,
+			type: 'PUT',
+			data: data,
+			dataType: 'json',
+			headers: AJAX_HEADERS,
+			success: (result) => {
+				if (result) {
+					Swal.fire({
+						html:
+							'<div class="mt-3">' +
+							'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
+							'<div class="mt-4 pt-2 fs-15">' +
+							'<h4>Well done!</h4>' +
+							'<p class="text-muted mx-4 mb-0">You have successfully set the status of this request to Released!</p>' +
+							'</div>' +
+							'</div>',
+						showCancelButton: !0,
+						showConfirmButton: !1,
+						cancelButtonClass: 'btn btn-success w-xs mb-1',
+						cancelButtonText: 'Ok',
+						buttonsStyling: !1,
+						showCloseButton: !0,
+					}).then(function () {
+						$('#releasedModal').modal('hide')
+						$('form#releasedRequestForm')[0].reset()
+
+						// Reload Pending and Approved Requests Datatable
+						loadPendingRequests()
+						loadApprovedRequests()
+					})
+				}
+			},
+		}).fail(() => {
 			Swal.fire({
 				html:
 					'<div class="mt-3">' +
@@ -1033,6 +1053,7 @@ releasedRequest = () => {
 				showCloseButton: !0,
 			})
 		})
+	}
 }
 
 addId = (request_id, status) => {

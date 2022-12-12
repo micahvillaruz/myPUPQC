@@ -582,6 +582,7 @@
             <span>Please make sure that the student has presented the <span class="fw-medium">CLAIM STUB</span> upon claiming of the request and has received all the <span class="fw-medium">REQUESTED DOCUMENT/S</span> before you set its status to Released.</span>
           </div>
           <form id="releasedRequestForm" class="needs-validation" novalidate>
+            <input type="hidden" id="release_request_id">
             <div class="form-check form-check-success mb-3">
               <input class="form-check-input" type="checkbox" id="validateRelease" required>
               <label class="form-check-label" for="validateRelease">
@@ -591,11 +592,11 @@
                 You must first agree that you released ALL the requested documents.
               </div>
             </div>
-            <div class="mt-4 hstack gap-2 justify-content-center">
-              <button class="btn btn-success fw-medium">Yes, It is!</button>
-              <button class="btn btn-light fw-medium" data-bs-dismiss="modal">Dismiss</button>
+            <div class="mt-4 justify-content-center">
+              <button type="submit" class="w-100 btn btn-success bg-gradient fw-medium waves-effect waves-light">Yes, It is!</button>
             </div>
           </form>
+          <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
         </div>
       </div>
     </div>
