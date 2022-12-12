@@ -98,16 +98,19 @@
       <div class="modal-body py-4">
         <form id="editDocumentForm" class="needs-validation" novalidate>
           <div class="mb-3">
-            <label for="document_name" class="form-label">Document Name <span class="text-danger">*</span></label>
-            <input type="text" id="document_name" name="document_name" class="form-control" placeholder="Enter the name of the Document" value="Informative Copy of Grades / Certified Copy of Grades" required>
+            <input type="hidden" id="edit_document_id" name="edit_document_id">
+          </div>
+          <div class="mb-3">
+            <label for="edit_document_name" class="form-label">Document Name <span class="text-danger">*</span></label>
+            <input type="text" id="edit_document_name" name="document_name" class="form-control" placeholder="Enter the name of the Document" value="" required>
             <div class="invalid-feedback">
               Please enter the Document's Name.
             </div>
           </div>
           <div class="mb-3">
-            <label for="document_type" class="form-label">Document Type <span class="text-danger">*</span></label>
-            <select id="document_type" name="document_type" class="form-control" required>
-              <option value="" selected disabled>Select the Type of the Document</option>
+            <label for="editdocument_type" class="form-label">Document Type <span class="text-danger">*</span></label>
+            <select id="edit_document_type" name="document_type" class="form-control" required>
+              <option value="" disabled>Select the Type of the Document</option>
               <option value="Transcript of Records">Transcript of Records</option>
               <option value="Certifications" selected>Certifications</option>
               <option value="Unclaimed">Unclaimed</option>
@@ -118,8 +121,8 @@
             </div>
           </div>
           <div class="mb-3">
-            <label for="document_details" class="form-label">Document Details <span class="text-danger">*</span></label>
-            <textarea id="document_details" name="document_details" class="form-control" rows="3" placeholder="Enter additional details about the Document" required>For transfer to other school or scholarship</textarea>
+            <label for="edit_document_details" class="form-label">Document Details <span class="text-danger">*</span></label>
+            <textarea id="edit_document_details" name="document_details" class="form-control" rows="3" placeholder="Enter additional details about the Document" required></textarea>
             <div class="invalid-feedback">
               Please enter the Document's Details.
             </div>
