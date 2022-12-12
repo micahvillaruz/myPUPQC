@@ -71,7 +71,7 @@
             <li class="nav-item">
               <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/omsss/doctor/analytics-and-history">
                 <i class="las la-history"></i>
-                <span>Analytics and History</span>
+                <span>Medical Request History</span>
               </a>
             </li>
 
@@ -90,7 +90,7 @@
             <li class="nav-item">
               <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/omsss/dentist/analytics-and-history">
                 <i class="las la-history"></i>
-                <span>Analytics and History</span>
+                <span>Dental Request History</span>
               </a>
             </li>
 
@@ -109,7 +109,7 @@
             <li class="nav-item">
               <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/omsss/counsellor/analytics-and-history">
                 <i class="las la-history"></i>
-                <span>Analytics and History</span>
+                <span>Counselling History</span>
               </a>
             </li>
 

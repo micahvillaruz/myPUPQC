@@ -132,35 +132,35 @@ class Admin extends CI_Controller
     $this->load->view('admin/omsss/all-appointment/scripts/all-appointment-scripts');
   }
 
-  public function dentist_appointment()
-  {
-    $this->load->view('partials/main');
-    $this->load->view('partials/title-meta');
-    $this->load->view('partials/head-css');
-    $this->load->view('partials/admin/topbar');
-    $this->load->view('partials/admin/sidebar');
-    $this->load->view('partials/page-title', ["page_title" => "Health and Well-Being", "title" => "Dental Appointment"]);
-    $this->load->view('admin/omsss/dentist-appointment/dentist-appointment');
-    $this->load->view('partials/footer');
-    $this->load->view('admin/omsss/components/dentist-appointment-modal');
-    $this->load->view('partials/foot-scripts');
-    $this->load->view('admin/omsss/dentist-appointment/scripts/dentist-appointment-scripts');
-  }
+  // public function dentist_appointment()
+  // {
+  //   $this->load->view('partials/main');
+  //   $this->load->view('partials/title-meta');
+  //   $this->load->view('partials/head-css');
+  //   $this->load->view('partials/admin/topbar');
+  //   $this->load->view('partials/admin/sidebar');
+  //   $this->load->view('partials/page-title', ["page_title" => "Health and Well-Being", "title" => "Dental Appointment"]);
+  //   $this->load->view('admin/omsss/dentist-appointment/dentist-appointment');
+  //   $this->load->view('partials/footer');
+  //   $this->load->view('admin/omsss/components/dentist-appointment-modal');
+  //   $this->load->view('partials/foot-scripts');
+  //   $this->load->view('admin/omsss/dentist-appointment/scripts/dentist-appointment-scripts');
+  // }
 
-  public function guidance_appointment()
-  {
-    $this->load->view('partials/main');
-    $this->load->view('partials/title-meta');
-    $this->load->view('partials/head-css');
-    $this->load->view('partials/admin/topbar');
-    $this->load->view('partials/admin/sidebar');
-    $this->load->view('partials/page-title', ["page_title" => "Health and Well-Being", "title" => "Guidance Appointment"]);
-    $this->load->view('admin/omsss/guidance-appointment/guidance-appointment');
-    $this->load->view('partials/footer');
-    $this->load->view('admin/omsss/components/guidance-appointment-modal');
-    $this->load->view('partials/foot-scripts');
-    $this->load->view('admin/omsss/guidance-appointment/scripts/guidance-appointment-scripts');
-  }
+  // public function guidance_appointment()
+  // {
+  //   $this->load->view('partials/main');
+  //   $this->load->view('partials/title-meta');
+  //   $this->load->view('partials/head-css');
+  //   $this->load->view('partials/admin/topbar');
+  //   $this->load->view('partials/admin/sidebar');
+  //   $this->load->view('partials/page-title', ["page_title" => "Health and Well-Being", "title" => "Guidance Appointment"]);
+  //   $this->load->view('admin/omsss/guidance-appointment/guidance-appointment');
+  //   $this->load->view('partials/footer');
+  //   $this->load->view('admin/omsss/components/guidance-appointment-modal');
+  //   $this->load->view('partials/foot-scripts');
+  //   $this->load->view('admin/omsss/guidance-appointment/scripts/guidance-appointment-scripts');
+  // }
 
   public function all_prescription()
   {
@@ -169,7 +169,7 @@ class Admin extends CI_Controller
     $this->load->view('partials/head-css');
     $this->load->view('partials/admin/topbar');
     $this->load->view('partials/admin/sidebar');
-    $this->load->view('partials/page-title', ["page_title" => "Health and Well-Being", "title" => "All Prescriptions"]);
+    $this->load->view('partials/page-title', ["page_title" => "Health and Well-Being", "title" => "Appointment History"]);
     $this->load->view('admin/omsss/medical-prescription/all-prescription');
     $this->load->view('partials/footer');
     $this->load->view('admin/omsss/components/all-prescription-modal');
