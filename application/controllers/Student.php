@@ -244,7 +244,7 @@ class Student extends CI_Controller
     $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "View Reservations"]);
     $this->load->view('student/evrsers/view-reservations');
     $this->load->view('partials/footer');
-    $this->load->view('student/evrsers/components/reservation-modal');
+    $this->load->view('student/evrsers/components/new-reservation-modal');
     $this->load->view('partials/foot-scripts');
     $this->load->view('student/evrsers/scripts/reservations-scripts');
   }
