@@ -441,6 +441,7 @@
           <h4 class="mb-3 fw-semibold">Approve this Request?</h4>
           <p class="text-muted mb-4">If yes, indicate on the Remarks when you are available for the processing of this request at PUP QC. If not, click the Dismiss button.</p>
           <form id="approveRequestForm" class="needs-validation" novalidate>
+            <input type="hidden" id="approve_request_id">
             <div class="mt-4">
               <label for="remarks" class="h5 form-label">Remarks <span class="text-danger">*</span></label>
               <textarea class="form-control mt-2" id="remarks" name="remarks" rows="5" placeholder="Enter the days and the time you are available for receiving of the requirements & accommodation of this request at PUP QC. You can also indicate when you are unavailable and when the student can file the request at the school." required></textarea>
@@ -448,11 +449,11 @@
                 Please indicate your availability at the remarks above.
               </div>
             </div>
-            <div class="mt-4 hstack gap-2 justify-content-center">
-              <button class="btn btn-success fw-medium">Yes, Approve It!</button>
-              <button class="btn btn-light fw-medium" data-bs-dismiss="modal">Dismiss</button>
+            <div class="mt-4 justify-content-center">
+              <button type="submit" class="w-100 btn btn-success bg-gradient fw-medium waves-effect waves-light">Yes, Approve It!</button>
             </div>
           </form>
+          <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
         </div>
       </div>
     </div>
@@ -470,6 +471,7 @@
           <h4 class="mb-3 fw-semibold">Cancel this Request?</h4>
           <p class="text-muted mb-4">If yes, indicate on the Remarks the reason why you are cancelling this request. If not, click the Dismiss button.</p>
           <form id="cancelRequestForm" class="needs-validation" novalidate>
+            <input type="hidden" id="cancel_request_id">
             <div class="mt-4">
               <label for="remarks" class="h5 form-label">Remarks <span class="text-danger">*</span></label>
               <textarea class="form-control mt-2" id="remarks" name="remarks" rows="5" placeholder="Enter the reason why you are cancelling the request and the instructions, if any, that the student must comply before requesting the document/s again." required></textarea>
@@ -477,11 +479,11 @@
                 Please indicate your reason for cancelling.
               </div>
             </div>
-            <div class="mt-4 hstack gap-2 justify-content-center">
-              <button class="btn btn-danger fw-medium">Yes, Cancel It!</button>
-              <button class="btn btn-light fw-medium" data-bs-dismiss="modal">Dismiss</button>
+            <div class="mt-4 justify-content-center">
+              <button type="submit" class="w-100 btn btn-danger bg-gradient fw-medium waves-effect waves-light">Yes, Cancel It!</button>
             </div>
           </form>
+          <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
         </div>
       </div>
     </div>

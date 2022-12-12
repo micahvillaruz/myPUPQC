@@ -9,12 +9,14 @@ $(function () {
 
 	$('#approveRequestForm').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
-		approveRequest()
+		const requestID = $('#approve_request_id').val()
+		approveRequest(requestID)
 	})
 
 	$('#cancelRequestForm').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
-		cancelRequest()
+		const requestID = $('#cancel_request_id').val()
+		cancelRequest(requestID)
 	})
 
 	$('#forProcessingRequestForm').on('submit', function (e) {
@@ -107,6 +109,7 @@ loadPendingRequests = () => {
 				// Details
 				{
 					data: null,
+					width: '40%',
 					render: (data) => {
 						const course = data.user_assigned_to_request.education_profile.course_when_admitted
 						const purpose = data.purpose_of_request
@@ -156,10 +159,10 @@ loadPendingRequests = () => {
 					render: (data) => {
 						return `
 							<div class="dropdown d-inline-block">
-								<button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#approveRequestModal">
+								<button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#approveRequestModal" onclick="addId('${data.request_id}', 'approve_request')">
 									<i class="ri-check-fill fs-5 fw-bold"></i>
 								</button>
-								<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#cancelRequestModal">
+								<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#cancelRequestModal" onclick="addId('${data.request_id}', 'cancel_request')">
 									<i class="ri-close-fill fs-5 fw-bold"></i>
 								</button>
 							</div>
@@ -730,30 +733,49 @@ getRequirements = (data) => {
 }
 
 // Approve Request
-approveRequest = () => {
-	if (!$('#approveRequestForm')[0].checkValidity()) return
+approveRequest = (request_id) => {
+	if ($('#approveRequestForm')[0].checkValidity()) {
+		// no validation error
+		const form = new FormData($('#approveRequestForm')[0])
 
-	Swal.fire({
-		html:
-			'<div class="mt-3">' +
-			'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
-			'<div class="mt-4 pt-2 fs-15">' +
-			'<h4>Well done!</h4>' +
-			'<p class="text-muted mx-4 mb-0">You have successfully approved this request!</p>' +
-			'</div>' +
-			'</div>',
-		showCancelButton: !0,
-		showConfirmButton: !1,
-		cancelButtonClass: 'btn btn-success w-xs mb-1',
-		cancelButtonText: 'Ok',
-		buttonsStyling: !1,
-		showCloseButton: !0,
-	})
-		.then(function () {
-			$('#approveRequestModal').modal('hide')
-			$('form#approveRequestForm')[0].reset()
-		})
-		.fail(() => {
+		data = {
+			remarks: form.get('remarks'),
+		}
+
+		$.ajax({
+			url: `${apiURL}odrs/pup_staff/update_request_status/For Clearance/${request_id}`,
+			type: 'PUT',
+			data: data,
+			dataType: 'json',
+			headers: AJAX_HEADERS,
+			success: (result) => {
+				if (result) {
+					Swal.fire({
+						html:
+							'<div class="mt-3">' +
+							'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
+							'<div class="mt-4 pt-2 fs-15">' +
+							'<h4>Well done!</h4>' +
+							'<p class="text-muted mx-4 mb-0">You have successfully approved this request!</p>' +
+							'</div>' +
+							'</div>',
+						showCancelButton: !0,
+						showConfirmButton: !1,
+						cancelButtonClass: 'btn btn-success w-xs mb-1',
+						cancelButtonText: 'Ok',
+						buttonsStyling: !1,
+						showCloseButton: !0,
+					}).then(function () {
+						$('#approveRequestModal').modal('hide')
+						$('form#approveRequestForm')[0].reset()
+
+						// Reload Pending and Approved Requests Datatable
+						loadPendingRequests()
+						loadApprovedRequests()
+					})
+				}
+			},
+		}).fail(() => {
 			Swal.fire({
 				html:
 					'<div class="mt-3">' +
@@ -771,33 +793,53 @@ approveRequest = () => {
 				showCloseButton: !0,
 			})
 		})
+	}
 }
 
 // Cancel Request
-cancelRequest = () => {
-	if (!$('#cancelRequestForm')[0].checkValidity()) return
+cancelRequest = (request_id) => {
+	if ($('#cancelRequestForm')[0].checkValidity()) {
+		// no validation error
+		const form = new FormData($('#cancelRequestForm')[0])
 
-	Swal.fire({
-		html:
-			'<div class="mt-3">' +
-			'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
-			'<div class="mt-4 pt-2 fs-15">' +
-			'<h4>Well done!</h4>' +
-			'<p class="text-muted mx-4 mb-0">You have successfully cancelled this request!</p>' +
-			'</div>' +
-			'</div>',
-		showCancelButton: !0,
-		showConfirmButton: !1,
-		cancelButtonClass: 'btn btn-success w-xs mb-1',
-		cancelButtonText: 'Ok',
-		buttonsStyling: !1,
-		showCloseButton: !0,
-	})
-		.then(function () {
-			$('#cancelRequestModal').modal('hide')
-			$('form#cancelRequestForm')[0].reset()
-		})
-		.fail(() => {
+		data = {
+			remarks: form.get('remarks'),
+		}
+
+		$.ajax({
+			url: `${apiURL}odrs/pup_staff/update_request_status/Cancelled by Staff/${request_id}`,
+			type: 'PUT',
+			data: data,
+			dataType: 'json',
+			headers: AJAX_HEADERS,
+			success: (result) => {
+				if (result) {
+					Swal.fire({
+						html:
+							'<div class="mt-3">' +
+							'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
+							'<div class="mt-4 pt-2 fs-15">' +
+							'<h4>Well done!</h4>' +
+							'<p class="text-muted mx-4 mb-0">You have successfully cancelled this request!</p>' +
+							'</div>' +
+							'</div>',
+						showCancelButton: !0,
+						showConfirmButton: !1,
+						cancelButtonClass: 'btn btn-success w-xs mb-1',
+						cancelButtonText: 'Ok',
+						buttonsStyling: !1,
+						showCloseButton: !0,
+					}).then(function () {
+						$('#cancelRequestModal').modal('hide')
+						$('form#cancelRequestForm')[0].reset()
+
+						// Reload Pending and Approved Requests Datatable
+						loadPendingRequests()
+						loadApprovedRequests()
+					})
+				}
+			},
+		}).fail(() => {
 			Swal.fire({
 				html:
 					'<div class="mt-3">' +
@@ -815,6 +857,7 @@ cancelRequest = () => {
 				showCloseButton: !0,
 			})
 		})
+	}
 }
 
 // for Evaluation / Processing
@@ -947,4 +990,8 @@ releasedRequest = () => {
 				showCloseButton: !0,
 			})
 		})
+}
+
+addId = (request_id, status) => {
+	$(`#${status}_id`).val(request_id)
 }
