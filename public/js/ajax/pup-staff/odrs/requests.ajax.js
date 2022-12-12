@@ -21,7 +21,8 @@ $(function () {
 
 	$('#forProcessingRequestForm').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
-		forProcessingRequest()
+		const requestID = $('#process_request_id').val()
+		forProcessingRequest(requestID)
 	})
 
 	$('#readyForPickupRequestForm').on('submit', function (e) {
@@ -344,7 +345,7 @@ loadApprovedRequests = () => {
 
 						if (requestStatus === 'For Clearance') {
 							return `
-								<button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#forProcessingModal">
+								<button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#forProcessingModal" onclick="addId('${data.request_id}', 'process_request')">
 									<i class="mdi mdi-file-sign fs-5"></i>
 								</button>
 							`
@@ -860,31 +861,51 @@ cancelRequest = (request_id) => {
 	}
 }
 
-// for Evaluation / Processing
-forProcessingRequest = () => {
-	if (!$('#forProcessingRequestForm')[0].checkValidity()) return
+// Change Status to For Evaluation / Processing
+forProcessingRequest = (request_id) => {
+	if ($('#forProcessingRequestForm')[0].checkValidity()) {
+		// no validation error
+		const form = new FormData($('#forProcessingRequestForm')[0])
 
-	Swal.fire({
-		html:
-			'<div class="mt-3">' +
-			'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
-			'<div class="mt-4 pt-2 fs-15">' +
-			'<h4>Well done!</h4>' +
-			'<p class="text-muted mx-4 mb-0">You have successfully set the status of this request to For Evaluation/Processing!</p>' +
-			'</div>' +
-			'</div>',
-		showCancelButton: !0,
-		showConfirmButton: !1,
-		cancelButtonClass: 'btn btn-success w-xs mb-1',
-		cancelButtonText: 'Ok',
-		buttonsStyling: !1,
-		showCloseButton: !0,
-	})
-		.then(function () {
-			$('#forProcessingModal').modal('hide')
-			$('form#forProcessingRequestForm')[0].reset()
-		})
-		.fail(() => {
+		data = {
+			or_no: form.get('or_no'),
+			remarks: null,
+		}
+
+		$.ajax({
+			url: `${apiURL}odrs/pup_staff/update_request_status/For Evaluation/${request_id}`,
+			type: 'PUT',
+			data: data,
+			dataType: 'json',
+			headers: AJAX_HEADERS,
+			success: (result) => {
+				if (result) {
+					Swal.fire({
+						html:
+							'<div class="mt-3">' +
+							'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
+							'<div class="mt-4 pt-2 fs-15">' +
+							'<h4>Well done!</h4>' +
+							'<p class="text-muted mx-4 mb-0">You have successfully set the status of this request to For Evaluation/Processing!</p>' +
+							'</div>' +
+							'</div>',
+						showCancelButton: !0,
+						showConfirmButton: !1,
+						cancelButtonClass: 'btn btn-success w-xs mb-1',
+						cancelButtonText: 'Ok',
+						buttonsStyling: !1,
+						showCloseButton: !0,
+					}).then(function () {
+						$('#forProcessingModal').modal('hide')
+						$('form#forProcessingRequestForm')[0].reset()
+
+						// Reload Pending and Approved Requests Datatable
+						loadPendingRequests()
+						loadApprovedRequests()
+					})
+				}
+			},
+		}).fail(() => {
 			Swal.fire({
 				html:
 					'<div class="mt-3">' +
@@ -902,6 +923,7 @@ forProcessingRequest = () => {
 				showCloseButton: !0,
 			})
 		})
+	}
 }
 
 // Ready for Pickup

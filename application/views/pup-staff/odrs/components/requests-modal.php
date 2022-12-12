@@ -508,6 +508,7 @@
             <span>Please make sure that the student has already <span class="fw-medium">PAID</span> the processing fee and presented the <span class="fw-medium">OFFICIAL RECEIPT</span> before you change the status of this request.</span>
           </div>
           <form id="forProcessingRequestForm" class="needs-validation" novalidate>
+            <input type="hidden" id="process_request_id">
             <div class="mt-4">
               <label for="or_no" class="h5 form-label">O.R. Number <span class="text-danger">*</span></label>
               <input type="number" class="form-control" id="or_no" name="or_no" placeholder="Official Receipt No." required>
@@ -515,11 +516,11 @@
                 Please enter the O.R. Number for this request.
               </div>
             </div>
-            <div class="mt-4 hstack gap-2 justify-content-center">
-              <button class="btn btn-info fw-medium">Yes, It is!</button>
-              <button class="btn btn-light fw-medium" data-bs-dismiss="modal">Dismiss</button>
+            <div class="mt-4 justify-content-center">
+              <button type="submit" class="w-100 btn btn-info bg-gradient fw-medium waves-effect waves-light">Yes, It is!</button>
             </div>
           </form>
+          <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
         </div>
       </div>
     </div>
