@@ -545,6 +545,7 @@
             <span>Please make sure that the document/s included in this request has already been <span class="fw-medium">SIGNED</span> by the intended signatories with <span class="fw-medium">SCHOOL DRY SEAL</span> and <span class="fw-medium">DOCUMENTARY STAMP</span> before you change the status of this request.</span>
           </div>
           <form id="readyForPickupRequestForm" class="needs-validation" novalidate>
+            <input type="hidden" id="pickup_request_id">
             <div class="mt-4">
               <label for="remarks" class="h5 form-label">Remarks <span class="text-danger">*</span></label>
               <textarea class="form-control" id="remarks" name="remarks" rows="5" placeholder="Enter the days and the time you are available to accomodate the claiming of this request at PUP QC. You can also indicate here if there are requirements that the student must bring upon receiving of the requested documents." required></textarea>
@@ -552,11 +553,11 @@
                 Please indicate your availability at the remarks above.
               </div>
             </div>
-            <div class="mt-4 hstack gap-2 justify-content-center">
-              <button class="btn btn-dark fw-medium">Yes, It is!</button>
-              <button class="btn btn-light fw-medium" data-bs-dismiss="modal">Dismiss</button>
+            <div class="mt-4 justify-content-center">
+              <button type="submit" class="w-100 btn btn-dark bg-gradient fw-medium waves-effect waves-light">Yes, It is!</button>
             </div>
           </form>
+          <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
         </div>
       </div>
     </div>

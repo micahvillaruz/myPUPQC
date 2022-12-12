@@ -27,7 +27,8 @@ $(function () {
 
 	$('#readyForPickupRequestForm').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
-		readyforPickupRequest()
+		const requestID = $('#pickup_request_id').val()
+		readyforPickupRequest(requestID)
 	})
 
 	$('#releasedRequestForm').on('submit', function (e) {
@@ -351,7 +352,7 @@ loadApprovedRequests = () => {
 							`
 						} else if (requestStatus === 'For Evaluation/Processing') {
 							return `
-								<button type="button" class="btn btn-dark btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#readyforPickupModal">
+								<button type="button" class="btn btn-dark btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#readyforPickupModal" onclick="addId('${data.request_id}', 'pickup_request')">
 									<i class="ri-user-received-2-line fs-5"></i>
 								</button>
 							`
@@ -926,31 +927,50 @@ forProcessingRequest = (request_id) => {
 	}
 }
 
-// Ready for Pickup
-readyforPickupRequest = () => {
-	if (!$('#readyForPickupRequestForm')[0].checkValidity()) return
+// Change Status to Ready for Pickup
+readyforPickupRequest = (request_id) => {
+	if ($('#readyForPickupRequestForm')[0].checkValidity()) {
+		// no validation error
+		const form = new FormData($('#readyForPickupRequestForm')[0])
 
-	Swal.fire({
-		html:
-			'<div class="mt-3">' +
-			'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
-			'<div class="mt-4 pt-2 fs-15">' +
-			'<h4>Well done!</h4>' +
-			'<p class="text-muted mx-4 mb-0">You have successfully set the status of this request to Ready for Pickup!</p>' +
-			'</div>' +
-			'</div>',
-		showCancelButton: !0,
-		showConfirmButton: !1,
-		cancelButtonClass: 'btn btn-success w-xs mb-1',
-		cancelButtonText: 'Ok',
-		buttonsStyling: !1,
-		showCloseButton: !0,
-	})
-		.then(function () {
-			$('#readyforPickupModal').modal('hide')
-			$('form#readyForPickupRequestForm')[0].reset()
-		})
-		.fail(() => {
+		data = {
+			remarks: form.get('remarks'),
+		}
+
+		$.ajax({
+			url: `${apiURL}odrs/pup_staff/update_request_status/Ready for Pickup/${request_id}`,
+			type: 'PUT',
+			data: data,
+			dataType: 'json',
+			headers: AJAX_HEADERS,
+			success: (result) => {
+				if (result) {
+					Swal.fire({
+						html:
+							'<div class="mt-3">' +
+							'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
+							'<div class="mt-4 pt-2 fs-15">' +
+							'<h4>Well done!</h4>' +
+							'<p class="text-muted mx-4 mb-0">You have successfully set the status of this request to Ready for Pickup!</p>' +
+							'</div>' +
+							'</div>',
+						showCancelButton: !0,
+						showConfirmButton: !1,
+						cancelButtonClass: 'btn btn-success w-xs mb-1',
+						cancelButtonText: 'Ok',
+						buttonsStyling: !1,
+						showCloseButton: !0,
+					}).then(function () {
+						$('#readyforPickupModal').modal('hide')
+						$('form#readyForPickupRequestForm')[0].reset()
+
+						// Reload Pending and Approved Requests Datatable
+						loadPendingRequests()
+						loadApprovedRequests()
+					})
+				}
+			},
+		}).fail(() => {
 			Swal.fire({
 				html:
 					'<div class="mt-3">' +
@@ -968,6 +988,7 @@ readyforPickupRequest = () => {
 				showCloseButton: !0,
 			})
 		})
+	}
 }
 
 // Released
