@@ -79,7 +79,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>admin/omsss/all-prescription">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/omsss/appointment-history">
                 <i class="mdi mdi-pill"></i>
                 <span>Appointment History</span>
               </a>

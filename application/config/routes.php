@@ -220,7 +220,7 @@ $route['admin/odrs/requests'] = 'admin/requests';
 */
 
 $route['admin/omsss/all-appointment'] = 'admin/all_appointment';
-$route['admin/omsss/all-prescription'] = 'admin/all_prescription';
+$route['admin/omsss/appointment-history'] = 'admin/appointment_history';
 
 /*
 | --------------

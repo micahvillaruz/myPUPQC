@@ -131,6 +131,20 @@ class Admin extends CI_Controller
     $this->load->view('partials/foot-scripts');
     $this->load->view('admin/omsss/all-appointment/scripts/all-appointment-scripts');
   }
+  public function appointment_history()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/admin/topbar');
+    $this->load->view('partials/admin/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "Health and Well-Being", "title" => "Appointment History"]);
+    $this->load->view('admin/omsss/appointment-history/appointment-history');
+    $this->load->view('partials/footer');
+    $this->load->view('admin/omsss/components/appointment-history-modal');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('admin/omsss/appointment-history/scripts/appointment-history-scripts');
+  }
 
   // public function dentist_appointment()
   // {
