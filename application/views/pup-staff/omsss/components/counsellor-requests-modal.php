@@ -18,7 +18,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Consultation Type</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_consultation_type"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_consultation_type">Follow-Up</div>
                 </div>
               </div>
             </li>
@@ -29,7 +29,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Reason for consultation</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_consultation_reason"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_consultation_reason">Anxiety</div>
                 </div>
               </div>
             </li>
@@ -40,7 +40,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Psychologist</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_health_physcian"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_health_physcian">Melanie Bactasa</div>
                 </div>
               </div>
             </li>
@@ -51,7 +51,7 @@
                   <h5 class="fs-13 mb-1">Appoinment Date</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_consultation_date"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_consultation_date">12-13-2022</div>
                 </div>
               </div>
             </li>
@@ -62,7 +62,7 @@
                   <h5 class="fs-13 mb-1">Time</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_consultation_time"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_consultation_time">9:00AM - 10:00AM</div>
                 </div>
               </div>
             </li>
@@ -71,7 +71,7 @@
                 <div class="col-4">
                   <h5 class="fs-13 mb-1 fw-medium">Status</h5>
                 </div>
-                <div class="col-8" id="view_status">
+                <div class="col-8" id="view_status"><span class="badge rounded-pill bg-warning"> Pending </span>
                 </div>
               </div>
             </li>
@@ -92,25 +92,31 @@
 </div>
 
 <!-- Conselling Request Status modal -->
-<div id="updateMedicalRequestModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
+<div id="updateCounsellorRequestModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content border-0 overflow-hidden">
+      <div class="modal-content">
+      <form>
       <div class="modal-header p-3">
         <h4 class="card-title mb-0">Appoinment Status</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-        <div class="">
+        <div class="modal-body">
+          <label class='form-label'>Status</label>
+          <span class="text-danger">*</span>
         <select class="form-select mb-3" aria-label="Change Status">
-          <option selected></option>
+          <option selected>Status</option>
           <option value="1">Pending</option>
           <option value="2">Approved</option>
           <option value="3">Declined</option>
         </select>
+          <label class='form-label'>Remarks</label>
+          <input type="text" class="form-control" id="remarks" name="Remarks" placeholder="Remarks"><br>
+          <div class="text-center d-grid">
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Confirm">Confirm</button>
+         </div>
         </div>
-          <div class="text-end">
-            <button type="submit" class="btn btn-primary">Confirmn</button>
-          </div>
-        </form>
+      </form>
       </div>
     </div>
     <!-- /.modal-content -->

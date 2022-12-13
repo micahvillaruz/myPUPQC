@@ -33,6 +33,24 @@
                 </tr>
               </thead>
               <tbody>
+              <tr>
+                  <td>COU-914BDD</td>
+                  <td>Josha G. Galga</td>
+                  <td><span class="badge rounded-pill bg-warning">Pending</span></td>
+                  <td>09-12-2022</td>
+                  <td><button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewGuidanceModal"><i class="ri-eye-fill fs-5"></i></button>
+                      <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#updateCounsellorRequestModal"><i class="ri-pencil-fill fs-5"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>COU-916BDD</td>
+                  <td>Nakshie Q. Santos</td>
+                  <td><span class="badge rounded-pill bg-warning">Pending</span></td>
+                  <td>09-12-2022</td>
+                  <td><button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewGuidanceModal"><i class="ri-eye-fill fs-5"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#updateCounsellorRequestModal"><i class="ri-pencil-fill fs-5"></i></button>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -48,6 +66,24 @@
                 </tr>
               </thead>
               <tbody>
+              <tr>
+                  <td>COU-916BDD</td>
+                  <td>Nakshie Q. Santos</td>
+                  <td><span class="badge rounded-pill bg-success">Approved</span></td>
+                  <td>09-12-2022</td>
+                  <td><button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewGuidanceModal"><i class="ri-eye-fill fs-5"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#updateCounsellorRequestModal"><i class="ri-pencil-fill fs-5"></i></button>
+                  </td>
+              </tr>
+              <tr>
+                  <td>COU-916BDD</td>
+                  <td>Juan Dela Cruz</td>
+                  <td><span class="badge rounded-pill bg-success">Approved</span></td>
+                  <td>09-15-2022</td>
+                  <td><button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewMedicalReqModal"><i class="ri-eye-fill fs-5"></i></button>
+                  <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#updateCounsellorRequestModal"><i class="ri-pencil-fill fs-5"></i></button>
+                  </td>
+              </tr>
               </tbody>
             </table>
           </div>
