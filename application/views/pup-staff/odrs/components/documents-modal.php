@@ -68,9 +68,9 @@
       </div>
       <div class="modal-body px-5 pt-5">
         <span class="badge badge-soft-dark fs-15 mb-3"> <i class="ri-folder-4-line me-2"></i> Type</span>
-        <p class="mb-4" id="view_document_type"></p>
+        <mark class="mb-4 mx-3 fw-bold d-block text-center" id="view_document_type"></mark>
         <span class="badge badge-soft-dark fs-15 mb-3"> <i class="ri-file-list-3-line me-2"></i> Details</span>
-        <p class="mb-4" id="view_document_details"></p>
+        <p class="mb-4 mx-3" id="view_document_details"></p>
         <span class="badge badge-soft-dark fs-15 mb-3"> <i class="ri-suitcase-line me-2"></i> Requirements</span>
         <p id="view_document_requirements" class="mx-3"></p>
       </div>

@@ -9,11 +9,10 @@
           <div class="row g-3">
             <div class="alert alert-info alert-border-left alert-dismissible fade show d-flex align-items-center" role="alert">
               <i class="ri-information-fill me-2 align-middle"></i> <strong>Advisory</strong> - If you shifted to another course, and it is not yet reflected on the Program/Course displayed below, please contact myPUPQC Admin at <u class="ms-1 fw-medium">mypupqc.odrs@pup.edu.ph</u>.
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
 
             <div class="col-lg-12">
-              <label for="course_when_admitted" class="form-label">Program / Course</label>
+              <label for="course_when_admitted" class="form-label">Program / Course <span class="text-danger">*</span></label>
               <select class="form-select" value="" id="course_when_admitted" name="course_when_admitted" disabled>
                 <option id="course" selected></option>
               </select>
@@ -43,7 +42,7 @@
             <!--end col-->
             <div id="not-visible" class="d-none">
               <div class="col-lg-12">
-                <label for="purpose" class="form-label">Purpose of Request</label>
+                <label for="purpose" class="form-label">Purpose of Request <span class="text-danger">*</span></label>
                 <textarea class="form-control mt-3" id="purpose" rows="3" placeholder="Readmission, Employment, Transfer to other school, Board / Licensure Examination, Further Studies, Scholarship or Other Purpose" required></textarea>
                 <div class="invalid-feedback">
                   Please provide the Purpose of Request.
@@ -141,7 +140,3 @@
   <!--end col-->
 </div>
 <!--end row-->
-</div>
-<!-- container-fluid -->
-</div>
-<!-- End Page-content -->
