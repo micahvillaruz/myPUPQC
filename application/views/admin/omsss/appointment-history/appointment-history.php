@@ -18,6 +18,33 @@
               <th>Action</th>
             </tr>
           </thead>
+          <tbody>
+            <tr>
+            <tr>
+                  <td>MED-916BDD</td>
+                  <td>Nakshie Q. Santos</td>
+                  <td><span class="badge rounded-pill bg-success">Approved</span></td>
+                  <td>09-12-2022</td>
+                  <td><button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewAppointmentModal"><i class="ri-eye-fill fs-5"></i></button>
+                  
+                  </td>
+              <tr>
+                  <td>DEN-915BDD</td>
+                  <td>Juan Dela Cruz</td>
+                  <td><span class="badge rounded-pill bg-success">Approved</span></td>
+                  <td>09-12-2022</td>
+                  <td><button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewAppointmentModal"><i class="ri-eye-fill fs-5"></i></button>
+                  
+              <tr>
+                  <td>COU-920BDD</td>
+                  <td>Zack Tabudlo 10:15</td>
+                  <td><span class="badge rounded-pill bg-warning">Pending</span></td>
+                  <td>09-12-2022</td>
+                  <td><button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewAppointmentModal"><i class="ri-eye-fill fs-5"></i></button>
+                  </td>
+             </tr>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
