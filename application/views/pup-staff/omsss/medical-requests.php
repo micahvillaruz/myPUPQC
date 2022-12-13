@@ -22,7 +22,7 @@
         <!-- Tab panes -->
         <div class="tab-content text-muted">
         <div class="tab-pane active" id="pending" role="tabpanel">
-          <table id="guidance-datatable" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
+          <table id="pending-datatable" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
             <thead class="bg-light">
               <tr>
                 <th>Appointment Code</th>
