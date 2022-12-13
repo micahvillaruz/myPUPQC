@@ -167,7 +167,7 @@ class PUPStaff extends CI_Controller
     $this->load->view('partials/head-css');
     $this->load->view('partials/pup-staff/topbar');
     $this->load->view('partials/pup-staff/sidebar');
-    $this->load->view('partials/page-title', ["page_title" => "OMSSS", "title" => "Counsellor Requests"]);
+    $this->load->view('partials/page-title', ["page_title" => "OMSSS", "title" => "Counseling Requests"]);
     $this->load->view('pup-staff/omsss/counsellor-requests');
     $this->load->view('partials/footer');
     $this->load->view('pup-staff/omsss/components/counsellor-requests-modal');

@@ -96,20 +96,20 @@
 
             <li class="menu-title">
               <i class="ri-more-fill"></i>
-              <span>OMSS - GUIDANCE COUNSELLOR </span>
+              <span>OMSS - GUIDANCE COUNSELOR </span>
             </li>
 
             <li class="nav-item">
               <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/omsss/counsellor/counsel-requests">
                 <i class="mdi mdi-brain me-1"></i>
-                <span>Counselling Requests</span>
+                <span>Counseling Requests</span>
               </a>
             </li>
 
             <li class="nav-item">
               <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/omsss/counsellor/analytics-and-history">
                 <i class="las la-history"></i>
-                <span>Counselling History</span>
+                <span>Counseling History</span>
               </a>
             </li>
 

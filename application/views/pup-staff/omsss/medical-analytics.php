@@ -103,7 +103,7 @@
   <div class="col-lg-12">
     <div class="card">
       <div class="card-header d-flex align-items-center">
-      <h2 class="card-title mb-0 flex-grow-1 fw-bold text-primary">Medical Request History</h2>
+      <h2 class="card-title mb-0 flex-grow-1 fw-bold text-primary">MEDICAL REQUEST HISTORY</h2>
         <div>
           <!-- <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addStaffModal">Add Faculty/Staff</button> -->
         </div>

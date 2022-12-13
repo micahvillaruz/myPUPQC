@@ -23,7 +23,7 @@ loadMedicalRequestTable = () => {
 		dt.DataTable({
 			bDestroy: true,
 			ajax: {
-				url: apiURL + 'mypupqc/v1/omsss/pup_staff/view_appointment_analytics/Guidance',
+				url: apiURL + 'omsss/pup_staff/view_pending_approved_appointment/Guidance',
 				type: 'GET',
 				// ContentType: 'application/x-www-form-urlencoded',
 			},
@@ -84,7 +84,7 @@ loadMedicalRequestTable = () => {
 					render: (data) => {
 						return `
         <div class="dropdown d-inline-block">
-        <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewMedicalDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewGuidanceModal"><i class="ri-eye-fill fs-5"></i></button>
+        <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewGuidanceDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewGuidanceModal"><i class="ri-eye-fill fs-5"></i></button>
 				</div>`
 					},
 				},
@@ -152,8 +152,8 @@ loadMedicalRequestTable = () => {
 // 	}
 // }
 
-// View Medical Consultation details
-viewMedicalDetails = (health_appointment_id) => {
+// View Dental Consultation details
+viewGuidanceDetails = (health_appointment_id) => {
 	$.ajaxSetup({
 		headers: {
 			Accept: 'application/json',
@@ -165,7 +165,7 @@ viewMedicalDetails = (health_appointment_id) => {
 	$.ajax({
 		type: 'GET',
 		cache: false,
-		url: apiURL + `omsss/student/view_appointment/${health_appointment_id}`,
+		url: apiURL + `omsss/pup_staff/view_specific_appointment/${health_appointment_id}`,
 		dataType: 'json',
 		success: (result) => {
 			console.log(result)
@@ -179,13 +179,20 @@ viewMedicalDetails = (health_appointment_id) => {
 			$('#view_consultaion_type').html(userData.consultation_type)
 			$('#view_consultation_reason').html(userData.consultation_reason)
 			$('#view_health_physcian').html(userProfileData != null ? userProfileData.full_name : 'N/A')
-			$('#view_date_of_symptom').html(moment(userData.symptoms_date).format('LL'))
+			$('#view_symptoms_date').html(moment(userData.symptoms_date).utc().format('LL'))
 			$('#view_consultation_date').html(moment(userData.consultation_date).format('LL'))
-			$('#view_status').html(
-				userData.consultation_status == 'Pending'
-					? '<span class="fs-12 badge rounded-pill bg-warning" >Pending</span>'
-					: '<span class="fs-12 badge rounded-pill bg-success" >Approved</span>',
-			)
+			const consultation_status_data = userData.consultation_status
+			let consultation_value
+			if (consultation_status_data == 'Pending') {
+				consultation_value = `<span class="badge rounded-pill bg-warning">Pending</span>`
+			} else if (consultation_status_data == 'Approved') {
+				consultation_value = `<span class="badge rounded-pill bg-success">Approved</span>`
+			} else if (consultation_status_data == 'Cancelled by Staff') {
+				consultation_value = `<span class="badge rounded-pill bg-info">Cancelled by Staff</span>`
+			} else if (consultation_status_data == 'Cancelled by Student') {
+				consultation_value = `<span class="badge rounded-pill bg-info">Cancelled by Student</span>`
+			}
+			$('#view_status').html(consultation_value)
 		},
 	})
 }

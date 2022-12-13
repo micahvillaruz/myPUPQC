@@ -100,6 +100,9 @@ addNewMedicalCase = () => {
 	if ($('#NewMedicalCaseForm')[0].checkValidity()) {
 		// no validation error
 		const form = new FormData($('#NewMedicalCaseForm')[0])
+		for (var pair of form.entries()) {
+			console.log(pair[0] + ', ' + pair[1])
+		}
 		data = {
 			appointment_type: 'Medical',
 			consultation_type: form.get('consultation_type'),
@@ -107,7 +110,7 @@ addNewMedicalCase = () => {
 			symptoms_date: form.get('symptoms_date'),
 			consultation_date: form.get('consultation_date'),
 		}
-
+		console.log(data)
 		$.ajax({
 			url: apiURL + 'omsss/student/add_appointment',
 			type: 'POST',
@@ -229,7 +232,7 @@ cancelMedical = (health_appointment_id) => {
 								'</div>',
 							showCancelButton: !0,
 							showConfirmButton: !1,
-							cancelButtonClass: 'btn btn-success w-xs mb-1',
+							cancelButtonClass: 'btn btn-danger w-xs mb-1',
 							cancelButtonText: 'Ok',
 							buttonsStyling: !1,
 							showCloseButton: !0,

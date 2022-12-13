@@ -23,7 +23,7 @@ loadMedicalRequestTable = () => {
 		dt.DataTable({
 			bDestroy: true,
 			ajax: {
-				url: apiURL + 'mypupqc/v1/omsss/pup_staff/view_appointment_analytics/Guidance',
+				url: apiURL + 'omsss/pup_staff/view_pending_approved_appointment/Dental',
 				type: 'GET',
 				// ContentType: 'application/x-www-form-urlencoded',
 			},
@@ -62,9 +62,17 @@ loadMedicalRequestTable = () => {
 				{
 					data: null,
 					render: (data) => {
-						return data.consultation_status == 'Pending'
-							? `<span class="badge rounded-pill bg-warning">Pending</span>`
-							: `<span class="badge rounded-pill bg-success">Approved</span>`
+						const consultation_status = data.consultation_status
+						console.log(consultation_status)
+						if (consultation_status == 'Pending') {
+							return `<span class="badge rounded-pill bg-warning">Pending</span>`
+						} else if (consultation_status == 'Approved') {
+							return `<span class="badge rounded-pill bg-success">Approved</span>`
+						} else if (consultation_status == 'Cancelled by Staff') {
+							return `<span class="badge rounded-pill bg-info">Cancelled by Staff</span>`
+						} else if (consultation_status == 'Cancelled by Student') {
+							return `<span class="badge rounded-pill bg-info">Cancelled by Student</span>`
+						}
 					},
 				},
 

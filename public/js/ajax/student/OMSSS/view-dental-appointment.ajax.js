@@ -102,13 +102,16 @@ addNewDentalCase = () => {
 	if ($('#NewDentalCaseForm')[0].checkValidity()) {
 		// no validation error
 		const form = new FormData($('#NewDentalCaseForm')[0])
+		for (var pair of form.entries()) {
+			console.log(pair[0] + ', ' + pair[1])
+		}
 		data = {
 			appointment_type: 'Dental',
 			consultation_type: form.get('consultation_type'),
 			consultation_reason: form.get('consultation_reason'),
 			consultation_date: form.get('consultation_date'),
 		}
-
+		console.log(data)
 		$.ajax({
 			url: apiURL + 'omsss/student/add_appointment',
 			type: 'POST',
@@ -121,7 +124,7 @@ addNewDentalCase = () => {
 						html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully added a Dental Case!</p></div></div>',
 						showCancelButton: !0,
 						showConfirmButton: !1,
-						cancelButtonClass: 'btn btn-success w-xs mb-1',
+						cancelButtonClass: 'btn btn-danger w-xs mb-1',
 						cancelButtonText: 'Ok',
 						buttonsStyling: !1,
 						showCloseButton: !0,
