@@ -212,6 +212,7 @@ $route['admin/user-management/pup-staffs'] = 'admin/user_pup_staffs';
 
 $route['admin/odrs/documents'] = 'admin/documents';
 $route['admin/odrs/requests'] = 'admin/requests';
+$route['admin/odrs/history'] = 'admin/history';
 
 /*
 | --------------
