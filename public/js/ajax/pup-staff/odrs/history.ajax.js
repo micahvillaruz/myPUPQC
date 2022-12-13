@@ -112,10 +112,7 @@ loadHistoryTable = () => {
 									<button type="button" class="btn btn-sm btn-secondary bg-gradient waves-effect waves-light rounded-circle position-absolute top-0 start-100 translate-middle" data-bs-toggle="modal" data-bs-target="#viewProcessStatusFlow">?</button>
 								</div>
               `
-						} else if (
-							data.status_of_request === 'Cancelled by Staff' ||
-							data.status_of_request === 'Cancelled by Student'
-						) {
+						} else {
 							return `
 								<div class="mt-2 d-grid fw-bolder badge badge-soft-danger position-relative">
 									<i class="m-2 mdi mdi-cancel fs-13"></i>

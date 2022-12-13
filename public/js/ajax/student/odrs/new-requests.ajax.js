@@ -96,8 +96,8 @@ loadDocuments = () => {
 								<input class="form-check-input fs-15 docs" type="checkbox" name="checkAll" value="${data.document_id}" />
 							</div>
 							<div class="d-flex flex-column">
-								${data.document_name}
-								<div class="mt-1">
+								<a href="#!" class="fw-medium">${data.document_name}</a>
+								<div class="mt-2">
 									<button type="button" class="btn btn-sm btn-info btn-label waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentDetails" onclick="loadDocumentInfo('${data.document_id}')">
 										<i class="mdi mdi-eye label-icon align-middle fs-13 me-2"></i> 
 										View Details
@@ -135,14 +135,17 @@ loadDocumentInfo = (document_id) => {
 		success: (result) => {
 			const data = result.data
 
-			$('#document_name').html(data.document_name)
-			$('#document_details').html(data.document_details)
-			$('#document_requirements').empty()
+			$('#view_document_type').html(
+				data.document_type === 'CAV' ? 'CAV (CHED/DFA/WES/CES)' : data.document_type,
+			)
+			$('#view_document_name').html(data.document_name)
+			$('#view_document_details').html(data.document_details)
+			$('#view_document_requirements').empty()
 			if (data.document_requirements.length === 0) {
-				$('#document_requirements').html('<i>No requirements are needed.</i>')
+				$('#view_document_requirements').html('<i>No requirements are needed.</i>')
 			} else {
 				data.document_requirements.forEach((item) => {
-					$('#document_requirements').append(`
+					$('#view_document_requirements').append(`
 						<li>${item.doc_req_name}</li>
 					`)
 				})

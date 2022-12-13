@@ -18,7 +18,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Consultation Type</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_consultation_type"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_consultation_type">Follow-Up</div>
                 </div>
               </div>
             </li>
@@ -29,7 +29,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Reason for consultation</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_consultation_reason"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_consultation_reason">Anxiety</div>
                 </div>
               </div>
             </li>
@@ -40,7 +40,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Psychologist</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_health_physcian"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_health_physcian">Melanie Bactasa</div>
                 </div>
               </div>
             </li>
@@ -51,7 +51,7 @@
                   <h5 class="fs-13 mb-1">Appoinment Date</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_consultation_date"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_consultation_date">12-15-2022</div>
                 </div>
               </div>
             </li>
@@ -62,7 +62,7 @@
                   <h5 class="fs-13 mb-1">Time</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_consultation_time"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_consultation_time">9:00AM - 11:00AM</div>
                 </div>
               </div>
             </li>
@@ -71,7 +71,7 @@
                 <div class="col-4">
                   <h5 class="fs-13 mb-1 fw-medium">Status</h5>
                 </div>
-                <div class="col-8" id="view_status">
+                <div class="col-8" id="view_status"><span class="badge rounded-pill bg-success">Approved</span>
                 </div>
               </div>
             </li>

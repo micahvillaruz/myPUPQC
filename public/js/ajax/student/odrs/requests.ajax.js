@@ -32,11 +32,11 @@ loadRequestsTable = () => {
 						const time = moment(data.pending_for_clearance).format('hh:mm A')
 
 						return `
-              <div class="d-flex align-items-center">
-                <i class="ri-calendar-todo-fill text-primary"></i>
-                <span class="ms-2">${date}<small class="text-muted ms-1">${time}</small></span>
-              </div>
-            `
+							<div class="d-flex align-items-center">
+								<i class="ri-calendar-todo-fill text-primary"></i>
+								<span class="ms-2">${date}<small class="text-muted ms-1">${time}</small></span>
+							</div>
+						`
 					},
 				},
 
@@ -46,19 +46,19 @@ loadRequestsTable = () => {
 					render: (data) => {
 						if (data.payment_status === 'Pending') {
 							return `
-							<div class="d-block badge badge-soft-warning align-items-center">
-								<i class="me-2 mdi mdi-cash-fast fs-13"></i>
-								<span class="text-uppercase">${data.payment_status}</span>
-							</div>
+								<div class="d-block badge badge-soft-warning align-items-center">
+									<i class="me-2 mdi mdi-cash-fast fs-13"></i>
+									<span class="text-uppercase fw-bold">${data.payment_status}</span>
+								</div>
 							`
 						} else if (data.payment_status === 'Paid') {
 							return `
-							<div class="d-block badge badge-soft-success align-items-center">
-								<i class="me-2 mdi mdi-cash-check fs-13"></i>
-								<span class="text-uppercase">${data.payment_status}</span>
-							</div>
-							<span class="mt-1 d-block badge badge-soft-dark badge-border">OR No. ${data.or_no} </span>
-              `
+								<div class="d-block badge badge-soft-success align-items-center">
+									<i class="me-2 mdi mdi-cash-check fs-13"></i>
+									<span class="text-uppercase fw-bold">${data.payment_status}</span>
+								</div>
+								<span class="mt-1 d-block badge badge-soft-dark badge-border">OR No. ${data.or_no} </span>
+							`
 						}
 					},
 				},
@@ -66,8 +66,8 @@ loadRequestsTable = () => {
 				// Details
 				{
 					data: null,
+					width: '30%',
 					render: (data) => {
-						const educationStatus = data.user_assigned_to_request.education_profile.education_status
 						const course = data.user_assigned_to_request.education_profile.course_when_admitted
 						const purpose = data.purpose_of_request
 						return `
@@ -75,13 +75,13 @@ loadRequestsTable = () => {
 								<tbody>
 									<tr>
 										<td>
-											<span class="fw-medium badge bg-primary me-1">Course: </span>
+											<span class="fw-medium badge bg-primary">Course: </span>
 										</td>
 										<td><span class="text-uppercase">${course}</span></td>
 									</tr>
 									<tr>
 										<td>
-											<span class="fw-medium badge bg-primary me-1">Purpose: </span>
+											<span class="fw-medium badge bg-primary me-3">Purpose: </span>
 										</td>
 										<td>${purpose}</td>
 									</tr>
@@ -104,7 +104,7 @@ loadRequestsTable = () => {
 									<span class="pb-2 text-uppercase">${requestStatus}</span>
 									<button type="button" class="btn btn-sm btn-secondary bg-gradient waves-effect waves-light rounded-circle position-absolute top-0 start-100 translate-middle" data-bs-toggle="modal" data-bs-target="#viewProcessStatusFlow">?</button>
 								</div>
-								`
+							`
 						} else if (requestStatus === 'For Clearance') {
 							return `
 								<div class="mt-2 d-grid badge badge-soft-danger position-relative">
@@ -112,7 +112,7 @@ loadRequestsTable = () => {
 									<span class="pb-2 text-uppercase">${requestStatus}</span>
 									<button type="button" class="btn btn-sm btn-secondary bg-gradient waves-effect waves-light rounded-circle position-absolute top-0 start-100 translate-middle" data-bs-toggle="modal" data-bs-target="#viewProcessStatusFlow">?</button>
 								</div>
-              `
+							`
 						} else if (requestStatus === 'For Evaluation/Processing') {
 							return `
 								<div class="mt-2 d-grid badge badge-soft-info position-relative">
@@ -120,7 +120,7 @@ loadRequestsTable = () => {
 									<span class="pb-2 text-uppercase">${requestStatus}</span>
 									<button type="button" class="btn btn-sm btn-secondary bg-gradient waves-effect waves-light rounded-circle position-absolute top-0 start-100 translate-middle" data-bs-toggle="modal" data-bs-target="#viewProcessStatusFlow">?</button>
 								</div>
-              `
+							`
 						} else if (requestStatus === 'Ready for Pickup') {
 							return `
 								<div class="mt-2 d-grid badge badge-soft-dark position-relative">
@@ -128,31 +128,7 @@ loadRequestsTable = () => {
 									<span class="pb-2 text-uppercase">${requestStatus}</span>
 									<button type="button" class="btn btn-sm btn-secondary bg-gradient waves-effect waves-light rounded-circle position-absolute top-0 start-100 translate-middle" data-bs-toggle="modal" data-bs-target="#viewProcessStatusFlow">?</button>
 								</div>
-              `
-						} else if (requestStatus === 'Released') {
-							return `
-								<div class="mt-2 d-grid fw-bolder badge badge-soft-success position-relative">
-									<i class="m-2 ri-checkbox-circle-line fs-13"></i>
-									<span class="pb-2 text-uppercase">${requestStatus}</span>
-									<button type="button" class="btn btn-sm btn-secondary bg-gradient waves-effect waves-light rounded-circle position-absolute top-0 start-100 translate-middle" data-bs-toggle="modal" data-bs-target="#viewProcessStatusFlow">?</button>
-								</div>
-              `
-						} else if (requestStatus === 'Cancelled') {
-							return `
-								<div class="mt-2 d-grid fw-bolder badge badge-soft-danger position-relative">
-									<i class="m-2 mdi mdi-cancel fs-13"></i>
-									<span class="pb-2 text-uppercase">${requestStatus}</span>
-									<button type="button" class="btn btn-sm btn-secondary bg-gradient waves-effect waves-light rounded-circle position-absolute top-0 start-100 translate-middle" data-bs-toggle="modal" data-bs-target="#viewProcessStatusFlow">?</button>
-								</div>
-              `
-						} else if (requestStatus === 'Deleted') {
-							return `
-							<div class="mt-2 d-grid fw-bolder badge badge-soft-dark position-relative">
-								<i class="m-2 mdi mdi-trash-can-outline fs-13"></i>
-								<span class="pb-2 text-uppercase">${requestStatus}</span>
-								<button type="button" class="btn btn-sm btn-secondary bg-gradient waves-effect waves-light rounded-circle position-absolute top-0 start-100 translate-middle" data-bs-toggle="modal" data-bs-target="#viewProcessStatusFlow">?</button>
-							</div>
-						`
+							`
 						}
 					},
 				},
@@ -236,39 +212,19 @@ viewRequestDetails = (request_id) => {
 
 			$('#purpose_of_request').html(data.purpose_of_request)
 
-			let pendingforClearance = `
-				<div class="accordion-header" id="headingOne">
-					<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-						<div class="d-flex align-items-center">
-							<div class="flex-shrink-0 avatar-xs">
-								<div class="avatar-title bg-warning rounded-circle">
-									<i class="mdi mdi-progress-clock"></i>
-								</div>
-							</div>
-							<div class="flex-grow-1 ms-3">
-								<h6 class="fs-15 mb-0 fw-semibold">
-									Pending for Clearance -
-									<span class="fw-normal">
-										${moment(data.pending_for_clearance).format('ddd')},
-										${moment(data.pending_for_clearance).format('DD, MMM. YYYY')}
-									</span>
-								</h6>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-					<div class="accordion-body ms-2 ps-5 pt-0">
-						<h6 class="mb-1">The Document Request is pending for approval and is being reviewed by the Officer-in-Charge of Student Records.</h6>
-						<p class="text-muted mb-0">
-							${moment(data.pending_for_clearance).format('ddd')},
-							${moment(data.pending_for_clearance).format('DD, MMM. YYYY')} -
-							${moment(data.pending_for_clearance).format('hh:mm A')}
-						</p>
-					</div>
-				</div>
+			pendingforClearanceDate = `
+				${moment(data.pending_for_clearance).format('ddd')},
+				${moment(data.pending_for_clearance).format('DD, MMM. YYYY')}
 			`
-			$('#pending_for_clearance').html(pendingforClearance)
+			$('#pending_date').html(pendingforClearanceDate)
+
+			pendingforClearanceDateTime = `
+				${moment(data.pending_for_clearance).format('ddd')},
+				${moment(data.pending_for_clearance).format('DD, MMM. YYYY')} -
+				${moment(data.pending_for_clearance).format('hh:mm A')}
+			`
+
+			$('#pending_datetime').html(pendingforClearanceDateTime)
 
 			let forClearance = ''
 			if (data.for_clearance !== null) {
@@ -285,8 +241,8 @@ viewRequestDetails = (request_id) => {
 									<h6 class="fs-15 mb-0 fw-semibold">
 										For Clearance -
 										<span class="fw-normal">
-										${moment(data.for_clearance).format('ddd')},
-										${moment(data.for_clearance).format('DD, MMM. YYYY')}
+											${moment(data.for_clearance).format('ddd')},
+											${moment(data.for_clearance).format('DD, MMM. YYYY')}
 										</span>
 									</h6>
 								</div>
@@ -295,11 +251,11 @@ viewRequestDetails = (request_id) => {
 					</div>
 					<div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
 						<div class="accordion-body ms-2 ps-5 pt-0">
-							<h6 class="mb-1">The Document Request is approved. The student must submit the requirements and pay the request fees at PUP QC.</h6>
+							<h6 class="mb-1">The Document Request is now Approved. The student must go to PUP QC to submit the requirements and pay the processing fees.</h6>
 							<p class="text-muted mb-0">
-							${moment(data.for_clearance).format('ddd')},
-							${moment(data.for_clearance).format('DD, MMM. YYYY')} -
-							${moment(data.for_clearance).format('hh:mm A')}
+								${moment(data.for_clearance).format('ddd')},
+								${moment(data.for_clearance).format('DD, MMM. YYYY')} -
+								${moment(data.for_clearance).format('hh:mm A')}
 							</p>
 						</div>
 					</div>
@@ -351,7 +307,7 @@ viewRequestDetails = (request_id) => {
 					</div>
 					<div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
 						<div class="accordion-body ms-2 ps-5 pt-0">
-							<h6 class="mb-1">The document request is now being processed by the OIC and signed by the signatories.</h6>
+							<h6 class="mb-1">The Document/s are Paid and the Request is now being Processed for signature, documentary stamp and school dry seal.</h6>
 							<p class="text-muted mb-0">
 								${moment(data.for_evaluation).format('ddd')},
 								${moment(data.for_evaluation).format('DD, MMM. YYYY')} -
@@ -405,7 +361,7 @@ viewRequestDetails = (request_id) => {
 					</div>
 					<div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
 						<div class="accordion-body ms-2 ps-5 pt-0">
-							<h6 class="mb-1">The requested documents is now ready for pickup. The student must claim the request at PUP QC.</h6>
+							<h6 class="mb-1">The Requested Document/s can now be claimed at PUP QC. The student must bring the claim stub and other requirements, if necessary.</h6>
 							<p class="text-muted mb-0">
 								${moment(data.ready_for_pickup).format('ddd')},
 								${moment(data.ready_for_pickup).format('DD, MMM. YYYY')} -
@@ -434,27 +390,6 @@ viewRequestDetails = (request_id) => {
 			}
 			$('#ready_for_pickup').html(readyforPickup)
 
-			let released = ''
-			if (data.released === null) {
-				released += `
-					<div class="accordion-header" id="headingFive">
-						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false">
-							<div class="d-flex align-items-center">
-								<div class="flex-shrink-0 avatar-xs">
-									<div class="avatar-title bg-light text-success rounded-circle">
-										<i class="ri-checkbox-circle-fill"></i>
-									</div>
-								</div>
-								<div class="flex-grow-1 ms-3">
-									<h6 class="fs-14 mb-0 fw-semibold">Released</h6>
-								</div>
-							</div>
-						</a>
-					</div>
-				`
-			}
-			$('#released').html(released)
-
 			if (data.status_of_request === 'For Clearance') {
 				remarks = `
 					<div class="h6 fs-15 text-primary">Remarks</div>
@@ -462,46 +397,41 @@ viewRequestDetails = (request_id) => {
 						<div class="list-group-item list-group-item-action">
 							<div class="d-flex mb-2 align-items-center">
 								<div class="flex-shrink-0">
-									<img src="${baseURL}public/images/officials/img-25.png" alt="" class="avatar-sm rounded-circle" />
+									<img src="${baseURL}public/images/officials/img-25.png" class="avatar-sm rounded-circle" />
 								</div>
 								<div class="flex-grow-1 ms-3">
 									<h5 class="list-title fs-15 mb-1">Hernando Liberato</h5>
-									<p class="list-text mb-0 fs-12">OIC, Student Records</p>
+									<p class="list-text mb-0 fs-12">Officer-in-Charge, Student Records</p>
 								</div>
 							</div>
-							<p>The Document Request is now approved. You must view the requirements and download the attachments by clicking the
-								<button type="button" class="btn btn-sm btn-success text-center waves-effect waves-light"><i class="mdi mdi-file-document-multiple label-icon align-middle me-2"></i> Requirements</button>
-							button. Please be reminded that you can only process the requirements at PUP QC from Monday to Friday, 8AM to 5PM. Go straight to the Rothlener Building, Records Section where the requirements passed will be validated and the corresponding request fee will be paid. If no requirements has been passed, the request will be automatically cancelled after 7 days.
+							<p>
+								The Document Request is now approved. You must view the requirements needed for each of the document/s requested and download the attachments by clicking the
+									<button type="button" class="btn btn-sm btn-success text-center waves-effect waves-light"><i class="mdi mdi-file-document-multiple label-icon align-middle me-2"></i> Requirements</button>
+								button. You must go to PUP QC and bring the downloaded attachments and requirements as listed below. 
 							</p>
-							<p>Please bring the following requirements:</p>
-							<ul class="list-unstyled mb-0">
-					`
+							<ul class="list-unstyled ms-3 mb-0">
+				`
 
 				getRequirements(data).forEach((requirement) => {
 					remarks += `
-						<li class="mb-2">
-							<i class="mdi mdi-check-decagram text-info me-1"></i>
-							${requirement}
-						</li>
-					`
+								<li class="mb-2">
+									<i class="mdi mdi-check-decagram text-info me-1"></i>
+									${requirement}
+								</li>
+							`
 				})
 
 				remarks += `
-						<li class="mb-2">
-							<i class="mdi mdi-check-decagram text-info me-1"></i>
-							Request Form
-						</li>
-					</ul>
-				`
-
-				if (data.remarks !== null) {
-					remarks += `
-						<p class="mt-4 fw-medium">${data.remarks}</p>
-					`
-				}
-
-				remarks += `
-						</div>
+								<li class="mb-2">
+									<i class="mdi mdi-check-decagram text-info me-1"></i>
+									Request Form
+								</li>
+							</ul>
+							<p class="fw-medium">${data.remarks}</p>
+							<p class="d-flex fw-medium align-items-center">
+								<i class="ri-error-warning-fill me-2 fs-4 text-warning"></i>
+								<span class="text-danger">Reminder: If the requirements for this request are not submitted at PUP QC after 90 days, the request will be automatically cancelled.</span>
+							</p>
 						</div>
 					</div>
 				`
@@ -517,39 +447,15 @@ viewRequestDetails = (request_id) => {
 								</div>
 								<div class="flex-grow-1 ms-3">
 									<h5 class="list-title fs-15 mb-1">Hernando Liberato</h5>
-									<p class="list-text mb-0 fs-12">OIC, Student Records</p>
+									<p class="list-text mb-0 fs-12">Officer-in-Charge, Student Records</p>
 								</div>
 							</div>
-							<p>Good Day! Please be informed that your requested credential/s is/are scheduled for pick-up and can now be claimed at the Records Section, Rothlener Building, PUP Quezon City. Please be guided that you can only claim the documents at PUP QC during Monday to Friday, 8AM to 5PM. Please present your Claim Stub upon claiming the documents. Thank you.</p>
-							<p>Reminder: If the  requested are not claimed after 90 days, the request will be automatically cancelled.</p>
-				`
-
-				if (data.remarks !== null) {
-					remarks += `
-						<p class="mt-4 fw-medium">${data.remarks}</p>
-					`
-				}
-
-				remarks += `
-						</div>
-					</div>
-				`
-				$('#remarks').html(remarks)
-			} else if (data.remarks !== null) {
-				remarks = `
-					<div class="h6 fs-15 text-primary">Remarks</div>
-					<div class="list-group">
-						<div class="list-group-item list-group-item-action">
-							<div class="d-flex mb-2 align-items-center">
-								<div class="flex-shrink-0">
-									<img src="${baseURL}public/images/officials/img-25.png" alt="" class="avatar-sm rounded-circle" />
-								</div>
-								<div class="flex-grow-1 ms-3">
-									<h5 class="list-title fs-15 mb-1">Hernando Liberato</h5>
-									<p class="list-text mb-0 fs-12">Administrative Staff</p>
-								</div>
-							</div>
-							<p>${data.remarks}</p>
+							<p>Good Day! Please be informed that your requested credential/s is/are scheduled for pick-up and can now be claimed at the Records Section, Rothlener Building in PUP Quezon City.</p>
+							<p class="fw-medium">${data.remarks}</p>
+							<p class="d-flex fw-medium align-items-center">
+								<i class="ri-error-warning-fill me-2 fs-4 text-warning"></i>
+								<span class="text-danger">Reminder: If the requested documents are not claimed at PUP QC after 90 days, the request will be automatically cancelled.</span>
+							</p>
 						</div>
 					</div>
 				`
@@ -604,10 +510,10 @@ cancelRequest = (request_id) => {
 	Swal.fire({
 		html:
 			'<div class="mt-3">' +
-			'<lord-icon src="https://cdn.lordicon.com/puvaffet.json" trigger="loop" colors="primary:#f7b84b,secondary:#f06548" style="width:100px;height:100px"></lord-icon>' +
+			'<lord-icon src="https://cdn.lordicon.com/nduddlov.json" trigger="loop" colors="outline:#f06548,primary:#ffffff,secondary:#f06548" style="width:100px;height:100px"></lord-icon>' +
 			'<div class="mt-4 pt-2 fs-15 mx-5">' +
-			'<h4>Are you sure?</h4>' +
-			'<p class="text-muted mx-4 mb-0">Do you want to cancel this request?</p>' +
+			'<h4 class="mb-3 fw-semibold">Cancel this Request?</h4>' +
+			'<p class="text-muted mx-4 mb-0">Are you sure you want to cancel this request?</p>' +
 			'</div>' +
 			'</div>',
 		showCancelButton: true,
