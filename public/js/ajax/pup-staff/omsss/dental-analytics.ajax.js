@@ -41,6 +41,18 @@ loadDentalAnalyticsTable = () => {
 				// 	},
 				// },
 
+				// Student
+				{
+					data: null,
+					render: (data) => {
+						if (data.health_appointment_assigned_to_user) {
+							const studentName =
+								data.health_appointment_assigned_to_user.user_profiles[0].full_name
+							return `${studentName}`
+						}
+					},
+				},
+
 				// Status
 				{
 					data: null,
@@ -50,20 +62,6 @@ loadDentalAnalyticsTable = () => {
 							: `<span class="badge rounded-pill bg-success">Approved</span>`
 					},
 				},
-
-				// // Attending Consultant
-				// {
-				// 	data: null,
-				// 	render: (data) => {
-				// 		if (data.health_appointment_assigned_to_physician) {
-				// 			const healthPhysician =
-				// 				data.health_appointment_assigned_to_physician.user_profiles[0].full_name
-				// 		}
-				// 		const healthPhysician = 'N/A'
-
-				// 		return `${healthPhysician}`
-				// 	},
-				// },
 
 				// Schedule
 				{

@@ -106,7 +106,7 @@
           <label class='form-label'>Status</label>
           <span class="text-danger">*</span>
         <select class="form-select mb-3" aria-label="Change Status">
-          <option selected>Status</option>
+          <option selected></option>
           <option value="1">Pending</option>
           <option value="2">Approved</option>
           <option value="3">Declined</option>
