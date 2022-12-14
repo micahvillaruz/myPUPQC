@@ -179,7 +179,7 @@ viewDentalDetails = (health_appointment_id) => {
 			const userProfileData = null
 
 			$('#view_case_details').html(userData.case_control_number)
-			$('#view_consultaion_type').html(userData.consultation_type)
+			$('#view_consultation_type').html(userData.consultation_type)
 			$('#view_consultation_reason').html(userData.consultation_reason)
 			$('#view_health_physcian').html(userProfileData != null ? userProfileData.full_name : 'N/A')
 			$('#view_symptoms_date').html(moment(userData.symptoms_date).utc().format('LL'))

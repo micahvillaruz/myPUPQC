@@ -1,5 +1,5 @@
 <!-- View Dental modal -->
-<div class="modal fade" id="viewDentalReqModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+<div class="modal fade" id="viewDentalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
@@ -82,11 +82,12 @@
 </div>
 
 <!-- Dental Request Status modal -->
-<div id="updateDentalRequestModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
+<div id="updateDentalAppointmentStatusModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content border-0 overflow-hidden">
       <div class="modal-content">
-      <form>
+      <form id="updateDentalAppointmentStatusForm" class="needs-validation" novalidate>
+      <input type="hidden" id="edit_health_appointment_id" name="edit_health_appointment_id">
       <div class="modal-header p-3">
         <h4 class="card-title mb-0">Appoinment Status</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -94,17 +95,15 @@
         <div class="modal-body">
           <label class='form-label'>Status</label>
           <span class="text-danger">*</span>
-        <select class="form-select mb-3" aria-label="Change Status">
-          <option selected>Status</option>
-          <option value="1">Pending</option>
-          <option value="2">Approved</option>
-          <option value="3">Declined</option>
+        <select class="form-select mb-3" id="consultation_status" name="consultation_status" aria-label="Change Status">
+          <option selected></option>
+          <option value="Approved">Approved</option>
+          <option value="Cancelled by Staff">Cancelled by Staff</option>
         </select>
           <label class='form-label'>Remarks</label>
-          <input type="text" class="form-control" id="remarks" name="Remarks" placeholder="Remarks"><br>
+          <input type="text" class="form-control" id="remarks" name="remarks" placeholder="remarks"><br>
           <div class="text-center d-grid">
-            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Confirm">Confirm</button>
-         </div>
+            <button type="submit" class="btn btn-primary" aria-label="Confirm">Confirm</button>
         </div>
       </form>
       </div>

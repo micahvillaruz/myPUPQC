@@ -18,7 +18,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Consultation Type</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_consultaion_type"></div>
+                  <div class="d-flex fs-13 fw-medium" id="view_consultation_type"></div>
                 </div>
               </div>
             </li>

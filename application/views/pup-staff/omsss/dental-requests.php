@@ -8,7 +8,7 @@
         </div>
       </div>
       <div class="card-body">
-        <table id="medical-request-datatable" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
+        <table id="dental-request-datatable" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
           <thead>
               <tr>
                 <th>Appointment Code</th>
