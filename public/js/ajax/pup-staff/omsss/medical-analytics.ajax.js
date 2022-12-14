@@ -1,14 +1,11 @@
 $(function () {
-	loadMedicalTable()
-
-	$('#NewMedicalCaseForm').on('submit', function (e) {
-		e.preventDefault() // prevent page refresh
-		addNewMedicalCase()
-	})
+	console.log('hello')
+	loadMedicalAnalyticsTable()
 })
+
 // Load datatables
-loadMedicalTable = () => {
-	const dt = $('#medical-datatable')
+loadMedicalAnalyticsTable = () => {
+	const dt = $('#medical-analytics-datatable')
 
 	$.ajaxSetup({
 		headers: {
@@ -22,12 +19,12 @@ loadMedicalTable = () => {
 		dt.DataTable({
 			bDestroy: true,
 			ajax: {
-				url: apiURL + 'omsss/student/view_medical_appointment',
+				url: apiURL + 'omsss/pup_staff/view_appointment_analytics/Medical',
 				type: 'GET',
 				// ContentType: 'application/x-www-form-urlencoded',
 			},
 			columns: [
-				// Appointment Code/Case Control No.
+				// Case Control No.
 				{
 					data: null,
 					render: (data) => {
@@ -36,12 +33,24 @@ loadMedicalTable = () => {
 					},
 				},
 
-				// Consultation Type
+				// // Consultation Type
+				// {
+				// 	data: null,
+				// 	render: (data) => {
+				// 		const consType = data.consultation_type
+				// 		return `${consType}`
+				// 	},
+				// },
+
+				// Student
 				{
 					data: null,
 					render: (data) => {
-						const consType = data.consultation_type
-						return `${consType}`
+						if (data.health_appointment_assigned_to_user) {
+							const studentName =
+								data.health_appointment_assigned_to_user.user_profiles[0].full_name
+							return `${studentName}`
+						}
 					},
 				},
 
@@ -55,20 +64,7 @@ loadMedicalTable = () => {
 					},
 				},
 
-				// Attending Consultant
-				{
-					data: null,
-					render: (data) => {
-						if (data.health_appointment_assigned_to_physician) {
-							const healthPhysician =
-								data.health_appointment_assigned_to_physician.user_profiles[0].full_name
-						}
-						const healthPhysician = 'N/A'
-						return `${healthPhysician}`
-					},
-				},
-
-				// Appointment Date
+				// Schedule
 				{
 					data: null,
 					render: (data) => {
@@ -84,9 +80,8 @@ loadMedicalTable = () => {
 					render: (data) => {
 						return `
         <div class="dropdown d-inline-block">
-        <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewMedicalDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill fs-5"></i></button>
-				<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="cancelMedical('${data.health_appointment_id}')"><i class="bx bxs-user-x fs-4"></i></button>
-				</div`
+        <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewMedicalDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewGuidanceModal"><i class="ri-eye-fill fs-5"></i></button>
+				</div>`
 					},
 				},
 			],
@@ -95,60 +90,63 @@ loadMedicalTable = () => {
 	}
 }
 
-addNewMedicalCase = () => {
-	// New Medical Case
-	if ($('#NewMedicalCaseForm')[0].checkValidity()) {
-		// no validation error
-		const form = new FormData($('#NewMedicalCaseForm')[0])
-		for (var pair of form.entries()) {
-			console.log(pair[0] + ', ' + pair[1])
-		}
-		data = {
-			appointment_type: 'Medical',
-			consultation_type: form.get('consultation_type'),
-			consultation_reason: form.get('consultation_reason'),
-			symptoms_date: form.get('symptoms_date'),
-			consultation_date: form.get('consultation_date'),
-		}
-		console.log(data)
-		$.ajax({
-			url: apiURL + 'omsss/student/add_appointment',
-			type: 'POST',
-			data: data,
-			dataType: 'json',
-			headers: AJAX_HEADERS,
-			success: (result) => {
-				if (result) {
-					Swal.fire({
-						html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully added a Medical Case!</p></div></div>',
-						showCancelButton: !0,
-						showConfirmButton: !1,
-						cancelButtonClass: 'btn btn-success w-xs mb-1',
-						cancelButtonText: 'Ok',
-						buttonsStyling: !1,
-						showCloseButton: !0,
-					}).then(function () {
-						$('#addMedicalModal').modal('hide')
-						$('form#NewMedicalCaseForm')[0].reset()
+// addNewGuidanceCase = () => {
+// 	// New Dental Case
+// 	if ($('#NewGuidanceCaseForm')[0].checkValidity()) {
+// 		// no validation error
+// 		const form = new FormData($('#NewGuidanceCaseForm')[0])
+// 		data = {
+// 			appointment_type: 'Guidance',
+// 			consultation_type: form.get('consultation_type'),
+// 			consultation_reason: form.get('consultation_reason'),
+// 			consultation_date: form.get('consultation_date'),
+// 		}
 
-						// Reload Medical Consultation Datatable
-						loadMedicalTable()
-					})
-				}
-			},
-		}).fail(() => {
-			Swal.fire({
-				html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">There was an error while adding a Medical Case. Please try again.</p></div></div>',
-				showCancelButton: !0,
-				showConfirmButton: !1,
-				cancelButtonClass: 'btn btn-danger w-xs mb-1',
-				cancelButtonText: 'Dismiss',
-				buttonsStyling: !1,
-				showCloseButton: !0,
-			})
-		})
-	}
-}
+// 		$.ajax({
+// 			url: apiURL + 'omsss/student/add_appointment',
+// 			type: 'POST',
+// 			data: data,
+// 			dataType: 'json',
+// 			headers: AJAX_HEADERS,
+// 			success: (result) => {
+// 				if (result) {
+// 					Swal.fire({
+// 						html:
+// 							'<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !/h4><p class="text-muted mx-4 mb-0">You have successfully added a Guidance Case!</p>' +
+// 							'<br><span><h5> Click Ok Button to proceed </h5></span>' +
+// 							'</div>' +
+// 							'</div>',
+// 						showCancelButton: !0,
+// 						showConfirmButton: !1,
+// 						cancelButtonClass: 'btn btn-danger w-xs mb-1',
+// 						cancelButtonText: 'Ok',
+// 						buttonsStyling: !1,
+// 						showCloseButton: !0,
+// 					}).then(function () {
+// 						$('#addGuidanceModal').modal('hide')
+// 						$('form#NewGuidanceCaseForm')[0].reset()
+
+// 						// Reload Guidance Consultation Datatable
+// 						window.location.reload()
+// 					})
+// 				}
+// 			},
+// 		}).fail(() => {
+// 			Swal.fire({
+// 				html:
+// 					'<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">There was an error while adding a Guidance Case. Please try again.</p>' +
+// 					'</div>' +
+// 					'</div>',
+// 				showCancelButton: !0,
+// 				showConfirmButton: !1,
+// 				cancelButtonClass: 'btn btn-danger w-xs mb-1',
+// 				cancelButtonText: 'Dismiss',
+// 				buttonsStyling: !1,
+// 				showCloseButton: !0,
+// 			})
+// 		})
+// 	}
+// }
 
 // View Medical Consultation details
 viewMedicalDetails = (health_appointment_id) => {
@@ -232,7 +230,7 @@ cancelMedical = (health_appointment_id) => {
 								'</div>',
 							showCancelButton: !0,
 							showConfirmButton: !1,
-							cancelButtonClass: 'btn btn-danger w-xs mb-1',
+							cancelButtonClass: 'btn btn-success w-xs mb-1',
 							cancelButtonText: 'Ok',
 							buttonsStyling: !1,
 							showCloseButton: !0,

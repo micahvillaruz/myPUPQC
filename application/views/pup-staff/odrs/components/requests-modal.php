@@ -441,6 +441,7 @@
           <h4 class="mb-3 fw-semibold">Approve this Request?</h4>
           <p class="text-muted mb-4">If yes, indicate on the Remarks when you are available for the processing of this request at PUP QC. If not, click the Dismiss button.</p>
           <form id="approveRequestForm" class="needs-validation" novalidate>
+            <input type="hidden" id="approve_request_id">
             <div class="mt-4">
               <label for="remarks" class="h5 form-label">Remarks <span class="text-danger">*</span></label>
               <textarea class="form-control mt-2" id="remarks" name="remarks" rows="5" placeholder="Enter the days and the time you are available for receiving of the requirements & accommodation of this request at PUP QC. You can also indicate when you are unavailable and when the student can file the request at the school." required></textarea>
@@ -448,11 +449,11 @@
                 Please indicate your availability at the remarks above.
               </div>
             </div>
-            <div class="mt-4 hstack gap-2 justify-content-center">
-              <button class="btn btn-success fw-medium">Yes, Approve It!</button>
-              <button class="btn btn-light fw-medium" data-bs-dismiss="modal">Dismiss</button>
+            <div class="mt-4 justify-content-center">
+              <button type="submit" class="w-100 btn btn-success bg-gradient fw-medium waves-effect waves-light">Yes, Approve It!</button>
             </div>
           </form>
+          <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
         </div>
       </div>
     </div>
@@ -470,6 +471,7 @@
           <h4 class="mb-3 fw-semibold">Cancel this Request?</h4>
           <p class="text-muted mb-4">If yes, indicate on the Remarks the reason why you are cancelling this request. If not, click the Dismiss button.</p>
           <form id="cancelRequestForm" class="needs-validation" novalidate>
+            <input type="hidden" id="cancel_request_id">
             <div class="mt-4">
               <label for="remarks" class="h5 form-label">Remarks <span class="text-danger">*</span></label>
               <textarea class="form-control mt-2" id="remarks" name="remarks" rows="5" placeholder="Enter the reason why you are cancelling the request and the instructions, if any, that the student must comply before requesting the document/s again." required></textarea>
@@ -477,11 +479,11 @@
                 Please indicate your reason for cancelling.
               </div>
             </div>
-            <div class="mt-4 hstack gap-2 justify-content-center">
-              <button class="btn btn-danger fw-medium">Yes, Cancel It!</button>
-              <button class="btn btn-light fw-medium" data-bs-dismiss="modal">Dismiss</button>
+            <div class="mt-4 justify-content-center">
+              <button type="submit" class="w-100 btn btn-danger bg-gradient fw-medium waves-effect waves-light">Yes, Cancel It!</button>
             </div>
           </form>
+          <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
         </div>
       </div>
     </div>
@@ -506,6 +508,7 @@
             <span>Please make sure that the student has already <span class="fw-medium">PAID</span> the processing fee and presented the <span class="fw-medium">OFFICIAL RECEIPT</span> before you change the status of this request.</span>
           </div>
           <form id="forProcessingRequestForm" class="needs-validation" novalidate>
+            <input type="hidden" id="process_request_id">
             <div class="mt-4">
               <label for="or_no" class="h5 form-label">O.R. Number <span class="text-danger">*</span></label>
               <input type="number" class="form-control" id="or_no" name="or_no" placeholder="Official Receipt No." required>
@@ -513,11 +516,11 @@
                 Please enter the O.R. Number for this request.
               </div>
             </div>
-            <div class="mt-4 hstack gap-2 justify-content-center">
-              <button class="btn btn-info fw-medium">Yes, It is!</button>
-              <button class="btn btn-light fw-medium" data-bs-dismiss="modal">Dismiss</button>
+            <div class="mt-4 justify-content-center">
+              <button type="submit" class="w-100 btn btn-info bg-gradient fw-medium waves-effect waves-light">Yes, It is!</button>
             </div>
           </form>
+          <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
         </div>
       </div>
     </div>
@@ -542,6 +545,7 @@
             <span>Please make sure that the document/s included in this request has already been <span class="fw-medium">SIGNED</span> by the intended signatories with <span class="fw-medium">SCHOOL DRY SEAL</span> and <span class="fw-medium">DOCUMENTARY STAMP</span> before you change the status of this request.</span>
           </div>
           <form id="readyForPickupRequestForm" class="needs-validation" novalidate>
+            <input type="hidden" id="pickup_request_id">
             <div class="mt-4">
               <label for="remarks" class="h5 form-label">Remarks <span class="text-danger">*</span></label>
               <textarea class="form-control" id="remarks" name="remarks" rows="5" placeholder="Enter the days and the time you are available to accomodate the claiming of this request at PUP QC. You can also indicate here if there are requirements that the student must bring upon receiving of the requested documents." required></textarea>
@@ -549,11 +553,11 @@
                 Please indicate your availability at the remarks above.
               </div>
             </div>
-            <div class="mt-4 hstack gap-2 justify-content-center">
-              <button class="btn btn-dark fw-medium">Yes, It is!</button>
-              <button class="btn btn-light fw-medium" data-bs-dismiss="modal">Dismiss</button>
+            <div class="mt-4 justify-content-center">
+              <button type="submit" class="w-100 btn btn-dark bg-gradient fw-medium waves-effect waves-light">Yes, It is!</button>
             </div>
           </form>
+          <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
         </div>
       </div>
     </div>
@@ -578,6 +582,7 @@
             <span>Please make sure that the student has presented the <span class="fw-medium">CLAIM STUB</span> upon claiming of the request and has received all the <span class="fw-medium">REQUESTED DOCUMENT/S</span> before you set its status to Released.</span>
           </div>
           <form id="releasedRequestForm" class="needs-validation" novalidate>
+            <input type="hidden" id="release_request_id">
             <div class="form-check form-check-success mb-3">
               <input class="form-check-input" type="checkbox" id="validateRelease" required>
               <label class="form-check-label" for="validateRelease">
@@ -587,11 +592,11 @@
                 You must first agree that you released ALL the requested documents.
               </div>
             </div>
-            <div class="mt-4 hstack gap-2 justify-content-center">
-              <button class="btn btn-success fw-medium">Yes, It is!</button>
-              <button class="btn btn-light fw-medium" data-bs-dismiss="modal">Dismiss</button>
+            <div class="mt-4 justify-content-center">
+              <button type="submit" class="w-100 btn btn-success bg-gradient fw-medium waves-effect waves-light">Yes, It is!</button>
             </div>
           </form>
+          <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
         </div>
       </div>
     </div>

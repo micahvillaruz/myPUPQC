@@ -66,6 +66,13 @@
               </a>
             </li>
 
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/odrs/history">
+                <i class="mdi mdi-history"></i>
+                <span>History</span>
+              </a>
+            </li>
+
             <li class="menu-title">
               <i class="ri-more-fill"></i>
               <span>OMSSS</span>
@@ -79,9 +86,9 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>admin/omsss/all-prescription">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/omsss/appointment-history">
                 <i class="mdi mdi-pill"></i>
-                <span>All Prescriptions</span>
+                <span>Appointment History</span>
               </a>
             </li>
 

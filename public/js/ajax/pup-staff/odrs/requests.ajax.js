@@ -9,27 +9,32 @@ $(function () {
 
 	$('#approveRequestForm').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
-		approveRequest()
+		const requestID = $('#approve_request_id').val()
+		approveRequest(requestID)
 	})
 
 	$('#cancelRequestForm').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
-		cancelRequest()
+		const requestID = $('#cancel_request_id').val()
+		cancelRequest(requestID)
 	})
 
 	$('#forProcessingRequestForm').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
-		forProcessingRequest()
+		const requestID = $('#process_request_id').val()
+		forProcessingRequest(requestID)
 	})
 
 	$('#readyForPickupRequestForm').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
-		readyforPickupRequest()
+		const requestID = $('#pickup_request_id').val()
+		readyforPickupRequest(requestID)
 	})
 
 	$('#releasedRequestForm').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
-		releasedRequest()
+		const requestID = $('#release_request_id').val()
+		releasedRequest(requestID)
 	})
 })
 
@@ -107,6 +112,7 @@ loadPendingRequests = () => {
 				// Details
 				{
 					data: null,
+					width: '40%',
 					render: (data) => {
 						const course = data.user_assigned_to_request.education_profile.course_when_admitted
 						const purpose = data.purpose_of_request
@@ -156,10 +162,10 @@ loadPendingRequests = () => {
 					render: (data) => {
 						return `
 							<div class="dropdown d-inline-block">
-								<button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#approveRequestModal">
+								<button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#approveRequestModal" onclick="addId('${data.request_id}', 'approve_request')">
 									<i class="ri-check-fill fs-5 fw-bold"></i>
 								</button>
-								<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#cancelRequestModal">
+								<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#cancelRequestModal" onclick="addId('${data.request_id}', 'cancel_request')">
 									<i class="ri-close-fill fs-5 fw-bold"></i>
 								</button>
 							</div>
@@ -341,19 +347,19 @@ loadApprovedRequests = () => {
 
 						if (requestStatus === 'For Clearance') {
 							return `
-								<button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#forProcessingModal">
+								<button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#forProcessingModal" onclick="addId('${data.request_id}', 'process_request')">
 									<i class="mdi mdi-file-sign fs-5"></i>
 								</button>
 							`
 						} else if (requestStatus === 'For Evaluation/Processing') {
 							return `
-								<button type="button" class="btn btn-dark btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#readyforPickupModal">
+								<button type="button" class="btn btn-dark btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#readyforPickupModal" onclick="addId('${data.request_id}', 'pickup_request')">
 									<i class="ri-user-received-2-line fs-5"></i>
 								</button>
 							`
 						} else if (requestStatus === 'Ready for Pickup') {
 							return `
-								<button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#releasedModal">
+								<button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#releasedModal" onclick="addId('${data.request_id}', 'release_request')">
 									<i class="ri-checkbox-circle-line fs-5"></i>
 								</button>
 							`
@@ -730,30 +736,49 @@ getRequirements = (data) => {
 }
 
 // Approve Request
-approveRequest = () => {
-	if (!$('#approveRequestForm')[0].checkValidity()) return
+approveRequest = (request_id) => {
+	if ($('#approveRequestForm')[0].checkValidity()) {
+		// no validation error
+		const form = new FormData($('#approveRequestForm')[0])
 
-	Swal.fire({
-		html:
-			'<div class="mt-3">' +
-			'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
-			'<div class="mt-4 pt-2 fs-15">' +
-			'<h4>Well done!</h4>' +
-			'<p class="text-muted mx-4 mb-0">You have successfully approved this request!</p>' +
-			'</div>' +
-			'</div>',
-		showCancelButton: !0,
-		showConfirmButton: !1,
-		cancelButtonClass: 'btn btn-success w-xs mb-1',
-		cancelButtonText: 'Ok',
-		buttonsStyling: !1,
-		showCloseButton: !0,
-	})
-		.then(function () {
-			$('#approveRequestModal').modal('hide')
-			$('form#approveRequestForm')[0].reset()
-		})
-		.fail(() => {
+		data = {
+			remarks: form.get('remarks'),
+		}
+
+		$.ajax({
+			url: `${apiURL}odrs/pup_staff/update_request_status/For Clearance/${request_id}`,
+			type: 'PUT',
+			data: data,
+			dataType: 'json',
+			headers: AJAX_HEADERS,
+			success: (result) => {
+				if (result) {
+					Swal.fire({
+						html:
+							'<div class="mt-3">' +
+							'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
+							'<div class="mt-4 pt-2 fs-15">' +
+							'<h4>Well done!</h4>' +
+							'<p class="text-muted mx-4 mb-0">You have successfully approved this request!</p>' +
+							'</div>' +
+							'</div>',
+						showCancelButton: !0,
+						showConfirmButton: !1,
+						cancelButtonClass: 'btn btn-success w-xs mb-1',
+						cancelButtonText: 'Ok',
+						buttonsStyling: !1,
+						showCloseButton: !0,
+					}).then(function () {
+						$('#approveRequestModal').modal('hide')
+						$('form#approveRequestForm')[0].reset()
+
+						// Reload Pending and Approved Requests Datatable
+						loadPendingRequests()
+						loadApprovedRequests()
+					})
+				}
+			},
+		}).fail(() => {
 			Swal.fire({
 				html:
 					'<div class="mt-3">' +
@@ -771,33 +796,53 @@ approveRequest = () => {
 				showCloseButton: !0,
 			})
 		})
+	}
 }
 
 // Cancel Request
-cancelRequest = () => {
-	if (!$('#cancelRequestForm')[0].checkValidity()) return
+cancelRequest = (request_id) => {
+	if ($('#cancelRequestForm')[0].checkValidity()) {
+		// no validation error
+		const form = new FormData($('#cancelRequestForm')[0])
 
-	Swal.fire({
-		html:
-			'<div class="mt-3">' +
-			'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
-			'<div class="mt-4 pt-2 fs-15">' +
-			'<h4>Well done!</h4>' +
-			'<p class="text-muted mx-4 mb-0">You have successfully cancelled this request!</p>' +
-			'</div>' +
-			'</div>',
-		showCancelButton: !0,
-		showConfirmButton: !1,
-		cancelButtonClass: 'btn btn-success w-xs mb-1',
-		cancelButtonText: 'Ok',
-		buttonsStyling: !1,
-		showCloseButton: !0,
-	})
-		.then(function () {
-			$('#cancelRequestModal').modal('hide')
-			$('form#cancelRequestForm')[0].reset()
-		})
-		.fail(() => {
+		data = {
+			remarks: form.get('remarks'),
+		}
+
+		$.ajax({
+			url: `${apiURL}odrs/pup_staff/update_request_status/Cancelled by Staff/${request_id}`,
+			type: 'PUT',
+			data: data,
+			dataType: 'json',
+			headers: AJAX_HEADERS,
+			success: (result) => {
+				if (result) {
+					Swal.fire({
+						html:
+							'<div class="mt-3">' +
+							'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
+							'<div class="mt-4 pt-2 fs-15">' +
+							'<h4>Well done!</h4>' +
+							'<p class="text-muted mx-4 mb-0">You have successfully cancelled this request!</p>' +
+							'</div>' +
+							'</div>',
+						showCancelButton: !0,
+						showConfirmButton: !1,
+						cancelButtonClass: 'btn btn-success w-xs mb-1',
+						cancelButtonText: 'Ok',
+						buttonsStyling: !1,
+						showCloseButton: !0,
+					}).then(function () {
+						$('#cancelRequestModal').modal('hide')
+						$('form#cancelRequestForm')[0].reset()
+
+						// Reload Pending and Approved Requests Datatable
+						loadPendingRequests()
+						loadApprovedRequests()
+					})
+				}
+			},
+		}).fail(() => {
 			Swal.fire({
 				html:
 					'<div class="mt-3">' +
@@ -815,33 +860,54 @@ cancelRequest = () => {
 				showCloseButton: !0,
 			})
 		})
+	}
 }
 
-// for Evaluation / Processing
-forProcessingRequest = () => {
-	if (!$('#forProcessingRequestForm')[0].checkValidity()) return
+// Change Status to For Evaluation / Processing
+forProcessingRequest = (request_id) => {
+	if ($('#forProcessingRequestForm')[0].checkValidity()) {
+		// no validation error
+		const form = new FormData($('#forProcessingRequestForm')[0])
 
-	Swal.fire({
-		html:
-			'<div class="mt-3">' +
-			'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
-			'<div class="mt-4 pt-2 fs-15">' +
-			'<h4>Well done!</h4>' +
-			'<p class="text-muted mx-4 mb-0">You have successfully set the status of this request to For Evaluation/Processing!</p>' +
-			'</div>' +
-			'</div>',
-		showCancelButton: !0,
-		showConfirmButton: !1,
-		cancelButtonClass: 'btn btn-success w-xs mb-1',
-		cancelButtonText: 'Ok',
-		buttonsStyling: !1,
-		showCloseButton: !0,
-	})
-		.then(function () {
-			$('#forProcessingModal').modal('hide')
-			$('form#forProcessingRequestForm')[0].reset()
-		})
-		.fail(() => {
+		data = {
+			or_no: form.get('or_no'),
+			remarks: null,
+		}
+
+		$.ajax({
+			url: `${apiURL}odrs/pup_staff/update_request_status/For Evaluation/${request_id}`,
+			type: 'PUT',
+			data: data,
+			dataType: 'json',
+			headers: AJAX_HEADERS,
+			success: (result) => {
+				if (result) {
+					Swal.fire({
+						html:
+							'<div class="mt-3">' +
+							'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
+							'<div class="mt-4 pt-2 fs-15">' +
+							'<h4>Well done!</h4>' +
+							'<p class="text-muted mx-4 mb-0">You have successfully set the status of this request to For Evaluation/Processing!</p>' +
+							'</div>' +
+							'</div>',
+						showCancelButton: !0,
+						showConfirmButton: !1,
+						cancelButtonClass: 'btn btn-success w-xs mb-1',
+						cancelButtonText: 'Ok',
+						buttonsStyling: !1,
+						showCloseButton: !0,
+					}).then(function () {
+						$('#forProcessingModal').modal('hide')
+						$('form#forProcessingRequestForm')[0].reset()
+
+						// Reload Pending and Approved Requests Datatable
+						loadPendingRequests()
+						loadApprovedRequests()
+					})
+				}
+			},
+		}).fail(() => {
 			Swal.fire({
 				html:
 					'<div class="mt-3">' +
@@ -859,33 +925,53 @@ forProcessingRequest = () => {
 				showCloseButton: !0,
 			})
 		})
+	}
 }
 
-// Ready for Pickup
-readyforPickupRequest = () => {
-	if (!$('#readyForPickupRequestForm')[0].checkValidity()) return
+// Change Status to Ready for Pickup
+readyforPickupRequest = (request_id) => {
+	if ($('#readyForPickupRequestForm')[0].checkValidity()) {
+		// no validation error
+		const form = new FormData($('#readyForPickupRequestForm')[0])
 
-	Swal.fire({
-		html:
-			'<div class="mt-3">' +
-			'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
-			'<div class="mt-4 pt-2 fs-15">' +
-			'<h4>Well done!</h4>' +
-			'<p class="text-muted mx-4 mb-0">You have successfully set the status of this request to Ready for Pickup!</p>' +
-			'</div>' +
-			'</div>',
-		showCancelButton: !0,
-		showConfirmButton: !1,
-		cancelButtonClass: 'btn btn-success w-xs mb-1',
-		cancelButtonText: 'Ok',
-		buttonsStyling: !1,
-		showCloseButton: !0,
-	})
-		.then(function () {
-			$('#readyforPickupModal').modal('hide')
-			$('form#readyForPickupRequestForm')[0].reset()
-		})
-		.fail(() => {
+		data = {
+			remarks: form.get('remarks'),
+		}
+
+		$.ajax({
+			url: `${apiURL}odrs/pup_staff/update_request_status/Ready for Pickup/${request_id}`,
+			type: 'PUT',
+			data: data,
+			dataType: 'json',
+			headers: AJAX_HEADERS,
+			success: (result) => {
+				if (result) {
+					Swal.fire({
+						html:
+							'<div class="mt-3">' +
+							'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
+							'<div class="mt-4 pt-2 fs-15">' +
+							'<h4>Well done!</h4>' +
+							'<p class="text-muted mx-4 mb-0">You have successfully set the status of this request to Ready for Pickup!</p>' +
+							'</div>' +
+							'</div>',
+						showCancelButton: !0,
+						showConfirmButton: !1,
+						cancelButtonClass: 'btn btn-success w-xs mb-1',
+						cancelButtonText: 'Ok',
+						buttonsStyling: !1,
+						showCloseButton: !0,
+					}).then(function () {
+						$('#readyforPickupModal').modal('hide')
+						$('form#readyForPickupRequestForm')[0].reset()
+
+						// Reload Pending and Approved Requests Datatable
+						loadPendingRequests()
+						loadApprovedRequests()
+					})
+				}
+			},
+		}).fail(() => {
 			Swal.fire({
 				html:
 					'<div class="mt-3">' +
@@ -903,33 +989,53 @@ readyforPickupRequest = () => {
 				showCloseButton: !0,
 			})
 		})
+	}
 }
 
-// Released
-releasedRequest = () => {
-	if (!$('#releasedRequestForm')[0].checkValidity()) return
+// Change Status to Released
+releasedRequest = (request_id) => {
+	if ($('#releasedRequestForm')[0].checkValidity()) {
+		// no validation error
+		const form = new FormData($('#readyForPickupRequestForm')[0])
 
-	Swal.fire({
-		html:
-			'<div class="mt-3">' +
-			'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
-			'<div class="mt-4 pt-2 fs-15">' +
-			'<h4>Well done!</h4>' +
-			'<p class="text-muted mx-4 mb-0">You have successfully set the status of this request to Released!</p>' +
-			'</div>' +
-			'</div>',
-		showCancelButton: !0,
-		showConfirmButton: !1,
-		cancelButtonClass: 'btn btn-success w-xs mb-1',
-		cancelButtonText: 'Ok',
-		buttonsStyling: !1,
-		showCloseButton: !0,
-	})
-		.then(function () {
-			$('#releasedModal').modal('hide')
-			$('form#releasedRequestForm')[0].reset()
-		})
-		.fail(() => {
+		data = {
+			remarks: null,
+		}
+
+		$.ajax({
+			url: `${apiURL}odrs/pup_staff/update_request_status/Released/${request_id}`,
+			type: 'PUT',
+			data: data,
+			dataType: 'json',
+			headers: AJAX_HEADERS,
+			success: (result) => {
+				if (result) {
+					Swal.fire({
+						html:
+							'<div class="mt-3">' +
+							'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
+							'<div class="mt-4 pt-2 fs-15">' +
+							'<h4>Well done!</h4>' +
+							'<p class="text-muted mx-4 mb-0">You have successfully set the status of this request to Released!</p>' +
+							'</div>' +
+							'</div>',
+						showCancelButton: !0,
+						showConfirmButton: !1,
+						cancelButtonClass: 'btn btn-success w-xs mb-1',
+						cancelButtonText: 'Ok',
+						buttonsStyling: !1,
+						showCloseButton: !0,
+					}).then(function () {
+						$('#releasedModal').modal('hide')
+						$('form#releasedRequestForm')[0].reset()
+
+						// Reload Pending and Approved Requests Datatable
+						loadPendingRequests()
+						loadApprovedRequests()
+					})
+				}
+			},
+		}).fail(() => {
 			Swal.fire({
 				html:
 					'<div class="mt-3">' +
@@ -947,4 +1053,9 @@ releasedRequest = () => {
 				showCloseButton: !0,
 			})
 		})
+	}
+}
+
+addId = (request_id, status) => {
+	$(`#${status}_id`).val(request_id)
 }
