@@ -1,6 +1,6 @@
 <!-- Default Modals -->
 <div id="myModal" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-primary" id="myModalLabel">Event Request Attachments</h5>
@@ -242,28 +242,28 @@
                                             <div class="form-check card-radio">
                                                 <input id="customizer-layout01" name="data-layout" type="radio" value="vertical" class="form-check-input" />
                                                 <label class="form-check-label p-0 avatar-lg w-100" for="customizer-layout01">
-                                                    <img src="../../public/images/facilities/img-5.jpg" class="card-img-top" alt="...">
+                                                <img src="../../public/images/facilities/img-8.jpg" class="card-img-top" alt="...">
                                                 </label>
                                             </div>
-                                            <h5 class="fs-13 text-center mt-2">PUPQC Gymnasium</h5>
+                                            <h5 class="fs-13 text-center mt-2">Interfaith Chapel</h5>
                                         </div>
                                         <div class="col-4">
                                             <div class="form-check card-radio">
                                                 <input id="customizer-layout02" name="data-layout" type="radio" value="horizontal" class="form-check-input" />
                                                 <label class="form-check-label p-0 avatar-lg w-100" for="customizer-layout02">
-                                                    <img src="../../public/images/facilities/img-11.jpg" class="card-img-top" alt="...">
+                                                <img src="../../public/images/facilities/img-4.jpg" class="card-img-top" alt="...">
                                                 </label>
                                             </div>
-                                            <h5 class="fs-13 text-center mt-2">Computer Laboratory</h5>
+                                            <h5 class="fs-13 text-center mt-2">Library</h5>
                                         </div>
                                         <div class="col-4">
                                             <div class="form-check card-radio">
                                                 <input id="customizer-layout03" name="data-layout" type="radio" value="twocolumn" class="form-check-input" />
                                                 <label class="form-check-label p-0 avatar-lg w-100" for="customizer-layout03">
-                                                <img src="../../public/images/facilities/img-6.jpg" class="card-img-top" alt="...">
+                                                <img src="../../public/images/facilities/img-10.jpg" class="card-img-top" alt="...">
                                                 </label>
                                             </div>
-                                            <h5 class="fs-13 text-center mt-2">Audio Visual Room</h5>
+                                            <h5 class="fs-13 text-center mt-2">Momol Spot</h5>
                                         </div>
                                 </div>
                                 </div>
