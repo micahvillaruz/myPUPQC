@@ -183,8 +183,8 @@ ownReservationsTable = () => {
                             return `<div class = "dropdown d-inline-block">
                                         <button type = "button" class = "btn btn-info btn-icon waves-effect waves-light" onclick = "viewReservationDetails('${data.reservation_id}')" data-bs-toggle = "modal" data-bs-target = "#viewReservationModal" > <i class = "ri-eye-fill fs-5" > </i></button>
                                     </div>`
-                        } else {
-                            return `<button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewReservationDetails('${data.reservation_id}')"><i class="ri-eye-fill fs-5"></i></button>`
+                        } else if (reserve_status == 'Approved') {
+                            return `<button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewReservationDetails('${data.reservation_id}')" data-bs-toggle = "modal" data-bs-target = "#viewReservationModal"><i class="ri-eye-fill fs-5"></i></button>`
                         }
                     },
                 },
