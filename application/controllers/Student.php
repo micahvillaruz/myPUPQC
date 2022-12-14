@@ -230,8 +230,8 @@ class Student extends CI_Controller
     $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "View Reservations"]);
     $this->load->view('student/evrsers/view-reservations');
     $this->load->view('partials/footer');
-    $this->load->view('student/evrsers/components/reservation-modal');
     $this->load->view('student/evrsers/components/new-reservation-modal');
+    $this->load->view('student/evrsers/components/reservation-modal');
     $this->load->view('partials/foot-scripts');
     $this->load->view('student/evrsers/scripts/reservations-scripts');
   }
@@ -250,4 +250,17 @@ class Student extends CI_Controller
     $this->load->view('partials/foot-scripts');
     $this->load->view('student/evrsers/scripts/reservationhist-scripts');
   }
+  
+  public function reservationpolicy()
+  {
+    $this->load->view('partials/main-home');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/home/home-header');
+    $this->load->view('student/evrsers/reservationpolicy');
+    $this->load->view('partials/home/home-footer');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('home/scripts/terms-scripts');
+  }
 }
+
