@@ -1,10 +1,11 @@
 $(function () {
-	loadAppointmentHistoryTable()
+	loadAllAppointmentsTable()
 })
 
 // Load datatables
-loadAppointmentHistoryTable = () => {
-	const dt = $('#appointment-history-datatable')
+loadAllAppointmentsTable = () => {
+	const dt = $('#all-appointments-datatable')
+	console.log(dt.length)
 
 	$.ajaxSetup({
 		headers: {
@@ -18,7 +19,7 @@ loadAppointmentHistoryTable = () => {
 		dt.DataTable({
 			bDestroy: true,
 			ajax: {
-				url: apiURL + 'omsss/student/appointment_logs',
+				url: apiURL + 'omsss/super_admin/view_appointments_except_done',
 				type: 'GET',
 				// ContentType: 'application/x-www-form-urlencoded',
 			},
@@ -32,35 +33,15 @@ loadAppointmentHistoryTable = () => {
 					},
 				},
 
-				// Consultation Type
+				// Student
 				{
 					data: null,
 					render: (data) => {
-						const consType = data.consultation_type
-						return `${consType}`
-					},
-				},
-
-				// Attending Consultant
-				{
-					data: null,
-					render: (data) => {
-						if (data.health_appointment_assigned_to_physician) {
-							const healthPhysician =
-								data.health_appointment_assigned_to_physician.user_profiles[0].full_name
+						if (data.health_appointment_assigned_to_user) {
+							const studentName =
+								data.health_appointment_assigned_to_user.user_profiles[0].full_name
+							return `${studentName}`
 						}
-						const healthPhysician = 'N/A'
-
-						return `${healthPhysician}`
-					},
-				},
-
-				// Schedule
-				{
-					data: null,
-					render: (data) => {
-						const consultation_date = moment(data.consultation_date).format('LL')
-						return `${consultation_date}`
 					},
 				},
 
@@ -78,7 +59,18 @@ loadAppointmentHistoryTable = () => {
 							return `<span class="badge rounded-pill bg-info">Cancelled by Staff</span>`
 						} else if (consultation_status == 'Cancelled by Student') {
 							return `<span class="badge rounded-pill bg-info">Cancelled by Student</span>`
+						} else if (consultation_status == 'Deleted') {
+							return `<span class="badge rounded-pill bg-dark">Deleted</span>`
 						}
+					},
+				},
+
+				// Schedule
+				{
+					data: null,
+					render: (data) => {
+						const consultation_date = moment(data.consultation_date).format('LL')
+						return `${consultation_date}`
 					},
 				},
 
@@ -100,11 +92,12 @@ loadAppointmentHistoryTable = () => {
 							modal_to_use = '#viewGuidanceModal'
 							AJAX_to_use = `viewGuidanceDetails('${data.health_appointment_id}')`
 						}
+
 						console.log(appointment_type, modal_to_use, AJAX_to_use)
 						return `
         <div class="dropdown d-inline-block">
         <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="${AJAX_to_use}" data-bs-toggle="modal" data-bs-target="${modal_to_use}"><i class="ri-eye-fill fs-5"></i></button>
-				<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="${AJAX_to_use}" data-bs-toggle="modal" data-bs-target="${modal_to_use}"><i class="bx bxs-user-x fs-4"></i></button>
+				<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="deleteAppointment('${data.health_appointment_id}')"><i class="bx bxs-user-x fs-4"></i></button>
 				</div>`
 					},
 				},
@@ -127,18 +120,19 @@ viewMedicalDetails = (health_appointment_id) => {
 	$.ajax({
 		type: 'GET',
 		cache: false,
-		url: apiURL + `omsss/student/view_appointment/${health_appointment_id}`,
+		url: apiURL + `omsss/super_admin/view_appointment/${health_appointment_id}`,
 		dataType: 'json',
 		success: (result) => {
 			console.log(result)
 			const userData = result.data
 			if (result.data.health_appointment_assigned_to_physician) {
-				const userProfileData = data.health_appointment_assigned_to_physician.user_profiles[0]
+				const userProfileData = userData.health_appointment_assigned_to_physician.user_profiles[0]
 			}
 			const userProfileData = null
 
 			$('#view_medical_case_details').html(userData.case_control_number)
 			$('#view_medical_consultation_type').html(userData.consultation_type)
+			console.log(userData.consultation_type)
 			$('#view_medical_consultation_reason').html(userData.consultation_reason)
 			$('#view_medical_health_physcian').html(
 				userProfileData != null ? userProfileData.full_name : 'N/A',
@@ -174,13 +168,13 @@ viewDentalDetails = (health_appointment_id) => {
 	$.ajax({
 		type: 'GET',
 		cache: false,
-		url: apiURL + `omsss/student/view_appointment/${health_appointment_id}`,
+		url: apiURL + `omsss/super_admin/view_appointment/${health_appointment_id}`,
 		dataType: 'json',
 		success: (result) => {
 			console.log(result)
 			const userData = result.data
 			if (result.data.health_appointment_assigned_to_physician) {
-				const userProfileData = data.health_appointment_assigned_to_physician.user_profiles[0]
+				const userProfileData = userData.health_appointment_assigned_to_physician.user_profiles[0]
 			}
 			const userProfileData = null
 			console.log(userData.consultation_type)
@@ -221,18 +215,19 @@ viewGuidanceDetails = (health_appointment_id) => {
 	$.ajax({
 		type: 'GET',
 		cache: false,
-		url: apiURL + `omsss/student/view_appointment/${health_appointment_id}`,
+		url: apiURL + `omsss/super_admin/view_appointment/${health_appointment_id}`,
 		dataType: 'json',
 		success: (result) => {
 			const userData = result.data
 			if (result.data.health_appointment_assigned_to_physician) {
-				const userProfileData = data.health_appointment_assigned_to_physician.user_profiles[0]
+				const userProfileData = userData.health_appointment_assigned_to_physician.user_profiles[0]
 			}
 			const userProfileData = null
 
 			$('#view_guidance_case_details').html(userData.case_control_number)
 			$('#view_guidance_consultation_type').html(userData.consultation_type)
 			$('#view_guidance_consultation_reason').html(userData.consultation_reason)
+			$('#view_guidance_consultation_date').html(moment(userData.consultation_date).format('LL'))
 			$('#view_guidance_health_physcian').html(
 				userProfileData != null ? userProfileData.full_name : 'N/A',
 			)
@@ -253,8 +248,8 @@ viewGuidanceDetails = (health_appointment_id) => {
 	})
 }
 
-// Cancel Dental Consultation
-cancelDental = (health_appointment_id) => {
+// Delete  Consultation
+deleteAppointment = (health_appointment_id) => {
 	$.ajaxSetup({
 		headers: {
 			Accept: 'application/json',
@@ -269,20 +264,21 @@ cancelDental = (health_appointment_id) => {
 			'<lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f7b84b,secondary:#f06548" style="width:100px;height:100px"></lord-icon>' +
 			'<div class="mt-4 pt-2 fs-15 mx-5">' +
 			'<h4>Are you Sure ?</h4>' +
-			'<p class="text-muted mx-4 mb-0">Are you Sure You want to Cancel it?</p>' +
+			'<p class="text-muted mx-4 mb-0">Are you Sure You want to Delete?</p>' +
 			'</div>' +
 			'</div>',
 		showCancelButton: true,
-		confirmButtonClass: 'btn btn-success w-xs me-2 mb-1',
-		confirmButtonText: 'Yes, Cancel It!',
+		confirmButtonClass: 'btn btn-danger w-xs me-2 mb-1',
+		confirmButtonText: 'Yes, Delete It!',
 		cancelButtonClass: 'btn btn-light w-xs mb-1',
 		buttonsStyling: false,
 		showCloseButton: true,
 	}).then(function (result) {
 		if (result.value) {
+			console.log(result)
 			$.ajax({
-				url: apiURL + 'omsss/student/cancel_appointment/' + health_appointment_id,
-				type: 'PUT',
+				url: apiURL + 'omsss/super_admin/delete_appointment/' + health_appointment_id,
+				type: 'DELETE',
 				dataType: 'json',
 				success: (result) => {
 					if (result) {
@@ -292,7 +288,7 @@ cancelDental = (health_appointment_id) => {
 								'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
 								'<div class="mt-4 pt-2 fs-15">' +
 								'<h4>Well done !</h4>' +
-								'<p class="text-muted mx-4 mb-0">You have successfully Cancel Appointment!</p>' +
+								'<p class="text-muted mx-4 mb-0">You have successfully Delete Appointment!</p>' +
 								'</div>' +
 								'</div>',
 							showCancelButton: !0,
@@ -314,7 +310,7 @@ cancelDental = (health_appointment_id) => {
 						'<lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon>' +
 						'<div class="mt-4 pt-2 fs-15">' +
 						'<h4>Something went Wrong !</h4>' +
-						'<p class="text-muted mx-4 mb-0">There was an error while canceling. Please try again.</p>' +
+						'<p class="text-muted mx-4 mb-0">There was an error while deleting. Please try again.</p>' +
 						'</div>' +
 						'</div>',
 					showCancelButton: !0,

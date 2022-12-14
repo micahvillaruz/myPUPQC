@@ -26,7 +26,7 @@
 <script src="<?= base_url() ?>public/js/pages/sweetalerts.init.js"></script>
 
 <!-- dental ajax -->
-<script src="<?= base_url() ?>public/js/ajax/admin/omsss/appointment-history/appointment-history.ajax.js"></script>
+<script src="<?= base_url() ?>public/js/ajax/admin/omsss/appointment-history.ajax.js"></script>
 
 <!-- App js -->
 <script src="<?= base_url() ?>public/js/app.js"></script>
