@@ -50,6 +50,58 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+<!-- Default Modals -->
+<div id="reserve-policy-modal" class="modal fade" tabindex="-1" aria-labelledby="reserve-policy-label" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-primary" id="reserve-policy-label">One Reservation Policy</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="myModal" aria-label="Close"> </button>
+            </div>
+            <div class="modal-body">
+                <ul class="list-group">
+                    <li class="list-group-item"><b style="width: 15px; height: 15px;" class="bg-dark text-white rounded-pill me-2 align-middle"><span class="mx-2 fs-10">1</span></b>
+                        <div class="badge badge-soft-secondary">
+                            <i class="me-2 mdi mdi-file-document fs-13"></i>
+                            <span class="text-uppercase">Event Request</span>
+                        </div>
+                        <br><br>
+                        <span class="mt-3">
+                            This should contain the information regarding the event and completed signatories from the following: <strong>Org President, SSC President, Adviser, Property Custodian, OSAS Head, Acad Head, & the Director.</strong>
+                        </span>
+                    </li>
+                    <li class="list-group-item"><b style="width: 15px; height: 15px;" class="bg-dark text-white rounded-pill me-2 align-middle"><span class="mx-2 fs-10">2</span></b>
+                        <div class="badge badge-soft-info">
+                            <i class="me-2 mdi mdi-file-document fs-13"></i>
+                            <span class="text-uppercase">Concept Paper</span>
+                        </div>
+                        <br><br>
+                        <span class="mt-3">
+                            The specific details regarding the event should be found here. This includes the venue, platform, number of participants included in the said event.
+                        </span>
+                    </li>
+                    <li class="list-group-item"><b style="width: 15px; height: 15px;" class="bg-dark text-white rounded-pill me-2 align-middle"><span class="mx-2 fs-10">3</span></b>
+                        <div class="badge badge-soft-primary">
+                            <i class="me-2 mdi mdi-file-document-multiple fs-13"></i>
+                            <span class="text-uppercase">Others</span>
+                        </div>
+                        <br><br>
+                        <span class="mt-3">
+                            Anything relevant to the creation of the event request should then be included here. <br><br>
+                        </span>
+                        <span class="mt-4 fs-6">
+                            <i class="text-muted">*** Note that this could help your event request application to be processed faster.</i>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#new-reservation">Close</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <div id="new-reservation" class="modal fade" tabindex="-1" aria-labelledby="new-reservation-label" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
@@ -230,7 +282,7 @@
                                             <div class="form-check card-radio">
                                                 <input id="customizer-layout03" name="data-layout" type="radio" value="twocolumn" class="form-check-input" />
                                                 <label class="form-check-label p-0 avatar-lg w-100" for="customizer-layout03">
-                                                <img src="../../public/images/facilities/img-6.jpg" class="card-img-top" alt="...">
+                                                    <img src="../../public/images/facilities/img-6.jpg" class="card-img-top" alt="...">
                                                 </label>
                                             </div>
                                             <h5 class="fs-13 text-center mt-2">Audio Visual Room</h5>
@@ -242,7 +294,7 @@
                                             <div class="form-check card-radio">
                                                 <input id="customizer-layout01" name="data-layout" type="radio" value="vertical" class="form-check-input" />
                                                 <label class="form-check-label p-0 avatar-lg w-100" for="customizer-layout01">
-                                                <img src="../../public/images/facilities/img-8.jpg" class="card-img-top" alt="...">
+                                                    <img src="../../public/images/facilities/img-8.jpg" class="card-img-top" alt="...">
                                                 </label>
                                             </div>
                                             <h5 class="fs-13 text-center mt-2">Interfaith Chapel</h5>
@@ -251,7 +303,7 @@
                                             <div class="form-check card-radio">
                                                 <input id="customizer-layout02" name="data-layout" type="radio" value="horizontal" class="form-check-input" />
                                                 <label class="form-check-label p-0 avatar-lg w-100" for="customizer-layout02">
-                                                <img src="../../public/images/facilities/img-4.jpg" class="card-img-top" alt="...">
+                                                    <img src="../../public/images/facilities/img-4.jpg" class="card-img-top" alt="...">
                                                 </label>
                                             </div>
                                             <h5 class="fs-13 text-center mt-2">Library</h5>
@@ -260,12 +312,26 @@
                                             <div class="form-check card-radio">
                                                 <input id="customizer-layout03" name="data-layout" type="radio" value="twocolumn" class="form-check-input" />
                                                 <label class="form-check-label p-0 avatar-lg w-100" for="customizer-layout03">
-                                                <img src="../../public/images/facilities/img-10.jpg" class="card-img-top" alt="...">
+                                                    <img src="../../public/images/facilities/img-10.jpg" class="card-img-top" alt="...">
                                                 </label>
                                             </div>
                                             <h5 class="fs-13 text-center mt-2">Momol Spot</h5>
                                         </div>
+                                    </div>
                                 </div>
+                                <div class="vstack d-flex align-items-start gap-3 mt-4">
+                                    <span>
+                                        <input class="form-check-input me-3" type="checkbox" id="formCheck1">
+                                        <label class="form-check-label" for="formCheck1">
+                                            I agree to PUP Quezon City's <a href="<?= base_url() ?>terms/" target="_blank" rel="noopener noreferrer">Terms and Conditions</a> and <a href="<?= base_url() ?>privacy/" target="_blank" rel="noopener noreferrer">Privacy Statement</a>
+                                        </label>
+                                    </span>
+                                    <span>
+                                        <input class="form-check-input me-3" type="checkbox" id="formCheck2">
+                                        <label class="form-check-label" for="formCheck2">
+                                            I agree to EVRSERS' <a href="<?= base_url() ?>student/evrsers/reservationpolicy/" target="_blank" rel="noopener noreferrer">One Reservation Policy</a>.
+                                        </label>
+                                    </span>
                                 </div>
                                 <div class="d-flex align-items-start gap-3 mt-4">
                                     <button type="button" class="btn btn-light btn-label previestab" data-previous="steparrow-gen-info-tab">
