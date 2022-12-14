@@ -128,13 +128,6 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/new-reservation" class="nav-link">
-            <i class="bx bxs-school"></i>
-            <span>Reserve Venue</span>
-          </a>
-        </li>
-
-        <li class="nav-item">
           <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/view-reservations" class="nav-link">
             <i class="ri-reserved-line"></i>
             <span>View Reservations</span>
