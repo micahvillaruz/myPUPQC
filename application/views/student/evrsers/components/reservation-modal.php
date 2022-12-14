@@ -1,8 +1,4 @@
-
-<!-- 
-//! PROBLEM:
-//! 1. Modal did not show up after clicking the button
-Default Modals -->
+<!-- Default Modals -->
 <div id="attachment-info" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog modal-dialog-centered modal-lg modal-fullscreen-md-down">
     <div class="modal-content">
@@ -57,11 +53,11 @@ Default Modals -->
 <!-- /.modal -->
 
 <!-- View Reservation modal -->
-<div class="modal fade" id="viewOwnReservation" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+<div class="modal fade" id="viewReservationModal" tabindex="-1" role="dialog" aria-labelledby="reservation-details-label" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalScrollableTitle">
+        <h5 class="modal-title" id="reservation-details-label">
           Reservation Information
         </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -76,7 +72,7 @@ Default Modals -->
                   <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">Reservation Control #:</a></h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="reservation_number"></div>
+                  <div class="d-flex fs-13 fw-medium" id="reserve_number"></div>
                 </div>
               </div>
             </li>
@@ -321,7 +317,7 @@ Default Modals -->
               </div>
             </div>
             <div class="text-end">
-              <button type="submit" class="btn btn-primary">Edit Reservation</button>
+              <button type="submit" class="btn btn-primary mt-3">Edit Reservation</button>
             </div>
         </form>
       </div>
