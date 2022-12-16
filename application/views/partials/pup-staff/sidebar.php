@@ -30,6 +30,32 @@
 
             <li class="menu-title">
               <i class="ri-more-fill"></i>
+              <span>EVRSERS</span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/evrsers/organizer-management">
+                <i class="ri-file-copy-2-line"></i>
+                <span>Organizer Management</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/odrs/manage-reservations">
+                <i class="ri-reserved-line"></i>
+                <span>Reservations</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/odrs/reservation-history">
+                <i class="bx bx-history"></i>
+                <span>Reservation History</span>
+              </a>
+            </li>
+
+            <li class="menu-title">
+              <i class="ri-more-fill"></i>
               <span>ODRS</span>
             </li>
 
@@ -55,8 +81,8 @@
               </a>
             </li>
 
-          <!--OMSS -->
-          <li class="menu-title">
+            <!--OMSS -->
+            <li class="menu-title">
               <i class="ri-more-fill"></i>
               <span>OMSS - DOCTOR </span>
             </li>
