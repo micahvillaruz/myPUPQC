@@ -18,7 +18,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Consultation Type</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_consultaion_type">New Consultation</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_consultation_type"></div>
                 </div>
               </div>
             </li>
@@ -29,7 +29,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Reason consultation</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_consultation_reason">Headache</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_consultation_reason"></div>
                 </div>
               </div>
             </li>
@@ -40,7 +40,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Doctor</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_health_physcian">Dr. Melissa Sarappudin</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_health_physcian"></div>
                 </div>
               </div>
             </li>
@@ -51,7 +51,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Date of start of symptoms</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_date_of_symptom">10-23-2022</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_date_of_symptom"></div>
                 </div>
               </div>
             </li>
@@ -62,7 +62,7 @@
                   <h5 class="fs-13 mb-1">Appointment Date</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_consultation_date">12-13-2022</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_consultation_date"></div>
                 </div>
               </div>
             </li>
@@ -72,7 +72,7 @@
                 <div class="col-4">
                   <h5 class="fs-13 mb-1 fw-medium">Status</h5>
                 </div>
-                <div class="col-8" id="view_status"><span class="badge rounded-pill bg-success"> Approved </span>
+                <div class="col-8" id="view_status">
                 </div>
               </div>
             </li>

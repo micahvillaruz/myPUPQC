@@ -51,9 +51,17 @@ loadDentalTable = () => {
 				{
 					data: null,
 					render: (data) => {
-						return data.consultation_status == 'Pending'
-							? `<span class="badge rounded-pill bg-warning">Pending</span>`
-							: `<span class="badge rounded-pill bg-success">Approved</span>`
+						const consultation_status = data.consultation_status
+						console.log(consultation_status)
+						if (consultation_status == 'Pending') {
+							return `<span class="badge rounded-pill bg-warning">Pending</span>`
+						} else if (consultation_status == 'Approved') {
+							return `<span class="badge rounded-pill bg-success">Approved</span>`
+						} else if (consultation_status == 'Cancelled by Staff') {
+							return `<span class="badge rounded-pill bg-info">Cancelled by Staff</span>`
+						} else if (consultation_status == 'Cancelled by Student') {
+							return `<span class="badge rounded-pill bg-info">Cancelled by Student</span>`
+						}
 					},
 				},
 
@@ -175,16 +183,23 @@ viewDentalDetails = (health_appointment_id) => {
 			const userProfileData = null
 
 			$('#view_case_details').html(userData.case_control_number)
-			$('#view_consultaion_type').html(userData.consultation_type)
+			$('#view_consultation_type').html(userData.consultation_type)
 			$('#view_consultation_reason').html(userData.consultation_reason)
 			$('#view_health_physcian').html(userProfileData != null ? userProfileData.full_name : 'N/A')
 			$('#view_symptoms_date').html(moment(userData.symptoms_date).utc().format('LL'))
 			$('#view_consultation_date').html(moment(userData.consultation_date).format('LL'))
-			$('#view_status').html(
-				userData.consultation_status == 'Pending'
-					? '<span class="fs-12 badge rounded-pill bg-warning" >Pending</span>'
-					: '<span class="fs-12 badge rounded-pill bg-success" >Approved</span>',
-			)
+			const consultation_status_data = userData.consultation_status
+			let consultation_value
+			if (consultation_status_data == 'Pending') {
+				consultation_value = `<span class="badge rounded-pill bg-warning">Pending</span>`
+			} else if (consultation_status_data == 'Approved') {
+				consultation_value = `<span class="badge rounded-pill bg-success">Approved</span>`
+			} else if (consultation_status_data == 'Cancelled by Staff') {
+				consultation_value = `<span class="badge rounded-pill bg-info">Cancelled by Staff</span>`
+			} else if (consultation_status_data == 'Cancelled by Student') {
+				consultation_value = `<span class="badge rounded-pill bg-info">Cancelled by Student</span>`
+			}
+			$('#view_status').html(consultation_value)
 		},
 	})
 }
