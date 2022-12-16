@@ -44,8 +44,8 @@
                   <div class="col-xxl-9">
                     <div class="card">
                       <div class="card-body">
-                        <h3 class="mb-3 text-primary">Terms</h3>
-                        <p class="fst-italic">Last updated: July 4, 2018</p>
+                        <h3 class="mb-3 text-primary">Event Reservation Policies</h3>
+                        <p class="fst-italic">Last updated: December 14, 2022</p>
                         <div class="m-3">
                           <div class="row">
                             <p>
