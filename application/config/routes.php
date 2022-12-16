@@ -229,9 +229,13 @@ $route['admin/omsss/appointment-history'] = 'admin/appointment_history';
 |     EVRSERS
 | --------------
 */
+// Organizer Management
+$route['admin/evrsers/organizer-management'] = 'admin/organizer_management';
+
+// Facilities
+$route['admin/evrsers/facilities'] = 'admin/facilities';
 
 // Reservations
-$route['admin/evrsers/facilities'] = 'admin/facilities';
 $route['admin/evrsers/manage-reservations'] = 'admin/manage_reservations';
 $route['admin/evrsers/reservation-history'] = 'admin/reservation_history';
 
@@ -260,3 +264,16 @@ $route['pupstaff/omsss/counsellor/analytics-and-history'] = 'pupstaff/counsellor
 $route['pupstaff/odrs/documents'] = 'pupstaff/documents';
 $route['pupstaff/odrs/requests'] = 'pupstaff/requests';
 $route['pupstaff/odrs/history'] = 'pupstaff/history';
+
+/*
+| --------------
+|     EVRSERS
+| --------------
+*/
+
+// Organizer Management
+$route['pupstaff/evrsers/organizer-management'] = 'pupstaff/organizer_management';
+
+// Reservations
+$route['pupstaff/evrsers/manage-reservations'] = 'pupstaff/manage_reservations';
+$route['pupstaff/evrsers/reservation-history'] = 'pupstaff/reservation_history';
