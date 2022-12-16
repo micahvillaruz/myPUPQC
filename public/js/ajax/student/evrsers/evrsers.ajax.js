@@ -217,27 +217,27 @@ loadFullName = () => {
 
 
 // Edit Reservation
-editReservation = (reservation_id) => {
-    $.ajaxSetup({
-        headers: {
-            Accept: 'application/json',
-            Authorization: 'Bearer ' + TOKEN,
-            ContentType: 'application/x-www-form-urlencoded',
-        },
-    })
+// editReservation = (reservation_id) => {
+//     $.ajaxSetup({
+//         headers: {
+//             Accept: 'application/json',
+//             Authorization: 'Bearer ' + TOKEN,
+//             ContentType: 'application/x-www-form-urlencoded',
+//         },
+//     })
 
-    $.ajax({
-        type: 'GET',
-        cache: false,
-        url: apiURL + `evrsers/student/view_reservation/${reservation_id}`,
-        dataType: 'json',
-        success: (result) => {
-            console.log(result)
-            const userData = result.data
-            $('#reserve-number').html(userData.reservation_number)
-        },
-    })
-}
+//     $.ajax({
+//         type: 'GET',
+//         cache: false,
+//         url: apiURL + `evrsers/student/view_reservation/${reservation_id}`,
+//         dataType: 'json',
+//         success: (result) => {
+//             console.log(result)
+//             const userData = result.data
+//             $('#reserve-number').html(userData.reservation_number)
+//         },
+//     })
+// }
 
 // addNewReservation = () => {
 //     // Create New Reservation
