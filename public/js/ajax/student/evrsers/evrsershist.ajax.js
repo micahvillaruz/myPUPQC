@@ -65,7 +65,7 @@ $(function() {
 // console.log(user_id)
 
 //View All Own Reservation History
-ownReservationsHistory = () => {
+ownReservationsHistory = (user_id) => {
     const dt = $('#reservation-history')
 
     $.ajaxSetup({
@@ -79,7 +79,7 @@ ownReservationsHistory = () => {
         dt.DataTable({
             bDestroy: true,
             ajax: {
-                url: apiURL + `evrsers/student/view_history`,
+                url: apiURL + `evrsers/student/view_history/${user_id}`,
                 type: 'GET',
                 ContentType: 'application/x-www-form-urlencoded',
             },
@@ -102,13 +102,13 @@ ownReservationsHistory = () => {
                 },
 
                 // Venue
-                // {
-                //     data: null,
-                //     render: (data) => {
-                //         const facility_name = data.facilities_assigned_to_reservation.facility_name
-                //         return `${facility_name}`
-                //     },
-                // },
+                {
+                    data: null,
+                    render: (data) => {
+                        const facility_name = data.facilities_assigned_to_reservation.facility_name
+                        return `${facility_name}`
+                    },
+                },
 
                 // Date
                 {
