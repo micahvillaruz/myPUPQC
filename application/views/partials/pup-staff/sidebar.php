@@ -35,20 +35,20 @@
 
             <li class="nav-item">
               <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/evrsers/organizer-management">
-                <i class="ri-file-copy-2-line"></i>
+                <i class="ri-team-line"></i>
                 <span>Organizer Management</span>
               </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/odrs/manage-reservations">
+              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/evrsers/manage-reservations">
                 <i class="ri-reserved-line"></i>
                 <span>Reservations</span>
               </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/odrs/reservation-history">
+              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/evrsers/reservation-history">
                 <i class="bx bx-history"></i>
                 <span>Reservation History</span>
               </a>
