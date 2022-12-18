@@ -1,5 +1,6 @@
 $(function () {
 	loadMedicalAnalyticsTable()
+	getMedicalAnalytics()
 })
 
 // Load datatables
@@ -67,6 +68,8 @@ loadMedicalAnalyticsTable = () => {
 							return `<span class="badge rounded-pill bg-info">Cancelled by Staff</span>`
 						} else if (consultation_status == 'Cancelled by Student') {
 							return `<span class="badge rounded-pill bg-info">Cancelled by Student</span>`
+						} else if (consultation_status == 'Done') {
+							return `<span class="badge rounded-pill bg-success">Done</span>`
 						}
 					},
 				},
@@ -95,6 +98,25 @@ loadMedicalAnalyticsTable = () => {
 			order: [[0, 'asc']],
 		})
 	}
+}
+
+getMedicalAnalytics = () => {
+	$.ajax({
+		url: apiURL + `omsss/pup_staff/view_analytics_for_consultation_status/Medical`,
+		type: 'GET',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			if (result) {
+				// Get data from result
+				const data = result.consultation_status_count
+				console.log(data)
+				$('#medical_analytics_pending').attr('data-target', data.pending)
+				$('#medical_analytics_done').attr('data-target', data.done)
+				$('#medical_analytics_cancelled_by_student').attr('data-target', data.cancelled_by_student)
+				$('#medical_analytics_cancelled_by_staff').attr('data-target', data.cancelled_by_staff)
+			}
+		},
+	}).fail(() => console.error('There was an error in retrieving medical request data'))
 }
 
 // View Medical Consultation details

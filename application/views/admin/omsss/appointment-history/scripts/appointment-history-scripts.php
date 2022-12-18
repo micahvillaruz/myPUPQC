@@ -31,3 +31,11 @@
 <!-- App js -->
 <script src="<?= base_url() ?>public/js/app.js"></script>
 
+<!-- Chart JS -->
+<script src="<?= base_url() ?>public/libs/chart.js/chart.min.js"></script>
+
+<!-- chartjs init -->
+<script src="<?= base_url() ?>public/js/pages/chartjs.init.js"></script>
+
+<!-- App js -->
+<script src="<?= base_url() ?>public/js/app.js"></script>

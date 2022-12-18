@@ -1,5 +1,6 @@
 $(function () {
 	loadAppointmentHistoryTable()
+	getPendingAppointmentHistory()
 })
 
 // Load datatables
@@ -59,6 +60,8 @@ loadAppointmentHistoryTable = () => {
 							return `<span class="badge rounded-pill bg-info">Cancelled by Staff</span>`
 						} else if (consultation_status == 'Cancelled by Student') {
 							return `<span class="badge rounded-pill bg-info">Cancelled by Student</span>`
+						} else if (consultation_status == 'Done') {
+							return `<span class="badge rounded-pill bg-success">Done</span>`
 						}
 					},
 				},
@@ -102,6 +105,24 @@ loadAppointmentHistoryTable = () => {
 			order: [[0, 'asc']],
 		})
 	}
+}
+
+getPendingAppointmentHistory = () => {
+	$.ajax({
+		url: apiURL + `super_admin/analytics/view_pending_appointment`,
+		type: 'GET',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			if (result) {
+				// Get data from result
+				const data = result.consultation_status_count
+				console.log(data)
+				$('#appointment_history_pending_medical').attr('data-target', data.peding_medical)
+				$('#appointment_history_pending_dental').attr('data-target', data.pending_dental)
+				$('#appointment_history_pending_guidance').attr('data-target', data.pending_guidance)
+			}
+		},
+	}).fail(() => console.error('There was an error in retrieving appointment history request data'))
 }
 
 // View Medical Consultation details
