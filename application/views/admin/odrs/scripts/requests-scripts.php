@@ -23,6 +23,9 @@
 		<!-- Sweet alert init js-->
 		<script src="<?= base_url() ?>public/js/pages/sweetalerts.init.js"></script>
 
+		<!-- Requests ajax -->
+		<script src="<?= base_url() ?>public/js/ajax/admin/odrs/requests.ajax.js"></script>
+
 		<!-- App js -->
 		<script src="<?= base_url() ?>public/js/app.js"></script>
 		</body>
