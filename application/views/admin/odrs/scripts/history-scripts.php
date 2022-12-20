@@ -11,8 +11,12 @@
 
 		<script src="<?= base_url() ?>public/js/pages/datatables.init.js"></script>
 
+		<!-- History ajax -->
+		<script src="<?= base_url() ?>public/js/ajax/admin/odrs/history.ajax.js"></script>
+
 		<!-- prismjs plugin -->
 		<script src="<?= base_url() ?>public/libs/prismjs/prism.js"></script>
+
 		</body>
 
 		</html>

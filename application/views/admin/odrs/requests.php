@@ -44,26 +44,20 @@
                   <span class="text-uppercase">Pending</span>
                 </div>
               </td>
-              <td>
+              <td width="30%">
                 <table>
                   <tbody>
                     <tr>
                       <td>
-                        <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Clearance: </span>
-                      </td>
-                      <td>Graduated Student</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Course: </span>
+                        <span class="fw-medium badge bg-primary">Course: </span>
                       </td>
                       <td>BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY</td>
                     </tr>
                     <tr>
                       <td>
-                        <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Purpose: </span>
+                        <span class="fw-medium badge bg-primary me-3">Purpose: </span>
                       </td>
-                      <td>Further Studies</td>
+                      <td>Employment</td>
                     </tr>
                   </tbody>
                 </table>
@@ -75,11 +69,8 @@
                   <button type="button" class="btn btn-sm btn-secondary bg-gradient waves-effect waves-light rounded-circle position-absolute top-0 start-100 translate-middle" data-bs-toggle="modal" data-bs-target="#viewProcessStatusFlow">?</button>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewTransactionDetails"><i class="ri-eye-fill"></i></button>
-                  <button type="button" id="sa-warning" class="btn btn-danger btn-icon waves-effect waves-light"><i class="bx bx-trash fs-4"></i></button>
-                </div>
+              <td class="text-center" width="10%">
+                <button type="button" class="btn btn-info btn-label waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails"><i class="mdi mdi-eye-outline label-icon align-middle fs-16 me-2"></i> View</button>
               </td>
             </tr>
             <tr>
@@ -105,27 +96,22 @@
               <td>
                 <div class="d-block badge badge-soft-success align-items-center">
                   <i class="me-2 mdi mdi-cash-check fs-13"></i>
-                  <span class="text-uppercase">Paid</span>
+                  <span class="text-uppercase fw-bold">Paid</span>
                 </div>
+                <span class="mt-1 d-block badge badge-soft-dark badge-border">OR No. 5960392</span>
               </td>
-              <td>
+              <td width="30%">
                 <table>
                   <tbody>
                     <tr>
                       <td>
-                        <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Clearance: </span>
+                        <span class="fw-medium badge bg-primary">Course: </span>
                       </td>
-                      <td>Undergraduate Student</td>
+                      <td>BACHELOR OF SCIENCE IN BUSINESS ADMINISTRATION MAJOR IN MARKETING MANAGEMENT</td>
                     </tr>
                     <tr>
                       <td>
-                        <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Course: </span>
-                      </td>
-                      <td>BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Purpose: </span>
+                        <span class="fw-medium badge bg-primary me-3">Purpose: </span>
                       </td>
                       <td>Scholarship</td>
                     </tr>
@@ -139,11 +125,8 @@
                   <button type="button" class="btn btn-sm btn-secondary bg-gradient waves-effect waves-light rounded-circle position-absolute top-0 start-100 translate-middle" data-bs-toggle="modal" data-bs-target="#viewProcessStatusFlow">?</button>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewTransactionDetails"><i class="ri-eye-fill"></i></button>
-                  <button type="button" id="sa-params" class="btn btn-danger btn-icon waves-effect waves-light"><i class="bx bx-trash fs-4"></i></button>
-                </div>
+              <td class="text-center" width="10%">
+                <button type="button" class="btn btn-info btn-label waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails"><i class="mdi mdi-eye-outline label-icon align-middle fs-16 me-2"></i> View</button>
               </td>
             </tr>
             <tr>
@@ -169,27 +152,22 @@
               <td>
                 <div class="d-block badge badge-soft-success align-items-center">
                   <i class="me-2 mdi mdi-cash-check fs-13"></i>
-                  <span class="text-uppercase">Paid</span>
+                  <span class="text-uppercase fw-bold">Paid</span>
                 </div>
+                <span class="mt-1 d-block badge badge-soft-dark badge-border">OR No. 8593028</span>
               </td>
-              <td>
+              <td width="30%">
                 <table>
                   <tbody>
                     <tr>
                       <td>
-                        <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Clearance: </span>
+                        <span class="fw-medium badge bg-primary">Course: </span>
                       </td>
-                      <td>Undergraduate Student</td>
+                      <td>BACHELOR OF SCIENCE IN BUSINESS TEACHER'S EDUCATION</td>
                     </tr>
                     <tr>
                       <td>
-                        <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Course: </span>
-                      </td>
-                      <td>BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span class="badge badge-outline-primary fw-bolder me-3 fs-11">Purpose: </span>
+                        <span class="fw-medium badge bg-primary me-3">Purpose: </span>
                       </td>
                       <td>Transfer to another school</td>
                     </tr>
@@ -203,11 +181,8 @@
                   <button type="button" class="btn btn-sm btn-secondary bg-gradient waves-effect waves-light rounded-circle position-absolute top-0 start-100 translate-middle" data-bs-toggle="modal" data-bs-target="#viewProcessStatusFlow">?</button>
                 </div>
               </td>
-              <td class="text-center">
-                <div class="dropdown d-inline-block">
-                  <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewTransactionDetails"><i class="ri-eye-fill"></i></button>
-                  <button type="button" id="custom-sa-warning" class="btn btn-danger btn-icon waves-effect waves-light"><i class="bx bx-trash fs-4"></i></button>
-                </div>
+              <td class="text-center" width="10%">
+                <button type="button" class="btn btn-info btn-label waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails"><i class="mdi mdi-eye-outline label-icon align-middle fs-16 me-2"></i> View</button>
               </td>
             </tr>
           </tbody>

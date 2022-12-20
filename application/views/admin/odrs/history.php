@@ -31,8 +31,8 @@
                                     <th>Control Number</th>
                                     <th>Student</th>
                                     <th>Date Filed</th>
+                                    <th>Payment Status</th>
                                     <th>Details</th>
-                                    <th>Request Status</th>
                                     <th>Date Released</th>
                                     <th>Action</th>
                                 </tr>
@@ -58,6 +58,13 @@
                                             <span class="ms-2">11 Nov, 2022<small class="text-muted ms-1">02:00 PM</small></span>
                                         </div>
                                     </td>
+                                    <td>
+                                        <div class="d-block badge badge-soft-success align-items-center">
+                                            <i class="me-2 mdi mdi-cash-check fs-13"></i>
+                                            <span class="text-uppercase fw-bold">Paid</span>
+                                        </div>
+                                        <span class="mt-1 d-block badge badge-soft-dark badge-border">OR No. 2345678</span>
+                                    </td>
                                     <td width="30%">
                                         <table>
                                             <tbody>
@@ -76,23 +83,16 @@
                                             </tbody>
                                         </table>
                                     </td>
-                                    <td width="10%">
-                                        <div class="mt-2 d-grid fw-bolder badge badge-soft-success position-relative">
-                                            <i class="m-2 ri-checkbox-circle-line fs-13"></i>
-                                            <span class="pb-2 text-uppercase">Released</span>
-                                            <button type="button" class="btn btn-sm btn-secondary bg-gradient waves-effect waves-light rounded-circle position-absolute top-0 start-100 translate-middle" data-bs-toggle="modal" data-bs-target="#viewProcessStatusFlow">?</button>
-                                        </div>
-                                    </td>
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <i class="ri-calendar-todo-fill text-primary"></i>
                                             <span class="ms-2">13 Nov, 2022<small class="text-muted ms-1">09:00 AM</small></span>
                                         </div>
                                     </td>
-                                    <td class="text-center">
-                                        <div class="dropdown d-inline-block">
-                                            <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewReleasedRequest"><i class="ri-eye-fill"></i></button>
-                                            <button type="button" id="sa-warning" class="btn btn-danger btn-icon waves-effect waves-light"><i class="bx bx-trash fs-4"></i></button>
+                                    <td width="10%">
+                                        <div class="d-flex gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails"><i class="ri-eye-fill"></i></button>
+                                            <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="deleteRequest()"><i class="bx bx-trash fs-4"></i></button>
                                         </div>
                                     </td>
                                 </tr>
@@ -116,6 +116,13 @@
                                             <span class="ms-2">28 Nov, 2022<small class="text-muted ms-1">04:30 PM</small></span>
                                         </div>
                                     </td>
+                                    <td>
+                                        <div class="d-block badge badge-soft-success align-items-center">
+                                            <i class="me-2 mdi mdi-cash-check fs-13"></i>
+                                            <span class="text-uppercase fw-bold">Paid</span>
+                                        </div>
+                                        <span class="mt-1 d-block badge badge-soft-dark badge-border">OR No. 5633217</span>
+                                    </td>
                                     <td width="30%">
                                         <table>
                                             <tbody>
@@ -134,23 +141,16 @@
                                             </tbody>
                                         </table>
                                     </td>
-                                    <td width="10%">
-                                        <div class="mt-2 d-grid fw-bolder badge badge-soft-success position-relative">
-                                            <i class="m-2 ri-checkbox-circle-line fs-13"></i>
-                                            <span class="pb-2 text-uppercase">Released</span>
-                                            <button type="button" class="btn btn-sm btn-secondary bg-gradient waves-effect waves-light rounded-circle position-absolute top-0 start-100 translate-middle" data-bs-toggle="modal" data-bs-target="#viewProcessStatusFlow">?</button>
-                                        </div>
-                                    </td>
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <i class="ri-calendar-todo-fill text-primary"></i>
                                             <span class="ms-2">29 Nov, 2022<small class="text-muted ms-1">07:45 AM</small></span>
                                         </div>
                                     </td>
-                                    <td class="text-center">
-                                        <div class="dropdown d-inline-block">
-                                            <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewReleasedRequest"><i class="ri-eye-fill"></i></button>
-                                            <button type="button" id="sa-params" class="btn btn-danger btn-icon waves-effect waves-light"><i class="bx bx-trash fs-4"></i></button>
+                                    <td width="10%">
+                                        <div class="d-flex gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails"><i class="ri-eye-fill"></i></button>
+                                            <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="deleteRequest()"><i class="bx bx-trash fs-4"></i></button>
                                         </div>
                                     </td>
                                 </tr>
@@ -174,6 +174,13 @@
                                             <span class="ms-2">05 Dec, 2022<small class="text-muted ms-1">10:27 AM</small></span>
                                         </div>
                                     </td>
+                                    <td>
+                                        <div class="d-block badge badge-soft-success align-items-center">
+                                            <i class="me-2 mdi mdi-cash-check fs-13"></i>
+                                            <span class="text-uppercase fw-bold">Paid</span>
+                                        </div>
+                                        <span class="mt-1 d-block badge badge-soft-dark badge-border">OR No. 1343167</span>
+                                    </td>
                                     <td width="30%">
                                         <table>
                                             <tbody>
@@ -192,23 +199,16 @@
                                             </tbody>
                                         </table>
                                     </td>
-                                    <td width="10%">
-                                        <div class="mt-2 d-grid fw-bolder badge badge-soft-success position-relative">
-                                            <i class="m-2 ri-checkbox-circle-line fs-13"></i>
-                                            <span class="pb-2 text-uppercase">Released</span>
-                                            <button type="button" class="btn btn-sm btn-secondary bg-gradient waves-effect waves-light rounded-circle position-absolute top-0 start-100 translate-middle" data-bs-toggle="modal" data-bs-target="#viewProcessStatusFlow">?</button>
-                                        </div>
-                                    </td>
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <i class="ri-calendar-todo-fill text-primary"></i>
                                             <span class="ms-2">11 Dec, 2022<small class="text-muted ms-1">01:33 PM</small></span>
                                         </div>
                                     </td>
-                                    <td class="text-center">
-                                        <div class="dropdown d-inline-block">
-                                            <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewReleasedRequest"><i class="ri-eye-fill"></i></button>
-                                            <button type="button" id="custom-sa-warning" class="btn btn-danger btn-icon waves-effect waves-light"><i class="bx bx-trash fs-4"></i></button>
+                                    <td width="10%">
+                                        <div class="d-flex gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails"><i class="ri-eye-fill"></i></button>
+                                            <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="deleteRequest()"><i class="bx bx-trash fs-4"></i></button>
                                         </div>
                                     </td>
                                 </tr>
@@ -280,10 +280,10 @@
                                             <span class="ms-2">15 Oct, 2022<small class="text-muted ms-1">08:15 AM</small></span>
                                         </div>
                                     </td>
-                                    <td class="text-center">
-                                        <div class="dropdown d-inline-block">
-                                            <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewCancelledRequest"><i class="ri-eye-fill"></i></button>
-                                            <button type="button" id="sa-warning" class="btn btn-danger btn-icon waves-effect waves-light"><i class="bx bx-trash fs-4"></i></button>
+                                    <td width="10%">
+                                        <div class="d-flex gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails"><i class="ri-eye-fill"></i></button>
+                                            <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="deleteRequest()"><i class="bx bx-trash fs-4"></i></button>
                                         </div>
                                     </td>
                                 </tr>
@@ -338,10 +338,10 @@
                                             <span class="ms-2">19 Nov, 2022<small class="text-muted ms-1">10:00 AM</small></span>
                                         </div>
                                     </td>
-                                    <td class="text-center">
-                                        <div class="dropdown d-inline-block">
-                                            <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewCancelledRequest"><i class="ri-eye-fill"></i></button>
-                                            <button type="button" id="sa-params" class="btn btn-danger btn-icon waves-effect waves-light"><i class="bx bx-trash fs-4"></i></button>
+                                    <td width="10%">
+                                        <div class="d-flex gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails"><i class="ri-eye-fill"></i></button>
+                                            <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="deleteRequest()"><i class="bx bx-trash fs-4"></i></button>
                                         </div>
                                     </td>
                                 </tr>
@@ -396,10 +396,10 @@
                                             <span class="ms-2">17 Dec, 2022<small class="text-muted ms-1">12:45 PM</small></span>
                                         </div>
                                     </td>
-                                    <td class="text-center">
-                                        <div class="dropdown d-inline-block">
-                                            <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewCancelledRequest"><i class="ri-eye-fill"></i></button>
-                                            <button type="button" id="custom-sa-warning" class="btn btn-danger btn-icon waves-effect waves-light"><i class="bx bx-trash fs-4"></i></button>
+                                    <td width="10%">
+                                        <div class="d-flex gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails"><i class="ri-eye-fill"></i></button>
+                                            <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="deleteRequest()"><i class="bx bx-trash fs-4"></i></button>
                                         </div>
                                     </td>
                                 </tr>
@@ -413,10 +413,9 @@
                                     <th>Control Number</th>
                                     <th>Student</th>
                                     <th>Date Filed</th>
+                                    <th>Payment Status</th>
                                     <th>Details</th>
-                                    <th>Request Status</th>
                                     <th>Date Deleted</th>
-                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -440,6 +439,12 @@
                                             <span class="ms-2">09 Dec, 2022<small class="text-muted ms-1">08:30 AM</small></span>
                                         </div>
                                     </td>
+                                    <td>
+                                        <div class="d-block badge badge-soft-warning align-items-center">
+                                            <i class="me-2 mdi mdi-cash-fast fs-13"></i>
+                                            <span class="text-uppercase fw-bold">Cancelled</span>
+                                        </div>
+                                    </td>
                                     <td width="30%">
                                         <table>
                                             <tbody>
@@ -458,21 +463,11 @@
                                             </tbody>
                                         </table>
                                     </td>
-                                    <td width="10%">
-                                        <div class="mt-2 d-grid badge badge-soft-dark position-relative">
-                                            <i class="m-2 mdi mdi-trash-can-outline fs-13"></i>
-                                            <span class="pb-2 text-uppercase">Deleted</span>
-                                            <button type="button" class="btn btn-sm btn-secondary bg-gradient waves-effect waves-light rounded-circle position-absolute top-0 start-100 translate-middle" data-bs-toggle="modal" data-bs-target="#viewProcessStatusFlow">?</button>
-                                        </div>
-                                    </td>
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <i class="ri-calendar-todo-fill text-primary"></i>
                                             <span class="ms-2">10 Dec, 2022<small class="text-muted ms-1">09:00 AM</small></span>
                                         </div>
-                                    </td>
-                                    <td class="text-center" width="10%">
-                                        <button type="button" class="btn btn-info btn-label waves-effect waves-light"><i class="mdi mdi-eye-outline label-icon align-middle fs-16 me-2"></i> View</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -495,6 +490,13 @@
                                             <span class="ms-2">12 Dec, 2022<small class="text-muted ms-1">07:15 AM</small></span>
                                         </div>
                                     </td>
+                                    <td>
+                                        <div class="d-block badge badge-soft-success align-items-center">
+                                            <i class="me-2 mdi mdi-cash-check fs-13"></i>
+                                            <span class="text-uppercase fw-bold">Paid</span>
+                                        </div>
+                                        <span class="mt-1 d-block badge badge-soft-dark badge-border">OR No. 3257893</span>
+                                    </td>
                                     <td width="30%">
                                         <table>
                                             <tbody>
@@ -513,21 +515,11 @@
                                             </tbody>
                                         </table>
                                     </td>
-                                    <td width="10%">
-                                        <div class="mt-2 d-grid badge badge-soft-dark position-relative">
-                                            <i class="m-2 mdi mdi-trash-can-outline fs-13"></i>
-                                            <span class="pb-2 text-uppercase">Deleted</span>
-                                            <button type="button" class="btn btn-sm btn-secondary bg-gradient waves-effect waves-light rounded-circle position-absolute top-0 start-100 translate-middle" data-bs-toggle="modal" data-bs-target="#viewProcessStatusFlow">?</button>
-                                        </div>
-                                    </td>
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <i class="ri-calendar-todo-fill text-primary"></i>
                                             <span class="ms-2">14 Dec, 2022<small class="text-muted ms-1">04:37 PM</small></span>
                                         </div>
-                                    </td>
-                                    <td class="text-center" width="10%">
-                                        <button type="button" class="btn btn-info btn-label waves-effect waves-light"><i class="mdi mdi-eye-outline label-icon align-middle fs-16 me-2"></i> View</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -550,6 +542,12 @@
                                             <span class="ms-2">13 Dec, 2022<small class="text-muted ms-1">09:17 AM</small></span>
                                         </div>
                                     </td>
+                                    <td>
+                                        <div class="d-block badge badge-soft-warning align-items-center">
+                                            <i class="me-2 mdi mdi-cash-fast fs-13"></i>
+                                            <span class="text-uppercase fw-bold">Cancelled</span>
+                                        </div>
+                                    </td>
                                     <td width="30%">
                                         <table>
                                             <tbody>
@@ -568,21 +566,11 @@
                                             </tbody>
                                         </table>
                                     </td>
-                                    <td width="10%">
-                                        <div class="mt-2 d-grid badge badge-soft-dark position-relative">
-                                            <i class="m-2 mdi mdi-trash-can-outline fs-13"></i>
-                                            <span class="pb-2 text-uppercase">Deleted</span>
-                                            <button type="button" class="btn btn-sm btn-secondary bg-gradient waves-effect waves-light rounded-circle position-absolute top-0 start-100 translate-middle" data-bs-toggle="modal" data-bs-target="#viewProcessStatusFlow">?</button>
-                                        </div>
-                                    </td>
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <i class="ri-calendar-todo-fill text-primary"></i>
                                             <span class="ms-2">14 Dec, 2022<small class="text-muted ms-1">06:00 PM</small></span>
                                         </div>
-                                    </td>
-                                    <td class="text-center" width="10%">
-                                        <button type="button" class="btn btn-info btn-label waves-effect waves-light"><i class="mdi mdi-eye-outline label-icon align-middle fs-16 me-2"></i> View</button>
                                     </td>
                                 </tr>
                             </tbody>
