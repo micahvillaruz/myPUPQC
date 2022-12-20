@@ -1,39 +1,26 @@
-<!-- <div class="row">
-  <div class="col-xl">
+<div class="row">
+  <div class="col-xl-6">
     <div class="card">
-	    <div class="card-header">
-			  <h4 class="card-title mb-0">Donut Chart</h4>
-				  </div>
-					  <div class="card-body">
-						  <canvas
-						  id=""
-						  class="chartjs-chart"
-						  data-colors='["--vz-primary", "--vz-light"]'></canvas>
-					  </div>
-				  </div>
-			  </div>
-      </div> 
-      end col
-		</div>
-  <!-- </div> 
-  <div class="col-xl">
+      <div class="card-header">
+        <h4 class="card-title mb-0">Donut Chart</h4>
+      </div>
+      <div class="card-body">
+        <canvas id="doughnut1" class="chartjs-chart" data-colors='["--vz-primary", "--vz-light"]'></canvas>
+      </div>
+    </div>
+  </div> <!-- end col -->
+
+  <div class="col-xl-6">
     <div class="card">
-	    <div class="card-header">
-			  <h4 class="card-title mb-0">Donut Chart</h4>
-				  </div>
-					  <div class="card-body">
-						  <canvas
-						  id=""
-						  class="chartjs-chart"
-						  data-colors='["--vz-primary", "--vz-light"]'></canvas>
-					  </div>
-				  </div>
-			  </div>
-      </div> 
-      <!-- end col -->
-		<!-- </div>
-  </div> 
-</div>  -->
+      <div class="card-header">
+        <h4 class="card-title mb-0">Donut Chart</h4>
+      </div>
+      <div class="card-body">
+        <canvas id="doughnut" class="chartjs-chart" data-colors='["--vz-primary", "--vz-light"]'></canvas>
+      </div>
+    </div>
+  </div> <!-- end col -->
+</div> <!-- end row -->
 
 <div class="row">
   <div class="col-xl-2 col-md-6">
@@ -64,9 +51,9 @@
           <div class="flex-shrink-0 align-self-center">
           </div>
         </div>
-      </div><!-- end card body -->
+      </div>
     </div>
-  </div> <!-- end col-->
+  </div>
 
   <div class="col-xl-2 col-md-6">
     <div class="card card-height-100 card-animate overflow-hidden">
@@ -96,9 +83,9 @@
           <div class="flex-shrink-0 align-self-center">
           </div>
         </div>
-      </div><!-- end card body -->
+      </div>
     </div>
-  </div> <!-- end col-->
+  </div>
 
   <div class="col-xl-2 col-md-6">
     <div class="card card-height-100 card-animate overflow-hidden">
@@ -128,9 +115,9 @@
           <div class="flex-shrink-0 align-self-center">
           </div>
         </div>
-      </div><!-- end card body -->
+      </div>
     </div>
-  </div> <!-- end col-->
+  </div>
 
   <div class="col-xl-2 col-md-6">
     <div class="card card-height-100 card-animate overflow-hidden">
@@ -161,9 +148,9 @@
             <span class="badge badge-soft-success fs-12"><i class="ri-arrow-right-up-line fs-13 align-middle"></i> +6.11 %<span></span></span>
           </div>
         </div>
-      </div><!-- end card body -->
+      </div>
     </div>
-  </div> <!-- end col-->
+  </div>
 
   <div class="col-xl-2 col-md-6">
     <div class="card card-height-100 card-animate overflow-hidden">
@@ -194,9 +181,9 @@
             <span class="badge badge-soft-success fs-12"><i class="ri-arrow-right-up-line fs-13 align-middle"></i> +6.11 %<span></span></span>
           </div>
         </div>
-      </div><!-- end card body -->
+      </div>
     </div>
-  </div> <!-- end col-->
+  </div>
 
   <div class="col-xl-2 col-md-6">
     <div class="card card-height-100 card-animate overflow-hidden">
@@ -227,16 +214,16 @@
             <span class="badge badge-soft-success fs-12"><i class="ri-arrow-right-up-line fs-13 align-middle"></i> +16.31 %<span></span></span>
           </div>
         </div>
-      </div><!-- end card body -->
+      </div>
     </div>
-  </div> <!-- end col-->
+  </div>
 </div> <!-- end row-->
 
 <div class="row">
   <div class="col-lg-12">
     <div class="card">
       <div class="card-header d-flex align-items-center">
-      <h2 class="card-title mb-0 flex-grow-1 fw-bold text-primary">APPOINTMENTS HISTORY</h2>
+        <h2 class="card-title mb-0 flex-grow-1 fw-bold text-primary">APPOINTMENTS HISTORY</h2>
         <div>
           <!-- <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addStaffModal">Add Faculty/Staff</button> -->
         </div>
@@ -244,17 +231,17 @@
       <div class="card-body">
         <table id="appointment-history-datatable" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
           <thead>
-              <tr>
-                <th>Appointment Code</th>
-                <th>Student Name</th>
-                <th>Status</th>
-                <th>Appointment Date</th>
-                <th>Action</th>
-              </tr>
+            <tr>
+              <th>Appointment Code</th>
+              <th>Student Name</th>
+              <th>Status</th>
+              <th>Appointment Date</th>
+              <th>Action</th>
+            </tr>
           </thead>
         </table>
       </div>
     </div>
-  </div>   
+  </div>
   <!--end col-->
 </div>

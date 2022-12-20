@@ -1,6 +1,27 @@
 $(function () {
 	loadAppointmentHistoryTable()
 	getPendingAppointmentHistory()
+
+	var isdoughnutchart = document.getElementById('doughnut1')
+	;(doughnutChartColors = getChartColorsArray('doughnut1')),
+		doughnutChartColors &&
+			(lineChart = new Chart(isdoughnutchart, {
+				type: 'doughnut',
+				data: {
+					labels: ['Desktops', 'Tablets'],
+					datasets: [
+						{
+							data: [300, 210],
+							backgroundColor: doughnutChartColors,
+							hoverBackgroundColor: doughnutChartColors,
+							hoverBorderColor: '#fff',
+						},
+					],
+				},
+				options: {
+					plugins: { legend: { labels: { font: { family: 'Poppins' } } } },
+				},
+			}))
 })
 
 // Load datatables
