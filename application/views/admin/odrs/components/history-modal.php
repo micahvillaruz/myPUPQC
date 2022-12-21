@@ -132,34 +132,33 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <h2 class="text-center"><span id="control_no" class="badge badge-outline-primary text-center fw-bold">20224935-0293</span></h2>
+        <h2 class="text-center"><span id="control_no" class="badge badge-outline-primary text-center fw-bold"></span></h2>
         <div class="row mt-4">
           <div class="col-md">
             <div class="row align-items-center g-3">
               <div class="col-md-auto">
                 <div class="avatar-md">
                   <div id="picture" class="avatar-title bg-white rounded-circle">
-                    <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-man-6.png" class="avatar-md" />
                   </div>
                 </div>
               </div>
               <div class="col-md">
                 <div>
-                  <h5 id="student_name">James Paul Tulod</h5>
-                  <h6 id="user_no">2019-00045-CM-0</h6>
+                  <h5 id="student_name"></h5>
+                  <h6 id="user_no"></h6>
                   <div class="hstack gap-3 flex-wrap">
-                    <div id="course" class="badge rounded-pill badge-soft-danger fs-12">Bachelor of Science in Business Teacher's Education</div>
+                    <div id="course" class="badge rounded-pill badge-soft-danger fs-12"></div>
                     <div class="vr"></div>
                     <div>
                       <i class="ri-mail-fill align-bottom text-info me-2"></i>
                       <span>Email Address :</span>
-                      <span id="email_address" class="fw-medium">paultulod@pm.me</span>
+                      <span id="email_address" class="fw-medium"></span>
                     </div>
                     <div class="vr"></div>
                     <div>
                       <i class="ri-phone-fill align-bottom text-success me-2"></i>
                       <span>Mobile Number:</span>
-                      <span id="contact_number" class="fw-medium">09451152076</span>
+                      <span id="contact_number" class="fw-medium"></span>
                     </div>
                   </div>
                 </div>
@@ -176,46 +175,16 @@
               <th>Document</th>
               <th>Qty</th>
               <th>Payment Status</th>
-              <th id="completion_date">Date Released</th>
+              <th id="completion_date"></th>
             </tr>
           </thead>
           <tbody id="documents">
-            <tr>
-              <td>CAV-CHED (Commission on Higher Education)</td>
-              <td class="text-center">2</td>
-              <td class="text-center">
-                <span class="badge bg-success">Paid</span> <span class="badge badge-outline-dark">OR No. 94830294 </span>
-              </td>
-              <td>
-                <span class="ms-2">19 Dec, 2022<small class="text-muted ms-1">06:00 PM</small></span>
-              </td>
-            </tr>
-            <tr>
-              <td>CAV-DFA/Apostille - Red Ribbon (For Undergrad)</td>
-              <td class="text-center">3</td>
-              <td class="text-center">
-                <span class="badge bg-success">Paid</span> <span class="badge badge-outline-dark">OR No. 94830294 </span>
-              </td>
-              <td>
-                <span class="ms-2">19 Dec, 2022<small class="text-muted ms-1">06:00 PM</small></span>
-              </td>
-            </tr>
-            <tr>
-              <td>WES Form, ICES Form, IQAS Form</td>
-              <td class="text-center">2</td>
-              <td class="text-center">
-                <span class="badge bg-success">Paid</span> <span class="badge badge-outline-dark">OR No. 94830294 </span>
-              </td>
-              <td>
-                <span class="ms-2">19 Dec, 2022<small class="text-muted ms-1">06:00 PM</small></span>
-              </td>
-            </tr>
           </tbody>
         </table>
         <div class="mt-4">
           <span class="badge rounded-pill bg-primary fs-12">Purpose of Request</span>
           <div class="bg-soft-secondary ms-1 text-wrap">
-            <p id="purpose_of_request" class="p-2 fw-medium">Scholarship</p>
+            <p id="purpose_of_request" class="p-2 fw-medium"></p>
           </div>
         </div>
         <div class="m-2 mt-4 mb-3">
@@ -234,7 +203,7 @@
                       <div class="flex-grow-1 ms-3">
                         <h6 class="fs-15 mb-0 fw-semibold">
                           Pending for Clearance -
-                          <span id="pending_for_clearance_date" class="fw-normal">Wed, 14 Dec 2022</span>
+                          <span id="pending_for_clearance_date" class="fw-normal"></span>
                         </h6>
                       </div>
                     </div>
@@ -243,109 +212,17 @@
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                   <div class="accordion-body ms-2 ps-5 pt-0">
                     <h6 class="mb-1">The Document Request is Pending for Approval and is being reviewed by the Officer-in-Charge, Student Records.</h6>
-                    <p id="pending_for_clearance_datetime" class="text-muted mb-0">Wed, 14 Dec 2022 - 9:15AM</p>
+                    <p id="pending_for_clearance_datetime" class="text-muted mb-0"></p>
                   </div>
                 </div>
               </div>
               <div id="for_clearance" class="accordion-item border-0">
-                <div class="accordion-header" id="headingTwo">
-                  <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <div class="d-flex align-items-center">
-                      <div class="flex-shrink-0 avatar-xs">
-                        <div class="avatar-title bg-danger rounded-circle">
-                          <i class="mdi mdi-nfc-search-variant"></i>
-                        </div>
-                      </div>
-                      <div class="flex-grow-1 ms-3">
-                        <h6 class="fs-15 mb-0 fw-semibold">
-                          For Clearance -
-                          <span class="fw-normal">Thu, 15 Dec 2022</span>
-                        </h6>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                  <div class="accordion-body ms-2 ps-5 pt-0">
-                    <h6 class="mb-1">The Document Request is now Approved. The student must go to PUP QC to submit the requirements and pay the processing fees.</h6>
-                    <p class="text-muted mb-0">Thu, 15 Dec 2022 - 07:00AM</p>
-                  </div>
-                </div>
               </div>
               <div id="for_evaluation" class="accordion-item border-0">
-                <div class="accordion-header" id="headingThree">
-                  <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    <div class="d-flex align-items-center">
-                      <div class="flex-shrink-0 avatar-xs">
-                        <div class="avatar-title bg-info rounded-circle">
-                          <i class="mdi mdi-file-sign"></i>
-                        </div>
-                      </div>
-                      <div class="flex-grow-1 ms-3">
-                        <h6 class="fs-15 mb-1 fw-semibold">
-                          For Evaluation / Processing -
-                          <span class="fw-normal">Fri, 16 Dec 2022</span>
-                        </h6>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                  <div class="accordion-body ms-2 ps-5 pt-0">
-                    <h6 class="mb-1">The Document/s are Paid and the Request is now being Processed for signature, documentary stamp and school dry seal.</h6>
-                    <p class="text-muted mb-0">Fri, 16 Dec 2022 - 04:18PM</p>
-                  </div>
-                </div>
               </div>
               <div id="ready_for_pickup" class="accordion-item border-0">
-                <div class="accordion-header" id="headingFour">
-                  <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    <div class="d-flex align-items-center">
-                      <div class="flex-shrink-0 avatar-xs">
-                        <div class="avatar-title bg-dark rounded-circle">
-                          <i class="ri-user-received-2-line"></i>
-                        </div>
-                      </div>
-                      <div class="flex-grow-1 ms-3">
-                        <h6 class="fs-15 mb-1 fw-semibold">
-                          Ready for Pickup -
-                          <span class="fw-normal">Sat, 17 Dec 2022</span>
-                        </h6>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                  <div class="accordion-body ms-2 ps-5 pt-0">
-                    <h6 class="mb-1">The Requested Document/s can now be claimed at PUP QC. The student must bring the claim stub and other requirements, if necessary.</h6>
-                    <p class="text-muted mb-0">Sat, 17 Dec 2022 - 08:18AM</p>
-                  </div>
-                </div>
               </div>
               <div id="last" class="accordion-item border-0">
-                <div class="accordion-header" id="headingFive">
-                  <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                    <div class="d-flex align-items-center">
-                      <div class="flex-shrink-0 avatar-xs">
-                        <div class="avatar-title bg-success rounded-circle">
-                          <i class="ri-checkbox-circle-fill"></i>
-                        </div>
-                      </div>
-                      <div class="flex-grow-1 ms-3">
-                        <h6 class="fs-15 mb-1 fw-semibold">
-                          Released -
-                          <span class="fw-normal">Mon, 19 Dec, 2022</span>
-                        </h6>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-                  <div class="accordion-body ms-2 ps-5 pt-0">
-                    <h6 class="mb-1">The requested documents has been successfully claimed by the student.</h6>
-                    <p class="text-muted mb-0">Mon, 19 Dec, 2022 - 06:00PM</p>
-                  </div>
-                </div>
               </div>
             </div>
             <!--end accordion-->
@@ -355,7 +232,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary btn-animation waves-effect waves-light" data-text="Close" data-bs-dismiss="modal"><span>Close</span></button>
+        <button type="button" class="btn btn-primary waves-effect waves-light" data-text="Close" data-bs-dismiss="modal"><span>Close</span></button>
       </div>
     </div>
     <!-- /.modal-content -->
