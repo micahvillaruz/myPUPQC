@@ -1,7 +1,7 @@
 $(function() {
     // viewReservationDetails()
 
-    ownReservationsHistory()
+    viewAllReservationHistoryStaff()
 
 })
 
@@ -62,10 +62,8 @@ $(function() {
 //     })
 // }
 
-// console.log(user_id)
-
-//View All Own Reservation History
-ownReservationsHistory = (user_id) => {
+//View All Reservation History
+viewAllReservationHistoryStaff = () => {
     const dt = $('#reservation-history')
 
     $.ajaxSetup({
@@ -79,7 +77,7 @@ ownReservationsHistory = (user_id) => {
         dt.DataTable({
             bDestroy: true,
             ajax: {
-                url: apiURL + `evrsers/student/view_history/${user_id}`,
+                url: apiURL + `evrsers/pup_staff/view_done`,
                 type: 'GET',
                 ContentType: 'application/x-www-form-urlencoded',
             },
@@ -133,9 +131,9 @@ ownReservationsHistory = (user_id) => {
                 {
                     data: null,
                     class: 'text-center',
-                    render: (data) => {
-                        const reserve_status = data.reserve_status
-                        return `<span class="badge rounded-pill bg-success">${reserve_status}</span>`
+                    render: () => {
+                        // const reserve_status = data.reserve_status
+                        return `<span class="badge rounded-pill bg-success">Done</span>`
                     },
                 },
             ],
