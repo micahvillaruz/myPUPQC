@@ -25,7 +25,7 @@
 <!-- Sweet alert init js-->
 <script src="<?= base_url() ?>public/js/pages/sweetalerts.init.js"></script>
 
-<!-- student ajax -->
+<!-- pup-staff ajax -->
 <script src="<?= base_url() ?>public/js/ajax/pup-staff/evrsers/evrsers.ajax.js"></script>
 
 <!-- App js -->

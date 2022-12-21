@@ -1,16 +1,11 @@
 $(function() {
-    viewReservationDetails()
+    viewDetailsReservationStaff()
 
     pendingReservations()
-
-    $('#addNewReservation').on('submit', function(e) {
-        e.preventDefault() // prevent page refresh
-        addNewReservation()
-    })
 })
 
 // View Own Reservation details
-viewReservationDetails = (reservation_id) => {
+viewDetailsReservationStaff = (reservation_id) => {
     $.ajaxSetup({
         headers: {
             Accept: 'application/json',
@@ -43,28 +38,10 @@ viewReservationDetails = (reservation_id) => {
             $('#attachment1').html(userData.reserve_attachments_1)
             $('#attachment2').html(userData.reserve_attachments_2)
             $('#attachment3').html(userData.reserve_attachments_3)
-            let reservation_status = userData.reserve_status
-            if (reservation_status == 'Pending') {
-                $('#reservation_status').html(
-                    `<span class="badge rounded-pill bg-secondary">${reservation_status}</span>`,
-                )
-            } else if (reservation_status == 'Cancelled by Staff') {
-                $('#reservation_status').html(
-                    `<span class="badge rounded-pill bg-danger">${reservation_status}</span>`,
-                )
-            } else if (reservation_status == 'Cancelled by Student') {
-                $('#reservation_status').html(
-                    `<span class="badge rounded-pill bg-info">${reservation_status}</span>`,
-                )
-            } else {
-                $('#reservation_status').html(
-                    `<span class="badge rounded-pill bg-success">${reservation_status}</span>`,
-                )
-            }
+                // let reservation_status = userData.reserve_status
         },
     })
 }
-
 
 
 //View All Own Reservations
@@ -151,8 +128,8 @@ pendingReservations = () => {
                     render: (data) => {
                         return `
                             <div class="dropdown d-inline-block">
-                                <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewReservationModal" onclick="viewReservationDetails('${data.reservation_id}')"><i class="ri-eye-fill fs-5"></i></button>
-                                <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editReservationModal" onclick = "editReservation('${data.reservation_id}')"><i class="ri-edit-2-fill fs-5"></i></button>
+                                <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewReservationModal" onclick="viewDetailsReservationStaff('${data.reservation_id}')"><i class="ri-eye-fill fs-5"></i></button>
+                                <button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#approveReservationModal" onclick="approveReservation('${data.reservation_id}')"><i class="ri-check-fill fs-5"></i></button> 
                                 <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#cancelReservationModal" onclick="cancelReservation('${data.reservation_id}')"><i class="ri-close-fill fs-5"></i></button> 
                             </div>
                                 `
