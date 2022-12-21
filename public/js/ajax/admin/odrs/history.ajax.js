@@ -27,6 +27,7 @@ loadReleasedRequests = () => {
 				// Control Number
 				{
 					data: null,
+					width: '12%',
 					render: (data) => {
 						return `<span class="text-primary fw-medium">${data.control_no}</span>`
 					},
@@ -147,8 +148,8 @@ loadReleasedRequests = () => {
 					render: (data) => {
 						return `
 							<div class="d-flex gap-2 justify-content-center">
-								<button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails" onclick="viewRequestDetails('${data.request_id}')"><i class="ri-eye-fill"></i></button>
-								<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="deleteRequest()"><i class="bx bx-trash fs-4"></i></button>
+								<button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails" onclick="viewRequestDetails('${data.request_id}')"><i class="ri-eye-fill fs-4"></i></button>
+								<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="deleteRequest('${data.request_id}')"><i class="bx bx-trash fs-4"></i></button>
 							</div>
 						`
 					},
@@ -176,6 +177,7 @@ loadCancelledRequests = () => {
 				// Control Number
 				{
 					data: null,
+					width: '12%',
 					render: (data) => {
 						return `<span class="text-primary fw-medium">${data.control_no}</span>`
 					},
@@ -297,8 +299,8 @@ loadCancelledRequests = () => {
 					render: (data) => {
 						return `
 							<div class="d-flex gap-2 justify-content-center">
-								<button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails" onclick="viewRequestDetails('${data.request_id}')"><i class="ri-eye-fill"></i></button>
-								<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="deleteRequest()"><i class="bx bx-trash fs-4"></i></button>
+								<button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails" onclick="viewRequestDetails('${data.request_id}')"><i class="ri-eye-fill fs-4"></i></button>
+								<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="deleteRequest('${data.request_id}')"><i class="bx bx-trash fs-4"></i></button>
 							</div>
 						`
 					},
@@ -325,6 +327,7 @@ loadDeletedRequests = () => {
 				// Control Number
 				{
 					data: null,
+					width: '12%',
 					render: (data) => {
 						return `<span class="text-primary fw-medium">${data.control_no}</span>`
 					},
@@ -779,7 +782,7 @@ viewRequestDetails = (request_id) => {
 }
 
 // Delete Request
-deleteRequest = () => {
+deleteRequest = (request_id) => {
 	$.ajaxSetup({
 		headers: {
 			Accept: 'application/json',
@@ -814,6 +817,10 @@ deleteRequest = () => {
 	}).then(function (result) {
 		if (result.value) {
 			$.ajax({
+				url: `${apiURL}odrs/super_admin/delete_request/${request_id}`,
+				type: 'DELETE',
+				dataType: 'json',
+				headers: AJAX_HEADERS,
 				success: (result) => {
 					if (result) {
 						Swal.fire({
@@ -832,6 +839,9 @@ deleteRequest = () => {
 							buttonsStyling: !1,
 							showCloseButton: !0,
 						})
+						loadReleasedRequests()
+						loadCancelledRequests()
+						loadDeletedRequests()
 					}
 				},
 			}).fail(() => {
