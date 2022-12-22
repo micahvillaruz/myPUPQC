@@ -73,14 +73,14 @@ class Student extends CI_Controller
     $this->load->view('student/odrs/scripts/new-request-scripts');
   }
 
-  public function requests()
+  public function request()
   {
     $this->load->view('partials/main');
     $this->load->view('partials/title-meta');
     $this->load->view('partials/head-css');
     $this->load->view('partials/student/topbar');
     $this->load->view('partials/student/sidebar');
-    $this->load->view('partials/page-title', ["page_title" => "ODRS", "title" => "Requests"]);
+    $this->load->view('partials/page-title', ["page_title" => "ODRS", "title" => "Request Details"]);
     $this->load->view('student/odrs/requests');
     $this->load->view('student/odrs/footer');
     $this->load->view('student/odrs/components/requests-modal');
@@ -219,7 +219,7 @@ class Student extends CI_Controller
     $this->load->view('partials/foot-scripts');
     $this->load->view('student/omsss/scripts/medical-logs-scripts');
   }
-  
+
   public function view_reservations()
   {
     $this->load->view('partials/main');
@@ -250,7 +250,7 @@ class Student extends CI_Controller
     $this->load->view('partials/foot-scripts');
     $this->load->view('student/evrsers/scripts/reservationhist-scripts');
   }
-  
+
   public function reservationpolicy()
   {
     $this->load->view('partials/main-home');
@@ -263,4 +263,3 @@ class Student extends CI_Controller
     $this->load->view('home/scripts/terms-scripts');
   }
 }
-
