@@ -30,6 +30,32 @@
 
             <li class="menu-title">
               <i class="ri-more-fill"></i>
+              <span>EVRSERS</span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/evrsers/organizer-management">
+                <i class="ri-team-line"></i>
+                <span>Organizer Management</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/evrsers/manage-reservations">
+                <i class="ri-reserved-line"></i>
+                <span>Reservations</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/evrsers/reservation-history">
+                <i class="bx bx-history"></i>
+                <span>Reservation History</span>
+              </a>
+            </li>
+
+            <li class="menu-title">
+              <i class="ri-more-fill"></i>
               <span>ODRS</span>
             </li>
 
@@ -55,8 +81,8 @@
               </a>
             </li>
 
-          <!--OMSS -->
-          <li class="menu-title">
+            <!--OMSS -->
+            <li class="menu-title">
               <i class="ri-more-fill"></i>
               <span>OMSS - DOCTOR </span>
             </li>
@@ -71,7 +97,7 @@
             <li class="nav-item">
               <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/omsss/doctor/analytics-and-history">
                 <i class="las la-history"></i>
-                <span>Analytics and History</span>
+                <span>Medical Request History</span>
               </a>
             </li>
 
@@ -90,26 +116,26 @@
             <li class="nav-item">
               <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/omsss/dentist/analytics-and-history">
                 <i class="las la-history"></i>
-                <span>Analytics and History</span>
+                <span>Dental Request History</span>
               </a>
             </li>
 
             <li class="menu-title">
               <i class="ri-more-fill"></i>
-              <span>OMSS - GUIDANCE COUNSELLOR </span>
+              <span>OMSS - GUIDANCE COUNSELOR </span>
             </li>
 
             <li class="nav-item">
               <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/omsss/counsellor/counsel-requests">
                 <i class="mdi mdi-brain me-1"></i>
-                <span>Counselling Requests</span>
+                <span>Counseling Requests</span>
               </a>
             </li>
 
             <li class="nav-item">
               <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/omsss/counsellor/analytics-and-history">
                 <i class="las la-history"></i>
-                <span>Analytics and History</span>
+                <span>Counseling History</span>
               </a>
             </li>
 

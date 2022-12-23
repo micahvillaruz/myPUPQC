@@ -1,7 +1,7 @@
 <!-- ADD DOCUMENT MODAL -->
 <div id="addDocumentModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content border-0 overflow-hidden">
+    <div class="modal-content px-4 border-0 overflow-hidden">
       <div class="modal-header">
         <h5 class="modal-title">
           <i class="ri-file-list-3-fill me-1"></i>
@@ -9,44 +9,46 @@
         </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body px-5 py-4">
+      <div class="modal-body py-4">
         <form id="addDocumentForm" class="needs-validation" novalidate>
           <div class="mb-3">
-            <label for="add_document_name" class="form-label">Document Name <span class="text-danger">*</span></label>
-            <input type="text" id="add_document_name" name="document_name" class="form-control" placeholder="Enter the name of the Document" required>
+            <label for="adocument_name" class="form-label">Document Name <span class="text-danger">*</span></label>
+            <input type="text" id="document_name" name="document_name" class="form-control" placeholder="Enter the name of the Document" required>
             <div class="invalid-feedback">
-              Please enter a Document Name.
+              Please enter the Document's Name.
             </div>
           </div>
           <div class="mb-3">
-            <label for="add_document_type" class="form-label">Document Type <span class="text-danger">*</span></label>
-            <select id="add_document_type" name="document_type" class="form-control js-example-basic-hide-search" required>
-              <option value="" selected disabled>Please select a Document Type</option>
+            <label for="document_type" class="form-label">Document Type <span class="text-danger">*</span></label>
+            <select id="document_type" name="document_type" class="form-control" required>
+              <option value="" selected disabled>Select the Type of the Document</option>
               <option value="Transcript of Records">Transcript of Records</option>
               <option value="Certifications">Certifications</option>
               <option value="Unclaimed">Unclaimed</option>
-              <option value="CAV">CAV</option>
+              <option value="CAV">CAV (CHED/DFA/WES/CES)</option>
             </select>
             <div class="invalid-feedback">
-              Please select a Document Type.
+              Please select the Document's Type.
             </div>
           </div>
           <div class="mb-3">
             <label for="document_details" class="form-label">Document Details <span class="text-danger">*</span></label>
             <textarea id="document_details" name="document_details" class="form-control" rows="3" placeholder="Enter additional details about the Document" required></textarea>
             <div class="invalid-feedback">
-              Please enter the Document Details.
+              Please enter the Document's Details.
             </div>
           </div>
           <div class="mb-3">
-            <label class="form-label">Document Requirements</label>
-            <div id="document_requirements_list">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <label class="form-label mb-0">Document Requirements</label>
+              <a href="javascript:new_link('add')" class="btn btn-success py-1 rounded-pill">Add New</a>
             </div>
-            <div id="newForm" style="display: none;">
+            <div id="add_document_requirements_list">
+            </div>
+            <div id="add_newForm" style="display: none;">
             </div>
           </div>
-          <a href="javascript:new_link()" class="btn btn-primary">Add New</a>
-          <button type="submit" class="btn btn-primary w-100 mt-3">Submit</button>
+          <button type="submit" class="btn btn-primary w-100 mt-3 bg-gradient">Submit</button>
         </form>
       </div>
     </div>
@@ -65,10 +67,11 @@
         </h5>
       </div>
       <div class="modal-body px-5 pt-5">
+        <span class="badge badge-soft-dark fs-15 mb-3"> <i class="ri-folder-4-line me-2"></i> Type</span>
+        <mark class="mb-4 mx-3 fw-bold d-block text-center" id="view_document_type"></mark>
         <span class="badge badge-soft-dark fs-15 mb-3"> <i class="ri-file-list-3-line me-2"></i> Details</span>
-        <p class="mb-4" id="view_document_details">
-        </p>
-        <span class="badge badge-soft-dark fs-15 mb-3"> <i class=" ri-folder-4-line me-2"></i> Requirements</span>
+        <p class="mb-4 mx-3" id="view_document_details"></p>
+        <span class="badge badge-soft-dark fs-15 mb-3"> <i class="ri-suitcase-line me-2"></i> Requirements</span>
         <p id="view_document_requirements" class="mx-3"></p>
       </div>
       <div class="modal-footer">
@@ -80,13 +83,11 @@
   <!-- /.modal-dialog -->
 </div>
 <!-- /.modal -->
-<!-- /.modal -->
-<!-- /.modal -->
 
 <!-- UPDATE DOCUMENT MODAL -->
 <div id="updateDocumentModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content border-0 overflow-hidden">
+    <div class="modal-content px-4 border-0 overflow-hidden">
       <div class="modal-header">
         <h5 class="modal-title">
           <i class="ri-file-edit-fill me-1"></i>
@@ -94,43 +95,49 @@
         </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body px-5 py-4">
+      <div class="modal-body py-4">
         <form id="editDocumentForm" class="needs-validation" novalidate>
           <div class="mb-3">
+            <input type="hidden" id="edit_document_id" name="edit_document_id">
+          </div>
+          <div class="mb-3">
             <label for="edit_document_name" class="form-label">Document Name <span class="text-danger">*</span></label>
-            <input type="text" id="edit_document_name" name="edit_document_name" class="form-control" placeholder="Enter the name of the Document" value="Informative Copy of Grades / Certified Copy of Grades" required>
+            <input type="text" id="edit_document_name" name="document_name" class="form-control" placeholder="Enter the name of the Document" value="" required>
             <div class="invalid-feedback">
-              Please enter a Document Name.
+              Please enter the Document's Name.
             </div>
           </div>
           <div class="mb-3">
-            <label for="edit_add_document_type" class="form-label">Document Type <span class="text-danger">*</span></label>
-            <select id="edit_add_document_type" name="edit_add_document_type" class="form-control js-example-basic-hide-search" required>
-              <option value="" disabled>Please select a Document Type</option>
+            <label for="editdocument_type" class="form-label">Document Type <span class="text-danger">*</span></label>
+            <select id="edit_document_type" name="document_type" class="form-control" required>
+              <option value="" disabled>Select the Type of the Document</option>
               <option value="Transcript of Records">Transcript of Records</option>
               <option value="Certifications" selected>Certifications</option>
               <option value="Unclaimed">Unclaimed</option>
-              <option value="CAV">CAV</option>
+              <option value="CAV">CAV (CHED/DFA/WES/CES)</option>
             </select>
             <div class="invalid-feedback">
-              Please select a Document Type.
+              Please select the Document's Type.
             </div>
           </div>
           <div class="mb-3">
             <label for="edit_document_details" class="form-label">Document Details <span class="text-danger">*</span></label>
-            <textarea id="edit_document_details" name="edit_document_details" class="form-control" rows="3" placeholder="Enter additional details about the Document" required>For transfer to other school or scholarship</textarea>
+            <textarea id="edit_document_details" name="document_details" class="form-control" rows="3" placeholder="Enter additional details about the Document" required></textarea>
             <div class="invalid-feedback">
-              Please enter the Document Details.
+              Please enter the Document's Details.
             </div>
           </div>
           <div class="mb-3">
-            <label for="edit_document_requirements" class="form-label">Document Requirements <span class="text-danger">*</span></label>
-            <textarea id="edit_document_requirements" name="edit_document_requirements" class="form-control" rows="3" placeholder="Enter the requirements needed for the request of this document" required>Photocopy of Student ID (Back to Back), Documentary Stamp, and Letter stating the purpose of the request</textarea>
-            <div class="invalid-feedback">
-              Please enter the Document Requirements.
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <label class="form-label mb-0">Document Requirements</label>
+              <a href="javascript:new_link('edit')" class="btn btn-success py-1 rounded-pill">Add New</a>
+            </div>
+            <div id="edit_document_requirements_list">
+            </div>
+            <div id="edit_newForm" style="display: none;">
             </div>
           </div>
-          <button type="submit" class="btn btn-primary w-100 mt-3">Submit</button>
+          <button type="submit" class="btn btn-primary w-100 mt-3 bg-gradient">Submit</button>
         </form>
       </div>
     </div>
@@ -138,4 +145,3 @@
   </div>
   <!-- /.modal-dialog -->
 </div>
-<!-- /.modal -->

@@ -50,9 +50,17 @@ loadGuidanceTable = () => {
 				{
 					data: null,
 					render: (data) => {
-						return data.consultation_status == 'Pending'
-							? `<span class="badge rounded-pill bg-warning">Pending</span>`
-							: `<span class="badge rounded-pill bg-success">Approved</span>`
+						const consultation_status = data.consultation_status
+						console.log(consultation_status)
+						if (consultation_status == 'Pending') {
+							return `<span class="badge rounded-pill bg-warning">Pending</span>`
+						} else if (consultation_status == 'Approved') {
+							return `<span class="badge rounded-pill bg-success">Approved</span>`
+						} else if (consultation_status == 'Cancelled by Staff') {
+							return `<span class="badge rounded-pill bg-info">Cancelled by Staff</span>`
+						} else if (consultation_status == 'Cancelled by Student') {
+							return `<span class="badge rounded-pill bg-info">Cancelled by Student</span>`
+						}
 					},
 				},
 
@@ -102,6 +110,9 @@ addNewGuidanceCase = () => {
 	if ($('#NewGuidanceCaseForm')[0].checkValidity()) {
 		// no validation error
 		const form = new FormData($('#NewGuidanceCaseForm')[0])
+		for (var pair of form.entries()) {
+			console.log(pair[0] + ', ' + pair[1])
+		}
 		data = {
 			appointment_type: 'Guidance',
 			consultation_type: form.get('consultation_type'),
@@ -118,14 +129,10 @@ addNewGuidanceCase = () => {
 			success: (result) => {
 				if (result) {
 					Swal.fire({
-						html:
-							'<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !/h4><p class="text-muted mx-4 mb-0">You have successfully added a Guidance Case!</p>' +
-							'<br><span><h5> Click Ok Button to proceed </h5></span>' +
-							'</div>' +
-							'</div>',
+						html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully added a Guidance Case!</p></div></div>',
 						showCancelButton: !0,
 						showConfirmButton: !1,
-						cancelButtonClass: 'btn btn-danger w-xs mb-1',
+						cancelButtonClass: 'btn btn-success w-xs mb-1',
 						cancelButtonText: 'Ok',
 						buttonsStyling: !1,
 						showCloseButton: !0,
@@ -178,16 +185,23 @@ viewGuidanceDetails = (health_appointment_id) => {
 			const userProfileData = null
 
 			$('#view_case_details').html(userData.case_control_number)
-			$('#view_consultaion_type').html(userData.consultation_type)
+			$('#view_consultation_type').html(userData.consultation_type)
 			$('#view_consultation_reason').html(userData.consultation_reason)
 			$('#view_health_physcian').html(userProfileData != null ? userProfileData.full_name : 'N/A')
 			// $('#view_date_of_symptoms').html(moment(userData.symptoms_date).format('LL'))
 			$('#view_consultation_date').html(moment(userData.consultation_date).format('LL'))
-			$('#view_status').html(
-				userData.consultation_status == 'Pending'
-					? '<span class="fs-12 badge rounded-pill bg-warning" >Pending</span>'
-					: '<span class="fs-12 badge rounded-pill bg-success" >Approved</span>',
-			)
+			const consultation_status_data = userData.consultation_status
+			let consultation_value
+			if (consultation_status_data == 'Pending') {
+				consultation_value = `<span class="badge rounded-pill bg-warning">Pending</span>`
+			} else if (consultation_status_data == 'Approved') {
+				consultation_value = `<span class="badge rounded-pill bg-success">Approved</span>`
+			} else if (consultation_status_data == 'Cancelled by Staff') {
+				consultation_value = `<span class="badge rounded-pill bg-info">Cancelled by Staff</span>`
+			} else if (consultation_status_data == 'Cancelled by Student') {
+				consultation_value = `<span class="badge rounded-pill bg-info">Cancelled by Student</span>`
+			}
+			$('#view_status').html(consultation_value)
 		},
 	})
 }
@@ -236,7 +250,7 @@ cancelGuidance = (health_appointment_id) => {
 								'</div>',
 							showCancelButton: !0,
 							showConfirmButton: !1,
-							cancelButtonClass: 'btn btn-success w-xs mb-1',
+							cancelButtonClass: 'btn btn-danger w-xs mb-1',
 							cancelButtonText: 'Ok',
 							buttonsStyling: !1,
 							showCloseButton: !0,

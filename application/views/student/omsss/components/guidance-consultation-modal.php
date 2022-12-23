@@ -55,17 +55,6 @@
                 </div>
               </div>
             </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1">Time</h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_consultation_time"></div>
-                </div>
-              </div>
-            </li>
             <li class="list-group-item">
               <div class="d-flex align-items-center">
                 <div class="col-4">
@@ -105,15 +94,15 @@
 
           <div class="d-flex gap-5 mb-3">
             <div class="form-check mb-2">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="consultation_type">
+            <input class="form-check-input" type="radio" name="consultation_type" id="consultation_type" value="New Consultation">
               <label class="form-check-label" for="new_consultation">
                 New Consultation
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="consultation_type" checked>
+              <input class="form-check-input" type="radio" name="consultation_type" id="consultation_type" value="Follow Up">
               <label class="form-check-label" for="followup_consultation">
-                Follow-up
+                Follow-up 
               </label>
             </div>
           </div>

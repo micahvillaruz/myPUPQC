@@ -1,8 +1,8 @@
-<div id="viewProcessStatusFlow" class="modal fade" tabindex="-1" aria-labelledby="ProcessStatusFlow" aria-hidden="true" style="display: none;">
+<div id="viewProcessStatusFlow" class="modal fade" tabindex="-1" aria-labelledby="processStatusFlowLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title text-primary" id="ProcessStatusFlow">Process Status Flow</h5>
+        <h5 class="modal-title text-primary" id="processStatusFlowLabel">Process Status Flow</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
       </div>
       <div class="modal-body">
@@ -17,7 +17,7 @@
             </div>
             <br>
             <span class="mt-2 fs-12">
-              The document request is pending for approval by the Administrative Staff. The Administrative Staff will have the option to approve or cancel the request.
+              The request created by the student is pending for approval by the Officer-in-Charge of Student Records. The OIC (Sir Nandy) will have the option to approve or cancel the request.
             </span>
           </li>
           <li class="list-group-item"><b style="width: 15px; height: 15px;" class="bg-dark text-white rounded-pill me-2 align-middle"><span class="mx-2 fs-10">2</span></b>
@@ -27,7 +27,7 @@
             </div>
             <br>
             <span class="mt-2 fs-12">
-              A schedule is released containing the day and time the student will go to PUP QC for submission of requirements, downloaded Request Form and payment of requested documents.
+              The request is approved and the student can now go to PUP QC for submission of requirements, and payment of requested documents.
           </li>
           <li class="list-group-item"><b style="width: 15px; height: 15px;" class="bg-dark text-white rounded-pill me-2 align-middle"><span class="mx-2 fs-10">3</span></b>
             <div class="badge badge-soft-info">
@@ -36,7 +36,7 @@
             </div>
             <br>
             <span class="mt-2 fs-12">
-              Evaluation and Processing of records and required documents for releasing. The Administrative Staff prints the documents, and gives it to the authorized personnel for signature.
+              Evaluation and Processing of records and required documents for releasing. Sir Nandy prints the documents, and gives it to the authorized personnel for signature.
             </span>
           </li>
           <li class="list-group-item"><b style="width: 15px; height: 15px;" class="bg-dark text-white rounded-pill me-2 align-middle"><span class="mx-2 fs-10">4</span></b>
@@ -46,7 +46,7 @@
             </div>
             <br>
             <span class="mt-2 fs-12">
-              The requested document/s is/are already available for pickup at the releasing section of student records. A schedule is given to the student for claiming of documents requested at PUP QC.
+              The requested document/s is/are already available for pickup at the releasing section of student records. The student must present the claim stub before receiving the documents requested at PUP QC.
             </span>
           </li>
           <li class="list-group-item"><b style="width: 15px; height: 15px;" class="bg-dark text-white rounded-pill me-2 align-middle"><span class="mx-2 fs-10">5</span></b>
@@ -71,27 +71,26 @@
             </div>
             <br>
             <span class="mt-2 fs-12">
-              The document request is pending for approval by the Administrative Staff. The Administrative Staff will have the option to approve or cancel the request.
+              The document request is pending for approval by the Officer-in-Charge of Student Records. The OIC (Sir Nandy) will have the option to approve or cancel the request.
             </span>
           </li>
           <li class="list-group-item"><b style="width: 15px; height: 15px;" class="bg-dark text-white rounded-pill me-2 align-middle"><span class="mx-2 fs-10">2</span></b>
             <div class="badge badge-soft-danger">
               <i class="me-2 mdi mdi-cancel fs-13"></i>
-              <span class="text-uppercase">Cancelled</span>
+              <span class="text-uppercase">Cancelled by Staff</span>
             </div>
             <br>
             <span class="mt-2 fs-12">
-              The document request was cancelled by the Administrative Staff. The reason for cancelling is indicated in the remarks sent to the student. The student can comply with the requirements and request again.
+              The document request was cancelled by Sir Nandy. The reason for cancelling is indicated in the remarks sent to the student. The student can comply with the requirements and request again.
           </li>
-          <li class="list-group-item"><b style="width: 15px; height: 15px;" class="bg-dark text-white rounded-pill me-2 align-middle"><span class="mx-2 fs-10">3</span></b>
-            <div class="badge badge-soft-dark">
-              <i class="me-2 mdi mdi-trash-can-outline fs-13"></i>
-              <span class="text-uppercase">Deleted</span>
+          <li class="list-group-item"><b style="width: 15px; height: 15px;" class="bg-dark text-white rounded-pill me-2 align-middle"><span class="mx-2 fs-10">2</span></b>
+            <div class="badge badge-soft-danger">
+              <i class="me-2 mdi mdi-cancel fs-13"></i>
+              <span class="text-uppercase">Cancelled by Student</span>
             </div>
             <br>
             <span class="mt-2 fs-12">
-              The document request has been deleted and will not be visible on the student's and Administrative Staff's side.
-            </span>
+              The document request was cancelled by the Student. The student can only cancel if request is still <i>Pending for Clearance</i> or <i>For Clearance</i>. The student must create a new request if requesting the same or different type of documents.
           </li>
         </ul>
       </div>
@@ -125,23 +124,20 @@
               </div>
               <div class="col-md">
                 <div>
-                  <h5 id="fullName"></h5>
+                  <h5 id="student_full_name"></h5>
                   <h6 id="user_no"></h6>
                   <div class="hstack gap-3 flex-wrap">
                     <div id="course" class="badge rounded-pill badge-soft-danger fs-12"></div>
                     <div class="vr"></div>
-                    <div class="d-flex align-items-center">
-                      <i class="bx bxs-school align-bottom me-2"></i>
-                      <span id="education_status"></span>
-                    </div>
-                    <div class="vr"></div>
                     <div>
-                      Email Address :
+                      <i class="ri-mail-fill align-bottom text-info me-2"></i>
+                      <span>Email Address :</span>
                       <span id="email_address" class="fw-medium"></span>
                     </div>
                     <div class="vr"></div>
                     <div>
-                      Contact Number:
+                      <i class="ri-phone-fill align-bottom text-success me-2"></i>
+                      <span>Mobile Number:</span>
                       <span id="contact_number" class="fw-medium"></span>
                     </div>
                   </div>
@@ -175,7 +171,30 @@
           <div class="h6 fs-15 text-primary">Status</div>
           <div class="profile-timeline">
             <div class="accordion accordion-flush" id="accordionFlushExample">
-              <div id="pending_for_clearance" class="accordion-item border-0">
+              <div class="accordion-item border-0">
+                <div class="accordion-header" id="headingOne">
+                  <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <div class="d-flex align-items-center">
+                      <div class="flex-shrink-0 avatar-xs">
+                        <div class="avatar-title bg-warning rounded-circle">
+                          <i class="mdi mdi-progress-clock"></i>
+                        </div>
+                      </div>
+                      <div class="flex-grow-1 ms-3">
+                        <h6 class="fs-15 mb-0 fw-semibold">
+                          Pending for Clearance -
+                          <span id="pending_for_clearance_date" class="fw-normal"></span>
+                        </h6>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body ms-2 ps-5 pt-0">
+                    <h6 class="mb-1">The Document Request is Pending for Approval and is being reviewed by the Officer-in-Charge, Student Records.</h6>
+                    <p id="pending_for_clearance_datetime" class="text-muted mb-0"></p>
+                  </div>
+                </div>
               </div>
               <div id="for_clearance" class="accordion-item border-0">
               </div>

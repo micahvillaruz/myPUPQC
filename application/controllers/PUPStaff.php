@@ -167,7 +167,7 @@ class PUPStaff extends CI_Controller
     $this->load->view('partials/head-css');
     $this->load->view('partials/pup-staff/topbar');
     $this->load->view('partials/pup-staff/sidebar');
-    $this->load->view('partials/page-title', ["page_title" => "OMSSS", "title" => "Counsellor Requests"]);
+    $this->load->view('partials/page-title', ["page_title" => "OMSSS", "title" => "Counseling Requests"]);
     $this->load->view('pup-staff/omsss/counsellor-requests');
     $this->load->view('partials/footer');
     $this->load->view('pup-staff/omsss/components/counsellor-requests-modal');
@@ -188,5 +188,50 @@ class PUPStaff extends CI_Controller
     $this->load->view('pup-staff/omsss/components/counsellor-analytics-modal');
     $this->load->view('partials/foot-scripts');
     $this->load->view('pup-staff/omsss/scripts/counsellor-analytics-scripts');
+  }
+
+  public function organizer_management()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/pup-staff/topbar');
+    $this->load->view('partials/pup-staff/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "Organizer Management"]);
+    $this->load->view('pup-staff/evrsers/organizer-management');
+    $this->load->view('partials/footer');
+    $this->load->view('pup-staff/evrsers/components/organizer-management-modal');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('pup-staff/evrsers/scripts/organizer-management-scripts');
+  }
+
+  public function manage_reservations()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/pup-staff/topbar');
+    $this->load->view('partials/pup-staff/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "Manage Reservations"]);
+    $this->load->view('pup-staff/evrsers/view-reservations');
+    $this->load->view('partials/footer');
+    $this->load->view('pup-staff/evrsers/components/reservation-modal');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('pup-staff/evrsers/scripts/view-reservations-scripts');
+  }
+
+  public function reservation_history()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/pup-staff/topbar');
+    $this->load->view('partials/pup-staff/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "Reservation History and Analytics"]);
+    $this->load->view('pup-staff/evrsers/reservation-history');
+    $this->load->view('partials/footer');
+    $this->load->view('pup-staff/evrsers/components/reservation-history-modal');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('pup-staff/evrsers/scripts/reservationhist-scripts');
   }
 }

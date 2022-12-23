@@ -104,45 +104,41 @@
   </div><!-- /.modal -->
 </div>
 
-<div id="viewRequest" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="viewRequest" aria-hidden="true">
+<div id="viewPendingRequest" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="viewPendingRequest" aria-hidden="true">
   <div class="modal-dialog modal-xl modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title text-primary" id="myLargeModalLabel">Request Details</h5>
+        <h5 class="modal-title text-primary" id="viewPendingRequest">Request Details</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <h2 class="text-center"><span id="control_no" class="badge badge-outline-primary text-center fw-bold">20220637-0029</span></h2>
+        <h2 class="text-center"><span id="control_no" class="badge badge-outline-primary text-center fw-bold"></span></h2>
         <div class="row mt-4">
           <div class="col-md">
             <div class="row align-items-center g-3">
               <div class="col-md-auto">
                 <div class="avatar-md">
-                  <div class="avatar-title bg-white rounded-circle">
-                    <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-woman-1.png" alt="" class="avatar-md" />
+                  <div id="image" class="avatar-title bg-white rounded-circle">
                   </div>
                 </div>
               </div>
               <div class="col-md">
                 <div>
-                  <h5>Razal, Shane Jean Artuz</h5>
-                  <h6>2020-00501-CM-1</h6>
+                  <h5 id="student_full_name"></h5>
+                  <h6 id="user_no"></h6>
                   <div class="hstack gap-3 flex-wrap">
-                    <div class="badge rounded-pill badge-soft-danger fs-12">BS Information Technology</div>
+                    <div id="course" class="badge rounded-pill badge-soft-danger fs-12"></div>
                     <div class="vr"></div>
-                    <div class="d-flex align-items-center">
-                      <i class="bx bxs-school align-bottom me-2"></i>
-                      Undergraduate
+                    <div>
+                      <i class="ri-mail-fill align-bottom text-info me-2"></i>
+                      <span>Email Address :</span>
+                      <span id="email_address" class="fw-medium"></span>
                     </div>
                     <div class="vr"></div>
                     <div>
-                      Email Address :
-                      <span class="fw-medium">razalshane@gmail.com</span>
-                    </div>
-                    <div class="vr"></div>
-                    <div>
-                      Mobile Number:
-                      <span class="fw-medium">09382918293</span>
+                      <i class="ri-phone-fill align-bottom text-success me-2"></i>
+                      <span>Mobile Number:</span>
+                      <span id="contact_number" class="fw-medium"></span>
                     </div>
                   </div>
                 </div>
@@ -160,25 +156,13 @@
               <th class="text-uppercase">Quantity</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>Certification of Subject Description</td>
-              <td class="text-center">1</td>
-            </tr>
-            <tr>
-              <td>Transcript of Records - Copy for (Undergraduate) 3rd and 4th Year</td>
-              <td class="text-center">1</td>
-            </tr>
-            <tr>
-              <td>Certification of Enrollment/Attendance</td>
-              <td class="text-center">1</td>
-            </tr>
+          <tbody id="documents">
           </tbody>
         </table>
         <div class="mt-4">
           <span class="badge rounded-pill bg-primary fs-12">Purpose of Request</span>
           <div class="bg-soft-secondary ms-1 text-wrap">
-            <p class="p-2 fw-medium">Employment</p>
+            <p id="purpose_of_request" class="p-2 fw-medium"></p>
           </div>
         </div>
         <div class="m-2 mt-4 mb-3">
@@ -197,7 +181,7 @@
                       <div class="flex-grow-1 ms-3">
                         <h6 class="fs-15 mb-0 fw-semibold">
                           Pending for Clearance -
-                          <span class="fw-normal">Fri, 09 Sep 2022</span>
+                          <span id="pending_for_clearance_date" class="fw-normal"></span>
                         </h6>
                       </div>
                     </div>
@@ -205,8 +189,8 @@
                 </div>
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                   <div class="accordion-body ms-2 ps-5 pt-0">
-                    <h6 class="mb-1">The Document Request is pending for approval and is being reviewed by the PUP Staff.</h6>
-                    <p class="text-muted mb-0">Fri, 09 Sep 2022 - 11:00AM</p>
+                    <h6 class="mb-1">The Document Request is Pending for Approval and is being reviewed by the Officer-in-Charge, Student Records.</h6>
+                    <p id="pending_for_clearance_datetime" class="text-muted mb-0"></p>
                   </div>
                 </div>
               </div>
@@ -294,45 +278,41 @@
   <!-- /.modal-dialog -->
 </div>
 
-<div id="viewRequestDetails" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div id="viewApprovedRequest" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="viewApprovedRequest" aria-hidden="true">
   <div class="modal-dialog modal-xl modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title text-primary" id="myLargeModalLabel">Request Details</h5>
+        <h5 class="modal-title text-primary" id="viewApprovedRequest">Request Details</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <h2 class="text-center"><span id="control_no" class="badge badge-outline-primary text-center fw-bold">20220903-0043</span></h2>
+        <h2 class="text-center"><span id="view_control_no" class="badge badge-outline-primary text-center fw-bold"></span></h2>
         <div class="row mt-4">
           <div class="col-md">
             <div class="row align-items-center g-3">
               <div class="col-md-auto">
                 <div class="avatar-md">
-                  <div class="avatar-title bg-white rounded-circle">
-                    <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-woman-6.png" alt="" class="avatar-md" />
+                  <div id="view_picture" class="avatar-title bg-white rounded-circle">
                   </div>
                 </div>
               </div>
               <div class="col-md">
                 <div>
-                  <h5>Villaruz, Micah Matorre</h5>
-                  <h6>2019-00025-CM-0</h6>
+                  <h5 id="view_student_name"></h5>
+                  <h6 id="view_user_no"></h6>
                   <div class="hstack gap-3 flex-wrap">
-                    <div class="badge rounded-pill badge-soft-danger fs-12">BS Information Technology</div>
+                    <div id="view_course" class="badge rounded-pill badge-soft-danger fs-12"></div>
                     <div class="vr"></div>
-                    <div class="d-flex align-items-center">
-                      <i class="bx bxs-school align-bottom me-2"></i>
-                      Undergraduate
+                    <div>
+                      <i class="ri-mail-fill align-bottom text-info me-2"></i>
+                      <span>Email Address :</span>
+                      <span id="view_email_address" class="fw-medium"></span>
                     </div>
                     <div class="vr"></div>
                     <div>
-                      Email Address :
-                      <span class="fw-medium">micahmvillaruz@gmail.com</span>
-                    </div>
-                    <div class="vr"></div>
-                    <div>
-                      Mobile Number:
-                      <span class="fw-medium">09561437674</span>
+                      <i class="ri-phone-fill align-bottom text-success me-2"></i>
+                      <span>Mobile Number:</span>
+                      <span id="view_contact_number" class="fw-medium"></span>
                     </div>
                   </div>
                 </div>
@@ -347,27 +327,17 @@
             </tr>
             <tr>
               <th>Document</th>
-              <th>Qty</th>
+              <th>Quantity</th>
               <th>Payment Status</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>Informative Copy of Grades / Certified Copy of Grades</td>
-              <td class="text-center">1</td>
-              <td class="text-center"><span class="badge bg-success">Paid</span></td>
-            </tr>
-            <tr>
-              <td>Transcript of Records - For evaluation/reference (Undergraduate) 3rd and 4th Year</td>
-              <td class="text-center">1</td>
-              <td class="text-center"><span class="badge bg-success">Paid</span></td>
-            </tr>
+          <tbody id="view_documents">
           </tbody>
         </table>
         <div class="mt-4">
           <span class="badge rounded-pill bg-primary fs-12">Purpose of Request</span>
           <div class="bg-soft-secondary ms-1 text-wrap">
-            <p class="p-2 fw-medium">Transfer to another school</p>
+            <p id="view_purpose" class="p-2 fw-medium"></p>
           </div>
         </div>
         <div class="m-2 mt-4 mb-3">
@@ -386,7 +356,7 @@
                       <div class="flex-grow-1 ms-3">
                         <h6 class="fs-15 mb-0 fw-semibold">
                           Pending for Clearance -
-                          <span class="fw-normal">Sun, 28 Aug 2022</span>
+                          <span id="pending_date" class="fw-normal"></span>
                         </h6>
                       </div>
                     </div>
@@ -394,8 +364,8 @@
                 </div>
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                   <div class="accordion-body ms-2 ps-5 pt-0">
-                    <h6 class="mb-1">The Document Request is pending for approval and is being reviewed by the PUP Staff.</h6>
-                    <p class="text-muted mb-0">Sun, 28 Aug 2022 - 8:00AM</p>
+                    <h6 class="mb-1">The Document Request is Pending for Approval and is being reviewed by the Officer-in-Charge, Student Records.</h6>
+                    <p id="pending_datetime" class="text-muted mb-0"></p>
                   </div>
                 </div>
               </div>
@@ -411,7 +381,7 @@
                       <div class="flex-grow-1 ms-3">
                         <h6 class="fs-15 mb-0 fw-semibold">
                           For Clearance -
-                          <span class="fw-normal">Mon, 29 Aug 2022</span>
+                          <span id="for_clearance_date" class="fw-normal"></span>
                         </h6>
                       </div>
                     </div>
@@ -419,86 +389,14 @@
                 </div>
                 <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                   <div class="accordion-body ms-2 ps-5 pt-0">
-                    <div class="hstack gap-3 flex-wrap align-items-center">
-                      <h6 class="fs-14">Schedule to Process Requirements at PUP QC</h6>
-                      <h6 class="fs-13">-</h6>
-                      <div class="d-flex">
-                        <i class="bx bxs-calendar-minus text-success me-2"></i>
-                        <h6 class="fs-14">August 30, 2022</h6>
-                      </div>
-                      <h6 class="vr"></h6>
-                      <div class="d-flex">
-                        <i class="bx bxs-time-five text-warning me-2"></i>
-                        <h6 class="fs-14">8:00 AM - 12:00 AM</h6>
-                      </div>
-                    </div>
-                    <h6 class="mb-1">The Document Request is approved. The student must submit the requirements and pay the request fees.</h6>
-                    <p class="text-muted mb-0">Mon, 29 Aug 2022 - 10:20AM</p>
+                    <h6 class="mb-1">The Document Request is now Approved. The student must go to PUP QC to submit the requirements and pay the processing fees.</h6>
+                    <p id="for_clearance_datetime" class="text-muted mb-0"></p>
                   </div>
                 </div>
               </div>
-              <div class="accordion-item border-0">
-                <div class="accordion-header" id="headingThree">
-                  <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    <div class="d-flex align-items-center">
-                      <div class="flex-shrink-0 avatar-xs">
-                        <div class="avatar-title bg-info rounded-circle">
-                          <i class="mdi mdi-file-sign"></i>
-                        </div>
-                      </div>
-                      <div class="flex-grow-1 ms-3">
-                        <h6 class="fs-15 mb-1 fw-semibold">
-                          For Evaluation / Processing -
-                          <span class="fw-normal">Wed, 31 Aug 2022</span>
-                        </h6>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                  <div class="accordion-body ms-2 ps-5 pt-0">
-                    <h6 class="mb-1">The document request is now being processed by the PUP Staff and signed by the signatories.</h6>
-                    <p class="text-muted mb-0">Wed, 31 Aug 2022 - 5:48PM</p>
-                  </div>
-                </div>
+              <div id="for_evaluation" class="accordion-item border-0">
               </div>
-              <div class="accordion-item border-0">
-                <div class="accordion-header" id="headingFour">
-                  <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    <div class="d-flex align-items-center">
-                      <div class="flex-shrink-0 avatar-xs">
-                        <div class="avatar-title bg-dark rounded-circle">
-                          <i class="ri-user-received-2-line"></i>
-                        </div>
-                      </div>
-                      <div class="flex-grow-1 ms-3">
-                        <h6 class="fs-15 mb-1 fw-semibold">
-                          Ready for Pickup -
-                          <span class="fw-normal">Thu, 01 Sep 2022</span>
-                        </h6>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                  <div class="accordion-body ms-2 ps-5 pt-0">
-                    <div class="hstack gap-3 flex-wrap align-items-center">
-                      <h6 class="fs-14">Schedule to Claim Documents at PUP QC</h6>
-                      <h6 class="fs-13">-</h6>
-                      <div class="d-flex">
-                        <i class="bx bxs-calendar-minus text-success me-2"></i>
-                        <h6 class="fs-14">September 02, 2022</h6>
-                      </div>
-                      <h6 class="vr"></h6>
-                      <div class="d-flex">
-                        <i class="bx bxs-time-five text-warning me-2"></i>
-                        <h6 class="fs-14">8:00 AM - 12:00 AM</h6>
-                      </div>
-                    </div>
-                    <h6 class="mb-1">The requested documents has been signed with school dry seal and documentary stamp, now available for pickup by the student.</h6>
-                    <p class="text-muted mb-0">Thu, 01 Sep 2022 - 4.54PM</p>
-                  </div>
-                </div>
+              <div id="ready_for_pickup" class="accordion-item border-0">
               </div>
               <div class="accordion-item border-0">
                 <div class="accordion-header" id="headingFive">
@@ -520,73 +418,7 @@
             <!--end accordion-->
           </div>
         </div>
-        <div class="mt-4">
-          <div class="h6 fs-15 text-primary">Remarks</div>
-          <div class="list-group">
-            <a href="javascript:void(0);" class="list-group-item list-group-item-action">
-              <div class="d-flex mb-2 align-items-center">
-                <div class="flex-shrink-0">
-                  <img src="<?= base_url() ?>public/images/officials/img-25.png" alt="" class="avatar-sm rounded-circle" />
-                </div>
-                <div class="flex-grow-1 ms-3">
-                  <h5 class="list-title fs-15 mb-1">Hernando Liberato</h5>
-                  <p class="list-text mb-0 fs-12">PUP Staff</p>
-                </div>
-              </div>
-              <p>The Document Request is now approved. You must download the Request form and bring it together with the requirements as listed below. Your schedule for processing of requirements at PUP QC is <b>August 30, 2022</b> from <b>8:00 AM to 12:00 AM</b>.</p>
-              <p>Please bring the following requirements:</p>
-              <ol class="list-group list-group-numbered">
-                <li class="list-group-item">Photocopy of Student ID (Back to Back)</li>
-                <li class="list-group-item">Documentary Stamp</li>
-                <li class="list-group-item">Letter stating the purpose of the request</li>
-              </ol>
-            </a>
-            <a href="javascript:void(0);" class="list-group-item list-group-item-action">
-              <div class="d-flex mb-2 align-items-center">
-                <div class="flex-shrink-0">
-                  <img src="<?= base_url() ?>public/images/officials/img-25.png" alt="" class="avatar-sm rounded-circle" />
-                </div>
-                <div class="flex-grow-1 ms-3">
-                  <h5 class="list-title fs-15 mb-1">Hernando Liberato</h5>
-                  <p class="list-text mb-0 fs-12">PUP Staff</p>
-                </div>
-              </div>
-              <p>Good Day! Please be informed that your requested credential/s is/are scheduled for pick-up on <b>September 02, 2022</b>. Please claim the credential/s at the releasing section on your scheduled date only, from <b>8:00 AM to 4:00 PM</b>. If you are unable to come on your scheduled date, you will be re-scheduled at a later date. Thank you.</p>
-            </a>
-          </div>
-        </div>
-        <div class="pt-3 border-top border-top-dashed mt-4">
-          <h6 class="mb-3 fw-semibold text-uppercase">Resources</h6>
-          <div class="row g-3">
-            <div class="col-xxl-4 col-lg-6">
-              <div class="border rounded border-dashed p-2">
-                <div class="d-flex align-items-center">
-                  <div class="flex-shrink-0 me-3">
-                    <div class="avatar-sm">
-                      <div class="avatar-title bg-light text-danger rounded fs-24">
-                        <i class="ri-file-pdf-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="flex-grow-1 overflow-hidden">
-                    <h5 class="fs-13 mb-1">
-                      <a href="#" class="text-body text-truncate d-block">Request Form.pdf</a>
-                    </h5>
-                    <div>2.2MB</div>
-                  </div>
-                  <div class="flex-shrink-0 ms-2">
-                    <div class="d-flex gap-1">
-                      <button type="button" class="btn btn-icon text-muted btn-sm fs-18">
-                        <i class="ri-download-2-line"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end col -->
-          </div>
-          <!-- end row -->
+        <div id="remarks" class="mt-4 mb-3">
         </div>
       </div>
       <div class="modal-footer">
@@ -609,6 +441,7 @@
           <h4 class="mb-3 fw-semibold">Approve this Request?</h4>
           <p class="text-muted mb-4">If yes, indicate on the Remarks when you are available for the processing of this request at PUP QC. If not, click the Dismiss button.</p>
           <form id="approveRequestForm" class="needs-validation" novalidate>
+            <input type="hidden" id="approve_request_id">
             <div class="mt-4">
               <label for="remarks" class="h5 form-label">Remarks <span class="text-danger">*</span></label>
               <textarea class="form-control mt-2" id="remarks" name="remarks" rows="5" placeholder="Enter the days and the time you are available for receiving of the requirements & accommodation of this request at PUP QC. You can also indicate when you are unavailable and when the student can file the request at the school." required></textarea>
@@ -616,11 +449,11 @@
                 Please indicate your availability at the remarks above.
               </div>
             </div>
-            <div class="mt-4 hstack gap-2 justify-content-center">
-              <button class="btn btn-success fw-medium">Yes, Approve It!</button>
-              <button class="btn btn-light fw-medium" data-bs-dismiss="modal">Dismiss</button>
+            <div class="mt-4 justify-content-center">
+              <button type="submit" class="w-100 btn btn-success bg-gradient fw-medium waves-effect waves-light">Yes, Approve It!</button>
             </div>
           </form>
+          <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
         </div>
       </div>
     </div>
@@ -638,6 +471,7 @@
           <h4 class="mb-3 fw-semibold">Cancel this Request?</h4>
           <p class="text-muted mb-4">If yes, indicate on the Remarks the reason why you are cancelling this request. If not, click the Dismiss button.</p>
           <form id="cancelRequestForm" class="needs-validation" novalidate>
+            <input type="hidden" id="cancel_request_id">
             <div class="mt-4">
               <label for="remarks" class="h5 form-label">Remarks <span class="text-danger">*</span></label>
               <textarea class="form-control mt-2" id="remarks" name="remarks" rows="5" placeholder="Enter the reason why you are cancelling the request and the instructions, if any, that the student must comply before requesting the document/s again." required></textarea>
@@ -645,11 +479,11 @@
                 Please indicate your reason for cancelling.
               </div>
             </div>
-            <div class="mt-4 hstack gap-2 justify-content-center">
-              <button class="btn btn-danger fw-medium">Yes, Cancel It!</button>
-              <button class="btn btn-light fw-medium" data-bs-dismiss="modal">Dismiss</button>
+            <div class="mt-4 justify-content-center">
+              <button type="submit" class="w-100 btn btn-danger bg-gradient fw-medium waves-effect waves-light">Yes, Cancel It!</button>
             </div>
           </form>
+          <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
         </div>
       </div>
     </div>
@@ -674,6 +508,7 @@
             <span>Please make sure that the student has already <span class="fw-medium">PAID</span> the processing fee and presented the <span class="fw-medium">OFFICIAL RECEIPT</span> before you change the status of this request.</span>
           </div>
           <form id="forProcessingRequestForm" class="needs-validation" novalidate>
+            <input type="hidden" id="process_request_id">
             <div class="mt-4">
               <label for="or_no" class="h5 form-label">O.R. Number <span class="text-danger">*</span></label>
               <input type="number" class="form-control" id="or_no" name="or_no" placeholder="Official Receipt No." required>
@@ -681,11 +516,11 @@
                 Please enter the O.R. Number for this request.
               </div>
             </div>
-            <div class="mt-4 hstack gap-2 justify-content-center">
-              <button class="btn btn-info fw-medium">Yes, It is!</button>
-              <button class="btn btn-light fw-medium" data-bs-dismiss="modal">Dismiss</button>
+            <div class="mt-4 justify-content-center">
+              <button type="submit" class="w-100 btn btn-info bg-gradient fw-medium waves-effect waves-light">Yes, It is!</button>
             </div>
           </form>
+          <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
         </div>
       </div>
     </div>
@@ -710,6 +545,7 @@
             <span>Please make sure that the document/s included in this request has already been <span class="fw-medium">SIGNED</span> by the intended signatories with <span class="fw-medium">SCHOOL DRY SEAL</span> and <span class="fw-medium">DOCUMENTARY STAMP</span> before you change the status of this request.</span>
           </div>
           <form id="readyForPickupRequestForm" class="needs-validation" novalidate>
+            <input type="hidden" id="pickup_request_id">
             <div class="mt-4">
               <label for="remarks" class="h5 form-label">Remarks <span class="text-danger">*</span></label>
               <textarea class="form-control" id="remarks" name="remarks" rows="5" placeholder="Enter the days and the time you are available to accomodate the claiming of this request at PUP QC. You can also indicate here if there are requirements that the student must bring upon receiving of the requested documents." required></textarea>
@@ -717,11 +553,11 @@
                 Please indicate your availability at the remarks above.
               </div>
             </div>
-            <div class="mt-4 hstack gap-2 justify-content-center">
-              <button class="btn btn-dark fw-medium">Yes, It is!</button>
-              <button class="btn btn-light fw-medium" data-bs-dismiss="modal">Dismiss</button>
+            <div class="mt-4 justify-content-center">
+              <button type="submit" class="w-100 btn btn-dark bg-gradient fw-medium waves-effect waves-light">Yes, It is!</button>
             </div>
           </form>
+          <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
         </div>
       </div>
     </div>
@@ -746,6 +582,7 @@
             <span>Please make sure that the student has presented the <span class="fw-medium">CLAIM STUB</span> upon claiming of the request and has received all the <span class="fw-medium">REQUESTED DOCUMENT/S</span> before you set its status to Released.</span>
           </div>
           <form id="releasedRequestForm" class="needs-validation" novalidate>
+            <input type="hidden" id="release_request_id">
             <div class="form-check form-check-success mb-3">
               <input class="form-check-input" type="checkbox" id="validateRelease" required>
               <label class="form-check-label" for="validateRelease">
@@ -755,11 +592,11 @@
                 You must first agree that you released ALL the requested documents.
               </div>
             </div>
-            <div class="mt-4 hstack gap-2 justify-content-center">
-              <button class="btn btn-success fw-medium">Yes, It is!</button>
-              <button class="btn btn-light fw-medium" data-bs-dismiss="modal">Dismiss</button>
+            <div class="mt-4 justify-content-center">
+              <button type="submit" class="w-100 btn btn-success bg-gradient fw-medium waves-effect waves-light">Yes, It is!</button>
             </div>
           </form>
+          <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
         </div>
       </div>
     </div>

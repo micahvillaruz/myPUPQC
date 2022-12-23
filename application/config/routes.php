@@ -146,7 +146,7 @@ $route['student/profile/settings'] = 'student/settings';
 */
 
 $route['student/odrs/new-request'] = 'student/new_request';
-$route['student/odrs/requests'] = 'student/requests';
+$route['student/odrs/request'] = 'student/request';
 $route['student/odrs/history'] = 'student/history';
 
 
@@ -183,6 +183,7 @@ $route['student/omsss/contact-omsss'] = 'student/contact_omsss';
 $route['student/evrsers/new-reservation'] = 'student/new_reservation';
 $route['student/evrsers/view-reservations'] = 'student/view_reservations';
 $route['student/evrsers/reservation-history'] = 'student/reservation_history';
+$route['student/evrsers/reservationpolicy'] = 'student/reservationpolicy';
 
 /*
 | -------------------------------------------------------------------------
@@ -212,6 +213,7 @@ $route['admin/user-management/pup-staffs'] = 'admin/user_pup_staffs';
 
 $route['admin/odrs/documents'] = 'admin/documents';
 $route['admin/odrs/requests'] = 'admin/requests';
+$route['admin/odrs/history'] = 'admin/history';
 
 /*
 | --------------
@@ -220,16 +222,20 @@ $route['admin/odrs/requests'] = 'admin/requests';
 */
 
 $route['admin/omsss/all-appointment'] = 'admin/all_appointment';
-$route['admin/omsss/all-prescription'] = 'admin/all_prescription';
+$route['admin/omsss/appointment-history'] = 'admin/appointment_history';
 
 /*
 | --------------
 |     EVRSERS
 | --------------
 */
+// Organizer Management
+$route['admin/evrsers/organizer-management'] = 'admin/organizer_management';
+
+// Facilities
+$route['admin/evrsers/facilities'] = 'admin/facilities';
 
 // Reservations
-$route['admin/evrsers/facilities'] = 'admin/facilities';
 $route['admin/evrsers/manage-reservations'] = 'admin/manage_reservations';
 $route['admin/evrsers/reservation-history'] = 'admin/reservation_history';
 
@@ -258,3 +264,16 @@ $route['pupstaff/omsss/counsellor/analytics-and-history'] = 'pupstaff/counsellor
 $route['pupstaff/odrs/documents'] = 'pupstaff/documents';
 $route['pupstaff/odrs/requests'] = 'pupstaff/requests';
 $route['pupstaff/odrs/history'] = 'pupstaff/history';
+
+/*
+| --------------
+|     EVRSERS
+| --------------
+*/
+
+// Organizer Management
+$route['pupstaff/evrsers/organizer-management'] = 'pupstaff/organizer_management';
+
+// Reservations
+$route['pupstaff/evrsers/manage-reservations'] = 'pupstaff/manage_reservations';
+$route['pupstaff/evrsers/reservation-history'] = 'pupstaff/reservation_history';

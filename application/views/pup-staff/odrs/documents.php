@@ -6,7 +6,7 @@
         <button class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#addDocumentModal">Add Document</button>
       </div>
       <div class="card-body">
-        <table id="documents-datatable" class="table no-wrap align-middle" style="width: 100%">
+        <table id="documents-datatable" class="table dt-responsive align-middle" style="width: 100%">
           <thead class="bg-light">
             <tr>
               <th class="text-uppercase">Document Name</th>
