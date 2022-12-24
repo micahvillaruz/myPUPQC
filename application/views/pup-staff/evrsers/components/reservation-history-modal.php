@@ -1,6 +1,6 @@
 <!-- View Reservation modal -->
-<div class="modal fade" id="viewOwnReservation" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable">
+<div class="modal fade" id="viewReservationDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalScrollableTitle">
@@ -18,18 +18,7 @@
                   <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">Reservation Control #:</a></h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="reservation_number"></div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">Event Title</a></h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="event_title"></div>
+                  <div class="d-flex fs-13 fw-medium" id="reserve_number"></div>
                 </div>
               </div>
             </li>
@@ -41,6 +30,17 @@
                 </div>
                 <div class="col-8">
                   <div class="d-flex fs-13 fw-medium" id="organization"></div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">Event Title</a></h5>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium" id="event_title"></div>
                 </div>
               </div>
             </li>
@@ -86,6 +86,34 @@
                 <div class="col-8">
                   <div class="fw-medium">
                     <span id="time"></span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1">Attachments</h5>
+                </div>
+                <div class="col-8">
+                  <div class="fw-medium fs-6">
+                    <span id="attachment1"></span>
+                    <span id="attachment2"></span>
+                    <span id="attachment3"></span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1">Remarks</h5>
+                </div>
+                <div class="col-8">
+                  <div class="fw-medium">
+                    <span id="remarks"></span>
                   </div>
                 </div>
               </div>

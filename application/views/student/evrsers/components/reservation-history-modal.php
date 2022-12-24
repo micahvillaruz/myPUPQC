@@ -1,6 +1,6 @@
 <!-- View Reservation modal -->
 <div class="modal fade" id="viewOwnReservation" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalScrollableTitle">
@@ -18,7 +18,7 @@
                   <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">Reservation Control #:</a></h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="reservation_number"></div>
+                  <div class="d-flex fs-13 fw-medium" id="reserve_number"></div>
                 </div>
               </div>
             </li>
@@ -97,6 +97,34 @@
                   <h5 class="fs-13 mb-1 fw-medium"><a href="#" class="link text-dark">Status</a></h5>
                 </div>
                 <div class="col-8" id="reservation_status"></div>
+              </div>
+            </li>
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1">Attachments</h5>
+                </div>
+                <div class="col-8">
+                  <div class="fw-medium">
+                    <span id="attachment1"></span>
+                    <span id="attachment2"></span>
+                    <span id="attachment3"></span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- end list item -->
+            <li class="list-group-item">
+              <div class="d-flex align-items-center">
+                <div class="col-4">
+                  <h5 class="fs-13 mb-1">Remarks</h5>
+                </div>
+                <div class="col-8">
+                  <div class="fw-medium">
+                    <span id="remarks"></span>
+                  </div>
+                </div>
               </div>
             </li>
             <!-- end list item -->
