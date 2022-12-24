@@ -1,7 +1,5 @@
 $(function() {
-    viewDetailsReservationStaff()
-
-    pendingReservations()
+    viewAllPendingReservation()
 })
 
 // View Own Reservation details
@@ -38,14 +36,38 @@ viewDetailsReservationStaff = (reservation_id) => {
             $('#attachment1').html(userData.reserve_attachments_1)
             $('#attachment2').html(userData.reserve_attachments_2)
             $('#attachment3').html(userData.reserve_attachments_3)
-                // let reservation_status = userData.reserve_status
+
+            let reservation_status = userData.reserve_status
+            if (reservation_status == 'Cancelled by Staff') {
+                $('#reservation_status').html(
+                    `<span class="badge rounded-pill badge-soft-danger">${reservation_status}</span>`,
+                )
+            } else if (reservation_status == 'Cancelled by Student') {
+                $('#reservation_status').html(
+                    `<span class="badge rounded-pill badge-soft-danger">${reservation_status}</span>`,
+                )
+            } else {
+                $('#reservation_status').html(
+                    `<span class="badge rounded-pill bg-success">${reservation_status}</span>`,
+                )
+            }
+
+            // ? ATTACHMENT DETAILS PARA MADISPLAY PDF FILE PERO WALA PA
+            // var source = 'ajax.php?InstrumentID=' + encodeUriComponent(instrID) + '&catView=pdf'
+            // $('#displayPDF').append(
+            // 	'<object data="' +
+            // 		source +
+            // 		'" type="application/pdf">' +
+            // 		'<embed src="' +
+            // 		source +
+            // 		'" type="application/pdf"/></object>',
+            // )
         },
     })
 }
 
-
 //View All Own Reservations
-pendingReservations = () => {
+viewAllPendingReservation = () => {
     const dt = $('#reservations-datatable')
 
     $.ajaxSetup({
@@ -116,7 +138,6 @@ pendingReservations = () => {
                     class: 'text-center',
                     render: (data) => {
                         const reserve_status = data.reserve_status
-                            // return `${reserve_status}`
                         return `<span class="badge rounded-pill bg-secondary">${reserve_status}</span>`
                     },
                 },
@@ -129,8 +150,8 @@ pendingReservations = () => {
                         return `
                             <div class="dropdown d-inline-block">
                                 <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewReservationModal" onclick="viewDetailsReservationStaff('${data.reservation_id}')"><i class="ri-eye-fill fs-5"></i></button>
-                                <button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#approveReservationModal" onclick="approveReservation('${data.reservation_id}')"><i class="ri-check-fill fs-5"></i></button> 
-                                <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#cancelReservationModal" onclick="cancelReservation('${data.reservation_id}')"><i class="ri-close-fill fs-5"></i></button> 
+                                <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editReservationModal" onclick = "editReservation('${data.reservation_id}')"><i class="ri-edit-2-fill fs-5"></i></button>
+                                <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#cancelReservationModal" onclick="cancelReservation('${data.reservation_id}')"><i class="ri-trash-fill fs-5"></i></button> 
                             </div>
                                 `
                     },
