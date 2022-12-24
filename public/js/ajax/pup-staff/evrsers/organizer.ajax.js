@@ -36,19 +36,9 @@ viewStudentNoOrganizerStaff = () => {
                 {
                     data: null,
                     render: (data) => {
-                        const fullName = data.user_profiles[0].full_name
-
+                        console.log(data)
+                        const fullName = data.user_profiles.full_name
                         return `${fullName}`
-                    },
-                },
-
-                // Birthday
-                {
-                    data: null,
-                    render: (data) => {
-                        const birth_date = moment(data.user_profiles[0].birth_date).format('LL')
-
-                        return `${birth_date}`
                     },
                 },
 
@@ -56,8 +46,7 @@ viewStudentNoOrganizerStaff = () => {
                 {
                     data: null,
                     render: (data) => {
-                        const email_address = data.user_profiles[0].email
-
+                        const email_address = data.user_profiles.email
                         return `${email_address}`
                     },
                 },
@@ -66,8 +55,7 @@ viewStudentNoOrganizerStaff = () => {
                 {
                     data: null,
                     render: (data) => {
-                        const contact_number = data.user_profiles[0].contact_number
-
+                        const contact_number = data.user_profiles.contact_number
                         return `${contact_number}`
                     },
                 },
