@@ -5,7 +5,6 @@ $(function() {
 
 })
 
-
 // View Own Reservation details
 // viewReservationDetails = (reservation_id) => {
 //     $.ajaxSetup({
@@ -64,7 +63,7 @@ $(function() {
 
 //View All Reservation History
 viewAllReservationHistoryStaff = () => {
-    const dt = $('#reservation-history')
+    const dt = $('#done-reservations')
 
     $.ajaxSetup({
         headers: {
@@ -108,6 +107,15 @@ viewAllReservationHistoryStaff = () => {
                     },
                 },
 
+                // Organization
+                {
+                    data: null,
+                    render: (data) => {
+                        const organization_name = data.organization_name
+                        return `${organization_name}`
+                    },
+                },
+
                 // Date
                 {
                     data: null,
@@ -131,9 +139,27 @@ viewAllReservationHistoryStaff = () => {
                 {
                     data: null,
                     class: 'text-center',
-                    render: () => {
-                        // const reserve_status = data.reserve_status
-                        return `<span class="badge rounded-pill bg-success">Done</span>`
+                    render: (data) => {
+                        const reserve_status = data.reserve_status
+                        if (reserve_status == "Done") {
+                            return `<span class="badge rounded-pill bg-success">Done</span>`
+                        } else if (reserve_status == "Cancelled by Staff") {
+                            return `<span class="badge rounded-pill badge-soft-danger">Cancelled by Staff</span>`
+                        } else if (reserve_status == "Cancelled by Student") {
+                            return `<span class="badge rounded-pill badge-soft-danger">Cancelled by Student</span>`
+                        }
+                    },
+                },
+                //Action
+                {
+                    data: null,
+                    class: 'text-center',
+                    render: (data) => {
+                        return `
+                            <div class="dropdown d-inline-block">
+                                <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewReservationModal" onclick="viewDetailsReservationStaff('${data.reservation_id}')"><i class="ri-eye-fill fs-5"></i></button>
+                            </div>
+                                `
                     },
                 },
             ],

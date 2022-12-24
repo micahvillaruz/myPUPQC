@@ -11,9 +11,11 @@
                             <th>Reservation Control #</th>
                             <th>Event Title</th>
                             <th>Venue</th>
+                            <th>Organization</th>
                             <th>Date</th>
                             <th>Time</th>
                             <th>Status</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
