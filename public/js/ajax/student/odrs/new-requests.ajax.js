@@ -1,24 +1,29 @@
 $(() => {
-	loadEducProfile()
-	loadDocuments()
-
-	$('#createRequestForm').on('submit', function (e) {
-		e.preventDefault() // prevent page refresh
-		createRequest()
-	})
+	checkCreatePermission()
 })
 
-// Load Educational Profile
-loadEducProfile = () => {
+// Check if student has existing request. If yes, he cannot create a new request. If no, he can access the new request form.
+checkCreatePermission = () => {
 	$.ajax({
 		type: 'GET',
-		url: apiURL + `student/educ_profile`,
+		url: `${apiURL}odrs/student/view_request`,
+		dataType: 'json',
 		headers: AJAX_HEADERS,
 		success: (result) => {
 			const data = result.data
 
-			$('#course').html(data.course_when_admitted)
-			$('#educ_status').html(data.education_status)
+			if (data.length !== 0) {
+				$('#decline_create_request').removeClass('d-none')
+			} else {
+				$('#allow_create_request').removeClass('d-none')
+				$('#decline_create_request').addClass('d-none')
+				loadDocuments()
+
+				$('#createRequestForm').on('submit', function (e) {
+					e.preventDefault() // prevent page refresh
+					createRequest()
+				})
+			}
 		},
 	})
 }
