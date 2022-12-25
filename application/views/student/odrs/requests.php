@@ -36,7 +36,7 @@
         <div class="d-sm-flex align-items-center">
           <h5 class="card-title flex-grow-1 mb-0">Request Status</h5>
           <div id="cancel_button" class="flex-shrink-0 mt-2 mt-sm-0">
-            <button type="button" class="btn btn-soft-danger btn-sm mt-2 mt-sm-0" onclick="cancelRequest()"><i class="mdi mdi-archive-remove-outline align-middle me-1"></i> Cancel Request</a>
+            <button type="button" class="btn btn-soft-danger btn-sm mt-2 mt-sm-0" onclick="cancelRequest()"><i class="mdi mdi-archive-remove-outline align-middle me-1"></i> Cancel Request</button>
           </div>
         </div>
       </div>

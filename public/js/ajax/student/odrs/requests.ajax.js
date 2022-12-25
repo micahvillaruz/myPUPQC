@@ -12,7 +12,7 @@ viewRequestDetails = () => {
 		success: (result) => {
 			const data = result.data
 
-			if (data === undefined || data.length !== 0) {
+			if (data.length !== 0) {
 				$('#existing_request').removeClass('d-none')
 				$('#no_request').addClass('d-none')
 
