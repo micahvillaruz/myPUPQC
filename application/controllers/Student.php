@@ -80,7 +80,7 @@ class Student extends CI_Controller
     $this->load->view('partials/head-css');
     $this->load->view('partials/student/topbar');
     $this->load->view('partials/student/sidebar');
-    $this->load->view('partials/page-title', ["page_title" => "ODRS", "title" => "Request Details"]);
+    $this->load->view('partials/page-title', ["page_title" => "ODRS", "title" => "Request"]);
     $this->load->view('student/odrs/requests');
     $this->load->view('student/odrs/footer');
     $this->load->view('student/odrs/components/requests-modal');
