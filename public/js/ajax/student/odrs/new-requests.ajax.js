@@ -194,7 +194,7 @@ createRequest = () => {
 				}).then(function () {
 					$('form#createRequestForm')[0].reset()
 
-					window.location.href = `${baseURL}student/odrs/requests`
+					window.location.href = `${baseURL}student/odrs/request`
 				})
 			}
 		},
