@@ -330,22 +330,29 @@ viewRequestDetails = () => {
 
 				let documentRequirements = ''
 				data.documents_assigned_to_request.forEach((document) => {
-					if (document.document_information[0].document_requirements) {
+					if (document.document_information[0].document_requirements.length != 0) {
 						documentRequirements += `
 							<div class="list-group-item nested-1">
 								<i class="mdi mdi-folder fs-16 align-middle text-warning me-2"></i>
 								<span>${document.document_information[0].document_name}</span>
 								<div class="list-group nested-list nested-sortable">`
 						document.document_information[0].document_requirements.forEach((requirement) => {
-							documentRequirements += `
-									<div class="list-group-item nested-2">
-										<i class="ri-file-text-fill fs-16 align-middle text-success me-2"></i>
-										<span>${requirement.doc_req_name}</span>
-									</div>
-							`
-
 							if (requirement.doc_req_name === 'Letter format for CHED') {
 								$('#ched-letter').removeClass('d-none')
+
+								documentRequirements += `
+								<div class="list-group-item nested-2">
+									<i class="ri-file-word-2-fill fs-16 align-middle text-info me-2"></i>
+									<span>${requirement.doc_req_name}</span>
+								</div>
+						`
+							} else {
+								documentRequirements += `
+								<div class="list-group-item nested-2">
+									<i class="ri-file-text-fill fs-16 align-middle text-success me-2"></i>
+									<span>${requirement.doc_req_name}</span>
+								</div>
+						`
 							}
 						})
 						documentRequirements += `
