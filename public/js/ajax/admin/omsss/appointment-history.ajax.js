@@ -1,27 +1,30 @@
 $(function () {
 	loadAppointmentHistoryTable()
 	getPendingAppointmentHistory()
+	getDoneAppointmentHistory()
+	getConsultationStatusCount()
+	getConsultationTypeCount()
 
-	var isdoughnutchart = document.getElementById('doughnut1')
-	;(doughnutChartColors = getChartColorsArray('doughnut1')),
-		doughnutChartColors &&
-			(lineChart = new Chart(isdoughnutchart, {
-				type: 'doughnut',
-				data: {
-					labels: ['Desktops', 'Tablets'],
-					datasets: [
-						{
-							data: [300, 210],
-							backgroundColor: doughnutChartColors,
-							hoverBackgroundColor: doughnutChartColors,
-							hoverBorderColor: '#fff',
-						},
-					],
-				},
-				options: {
-					plugins: { legend: { labels: { font: { family: 'Poppins' } } } },
-				},
-			}))
+	// var isdoughnutchart = document.getElementById('doughnut1')
+	// ;(doughnutChartColors = getChartColorsArray('doughnut1')),
+	// 	doughnutChartColors &&
+	// 		(lineChart = new Chart(isdoughnutchart, {
+	// 			type: 'doughnut',
+	// 			data: {
+	// 				labels: ['Desktops', 'Tablets'],
+	// 				datasets: [
+	// 					{
+	// 						data: [300, 210],
+	// 						backgroundColor: doughnutChartColors,
+	// 						hoverBackgroundColor: doughnutChartColors,
+	// 						hoverBorderColor: '#fff',
+	// 					},
+	// 				],
+	// 			},
+	// 			options: {
+	// 				plugins: { legend: { labels: { font: { family: 'Poppins' } } } },
+	// 			},
+	// 		}))
 })
 
 // Load datatables
@@ -128,19 +131,92 @@ loadAppointmentHistoryTable = () => {
 	}
 }
 
+getConsultationStatusCount = () => {
+	$.ajax({
+		url: apiURL + `omsss/super_admin/analytics/pie_chart_consultation_status`,
+		type: 'GET',
+		success: function (data) {
+			// process the data and update the chart
+			var chartData = {
+				labels: Object.keys(data.consultation_status_count), // extract the keys (i.e. "Done", "Cancelled by Staff", etc.)
+				datasets: [
+					{
+						data: Object.values(data.consultation_status_count), // extract the values (i.e. 1, 1, 1, etc.)
+						backgroundColor: ['#FF6961', '#FFD700', '#87CEEB', '#7FFF00', '#9ACD32', '#6495ED'], // use the colors specified in the canvas element's data-colors attribute
+					},
+				],
+			}
+
+			var ctx = document.getElementById('doughnut1').getContext('2d')
+			var chart = new Chart(ctx, {
+				type: 'doughnut',
+				data: chartData,
+			})
+		},
+		error: function (xhr, status, error) {
+			console.log(error)
+		},
+	})
+}
+
+getConsultationTypeCount = () => {
+	$.ajax({
+		url: apiURL + `omsss/super_admin/analytics/consultation_type_count`,
+		type: 'GET',
+		success: function (data) {
+			// process the data and update the chart
+			var chartData = {
+				labels: Object.keys(data.consultation_type_count), // extract the keys (i.e. "Done", "Cancelled by Staff", etc.)
+				datasets: [
+					{
+						data: Object.values(data.consultation_type_count), // extract the values (i.e. 1, 1, 1, etc.)
+						backgroundColor: ['#87CEEB', '#FFB6C1'], // use the colors specified in the canvas element's data-colors attribute
+					},
+				],
+			}
+			var ctx = document.getElementById('doughnut2').getContext('2d')
+			var chart = new Chart(ctx, {
+				type: 'doughnut',
+				data: chartData,
+			})
+		},
+		error: function (xhr, status, error) {
+			console.log(error)
+		},
+	})
+}
+
 getPendingAppointmentHistory = () => {
 	$.ajax({
-		url: apiURL + `super_admin/analytics/view_pending_appointment`,
+		url: apiURL + `omsss/super_admin/analytics/view_pending_appointment`,
 		type: 'GET',
 		headers: AJAX_HEADERS,
 		success: (result) => {
 			if (result) {
 				// Get data from result
-				const data = result.consultation_status_count
+				const data = result.appointment_pending_count
 				console.log(data)
-				$('#appointment_history_pending_medical').attr('data-target', data.peding_medical)
-				$('#appointment_history_pending_dental').attr('data-target', data.pending_dental)
-				$('#appointment_history_pending_guidance').attr('data-target', data.pending_guidance)
+				$('#appointment_history_pending_medical').attr('data-target', data.Medical)
+				$('#appointment_history_pending_dental').attr('data-target', data.Dental)
+				$('#appointment_history_pending_guidance').attr('data-target', data.Guidance)
+			}
+		},
+	}).fail(() => console.error('There was an error in retrieving appointment history request data'))
+}
+
+getDoneAppointmentHistory = () => {
+	$.ajax({
+		url: apiURL + `omsss/super_admin/analytics/view_done_appointment`,
+		type: 'GET',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			if (result) {
+				// Get data from result
+				const data = result.appointment_done_count
+				console.log(data)
+				$('#appointment_history_done_medical').attr('data-target', data.Medical)
+				$('#appointment_history_done_dental').attr('data-target', data.Dental)
+				$('#appointment_history_done_guidance').attr('data-target', data.Guidance)
 			}
 		},
 	}).fail(() => console.error('There was an error in retrieving appointment history request data'))
