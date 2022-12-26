@@ -1,6 +1,28 @@
 $(function () {
+	getRequestsAnalytics()
+
 	loadRequestsTable()
 })
+
+// Get Requests Analytics
+getRequestsAnalytics = () => {
+	$.ajax({
+		type: 'GET',
+		url: `${apiURL}odrs/super_admin/analytics/requests`,
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			const data = result.request_status_count
+
+			document.getElementById('pending_analytics').dataset.target = data.pending_for_clearance
+			document.getElementById('for_clearance_analytics').dataset.target = data.for_clearance
+			document.getElementById('for_evaluation_analytics').dataset.target = data.for_evaluation
+			document.getElementById('ready_for_pickup_analytics').dataset.target = data.ready_for_pickup
+
+			counter()
+		},
+	})
+}
 
 // Load Requests Table
 loadRequestsTable = () => {
@@ -530,4 +552,22 @@ getRequirements = (data) => {
 	uniqueReqsArray = [...uniqueReqs]
 
 	return uniqueReqsArray
+}
+
+counter = () => {
+	var e = document.querySelectorAll('.counter-value')
+	function s(e) {
+		return e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+	}
+	e &&
+		Array.from(e).forEach(function (o) {
+			!(function e() {
+				var t = +o.getAttribute('data-target'),
+					a = +o.innerText,
+					n = t / 250
+				n < 1 && (n = 1),
+					a < t ? ((o.innerText = (a + n).toFixed(0)), setTimeout(e, 1)) : (o.innerText = s(t)),
+					s(o.innerText)
+			})()
+		})
 }
