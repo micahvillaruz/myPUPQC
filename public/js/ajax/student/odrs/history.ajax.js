@@ -249,7 +249,7 @@ viewRequestDetails = (request_id) => {
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
 							<div class="d-flex align-items-center">
 								<div class="flex-shrink-0 avatar-xs">
-									<div class="avatar-title bg-danger rounded-circle">
+									<div class="avatar-title bg-danger bg-gradient rounded-circle">
 										<i class="mdi mdi-nfc-search-variant"></i>
 									</div>
 								</div>
@@ -283,7 +283,7 @@ viewRequestDetails = (request_id) => {
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 							<div class="d-flex align-items-center">
 								<div class="flex-shrink-0 avatar-xs">
-									<div class="avatar-title bg-info rounded-circle">
+									<div class="avatar-title bg-info bg-gradient rounded-circle">
 										<i class="mdi mdi-file-sign"></i>
 									</div>
 								</div>
@@ -317,7 +317,7 @@ viewRequestDetails = (request_id) => {
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
 							<div class="d-flex align-items-center">
 								<div class="flex-shrink-0 avatar-xs">
-									<div class="avatar-title bg-dark rounded-circle">
+									<div class="avatar-title bg-dark bg-gradient rounded-circle">
 										<i class="ri-user-received-2-line"></i>
 									</div>
 								</div>
@@ -351,7 +351,7 @@ viewRequestDetails = (request_id) => {
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
 							<div class="d-flex align-items-center">
 								<div class="flex-shrink-0 avatar-xs">
-									<div class="avatar-title bg-success rounded-circle">
+									<div class="avatar-title bg-success bg-gradient rounded-circle">
 										<i class="ri-checkbox-circle-fill"></i>
 									</div>
 								</div>
@@ -390,7 +390,7 @@ viewRequestDetails = (request_id) => {
 						<div class="list-group-item list-group-item-action">
 							<div class="d-flex mb-2 align-items-center">
 								<div class="flex-shrink-0">
-									<img src="${baseURL}public/images/officials/img-25.png" alt="" class="avatar-sm rounded-circle" />
+									<img src="${baseURL}public/images/officials/img-25.png" class="avatar-sm rounded-circle" />
 								</div>
 								<div class="flex-grow-1 ms-3">
 									<h5 class="list-title fs-15 mb-1">Hernando Liberato</h5>
@@ -435,7 +435,7 @@ cancelledStudent = (data) => {
                 <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <div class="d-flex align-items-center">
                         <div class="flex-shrink-0 avatar-xs">
-                            <div class="avatar-title bg-danger rounded-circle">
+                            <div class="avatar-title bg-danger bg-gradient rounded-circle">
                                 <i class="mdi mdi-nfc-search-variant"></i>
                             </div>
                         </div>
@@ -472,7 +472,7 @@ cancelledStudent = (data) => {
             <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                 <div class="d-flex align-items-center">
                     <div class="flex-shrink-0 avatar-xs">
-                        <div class="avatar-title bg-danger rounded-circle">
+                        <div class="avatar-title bg-primary bg-gradient rounded-circle">
                             <i class="mdi mdi-cancel"></i>
                         </div>
                     </div>
@@ -511,7 +511,7 @@ cancelledStaff = (data) => {
                 <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <div class="d-flex align-items-center">
                         <div class="flex-shrink-0 avatar-xs">
-                            <div class="avatar-title bg-danger rounded-circle">
+                            <div class="avatar-title bg-danger bg-gradient rounded-circle">
                                 <i class="mdi mdi-nfc-search-variant"></i>
                             </div>
                         </div>
@@ -545,7 +545,7 @@ cancelledStaff = (data) => {
                 <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                     <div class="d-flex align-items-center">
                         <div class="flex-shrink-0 avatar-xs">
-                            <div class="avatar-title bg-info rounded-circle">
+                            <div class="avatar-title bg-info bg-gradient rounded-circle">
                                 <i class="mdi mdi-file-sign"></i>
                             </div>
                         </div>
@@ -579,7 +579,7 @@ cancelledStaff = (data) => {
                 <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                     <div class="d-flex align-items-center">
                         <div class="flex-shrink-0 avatar-xs">
-                            <div class="avatar-title bg-dark rounded-circle">
+                            <div class="avatar-title bg-dark bg-gradient rounded-circle">
                                 <i class="ri-user-received-2-line"></i>
                             </div>
                         </div>
@@ -617,7 +617,7 @@ cancelledStaff = (data) => {
                 <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <div class="d-flex align-items-center">
                         <div class="flex-shrink-0 avatar-xs">
-                            <div class="avatar-title bg-danger rounded-circle">
+                            <div class="avatar-title bg-danger bg-gradient rounded-circle">
                                 <i class="mdi mdi-nfc-search-variant"></i>
                             </div>
                         </div>
@@ -646,9 +646,9 @@ cancelledStaff = (data) => {
         `
 		$('#for_clearance').html(forClearance)
 	} else {
-		$('#for_clearance').removeClass('d-none')
-		$('#for_evaluation').removeClass('d-none')
-		$('#ready_for_pickup').removeClass('d-none')
+		$('#for_clearance').addClass('d-none')
+		$('#for_evaluation').addClass('d-none')
+		$('#ready_for_pickup').addClass('d-none')
 	}
 
 	let cancelled = `
@@ -656,7 +656,7 @@ cancelledStaff = (data) => {
             <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                 <div class="d-flex align-items-center">
                     <div class="flex-shrink-0 avatar-xs">
-                        <div class="avatar-title bg-danger rounded-circle">
+                        <div class="avatar-title bg-primary bg-gradient rounded-circle">
                             <i class="mdi mdi-cancel"></i>
                         </div>
                     </div>

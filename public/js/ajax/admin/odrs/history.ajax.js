@@ -560,7 +560,7 @@ viewRequestDetails = (request_id) => {
 
 			$('#pending_for_clearance_datetime').html(pendingforClearanceDateTime)
 
-			if (data.released !== null) {
+			if (data.status_of_request === 'Released') {
 				$('#for_clearance').removeClass('d-none')
 				$('#for_evaluation').removeClass('d-none')
 				$('#ready_for_pickup').removeClass('d-none')
@@ -570,7 +570,7 @@ viewRequestDetails = (request_id) => {
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
 							<div class="d-flex align-items-center">
 								<div class="flex-shrink-0 avatar-xs">
-									<div class="avatar-title bg-danger rounded-circle">
+									<div class="avatar-title bg-danger bg-gradient rounded-circle">
 										<i class="mdi mdi-nfc-search-variant"></i>
 									</div>
 								</div>
@@ -604,7 +604,7 @@ viewRequestDetails = (request_id) => {
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 							<div class="d-flex align-items-center">
 								<div class="flex-shrink-0 avatar-xs">
-									<div class="avatar-title bg-info rounded-circle">
+									<div class="avatar-title bg-info bg-gradient rounded-circle">
 										<i class="mdi mdi-file-sign"></i>
 									</div>
 								</div>
@@ -638,7 +638,7 @@ viewRequestDetails = (request_id) => {
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
 							<div class="d-flex align-items-center">
 								<div class="flex-shrink-0 avatar-xs">
-									<div class="avatar-title bg-dark rounded-circle">
+									<div class="avatar-title bg-dark bg-gradient rounded-circle">
 										<i class="ri-user-received-2-line"></i>
 									</div>
 								</div>
@@ -672,7 +672,7 @@ viewRequestDetails = (request_id) => {
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
 							<div class="d-flex align-items-center">
 								<div class="flex-shrink-0 avatar-xs">
-									<div class="avatar-title bg-success rounded-circle">
+									<div class="avatar-title bg-success bg-gradient rounded-circle">
 										<i class="ri-checkbox-circle-fill"></i>
 									</div>
 								</div>
@@ -701,54 +701,9 @@ viewRequestDetails = (request_id) => {
 				`
 				$('#last').html(released)
 			} else {
-				$('#for_clearance').addClass('d-none')
-				$('#for_evaluation').addClass('d-none')
-				$('#ready_for_pickup').addClass('d-none')
-
-				let cancelled = `
-					<div class="accordion-header" id="headingFive">
-						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-							<div class="d-flex align-items-center">
-								<div class="flex-shrink-0 avatar-xs">
-									<div class="avatar-title bg-danger rounded-circle">
-										<i class="mdi mdi-cancel"></i>
-									</div>
-								</div>
-								<div class="flex-grow-1 ms-3">
-									<h6 class="fs-15 mb-1 fw-semibold">
-										${data.status_of_request} -
-										<span class="fw-normal">
-										${moment(data.cancelled).format('ddd')},
-										${moment(data.cancelled).format('DD, MMM. YYYY')}
-										</span>
-									</h6>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingFives" data-bs-parent="#accordionExample">
-						<div class="accordion-body ms-2 ps-5 pt-0">
-					`
-				if (data.status_of_request === 'Cancelled by Student') {
-					cancelled += `
-							<h6 class="mb-1">The Document Request has been cancelled by the Student.</h6>
-						`
-				} else if (data.status_of_request === 'Cancelled by Staff') {
-					cancelled += `
-							<h6 class="mb-1">The Document Request has been cancelled by the PUP Staff. The student can find the reason of cancelling on the Remarks of this request.</h6>
-						`
-				}
-				cancelled += `
-							<p class="text-muted mb-0">
-								${moment(data.cancelled).format('ddd')},
-								${moment(data.cancelled).format('DD, MMM. YYYY')} -
-								${moment(data.cancelled).format('hh:mm A')}
-							</p>
-						</div>
-					</div>
-				`
-				$('#last').html(cancelled)
+				processCancelled(data)
 			}
+
 			if (data.status_of_request === 'Cancelled by Staff') {
 				remarks = `
 					<div class="h6 fs-15 text-primary">Remarks</div>
@@ -779,6 +734,277 @@ viewRequestDetails = (request_id) => {
 			}
 		},
 	})
+}
+
+processCancelled = (data) => {
+	if (data.status_of_request === 'Cancelled by Student') {
+		cancelledStudent(data)
+	} else if (data.status_of_request === 'Cancelled by Staff') {
+		cancelledStaff(data)
+	}
+}
+
+cancelledStudent = (data) => {
+	$('#for_evaluation').addClass('d-none')
+	$('#ready_for_pickup').addClass('d-none')
+
+	if (data.for_clearance !== null) {
+		$('#for_clearance').removeClass('d-none')
+
+		let forClearance = `
+            <div class="accordion-header" id="headingTwo">
+                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 avatar-xs">
+                            <div class="avatar-title bg-danger bg-gradient rounded-circle">
+                                <i class="mdi mdi-nfc-search-variant"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="fs-15 mb-0 fw-semibold">
+                                For Clearance -
+                                <span class="fw-normal">
+                                    ${moment(data.for_clearance).format('ddd')},
+                                    ${moment(data.for_clearance).format('DD, MMM. YYYY')}
+                                </span>
+                            </h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body ms-2 ps-5 pt-0">
+                    <h6 class="mb-1">The Document Request is now Approved. The student must go to PUP QC to submit the requirements and pay the processing fees.</h6>
+                    <p class="text-muted mb-0">
+                        ${moment(data.for_clearance).format('ddd')},
+                        ${moment(data.for_clearance).format('DD, MMM. YYYY')} -
+                        ${moment(data.for_clearance).format('hh:mm A')}
+                    </p>
+                </div>
+            </div>
+        `
+		$('#for_clearance').html(forClearance)
+	} else {
+		$('#for_clearance').addClass('d-none')
+	}
+
+	let cancelled = `
+        <div class="accordion-header" id="headingFive">
+            <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0 avatar-xs">
+                        <div class="avatar-title bg-primary bg-gradient rounded-circle">
+                            <i class="mdi mdi-cancel"></i>
+                        </div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h6 class="fs-15 mb-1 fw-semibold">
+                            ${data.status_of_request} -
+                            <span class="fw-normal">
+                            ${moment(data.cancelled).format('ddd')},
+                            ${moment(data.cancelled).format('DD, MMM. YYYY')}
+                            </span>
+                        </h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingFives" data-bs-parent="#accordionExample">
+            <div class="accordion-body ms-2 ps-5 pt-0">
+                <h6 class="mb-1">The Document Request has been cancelled by the Student.</h6>
+
+                <p class="text-muted mb-0">
+                    ${moment(data.cancelled).format('ddd')},
+                    ${moment(data.cancelled).format('DD, MMM. YYYY')} -
+                    ${moment(data.cancelled).format('hh:mm A')}
+                </p>
+            </div>
+        </div>
+    `
+
+	$('#last').html(cancelled)
+}
+
+cancelledStaff = (data) => {
+	if (data.ready_for_pickup !== null) {
+		let forClearance = `
+            <div class="accordion-header" id="headingTwo">
+                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 avatar-xs">
+                            <div class="avatar-title bg-danger bg-gradient rounded-circle">
+                                <i class="mdi mdi-nfc-search-variant"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="fs-15 mb-0 fw-semibold">
+                                For Clearance -
+                                <span class="fw-normal">
+                                    ${moment(data.for_clearance).format('ddd')},
+                                    ${moment(data.for_clearance).format('DD, MMM. YYYY')}
+                                </span>
+                            </h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body ms-2 ps-5 pt-0">
+                    <h6 class="mb-1">The Document Request is now Approved. The student must go to PUP QC to submit the requirements and pay the processing fees.</h6>
+                    <p class="text-muted mb-0">
+                        ${moment(data.for_clearance).format('ddd')},
+                        ${moment(data.for_clearance).format('DD, MMM. YYYY')} -
+                        ${moment(data.for_clearance).format('hh:mm A')}
+                    </p>
+                </div>
+            </div>
+        `
+		$('#for_clearance').html(forClearance)
+
+		let forEvaluation = `
+            <div class="accordion-header" id="headingThree">
+                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 avatar-xs">
+                            <div class="avatar-title bg-info bg-gradient rounded-circle">
+                                <i class="mdi mdi-file-sign"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="fs-15 mb-1 fw-semibold">
+                                For Evaluation / Processing -
+                                <span class="fw-normal">
+                                    ${moment(data.for_evaluation).format('ddd')},
+                                    ${moment(data.for_evaluation).format('DD, MMM. YYYY')}
+                                </span>
+                            </h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body ms-2 ps-5 pt-0">
+                    <h6 class="mb-1">The Document/s are Paid and the Request is now being Processed for signature, documentary stamp and school dry seal.</h6>
+                    <p class="text-muted mb-0">
+                        ${moment(data.for_evaluation).format('ddd')},
+                        ${moment(data.for_evaluation).format('DD, MMM. YYYY')} -
+                        ${moment(data.for_evaluation).format('hh:mm A')}
+                    </p>
+                </div>
+            </div>
+        `
+		$('#for_evaluation').html(forEvaluation)
+
+		let readyforPickup = `
+            <div class="accordion-header" id="headingFour">
+                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 avatar-xs">
+                            <div class="avatar-title bg-dark bg-gradient rounded-circle">
+                                <i class="ri-user-received-2-line"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="fs-15 mb-1 fw-semibold">
+                                Ready for Pickup -
+                                <span class="fw-normal">
+                                    ${moment(data.ready_for_pickup).format('ddd')},
+                                    ${moment(data.ready_for_pickup).format('DD, MMM. YYYY')}
+                                </span>
+                            </h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                <div class="accordion-body ms-2 ps-5 pt-0">
+                    <h6 class="mb-1">The Requested Document/s can now be claimed at PUP QC. The student must bring the claim stub and other requirements, if necessary.</h6>
+                    <p class="text-muted mb-0">
+                        ${moment(data.ready_for_pickup).format('ddd')},
+                        ${moment(data.ready_for_pickup).format('DD, MMM. YYYY')} -
+                        ${moment(data.ready_for_pickup).format('hh:mm A')}
+                    </p>
+                </div>
+            </div>
+        `
+		$('#ready_for_pickup').html(readyforPickup)
+	} else if (data.for_clearance !== null) {
+		$('#for_clearance').removeClass('d-none')
+		$('#for_evaluation').addClass('d-none')
+		$('#ready_for_pickup').addClass('d-none')
+
+		let forClearance = `
+            <div class="accordion-header" id="headingTwo">
+                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 avatar-xs">
+                            <div class="avatar-title bg-danger bg-gradient rounded-circle">
+                                <i class="mdi mdi-nfc-search-variant"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="fs-15 mb-0 fw-semibold">
+                                For Clearance -
+                                <span class="fw-normal">
+                                    ${moment(data.for_clearance).format('ddd')},
+                                    ${moment(data.for_clearance).format('DD, MMM. YYYY')}
+                                </span>
+                            </h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body ms-2 ps-5 pt-0">
+                    <h6 class="mb-1">The Document Request is now Approved. The student must go to PUP QC to submit the requirements and pay the processing fees.</h6>
+                    <p class="text-muted mb-0">
+                        ${moment(data.for_clearance).format('ddd')},
+                        ${moment(data.for_clearance).format('DD, MMM. YYYY')} -
+                        ${moment(data.for_clearance).format('hh:mm A')}
+                    </p>
+                </div>
+            </div>
+        `
+		$('#for_clearance').html(forClearance)
+	} else {
+		$('#for_clearance').addClass('d-none')
+		$('#for_evaluation').addClass('d-none')
+		$('#ready_for_pickup').addClass('d-none')
+	}
+
+	let cancelled = `
+        <div class="accordion-header" id="headingFive">
+            <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0 avatar-xs">
+                        <div class="avatar-title bg-primary bg-gradient rounded-circle">
+                            <i class="mdi mdi-cancel"></i>
+                        </div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h6 class="fs-15 mb-1 fw-semibold">
+                            ${data.status_of_request} -
+                            <span class="fw-normal">
+                            ${moment(data.cancelled).format('ddd')},
+                            ${moment(data.cancelled).format('DD, MMM. YYYY')}
+                            </span>
+                        </h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingFives" data-bs-parent="#accordionExample">
+            <div class="accordion-body ms-2 ps-5 pt-0">
+				<h6 class="mb-1">The Document Request has been cancelled by the PUP Staff. The student can find the reason of cancelling on the Remarks of this request.</h6>
+				<p class="text-muted mb-0">
+					${moment(data.cancelled).format('ddd')},
+					${moment(data.cancelled).format('DD, MMM. YYYY')} -
+					${moment(data.cancelled).format('hh:mm A')}
+				</p>
+			</div>
+		</div>
+`
+	$('#last').html(cancelled)
 }
 
 // Delete Request
