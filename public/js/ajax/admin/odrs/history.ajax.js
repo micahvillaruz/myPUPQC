@@ -1,4 +1,6 @@
 $(function () {
+	getHistoryAnalytics()
+
 	loadReleasedRequests()
 	loadCancelledRequests()
 	loadDeletedRequests()
@@ -9,6 +11,27 @@ $(function () {
 		$('#deleted-requests').DataTable().columns.adjust().responsive.recalc()
 	})
 })
+
+// Get History Analytics
+getHistoryAnalytics = () => {
+	$.ajax({
+		type: 'GET',
+		url: `${apiURL}odrs/super_admin/analytics/history`,
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			const data = result.request_status_count
+
+			document.getElementById('released_analytics').dataset.target = data.released
+			document.getElementById('cancelled_student_analytics').dataset.target =
+				data.cancelled_by_student
+			document.getElementById('cancelled_staff_analytics').dataset.target = data.cancelled_by_staff
+			document.getElementById('deleted_analytics').dataset.target = data.deleted
+
+			counter()
+		},
+	})
+}
 
 // Load Released Requests Table
 loadReleasedRequests = () => {
@@ -1090,4 +1113,22 @@ deleteRequest = (request_id) => {
 			})
 		}
 	})
+}
+
+counter = () => {
+	var e = document.querySelectorAll('.counter-value')
+	function s(e) {
+		return e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+	}
+	e &&
+		Array.from(e).forEach(function (o) {
+			!(function e() {
+				var t = +o.getAttribute('data-target'),
+					a = +o.innerText,
+					n = t / 250
+				n < 1 && (n = 1),
+					a < t ? ((o.innerText = (a + n).toFixed(0)), setTimeout(e, 1)) : (o.innerText = s(t)),
+					s(o.innerText)
+			})()
+		})
 }
