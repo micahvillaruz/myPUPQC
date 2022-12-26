@@ -21,12 +21,12 @@
           </div>
           <div class="flex-grow-1 ms-3">
             <p class="text-uppercase fw-medium text-muted mb-3">Released</p>
-            <h4 class="fs-4 mb-3"><span class="counter-value" data-target="7522">0</span></h4>
-            <p class="text-muted mb-0">From 9530 last month</p>
+            <h4 class="fs-4 mb-3"><span id="released_analytics" class="counter-value" data-target="">0</span></h4>
+            <!-- <p class="text-muted mb-0">From 9530 last month</p> -->
           </div>
-          <div class="flex-shrink-0 align-self-center">
+          <!-- <div class="flex-shrink-0 align-self-center">
             <span class="badge badge-soft-danger fs-12"><i class="ri-arrow-right-down-line fs-13 align-middle"></i> -10.35 %<span></span></span>
-          </div>
+          </div> -->
         </div>
       </div><!-- end card body -->
     </div>
@@ -54,12 +54,12 @@
           </div>
           <div class="flex-grow-1 ms-3">
             <p class="text-uppercase fw-medium text-muted mb-3">Cancelled by Student</p>
-            <h4 class="fs-4 mb-3"><span class="counter-value" data-target="2045">0</span></h4>
-            <p class="text-muted mb-0">From 1930 last month</p>
+            <h4 class="fs-4 mb-3"><span id="cancelled_student_analytics" class="counter-value" data-target="">0</span></h4>
+            <!-- <p class="text-muted mb-0">From 1930 last month</p> -->
           </div>
-          <div class="flex-shrink-0 align-self-center">
+          <!-- <div class="flex-shrink-0 align-self-center">
             <span class="badge badge-soft-success fs-12"><i class="ri-arrow-right-up-line fs-13 align-middle"></i> +6.11 %<span></span></span>
-          </div>
+          </div> -->
         </div>
       </div><!-- end card body -->
     </div>
@@ -87,12 +87,12 @@
           </div>
           <div class="flex-grow-1 ms-3">
             <p class="text-uppercase fw-medium text-muted mb-3">Cancelled by Staff</p>
-            <h4 class="fs-4 mb-3"><span class="counter-value" data-target="405">0</span></h4>
-            <p class="text-muted mb-0">From 308 last month</p>
+            <h4 class="fs-4 mb-3"><span id="cancelled_staff_analytics" class="counter-value" data-target="">0</span></h4>
+            <!-- <p class="text-muted mb-0">From 308 last month</p> -->
           </div>
-          <div class="flex-shrink-0 align-self-center">
+          <!-- <div class="flex-shrink-0 align-self-center">
             <span class="badge badge-soft-success fs-12"><i class="ri-arrow-right-up-line fs-13 align-middle"></i> +16.31 %<span></span></span>
-          </div>
+          </div> -->
         </div>
       </div><!-- end card body -->
     </div>
