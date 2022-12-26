@@ -10,6 +10,7 @@
             <tr>
               <th>Control Number</th>
               <th>Date Filed</th>
+              <th>Payment Status</th>
               <th>Details</th>
               <th>Date Released / Cancelled</th>
               <th>Request Status</th>

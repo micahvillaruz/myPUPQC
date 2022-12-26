@@ -457,9 +457,7 @@ viewRequestDetails = (request_id) => {
 								</div>
 							</div>
 							<p>
-								The Document Request is now approved. You must view the requirements needed for each of the document/s requested and download the attachments by clicking the
-									<button type="button" class="btn btn-sm btn-success text-center waves-effect waves-light"><i class="mdi mdi-file-document-multiple label-icon align-middle me-2"></i> Requirements</button>
-								button. You must go to PUP QC and bring the downloaded attachments and requirements as listed below. 
+								The Document Request is now approved. You must view the requirements needed for each of the document/s requested and download the attachments by clicking the <i class="ri-download-2-line label-icon align-middle mx-1 text-muted fs-20"></i> icon next to the attached files in this request. Go to PUP QC and bring the downloaded attachments and requirements as listed below. 
 							</p>
 							<ul class="list-unstyled ms-3 mb-0">
 				`

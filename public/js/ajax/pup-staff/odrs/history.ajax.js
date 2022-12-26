@@ -32,26 +32,26 @@ loadHistoryTable = () => {
 
 						if (gender == 'Male') {
 							return `
-                <div class="d-flex align-items-center fw-medium">
-                  <img src="${baseURL}public/images/profile/flat-faces-icons-circle-man-6.png" class="avatar-xs rounded-circle me-2">
-                  <div>
-                    <span class="d-block fw-medium">${fullName}</span>
-                    <i class="mdi mdi-gender-male text-info"></i>
-                    <small>${gender}</small>
-                  </div>
-                </div>
-								`
+								<div class="d-flex align-items-center fw-medium">
+									<img src="${baseURL}public/images/profile/flat-faces-icons-circle-man-6.png" class="avatar-xs rounded-circle me-2">
+									<div>
+										<span class="d-block fw-medium">${fullName}</span>
+										<i class="mdi mdi-gender-male text-info"></i>
+										<small>${gender}</small>
+									</div>
+								</div>
+							`
 						} else {
 							return `
-                <div class="d-flex align-items-center fw-medium">
-                  <img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-1.png" class="avatar-xs rounded-circle me-2">
-                  <div>
-                    <span class="d-block fw-medium">${fullName}</span>
-                    <i class="mdi mdi-gender-female text-danger"></i>
-                    <small>${gender}</small>
-                  </div>
-                </div>
-								`
+								<div class="d-flex align-items-center fw-medium">
+									<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-1.png" class="avatar-xs rounded-circle me-2">
+									<div>
+										<span class="d-block fw-medium">${fullName}</span>
+										<i class="mdi mdi-gender-female text-danger"></i>
+										<small>${gender}</small>
+									</div>
+								</div>
+							`
 						}
 					},
 				},
@@ -64,11 +64,34 @@ loadHistoryTable = () => {
 						const time = moment(data.pending_for_clearance).format('hh:mm A')
 
 						return `
-              <div class="d-flex align-items-center">
-                <i class="ri-calendar-todo-fill text-primary"></i>
-                <span class="ms-2">${date}<small class="text-muted ms-1">${time}</small></span>
-              </div>
-            `
+							<div class="d-flex align-items-center">
+								<i class="ri-calendar-todo-fill text-primary"></i>
+								<span class="ms-2">${date}<small class="text-muted ms-1">${time}</small></span>
+							</div>
+						`
+					},
+				},
+
+				// Payment Status
+				{
+					data: null,
+					render: (data) => {
+						if (data.payment_status === 'Cancelled') {
+							return `
+								<div class="d-flex badge badge-soft-danger align-items-center justify-content-center">
+									<i class="me-2 mdi mdi-cash-remove fs-15"></i>
+									<span class="text-uppercase fw-bold">${data.payment_status}</span>
+								</div>
+							`
+						} else if (data.payment_status === 'Paid') {
+							return `
+								<div class="d-flex badge badge-soft-success align-items-center justify-content-center">
+									<i class="me-2 mdi mdi-cash-check fs-15"></i>
+									<span class="text-uppercase fw-bold">${data.payment_status}</span>
+								</div>
+								<span class="mt-1 d-block badge badge-soft-dark badge-border">OR No. ${data.or_no} </span>
+							`
+						}
 					},
 				},
 
@@ -130,8 +153,8 @@ loadHistoryTable = () => {
 					class: 'text-center',
 					render: (data) => {
 						return `
-              <button type="button" class="btn btn-info btn-sm bg-gradient waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails" onclick="viewRequestDetails('${data.request_id}')">View</button>
-            `
+						<button type="button" class="btn btn-info btn-label waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails" onclick = "viewRequestDetails('${data.request_id}')"><i class="mdi mdi-eye-outline label-icon align-middle fs-16 me-2"></i> View</button>
+					`
 					},
 				},
 			],

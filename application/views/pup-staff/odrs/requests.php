@@ -134,10 +134,10 @@
 <div class="row">
   <div class="col-lg-12">
     <div class="card">
-      <div class="card-header align-items-xl-center d-xl-flex">
+      <div class="card-header d-flex align-items-center justify-content-between pb-0 pe-0">
         <h5 class="card-title mb-0 flex-grow-1">Requests</h5>
         <div class="flex-shrink-0">
-          <ul class="nav nav-pills card-header-pills" role="tablist">
+          <ul class="nav nav-pills nav-customs nav-danger" role="tablist">
             <li class="nav-item">
               <a class="nav-link active" data-bs-toggle="tab" href="#pending" role="tab">
                 Pending

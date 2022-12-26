@@ -277,7 +277,6 @@ viewRequestDetails = () => {
 								</div>
 							</div>
 					`
-					$('#remarks').html(remarks)
 				} else if (data.status_of_request === 'Ready for Pickup') {
 					remarks = `
 						<div class="card-header">
@@ -307,11 +306,10 @@ viewRequestDetails = () => {
 							</div>
 						</div>
 					`
-					$('#remarks').html(remarks)
 				} else {
 					remarks = ''
-					$('#remarks').html(remarks)
 				}
+				$('#remarks').html(remarks)
 
 				if (
 					data.status_of_request === 'Pending for Clearance' ||

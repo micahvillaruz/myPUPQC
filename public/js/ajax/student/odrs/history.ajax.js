@@ -39,6 +39,29 @@ loadHistoryTable = () => {
 					},
 				},
 
+				// Payment Status
+				{
+					data: null,
+					render: (data) => {
+						if (data.payment_status === 'Cancelled') {
+							return `
+								<div class="d-flex badge badge-soft-danger align-items-center justify-content-center">
+									<i class="me-2 mdi mdi-cash-remove fs-15"></i>
+									<span class="text-uppercase fw-bold">${data.payment_status}</span>
+								</div>
+							`
+						} else if (data.payment_status === 'Paid') {
+							return `
+								<div class="d-flex badge badge-soft-success align-items-center justify-content-center">
+									<i class="me-2 mdi mdi-cash-check fs-15"></i>
+									<span class="text-uppercase fw-bold">${data.payment_status}</span>
+								</div>
+								<span class="mt-1 d-block badge badge-soft-dark badge-border">OR No. ${data.or_no} </span>
+							`
+						}
+					},
+				},
+
 				// Details
 				{
 					data: null,
@@ -125,7 +148,7 @@ loadHistoryTable = () => {
 					class: 'text-center',
 					render: (data) => {
 						return `
-							<button type="button" class="btn btn-info btn-sm bg-gradient waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails" onclick="viewRequestDetails('${data.request_id}')">View</button>
+							<button type="button" class="btn btn-info btn-label waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails" onclick = "viewRequestDetails('${data.request_id}')"><i class="mdi mdi-eye-outline label-icon align-middle fs-16 me-2"></i> View</button>
 						`
 					},
 				},

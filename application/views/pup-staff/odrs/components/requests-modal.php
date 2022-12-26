@@ -152,8 +152,8 @@
               <th colspan="2" class="fst-italic">Requested Document/s:</th>
             </tr>
             <tr>
-              <th class="text-uppercase">Document</th>
-              <th class="text-uppercase">Quantity</th>
+              <th>Document</th>
+              <th>Quantity</th>
             </tr>
           </thead>
           <tbody id="documents">
