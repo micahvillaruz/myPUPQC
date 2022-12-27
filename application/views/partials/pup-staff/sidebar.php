@@ -54,32 +54,38 @@
               </a>
             </li>
 
-            <li class="menu-title">
-              <i class="ri-more-fill"></i>
-              <span>ODRS</span>
-            </li>
 
-            <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/odrs/documents">
-                <i class="ri-file-copy-2-line"></i>
-                <span>Documents</span>
-              </a>
-            </li>
+            <?php if (strpos($this->session->userdata('user_roles'), 'Student Records') !== false) { ?>
+              <li class="menu-title">
+                <i class="ri-more-fill"></i>
+                <span>ODRTS</span>
+              </li>
 
-            <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/odrs/requests">
-                <i class="ri-archive-line"></i>
-                <span>Requests</span>
-              </a>
-            </li>
+              <li class="nav-item">
+                <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/odrs/documents">
+                  <i class="ri-file-copy-2-line"></i>
+                  <span>Documents</span>
+                </a>
+              </li>
 
+              <li class="nav-item">
+                <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/odrs/requests">
+                  <i class="ri-archive-line"></i>
+                  <span>Requests</span>
+                </a>
+              </li>
 
-            <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/odrs/history">
-                <i class="mdi mdi-history"></i>
-                <span>History</span>
-              </a>
-            </li>
+              <li class="nav-item">
+                <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/odrs/history">
+                  <i class="mdi mdi-history"></i>
+                  <span>History</span>
+                </a>
+              </li>
+            <?php } ?>
+
+            <div class="d-none" id="odrs-sidebar">
+
+            </div>
 
             <!--OMSS -->
             <li class="menu-title">
@@ -150,3 +156,5 @@
     <!-- Left Sidebar End -->
     <!-- Vertical Overlay-->
     <div class="vertical-overlay"></div>
+    <!-- imnport sidebar ajax -->
+    <script src="<?= base_url() ?>public\js\ajax\pup-staff\sidebar.ajax.js"></script>
