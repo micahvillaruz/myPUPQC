@@ -464,8 +464,65 @@ viewRequestDetails = (request_id) => {
 			}
 			$('#ready_for_pickup').html(readyforPickup)
 
+			let documentRequirements = ''
+			let remarks = ''
+
+			$('#attachments').addClass('d-none')
+
 			if (data.status_of_request === 'For Clearance') {
-				remarks = `
+				documentRequirements += `
+					<div class="h6 fs-15 text-primary">Requirements</div>
+						<div class="list-group col nested-list nested-sortable">
+				`
+				data.documents_assigned_to_request.forEach((document) => {
+					if (document.document_information[0].document_requirements.length != 0) {
+						documentRequirements += `
+							<div class="list-group-item nested-1">
+								<i class="mdi mdi-folder fs-16 align-middle text-warning me-2"></i>
+								<span>${document.document_information[0].document_name}</span>
+								<div class="list-group nested-list nested-sortable">`
+						document.document_information[0].document_requirements.forEach((requirement) => {
+							if (requirement.doc_req_name === 'Letter format for CHED') {
+								$('#ched-letter').removeClass('d-none')
+
+								documentRequirements += `
+								<div class="list-group-item nested-2">
+									<i class="ri-file-word-2-fill fs-16 align-middle text-info me-2"></i>
+									<span>${requirement.doc_req_name}</span>
+								</div>
+						`
+							} else {
+								documentRequirements += `
+								<div class="list-group-item nested-2">
+									<i class="ri-file-text-fill fs-16 align-middle text-success me-2"></i>
+									<span>${requirement.doc_req_name}</span>
+								</div>
+						`
+							}
+						})
+						documentRequirements += `
+								</div>
+							</div>
+						`
+					}
+				})
+				documentRequirements += `
+						<div class="list-group-item nested-1">
+							<i class="mdi mdi-folder fs-16 align-middle text-warning me-2"></i>
+							<span>For Overall Request</span>
+							<div class="list-group nested-list nested-sortable">
+								<div class="list-group-item nested-2">
+									<i class="ri-file-pdf-fill fs-16 align-middle text-danger me-2"></i>
+									Request Form
+								</div>
+							</div>
+						</div>
+					</div>
+				`
+
+				$('#attachments').removeClass('d-none')
+
+				remarks += `
 					<div class="h6 fs-15 text-primary">Remarks</div>
 					<div class="list-group">
 						<div class="list-group-item list-group-item-action">
@@ -530,10 +587,10 @@ viewRequestDetails = (request_id) => {
 						</div>
 					</div>
 				`
-			} else {
-				remarks = ''
 			}
+
 			$('#remarks').html(remarks)
+			$('#requirements').html(documentRequirements)
 		},
 	})
 }

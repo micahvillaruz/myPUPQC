@@ -127,7 +127,7 @@
                   <h5 id="student_full_name"></h5>
                   <h6 id="user_no"></h6>
                   <div class="hstack gap-3 flex-wrap">
-                    <div id="course" class="badge rounded-pill badge-soft-danger fs-12"></div>
+                    <div id="course" class="badge rounded-pill badge-soft-danger fs-12 text-wrap py-2" style="width: 350px; line-height: 15px;"></div>
                     <div class="vr"></div>
                     <div>
                       <i class="ri-mail-fill align-bottom text-info me-2"></i>
@@ -147,9 +147,9 @@
           </div>
         </div>
         <table class="mt-5 table table-bordered nowrap align-middle" style="width: 100%">
-          <thead>
-            <tr class="bg-light">
-              <th colspan="2" class="fst-italic">Requested Document/s:</th>
+          <thead class="table-light text-muted">
+            <tr>
+              <th colspan="2" class="bg-soft-primary text-dark">Requested Document/s:</th>
             </tr>
             <tr>
               <th>Document</th>
@@ -301,7 +301,7 @@
                   <h5 id="view_student_name"></h5>
                   <h6 id="view_user_no"></h6>
                   <div class="hstack gap-3 flex-wrap">
-                    <div id="view_course" class="badge rounded-pill badge-soft-danger fs-12"></div>
+                    <div id="view_course" class="badge rounded-pill badge-soft-danger fs-12 text-wrap py-2" style="width: 350px; line-height: 15px;"></div>
                     <div class="vr"></div>
                     <div>
                       <i class="ri-mail-fill align-bottom text-info me-2"></i>
@@ -321,9 +321,9 @@
           </div>
         </div>
         <table class="mt-5 table table-bordered nowrap align-middle" style="width: 100%">
-          <thead>
-            <tr class="bg-light">
-              <th colspan="4" class="fst-italic">Requested Document/s:</th>
+          <thead class="table-light text-muted">
+            <tr>
+              <th colspan="3" class="bg-soft-primary text-dark">Requested Document/s:</th>
             </tr>
             <tr>
               <th>Document</th>
@@ -341,7 +341,7 @@
           </div>
         </div>
         <div class="m-2 mt-4 mb-3">
-          <div class="h6 fs-15 text-primary">Status</div>
+          <div class="h6 fs-15 text-primary">Request Status</div>
           <div class="profile-timeline">
             <div class="accordion accordion-flush" id="accordionFlushExample">
               <div class="accordion-item border-0">
@@ -417,6 +417,64 @@
             </div>
             <!--end accordion-->
           </div>
+        </div>
+        <div id="requirements" class="mt-4 mb-3">
+        </div>
+        <div id="attachments" class="mt-4 mb-3 d-none">
+          <div class="h6 fs-15 text-primary">Attachement/s</div>
+          <div class="row g-3">
+            <div id="ched-letter" class="col-xxl-4 col-lg-6 d-none">
+              <div class="border rounded border-dashed p-2">
+                <div class="d-flex align-items-center">
+                  <div class="flex-shrink-0 me-3">
+                    <div class="avatar-sm">
+                      <div class="avatar-title bg-light text-info rounded fs-24">
+                        <i class="ri-file-word-2-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1 overflow-hidden">
+                    <h5 class="fs-13 mb-1"><a href="<?= base_url() ?>public/file/Letter-Format-for-CHED.docx" download="Letter-Format-for-CHED" class="text-body text-truncate d-block">Letter for CHED.docx</a></h5>
+                    <div>17KB</div>
+                  </div>
+                  <div class="flex-shrink-0 ms-2">
+                    <div class="d-flex gap-1">
+                      <a href="<?= base_url() ?>public/file/Letter-Format-for-CHED.docx" download="Letter-Format-for-CHED" type="button" class="btn btn-icon text-muted btn-sm fs-18">
+                        <i class="ri-download-2-line"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end col -->
+            <div class="col-xxl-4 col-lg-6">
+              <div class="border rounded border-dashed p-2">
+                <div class="d-flex align-items-center">
+                  <div class="flex-shrink-0 me-3">
+                    <div class="avatar-sm">
+                      <div class="avatar-title bg-light text-danger rounded fs-24">
+                        <i class="ri-file-pdf-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1 overflow-hidden">
+                    <h5 class="fs-13 mb-1"><a href="<?= base_url() ?>public/file/Request-Form.pdf" download="Request Form" class="text-body text-truncate d-block">Request Form.pdf</a></h5>
+                    <div>624KB</div>
+                  </div>
+                  <div class="flex-shrink-0 ms-2">
+                    <div class="d-flex gap-1">
+                      <a href="<?= base_url() ?>public/file/Request-Form.pdf" download="Request Form" type="button" class="btn btn-icon text-muted btn-sm fs-18">
+                        <i class="ri-download-2-line"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end col -->
+          </div>
+          <!-- end row -->
         </div>
         <div id="remarks" class="mt-4 mb-3">
         </div>
