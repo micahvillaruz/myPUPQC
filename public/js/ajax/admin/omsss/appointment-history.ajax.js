@@ -142,7 +142,7 @@ getConsultationStatusCount = () => {
 				datasets: [
 					{
 						data: Object.values(data.consultation_status_count), // extract the values (i.e. 1, 1, 1, etc.)
-						backgroundColor: ['#FF6961', '#FFD700', '#87CEEB', '#7FFF00', '#9ACD32', '#6495ED'], // use the colors specified in the canvas element's data-colors attribute
+						backgroundColor: ['#9ACD32', '#6495ED', '#87ceeb', '#ffd700', '#FFB347', '#FF6961'], // use the colors specified in the canvas element's data-colors attribute
 					},
 				],
 			}

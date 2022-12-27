@@ -46,8 +46,8 @@
       <div class="card-body" style="z-index: 1;">
         <div class="d-flex align-items-center">
           <div class="avatar-sm flex-shrink-0">
-            <span class="avatar-title bg-soft-danger text-danger rounded-2 fs-2">
-              <i class="mdi mdi-nfc-search-variant"></i>
+          <span class="avatar-title bg-soft-success text-success rounded-2 fs-2">
+            <i class="ri-checkbox-circle-line"></i>
             </span>
           </div>
           <div class="flex-grow-1 ms-3">

@@ -22,7 +22,6 @@
           <div class="flex-grow-1 ms-3">
             <p class="text-uppercase fw-medium text-muted mb-3">Pending For Medical</p>
             <h4 class="fs-4 mb-3"><span class="counter-value" id="medical_analytics_pending" data-target="7522">0</span></h4>
-            <p class="text-muted mb-0">From 9530 last month</p>
           </div>
           <div class="flex-shrink-0 align-self-center">
           </div>
@@ -47,14 +46,13 @@
       <div class="card-body" style="z-index: 1;">
         <div class="d-flex align-items-center">
           <div class="avatar-sm flex-shrink-0">
-            <span class="avatar-title bg-soft-danger text-danger rounded-2 fs-2">
-              <i class="mdi mdi-nfc-search-variant"></i>
+          <span class="avatar-title bg-soft-success text-success rounded-2 fs-2">
+            <i class="ri-checkbox-circle-line"></i>
             </span>
           </div>
           <div class="flex-grow-1 ms-3">
             <p class="text-uppercase fw-medium text-muted mb-3">Done</p>
             <h4 class="fs-4 mb-3"><span class="counter-value" id="medical_analytics_done" data-target="2045">0</span></h4>
-            <p class="text-muted mb-0">From 1930 last month</p>
           </div>
           <div class="flex-shrink-0 align-self-center">
           </div>
@@ -86,7 +84,6 @@
           <div class="flex-grow-1 ms-3">
             <p class="text-uppercase fw-medium text-muted mb-3">Cancelled by student</p>
             <h4 class="fs-4 mb-3"><span class="counter-value" id="medical_analytics_cancelled_by_student" data-target="2045">0</span></h4>
-            <p class="text-muted mb-0">From 1930 last month</p>
           </div>
           <div class="flex-shrink-0 align-self-center">
           </div>
@@ -118,7 +115,6 @@
           <div class="flex-grow-1 ms-3">
             <p class="text-uppercase fw-medium text-muted mb-3">Cancelled by staff</p>
             <h4 class="fs-4 mb-3"><span class="counter-value" id="medical_analytics_cancelled_by_staff" data-target="405">0</span></h4>
-            <p class="text-muted mb-0">From 308 last month</p>
           </div>
           <div class="flex-shrink-0 align-self-center">
           </div>
