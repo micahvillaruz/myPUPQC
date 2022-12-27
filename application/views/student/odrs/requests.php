@@ -1,9 +1,9 @@
-<div class="row">
-  <div class="col-xl-9">
+<div id="existing_request" class="row d-none">
+  <div id="first_col" class="col-xl-12">
     <div class="card">
       <div class="card-header">
         <div class="d-flex align-items-center justify-content-center">
-          <h5 id="control_no" class="fs-4 badge badge-outline-primary fw-bold mb-0">CTRL-3343365491748</h5>
+          <h5 id="control_no" class="fs-4 badge badge-outline-primary fw-bold mb-0"></h5>
         </div>
       </div>
       <div class="card-body">
@@ -18,47 +18,25 @@
                 <th scope="col">Quantity</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <div class="d-flex">
-                    <div class="flex-grow-1 ms-3">
-                      <h5 class="fs-15"><a href="#" class="link-primary">Transcript of Records - Copy for (Undergraduate) 3rd and 4th Year</a></h5>
-                      <p class="text-muted mb-0">Type: <span class="fw-medium">Transcript of Records</span></p>
-                    </div>
-                  </div>
-                </td>
-                <td>5</td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="d-flex">
-                    <div class="flex-grow-1 ms-3">
-                      <h5 class="fs-15"><a href="#" class="link-primary">Certification of Subject Description</a></h5>
-                      <p class="text-muted mb-0">Type: <span class="fw-medium">Certifications</span></p>
-                    </div>
-                  </div>
-                </td>
-                <td>3</td>
-              </tr>
+            <tbody id="documents">
             </tbody>
           </table>
           <div class="mt-4 mx-3">
             <span class="badge rounded-pill bg-primary fs-12">Purpose of Request</span>
             <div class="bg-soft-secondary ms-1 text-wrap">
-              <p id="purpose_of_request" class="p-2 fw-medium">Board / Licensure Examination</p>
+              <p id="purpose_of_request" class="p-2 fw-medium"></p>
             </div>
           </div>
         </div>
       </div>
     </div>
     <!--end card-->
-    <div class="card">
+    <div id="request_status" class="card mb-0">
       <div class="card-header">
         <div class="d-sm-flex align-items-center">
           <h5 class="card-title flex-grow-1 mb-0">Request Status</h5>
-          <div class="flex-shrink-0 mt-2 mt-sm-0">
-            <a href="javasccript:void(0;)" class="btn btn-soft-danger btn-sm mt-2 mt-sm-0"><i class="mdi mdi-archive-remove-outline align-middle me-1"></i> Cancel Request</a>
+          <div id="cancel_button" class="flex-shrink-0 mt-2 mt-sm-0">
+            <button type="button" class="btn btn-soft-danger btn-sm mt-2 mt-sm-0" onclick="cancelRequest()"><i class="mdi mdi-archive-remove-outline align-middle me-1"></i> Cancel Request</button>
           </div>
         </div>
       </div>
@@ -70,14 +48,14 @@
                 <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0 avatar-xs">
-                      <div class="avatar-title bg-warning rounded-circle">
+                      <div class="avatar-title bg-warning bg-gradient rounded-circle">
                         <i class="mdi mdi-progress-clock"></i>
                       </div>
                     </div>
                     <div class="flex-grow-1 ms-3">
                       <h6 class="fs-15 mb-0 fw-semibold">
                         Pending for Clearance -
-                        <span id="pending_date" class="fw-normal">Sun, 28 Aug 2022</span>
+                        <span id="pending_date" class="fw-normal"></span>
                       </h6>
                     </div>
                   </div>
@@ -86,84 +64,15 @@
               <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body ms-2 ps-5 pt-0">
                   <h6 class="mb-1">The Document Request is Pending for Approval and is being reviewed by the Officer-in-Charge, Student Records.</h6>
-                  <p id="pending_datetime" class="text-muted mb-0">Sun, 28 Aug 2022 - 8:00AM</p>
+                  <p id="pending_datetime" class="text-muted mb-0"></p>
                 </div>
               </div>
             </div>
             <div id="for_clearance" class="accordion-item border-0">
-              <div class="accordion-header" id="headingTwo">
-                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                  <div class="d-flex align-items-center">
-                    <div class="flex-shrink-0 avatar-xs">
-                      <div class="avatar-title bg-danger rounded-circle">
-                        <i class="mdi mdi-nfc-search-variant"></i>
-                      </div>
-                    </div>
-                    <div class="flex-grow-1 ms-3">
-                      <h6 class="fs-15 mb-0 fw-semibold">
-                        For Clearance -
-                        <span class="fw-normal">Mon, 29 Aug 2022</span>
-                      </h6>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                <div class="accordion-body ms-2 ps-5 pt-0">
-                  <h6 class="mb-1">The Document Request is now Approved. The student must go to PUP QC to submit the requirements and pay the processing fees.</h6>
-                  <p class="text-muted mb-0">Mon, 29 Aug 2022 - 10:20AM</p>
-                </div>
-              </div>
             </div>
             <div id="for_evaluation" class="accordion-item border-0">
-              <div class="accordion-header" id="headingThree">
-                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  <div class="d-flex align-items-center">
-                    <div class="flex-shrink-0 avatar-xs">
-                      <div class="avatar-title bg-info rounded-circle">
-                        <i class="mdi mdi-file-sign"></i>
-                      </div>
-                    </div>
-                    <div class="flex-grow-1 ms-3">
-                      <h6 class="fs-15 mb-1 fw-semibold">
-                        For Evaluation / Processing -
-                        <span class="fw-normal">Wed, 31 Aug 2022</span>
-                      </h6>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                <div class="accordion-body ms-2 ps-5 pt-0">
-                  <h6 class="mb-1">The Document/s are Paid and the Request is now being Processed for signature, documentary stamp and school dry seal.</h6>
-                  <p class="text-muted mb-0">Wed, 31 Aug 2022 - 5:48PM</p>
-                </div>
-              </div>
             </div>
             <div id="ready_for_pickup" class="accordion-item border-0">
-              <div class="accordion-header" id="headingFour">
-                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                  <div class="d-flex align-items-center">
-                    <div class="flex-shrink-0 avatar-xs">
-                      <div class="avatar-title bg-dark rounded-circle">
-                        <i class="ri-user-received-2-line"></i>
-                      </div>
-                    </div>
-                    <div class="flex-grow-1 ms-3">
-                      <h6 class="fs-15 mb-1 fw-semibold">
-                        Ready for Pickup -
-                        <span class="fw-normal">Thu, 01 Sep 2022</span>
-                      </h6>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                <div class="accordion-body ms-2 ps-5 pt-0">
-                  <h6 class="mb-1">The Requested Document/s can now be claimed at PUP QC. The student must bring the claim stub and other requirements, if necessary.</h6>
-                  <p class="text-muted mb-0">Thu, 01 Sep 2022 - 4.54PM</p>
-                </div>
-              </div>
             </div>
             <div class="accordion-item border-0">
               <div class="accordion-header" id="headingFive">
@@ -187,74 +96,31 @@
       </div>
     </div>
     <!--end card-->
-    <!--end card-->
-    <div class="card">
-      <div class="card-header">
-        <div class="d-sm-flex align-items-center">
-          <h5 class="card-title flex-grow-1 mb-0">Remarks</h5>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="list-group">
-          <div class="list-group-item list-group-item-action">
-            <div class="d-flex mb-2 align-items-center">
-              <div class="flex-shrink-0">
-                <img src="<?= base_url() ?>public/images/officials/img-25.png" alt="" class="avatar-sm rounded-circle" />
-              </div>
-              <div class="flex-grow-1 ms-3">
-                <h5 class="list-title fs-15 mb-1">Hernando Liberato</h5>
-                <p class="list-text mb-0 fs-12">Officer-in-Charge, Student Records</p>
-              </div>
-            </div>
-            <p>Good Day! Please be informed that your requested credential/s is/are scheduled for pick-up and can now be claimed at the Records Section, Rothlener Building in PUP Quezon City.</p>
-            <p class="fw-medium">Please present your claim stub and go to PUP QC on Monday to Friday from 8:00 AM to 5:00 PM only</p>
-            <p class="d-flex fw-medium align-items-center">
-              <i class="ri-error-warning-fill me-2 fs-4 text-warning"></i>
-              <span class="text-danger">Reminder: If the requested documents are not claimed at PUP QC after 90 days, the request will be automatically cancelled.</span>
-            </p>
-          </div>
-        </div>
-      </div>
+    <div id="remarks" class="card">
     </div>
     <!--end card-->
   </div>
   <!--end col-->
-  <div class="col-xl-3">
+  <div id="second_col" class="col-xl-3 d-none">
     <div class="card">
       <div class="card-header">
         <div class="d-flex">
           <h5 class="card-title flex-grow-1 mb-0"><i class="mdi mdi-file-document-multiple-outline align-middle me-1 text-muted"></i> Requirements</h5>
-          <div class="flex-shrink-0">
-            <div class="d-flex align-items-center badge badge-soft-success fs-11"> <i class="ri-check-fill fs-13 me-2"></i> <span>Submitted</span></div>
+          <div id="statusReq" class="flex-shrink-0">
           </div>
         </div>
       </div>
       <div class="card-body">
-        <div class="alert alert-info" role="alert">
+        <div class="alert alert-info alert_reqs" role="alert">
           Submit hard copy of the requirement/s to the <strong> Records Section - OIC Student Records</strong>.
         </div>
 
-        <div class="list-group col nested-list nested-sortable">
-          <div class="list-group-item nested-1"> <i class="mdi mdi-folder fs-16 align-middle text-warning me-2"></i><span>Transcript of Records - Copy for (Undergraduate) 3rd and 4th Year</span>
-            <div class="list-group nested-list nested-sortable">
-              <div class="list-group-item nested-2"><i class="ri-file-text-fill fs-16 align-middle text-success me-2"></i> Tear-off portion of Honorable Dismissal</div>
-            </div>
-          </div>
-          <div class="list-group-item nested-1"> <i class="mdi mdi-folder fs-16 align-middle text-warning me-2"></i><span>Certification of Subject Description</span>
-            <div class="list-group nested-list nested-sortable">
-              <div class="list-group-item nested-2"><i class=" ri-file-text-fill fs-16 align-middle text-success me-2"></i> List of Subject/s</div>
-            </div>
-          </div>
-          <div class="list-group-item nested-1"> <i class="mdi mdi-folder fs-16 align-middle text-warning me-2"></i><span>For Overall Request</span>
-            <div class="list-group nested-list nested-sortable">
-              <div class="list-group-item nested-2"><i class="ri-file-pdf-fill fs-16 align-middle text-danger me-2"></i> Request Form</div>
-            </div>
-          </div>
+        <div id="requirements" class="list-group col nested-list nested-sortable">
         </div>
 
-        <div class="alert alert-danger alert-border-left alert-dismissible fade show mt-4" role="alert">
+        <div class="alert alert-warning alert-border-left alert-dismissible alert_reqs fade show mt-4 mb-0" role="alert">
           <i class="ri-error-warning-line me-3 align-middle"></i> <strong>Notice</strong> - Only requests with complete requirements shall be processed. <br>
-          <small class="fst-italic">Please contact Hernando DR. Liberato if you have any questions about the requirements or if the request status hasn't changed after 3 days from submission of requirements.</small>
+          <small class="fst-italic">Please contact Hernando DR. Liberato if you have any questions about the requirements.</small>
         </div>
       </div>
       <!-- end card body -->
@@ -263,12 +129,12 @@
 
     <div class="card">
       <div class="card-header align-items-center d-flex border-bottom-dashed">
-        <h4 class="card-title mb-0 flex-grow-1"><i class="mdi mdi-download-box-outline align-middle me-1 text-muted"></i> Download Attachment/s</h4>
+        <h4 class="card-title mb-0 flex-grow-1"><i class="mdi mdi-download-box-outline align-middle me-1 text-muted"></i> Attachment/s</h4>
       </div>
 
       <div class="card-body">
         <div class="vstack gap-2">
-          <div class="border rounded border-dashed p-2">
+          <div id="ched-letter" class="border rounded border-dashed p-2 d-none">
             <div class="d-flex align-items-center">
               <div class="flex-shrink-0 me-3">
                 <div class="avatar-sm">
@@ -290,7 +156,6 @@
               </div>
             </div>
           </div>
-
           <div class="border rounded border-dashed p-2">
             <div class="d-flex align-items-center">
               <div class="flex-shrink-0 me-3">
@@ -314,6 +179,19 @@
             </div>
           </div>
         </div>
+        <div class="mt-4 mb-0 alert alert-info alert-dismissible alert-additional fade show" role="alert">
+          <div class="alert-body">
+            <div class="d-flex">
+              <div class="flex-shrink-0 me-3">
+                <i class="ri-information-line fs-16 align-middle"></i>
+              </div>
+              <div class="flex-grow-1">
+                <p class="mb-0"> <b>Download</b> the file attachment/s, and <b>bring it with the requirements</b> specified for each of the documents included in this request. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
       <!-- end card body -->
     </div>
@@ -326,16 +204,20 @@
         </div>
       </div>
       <div class="card-body">
-        <div class="text-center">
-          <lord-icon src="https://cdn.lordicon.com/lqqcslws.json" trigger="loop" style="width:80px;height:80px"></lord-icon>
-          <p class="mt-2 mb-0 fs-13"><span class="fw-medium">Official Receipt No.</span>: 19302910</p>
-          <p class="mb-0 fs-13"><span class="fw-medium">Payment Status</span> : <span class="badge bg-success">Paid</span></p>
+        <div id="payment" class="text-center">
         </div>
       </div>
     </div>
     <!--end card-->
-
-
   </div>
   <!--end col-->
+</div>
+
+<div id="no_request" class="row my-5 py-5 d-none">
+  <div class="py-5 col-12 d-flex justify-content-center align-items-center text-center flex-column gap-2">
+    <lord-icon src="https://cdn.lordicon.com/kdookkse.json" trigger="loop" style="width:180px;height:180px"></lord-icon>
+    <h4 class="fw-bold">No Existing Request Found!</h4>
+    <p class="fs-15">You have no Ongoing Document Request as of the moment. <br> Please create a New Request first by clicking the <spam class="fw-medium">"New Request"</spam> button below.</p>
+    <a href="<?= base_url() ?>student/odrs/new-request" role="button" class="btn btn-primary bg-gradient waves-effect waves-light">New Request</a>
+  </div>
 </div>

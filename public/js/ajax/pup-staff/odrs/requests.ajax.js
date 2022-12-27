@@ -1,4 +1,6 @@
 $(function () {
+	getRequestsAnalytics()
+
 	loadPendingRequests()
 	loadApprovedRequests()
 
@@ -37,6 +39,26 @@ $(function () {
 		releasedRequest(requestID)
 	})
 })
+
+// Get Requests Analytics
+getRequestsAnalytics = () => {
+	$.ajax({
+		type: 'GET',
+		url: `${apiURL}odrs/pup_staff/analytics/requests`,
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			const data = result.request_status_count
+
+			document.getElementById('pending_analytics').dataset.target = data.pending_for_clearance
+			document.getElementById('for_clearance_analytics').dataset.target = data.for_clearance
+			document.getElementById('for_evaluation_analytics').dataset.target = data.for_evaluation
+			document.getElementById('ready_for_pickup_analytics').dataset.target = data.ready_for_pickup
+
+			counter()
+		},
+	})
+}
 
 // Load Pending Requests Table
 loadPendingRequests = () => {
@@ -540,7 +562,7 @@ viewApprovedRequest = (request_id) => {
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 							<div class="d-flex align-items-center">
 								<div class="flex-shrink-0 avatar-xs">
-									<div class="avatar-title bg-info rounded-circle">
+									<div class="avatar-title bg-info bg-gradient rounded-circle">
 										<i class="mdi mdi-file-sign"></i>
 									</div>
 								</div>
@@ -594,7 +616,7 @@ viewApprovedRequest = (request_id) => {
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
 							<div class="d-flex align-items-center">
 								<div class="flex-shrink-0 avatar-xs">
-									<div class="avatar-title bg-dark rounded-circle">
+									<div class="avatar-title bg-dark bg-gradient rounded-circle">
 										<i class="ri-user-received-2-line"></i>
 									</div>
 								</div>
@@ -641,8 +663,65 @@ viewApprovedRequest = (request_id) => {
 			}
 			$('#ready_for_pickup').html(readyforPickup)
 
+			let documentRequirements = ''
+			let remarks = ''
+
+			$('#attachments').addClass('d-none')
+
 			if (data.status_of_request === 'For Clearance') {
-				remarks = `
+				documentRequirements += `
+					<div class="h6 fs-15 text-primary">Requirements</div>
+						<div class="list-group col nested-list nested-sortable">
+				`
+				data.documents_assigned_to_request.forEach((document) => {
+					if (document.document_information[0].document_requirements.length != 0) {
+						documentRequirements += `
+							<div class="list-group-item nested-1">
+								<i class="mdi mdi-folder fs-16 align-middle text-warning me-2"></i>
+								<span>${document.document_information[0].document_name}</span>
+								<div class="list-group nested-list nested-sortable">`
+						document.document_information[0].document_requirements.forEach((requirement) => {
+							if (requirement.doc_req_name === 'Letter format for CHED') {
+								$('#ched-letter').removeClass('d-none')
+
+								documentRequirements += `
+								<div class="list-group-item nested-2">
+									<i class="ri-file-word-2-fill fs-16 align-middle text-info me-2"></i>
+									<span>${requirement.doc_req_name}</span>
+								</div>
+						`
+							} else {
+								documentRequirements += `
+								<div class="list-group-item nested-2">
+									<i class="ri-file-text-fill fs-16 align-middle text-success me-2"></i>
+									<span>${requirement.doc_req_name}</span>
+								</div>
+						`
+							}
+						})
+						documentRequirements += `
+								</div>
+							</div>
+						`
+					}
+				})
+				documentRequirements += `
+						<div class="list-group-item nested-1">
+							<i class="mdi mdi-folder fs-16 align-middle text-warning me-2"></i>
+							<span>For Overall Request</span>
+							<div class="list-group nested-list nested-sortable">
+								<div class="list-group-item nested-2">
+									<i class="ri-file-pdf-fill fs-16 align-middle text-danger me-2"></i>
+									Request Form
+								</div>
+							</div>
+						</div>
+					</div>
+				`
+
+				$('#attachments').removeClass('d-none')
+
+				remarks += `
 					<div class="h6 fs-15 text-primary">Remarks</div>
 					<div class="list-group">
 						<div class="list-group-item list-group-item-action">
@@ -656,9 +735,7 @@ viewApprovedRequest = (request_id) => {
 								</div>
 							</div>
 							<p>
-								The Document Request is now approved. You must view the requirements needed for each of the document/s requested and download the attachments by clicking the
-									<button type="button" class="btn btn-sm btn-success text-center waves-effect waves-light"><i class="mdi mdi-file-document-multiple label-icon align-middle me-2"></i> Requirements</button>
-								button. You must go to PUP QC and bring the downloaded attachments and requirements as listed below. 
+								The Document Request is now approved. You must view the requirements needed for each of the document/s requested and download the attachments by clicking the <i class="ri-download-2-line label-icon align-middle mx-1 text-muted fs-20"></i> icon next to the attached files in this request. Go to PUP QC and bring the downloaded attachments and requirements as listed below. 
 							</p>
 							<ul class="list-unstyled ms-3 mb-0">
 				`
@@ -686,9 +763,8 @@ viewApprovedRequest = (request_id) => {
 						</div>
 					</div>
 				`
-				$('#remarks').html(remarks)
 			} else if (data.status_of_request === 'Ready for Pickup') {
-				remarks = `
+				remarks += `
 					<div class="h6 fs-15 text-primary">Remarks</div>
 					<div class="list-group">
 						<div class="list-group-item list-group-item-action">
@@ -710,11 +786,10 @@ viewApprovedRequest = (request_id) => {
 						</div>
 					</div>
 				`
-				$('#remarks').html(remarks)
-			} else {
-				remarks = ''
-				$('#remarks').html(remarks)
 			}
+
+			$('#remarks').html(remarks)
+			$('#requirements').html(documentRequirements)
 		},
 	})
 }
@@ -1058,4 +1133,22 @@ releasedRequest = (request_id) => {
 
 addId = (request_id, status) => {
 	$(`#${status}_id`).val(request_id)
+}
+
+counter = () => {
+	var e = document.querySelectorAll('.counter-value')
+	function s(e) {
+		return e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+	}
+	e &&
+		Array.from(e).forEach(function (o) {
+			!(function e() {
+				var t = +o.getAttribute('data-target'),
+					a = +o.innerText,
+					n = t / 250
+				n < 1 && (n = 1),
+					a < t ? ((o.innerText = (a + n).toFixed(0)), setTimeout(e, 1)) : (o.innerText = s(t)),
+					s(o.innerText)
+			})()
+		})
 }
