@@ -146,18 +146,10 @@
           <span>Document Request</span>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link menu-link" href="<?= base_url() ?>student/odrs/new-request">
-            <i class="ri-file-add-line"></i>
-            <span>New Request</span>
-          </a>
+        <li id="new-request-sidebar" class="nav-item">
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link menu-link" href="<?= base_url() ?>student/odrs/request">
-            <i class="ri-archive-line"></i>
-            <span>Request</span>
-          </a>
+        <li id="request-sidebar" class="nav-item">
         </li>
 
         <li class="nav-item">
@@ -233,3 +225,5 @@
 <!-- Left Sidebar End -->
 <!-- Vertical Overlay-->
 <div class="vertical-overlay"></div>
+<!-- imnport sidebar ajax -->
+<script src="<?= base_url() ?>public\js\ajax\student\sidebar.ajax.js"></script>

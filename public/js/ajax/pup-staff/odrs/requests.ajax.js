@@ -562,7 +562,7 @@ viewApprovedRequest = (request_id) => {
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 							<div class="d-flex align-items-center">
 								<div class="flex-shrink-0 avatar-xs">
-									<div class="avatar-title bg-info rounded-circle">
+									<div class="avatar-title bg-info bg-gradient rounded-circle">
 										<i class="mdi mdi-file-sign"></i>
 									</div>
 								</div>
@@ -616,7 +616,7 @@ viewApprovedRequest = (request_id) => {
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
 							<div class="d-flex align-items-center">
 								<div class="flex-shrink-0 avatar-xs">
-									<div class="avatar-title bg-dark rounded-circle">
+									<div class="avatar-title bg-dark bg-gradient rounded-circle">
 										<i class="ri-user-received-2-line"></i>
 									</div>
 								</div>

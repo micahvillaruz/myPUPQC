@@ -48,7 +48,7 @@
                 <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0 avatar-xs">
-                      <div class="avatar-title bg-warning rounded-circle">
+                      <div class="avatar-title bg-warning bg-gradient rounded-circle">
                         <i class="mdi mdi-progress-clock"></i>
                       </div>
                     </div>
@@ -218,6 +218,6 @@
     <lord-icon src="https://cdn.lordicon.com/kdookkse.json" trigger="loop" style="width:180px;height:180px"></lord-icon>
     <h4 class="fw-bold">No Existing Request Found!</h4>
     <p class="fs-15">You have no Ongoing Document Request as of the moment. <br> Please create a New Request first by clicking the <spam class="fw-medium">"New Request"</spam> button below.</p>
-    <a href="http://localhost/myPUPQC/student/odrs/new-request" role="button" class="btn btn-primary bg-gradient waves-effect waves-light">New Request</a>
+    <a href="<?= base_url() ?>student/odrs/new-request" role="button" class="btn btn-primary bg-gradient waves-effect waves-light">New Request</a>
   </div>
 </div>
