@@ -271,7 +271,7 @@
                                         </div>
                                         <div class="col-4">
                                             <div class="form-check card-radio">
-                                                <input id="customizer-layout02" name="data-layout" type="radio" value="horizontal" class="form-check-input" />
+                                                <input id="customizer-layout02" name="data-layout" type="radio" value="" class="form-check-input" />
                                                 <label class="form-check-label p-0 avatar-lg w-100" for="customizer-layout02">
                                                     <img src="../../public/images/facilities/img-11.jpg" class="card-img-top" alt="...">
                                                 </label>
@@ -280,7 +280,7 @@
                                         </div>
                                         <div class="col-4">
                                             <div class="form-check card-radio">
-                                                <input id="customizer-layout03" name="data-layout" type="radio" value="twocolumn" class="form-check-input" />
+                                                <input id="customizer-layout03" name="data-layout" type="radio" value="" class="form-check-input" />
                                                 <label class="form-check-label p-0 avatar-lg w-100" for="customizer-layout03">
                                                     <img src="../../public/images/facilities/img-6.jpg" class="card-img-top" alt="...">
                                                 </label>
@@ -292,7 +292,7 @@
                                     <div class="row mb-3">
                                         <div class="col-4">
                                             <div class="form-check card-radio">
-                                                <input id="customizer-layout01" name="data-layout" type="radio" value="vertical" class="form-check-input" />
+                                                <input id="customizer-layout01" name="data-layout" type="radio" value="" class="form-check-input" />
                                                 <label class="form-check-label p-0 avatar-lg w-100" for="customizer-layout01">
                                                     <img src="../../public/images/facilities/img-8.jpg" class="card-img-top" alt="...">
                                                 </label>
@@ -301,7 +301,7 @@
                                         </div>
                                         <div class="col-4">
                                             <div class="form-check card-radio">
-                                                <input id="customizer-layout02" name="data-layout" type="radio" value="horizontal" class="form-check-input" />
+                                                <input id="customizer-layout02" name="data-layout" type="radio" value="" class="form-check-input" />
                                                 <label class="form-check-label p-0 avatar-lg w-100" for="customizer-layout02">
                                                     <img src="../../public/images/facilities/img-4.jpg" class="card-img-top" alt="...">
                                                 </label>
@@ -310,7 +310,7 @@
                                         </div>
                                         <div class="col-4">
                                             <div class="form-check card-radio">
-                                                <input id="customizer-layout03" name="data-layout" type="radio" value="twocolumn" class="form-check-input" />
+                                                <input id="customizer-layout03" name="data-layout" type="radio" value="" class="form-check-input" />
                                                 <label class="form-check-label p-0 avatar-lg w-100" for="customizer-layout03">
                                                     <img src="../../public/images/facilities/img-10.jpg" class="card-img-top" alt="...">
                                                 </label>
@@ -323,13 +323,13 @@
                                     <span>
                                         <input class="form-check-input me-3" type="checkbox" id="formCheck1">
                                         <label class="form-check-label" for="formCheck1">
-                                            I agree to PUP Quezon City's <a href="<?= base_url() ?>terms/" target="_blank" rel="noopener noreferrer">Terms and Conditions</a> and <a href="<?= base_url() ?>privacy/" target="_blank" rel="noopener noreferrer">Privacy Statement</a>
+                                            I agree to PUP Quezon City's <a href="<?= base_url() ?>terms/" rel="noopener noreferrer">Terms and Conditions</a> and <a href="<?= base_url() ?>privacy/" rel="noopener noreferrer">Privacy Statement</a>
                                         </label>
                                     </span>
                                     <span>
                                         <input class="form-check-input me-3" type="checkbox" id="formCheck2">
                                         <label class="form-check-label" for="formCheck2">
-                                            I agree to EVRSERS' <a href="<?= base_url() ?>student/evrsers/reservationpolicy/" target="_blank" rel="noopener noreferrer">One Reservation Policy</a>.
+                                            I agree to EVRSERS' <a href="<?= base_url() ?>student/evrsers/reservationpolicy/" id="reservation-policy">One Reservation Policy</a>.
                                         </label>
                                     </span>
                                 </div>
