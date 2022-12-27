@@ -16,7 +16,8 @@ class Auth extends CI_Controller
       $this->session->set_userdata([
         'token'     => $params['token'],
         'user_id'   => $params['user_id'],
-        'user_type' => $params['user_type']
+        'user_type' => $params['user_type'],
+        'user_roles' => $params['user_roles']
       ]);
 
       // check user type
