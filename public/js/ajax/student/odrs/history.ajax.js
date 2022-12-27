@@ -76,7 +76,7 @@ loadHistoryTable = () => {
 										<td>
 											<span class="fw-medium badge bg-primary">Course: </span>
 										</td>
-										<td><span class="text-uppercase">${course}</span></td>
+										<td><span class="text-uppercase text-wrap">${course}</span></td>
 									</tr>
 									<tr>
 										<td>
@@ -99,7 +99,7 @@ loadHistoryTable = () => {
 							const time = moment(data.released).format('hh:mm A')
 
 							return `
-								<div class="d-flex align-items-center">
+								<div class="d-flex align-items-center justify-content-center">
 									<i class="ri-calendar-todo-fill text-primary"></i>
 									<span class="ms-2">${date}<small class="text-muted ms-1">${time}</small></span>
 								</div>
@@ -109,7 +109,7 @@ loadHistoryTable = () => {
 							const time = moment(data.cancelled).format('hh:mm A')
 
 							return `
-								<div class="d-flex align-items-center">
+								<div class="d-flex align-items-center justify-content-center">
 									<i class="ri-calendar-todo-fill text-primary"></i>
 									<span class="ms-2">${date}<small class="text-muted ms-1">${time}</small></span>
 								</div>

@@ -114,9 +114,9 @@
       <div class="modal-body">
         <h2 class="text-center"><span id="control_no" class="badge badge-outline-primary text-center fw-bold"></span></h2>
         <table class="mt-5 table table-bordered nowrap align-middle" style="width: 100%">
-          <thead>
-            <tr class="bg-light">
-              <th colspan="4" class="fst-italic">Requested Document/s:</th>
+          <thead class="table-light text-muted">
+            <tr>
+              <th colspan="4" class="bg-soft-primary text-dark">Requested Document/s:</th>
             </tr>
             <tr>
               <th>Document</th>
@@ -135,7 +135,7 @@
           </div>
         </div>
         <div class="m-2 mt-4 mb-3">
-          <div class="h6 fs-15 text-primary">Status</div>
+          <div class="h6 fs-15 text-primary">Request Status</div>
           <div class="profile-timeline">
             <div class="accordion accordion-flush" id="accordionFlushExample">
               <div class="accordion-item border-0">

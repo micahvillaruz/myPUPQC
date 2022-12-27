@@ -118,7 +118,7 @@
         <div id="requirements" class="list-group col nested-list nested-sortable">
         </div>
 
-        <div class="alert alert-danger alert-border-left alert-dismissible alert_reqs fade show mt-4 mb-0" role="alert">
+        <div class="alert alert-warning alert-border-left alert-dismissible alert_reqs fade show mt-4 mb-0" role="alert">
           <i class="ri-error-warning-line me-3 align-middle"></i> <strong>Notice</strong> - Only requests with complete requirements shall be processed. <br>
           <small class="fst-italic">Please contact Hernando DR. Liberato if you have any questions about the requirements.</small>
         </div>
@@ -179,6 +179,19 @@
             </div>
           </div>
         </div>
+        <div class="mt-4 mb-0 alert alert-info alert-dismissible alert-additional fade show" role="alert">
+          <div class="alert-body">
+            <div class="d-flex">
+              <div class="flex-shrink-0 me-3">
+                <i class="ri-information-line fs-16 align-middle"></i>
+              </div>
+              <div class="flex-grow-1">
+                <p class="mb-0"> <b>Download</b> the file attachment/s, and <b>bring it with the requirements</b> specified for each of the documents included in this request. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
       <!-- end card body -->
     </div>
