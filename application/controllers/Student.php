@@ -232,6 +232,7 @@ class Student extends CI_Controller
     $this->load->view('partials/footer');
     $this->load->view('student/evrsers/components/new-reservation-modal');
     $this->load->view('student/evrsers/components/reservation-modal');
+    $this->load->view('student/evrsers/components/add-pubmat-modal');
     $this->load->view('partials/foot-scripts');
     $this->load->view('student/evrsers/scripts/reservations-scripts');
   }
