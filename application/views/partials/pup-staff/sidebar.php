@@ -83,10 +83,6 @@
               </li>
             <?php } ?>
 
-            <div class="d-none" id="odrs-sidebar">
-
-            </div>
-
             <!--OMSS -->
             <li class="menu-title">
               <i class="ri-more-fill"></i>

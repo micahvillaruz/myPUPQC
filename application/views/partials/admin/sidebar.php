@@ -49,7 +49,7 @@
 
             <li class="menu-title">
               <i class="ri-more-fill"></i>
-              <span>ODRS</span>
+              <span>ODRTS</span>
             </li>
 
             <li class="nav-item">
