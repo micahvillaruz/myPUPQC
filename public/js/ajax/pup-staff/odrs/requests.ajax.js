@@ -4,6 +4,21 @@ $(function () {
 	loadPendingRequests()
 	loadApprovedRequests()
 
+	$('#release_classification').on('change', function (e) {
+		$('#claim-stub').addClass('d-none')
+		$('#representative').addClass('d-none')
+		$('#lost-claim-stub').addClass('d-none')
+
+		let release_classification = $(this).val()
+		if (release_classification === 'Claim Stub') {
+			$('#claim-stub').removeClass('d-none')
+		} else if (release_classification === 'Representative') {
+			$('#representative').removeClass('d-none')
+		} else {
+			$('#lost-claim-stub').removeClass('d-none')
+		}
+	})
+
 	$('a[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
 		$('#pending-datatables').DataTable().columns.adjust().responsive.recalc()
 		$('#approved-datatables').DataTable().columns.adjust().responsive.recalc()
@@ -1071,9 +1086,10 @@ readyforPickupRequest = (request_id) => {
 releasedRequest = (request_id) => {
 	if ($('#releasedRequestForm')[0].checkValidity()) {
 		// no validation error
-		const form = new FormData($('#readyForPickupRequestForm')[0])
+		const form = new FormData($('#releasedRequestForm')[0])
 
 		data = {
+			release_classification: form.get('release_classification'),
 			remarks: null,
 		}
 

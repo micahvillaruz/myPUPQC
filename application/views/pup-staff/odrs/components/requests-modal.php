@@ -563,7 +563,7 @@
             <div class="mb-2 d-flex align-items-center justify-content-center">
               <i class="ri-alert-line me-2 align-middle fs-6"></i> <strong>WARNING</strong>
             </div>
-            <span>Please make sure that the student has already <span class="fw-medium">PAID</span> the processing fee and presented the <span class="fw-medium">OFFICIAL RECEIPT</span> before you change the status of this request.</span>
+            <span>Please make sure that the student has already <span class="fw-medium">SUBMITTED</span> the requirements, <span class="fw-medium">PAID</span> the processing fee and presented the <span class="fw-medium">OFFICIAL RECEIPT</span> before you change the status of this request.</span>
           </div>
           <form id="forProcessingRequestForm" class="needs-validation" novalidate>
             <input type="hidden" id="process_request_id">
@@ -631,23 +631,58 @@
 
         <div class="mt-4">
           <h4 class="mb-3 fw-semibold">Is this Request already Released?</h4>
-          <p class="text-muted mb-4">If yes, tick the checkbox and click the Yes, It is! button. If not, click the Dismiss button.</p>
+          <p class="text-muted mb-4">If yes, select the Release Classification, tick the checkbox and click the Yes, It is! button. If not, click the Dismiss button.</p>
           <!-- Warning Alert -->
           <div class="alert alert-warning alert-border-left alert-dismissible fade show" style="padding-right: 16px;" role="alert">
             <div class="mb-2 d-flex align-items-center justify-content-center">
               <i class="ri-alert-line me-2 align-middle fs-6"></i> <strong>WARNING</strong>
             </div>
-            <span>Please make sure that the student has presented the <span class="fw-medium">CLAIM STUB</span> upon claiming of the request and has received all the <span class="fw-medium">REQUESTED DOCUMENT/S</span> before you set its status to Released.</span>
+            <span>Please make sure that the student has received all the <span class="fw-medium">REQUESTED DOCUMENT/S</span> before you set its status to Released.</span>
           </div>
+          <div id="claim-stub" class="alert alert-info alert-label-icon label-arrow fade show text-start d-none" role="alert">
+            <i class="ri-information-line label-icon"></i><span>The student should present the following requirements upon claiming of this request: </span>
+            <ul class="mb-0">
+              <li>Student ID with picture and signature</li>
+              <li>Claim Stub</li>
+            </ul>
+          </div>
+          <div id="representative" class="alert alert-info alert-label-icon label-arrow fade show text-start d-none" role="alert">
+            <i class="ri-information-line label-icon"></i><span>The representative should present the following requirements upon claiming of this request: </span>
+            <ul class="mb-0">
+              <li>Authorization Letter</li>
+              <li>lD of the student (with photocopy)</li>
+              <li>lD of the representative (with photocopy)</li>
+            </ul>
+          </div>
+          <div id="lost-claim-stub" class="alert alert-info alert-label-icon label-arrow fade show text-start d-none" role="alert">
+            <i class="ri-information-line label-icon"></i><span>The student should present the following requirements upon claiming of this request: </span>
+            <ul class="mb-0">
+              <li>Student ID with picture and signature</li>
+              <li>Duly Notarized Affidavit</li>
+            </ul>
+          </div>
+
           <form id="releasedRequestForm" class="needs-validation" novalidate>
             <input type="hidden" id="release_request_id">
-            <div class="form-check form-check-success mb-3">
+            <div class="mt-4">
+              <label for="release_classification" class="h5 form-label">Release Classification <span class="text-danger">*</span></label>
+              <select class="form-select js-example-basic-hide-search" id="release_classification" name="release_classification" required>
+                <option value="" selected disabled>Select the Release Classification</option>
+                <option value="Claim Stub">Claim Stub</option>
+                <option value="Representative">Representative</option>
+                <option value="Lost Claim Stub">Lost Claim Stub</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select the Release Classification of this request first.
+              </div>
+            </div>
+            <div class="mt-3 form-check form-check-success mb-3">
               <input class="form-check-input" type="checkbox" id="validateRelease" required>
               <label class="form-check-label" for="validateRelease">
-                I hereby certify that all the documents included in this request has been released to the student.
+                I hereby certify that the requirements for claiming of this request has been submitted and all the documents has been released.
               </label>
               <div class="invalid-feedback">
-                You must first agree that you released ALL the requested documents.
+                You must agree that you received ALL the requirements for claiming of this request and released ALL the requested documents.
               </div>
             </div>
             <div class="mt-4 justify-content-center">
