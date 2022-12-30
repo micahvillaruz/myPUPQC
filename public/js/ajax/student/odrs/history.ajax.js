@@ -170,12 +170,6 @@ viewRequestDetails = (request_id) => {
 
 			$('#control_no').html(data.control_no)
 
-			if (data.status_of_request === 'Released') {
-				$('#completion_date').html('Date Released')
-			} else {
-				$('#completion_date').html('Date Cancelled')
-			}
-
 			let documentsList = ''
 			data.documents_assigned_to_request.forEach((document) => {
 				documentsList += `
@@ -184,46 +178,50 @@ viewRequestDetails = (request_id) => {
 							<span>${document.document_information[0].document_name}</span>
 						</td>
 						<td class="text-center">${document.quantity}</td>
-					`
-				if (data.payment_status === 'Paid') {
-					documentsList += `
-						<td class="text-center">
-							<span class="badge bg-success">${data.payment_status}</span> <span class="badge badge-outline-dark">OR No. ${data.or_no} </span>
-						</td>
-					`
-				} else {
-					documentsList += `
-						<td class="text-center">
-							<span class="badge bg-danger">${data.payment_status}</span>
-						</td>
-					`
-				}
-
-				if (data.status_of_request === 'Released') {
-					const date = moment(data.released).format('DD, MMM. YYYY')
-					const time = moment(data.released).format('hh:mm A')
-
-					documentsList += `
-						<td>
-							<span class="ms-2">${date}<small class="text-muted ms-1">${time}</small></span>
-						</td>
 					</tr>
 				`
-				} else {
-					const date = moment(data.cancelled).format('DD, MMM. YYYY')
-					const time = moment(data.cancelled).format('hh:mm A')
-
-					documentsList += `
-						<td>
-							<span class="ms-2">${date}<small class="text-muted ms-1">${time}</small></span>
-						</td>
-					</tr>
-				`
-				}
 			})
 			$('#documents').html(documentsList)
-
 			$('#purpose_of_request').html(data.purpose_of_request)
+
+			$('#payment_status_col').removeClass()
+			$('#or_number_col').removeClass()
+			$('#release_classification_col').removeClass()
+			$('#completed_date_col').removeClass()
+
+			let date = ''
+			let time = ''
+			if (data.status_of_request === 'Released') {
+				date = moment(data.released).format('DD, MMM. YYYY')
+				time = moment(data.released).format('hh:mm A')
+				$('#payment_status_col').addClass('col-lg-3 col-sm-6')
+				$('#or_number_col').addClass('col-lg-3 col-sm-6')
+				$('#release_classification_col').addClass('col-lg-3 col-sm-6')
+				$('#completed_date_col').addClass('col-lg-3 col-sm-6')
+				$('#completed_date').html('Date Released')
+
+				$('#payment_status').html(
+					`<span class="badge bg-success fs-11">${data.payment_status}</span>`,
+				)
+				$('#or_no').html(data.or_no)
+				$('#release_classification').html(data.release_classification)
+			} else {
+				date = moment(data.cancelled).format('DD, MMM. YYYY')
+				time = moment(data.cancelled).format('hh:mm A')
+				$('#payment_status_col').addClass('col-lg-6 col-sm-12')
+				$('#or_number_col').addClass('d-none')
+				$('#release_classification_col').addClass('d-none')
+				$('#completed_date_col').addClass('col-lg-6 col-sm-12')
+				$('#completed_date').html('Date Cancelled')
+
+				$('#payment_status').html(
+					`<span class="badge bg-danger fs-11">${data.payment_status}</span>`,
+				)
+			}
+
+			$('#date_completed').html(
+				`<span>${date}<small class="text-muted ms-1">${time}</small></span>`,
+			)
 
 			pendingforClearanceDate = `
 				${moment(data.pending_for_clearance).format('ddd')},
