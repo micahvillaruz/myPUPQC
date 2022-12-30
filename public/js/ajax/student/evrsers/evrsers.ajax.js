@@ -193,26 +193,6 @@ ownReservationsTable = () => {
     }
 }
 
-
-loadFullName = () => {
-    $.ajax({
-        type: 'GET',
-        url: apiURL + `student/info`,
-        headers: AJAX_HEADERS,
-        success: (result) => {
-            const data = result.data
-            const full_name = data.full_name
-            console.log(full_name)
-                // $('#full_name').val(full_name)
-            $('input[name="full_name"]').val(full_name);
-            // console.log($('#full_name').val(full_name))
-            // $('#full_name').attr('value', full_name);
-        },
-        error: function() {},
-    })
-}
-
-
 // Edit Reservation
 // editReservation = (reservation_id) => {
 //     $.ajaxSetup({
