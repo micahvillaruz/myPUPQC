@@ -181,7 +181,7 @@ $route['student/omsss/contact-omsss'] = 'student/contact_omsss';
 
 // Reservations
 $route['student/evrsers/new-reservation'] = 'student/new_reservation';
-$route['student/evrsers/view-reservations'] = 'student/view_reservations';
+$route['student/evrsers/view-reservation'] = 'student/view_reservation';
 $route['student/evrsers/reservation-history'] = 'student/reservation_history';
 $route['student/evrsers/reservationpolicy'] = 'student/reservationpolicy';
 
