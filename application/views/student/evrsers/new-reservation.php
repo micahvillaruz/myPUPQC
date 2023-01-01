@@ -1,108 +1,53 @@
 <div class="row">
-    <div class="col-lg-12">
+    <div class="col-xl-12">
         <div class="card">
-            <div class="card-header d-flex align-items-center">
-                <h5 class="card-title mb-0 flex-grow-1">Add New Reservation</h5>
+            <div class="card-header">
+                <h4 class="card-title mb-0">New Venue Reservation</h4>
             </div>
+            <!-- end card header -->
             <div class="card-body form-steps">
-                <form action="#">
+                <form class="needs-validation" id="addNewReservation" novalidate>
                     <div class="step-arrow-nav mb-4">
                         <ul class="nav nav-pills custom-nav nav-justified" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="venue-selection" data-bs-toggle="pill" data-bs-target="#venue-selection-tab" type="button" role="tab" aria-controls="venue-selection-tab" aria-selected="true">
+                                <button class="nav-link active" id="steparrow-description-info-tab" data-bs-toggle="pill" data-bs-target="#steparrow-description-info" type="button" role="tab" aria-controls="steparrow-description-info" aria-selected="false" style="pointer-events: none;">
                                     Venue Selection
                                 </button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="reservation-details" data-bs-toggle="pill" data-bs-target="#reservation-details-tab" type="button" role="tab" aria-controls="reservation-details-tab" aria-selected="false" disabled>
+                                <button class="nav-link" id="steparrow-gen-info-tab" data-bs-toggle="pill" data-bs-target="#steparrow-gen-info" type="button" role="tab" aria-controls="steparrow-gen-info" aria-selected="true" style="pointer-events: none;">
                                     Reservation Details
                                 </button>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="tab-pane fade show active" id="venue-selection-tab" role="tabpanel" aria-labelledby="venue-selection">
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="steparrow-description-info" role="tabpanel" aria-labelledby="steparrow-description-info-tab">
                             <div>
-                                <p class="text-muted">Please choose your venue.</p>
-                                <div class="row mb-3">
-                                    <div class="col-4">
-                                        <div class="form-check card-radio">
-                                            <input id="customizer-layout01" name="data-layout" type="radio" value="vertical" class="form-check-input" />
-                                            <label class="form-check-label p-0 avatar-lg w-100" for="customizer-layout01">
-                                                <img src="../../public/images/facilities/img-5.jpg" class="card-img-top" alt="...">
-                                            </label>
-                                        </div>
-                                        <h5 class="fs-13 text-center mt-2">PUPQC Gymnasium</h5>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="form-check card-radio">
-                                            <input id="customizer-layout02" name="data-layout" type="radio" value="" class="form-check-input" />
-                                            <label class="form-check-label p-0 avatar-lg w-100" for="customizer-layout02">
-                                                <img src="../../public/images/facilities/img-11.jpg" class="card-img-top" alt="...">
-                                            </label>
-                                        </div>
-                                        <h5 class="fs-13 text-center mt-2">Computer Laboratory</h5>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="form-check card-radio">
-                                            <input id="customizer-layout03" name="data-layout" type="radio" value="" class="form-check-input" />
-                                            <label class="form-check-label p-0 avatar-lg w-100" for="customizer-layout03">
-                                                <img src="../../public/images/facilities/img-6.jpg" class="card-img-top" alt="...">
-                                            </label>
-                                        </div>
-                                        <h5 class="fs-13 text-center mt-2">Audio Visual Room</h5>
-                                    </div>
-                                    <!-- end col -->
+                                <p class="text-dark fw-medium fs-6">Please choose your venue.</p>
+                                <div class="row row-cols g-3" id="facilities">
                                 </div>
-                                <div class="row mb-3">
-                                    <div class="col-4">
-                                        <div class="form-check card-radio">
-                                            <input id="customizer-layout01" name="data-layout" type="radio" value="" class="form-check-input" />
-                                            <label class="form-check-label p-0 avatar-lg w-100" for="customizer-layout01">
-                                                <img src="../../public/images/facilities/img-8.jpg" class="card-img-top" alt="...">
-                                            </label>
-                                        </div>
-                                        <h5 class="fs-13 text-center mt-2">Interfaith Chapel</h5>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="form-check card-radio">
-                                            <input id="customizer-layout02" name="data-layout" type="radio" value="" class="form-check-input" />
-                                            <label class="form-check-label p-0 avatar-lg w-100" for="customizer-layout02">
-                                                <img src="../../public/images/facilities/img-4.jpg" class="card-img-top" alt="...">
-                                            </label>
-                                        </div>
-                                        <h5 class="fs-13 text-center mt-2">Library</h5>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="form-check card-radio">
-                                            <input id="customizer-layout03" name="data-layout" type="radio" value="" class="form-check-input" />
-                                            <label class="form-check-label p-0 avatar-lg w-100" for="customizer-layout03">
-                                                <img src="../../public/images/facilities/img-10.jpg" class="card-img-top" alt="...">
-                                            </label>
-                                        </div>
-                                        <h5 class="fs-13 text-center mt-2">Momol Spot</h5>
-                                    </div>
-                                </div>
+                                <!-- end row -->
                             </div>
                             <div class="d-flex align-items-start gap-3 mt-4">
-                                <button type="button" class="btn btn-success btn-label right ms-auto nexttab nexttab" data-nexttab="venue-selection">
+                                <button id="nextBtn" type="button" class="btn btn-success btn-label right ms-auto nexttab" data-nexttab="steparrow-gen-info-tab" disabled>
                                     <i class="ri-arrow-right-line label-icon align-middle fs-16 ms-2"></i>Next
                                 </button>
                             </div>
                         </div>
                         <!-- end tab pane -->
 
-                    <div class="tab-content">
-                        <div class="tab-pane fade" id="reservation-details-tab" role="tabpanel" aria-labelledby="reservation-details">
+                        <div class="tab-pane fade" id="steparrow-gen-info" role="tabpanel" aria-labelledby="steparrow-gen-info-tab">
                             <div>
-                                <div class="row mb-3">
-                                    <div class="col-lg">
+                                <div class="row">
+                                    <div class="col-lg mb-3">
                                         <div class="form-floating">
                                             <input type="text" class="form-control" placeholder="Student Full Name" id="full_name_floatinginput" name="full_name" value="" disabled>
                                             <label for="full_name_floatinginput">Full Name</label>
                                         </div>
                                     </div>
-                                    <div class="col-lg">
+                                    <div class="col-lg mb-3">
                                         <div class="form-floating">
                                             <select class="form-select" id="orgfloatingInput" placeholder="" required>
                                                 <option selected disabled>- Select Organization -</option>
@@ -125,28 +70,28 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row mb-3">
-                                    <div class="col-lg-4">
+                                <div class="row">
+                                    <div class="col-lg-4 mb-3">
                                         <div class="form-floating">
                                             <input type="text" class="form-control" id="eventTitlefloatingInput" placeholder="Event Title" required>
                                             <label for="eventTitlefloatingInput">Event Title</label>
                                         </div>
                                     </div>
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-8 mb-3">
                                         <div class="form-floating">
                                             <input type="text" class="form-control" id="eventDetailsfloatingInput" placeholder="Event Details" required>
                                             <label for="eventDetailsfloatingInput">Event Details</label>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row mb-3">
-                                    <div class="col-lg-6">
+                                <div class="row">
+                                    <div class="col-lg-6 mb-3">
                                         <div class="form-floating">
                                             <input type="date" class="form-control" id="reserveDatefloatingInput" placeholder="Reservation Date / Event Date" required>
                                             <label for="reserveDatefloatingInput">Reserve Date</label>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-3 mb-3">
                                         <div class="form-floating">
                                             <select class="form-select" id="timeFromfloatingInput" placeholder="" required>
                                                 <option selected disabled>- Select Time -</option>
@@ -166,7 +111,7 @@
                                             <label for="timeFromfloatingInput">Time From</label>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-3 mb-3">
                                         <div class="form-floating">
                                             <select class="form-select" id="timeTofloatingInput" placeholder="" required>
                                                 <option selected disabled>- Select Time -</option>
@@ -187,11 +132,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row mb-3">
-                                    <div class="col-lg">
+                                <div class="row">
+                                    <div class="col-lg-6 mb-3">
                                         <div class="form-control">
                                             <label for="attachfloatingInput">Relevant Attachments</label>
-                                            <button type="button" class="btn rounded-pill btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bx bx-question-mark"></i></button>
+                                            <button type="button" class="btn btn-icon btn-info btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bx bx-question-mark"></i></button>
                                             <div class="input-group mt-2">
                                                 <input type="file" class="form-control" id="inputGroupFile01">
                                                 <label class="input-group-text" for="inputGroupFile01">Event Request</label>
@@ -206,16 +151,37 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-lg-6 mb-3">
+                                        <div class="card border card-border-info">
+                                            <div class="card-header">
+                                                <h6 class="card-title text-dark mb-0">
+                                                    Before proceeding...
+                                                </h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="row form-check">
+                                                    <div class="col-sm-1">
+                                                        <input class="form-check-input" type="checkbox" value="" id="formCheck1" required>
+                                                    </div>
+                                                    <div class="col-lg">
+                                                        <label class="form-check-label" for="formCheck1">
+                                                            I assure that all information put in this form have been checked and accomplished at the best of my knowledge. In accordance with this, I agree to EVRSERS' <a href="<?= base_url() ?>student/evrsers/reservationpolicy/" id="reservation-policy">One Reservation Policy</a> and to PUP Quezon City's <a href="<?= base_url() ?>terms/" rel="noopener noreferrer">Terms</a> and <a href="<?= base_url() ?>privacy/" rel="noopener noreferrer">Privacy Statement.</a>
+                                                        </label>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="d-flex align-items-start gap-3 mt-4">
-                                <button type="button" class="btn btn-light btn-label previestab" data-previous="reservation-details">
-                                    <i class="ri-arrow-left-line label-icon align-middle fs-16 me-2"></i>
-                                    Back to Venue Selection
-                                </button>
-                                <button type="button" class="btn btn-success btn-label right ms-auto nexttab nexttab" data-nexttab="pills-experience-tab">
-                                    <i class="ri-arrow-right-line label-icon align-middle fs-16 ms-2"></i>Submit
-                                </button>
+                                <div class="d-flex align-items-start gap-3 mt-4">
+                                    <button type="button" class="btn btn-light btn-label previestab" data-previous="steparrow-description-info-tab">
+                                        <i class="ri-arrow-left-line label-icon align-middle fs-16 me-2"></i>
+                                        Back to Venue Selection
+                                    </button>
+                                    <button type="submit" class="btn btn-success btn-label right ms-auto" value="Submit">
+                                    <i class="ri-check-line label-icon align-middle fs-16 ms-2"></i>Submit
+                                    </button>
+                                </div>
                             </div>
                         </div>
                         <!-- end tab pane -->
@@ -225,6 +191,8 @@
             </div>
             <!-- end card body -->
         </div>
+        <!-- end card -->
     </div>
-    <!--end col-->
+    <!-- end col -->
 </div>
+<!-- end row -->
