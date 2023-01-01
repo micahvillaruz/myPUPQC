@@ -135,9 +135,9 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/view-reservations" class="nav-link">
+          <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/view-reservation" class="nav-link">
             <i class="ri-reserved-line"></i>
-            <span>View Reservations</span>
+            <span>View Reservation</span>
           </a>
         </li>
 
