@@ -179,7 +179,7 @@
             </div>
           </div>
         </div>
-        <div class="mt-4 mb-0 alert alert-info alert-dismissible alert-additional fade show" role="alert">
+        <div class="mt-4 mb-0 alert alert-info alert-dismissible alert_reqs alert-additional fade show" role="alert">
           <div class="alert-body">
             <div class="d-flex">
               <div class="flex-shrink-0 me-3">

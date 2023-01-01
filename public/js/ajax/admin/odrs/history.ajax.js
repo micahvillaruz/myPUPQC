@@ -848,6 +848,10 @@ cancelledStudent = (data) => {
 
 cancelledStaff = (data) => {
 	if (data.ready_for_pickup !== null) {
+		$('#for_clearance').removeClass('d-none')
+		$('#for_evaluation').removeClass('d-none')
+		$('#ready_for_pickup').removeClass('d-none')
+
 		let forClearance = `
             <div class="accordion-header" id="headingTwo">
                 <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
