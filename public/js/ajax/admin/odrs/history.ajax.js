@@ -549,6 +549,19 @@ viewRequestDetails = (request_id) => {
 				)
 				$('#or_no').html(data.or_no)
 				$('#release_classification').html(data.release_classification)
+			} else if (data.ready_for_pickup !== null) {
+				date = moment(data.cancelled).format('DD, MMM. YYYY')
+				time = moment(data.cancelled).format('hh:mm A')
+				$('#payment_status_col').addClass('col-lg-4 col-sm-12')
+				$('#or_number_col').addClass('col-lg-4 col-sm-12')
+				$('#release_classification_col').addClass('d-none')
+				$('#completed_date_col').addClass('col-lg-4 col-sm-12')
+				$('#completed_date').html('Date Cancelled')
+
+				$('#payment_status').html(
+					`<span class="badge bg-success fs-11">${data.payment_status}</span>`,
+				)
+				$('#or_no').html(data.or_no)
 			} else {
 				date = moment(data.cancelled).format('DD, MMM. YYYY')
 				time = moment(data.cancelled).format('hh:mm A')
