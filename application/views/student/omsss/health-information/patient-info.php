@@ -75,32 +75,7 @@
 			<div class="card-body p-4">
 				<div class="tab-content">
 					<div class="tab-pane active" id="personalDetails" role="tabpanel">
-						<form action="javascript:void(0);" id="patientInformationForm">
-						<!-- <div class="row mb-3">
-        			<div class="col-lg-3">
-            		<label for="disabledInput" class="form-label">Primary Contact No.</label>
-        					</div>
-									<div class="col-lg-9">
-            				<input type="number" class="form-control" id="primary_contact_no" placeholder="Enter your primary contact No." disabled>
-        					</div>
-    						</div>
-    					<div class="row mb-3">
-        				<div class="col-lg-3">
-            		<label for="disabledInput" class="form-label">Email</label>
-        		</div>
-        			<div class="col-lg-9">
-            		<input type="email" class="form-control" id="primary_email" placeholder="Enter your email" disabled>
-        			</div>
-    				</div>
-						<div class="row mb-3">
-        				<div class="col-lg-3">
-            		<label for="fbInput" class="form-label">Facebook Username</label>
-        		</div>
-        			<div class="col-lg-9">
-            		<input type="facebook" class="form-control" id="facebook_username" name="facebook_username" placeholder="Enter your facebook username">
-        			</div>
-    				</div>
-								<br> -->
+						<form action="javascript:void(0);" id="patientInformationForm" enctype='multipart/form-data'>
 								<h4 class="fw-bold text-primary">Emergency Contact Information</h4></br>
     					<div class="row mb-3">
         			<div class="col-lg-3">
@@ -131,7 +106,7 @@
     					<input class="form-check-input" type="checkbox" id="formCheck1" checked="true">
     					<label class="form-check-label" for="formCheck1">Is the Address the same as your address?</label>
 						</div>
-						<input type="text" class="form-control" id="view_full_address" name="emergency_contact_address" placeholder="Enter Address">
+						<input type="text" class="form-control" id="emergency_contact_address" name="emergency_contact_address" placeholder="Enter Address">
 						<br>
 						<h4 class="fw-bold text-primary"> PhilHealth Information</h4></br>
 						<div class="row mb-3">
@@ -139,7 +114,7 @@
             		<label for="philHealthInput" class="form-label">PhilHealth No.</label>
         		</div>
         			<div class="col-lg-9">
-            		<input type="text" class="form-control" id="philhealth_number" name="philHealth_number" placeholder="If none, please leave it blank">
+            		<input type="text" class="form-control" id="philhealth_number" name="philhealth_number" placeholder="If none, please leave it blank">
         			</div>
     				</div>
 						<div class="row mb-3">
@@ -147,10 +122,11 @@
             		<label for="uploadphilHealthInput" class="form-label">Upload PhilHealth ID / Member Data Record (MDR)</label>
         		</div>
         			<div class="col-lg-9">
-							<input class="form-control form-control-sm" id="philhealth_id_image'" name="philHealth_id_image" type="file">
+							<input class="form-control form-control-sm" id="philhealth_id_image'" name="philhealth_id_image" type="file">
         			</div>
     				</div>
-					 <!-- Privacy Statement -->
+
+					<!-- Privacy Statement -->
 						<div class="col-lg-8">
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="privacy" required>

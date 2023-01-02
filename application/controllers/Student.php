@@ -191,20 +191,6 @@ class Student extends CI_Controller
     $this->load->view('student/omsss/appointment/scripts/guidance-consultation-scripts');
   }
 
-  public function medical_prescription()
-  {
-    $this->load->view('partials/main');
-    $this->load->view('partials/title-meta');
-    $this->load->view('partials/head-css');
-    $this->load->view('partials/student/topbar');
-    $this->load->view('partials/student/sidebar');
-    $this->load->view('partials/page-title', ["page_title" => "Medical Prescription", "title" => "Prescription"]);
-    $this->load->view('student/omsss/medical_prescription');
-    $this->load->view('student/omsss/footer');
-    $this->load->view('partials/foot-scripts');
-    $this->load->view('student/omsss/scripts/medical-prescription-scripts');
-  }
-
   public function medical_logs()
   {
     $this->load->view('partials/main');

@@ -18,6 +18,7 @@ editMedicalHistory = () => {
 			if (result) {
 				// Get data from result
 				const data = result.data
+				console.log(data)
 				$('#medical_history').val(data.medical_history)
 				$('#social_history').val(data.social_history)
 				$('allergy').val(data.allergy)
