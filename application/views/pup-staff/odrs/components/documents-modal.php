@@ -41,7 +41,7 @@
           <div class="mb-3">
             <div class="d-flex justify-content-between align-items-center mb-3">
               <label class="form-label mb-0">Document Requirements</label>
-              <a href="javascript:new_link('add')" class="btn btn-success py-1 rounded-pill">Add New</a>
+              <a href="javascript:add_new_link()" class="btn btn-success py-1 rounded-pill">Add New</a>
             </div>
             <div id="add_document_requirements_list">
             </div>
@@ -130,7 +130,7 @@
           <div class="mb-3">
             <div class="d-flex justify-content-between align-items-center mb-3">
               <label class="form-label mb-0">Document Requirements</label>
-              <a href="javascript:new_link('edit')" class="btn btn-success py-1 rounded-pill">Add New</a>
+              <a href="javascript:edit_new_link()" class="btn btn-success py-1 rounded-pill">Add New</a>
             </div>
             <div id="edit_document_requirements_list">
             </div>
