@@ -7,13 +7,6 @@ $(function() {
         e.preventDefault() // prevent page refresh
         addNewReservation()
     })
-
-    // $('#updateStudentForm').on('submit', function (e) {
-    // 	e.preventDefault() // prevent page refresh
-
-    // 	// pass data to API for updating of student's info
-    // 	updateStudentAJAX($('#edit_user_id').val())
-    // })
 })
 
 loadFullName = () => {
@@ -75,7 +68,6 @@ loadFacilities = () => {
 }
 
 addNewReservation = () => {
-
     if ($('#addNewReservation')[0].checkValidity()) {
         // no validation error
         const form = new FormData($('#addNewReservation')[0])
@@ -88,35 +80,46 @@ addNewReservation = () => {
         const reserve_date = form.get('reserveDatefloatingInput')
         const time_from = form.get('timeFromfloatingInput')
         const time_to = form.get('timeTofloatingInput')
-        const reserve_attachments_1 = form.get('inputGroupFile01')
-        const reserve_attachments_2 = form.get('inputGroupFile02')
-        const reserve_attachments_3 = form.get('inputGroupFile03')
+        const file1 = form.get('inputGroupFile01')
+        const file2 = form.get('inputGroupFile02')
+        const file3 = form.get('inputGroupFile03')
+
+        // convert file1, file2, file3 to blob
+        const file1Blob = new Blob([file1], { type: file1.type })
+        const file2Blob = new Blob([file2], { type: file2.type })
+        const file3Blob = new Blob([file3], { type: file3.type })
+
         const facility_id = $('input[name="facility"]:checked').attr('id')
+
+        const formData = new FormData()
+        formData.append('organization_name', organization_name)
+        formData.append('event_title', event_title)
+        formData.append('event_details', event_details)
+        formData.append('reserve_date', reserve_date)
+        formData.append('time_from', time_from)
+        formData.append('time_to', time_to)
+
+        // append the blob to formData
+        formData.append('reserve_attachments_1', file1Blob)
+        formData.append('reserve_attachments_2', file2Blob)
+        formData.append('reserve_attachments_3', file3Blob)
+
+        formData.append('facility_id', facility_id)
+        formData.append('reserve_status', 'Pending')
+        formData.append('remarks', 'Please wait for admin approval.')
 
         // all values are not empty, proceed to ajax call
         $.ajaxSetup({
             headers: {
                 Accept: 'application/json',
                 Authorization: 'Bearer ' + TOKEN,
-                ContentType: 'application/x-www-form-urlencoded',
             },
         })
 
         $.ajax({
             type: 'POST',
-            url: apiURL + `evrsers/student/add_reservation`,
-            data: {
-                organization_name: organization_name,
-                event_title: event_title,
-                event_details: event_details,
-                reserve_date: reserve_date,
-                time_from: time_from,
-                time_to: time_to,
-                reserve_attachments_1: reserve_attachments_1,
-                reserve_attachments_2: reserve_attachments_2,
-                reserve_attachments_3: reserve_attachments_3,
-                facility_id: facility_id,
-            },
+            url: apiURL + `evrsers/student/add_reservation/`,
+            data: formData,
             success: (result) => {
                 const data = result.data
                 console.log(data)
@@ -139,8 +142,8 @@ addNewReservation = () => {
         }).fail((xhr) => {
             Swal.fire({
                 html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">${
-				JSON.parse(xhr.responseText).message
-			}</p></div></div>`,
+					JSON.parse(xhr.responseText).message
+				}</p></div></div>`,
                 showCancelButton: !0,
                 showConfirmButton: !1,
                 cancelButtonClass: 'btn btn-danger w-xs mb-1',
