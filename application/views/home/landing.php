@@ -1,4 +1,4 @@
-	<div id="fb-root"></div>
+<div id="fb-root"></div>
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0" nonce="KOSJDxRE"></script>
 	<!-- Begin page -->
 	<div class="layout-wrapper landing">
@@ -704,8 +704,8 @@
 									</div>
 									<div class="col-lg-6">
 										<div class="mb-4">
-											<label for="email" class="form-label fs-13">Email <span class="text-danger">*</span></label>
-											<input name="email" id="email" type="email" class="form-control bg-light border-light" placeholder="Your email" required />
+											<label for="email_address" class="form-label fs-13">Email <span class="text-danger">*</span></label>
+											<input name="email_address" id="email_address" type="email" class="form-control bg-light border-light" placeholder="Your email" required />
 											<div class="invalid-feedback">
 												Please enter your Email
 											</div>
@@ -726,8 +726,8 @@
 								<div class="row">
 									<div class="col-lg-12">
 										<div class="mb-3">
-											<label for="comments" class="form-label fs-13">Message <span class="text-danger">*</span></label>
-											<textarea name="comments" id="comments" rows="3" class="form-control bg-light border-light" placeholder="Your message" required></textarea>
+											<label for="message" class="form-label fs-13">Message <span class="text-danger">*</span></label>
+											<textarea name="message" id="message" rows="3" class="form-control bg-light border-light" placeholder="Your message" required></textarea>
 											<div class="invalid-feedback">
 												Please Enter your Message
 											</div>
