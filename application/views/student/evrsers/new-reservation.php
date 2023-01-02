@@ -6,7 +6,7 @@
             </div>
             <!-- end card header -->
             <div class="card-body form-steps">
-                <form class="needs-validation" id="addNewReservation" novalidate>
+                <form class="needs-validation" id="addNewReservation" method="POST" ENCTYPE="multipart/form-data" novalidate>
                     <div class="step-arrow-nav mb-4">
                         <ul class="nav nav-pills custom-nav nav-justified" role="tablist">
                             <li class="nav-item" role="presentation">
@@ -138,15 +138,15 @@
                                             <label for="attachfloatingInput">Relevant Attachments</label>
                                             <button type="button" class="btn btn-icon btn-info btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bx bx-question-mark"></i></button>
                                             <div class="input-group mt-2">
-                                                <input type="file" class="form-control" id="inputGroupFile01">
+                                                <input type="file" name="inputGroupFile01" class="form-control" id="inputGroupFile01">
                                                 <label class="input-group-text" for="inputGroupFile01">Event Request</label>
                                             </div>
                                             <div class="input-group mt-2">
-                                                <input type="file" class="form-control" id="inputGroupFile02">
+                                                <input type="file" name="inputGroupFile02" class="form-control" id="inputGroupFile02">
                                                 <label class="input-group-text" for="inputGroupFile02">Concept Paper</label>
                                             </div>
                                             <div class="input-group mt-2">
-                                                <input type="file" class="form-control" id="inputGroupFile03">
+                                                <input type="file" name="inputGroupFile03" class="form-control" id="inputGroupFile03">
                                                 <label class="input-group-text" for="inputGroupFile03">Others</label>
                                             </div>
                                         </div>
