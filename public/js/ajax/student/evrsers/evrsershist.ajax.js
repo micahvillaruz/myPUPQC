@@ -61,17 +61,60 @@ viewReservationDetails = (reservation_id) => {
                 `<i class="ri-file-copy-2-fill text-primary me-2"></i><a href="${userData.reserve_attachments_2}" target="_blank" class="link fw-bold">Others</a>`,
             )
             let reservation_status = userData.reserve_status
-            if (reservation_status == 'Cancelled by Staff') {
-                $('#reservation_status').html(
-                    `<span class="badge rounded-pill badge-soft-danger">${reservation_status}</span>`,
+            if (reservation_status == 'Pending') {
+                $('#reservation-status').html(
+                    `<div class="card card-secondary">
+                        <div class="card-body">
+                            <div class="d-flex position-relative">
+                                <i class="ri-2x ri-load-2-line fw-medium me-2"></i>
+                                <h3 class="card-text fw-medium text-white my-auto">${reservation_status}</h3>
+                            </div>
+                        </div>
+                    </div>`,
+                )
+            } else if (reservation_status == 'Approved') {
+                $('#reservation-status').html(
+                    `<div class="card card-success">
+                        <div class="card-body">
+                            <div class="d-flex position-relative">
+                                <i class="ri-2x ri-check-line fw-medium me-2"></i>
+                                <h3 class="card-text fw-medium text-white my-auto">${reservation_status}</h3>
+                            </div>
+                        </div>
+                    </div>`,
+                )
+            } else if (reservation_status == 'Done') {
+                $('#reservation-status').html(
+                    `<div class="card card-success">
+                        <div class="card-body">
+                            <div class="d-flex position-relative">
+                                <i class="ri-2x ri-check-line fw-medium me-2"></i>
+                                <h3 class="card-text fw-medium text-white my-auto">${reservation_status}</h3>
+                            </div>
+                        </div>
+                    </div>`,
                 )
             } else if (reservation_status == 'Cancelled by Student') {
-                $('#reservation_status').html(
-                    `<span class="badge rounded-pill badge-soft-danger">${reservation_status}</span>`,
+                $('#reservation-status').html(
+                    `<div class="card card-danger">
+                        <div class="card-body">
+                            <div class="d-flex position-relative">
+                                <i class="ri-2x ri-close-line fw-medium me-2"></i>
+                                <h3 class="card-text fw-medium text-white my-auto">Cancelled</h3>
+                            </div>
+                        </div>
+                    </div>`,
                 )
-            } else {
-                $('#reservation_status').html(
-                    `<span class="badge rounded-pill bg-success">${reservation_status}</span>`,
+            } else if (reservation_status == 'Cancelled by Staff') {
+                $('#reservation-status').html(
+                    `<div class="card card-danger">
+                        <div class="card-body">
+                            <div class="d-flex position-relative">
+                                <i class="ri-2x ri-close-line fw-medium me-2"></i>
+                                <h3 class="card-text fw-medium text-white my-auto">Cancelled</h3>
+                            </div>
+                        </div>
+                    </div>`,
                 )
             }
         },
