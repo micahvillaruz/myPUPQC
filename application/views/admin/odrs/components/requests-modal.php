@@ -151,10 +151,9 @@
             <tr>
               <th colspan="3" class="bg-soft-primary text-dark">Requested Document/s:</th>
             </tr>
-            <tr>
+            <tr class="text-uppercase">
               <th>Document</th>
               <th>Quantity</th>
-              <th id="payment">Payment Status</th>
             </tr>
           </thead>
           <tbody id="documents">
@@ -165,6 +164,8 @@
           <div class="bg-soft-secondary ms-1 text-wrap">
             <p id="purpose" class="p-2 fw-medium"></p>
           </div>
+        </div>
+        <div id="payment_details" class="alert alert-border-left alert-info d-none" style="padding-right: 16px;" role="alert">
         </div>
         <div class="m-2 mt-4 mb-3">
           <div class="h6 fs-15 text-primary">Request Status</div>

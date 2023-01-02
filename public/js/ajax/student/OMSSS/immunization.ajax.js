@@ -1,35 +1,54 @@
 $(function () {
-	loadPersonalInfo()
-	editPatientInfoInput()
-
-	$('#patientInformationForm').on('submit', function (e) {
-		e.preventDefault() // prevent page refresh
-		// pass data to API for updating of student's info
-		editPatientInformationAJAX()
-	})
-	const checkbox = document.getElementById('formCheck1')
-	const input = document.getElementById('emergency_contact_address')
-	input.disabled = !input.disabled
-	checkbox.addEventListener('change', function () {
-		input.disabled = this.checked
-	})
+	loadImmuniationTable()
 })
+// Load datatables
+loadImmuniationTable = () => {
+	const dt = $('#immunization-datatable')
 
-loadPersonalInfo = () => {
-	$.ajax({
-		type: 'GET',
-		url: apiURL + `omsss/student/patient_information`,
-		headers: AJAX_HEADERS,
-		success: (result) => {
-			const data = result.data
-			console.log(data)
-
-			//Load Topbar
-			$('#view_student_name').html(data.patient_info_assigned_to_user.user_profiles[0].full_name)
-			$('#view_student_number').html(data.patient_info_assigned_to_user.user_no)
+	$.ajaxSetup({
+		headers: {
+			Accept: 'application/json',
+			Authorization: 'Bearer ' + TOKEN,
+			ContentType: 'application/x-www-form-urlencoded',
 		},
 	})
+
+	if (dt.length) {
+		dt.DataTable({
+			bDestroy: true,
+			ajax: {
+				url: apiURL + 'omsss/student/view_medical_appointment',
+				type: 'GET',
+				// ContentType: 'application/x-www-form-urlencoded',
+			},
+			columns: [
+				// Appointment Code/Case Control No.
+				{
+					data: null,
+					render: (data) => {
+						const caseNo = data.case_control_number
+						return `${caseNo}`
+					},
+				},
+
+				//Action
+				{
+					data: null,
+					class: 'text-center',
+					render: (data) => {
+						return `
+        <div class="dropdown d-inline-block">
+        <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewMedicalDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill fs-5"></i></button>
+				<button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editImmunizationModal('${data.health_appointment_id}')"><i class="ri-edit-2-fill"></i></button>
+				</div`
+					},
+				},
+			],
+			order: [[0, 'asc']],
+		})
+	}
 }
+
 // Edit Patient Information
 editPatientInfoInput = () => {
 	$.ajax({

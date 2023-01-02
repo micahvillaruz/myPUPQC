@@ -329,10 +329,11 @@ viewRequestDetails = () => {
 				}
 
 				let documentRequirements = ''
+				$('#ched-letter').addClass('d-none')
 				data.documents_assigned_to_request.forEach((document) => {
 					if (document.document_information[0].document_requirements.length != 0) {
 						documentRequirements += `
-							<div class="list-group-item nested-1">
+							<div class="list-group-item nested-1" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
 								<i class="mdi mdi-folder fs-16 align-middle text-warning me-2"></i>
 								<span>${document.document_information[0].document_name}</span>
 								<div class="list-group nested-list nested-sortable">`
@@ -341,14 +342,14 @@ viewRequestDetails = () => {
 								$('#ched-letter').removeClass('d-none')
 
 								documentRequirements += `
-								<div class="list-group-item nested-2">
+								<div class="list-group-item nested-2" style="background-color: rgba(64,81,137,.07); border-color: rgba(64,81,137,.07);">
 									<i class="ri-file-word-2-fill fs-16 align-middle text-info me-2"></i>
 									<span>${requirement.doc_req_name}</span>
 								</div>
 						`
 							} else {
 								documentRequirements += `
-								<div class="list-group-item nested-2">
+								<div class="list-group-item nested-2" style="background-color: rgba(64,81,137,.07); border-color: rgba(64,81,137,.07);">
 									<i class="ri-file-text-fill fs-16 align-middle text-success me-2"></i>
 									<span>${requirement.doc_req_name}</span>
 								</div>
@@ -362,11 +363,11 @@ viewRequestDetails = () => {
 					}
 				})
 				documentRequirements += `
-						<div class="list-group-item nested-1">
+						<div class="list-group-item nested-1" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
 							<i class="mdi mdi-folder fs-16 align-middle text-warning me-2"></i>
 							<span>For Overall Request</span>
 							<div class="list-group nested-list nested-sortable">
-								<div class="list-group-item nested-2">
+								<div class="list-group-item nested-2" style="background-color: rgba(64,81,137,.07); border-color: rgba(64,81,137,.07);">
 									<i class="ri-file-pdf-fill fs-16 align-middle text-danger me-2"></i>
 									Request Form
 								</div>
@@ -378,8 +379,11 @@ viewRequestDetails = () => {
 				payment = ''
 				if (data.payment_status === 'Pending') {
 					payment = `
-					<lord-icon src="https://cdn.lordicon.com/etgdlawk.json" trigger="loop" style="width:80px;height:80px"></lord-icon>
-					<p class="mt-2 mb-0 fs-13"><span class="fw-medium">Payment Status</span> : <span class="badge bg-warning text-dark">Pending</span></p>
+					<lord-icon src="https://cdn.lordicon.com/lqqcslws.json" trigger="loop" style="width:80px;height:80px"></lord-icon>
+					<div class="mt-2 d-flex gap-3 align-items-center">
+						<span class="text-black fw-semibold">Payment Status: </span>
+						<span class="w-md fs-11 badge badge-gradient-warning text-uppercase">${data.payment_status}</span>
+					</div>
 	
 					<div class="mt-4 mb-0 alert alert-info alert-border-left alert-dismissible fade show" role="alert" style="padding-right: 16px;">Pay the Request Fee to the <b>Cashier's Office -  Collecting Officer</b>. You will be given an Official Receipt which you will present to the Records Section for manual tagging of receipt and processing of request/s.
 					</div>
@@ -387,9 +391,27 @@ viewRequestDetails = () => {
 					`
 				} else if (data.payment_status === 'Paid') {
 					payment = `
-					<lord-icon src="https://cdn.lordicon.com/lqqcslws.json" trigger="loop" style="width:80px;height:80px"></lord-icon>
-					<p class="mt-2 mb-0 fs-13"><span class="fw-medium">Official Receipt No.</span>: ${data.or_no}</p>
-					<p class="mb-0 fs-13"><span class="fw-medium">Payment Status</span> : <span class="badge bg-success">Paid</span></p>
+					<lord-icon src="https://cdn.lordicon.com/zkidfvrs.json" trigger="loop" style="width:80px;height:80px"></lord-icon>
+					<table class="mt-2">
+						<tbody>
+							<tr>
+								<td>
+									<span class="text-black fw-semibold">Payment Status: </span>
+								</td>
+								<td class="text-center">
+									<span class="w-md fs-11 badge badge-gradient-success text-uppercase">${data.payment_status}</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="text-black mb-1 fw-semibold me-3">Official Receipt No.: </span>
+								</td>
+								<td class="text-center">
+									<span class="text-dark">${data.or_no}</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 					`
 				}
 				$('#payment').html(payment)

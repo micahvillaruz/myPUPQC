@@ -118,7 +118,7 @@
         <div id="requirements" class="list-group col nested-list nested-sortable">
         </div>
 
-        <div class="alert alert-warning alert-border-left alert-dismissible alert_reqs fade show mt-4 mb-0" role="alert">
+        <div class="alert alert-warning alert-border-left alert-dismissible alert_reqs fade show mt-4 mb-0" style="padding-right: 16px;" role="alert">
           <i class="ri-error-warning-line me-3 align-middle"></i> <strong>Notice</strong> - Only requests with complete requirements shall be processed. <br>
           <small class="fst-italic">Please contact Hernando DR. Liberato if you have any questions about the requirements.</small>
         </div>
@@ -204,7 +204,7 @@
         </div>
       </div>
       <div class="card-body">
-        <div id="payment" class="text-center">
+        <div id="payment" class="d-flex flex-column justify-content-center align-items-center">
         </div>
       </div>
     </div>
