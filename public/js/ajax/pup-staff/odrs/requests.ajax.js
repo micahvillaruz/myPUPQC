@@ -521,26 +521,56 @@ viewApprovedRequest = (request_id) => {
 							<span>${document.document_information[0].document_name}</span>
 						</td>
 						<td class="text-center">${document.quantity}</td>
+					</tr>
 				`
-				if (data.payment_status === 'Pending') {
-					documentsList += `
-						<td class="text-center">
-							<span class="badge bg-warning text-dark">${data.payment_status}</span>
-						</td>
-					</tr>
-					`
-				} else if (data.payment_status === 'Paid') {
-					documentsList += `
-							<td class="text-center">
-								<span class="badge bg-success">${data.payment_status}</span> <span class="badge badge-outline-dark">OR No. ${data.or_no} </span>
-							</td>
-					</tr>
-					`
-				}
 			})
 			$('#view_documents').html(documentsList)
 
 			$('#view_purpose').html(data.purpose_of_request)
+
+			if (data.payment_status === 'Pending') {
+				$('#payment_details').html(`
+					<div class="d-flex align-items-center justify-content-center gap-4">
+						<lord-icon src="https://cdn.lordicon.com/lqqcslws.json" trigger="loop" style="width:80px;height:80px"></lord-icon>
+						<div>
+							<h5 class="fs-14 text-info fw-semibold text-center"> Payment Details</h5>
+							<div class="d-flex gap-3 align-items-center">
+								<span class="text-black fw-semibold">Payment Status: </span>
+								<span class="w-md fs-11 badge badge-gradient-warning text-uppercase">${data.payment_status}</span>
+							</div>
+						</div>
+					</div>
+				`)
+			} else if (data.payment_status === 'Paid') {
+				$('#payment_details').html(`
+					<div class="d-flex align-items-center justify-content-center gap-4">
+						<lord-icon src="https://cdn.lordicon.com/zkidfvrs.json" trigger="loop" style="width:80px;height:80px"></lord-icon>
+						<div>
+							<h5 class="fs-14 text-info fw-semibold text-center"> Payment Details</h5>
+							<table>
+								<tbody>
+									<tr>
+										<td>
+											<span class="text-black fw-semibold">Payment Status: </span>
+										</td>
+										<td class="text-center">
+											<span class="w-md fs-11 badge badge-gradient-success text-uppercase">${data.payment_status}</span>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="text-black mb-1 fw-semibold me-3">Official Receipt No.: </span>
+										</td>
+										<td class="text-center">
+											<span class="text-dark">${data.or_no}</span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				`)
+			}
 
 			pendingforClearanceDate = `
 				${moment(data.pending_for_clearance).format('ddd')},
@@ -688,10 +718,11 @@ viewApprovedRequest = (request_id) => {
 					<div class="h6 fs-15 text-primary">Requirements</div>
 						<div class="list-group col nested-list nested-sortable">
 				`
+				$('#ched-letter').addClass('d-none')
 				data.documents_assigned_to_request.forEach((document) => {
 					if (document.document_information[0].document_requirements.length != 0) {
 						documentRequirements += `
-							<div class="list-group-item nested-1">
+							<div class="list-group-item nested-1" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
 								<i class="mdi mdi-folder fs-16 align-middle text-warning me-2"></i>
 								<span>${document.document_information[0].document_name}</span>
 								<div class="list-group nested-list nested-sortable">`
@@ -700,14 +731,14 @@ viewApprovedRequest = (request_id) => {
 								$('#ched-letter').removeClass('d-none')
 
 								documentRequirements += `
-								<div class="list-group-item nested-2">
+								<div class="list-group-item nested-2" style="background-color: rgba(64,81,137,.07); border-color: rgba(64,81,137,.07);">
 									<i class="ri-file-word-2-fill fs-16 align-middle text-info me-2"></i>
 									<span>${requirement.doc_req_name}</span>
 								</div>
 						`
 							} else {
 								documentRequirements += `
-								<div class="list-group-item nested-2">
+								<div class="list-group-item nested-2" style="background-color: rgba(64,81,137,.07); border-color: rgba(64,81,137,.07);">
 									<i class="ri-file-text-fill fs-16 align-middle text-success me-2"></i>
 									<span>${requirement.doc_req_name}</span>
 								</div>
@@ -721,11 +752,11 @@ viewApprovedRequest = (request_id) => {
 					}
 				})
 				documentRequirements += `
-						<div class="list-group-item nested-1">
+						<div class="list-group-item nested-1" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
 							<i class="mdi mdi-folder fs-16 align-middle text-warning me-2"></i>
 							<span>For Overall Request</span>
 							<div class="list-group nested-list nested-sortable">
-								<div class="list-group-item nested-2">
+								<div class="list-group-item nested-2" style="background-color: rgba(64,81,137,.07); border-color: rgba(64,81,137,.07);">
 									<i class="ri-file-pdf-fill fs-16 align-middle text-danger me-2"></i>
 									Request Form
 								</div>
