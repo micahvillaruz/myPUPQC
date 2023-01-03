@@ -199,7 +199,7 @@
   <!-- /.modal-dialog -->
 </div>
 
-<!-- Delete Reservation modal -->
+<!-- Cancel Reservation modal -->
 <div class="modal fade zoomIn" id="cancelReservationModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -213,7 +213,7 @@
           <p class="text-muted fs-14 mb-4 pt-1">Cancelling this will remove the event information from our the reservation calendar.</p>
           <div class="hstack gap-2 justify-content-center remove">
             <button class="btn btn-link link-danger fw-medium text-decoration-none" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Close</button>
-            <button class="btn btn-warning" id="delete-record">Yes, Cancel It!!</button>
+            <button class="btn btn-warning" id="cancel-reservation">Yes, Cancel It!!</button>
           </div>
         </div>
       </div>
