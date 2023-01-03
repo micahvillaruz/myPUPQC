@@ -35,11 +35,8 @@ sendMessageToAdmin = () => {
 					cancelButtonText: 'Ok',
 					buttonsStyling: !1,
 					showCloseButton: !0,
-					timer: 1500,
 				}).then(() => {
-					setTimeout(() => {
-						location.reload()
-					}, 1000)
+					refreshPage()
 				})
 			} else {
 				Swal.fire({
