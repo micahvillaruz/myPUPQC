@@ -204,6 +204,22 @@ $route['admin/profile/settings'] = 'admin/settings';
 $route['admin/user-management/students'] = 'admin/user_students';
 $route['admin/user-management/pup-staffs'] = 'admin/user_pup_staffs';
 
+/*
+| ----------------------
+|     ROLE MANAGEMENT
+| ----------------------
+*/
+
+$route['admin/role-management/roles'] = 'admin/roles';
+
+/*
+| ----------------------
+|     USER ROLE MANAGEMENT
+| ----------------------
+*/
+
+$route['admin/user-role-management/user-roles'] = 'admin/user_roles_management';
+
 
 /*
 | --------------
@@ -223,6 +239,7 @@ $route['admin/odrs/history'] = 'admin/history';
 
 $route['admin/omsss/all-appointment'] = 'admin/all_appointment';
 $route['admin/omsss/appointment-history'] = 'admin/appointment_history';
+
 
 /*
 | --------------

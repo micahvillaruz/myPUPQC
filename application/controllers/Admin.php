@@ -72,6 +72,37 @@ class Admin extends CI_Controller
     $this->load->view('admin/user-management/scripts/students-scripts');
   }
 
+  public function roles()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/admin/topbar');
+    $this->load->view('partials/admin/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "Role Management", "title" => "Roles"]);
+    $this->load->view('admin/role-management/roles');
+    $this->load->view('partials/footer');
+    $this->load->view('admin/roles-management/components/roles-modal');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('admin/role-management/scripts/roles-scripts');
+  }
+
+  public function user_roles_management()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/admin/topbar');
+    $this->load->view('partials/admin/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "User Role Management", "title" => "User Roles"]);
+    $this->load->view('admin/user-role-management/user-roles');
+    $this->load->view('partials/footer');
+    $this->load->view('admin/user-roles-management/components/user-roles-modal');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('admin/user-role-management/scripts/user-roles-scripts');
+  }
+
+
   public function user_pup_staffs()
   {
     $this->load->view('partials/main');
