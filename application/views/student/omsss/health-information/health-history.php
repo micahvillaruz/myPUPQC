@@ -22,7 +22,7 @@
                 <label class="form-check-label" for="flexCheckChecked">Bleeding Disorder</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="#medical_history">
+                <input class="form-check-input" type="checkbox" value="COVID-19" id="#medical_history">
                 <label class="form-check-label" for="flexCheckDefault">COVID-19</label>
               </div>
               <div class="form-check">
@@ -34,7 +34,7 @@
                 <label class="form-check-label" for="flexCheckDefault">Chickenpox</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="High Blood Pressure  / Hypertension" id="#medical_history">
+                <input class="form-check-input" type="checkbox" value="High Blood Pressure / Hypertension" id="#medical_history">
                 <label class="form-check-label" for="flexCheckChecked">High Blood Pressure / Hypertension</label>
               </div>
               <div class="form-check">
@@ -154,12 +154,12 @@
               <p>Please <span class="fw-bold">check</span> the items that apply to you.</p>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="social_history">
+              <input class="form-check-input" type="checkbox" value="" id="smoker_history">
               <label class="form-check-label" for="flexCheckDefault">Are you a smoker?</label>
               <!-- <input class="form-control" type="text" name="social_history" placeholder="If yes, how many sticks?"> -->
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="social_history">
+              <input class="form-check-input" type="checkbox" value="" id="alcohol_history">
               <label class="form-check-label" for="flexCheckChecked">Do you drink alcohol?</label>
               <!-- <input class="form-control" type="text" name="social_history" placeholder="If yes, how many bottles per week?"> -->
             </div>

@@ -18,12 +18,15 @@ editMedicalHistory = () => {
 			if (result) {
 				// Get data from result
 				const data = result.data
-				console.log(data)
-				$('#medical_history').val(data.medical_history)
-				$('#social_history').val(data.social_history)
-				$('allergy').val(data.allergy)
-				$('#family_history').val(data.family_history)
-				$('#medications').val(data.medications)
+				const medical_history = data.medical_history
+				const social_history = data.social_history
+				const allergy = data.allergy.join(';')
+				const family_history = data.family_history.join(';')
+				const medications = data.medications.join(';')
+
+				$('#allergy').val(allergy)
+				$('#family_history').val(family_history)
+				$('#medications').val(medications)
 			}
 		},
 	}).fail(() => console.error('There was an error in retrieving health history data'))
@@ -35,13 +38,20 @@ editMedicalHistoryAJAX = () => {
 	if ($('#medicalHistoryForm')[0]) {
 		// no validation error
 		const form = new FormData($('#medicalHistoryForm')[0])
+
+		let medical_history = []
+
+		const social_history = [smokerCheckbox.checked, alcoholCheckbox.checked].join(';')
+
 		data = {
-			medical_history: form.get('#medical_history'),
-			social_history: form.get('social_history'),
+			medical_history: medical_history,
+			social_history: social_history,
 			allergy: form.get('allergy'),
 			family_history: form.get('family_history'),
 			medications: form.get('medications'),
 		}
+
+		console.log('data to be sent: ', data)
 
 		$.ajax({
 			url: apiURL + `omsss/student/medical_history`,
@@ -60,7 +70,7 @@ editMedicalHistoryAJAX = () => {
 						buttonsStyling: !1,
 						showCloseButton: !0,
 					}).then(function () {
-						loadProfile()
+						refreshPage()
 					})
 				}
 			},
