@@ -66,7 +66,7 @@ viewReservationDetails = (reservation_id) => {
                     `<div class="card card-secondary">
                         <div class="card-body">
                             <div class="d-flex position-relative">
-                                <i class="ri-2x ri-load-2-line fw-medium me-2"></i>
+                                // <i class="ri-2x ri-loader-2-fill fw-medium me-2"></i>
                                 <h3 class="card-text fw-medium text-white my-auto">${reservation_status}</h3>
                             </div>
                         </div>
