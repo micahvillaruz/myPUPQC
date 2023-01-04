@@ -1,11 +1,8 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="card">
-            <div class="card-header d-flex align-items-center">
-                <h5 class="card-title mb-0 flex-grow-1">Venue Reservations</h5>
-            </div>
-            <div class="card-body">
-                <ul class="nav nav-pills animation-nav nav-justified mb-3 gap-3 px-3" role="tablist">
+            <div class="card-header d-block align-items-center">
+                <ul class="nav nav-pills animation-nav nav-justified gap-3 px-3" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" data-bs-toggle="tab" href="#nav-border-top-home" role="tab" aria-selected="true">
                             Pending
@@ -17,7 +14,8 @@
                         </a>
                     </li>
                 </ul>
-                <hr class="text-muted">
+            </div>
+            <div class="card-body">
                 <div class="tab-content text-muted">
                     <div class="tab-pane active" id="nav-border-top-home" role="tabpanel">
                         <div class="d-flex">
