@@ -153,4 +153,4 @@
     <!-- Vertical Overlay-->
     <div class="vertical-overlay"></div>
     <!-- imnport sidebar ajax -->
-    <script src="<?= base_url() ?>public\js\ajax\pup-staff\sidebar.ajax.js"></script>
+    <!-- <script src="<?= base_url() ?>public\js\ajax\pup-staff\sidebar.ajax.js"></script> -->
