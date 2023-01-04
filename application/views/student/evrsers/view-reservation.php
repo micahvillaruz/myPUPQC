@@ -9,7 +9,8 @@
             <div class="card-body p-4">
                 <div class="row mb-5">
                     <div class="col-lg-8">
-                        <h5 class="fs-5 badge badge-outline-info fw-bold mb-3" id="organization"></h5>
+                        <div id="organization">
+                        </div>
                         <br>
                         <div class="alert alert-border-left alert-primary mb-4 me-3 ms-2">
                             <div class="row">

@@ -46,13 +46,13 @@ viewReservationDetails = () => {
                 'SPAS' ||
                 'YES'
             ) {
-                $('#organization').html(`<span>${organization_name}</span>`)
+                $('#organization').html(`<span class="fs-5 badge badge-outline-info fw-bold mb-0">${organization_name}</span>`)
             } else if (organization_name == 'KATAGA' || 'MUSA' || 'PSC' || 'Vox Nova' || 'Other') {
-                $('#organization').html(`<span>${organization_name}</span>`)
+                $('#organization').html(`<h5 class="fs-5 badge badge-outline-danger fw-bold mb-0">${organization_name}</h5>`)
             } else if (organization_name == 'SSC' || 'COL') {
-                $('#organization').html(`<span>${organization_name}</span>`)
+                $('#organization').html(`<h5 class="fs-5 badge badge-outline-dark fw-bold mb-0">${organization_name}</h5>`)
             }
-            $('#organization').html(userData.organization_name)
+
             event_title = userData.event_title
                 // convert to all caps
             event_title = event_title.toUpperCase()
