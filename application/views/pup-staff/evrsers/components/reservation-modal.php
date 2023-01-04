@@ -1,10 +1,54 @@
+ <!-- Approve Reservation modal -->
+ <div class="modal fade zoomIn" id="approveReservationModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"></button>
+        </div>
+        <div class="modal-body p-5 text-center">
+          <lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#161f2e,secondary:#3080e8" style="width:100px;height:100px"></lord-icon>
+          <div class="mt-4 text-center">
+            <h4 class="fs-semibold">Approve This Event?</h4>
+            <p class="text-muted fs-14 mb-4 pt-1">Doing so would add the event in the University Activity Calendar.</p>
+            <div class="hstack gap-2 justify-content-center remove">
+              <button class="btn btn-link link-danger fw-medium text-decoration-none" data-bs-dismiss="modal"><i class="ri-close-line me-2 align-middle"></i>Cancel</button>
+              <button class="btn btn-success" id="approve-reservation">Yes, Approve Reservation.</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cancel Reservation modal -->
+  <div class="modal fade zoomIn" id="cancelReservationModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"></button>
+        </div>
+        <div class="modal-body p-5 text-center">
+          <lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#405189,secondary:#f06548" style="width:90px;height:90px"></lord-icon>
+          <div class="mt-4 text-center">
+            <h4 class="fs-semibold">Sure to cancel this pending reservation ?</h4>
+            <p class="text-muted fs-14 mb-4 pt-1">Cancelling this will remove the event information from our the reservation calendar.</p>
+            <div class="hstack gap-2 justify-content-center remove">
+              <button class="btn btn-link link-danger fw-medium text-decoration-none" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Close</button>
+              <button class="btn btn-warning" id="cancel-reservation">Yes, Cancel It!!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <!-- View Reservation modal -->
 <div class="modal fade" id="viewReservationModal" tabindex="-1" role="dialog" aria-labelledby="reservation-details-label" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
     <div class="modal-content px-3">
-      <div class="modal-header position-relative">
+      <div class="modal-header position-relative mb-4">
         <div class="d-flex position-absolute top-50 start-50 translate-middle-x">
-          <h5 id="reserve_number" class="fs-4 badge badge-outline-primary fw-bold mb-0"></h5>
+          <h5 id="reserve_number" class="fs-4 badge badge-outline-primary fw-bold"></h5>
         </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -53,8 +97,8 @@
               <div class="col-lg">
                 <h6 class="text-medium mb-3">CHANGE STATUS</h6>
                 <div class="vstack gap-2">
-                  <button type="button" class="btn waves-effect waves-light btn-success btn-label fw-medium" id="approve-reservation"><i class="ri-check-double-line label-icon align-middle fs-16 me-2"></i>Approve</button>
-                  <button type="button" class="btn waves-effect waves-light btn-danger btn-label fw-medium" id="cancel-reservation"><i class=" ri-close-line label-icon align-middle fs-16 me-2"></i>Cancel</button>
+                  <button type="button" class="btn waves-effect waves-light btn-success btn-label fw-medium" id="approveBtn"><i class="ri-check-double-line label-icon align-middle fs-16 me-2"></i>Approve</button>
+                  <button type="button" class="btn waves-effect waves-light btn-danger btn-label fw-medium" id="cancelBtn"><i class=" ri-close-line label-icon align-middle fs-16 me-2"></i>Cancel</button>
                 </div>
               </div>
             </div>
@@ -69,48 +113,4 @@
       <!-- /.modal-content -->
     </div>
     <!-- /.modal-dialog -->
-  </div>
-
-  <!-- Approve Reservation modal -->
-  <div class="modal fade zoomIn" id="addStudentOrganizerModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"></button>
-        </div>
-        <div class="modal-body p-5 text-center">
-          <lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#161f2e,secondary:#3080e8" style="width:100px;height:100px"></lord-icon>
-          <div class="mt-4 text-center">
-            <h4 class="fs-semibold">Add this Student as an Organizer?</h4>
-            <p class="text-muted fs-14 mb-4 pt-1">Adding them as organizer would enable them to see and access myPUPQC's Venue Management System Features.</p>
-            <div class="hstack gap-2 justify-content-center remove">
-              <button class="btn btn-link link-danger fw-medium text-decoration-none" data-bs-dismiss="modal"><i class="ri-close-line me-2 align-middle"></i>Cancel</button>
-              <button class="btn btn-success" id="add-organizer">Yes, Add Student as Organizer.</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Cancel Reservation modal -->
-  <div class="modal fade zoomIn" id="cancelReservationModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"></button>
-        </div>
-        <div class="modal-body p-5 text-center">
-          <lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#405189,secondary:#f06548" style="width:90px;height:90px"></lord-icon>
-          <div class="mt-4 text-center">
-            <h4 class="fs-semibold">Sure to cancel this pending reservation ?</h4>
-            <p class="text-muted fs-14 mb-4 pt-1">Cancelling this will remove the event information from our the reservation calendar.</p>
-            <div class="hstack gap-2 justify-content-center remove">
-              <button class="btn btn-link link-danger fw-medium text-decoration-none" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Close</button>
-              <button class="btn btn-warning" id="cancel-reservation">Yes, Cancel It!!</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>

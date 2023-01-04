@@ -2,7 +2,7 @@
 <div class="modal fade" id="viewOwnReservation" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
     <div class="modal-content px-3">
-      <div class="modal-header position-relative">
+      <div class="modal-header position-relative mb-4">
         <div class="d-flex position-absolute top-50 start-50 translate-middle-x">
           <h5 id="reserve_number" class="fs-4 badge badge-outline-primary fw-bold mb-0"></h5>
         </div>
