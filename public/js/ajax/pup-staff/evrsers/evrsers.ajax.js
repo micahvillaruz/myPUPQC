@@ -129,6 +129,16 @@ viewDetailsReservationStaff = (reservation_id) => {
                     </div>`,
                 )
             }
+            const reservation_id = userData.reservation_id
+
+            $('#cancelBtn').on('click', function() {
+                console.log(reservation_id)
+                cancelReservation(reservation_id)
+            })
+
+            $('#approveBtn').on('click', function() {
+                approveReservation(reservation_id)
+            })
         },
     })
 }
@@ -322,4 +332,115 @@ viewAllApprovedReservation = () => {
             ],
         })
     }
+}
+
+approveReservation = (reservation_id) => {
+    console.log(reservation_id)
+    $('#viewReservationModal').modal('hide')
+    $('#approveReservationModal').modal('show')
+    $('#approve-reservation').on('click', function() {
+        const reservation_status = 'Approved'
+
+        $.ajaxSetup({
+            headers: {
+                Accept: 'application/json',
+                Authorization: 'Bearer ' + TOKEN,
+                ContentType: 'application/x-www-form-urlencoded',
+            },
+        })
+        $.ajax({
+            url: apiURL + `evrsers/pup_staff/edit_status/${reservation_id}`,
+            type: 'PUT',
+            data: {
+                reservation_status: reservation_status,
+            },
+            ContentType: 'application/x-www-form-urlencoded',
+            success: (result) => {
+                $('#approveReservationModal').modal('hide')
+                if (result) {
+                    Swal.fire({
+                        html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully added an organizer!</p></div></div>',
+                        showCancelButton: !0,
+                        showConfirmButton: !1,
+                        cancelButtonClass: 'btn btn-success w-xs mb-1',
+                        cancelButtonText: 'Ok',
+                        buttonsStyling: !1,
+                        showCloseButton: !0,
+                    }).then(function() {
+                        // reload Pending Reservations table
+                        viewAllPendingReservation()
+                    })
+                }
+            },
+        }).fail((xhr) => {
+            $('#approveReservationModal').modal('hide')
+            Swal.fire({
+                html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong!</h4><p class="text-muted mx-4 mb-0">${
+					JSON.parse(xhr.responseText).message
+				}</p></div></div>`,
+                showCancelButton: !0,
+                showConfirmButton: !1,
+                cancelButtonClass: 'btn btn-danger w-xs mb-1',
+                cancelButtonText: 'Dismiss',
+                buttonsStyling: !1,
+                showCloseButton: !0,
+            })
+        })
+    })
+}
+
+cancelReservation = (reservation_id) => {
+    console.log(reservation_id)
+    $('#viewReservationModal').modal('hide')
+    $('#cancelReservationModal').modal('show')
+    $('#cancel-reservation').on('click', function() {
+        const reservation_status = 'Cancelled by Staff'
+        console.log(reservation_id)
+            // change reservation status through ajax
+        $.ajaxSetup({
+            headers: {
+                Accept: 'application/json',
+                Authorization: 'Bearer ' + TOKEN,
+                contentType: 'application/x-www-form-urlencoded',
+            },
+        })
+        $.ajax({
+            url: apiURL + `evrsers/pup_staff/edit_status/${reservation_id}`,
+            type: 'PUT',
+            data: {
+                reservation_status: reservation_status,
+            },
+            contentType: 'application/x-www-form-urlencoded',
+            success: (result) => {
+                $('#cancelReservationModal').modal('hide')
+                if (result) {
+                    Swal.fire({
+                        html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully removed an organizer!</p></div></div>',
+                        showCancelButton: !0,
+                        showConfirmButton: !1,
+                        cancelButtonClass: 'btn btn-success w-xs mb-1',
+                        cancelButtonText: 'Ok',
+                        buttonsStyling: !1,
+                        showCloseButton: !0,
+                    }).then(function() {
+                        // reload Pending Reservations table
+                        viewAllPendingReservation()
+                    })
+                }
+            },
+        }).fail((xhr) => {
+            $('#cancelReservationModal').modal('hide')
+            Swal.fire({
+                html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong!</h4><p class="text-muted mx-4 mb-0">${
+					JSON.parse(xhr.responseText).message
+				}</p></div></div>`,
+                showCancelButton: !0,
+                showConfirmButton: !1,
+                cancelButtonClass: 'btn btn-danger w-xs mb-1',
+                cancelButtonText: 'Dismiss',
+                buttonsStyling: !1,
+                showCloseButton: !0,
+            })
+        })
+    })
 }
