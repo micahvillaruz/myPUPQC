@@ -15,7 +15,8 @@
             <div class="alert alert-border-left alert-primary mb-4 me-3 ms-2">
               <div class="row">
                 <h6 class="text-medium">EVENT TITLE</h6>
-                <h1 class="text-dark fw-bold mb-3 ms-2" id="event_title"></h1><hr>
+                <h1 class="text-dark fw-bold mb-3 ms-2" id="event_title"></h1>
+                <hr>
                 <div class="col-lg-6">
                   <h6 class="text-medium">DESCRIPTION</h6>
                   <p id="event_details" class="fw-medium"></p>
@@ -26,8 +27,8 @@
                   <h6 class="text-medium">TIME</h6>
                   <p id="time" class="fw-medium"></p>
                 </div>
+                <hr>
               </div>
-              <hr>
               <div class="row">
                 <h6 class="text-medium">REMARKS</h6>
                 <p id="remarks" class="fw-medium"></p>
