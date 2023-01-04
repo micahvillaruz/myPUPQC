@@ -27,11 +27,11 @@
 
 <script src="../../public/js/pages/select2.init.js"></script>
 
-<!-- App js -->
-<script src="<?= base_url() ?>public/js/app.js"></script>
-
 <!-- PUP STAFF ajax -->
 <script src="<?= base_url() ?>public/js/ajax/pup-staff/evrsers/organizer.ajax.js"></script>
+
+<!-- App js -->
+<script src="<?= base_url() ?>public/js/app.js"></script>
 
 </body>
 
