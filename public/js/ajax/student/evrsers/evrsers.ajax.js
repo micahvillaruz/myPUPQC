@@ -141,7 +141,7 @@ viewReservationDetails = () => {
 
 // cancel reservation function
 // cancelBtn clicked -> show cancelReservationModal -> if cancel-reservation clicked -> cancelReservation(reservation_id)
-function cancelReservation(reservation_id) {
+cancelReservation = (reservation_id) => {
     $('#cancelReservationModal').modal('show')
     $('#cancel-reservation').on('click', function() {
         $.ajaxSetup({
