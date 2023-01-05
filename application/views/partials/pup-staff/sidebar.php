@@ -28,6 +28,7 @@
               </a>
             </li>
 
+            <?php if (strpos($this->session->userdata('user_roles'), 'Organizer') !== false) { ?>
             <li class="menu-title">
               <i class="ri-more-fill"></i>
               <span>EVRSERS</span>
@@ -53,7 +54,7 @@
                 <span>Reservation History</span>
               </a>
             </li>
-
+            <?php } ?>
 
             <?php if (strpos($this->session->userdata('user_roles'), 'Student Records') !== false) { ?>
               <li class="menu-title">
@@ -84,6 +85,7 @@
             <?php } ?>
 
             <!--OMSS -->
+            <?php if (strpos($this->session->userdata('user_roles'), 'Doctor') !== false) { ?>
             <li class="menu-title">
               <i class="ri-more-fill"></i>
               <span>OMSS - DOCTOR </span>
@@ -102,7 +104,9 @@
                 <span>Medical Request History</span>
               </a>
             </li>
+            <?php } ?>
 
+            <?php if (strpos($this->session->userdata('user_roles'), 'Dentist') !== false) { ?>
             <li class="menu-title">
               <i class="ri-more-fill"></i>
               <span>OMSS - DENTIST </span>
@@ -121,7 +125,9 @@
                 <span>Dental Request History</span>
               </a>
             </li>
+            <?php } ?>
 
+            <?php if (strpos($this->session->userdata('user_roles'), 'Guidance Counsellor') !== false) { ?>
             <li class="menu-title">
               <i class="ri-more-fill"></i>
               <span>OMSS - GUIDANCE COUNSELOR </span>
@@ -140,6 +146,7 @@
                 <span>Counseling History</span>
               </a>
             </li>
+            <?php } ?>
 
 
           </ul>
