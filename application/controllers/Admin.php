@@ -248,7 +248,7 @@ class Admin extends CI_Controller
     $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "Manage Facilities"]);
     $this->load->view('admin/evrsers/facilities');
     $this->load->view('partials/footer');
-    $this->load->view('admin/evrsers/components/add-facility-modal');
+    $this->load->view('admin/evrsers/components/facility-modal');
     $this->load->view('partials/foot-scripts');
     $this->load->view('admin/evrsers/scripts/facilities-scripts');
   }
