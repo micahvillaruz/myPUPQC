@@ -70,6 +70,10 @@ fetchNews = () => {
 			let slider = $('#news_slider')
 			newsInArray.forEach((news) => {
 				const date = new Date(news.created_at)
+				const link =
+					baseURL == 'http://localhost/myPUPQC/'
+						? baseURL + `news/${news.reference_id}`
+						: news.announcement_link
 				const article_date = date.toLocaleDateString('en-US', {
 					year: 'numeric',
 					month: 'long',
@@ -87,7 +91,7 @@ fetchNews = () => {
 
 				let newsOnSlider = `
                 <div class="swiper-slide">
-                    <a href="${news.announcement_link}">
+                    <a href="${link}">
                         <img src="${imageToShow}" class="img-fluid news-img" />
                         <h5 class="text-wrap mb-3 mt-4 text-primary">${news.announcement_title}</h5>
                     </a>

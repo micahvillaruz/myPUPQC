@@ -129,6 +129,10 @@ $route['faculty'] = 'home/faculty';
 // Footer
 $route['admission'] = 'home/admission';
 
+// News and Dynamic Parameter
+$route['news'] = 'home/news';
+$route['news/(:any)'] = 'home/news/$1';
+
 /*
 | -------------------------------------------------------------------------
 | STUDENT ROUTES
