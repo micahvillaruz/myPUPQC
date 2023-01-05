@@ -347,7 +347,7 @@
 					<div class="col-xl-4 col-lg-4 col-xs-1">
 						<div class="card">
 							<div class="card-header">
-								<h4 class="card-title mb-0 fw-medium text-primary">Announcements and Advisories</h4>
+								<h4 class="card-title mb-0 fw-medium text-primary">PUPQC Advisories</h4>
 							</div><!-- end card header -->
 
 							<div class="card-body">
@@ -469,31 +469,7 @@
 							<div class="card-body">
 								<!-- Swiper -->
 								<div class="swiper pagination-dynamic-swiper rounded">
-									<div class="swiper-wrapper">
-										<div class="swiper-slide">
-											<a href="https://www.facebook.com/361074807312478/posts/5359676797452229/" target="_blank">
-												<img src="<?= base_url() ?>public/images/news/img-1.jpg" class="img-fluid news-img" />
-												<h5 class="text-wrap mb-3 mt-4 text-primary">PUP President Muhi announces face-to-face recognition and graduation rites</h5>
-											</a>
-											<span class="h5 fw-light">1 Aug, 2022,</span>
-											<small class="text-muted">09:48 AM</small>
-										</div>
-										<div class="swiper-slide">
-											<a href="https://www.facebook.com/361074807312478/posts/5308009152618994/" target="_blank">
-												<img src="<?= base_url() ?>public/images/news/img-2.jpg" class="img-fluid news-img" />
-												<h5 class="text-wrap mb-3 mt-4 text-primary">Succession of new PUPQC Aministration Announced for Academic Year 22-23</h5>
-											</a>
-											<span class="h5 fw-light">13 Jul, 2022,</span>
-											<small class="text-muted">02:15 PM</small>
-										</div>
-										<div class="swiper-slide">
-											<a href="https://www.facebook.com/361074807312478/posts/5320818454671397/" target="_blank">
-												<img src="<?= base_url() ?>public/images/news/img-3.jpg" class="img-fluid news-img" />
-												<h5 class="text-wrap mb-3 mt-4 text-primary">PUPQC Heralds its New Set of Leaders</h5>
-											</a>
-											<span class="h5 fw-light">17 Jul, 2022,</span>
-											<small class="text-muted">03:29 PM</small>
-										</div>
+									<div class="swiper-wrapper" id="news_slider">
 									</div>
 									<div class="swiper-pagination dynamic-pagination"></div>
 								</div>

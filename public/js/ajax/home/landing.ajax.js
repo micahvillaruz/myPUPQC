@@ -5,6 +5,7 @@ $(function () {
 			sendMessageToAdmin()
 		}
 	})
+	fetchNews()
 })
 
 sendMessageToAdmin = () => {
@@ -56,5 +57,54 @@ sendMessageToAdmin = () => {
 			buttonsStyling: !1,
 			showCloseButton: !0,
 		})
+	})
+}
+
+fetchNews = () => {
+	$.ajax({
+		url: apiURL + 'news',
+		type: 'GET',
+		dataType: 'json',
+		success: (result) => {
+			const newsInArray = result.data
+			let slider = $('#news_slider')
+			newsInArray.forEach((news) => {
+				const date = new Date(news.created_at)
+				const article_date = date.toLocaleDateString('en-US', {
+					year: 'numeric',
+					month: 'long',
+					day: 'numeric',
+				})
+				const article_time = date.toLocaleTimeString('en-US', {
+					hour: 'numeric',
+					minute: 'numeric',
+					hour12: true,
+				})
+				// albert palitan mo ito in the future
+				let imageToShow = news.announcement_image
+					? news.announcement_image
+					: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921'
+
+				let newsOnSlider = `
+                <div class="swiper-slide">
+                    <a href="${news.announcement_link}">
+                        <img src="${imageToShow}" class="img-fluid news-img" />
+                        <h5 class="text-wrap mb-3 mt-4 text-primary">${news.announcement_title}</h5>
+                    </a>
+                    <span class="h5 fw-light">Posted: ${article_date}</span>
+                    <small class="text-muted">${article_time}</small>
+                </div>
+                `
+				slider.append(newsOnSlider)
+			})
+
+			let mySwiper = new Swiper('.pagination-dynamic-swiper', {
+				// Swiper configuration options
+				loop: true,
+				autoplay: {
+					delay: 3000,
+				},
+			})
+		},
 	})
 }
