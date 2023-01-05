@@ -140,12 +140,6 @@
             </ul>
           </div>
         </li>
-        <!-- <li class="nav-item">
-          <a href="<?= base_url() ?>student/omsss/medical-prescription" class="nav-link">
-            <i class="las la-file-prescription"></i>
-            <span>Medical Prescription</span>
-          </a>
-        </li> -->
         <li class="nav-item">
           <a class="nav-link menu-link" href="<?= base_url() ?>student/omsss/medical-logs">
             <i class="ri-refresh-line"></i>

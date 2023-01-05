@@ -56,6 +56,36 @@
             </li>
             <?php } ?>
 
+            <?php if (strpos($this->session->userdata('user_roles'), 'News Reporter') !== false || strpos($this->session->userdata('user_roles'), 'Public Relations') !== false) { ?>
+            <li class="menu-title">
+              <i class="ri-more-fill"></i>
+              <span>Announcement System</span>
+            </li>
+            <?php } ?>
+            <?php if (strpos($this->session->userdata('user_roles'), 'Public Relations') !== false) { ?>
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="#">
+                <i class="bx bx-history"></i>
+                <span>Advisory</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="#">
+                <i class="ri-team-line"></i>
+                <span>Announcement</span>
+              </a>
+            </li>
+            <?php } ?>
+            <?php if (strpos($this->session->userdata('user_roles'), 'News Reporter') !== false) { ?>
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="#">
+                <i class="ri-reserved-line"></i>
+                <span>News</span>
+              </a>
+            </li>
+            <?php } ?>
+
             <?php if (strpos($this->session->userdata('user_roles'), 'Student Records') !== false) { ?>
               <li class="menu-title">
                 <i class="ri-more-fill"></i>
