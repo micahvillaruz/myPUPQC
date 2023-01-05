@@ -1106,6 +1106,7 @@ deleteRequest = (request_id) => {
 						loadReleasedRequests()
 						loadCancelledRequests()
 						loadDeletedRequests()
+						getHistoryAnalytics()
 					}
 				},
 			}).fail(() => {

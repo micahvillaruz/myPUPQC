@@ -896,6 +896,7 @@ approveRequest = (request_id) => {
 						// Reload Pending and Approved Requests Datatable
 						loadPendingRequests()
 						loadApprovedRequests()
+						getRequestsAnalytics()
 					})
 				}
 			},
@@ -960,6 +961,7 @@ cancelRequest = (request_id) => {
 						// Reload Pending and Approved Requests Datatable
 						loadPendingRequests()
 						loadApprovedRequests()
+						getRequestsAnalytics()
 					})
 				}
 			},
@@ -1025,6 +1027,7 @@ forProcessingRequest = (request_id) => {
 						// Reload Pending and Approved Requests Datatable
 						loadPendingRequests()
 						loadApprovedRequests()
+						getRequestsAnalytics()
 					})
 				}
 			},
@@ -1089,6 +1092,7 @@ readyforPickupRequest = (request_id) => {
 						// Reload Pending and Approved Requests Datatable
 						loadPendingRequests()
 						loadApprovedRequests()
+						getRequestsAnalytics()
 					})
 				}
 			},
@@ -1154,6 +1158,7 @@ releasedRequest = (request_id) => {
 						// Reload Pending and Approved Requests Datatable
 						loadPendingRequests()
 						loadApprovedRequests()
+						getRequestsAnalytics()
 					})
 				}
 			},
