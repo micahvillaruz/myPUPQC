@@ -27,20 +27,6 @@
             <span>Dashboard</span>
           </a>
         </li>
-        <!--         <li class="nav-item">
-          <a class="nav-link menu-link">
-            <i class="ri-calendar-todo-fill"></i>
-            <span>Calendar</span>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link menu-link">
-            <i class="ri-customer-service-2-fill"></i>
-            <span>Announcements</span>
-          </a>
-        </li> -->
-
         <li class="menu-title">
           <i class="ri-more-fill"></i>
           <span>Online Services</span>
@@ -59,69 +45,13 @@
             <span>VASS</span>
           </a>
         </li>
-
-        <!--         <li class="nav-item">
-          <a class="nav-link menu-link">
-            <i class="ri-hand-coin-line"></i>
-            <span>Scholarships</span>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link menu-link" href="#sidebarForms" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarForms">
-            <i class="ri-book-read-fill"></i>
-            <span>Library</span>
-          </a>
-          <div class="collapse menu-dropdown" id="sidebarForms">
-            <ul class="nav nav-sm flex-column">
-              <li class="nav-item">
-                <a href="forms-elements.html" class="nav-link">Browse E-Resources</a>
-              </li>
-              <li class="nav-item">
-                <a href="forms-select.html" class="nav-link">
-                  Transactions
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="forms-pickers.html" class="nav-link">
-                  Chat with Librarian
-                </a>
-              </li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link menu-link" href="widgets.html">
-            <i class="mdi mdi-account-group-outline"></i>
-            <span>Organizations</span>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link menu-link" href="#sidebarMaps" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMaps">
-            <i class="ri-briefcase-5-line"></i>
-            <span>Legal Counsel</span>
-          </a>
-          <div class="collapse menu-dropdown" id="sidebarMaps">
-            <ul class="nav nav-sm flex-column">
-              <li class="nav-item">
-                <a href="maps-google.html" class="nav-link"> File a Complaint </a>
-              </li>
-              <li class="nav-item">
-                <a href="maps-vector.html" class="nav-link"> Request of Legal Advice / Opinion </a>
-              </li>
-            </ul>
-          </div>
-        </li> -->
-
         <li class="nav-item">
           <a class="nav-link menu-link" href="#" onclick="logout('osssac')">
             <i class=" ri-question-answer-line"></i>
             <span>HelpDesk</span>
           </a>
         </li>
-
+        <?php if (strpos($this->session->userdata('user_roles'), 'Organizer') !== false) { ?>
         <li class="menu-title">
           <i class="ri-more-fill"></i>
           <span>Venue Management System</span>
@@ -147,7 +77,7 @@
             <span>Reservation History</span>
           </a>
         </li>
-
+        <?php } ?>
         <li class="menu-title">
           <i class="ri-more-fill"></i>
           <span>Document Request</span>
