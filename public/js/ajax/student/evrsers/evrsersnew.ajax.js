@@ -70,7 +70,7 @@ loadFacilities = () => {
                     <div class="form-check card-radio">
                         <input id="${facility.facility_id}" name="facility" type="radio" value="${facility.facility_name}" class="form-check-input"/>
                             <label class="form-check-label p-0 avatar-md w-100 h-50" for="${facility.facility_id}">
-                                <img src="${facility.facility_picture}" class="card-img-top" alt="${facility.facility_name}">
+                                <img src="${facility.facility_picture}" class="card-img-top" alt="${facility.facility_name}" style="height:200px;">
                             </label>
                     </div>
                     <h5 class="fs-13 text-center mt-2">${facility.facility_name}</h5>
