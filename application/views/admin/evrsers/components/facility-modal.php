@@ -42,7 +42,7 @@
                 <div class="mb-0 float-end" id="deact">
                     <button type="button" class="btn btn-soft-danger waves-effect waves-light float-end" id="deactFacilityBtn"><i class="ri-close-circle-line me-2"></i>Deactivate Facility</button>
                 </div>
-                <form id="addNewFacility" class="needs-validation" method="PUT" enctype="multipart/form-data">
+                <form id="editFacilityForm" class="needs-validation" method="PUT">
                     <div class="mb-3">
                         <label for="facility-name-edit" class="form-label">Facility Name</label>
                         <input type="text" class="form-control" id="facility-name-edit" name="facility-name-edit" placeholder="Facility Name" required>
@@ -53,7 +53,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="facility-status-edit" class="form-label">Facility Status</label>
-                        <select class="form-control" type="file" id="facility-status-edit" name="facility-status-edit" accept="image/*" required>
+                        <select class="form-control" id="facility-status-edit" name="facility-status-edit" required>
                         </select>
                     </div>
                 </form>
