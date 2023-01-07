@@ -278,6 +278,16 @@ $route['pupstaff/omsss/counsellor/analytics-and-history'] = 'pupstaff/counsellor
 
 /*
 | --------------
+|  ANNOUNCEMENT
+| --------------
+*/
+
+$route['pupstaff/announcement/advisory'] = 'pupstaff/advisory';
+$route['pupstaff/announcement/announcements'] = 'pupstaff/announcements';
+$route['pupstaff/announcement/news'] = 'pupstaff/news';
+
+/*
+| --------------
 |     ODRS
 | --------------
 */
