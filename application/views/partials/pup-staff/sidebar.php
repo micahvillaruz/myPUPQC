@@ -64,23 +64,23 @@
             <?php } ?>
             <?php if (strpos($this->session->userdata('user_roles'), 'Public Relations') !== false) { ?>
             <li class="nav-item">
-              <a class="nav-link menu-link" href="#">
-                <i class="bx bx-history"></i>
+              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/announcement/advisory">
+                <i class=" ri-article-line"></i>
                 <span>Advisory</span>
               </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link" href="#">
-                <i class="ri-team-line"></i>
+              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/announcement/announcement">
+                <i class=" ri-notification-badge-line"></i>
                 <span>Announcement</span>
               </a>
             </li>
             <?php } ?>
             <?php if (strpos($this->session->userdata('user_roles'), 'News Reporter') !== false) { ?>
             <li class="nav-item">
-              <a class="nav-link menu-link" href="#">
-                <i class="ri-reserved-line"></i>
+              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/announcement/news">
+                <i class=" ri-newspaper-line"></i>
                 <span>News</span>
               </a>
             </li>
