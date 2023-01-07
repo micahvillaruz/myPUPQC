@@ -155,16 +155,6 @@ viewSpecificFacility = (facility_id) => {
     //    do function after viewFacility is clicked
     // console.log(facility_id)
 
-    $('#deactFacilityBtn').on('click', function(e) {
-        e.preventDefault() // prevent page refresh
-        deactFacility(facility_id)
-    })
-
-    $('#editFacilityBtn').on('click', function(e) {
-        e.preventDefault() // prevent page refresh
-        editFacilityDetails(facility_id)
-    })
-
     $.ajaxSetup({
         headers: {
             Accept: 'application/json',
@@ -195,14 +185,24 @@ viewSpecificFacility = (facility_id) => {
                                 `,
                 )
             }
+
+            $('#deactFacilityBtn').on('click', function(e) {
+                e.preventDefault() // prevent page refresh
+                deactFacility(facility_id)
+            })
+
+            $('#editFacilityBtn').on('click', function(e) {
+                $('#edit-facility-modal').modal('hide')
+                e.preventDefault() // prevent page refresh
+                editFacilityDetails(facility_id)
+            })
+
         },
     })
 }
 
 // edit facility details
 editFacilityDetails = (facility_id) => {
-    //    do function after editFacilityBtn clicked
-
     // with the id's: facility-name-edit, facility-description-edit, facility-status-edit
     const facility_name = document.getElementById('facility-name-edit')
     const facility = facility_name.value
@@ -211,10 +211,7 @@ editFacilityDetails = (facility_id) => {
     const facility_status = document.getElementById('facility-status-edit')
     const status = facility_status.value
 
-    const formData = new FormData()
-    formData.append('facility_name', facility)
-    formData.append('facility_description', description)
-    formData.append('facility_status', status)
+    console.log(facility_id, facility, description, status)
 
     // all values are not empty, proceed to ajax call
     $.ajaxSetup({
@@ -226,11 +223,12 @@ editFacilityDetails = (facility_id) => {
 
     $.ajax({
         type: 'PUT',
-        url: apiURL + `evrsers/super_admin/edit/${facility_id}`,
-        data: formData,
-        processData: false,
-        contentType: false,
-        cache: false,
+        url: apiURL + `evrsers/super_admin/edit_facility/${facility_id}`,
+        data: {
+            facility_name: facility,
+            facility_description: description,
+            facility_status: status,
+        },
         success: (result) => {
             const data = result.data
             console.log(data)
@@ -246,6 +244,8 @@ editFacilityDetails = (facility_id) => {
                     buttonsStyling: !1,
                     showCloseButton: !0,
                 }).then(function() {
+                    // hide success message
+                    $('#edit-facility-modal').modal('hide')
                     viewFacilities()
                 })
             } else {
