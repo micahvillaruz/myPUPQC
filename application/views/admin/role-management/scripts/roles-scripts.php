@@ -28,7 +28,7 @@
 <script src="../../public/js/pages/select2.init.js"></script>
 
 <!-- PUP STAFF ajax -->
-<script src="<?= base_url() ?>public/js/ajax/admin/omsss/roles.ajax.js"></script>
+<script src="<?= base_url() ?>public/js/ajax/admin/roles/roles.ajax.js"></script>
 
 <!-- App js -->
 <script src="<?= base_url() ?>public/js/app.js"></script>

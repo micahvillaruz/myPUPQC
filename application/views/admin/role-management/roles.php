@@ -24,7 +24,7 @@
                 <h5 class="card-title mb-0 flex-grow-1">All Roles</h5>
             </div>
             <div class="card-body">
-                <table id="example" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center w-100">
+                <table id="users-with-roles" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center w-100">
                     <thead>
                         <tr>
                             <th>Role</th>

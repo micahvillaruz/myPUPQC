@@ -1,22 +1,16 @@
 $(function () {
 	studentNoOrganizer()
 
-	viewStudentOrganizerStaff()
+	viewAllRoles()
 })
 
+// * This function will view the User's Details
 viewStudentDetails = (user_id) => {
-	$.ajaxSetup({
-		headers: {
-			Accept: 'application/json',
-			Authorization: 'Bearer ' + TOKEN,
-			ContentType: 'application/x-www-form-urlencoded',
-		},
-	})
-
 	$.ajax({
 		type: 'GET',
 		cache: false,
 		url: apiURL + `evrsers//pup_staff/view_student/${user_id}`,
+		headers: AJAX_HEADERS,
 		dataType: 'json',
 		success: (result) => {
 			const userData = result.data
@@ -47,8 +41,8 @@ viewStudentDetails = (user_id) => {
 }
 
 // Load datatables
-viewStudentOrganizerStaff = () => {
-	const dt = $('#students-no-organizer-table')
+viewAllRoles = () => {
+	const dt = $('#users-with-roles')
 
 	$.ajaxSetup({
 		headers: {
@@ -62,26 +56,26 @@ viewStudentOrganizerStaff = () => {
 		dt.DataTable({
 			bDestroy: true,
 			ajax: {
-				url: apiURL + 'evrsers/pup_staff/view_organizers/',
+				url: apiURL + 'super_admin/role/',
 				type: 'GET',
 				ContentType: 'application/x-www-form-urlencoded',
 			},
 			columns: [
-				// Student No.
+				// Role
 				{
 					data: null,
 					render: (data) => {
-						const userNo = data.user_assigned_to_role.user_no
-						return `${userNo}`
+						const roleName = data.role_name
+						return `${roleName}`
 					},
 				},
 
-				// Full Name
+				// Description
 				{
 					data: null,
 					render: (data) => {
-						const fullName = data.user_assigned_to_role.user_profiles[0].full_name
-						return `${fullName}`
+						const roleDescription = data.role_description
+						return `${roleDescription}`
 					},
 				},
 
@@ -89,18 +83,17 @@ viewStudentOrganizerStaff = () => {
 				{
 					data: null,
 					render: (data) => {
-						return data.is_blacklist
+						return data.role_status == 0
 							? `<span class="badge rounded-pill bg-danger">Inactive</span>`
 							: `<span class="badge rounded-pill bg-success">Active</span>`
 					},
 				},
 
-				//Action
+				// Action
 				{
 					data: null,
 					class: 'text-center',
 					render: (data) => {
-						console.log(data)
 						return `
                           <div class="dropdown d-inline-block">
                               <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentInfoModal" onclick="viewStudentDetails('${data.user_id}')"><i class="ri-eye-fill fs-5"></i></button>
@@ -117,41 +110,39 @@ viewStudentOrganizerStaff = () => {
 
 // Populate select2 option with id student-no-organizer names of the students
 studentNoOrganizer = () => {
-	$.ajaxSetup({
-		headers: {
-			Accept: 'application/json',
-			Authorization: 'Bearer ' + TOKEN,
-			'Content-Type': 'application/x-www-form-urlencoded',
-		},
-	})
-
-	$.ajax({
-		url: apiURL + 'evrsers/pup_staff/view_student_no_organizer/',
-		type: 'GET',
-		ContentType: 'application/x-www-form-urlencoded',
-		success: (data) => {
-			const students = data.data
-			const select2 = $('#student-no-organizer')
-			students.forEach((student) => {
-				// console.log(student)
-				const userNo = student.user_no
-				const fullName = student.user_profiles[0].full_name
-				const option = new Option(`${userNo} - ${fullName}`, student.user_no, false, false)
-				select2.append(option)
-			})
-
-			// if option is selected and add-student-organizer button is clicked, get student.user_id
-			// and pass it to addStudentOrganizer function and prevent page from reloading
-			$('#add-student-organizer').on('click', function (e) {
-				// get selected option user_id
-				const selectedOption = select2.find(':selected')
-				const student = students.find((student) => student.user_no === selectedOption.val())
-				// prevent page from reloading
-				e.preventDefault()
-				addStudentOrganizer(student.user_id)
-			})
-		},
-	})
+	// $.ajaxSetup({
+	// 	headers: {
+	// 		Accept: 'application/json',
+	// 		Authorization: 'Bearer ' + TOKEN,
+	// 		'Content-Type': 'application/x-www-form-urlencoded',
+	// 	},
+	// })
+	// $.ajax({
+	// 	url: apiURL + 'evrsers/pup_staff/view_student_no_organizer/',
+	// 	type: 'GET',
+	// 	ContentType: 'application/x-www-form-urlencoded',
+	// 	success: (data) => {
+	// 		const students = data.data
+	// 		const select2 = $('#student-no-organizer')
+	// 		students.forEach((student) => {
+	// 			// console.log(student)
+	// 			const userNo = student.user_no
+	// 			const fullName = student.user_profiles[0].full_name
+	// 			const option = new Option(`${userNo} - ${fullName}`, student.user_no, false, false)
+	// 			select2.append(option)
+	// 		})
+	// 		// if option is selected and add-student-organizer button is clicked, get student.user_id
+	// 		// and pass it to addStudentOrganizer function and prevent page from reloading
+	// 		$('#add-student-organizer').on('click', function (e) {
+	// 			// get selected option user_id
+	// 			const selectedOption = select2.find(':selected')
+	// 			const student = students.find((student) => student.user_no === selectedOption.val())
+	// 			// prevent page from reloading
+	// 			e.preventDefault()
+	// 			addStudentOrganizer(student.user_id)
+	// 		})
+	// 	},
+	// })
 }
 
 addStudentOrganizer = (user_id) => {
