@@ -1,54 +1,50 @@
 $(function () {
 	studentNoOrganizer()
 
-	viewStudentOrganizerStaff()
+	viewRoleManagementTable()
 })
 
 viewStudentDetails = (user_id) => {
-	$.ajaxSetup({
-		headers: {
-			Accept: 'application/json',
-			Authorization: 'Bearer ' + TOKEN,
-			ContentType: 'application/x-www-form-urlencoded',
-		},
-	})
-
-	$.ajax({
-		type: 'GET',
-		cache: false,
-		url: apiURL + `evrsers//pup_staff/view_student/${user_id}`,
-		dataType: 'json',
-		success: (result) => {
-			const userData = result.data
-			const userProfile = userData.user_profiles[0]
-
-			// change student profile pic id source to userProfile.image
-			if (userProfile.image != null && userProfile.image.length != 0) {
-				$('#student-profile-pic').attr('src', userProfile.image)
-			}
-
-			$('#student-num').html(userData.user_no)
-			$('#student-name').html(userProfile.full_name)
-			$('#address').html(userProfile.full_address)
-			$('#contact-num').html(userProfile.contact_number)
-			$('#email').html(userProfile.email_address)
-			$('#gender').html(userProfile.gender)
-			$('#religion').html(userProfile.religion)
-			$('#civil-status').html(userProfile.civil_status)
-			// convert birthdate using moment.js in MM/DD/YYYY format
-			const birthdate = moment(userProfile.birth_date).format('L')
-			$('#birthday').html(birthdate)
-
-			// Compute age using moment.js
-			const age = moment().diff(userProfile.birth_date, 'years')
-			$('#age').html(age)
-		},
-	})
+	// $.ajaxSetup({
+	// 	headers: {
+	// 		Accept: 'application/json',
+	// 		Authorization: 'Bearer ' + TOKEN,
+	// 		ContentType: 'application/x-www-form-urlencoded',
+	// 	},
+	// })
+	// $.ajax({
+	// 	type: 'GET',
+	// 	cache: false,
+	// 	url: apiURL + `evrsers//pup_staff/view_student/${user_id}`,
+	// 	dataType: 'json',
+	// 	success: (result) => {
+	// 		const userData = result.data
+	// 		const userProfile = userData.user_profiles[0]
+	// 		// change student profile pic id source to userProfile.image
+	// 		if (userProfile.image != null && userProfile.image.length != 0) {
+	// 			$('#student-profile-pic').attr('src', userProfile.image)
+	// 		}
+	// 		$('#student-num').html(userData.user_no)
+	// 		$('#student-name').html(userProfile.full_name)
+	// 		$('#address').html(userProfile.full_address)
+	// 		$('#contact-num').html(userProfile.contact_number)
+	// 		$('#email').html(userProfile.email_address)
+	// 		$('#gender').html(userProfile.gender)
+	// 		$('#religion').html(userProfile.religion)
+	// 		$('#civil-status').html(userProfile.civil_status)
+	// 		// convert birthdate using moment.js in MM/DD/YYYY format
+	// 		const birthdate = moment(userProfile.birth_date).format('L')
+	// 		$('#birthday').html(birthdate)
+	// 		// Compute age using moment.js
+	// 		const age = moment().diff(userProfile.birth_date, 'years')
+	// 		$('#age').html(age)
+	// 	},
+	// })
 }
 
 // Load datatables
-viewStudentOrganizerStaff = () => {
-	const dt = $('#students-no-organizer-table')
+viewRoleManagementTable = () => {
+	const dt = $('#users-with-roles')
 
 	$.ajaxSetup({
 		headers: {
@@ -62,16 +58,16 @@ viewStudentOrganizerStaff = () => {
 		dt.DataTable({
 			bDestroy: true,
 			ajax: {
-				url: apiURL + 'evrsers/pup_staff/view_organizers/',
+				url: apiURL + 'super_admin/user_role/all/',
 				type: 'GET',
 				ContentType: 'application/x-www-form-urlencoded',
 			},
 			columns: [
-				// Student No.
+				// User ID
 				{
 					data: null,
 					render: (data) => {
-						const userNo = data.user_assigned_to_role.user_no
+						const userNo = data.user_no
 						return `${userNo}`
 					},
 				},
@@ -80,27 +76,41 @@ viewStudentOrganizerStaff = () => {
 				{
 					data: null,
 					render: (data) => {
-						const fullName = data.user_assigned_to_role.user_profiles[0].full_name
+						const fullName = data.user_profiles[0].full_name
 						return `${fullName}`
 					},
 				},
 
-				// Status
+				// User Type
 				{
 					data: null,
 					render: (data) => {
-						return data.is_blacklist
-							? `<span class="badge rounded-pill bg-danger">Inactive</span>`
-							: `<span class="badge rounded-pill bg-success">Active</span>`
+						const userType = data.user_type
+						return `${userType}`
 					},
 				},
 
-				//Action
+				// User Roles
+				{
+					data: null,
+					render: (data) => {
+						const userRoles = data.user_roles.map((role) => role.role_name)
+						const rolePills = userRoles.map((role) => {
+							return `<span class="badge bg-primary">${role}</span>  `
+						})
+						return `
+                            <div class="dropdown d-inline-block">
+                                ${rolePills.join('<br/>')}
+                            </div>
+                        `
+					},
+				},
+
+				// Action
 				{
 					data: null,
 					class: 'text-center',
 					render: (data) => {
-						console.log(data)
 						return `
                           <div class="dropdown d-inline-block">
                               <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentInfoModal" onclick="viewStudentDetails('${data.user_id}')"><i class="ri-eye-fill fs-5"></i></button>
@@ -117,17 +127,10 @@ viewStudentOrganizerStaff = () => {
 
 // Populate select2 option with id student-no-organizer names of the students
 studentNoOrganizer = () => {
-	$.ajaxSetup({
-		headers: {
-			Accept: 'application/json',
-			Authorization: 'Bearer ' + TOKEN,
-			'Content-Type': 'application/x-www-form-urlencoded',
-		},
-	})
-
 	$.ajax({
 		url: apiURL + 'evrsers/pup_staff/view_student_no_organizer/',
 		type: 'GET',
+		headers: AJAX_HEADERS,
 		ContentType: 'application/x-www-form-urlencoded',
 		success: (data) => {
 			const students = data.data

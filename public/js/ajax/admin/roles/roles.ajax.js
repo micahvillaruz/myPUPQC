@@ -1,44 +1,13 @@
 $(function () {
-	studentNoOrganizer()
-
 	viewAllRoles()
-})
 
-// * This function will view the User's Details
-viewStudentDetails = (user_id) => {
-	$.ajax({
-		type: 'GET',
-		cache: false,
-		url: apiURL + `evrsers//pup_staff/view_student/${user_id}`,
-		headers: AJAX_HEADERS,
-		dataType: 'json',
-		success: (result) => {
-			const userData = result.data
-			const userProfile = userData.user_profiles[0]
-
-			// change student profile pic id source to userProfile.image
-			if (userProfile.image != null && userProfile.image.length != 0) {
-				$('#student-profile-pic').attr('src', userProfile.image)
-			}
-
-			$('#student-num').html(userData.user_no)
-			$('#student-name').html(userProfile.full_name)
-			$('#address').html(userProfile.full_address)
-			$('#contact-num').html(userProfile.contact_number)
-			$('#email').html(userProfile.email_address)
-			$('#gender').html(userProfile.gender)
-			$('#religion').html(userProfile.religion)
-			$('#civil-status').html(userProfile.civil_status)
-			// convert birthdate using moment.js in MM/DD/YYYY format
-			const birthdate = moment(userProfile.birth_date).format('L')
-			$('#birthday').html(birthdate)
-
-			// Compute age using moment.js
-			const age = moment().diff(userProfile.birth_date, 'years')
-			$('#age').html(age)
-		},
+	// get the values in the form
+	$('#addRoleForm').on('submit', function (e) {
+		e.preventDefault() // prevent page refresh
+		// pass data to API for updating of student's info
+		addRoleAJAX()
 	})
-}
+})
 
 // Load datatables
 viewAllRoles = () => {
@@ -108,62 +77,30 @@ viewAllRoles = () => {
 	}
 }
 
-// Populate select2 option with id student-no-organizer names of the students
-studentNoOrganizer = () => {
-	// $.ajaxSetup({
-	// 	headers: {
-	// 		Accept: 'application/json',
-	// 		Authorization: 'Bearer ' + TOKEN,
-	// 		'Content-Type': 'application/x-www-form-urlencoded',
-	// 	},
-	// })
-	// $.ajax({
-	// 	url: apiURL + 'evrsers/pup_staff/view_student_no_organizer/',
-	// 	type: 'GET',
-	// 	ContentType: 'application/x-www-form-urlencoded',
-	// 	success: (data) => {
-	// 		const students = data.data
-	// 		const select2 = $('#student-no-organizer')
-	// 		students.forEach((student) => {
-	// 			// console.log(student)
-	// 			const userNo = student.user_no
-	// 			const fullName = student.user_profiles[0].full_name
-	// 			const option = new Option(`${userNo} - ${fullName}`, student.user_no, false, false)
-	// 			select2.append(option)
-	// 		})
-	// 		// if option is selected and add-student-organizer button is clicked, get student.user_id
-	// 		// and pass it to addStudentOrganizer function and prevent page from reloading
-	// 		$('#add-student-organizer').on('click', function (e) {
-	// 			// get selected option user_id
-	// 			const selectedOption = select2.find(':selected')
-	// 			const student = students.find((student) => student.user_no === selectedOption.val())
-	// 			// prevent page from reloading
-	// 			e.preventDefault()
-	// 			addStudentOrganizer(student.user_id)
-	// 		})
-	// 	},
-	// })
-}
+addRoleAJAX = () => {
+	if ($('#addRoleForm')[0].checkValidity()) {
+		const form = new FormData($('#addRoleForm')[0])
+		// Display the key/value pairs
+		for (var pair of form.entries()) {
+			console.log(pair[0] + ': ' + pair[1])
+		}
 
-addStudentOrganizer = (user_id) => {
-	$('#addStudentOrganizerModal').modal('show')
-	$('#add-organizer').on('click', function () {
-		$.ajaxSetup({
-			headers: {
-				Accept: 'application/json',
-				Authorization: 'Bearer ' + TOKEN,
-				ContentType: 'application/x-www-form-urlencoded',
-			},
-		})
+		data = {
+			role_name: form.get('role_name'),
+			role_description: form.get('role_description'),
+			role_for: 'PUP Staff',
+		}
+
 		$.ajax({
-			url: apiURL + `evrsers/pup_staff/set_organizer_role/${user_id}`,
-			type: 'PUT',
-			ContentType: 'application/x-www-form-urlencoded',
+			url: apiURL + 'super_admin/role/add',
+			type: 'POST',
+			data: data,
+			dataType: 'json',
+			headers: AJAX_HEADERS,
 			success: (result) => {
-				$('#addStudentOrganizerModal').modal('hide')
 				if (result) {
 					Swal.fire({
-						html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully added an organizer!</p></div></div>',
+						html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully added a new role!</p></div></div>',
 						showCancelButton: !0,
 						showConfirmButton: !1,
 						cancelButtonClass: 'btn btn-success w-xs mb-1',
@@ -171,16 +108,16 @@ addStudentOrganizer = (user_id) => {
 						buttonsStyling: !1,
 						showCloseButton: !0,
 					}).then(function () {
-						// reload viewStudentOrganizer table
-						viewStudentOrganizerStaff()
+						setTimeout(() => {
+							location.reload()
+						}, 1000)
 					})
 				}
 			},
 		}).fail((xhr) => {
+			console.log(xhr.responseJSON.message)
 			Swal.fire({
-				html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong!</h4><p class="text-muted mx-4 mb-0">${
-					JSON.parse(xhr.responseText).message
-				}</p></div></div>`,
+				html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">There was an error while adding a new role. Please try again.</p></div></div>',
 				showCancelButton: !0,
 				showConfirmButton: !1,
 				cancelButtonClass: 'btn btn-danger w-xs mb-1',
@@ -189,52 +126,5 @@ addStudentOrganizer = (user_id) => {
 				showCloseButton: !0,
 			})
 		})
-	})
-}
-
-removeStudentOrganizer = (user_id) => {
-	$('#removeStudentOrganizerModal').modal('show')
-	$('#remove-organizer').on('click', function () {
-		$.ajaxSetup({
-			headers: {
-				Accept: 'application/json',
-				Authorization: 'Bearer ' + TOKEN,
-				ContentType: 'application/x-www-form-urlencoded',
-			},
-		})
-		$.ajax({
-			url: apiURL + `evrsers/pup_staff/set_organizer_role/${user_id}`,
-			type: 'PUT',
-			ContentType: 'application/x-www-form-urlencoded',
-			success: (result) => {
-				$('#removeStudentOrganizerModal').modal('hide')
-				if (result) {
-					Swal.fire({
-						html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully removed an organizer!</p></div></div>',
-						showCancelButton: !0,
-						showConfirmButton: !1,
-						cancelButtonClass: 'btn btn-success w-xs mb-1',
-						cancelButtonText: 'Ok',
-						buttonsStyling: !1,
-						showCloseButton: !0,
-					}).then(function () {
-						// reload viewStudentOrganizer table
-						viewStudentOrganizerStaff()
-					})
-				}
-			},
-		}).fail((xhr) => {
-			Swal.fire({
-				html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong!</h4><p class="text-muted mx-4 mb-0">${
-					JSON.parse(xhr.responseText).message
-				}</p></div></div>`,
-				showCancelButton: !0,
-				showConfirmButton: !1,
-				cancelButtonClass: 'btn btn-danger w-xs mb-1',
-				cancelButtonText: 'Dismiss',
-				buttonsStyling: !1,
-				showCloseButton: !0,
-			})
-		})
-	})
+	}
 }

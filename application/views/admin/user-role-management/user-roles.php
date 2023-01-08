@@ -8,10 +8,10 @@
                 <div class="row my-3 py-3">
                     <div class="col-lg h-100">
                         <select class="js-example-basic-single" name="select-users" id="select-users">
-                            <option class="text-center" value="" selected disabled>- Select User -</option>
+                            <option class="text-center" value="" selected disabled>- Select Users without Roles -</option>
                         </select>
                     <br></br>
-                    <select class="js-example-basic-single" name="select-role" id="select-role">
+                    <select class="js-example-basic-multiple" name="select-role" id="select-role">
                             <option class="text-center" value="" selected disabled>- Select Role -</option>
                         </select>
                     </div>
@@ -26,7 +26,7 @@
                 <h5 class="card-title mb-0 flex-grow-1">Role Management</h5>
             </div>
             <div class="card-body">
-                <table id="example" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center w-100">
+                <table id="users-with-roles" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center w-100">
                     <thead>
                         <tr>
                             <th>User ID</th>
