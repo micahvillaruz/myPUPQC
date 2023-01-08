@@ -18,7 +18,10 @@
                   <h5 class="fs-13 mb-1 fw-medium">Consultation Type</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_consultation_reason">Follow-Up</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_consultation_type">New Consultation</div>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex fs-13 fw-medium" id="view_consultation_type">Follow-Up</div>
                 </div>
               </div>
             </li>
@@ -40,7 +43,7 @@
                   <h5 class="fs-13 mb-1 fw-medium">Dentist</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_health_physcian">Dr. Stephen Strange</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_health_physcian"></div>
                 </div>
               </div>
             </li>
@@ -51,7 +54,7 @@
                   <h5 class="fs-13 mb-1">Appointment Date</h5>
                 </div>
                 <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_consultation_date">09-12-2022</div>
+                  <div class="d-flex fs-13 fw-medium" id="view_consultation_date"></div>
                 </div>
               </div>
             </li>
@@ -61,7 +64,7 @@
                 <div class="col-4">
                   <h5 class="fs-13 mb-1 fw-medium">Status</h5>
                 </div>
-                <div class="col-8" id="view_status"><span class="badge rounded-pill bg-warning"> Pending </span>
+                <div class="col-8" id="view_status"><span class="badge rounded-pill bg-warning"></span>
                 </div>
               </div>
             </li>
