@@ -6,6 +6,7 @@ $(function () {
 		}
 	})
 	fetchNews()
+	fetchAdvisory()
 })
 
 sendMessageToAdmin = () => {
@@ -100,6 +101,58 @@ fetchNews = () => {
                 </div>
                 `
 				slider.append(newsOnSlider)
+			})
+
+			let mySwiper = new Swiper('.pagination-dynamic-swiper', {
+				// Swiper configuration options
+				loop: true,
+				autoplay: {
+					delay: 3000,
+				},
+			})
+		},
+	})
+}
+
+fetchAdvisory = () => {
+	$.ajax({
+		url: apiURL + 'advisory',
+		type: 'GET',
+		dataType: 'json',
+		success: (result) => {
+			const advisoryInArray = result.data
+			let slider = $('#advisory_slider')
+			advisoryInArray.forEach((advisory) => {
+				console.log(advisory)
+				const date = new Date(advisory.created_at)
+				const link =
+					baseURL == 'http://localhost/myPUPQC/'
+						? baseURL + `advisory/${advisory.reference_id}`
+						: advisory.announcement_link
+				const article_date = date.toLocaleDateString('en-US', {
+					year: 'numeric',
+					month: 'long',
+					day: 'numeric',
+				})
+				const article_time = date.toLocaleTimeString('en-US', {
+					hour: 'numeric',
+					minute: 'numeric',
+					hour12: true,
+				})
+
+				let advisoryOnSlider = `
+                <a href="${link}" class="text-reset notification-item d-block dropdown-item list-group-item py-4">
+                    <div class="d-flex align-items-start">
+                        <div class="flex-grow-1 overflow-hidden">
+                            <h5 class="fw-normal mb-1 text-primary">${advisory.announcement_title}</h5>
+                            <p class="mb-0 fs-6">Posted: <span>${article_date}</span>
+                                <small>${article_time}</small>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                `
+				slider.append(advisoryOnSlider)
 			})
 
 			let mySwiper = new Swiper('.pagination-dynamic-swiper', {
