@@ -10,7 +10,9 @@ fetchSpecificAdvisory = (reference_id) => {
 		dataType: 'json',
 		success: (result) => {
 			if (result.data.length === 0) {
+				// ! Shane or Micah pakilagyan ng Error 404, paki-append yung 404 here
 				$('.advisory-body').append('<h1 class="text-center">No Advisory Found</h1>')
+				return
 			}
 			let data = result.data
 			let title = data.announcement_title

@@ -123,7 +123,6 @@ fetchAdvisory = () => {
 			const advisoryInArray = result.data
 			let slider = $('#advisory_slider')
 			advisoryInArray.forEach((advisory) => {
-				console.log(advisory)
 				const date = new Date(advisory.created_at)
 				const link =
 					baseURL == 'http://localhost/myPUPQC/'
