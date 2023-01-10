@@ -506,10 +506,28 @@ class Home extends CI_Controller
             $this->load->view('home/news');
         }
         else{
-            $this->load->view('home/specific-news', $data);
+            $this->load->view('home/news-specific', $data);
         }
 		$this->load->view('partials/home/home-footer');
 		$this->load->view('partials/foot-scripts');
 		$this->load->view('home/scripts/news-scripts');
+    }
+
+    public function advisory($go = NULL)
+    {
+        $data['go'] = $go;
+        $this->load->view('partials/main-home');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		if(!$go){
+            $this->load->view('home/advisory');
+        }
+        else{
+            $this->load->view('home/advisory-specific', $data);
+        }
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/advisory-scripts');
     }
 }

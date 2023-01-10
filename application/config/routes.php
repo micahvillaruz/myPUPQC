@@ -133,6 +133,10 @@ $route['admission'] = 'home/admission';
 $route['news'] = 'home/news';
 $route['news/(:any)'] = 'home/news/$1';
 
+// Advisory and Dynamic Parameter
+$route['advisory'] = 'home/advisory';
+$route['advisory/(:any)'] = 'home/advisory/$1';
+
 /*
 | -------------------------------------------------------------------------
 | STUDENT ROUTES
