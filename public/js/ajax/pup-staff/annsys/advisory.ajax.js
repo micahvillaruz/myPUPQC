@@ -1,5 +1,10 @@
 $(() => {
 	loadAdvisoryTables()
+
+	$('#NewAdvisory').on('submit', function (e) {
+		e.preventDefault() // prevent page refresh
+		addAdvisory()
+	})
 })
 
 loadAdvisoryTables = () => {
@@ -25,8 +30,11 @@ loadAdvisoryTables = () => {
 					class: 'text-wrap text-center',
 					render: (data) => {
 						const advisoryTitle = data.announcement_title
-						const advisoryLink = data.announcement_link
-						const link = `<a href="${advisoryLink}">${advisoryTitle}</a>`
+						const advisoryLink =
+							baseURL == 'http://localhost/myPUPQC/'
+								? baseURL + `advisory/${data.reference_id}`
+								: data.announcement_link
+						const link = `<a href="${advisoryLink}" target="_blank">${advisoryTitle}</a>`
 						return `${link}`
 					},
 				},
@@ -100,19 +108,22 @@ loadAdvisoryTables = () => {
 				// * Advisory Title
 				{
 					data: null,
-					width: '40%',
+					width: '30%',
 					class: 'text-wrap text-center',
 					render: (data) => {
 						const advisoryTitle = data.announcement_title
-						const advisoryLink = data.announcement_link
-						const link = `<a href="${advisoryLink}">${advisoryTitle}</a>`
+						const advisoryLink =
+							baseURL == 'http://localhost/myPUPQC/'
+								? baseURL + `advisory/${data.reference_id}`
+								: data.announcement_link
+						const link = `<a href="${advisoryLink}" target="_blank">${advisoryTitle}</a>`
 						return `${link}`
 					},
 				},
 				// * Advisory Description
 				{
 					data: null,
-					width: '40%',
+					width: '60%',
 					class: 'text-wrap',
 					render: (data) => {
 						const advisoryDescription = data.announcement_description
@@ -164,6 +175,57 @@ loadAdvisoryTables = () => {
 				},
 			],
 			order: [[0, 'asc']],
+		})
+	}
+}
+
+addAdvisory = () => {
+	if ($('#NewAdvisory')[0].checkValidity()) {
+		// * No error in validation
+		const form = new FormData($('#NewAdvisory')[0])
+		form.set('announcement_type', 'Advisory')
+		if (form.get('announcement_image').name == '') {
+			form.delete('announcement_image')
+		}
+		for (var pair of form.entries()) {
+			console.log(pair[0] + ': ' + pair[1])
+		}
+
+		$.ajax({
+			url: apiURL + 'annsys/pup_staff/add_advisory',
+			type: 'POST',
+			headers: AJAX_HEADERS,
+			data: form,
+			processData: false,
+			contentType: false,
+			success: (result) => {
+				if (result) {
+					Swal.fire({
+						html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully added an advisory!</p></div></div>',
+						showCancelButton: !0,
+						showConfirmButton: !1,
+						cancelButtonClass: 'btn btn-success w-xs mb-1',
+						cancelButtonText: 'Ok',
+						buttonsStyling: !1,
+						showCloseButton: !0,
+					}).then(function () {
+						// reload Pending Reservations table
+						refreshPage()
+					})
+				}
+			},
+		}).fail((xhr) => {
+			Swal.fire({
+				html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong!</h4><p class="text-muted mx-4 mb-0">${
+					JSON.parse(xhr.responseText).message
+				}</p></div></div>`,
+				showCancelButton: !0,
+				showConfirmButton: !1,
+				cancelButtonClass: 'btn btn-danger w-xs mb-1',
+				cancelButtonText: 'Dismiss',
+				buttonsStyling: !1,
+				showCloseButton: !0,
+			})
 		})
 	}
 }

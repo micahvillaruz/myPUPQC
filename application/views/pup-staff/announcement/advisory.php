@@ -19,26 +19,26 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form id="NewAdvisory" action="javascript:void(0);" class="row g-3">
+                    <form id="NewAdvisory" class="row g-3 needs-validation" novalidate>
                         <div class="col-md-12">
                             <label for="announcement_title" class="form-label">Title <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="announcement_title" placeholder="Enter the title of the advisory">
+                            <input type="text" class="form-control" id="announcement_title" name="announcement_title" placeholder="Enter the title of the advisory">
                         </div>
                         <div class="col-md-12">
                             <label for="announcement_description" class="form-label">Description <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="announcement_description" placeholder="Enter the short description/headline for this advisory">
+                            <input type="text" class="form-control" id="announcement_description" name="announcement_description" placeholder="Enter the short description/headline for this advisory">
                         </div>
                         <div class="col-md-12">
                             <label for="announcement_image" class="form-label">Attachment</label>
-                            <input type="file" class="filepond filepond-input-multiple" id="announcement_image" multiple name="filepond" data-allow-reorder="true" data-max-files="1">
+                            <input type="file" class="filepond filepond-input-multiple" id="announcement_image" multiple name="announcement_image" data-allow-reorder="true" data-max-files="1">
                         </div>
                         <div class="col-md-12">
                             <label for="announcement_content" class="form-label">Content <span class="text-danger">*</span></label>
-                            <textarea></textarea>
+                            <textarea id="announcement_content" name="announcement_content"></textarea>
                         </div>
                         <div class="col-12">
                             <div class="mt-2 d-flex justify-content-end gap-2">
-                                <button type="button" class="btn btn-success w-lg waves-effect waves-light">Submit</button>
+                                <button type="submit" class="btn btn-success w-lg waves-effect waves-light">Submit</button>
                                 <button type="button" class="btn btn-danger w-lg waves-effect waves-light" data-bs-toggle="collapse" href="#collapseExample" aria-expanded="true" aria-controls="collapseExample">Cancel</button>
                             </div>
                         </div>
