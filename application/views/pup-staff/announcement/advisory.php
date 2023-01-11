@@ -80,7 +80,6 @@
                                         <th>Description</th>
                                         <th>Created By</th>
                                         <th>Create Date</th>
-                                        <th>Action</th>
                                     </tr>
                                 </thead>
                             </table>

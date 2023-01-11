@@ -26,6 +26,8 @@
 
     <script src="<?= base_url() ?>public/js/app.js"></script>
     <script src="<?= base_url() ?>public/js/ajax/pup-staff/annsys/advisory.ajax.js"></script>
+    <script src="<?= base_url() ?>public/js/ajax/pup-staff/annsys/announcement.ajax.js"></script>
+    <script src="<?= base_url() ?>public/js/ajax/pup-staff/annsys/news.ajax.js"></script>
 
     <script>
         tinymce.init({
