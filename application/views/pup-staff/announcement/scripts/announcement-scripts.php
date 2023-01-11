@@ -25,6 +25,7 @@
     <script src="<?= base_url() ?>public/js/pages/apps-nft-create.init.js"></script>
 
     <script src="<?= base_url() ?>public/js/app.js"></script>
+    <script src="<?= base_url() ?>public/js/ajax/pup-staff/annsys/advisory.ajax.js"></script>
 
     <script>
         tinymce.init({

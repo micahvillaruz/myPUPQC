@@ -73,7 +73,7 @@
                     <!-- Tab panes -->
                     <div class="tab-content text-muted">
                         <div class="tab-pane active" id="all_advisories" role="tabpanel">
-                            <table id="model-datatables" class="table nowrap align-middle" style="width:100%">
+                            <table id="all_advisories_table" class="table nowrap align-middle" style="width:100%">
                                 <thead class="text-muted table-light">
                                     <tr class="text-uppercase">
                                         <th>Title</th>
@@ -83,30 +83,10 @@
                                         <th>Action</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td width="30%" class="text-wrap text-center"><a href="#" class="fw-medium link-primary">Invitation to Submit Proposals or Quotations for Graduation Photo Services</a></td>
-                                        <td width='60%' class="text-wrap">Invitation to Submit Proposals or Quotations for Portrait, Graduation Rites, and TOR Photo Services relative to the Graduation, Year-End and Mid-Year Commencement Exercises in PUP QC for the Academic Year 2022-2023</td>
-                                        <td>
-                                            <div class="d-flex align-items-center fw-medium">
-                                                <img src="<?= base_url() ?>public/images/officials/img-2.png" class="avatar-xs rounded-circle me-2">
-                                                <div>
-                                                    <span class="d-block fw-medium">Demelyn E. Monzon</span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>20 Dec, 2021, <small class="text-muted">02:21 AM</small></td>
-                                        <td class="text-center">
-                                            <button type="button" class="btn btn-info btn-icon waves-effect waves-light">
-                                                <i class="ri-eye-fill"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
                             </table>
                         </div>
                         <div class="tab-pane" id="my_advisory" role="tabpanel">
-                            <table id="example" class="table nowrap align-middle" style="width:100%">
+                            <table id="my_advisories_table" class="table nowrap align-middle" style="width:100%">
                                 <thead class="text-muted table-light">
                                     <tr class="text-uppercase">
                                         <th>Title</th>
