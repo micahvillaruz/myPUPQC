@@ -10,13 +10,13 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
         <div class="modal-body">
-          <label class='form-label'>Role Name</label>
-          <input type="text" class="form-control" id="role_name" name="role_name" placeholder="role name"><br>
-          <label class='form-label'>Description</label>
-          <input type="text" class="form-control" id="description" name="description" placeholder="description"><br>
-          <label class='form-label'>Status</label>
+          <label class='form-label'>Role Name<span class="text-danger">*</span></label>
+          <input type="text" class="form-control" id="role_name" name="role_name" placeholder="Role Namee" required><br>
+          <label class='form-label'>Description<span class="text-danger">*</span></label>
+          <input type="text" class="form-control" id="description" name="description" placeholder="description" required><br>
+          <label class='form-label'>Status<span class="text-danger">*</span></label>
           <span class="text-danger">*</span>
-        <select class="form-select mb-3" id="role_status" name="role_status" aria-label="Change Status">
+        <select class="form-select mb-3" id="role_status" name="role_status" aria-label="Change Status" required>
           <option selected></option>
           <option value="Active">Active</option>
           <option value="Inactive">Inactive</option>

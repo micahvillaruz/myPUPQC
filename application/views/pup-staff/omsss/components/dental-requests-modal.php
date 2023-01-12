@@ -98,13 +98,14 @@
         <div class="modal-body">
           <label class='form-label'>Status</label>
           <span class="text-danger">*</span>
-        <select class="form-select mb-3" id="consultation_status" name="consultation_status" aria-label="Change Status">
+        <select class="form-select mb-3" id="consultation_status" name="consultation_status" aria-label="Change Status" Required>
           <option selected></option>
           <option value="Approved">Approved</option>
           <option value="Cancelled by Staff">Cancelled by Staff</option>
         </select>
           <label class='form-label'>Remarks</label>
-          <input type="text" class="form-control" id="remarks" name="remarks" placeholder="remarks"><br>
+          <span class="text-danger">*</span>
+          <input type="text" class="form-control" id="remarks" name="remarks" placeholder="Remarks" required><br>
           <div class="text-center d-grid">
             <button type="submit" class="btn btn-primary" aria-label="Confirm">Confirm</button>
         </div>
