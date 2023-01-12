@@ -22,11 +22,11 @@
                     <form id="NewAdvisory" class="row g-3 needs-validation" novalidate>
                         <div class="col-md-12">
                             <label for="announcement_title" class="form-label">Title <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="announcement_title" name="announcement_title" placeholder="Enter the title of the advisory">
+                            <input type="text" class="form-control" id="announcement_title" name="announcement_title" placeholder="Enter the title of the advisory" required>
                         </div>
                         <div class="col-md-12">
                             <label for="announcement_description" class="form-label">Description <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="announcement_description" name="announcement_description" placeholder="Enter the short description/headline for this advisory">
+                            <input type="text" class="form-control" id="announcement_description" name="announcement_description" placeholder="Enter the short description/headline for this advisory" required>
                         </div>
                         <div class="col-md-12">
                             <label for="announcement_image" class="form-label">Attachment</label>
@@ -34,7 +34,7 @@
                         </div>
                         <div class="col-md-12">
                             <label for="announcement_content" class="form-label">Content <span class="text-danger">*</span></label>
-                            <textarea id="announcement_content" name="announcement_content"></textarea>
+                            <textarea id="announcement_content" name="announcement_content" required></textarea>
                         </div>
                         <div class="col-12">
                             <div class="mt-2 d-flex justify-content-end gap-2">
