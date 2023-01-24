@@ -151,6 +151,18 @@
             </li>
 
 
+            <li class="menu-title">
+              <i class="ri-more-fill"></i>
+              <span>others</span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/holiday" class="nav-link">
+                <i class="bx bx-history"></i>
+                <span>Holiday Management</span>
+              </a>
+            </li>
+
           </ul>
         </div>
         <!-- Sidebar -->

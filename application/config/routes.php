@@ -266,6 +266,14 @@ $route['admin/evrsers/manage-reservations'] = 'admin/manage_reservations';
 $route['admin/evrsers/reservation-history'] = 'admin/reservation_history';
 
 /*
+| ----------------------
+|         OTHERS
+| ----------------------
+*/
+
+$route['admin/holiday'] = 'admin/holiday';
+
+/*
 | -------------------------------------------------------------------------
 | PUP STAFF ROUTES
 | -------------------------------------------------------------------------

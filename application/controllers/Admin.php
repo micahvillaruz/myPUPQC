@@ -207,21 +207,6 @@ class Admin extends CI_Controller
     $this->load->view('admin/omsss/appointment-history/scripts/appointment-history-scripts');
   }
 
-  public function all_prescription()
-  {
-    $this->load->view('partials/main');
-    $this->load->view('partials/title-meta');
-    $this->load->view('partials/head-css');
-    $this->load->view('partials/admin/topbar');
-    $this->load->view('partials/admin/sidebar');
-    $this->load->view('partials/page-title', ["page_title" => "Health and Well-Being", "title" => "Appointment History"]);
-    $this->load->view('admin/omsss/medical-prescription/all-prescription');
-    $this->load->view('partials/footer');
-    $this->load->view('admin/omsss/components/all-prescription-modal');
-    $this->load->view('partials/foot-scripts');
-    $this->load->view('admin/omsss/medical-prescription/scripts/all-prescription-scripts');
-  }
-
   public function facilities()
   {
     $this->load->view('partials/main');
@@ -261,6 +246,21 @@ class Admin extends CI_Controller
     $this->load->view('partials/admin/sidebar');
     $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "Reservation History and Analytics"]);
     $this->load->view('admin/evrsers/reservation-history');
+    $this->load->view('partials/footer');
+    $this->load->view('admin/evrsers/components/reservation-history-modal');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('admin/evrsers/scripts/reservation-history-scripts');
+  }
+
+  public function holiday()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/admin/topbar');
+    $this->load->view('partials/admin/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "Holiday", "title" => "Holiday Management"]);
+    // $this->load->view('admin/evrsers/reservation-history');
     $this->load->view('partials/footer');
     $this->load->view('admin/evrsers/components/reservation-history-modal');
     $this->load->view('partials/foot-scripts');
