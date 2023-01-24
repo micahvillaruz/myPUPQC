@@ -10,44 +10,6 @@ $(function () {
 	})
 })
 
-viewStudentDetails = (user_id) => {
-	// $.ajaxSetup({
-	// 	headers: {
-	// 		Accept: 'application/json',
-	// 		Authorization: 'Bearer ' + TOKEN,
-	// 		ContentType: 'application/x-www-form-urlencoded',
-	// 	},
-	// })
-	// $.ajax({
-	// 	type: 'GET',
-	// 	cache: false,
-	// 	url: apiURL + `evrsers//pup_staff/view_student/${user_id}`,
-	// 	dataType: 'json',
-	// 	success: (result) => {
-	// 		const userData = result.data
-	// 		const userProfile = userData.user_profiles[0]
-	// 		// change student profile pic id source to userProfile.image
-	// 		if (userProfile.image != null && userProfile.image.length != 0) {
-	// 			$('#student-profile-pic').attr('src', userProfile.image)
-	// 		}
-	// 		$('#student-num').html(userData.user_no)
-	// 		$('#student-name').html(userProfile.full_name)
-	// 		$('#address').html(userProfile.full_address)
-	// 		$('#contact-num').html(userProfile.contact_number)
-	// 		$('#email').html(userProfile.email_address)
-	// 		$('#gender').html(userProfile.gender)
-	// 		$('#religion').html(userProfile.religion)
-	// 		$('#civil-status').html(userProfile.civil_status)
-	// 		// convert birthdate using moment.js in MM/DD/YYYY format
-	// 		const birthdate = moment(userProfile.birth_date).format('L')
-	// 		$('#birthday').html(birthdate)
-	// 		// Compute age using moment.js
-	// 		const age = moment().diff(userProfile.birth_date, 'years')
-	// 		$('#age').html(age)
-	// 	},
-	// })
-}
-
 // Load datatables
 viewRoleManagementTable = () => {
 	const dt = $('#users-with-roles')
@@ -64,7 +26,7 @@ viewRoleManagementTable = () => {
 		dt.DataTable({
 			bDestroy: true,
 			ajax: {
-				url: apiURL + 'super_admin/user_role/all/',
+				url: apiURL + 'super_admin/user_role/all/PUP Staff',
 				type: 'GET',
 				ContentType: 'application/x-www-form-urlencoded',
 			},
@@ -84,15 +46,6 @@ viewRoleManagementTable = () => {
 					render: (data) => {
 						const fullName = data.user_profiles[0].full_name
 						return `${fullName}`
-					},
-				},
-
-				// User Type
-				{
-					data: null,
-					render: (data) => {
-						const userType = data.user_type
-						return `${userType}`
 					},
 				},
 
@@ -119,8 +72,7 @@ viewRoleManagementTable = () => {
 					render: (data) => {
 						return `
                           <div class="dropdown d-inline-block">
-                              <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewStudentInfoModal" onclick="viewStudentDetails('${data.user_id}')"><i class="ri-eye-fill fs-5"></i></button>
-                              <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="removeStudentOrganizer('${data.user_id}')"><i class="ri-close-fill fs-5"></i></button> 
+                              <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" onclick="removeStudentOrganizer('${data.user_id}')"><i class="ri-pencil-fill fs-5"></i></button> 
                           </div>
                               `
 					},
@@ -131,12 +83,14 @@ viewRoleManagementTable = () => {
 	}
 }
 
+viewStudentDetails = (user_id) => {}
+
 // Populate select2 options
 populateSelect2 = () => {
 	// * First Phase: Populate select2 option: select_users which is a js-example-basic-single class
 	const select2Users = $('#select_users')
 	$.ajax({
-		url: apiURL + 'super_admin/users_without_roles',
+		url: apiURL + 'super_admin/users_without_roles/PUP Staff',
 		type: 'GET',
 		headers: AJAX_HEADERS,
 		success: (data) => {
@@ -152,7 +106,7 @@ populateSelect2 = () => {
 	// * Second Phase: Populate select2 option: select_roles which is a js-example-basic-multiple
 	const select2Roles = $('#select_roles')
 	$.ajax({
-		url: apiURL + 'super_admin/role/',
+		url: apiURL + 'super_admin/role/user_type/PUP Staff',
 		type: 'GET',
 		headers: AJAX_HEADERS,
 		success: (data) => {
