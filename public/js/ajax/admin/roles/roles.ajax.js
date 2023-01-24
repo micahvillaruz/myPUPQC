@@ -84,11 +84,11 @@ viewAllRoles = () => {
 						const buttonColor = data.role_status == 'Active' ? 'btn-danger' : 'btn-success'
 						const buttonLogo = data.role_status == 'Active' ? 'ri-close-fill' : 'ri-check-fill'
 						return `
-                          <div class="dropdown d-inline-block">
-                              <button type="button" class="btn ${buttonColor} btn-icon waves-effect waves-light" onclick="changeRoleStatus('${data.role_id}', '${data.role_status}')"><i class="${buttonLogo} fs-5"></i></button>
-                              <button type="button" class="btn btn-dark bg-gradient btn-icon waves-effect waves-light" onclick="deleteRole('${data.role_id}')"><i class="bx bxs-trash fs-5"></i></button> 
-                          </div>
-                              `
+                        <div class="dropdown d-inline-block">
+                            button type="button" class="btn ${buttonColor} btn-icon waves-effect waves-light" onclick="changeRoleStatus('${data.role_id}', '${data.role_status}')"><i class="${buttonLogo} fs-5"></i></button>
+                            <button type="button" class="btn btn-dark bg-gradient btn-icon waves-effect waves-light" onclick="deleteRole('${data.role_id}')"><i class="bx bxs-trash fs-5"></i></button> 
+                        </div>
+                        `
 					},
 				},
 			],

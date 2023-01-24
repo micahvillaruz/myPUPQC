@@ -7,12 +7,12 @@
             <form id="selectRoleToUsersForm" class="needs-validation" novalidate>
             <div class="row my-3 py-3">
                 <div class="col-lg h-100">
-                <select class="js-example-basic-single" name="select_users" id="select_users" placeholder="Select Roles">
+                <select class="js-example-basic-single" name="select_users" id="select_users" placeholder="Select Roles" required>
                     <option class="text-center" value="" selected disabled>- Select PUP Staff without Roles -</option>
                 </select>
                 <br></br>
                 <span>Select Multiple Roles:</span>
-                <select class="js-example-basic-multiple " multiple="multiple" name="select_roles" id="select_roles">
+                <select class="js-example-basic-multiple " multiple="multiple" name="select_roles" id="select_roles" required>
                 </select>
                 </div>
             </div>

@@ -302,5 +302,140 @@ editRolesToUser = () => {
 		remove_data = {
 			roles: removed_roles,
 		}
+
+		const Toast = Swal.mixin({
+			toast: true,
+			position: 'top-end',
+			showConfirmButton: false,
+			timer: 3000,
+			timerProgressBar: true,
+			didOpen: (toast) => {
+				toast.addEventListener('mouseenter', Swal.stopTimer)
+				toast.addEventListener('mouseleave', Swal.resumeTimer)
+			},
+		})
+
+		if (assigned_roles != '' && removed_roles == '') {
+			console.log('assign')
+			$.ajax({
+				type: 'POST',
+				url: apiURL + 'super_admin/user_role/' + user_id,
+				data: assign_data,
+				success: (result) => {
+					if (result) {
+						console.log(result)
+						Toast.fire({
+							icon: 'success',
+							title: 'Successfully added roles to this user!',
+						}).then(() => {
+							setTimeout(() => {
+								location.reload()
+							}, 500)
+						})
+					}
+				},
+				error: (error) => {
+					// Handle error here
+					console.log(error)
+					Toast.fire({
+						icon: 'error',
+						title: 'Failed to add role...',
+					}).then(() => {
+						setTimeout(() => {
+							location.reload()
+						}, 500)
+					})
+				},
+			})
+		} else if (removed_roles != '' && assigned_roles == '') {
+			console.log('remove')
+			$.ajax({
+				type: 'DELETE',
+				url: apiURL + 'super_admin/user_role/' + user_id,
+				data: remove_data,
+				success: (result) => {
+					if (result) {
+						console.log(result)
+						Toast.fire({
+							icon: 'success',
+							title: 'Successfully removed roles to this user!',
+						}).then(() => {
+							setTimeout(() => {
+								location.reload()
+							}, 500)
+						})
+					}
+				},
+				error: (error) => {
+					// Handle error here
+					console.log(error)
+					Toast.fire({
+						icon: 'error',
+						title: 'Failed to add role...',
+					}).then(() => {
+						setTimeout(() => {
+							location.reload()
+						}, 500)
+					})
+				},
+			})
+		} else {
+			console.log('assign and remove')
+			$.ajax({
+				type: 'POST',
+				url: apiURL + 'super_admin/user_role/' + user_id,
+				data: assign_data,
+				success: (result) => {
+					console.log(result)
+					Toast.fire({
+						icon: 'success',
+						title: 'Successfully added roles to this user!',
+					}).then(() => {
+						setTimeout(() => {
+							$.ajax({
+								type: 'DELETE',
+								url: apiURL + 'super_admin/user_role/' + user_id,
+								data: remove_data,
+								success: (result) => {
+									console.log(result)
+									Toast.fire({
+										icon: 'success',
+										title: 'Successfully removed roles to this user!',
+									}).then(() => {
+										setTimeout(() => {
+											location.reload()
+										}, 500)
+									})
+								},
+								error: (error) => {
+									// Handle error here
+									console.log(error)
+									Toast.fire({
+										icon: 'error',
+										title: 'Failed to add role...',
+									}).then(() => {
+										setTimeout(() => {
+											location.reload()
+										}, 500)
+									})
+								},
+							})
+						}, 500)
+					})
+				},
+				error: (error) => {
+					// Handle error here
+					console.log(error)
+					Toast.fire({
+						icon: 'error',
+						title: 'Failed to add role...',
+					}).then(() => {
+						setTimeout(() => {
+							location.reload()
+						}, 500)
+					})
+				},
+			})
+		}
 	}
 }
