@@ -4,7 +4,7 @@
                 <h5 class="card-title mb-0 flex-grow-1">Add New Roles for User & Access Control</h5>
             </div>
             <div class="card-body justify-content-center text-center">
-                <div class="alert alert-danger alert-dismissible alert-label-icon fs-4 label-arrow fade show" role="alert">
+                <div class="alert alert-danger alert-label-icon fs-4 label-arrow fade show" role="alert">
                     <i class="ri-error-warning-line label-icon"></i><strong>REMINDER: </strong>When adding a New Role in the System, please make sure that the Role Name is Unique and the Role Description is clear and concise.
                 </div>
                 <form id="addRoleForm" class="needs-validation" novalidate>

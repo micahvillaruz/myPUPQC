@@ -8,6 +8,12 @@ $(function () {
 		// pass data to API for updating of student's info
 		addRolesToUser()
 	})
+
+	$('#editRolesForm').on('submit', function (e) {
+		e.preventDefault() // prevent page refresh
+		// pass data to API for updating of student's info
+		editRolesToUser()
+	})
 })
 
 // Load datatables
@@ -72,7 +78,7 @@ viewRoleManagementTable = () => {
 					render: (data) => {
 						return `
                           <div class="dropdown d-inline-block">
-                              <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" onclick="removeStudentOrganizer('${data.user_id}')"><i class="ri-pencil-fill fs-5"></i></button> 
+                              <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editUserRoleModal" onclick="populateEditForm('${data.user_id}')"><i class="ri-pencil-fill fs-5"></i></button> 
                           </div>
                               `
 					},
@@ -117,6 +123,91 @@ populateSelect2 = () => {
 				const option = new Option(role)
 				select2Roles.append(option)
 			})
+		},
+	})
+}
+
+// Populate Edit Form Modal with data
+populateEditForm = (user_id) => {
+	$('#user_id').val(user_id)
+
+	// * First Phase: Edit all the Information in the Modal
+	$.ajax({
+		url: apiURL + 'super_admin/user_role/' + user_id,
+		type: 'GET',
+		headers: AJAX_HEADERS,
+		success: (data) => {
+			const result = data.data[0]
+			const userFullName = result.user_profiles[0].full_name
+			const userRoles = result.user_roles
+			$('#user_role_title').text(`Edit Roles of ${userFullName}`)
+			$('#view_user_roles').html(
+				`<span class="text-primary font-italic">${userFullName}</span> currently has the following roles:`,
+			)
+			const rolePills = userRoles.map((role) => {
+				return `<span class="badge bg-primary">${role}</span>  `
+			})
+			$('#user_current_roles').html(`<div>${rolePills.join(' ')}</div>`)
+		},
+	})
+
+	// * Second Phase: Populate select2 option: select_assign_roles which is a js-example-basic-multiple using the endpoint: super_admin/all_roles/
+	$.ajax({
+		url: apiURL + 'super_admin/all_roles/' + user_id,
+		type: 'GET',
+		headers: AJAX_HEADERS,
+		success: (data) => {
+			const roles = data.data
+			if (roles.length == 0) {
+				$('#assign_role_input')
+					.html(`<div class="alert alert-info alert-label-icon fs-4 label-arrow fade show" role="alert">
+			    <i class="ri-alert-fill label-icon"></i><strong>This user can't be assigned to any roles at the moment.
+			</div>`)
+			} else {
+				$('#assign_role_input').html(`<span>You can still assign the following roles:</span>
+                <br/>
+                <select class="js-example-basic-multiple w-100" multiple="multiple" name="select_assign_roles" id="select_assign_roles">
+                </select>`)
+				$('#select_assign_roles').select2({
+					placeholder: 'Select Roles',
+					allowClear: true,
+					width: '100%',
+					data: roles,
+					// ! Lesson Learned: Hindi lahat ng sagot nasa ChatGPT
+					// ! https://stackoverflow.com/a/33884094/14043411
+					dropdownParent: $('#editUserRoleModal'),
+				})
+			}
+		},
+	})
+
+	// * Third Phase: Populate select2 option: select_remove_roles which is a js-example-basic-multiple using the endpoint: super_admin/user_role/
+	$.ajax({
+		url: apiURL + 'super_admin/user_role/' + user_id,
+		type: 'GET',
+		headers: AJAX_HEADERS,
+		success: (data) => {
+			const roles = data.data[0].user_roles
+			if (roles.length == 0) {
+				$('#remove_role_input')
+					.html(`<div class="alert alert-info alert-label-icon fs-4 label-arrow fade show" role="alert">
+                                <i class="ri-alert-fill label-icon"></i>This user can't be assigned to any roles at the moment.
+                            </div>`)
+			} else {
+				$('#remove_role_input').html(`<span>You can remove the following roles:</span>
+                <br/>
+                <select class="js-example-basic-multiple w-100" multiple="multiple" name="select_remove_roles" id="select_remove_roles">
+                </select>`)
+				$('#select_remove_roles').select2({
+					placeholder: 'Select Roles',
+					allowClear: true,
+					width: '100%',
+					data: roles,
+					// ! Lesson Learned: Hindi lahat ng sagot nasa ChatGPT
+					// ! https://stackoverflow.com/a/33884094/14043411
+					dropdownParent: $('#editUserRoleModal'),
+				})
+			}
 		},
 	})
 }
@@ -176,5 +267,40 @@ addRolesToUser = () => {
 				showCloseButton: !0,
 			})
 		})
+	}
+}
+
+editRolesToUser = () => {
+	// ! Major Loophole: Kailangan ma-detect niya if yung user_id ay Student or PUP Staff
+	if ($('#editRolesForm')[0].checkValidity()) {
+		const form = new FormData($('#editRolesForm')[0])
+
+		const user_id = form.get('user_id')
+		let assigned_roles = ''
+		let removed_roles = ''
+
+		for (var pair of form.entries()) {
+			console.log(pair[0] + ': ' + pair[1])
+
+			if (pair[0] == 'select_remove_roles') {
+				removed_roles += `;${pair[1]}`
+			}
+			if (pair[0] == 'select_assign_roles') {
+				assigned_roles += `;${pair[1]}`
+			}
+		}
+
+		assigned_roles = assigned_roles.substring(1)
+		removed_roles = removed_roles.substring(1)
+
+		console.log(assigned_roles, removed_roles)
+
+		assign_data = {
+			roles: assigned_roles,
+		}
+
+		remove_data = {
+			roles: removed_roles,
+		}
 	}
 }
