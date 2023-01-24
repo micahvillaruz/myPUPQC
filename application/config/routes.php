@@ -129,6 +129,14 @@ $route['faculty'] = 'home/faculty';
 // Footer
 $route['admission'] = 'home/admission';
 
+// News and Dynamic Parameter
+$route['news'] = 'home/news';
+$route['news/(:any)'] = 'home/news/$1';
+
+// Advisory and Dynamic Parameter
+$route['advisory'] = 'home/advisory';
+$route['advisory/(:any)'] = 'home/advisory/$1';
+
 /*
 | -------------------------------------------------------------------------
 | STUDENT ROUTES
@@ -181,7 +189,7 @@ $route['student/omsss/contact-omsss'] = 'student/contact_omsss';
 
 // Reservations
 $route['student/evrsers/new-reservation'] = 'student/new_reservation';
-$route['student/evrsers/view-reservations'] = 'student/view_reservations';
+$route['student/evrsers/view-reservation'] = 'student/view_reservation';
 $route['student/evrsers/reservation-history'] = 'student/reservation_history';
 $route['student/evrsers/reservationpolicy'] = 'student/reservationpolicy';
 
@@ -204,6 +212,22 @@ $route['admin/profile/settings'] = 'admin/settings';
 $route['admin/user-management/students'] = 'admin/user_students';
 $route['admin/user-management/pup-staffs'] = 'admin/user_pup_staffs';
 
+/*
+| ----------------------
+|     ROLE MANAGEMENT
+| ----------------------
+*/
+
+$route['admin/role-management/roles'] = 'admin/roles';
+
+/*
+| ----------------------
+|     USER ROLE MANAGEMENT
+| ----------------------
+*/
+
+$route['admin/user-role-management/user-roles'] = 'admin/user_roles_management';
+
 
 /*
 | --------------
@@ -223,6 +247,7 @@ $route['admin/odrs/history'] = 'admin/history';
 
 $route['admin/omsss/all-appointment'] = 'admin/all_appointment';
 $route['admin/omsss/appointment-history'] = 'admin/appointment_history';
+
 
 /*
 | --------------
@@ -254,6 +279,16 @@ $route['pupstaff/omsss/dentist/dental-requests'] = 'pupstaff/dental_requests';
 $route['pupstaff/omsss/dentist/analytics-and-history'] = 'pupstaff/dental_analytics';
 $route['pupstaff/omsss/counsellor/counsel-requests'] = 'pupstaff/counsellor_requests';
 $route['pupstaff/omsss/counsellor/analytics-and-history'] = 'pupstaff/counsellor_analytics';
+
+/*
+| --------------
+|  ANNOUNCEMENT
+| --------------
+*/
+
+$route['pupstaff/announcement/advisory'] = 'pupstaff/advisory';
+$route['pupstaff/announcement/announcements'] = 'pupstaff/announcements';
+$route['pupstaff/announcement/news'] = 'pupstaff/news';
 
 /*
 | --------------

@@ -9,7 +9,8 @@ $(function () {
 		updateDocument($('#edit_document_id').val())
 	})
 })
-var count = 0
+var addCount = 0
+var editCount = 0
 
 // Load Documents Table
 loadDocumentsTable = () => {
@@ -117,7 +118,7 @@ addDocument = () => {
 
 	const form = new FormData($('#addDocumentForm')[0])
 
-	var values = $("input[name='document_requirement']")
+	var values = $("input[name='add_document_requirement']")
 		.map(function () {
 			return $(this).val()
 		})
@@ -152,7 +153,7 @@ addDocument = () => {
 					$('#addDocumentModal').modal('hide')
 					$('form#addDocumentForm')[0].reset()
 					$('#document_requirements_list').empty()
-					count = 0
+					addCount = 0
 					// Reload Document Datatable
 					loadDocumentsTable()
 				})
@@ -177,7 +178,7 @@ updateDocument = (document_id) => {
 
 	const form = new FormData($('#editDocumentForm')[0])
 
-	var values = $("input[name='document_requirement']")
+	var values = $("input[name='edit_document_requirement']")
 		.map(function () {
 			return $(this).val()
 		})
@@ -212,7 +213,7 @@ updateDocument = (document_id) => {
 					$('#updateDocumentModal').modal('hide')
 					$('form#editDocumentForm')[0].reset()
 					$('#document_requirements_list').empty()
-					count = 0
+					editCount = 0
 					// Reload Document Datatable
 					loadDocumentsTable()
 				})
@@ -246,7 +247,7 @@ getDocumentInfo = (document_id) => {
 				$('#edit_document_type').val(result.data.document_type)
 				const document_requirements = result.data.document_requirements
 				$('#edit_document_requirements_list').empty()
-				count = document_requirements.length
+				editCount = document_requirements.length
 				document_requirements.forEach((item, i) => {
 					$('#edit_document_requirements_list').append(`
 					<div id=${i + 1}>
@@ -272,13 +273,22 @@ getDocumentInfo = (document_id) => {
 	})
 }
 
-function new_link(val) {
-	count++
-	var o = document.createElement('div'),
-		e = `<div class="row"><div class="hstack gap-2 justify-content-end mb-3"><input type="text" name="document_requirement" class="form-control" placeholder="Enter a requirement for this Document" required><a class="btn btn-danger rounded-pill" href="javascript:deleteEl(${(o.id =
-			count)}, '${val}')">Delete</a></div><div class="invalid-feedback">Please select the Document Requirement.</div></div>`
-	;(o.innerHTML = document.getElementById(`${val}_newForm`).innerHTML + e),
-		document.getElementById(`${val}_document_requirements_list`).appendChild(o)
+function add_new_link() {
+	addCount++
+	let o = document.createElement('div'),
+		e = `<div class="row"><div class="hstack gap-2 justify-content-end mb-3"><input type="text" name="add_document_requirement" class="form-control" placeholder="Enter a requirement for this Document" required><a class="btn btn-danger rounded-pill" href="javascript:deleteEl(${(o.id =
+			addCount)}, 'add')">Delete</a></div><div class="invalid-feedback">Please select the Document Requirement.</div></div>`
+	;(o.innerHTML = document.getElementById('add_newForm').innerHTML + e),
+		document.getElementById('add_document_requirements_list').appendChild(o)
+}
+
+function edit_new_link() {
+	editCount++
+	let o = document.createElement('div'),
+		e = `<div class="row"><div class="hstack gap-2 justify-content-end mb-3"><input type="text" name="edit_document_requirement" class="form-control" placeholder="Enter a requirement for this Document" required><a class="btn btn-danger rounded-pill" href="javascript:deleteEl(${(o.id =
+			editCount)}, 'edit')">Delete</a></div><div class="invalid-feedback">Please select the Document Requirement.</div></div>`
+	;(o.innerHTML = document.getElementById('edit_newForm').innerHTML + e),
+		document.getElementById('edit_document_requirements_list').appendChild(o)
 }
 
 function deleteEl(o, val) {

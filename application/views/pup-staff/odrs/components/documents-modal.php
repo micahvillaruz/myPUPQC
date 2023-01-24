@@ -41,7 +41,7 @@
           <div class="mb-3">
             <div class="d-flex justify-content-between align-items-center mb-3">
               <label class="form-label mb-0">Document Requirements</label>
-              <a href="javascript:new_link('add')" class="btn btn-success py-1 rounded-pill">Add New</a>
+              <a href="javascript:add_new_link()" class="btn btn-success py-1 rounded-pill">Add New</a>
             </div>
             <div id="add_document_requirements_list">
             </div>
@@ -72,7 +72,7 @@
         <span class="badge badge-soft-dark fs-15 mb-3"> <i class="ri-file-list-3-line me-2"></i> Details</span>
         <p class="mb-4 mx-3" id="view_document_details"></p>
         <span class="badge badge-soft-dark fs-15 mb-3"> <i class="ri-suitcase-line me-2"></i> Requirements</span>
-        <p id="view_document_requirements" class="mx-3"></p>
+        <ul id="view_document_requirements" class="mx-3"></ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger btn-animation waves-effect waves-light fs-13" data-text="Close" data-bs-dismiss="modal"><span>Close</span></button>
@@ -130,7 +130,7 @@
           <div class="mb-3">
             <div class="d-flex justify-content-between align-items-center mb-3">
               <label class="form-label mb-0">Document Requirements</label>
-              <a href="javascript:new_link('edit')" class="btn btn-success py-1 rounded-pill">Add New</a>
+              <a href="javascript:edit_new_link()" class="btn btn-success py-1 rounded-pill">Add New</a>
             </div>
             <div id="edit_document_requirements_list">
             </div>

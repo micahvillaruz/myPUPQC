@@ -17,6 +17,12 @@ const AJAX_HEADERS = {
 	ContentType: 'application/x-www-form-urlencoded',
 }
 
+const refreshPage = () => {
+	return setTimeout(() => {
+		location.reload()
+	}, 1000)
+}
+
 function logout(page) {
 	let msg = ''
 

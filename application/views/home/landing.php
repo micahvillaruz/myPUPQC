@@ -1,4 +1,4 @@
-	<div id="fb-root"></div>
+<div id="fb-root"></div>
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0" nonce="KOSJDxRE"></script>
 	<!-- Begin page -->
 	<div class="layout-wrapper landing">
@@ -347,113 +347,13 @@
 					<div class="col-xl-4 col-lg-4 col-xs-1">
 						<div class="card">
 							<div class="card-header">
-								<h4 class="card-title mb-0 fw-medium text-primary">Announcements and Advisories</h4>
+								<h4 class="card-title mb-0 fw-medium text-primary">PUPQC Advisories</h4>
 							</div><!-- end card header -->
 
 							<div class="card-body">
 								<div class="mx-n3">
 									<div data-simplebar data-simplebar-auto-hide="false" data-simplebar-track="primary" style="max-height: 536px;">
-										<div class="list-group list-group-flush">
-											<a href="https://www.facebook.com/sscpupquezoncity/videos/1919189238471683/" class="text-reset notification-item d-block dropdown-item list-group-item py-4">
-												<div class="d-flex align-items-start">
-													<div class="flex-grow-1 overflow-hidden">
-														<h5 class="fw-normal mb-1 text-primary">E-REPORT: Safe Space for PUPQC Students' Academic Issues & Concerns</h5>
-														<p class="mb-0 fs-6">Posted: <span>23 Nov, 2021,</span>
-															<small>02:21 AM</small>
-														</p>
-													</div>
-												</div>
-											</a>
-											<a href="https://www.facebook.com/sscpupquezoncity/posts/pfbid0pJgkKFiqPrTVLvev4KCJk894vhgzipEJ1tccAySHAGoiYbKW5RmBnwjkY1rf1bB7l" class="text-reset notification-item d-block dropdown-item list-group-item py-4">
-												<div class="d-flex align-items-start">
-													<div class="flex-grow-1 overflow-hidden">
-														<h5 class="fw-normal mb-1 text-primary">A Resolution Recognizing the Newly Established Student Commission on Election (COMELEC)</h5>
-														<p class="mb-0 fs-6">Posted: <span>13 Aug, 2022,</span>
-															<small class="text-muted">02:36 PM</small>
-														</p>
-													</div>
-												</div>
-											</a>
-											<a href="https://www.facebook.com/sscpupquezoncity/posts/pfbid02wRAw94xJTYpbSXkT72qoTiqaCoyPUZ6xhRA8zjHqu742KjWCEYNe37Fpf2CWLBywl" class="text-reset notification-item d-block dropdown-item list-group-item py-4">
-												<div class="d-flex align-items-start">
-													<div class="flex-grow-1 overflow-hidden">
-														<h5 class="fw-normal mb-1 text-primary">A Resolution Adopting the Amendments to the Constitution and By-Laws of the SSC</h5>
-														<p class="mb-0 fs-6">Posted: <span>04 Apr, 2022,</span>
-															<small class="text-muted">02:21 AM</small>
-														</p>
-													</div>
-												</div>
-											</a>
-											<a href="https://www.facebook.com/ThePUPOfficial/posts/pfbid0EMX2xx6XxvW2JZ9Cf9rxDRoYsnVCVr5ACieVxtYsmFjSsZRViD7X4YUTTagRWcuXl" class="text-reset notification-item d-block dropdown-item list-group-item py-4">
-												<div class="d-flex align-items-start">
-													<div class="flex-grow-1 overflow-hidden">
-														<h5 class="fw-normal mb-1 text-primary">Printing of Certificate of Candidacy (COC) will end on August 15, 2022</h5>
-														<p class="mb-0 fs-6">Posted: <span>11 Aug, 2022,</span>
-															<small class="text-muted">10:52 AM</small>
-														</p>
-													</div>
-												</div>
-											</a>
-											<a href="https://www.facebook.com/ThePUPOfficial/posts/pfbid0riNCN2XSpZV67VN4ynkr6JvAPJLPShndGJmy8vQvXVCHdzBt9e9o9GAyfxjYWozul" class="text-reset notification-item d-block dropdown-item list-group-item py-4">
-												<div class="d-flex align-items-start">
-													<div class="flex-grow-1 overflow-hidden">
-														<h5 class="fw-normal mb-1 text-primary">Freshmen Students, submission of credentials is extended until August 31, 2022.</h5>
-														<p class="mb-0 fs-6">Posted: <span>17 Aug, 2022,</span>
-															<small class="text-muted">02:43 PM</small>
-														</p>
-													</div>
-												</div>
-											</a>
-											<a href="https://www.facebook.com/voxnovapupqc/posts/pfbid02v1vGtiw7i41YvzqwqhhiVwzwkdmYbzvhY76TRni8v5QKBLy6VsHVoVLwTgtfiQmBl" class="text-reset notification-item d-block dropdown-item list-group-item py-4">
-												<div class="d-flex align-items-start">
-													<div class="flex-grow-1 overflow-hidden">
-														<h5 class="fw-normal mb-1 text-primary">BREAKING: CAEPUPQC results set to release today through iApply</h5>
-														<p class="mb-0 fs-6">Posted: <span>24 Jun, 2022,</span>
-															<small class="text-muted">05:18 PM</small>
-														</p>
-													</div>
-												</div>
-											</a>
-											<a href="https://www.facebook.com/ThePUPOfficial/posts/pfbid02GuwAAiNxECZY5orgSMBcHBLjmbqJxk4U2qUAmxDmyRaxATWi1q7n9nqx15Je8XFrl" class="text-reset notification-item d-block dropdown-item list-group-item py-4">
-												<div class="d-flex align-items-start">
-													<div class="flex-grow-1 overflow-hidden">
-														<h5 class="fw-normal mb-1 text-primary">Re-opening of the Application for Year-End Graduation AY 2021-2022</h5>
-														<p class="mb-0 fs-6">Posted: <span>08 Jun, 2022,</span>
-															<small class="text-muted">03:19 PM</small>
-														</p>
-													</div>
-												</div>
-											</a>
-											<a href="https://www.facebook.com/sscpupquezoncity/posts/pfbid02SCZLiiEYuLVwMz3pRe6yPd66H88DsW8uoVWPXqKtbXZtYgFdLqrEggD1NSmqJP5Pl" class="text-reset notification-item d-block dropdown-item list-group-item py-4">
-												<div class="d-flex align-items-start">
-													<div class="flex-grow-1 overflow-hidden">
-														<h5 class="fw-normal mb-1 text-primary">The application for graduation is extended until June 15, 2022</h5>
-														<p class="mb-0 fs-6">Posted: <span>02 Jun, 2022,</span>
-															<small class="text-muted">03:35 PM</small>
-														</p>
-													</div>
-												</div>
-											</a>
-											<a href="https://www.facebook.com/voxnovapupqc/posts/pfbid0QYZehnipJMkCkhBT7eVr2zgxCe3nmdTBLq19cdGJxia8uh5xYwDieAuehqPTeV6nl" class="text-reset notification-item d-block dropdown-item list-group-item py-4">
-												<div class="d-flex align-items-start">
-													<div class="flex-grow-1 overflow-hidden">
-														<h5 class="fw-normal mb-1 text-primary">F2F Graduation in PUPQC for Academic Year 2021-2022 in Talks</h5>
-														<p class="mb-0 fs-6">Posted: <span>19 May, 2022,</span>
-															<small class="text-muted">12:35 PM</small>
-														</p>
-													</div>
-												</div>
-											</a>
-											<a href="https://www.facebook.com/voxnovapupqc/posts/pfbid0Rm1E452K9BacxHKmUrBkPoBUvvQYxeDb9bj2mCQJtBVFgCCaz3S2JssVsjiXx9kml" class="text-reset notification-item d-block dropdown-item list-group-item py-4">
-												<div class="d-flex align-items-start">
-													<div class="flex-grow-1 overflow-hidden">
-														<h5 class="fw-normal mb-1 text-primary">PUPQC Admin Releases Graduating Students' Schedule for Second Semester</h5>
-														<p class="mb-0 fs-6">Posted: <span class="fs-13">05 May, 2022,</span>
-															<small class="text-muted">02:18 PM</small>
-														</p>
-													</div>
-												</div>
-											</a>
+										<div class="list-group list-group-flush" id="advisory_slider">
 										</div>
 									</div>
 								</div>
@@ -469,31 +369,7 @@
 							<div class="card-body">
 								<!-- Swiper -->
 								<div class="swiper pagination-dynamic-swiper rounded">
-									<div class="swiper-wrapper">
-										<div class="swiper-slide">
-											<a href="https://www.facebook.com/361074807312478/posts/5359676797452229/" target="_blank">
-												<img src="<?= base_url() ?>public/images/news/img-1.jpg" class="img-fluid news-img" />
-												<h5 class="text-wrap mb-3 mt-4 text-primary">PUP President Muhi announces face-to-face recognition and graduation rites</h5>
-											</a>
-											<span class="h5 fw-light">1 Aug, 2022,</span>
-											<small class="text-muted">09:48 AM</small>
-										</div>
-										<div class="swiper-slide">
-											<a href="https://www.facebook.com/361074807312478/posts/5308009152618994/" target="_blank">
-												<img src="<?= base_url() ?>public/images/news/img-2.jpg" class="img-fluid news-img" />
-												<h5 class="text-wrap mb-3 mt-4 text-primary">Succession of new PUPQC Aministration Announced for Academic Year 22-23</h5>
-											</a>
-											<span class="h5 fw-light">13 Jul, 2022,</span>
-											<small class="text-muted">02:15 PM</small>
-										</div>
-										<div class="swiper-slide">
-											<a href="https://www.facebook.com/361074807312478/posts/5320818454671397/" target="_blank">
-												<img src="<?= base_url() ?>public/images/news/img-3.jpg" class="img-fluid news-img" />
-												<h5 class="text-wrap mb-3 mt-4 text-primary">PUPQC Heralds its New Set of Leaders</h5>
-											</a>
-											<span class="h5 fw-light">17 Jul, 2022,</span>
-											<small class="text-muted">03:29 PM</small>
-										</div>
+									<div class="swiper-wrapper" id="news_slider">
 									</div>
 									<div class="swiper-pagination dynamic-pagination"></div>
 								</div>
@@ -704,8 +580,8 @@
 									</div>
 									<div class="col-lg-6">
 										<div class="mb-4">
-											<label for="email" class="form-label fs-13">Email <span class="text-danger">*</span></label>
-											<input name="email" id="email" type="email" class="form-control bg-light border-light" placeholder="Your email" required />
+											<label for="email_address" class="form-label fs-13">Email <span class="text-danger">*</span></label>
+											<input name="email_address" id="email_address" type="email" class="form-control bg-light border-light" placeholder="Your email" required />
 											<div class="invalid-feedback">
 												Please enter your Email
 											</div>
@@ -726,8 +602,8 @@
 								<div class="row">
 									<div class="col-lg-12">
 										<div class="mb-3">
-											<label for="comments" class="form-label fs-13">Message <span class="text-danger">*</span></label>
-											<textarea name="comments" id="comments" rows="3" class="form-control bg-light border-light" placeholder="Your message" required></textarea>
+											<label for="message" class="form-label fs-13">Message <span class="text-danger">*</span></label>
+											<textarea name="message" id="message" rows="3" class="form-control bg-light border-light" placeholder="Your message" required></textarea>
 											<div class="invalid-feedback">
 												Please Enter your Message
 											</div>

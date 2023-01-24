@@ -13,8 +13,8 @@
 
 <script src="<?= base_url() ?>public/js/pages/datatables.init.js"></script>
 
-<!-- student reservation hist ajax -->
-<script src="<?= base_url() ?>public/js/ajax/student/evrsers/evrsershist.ajax.js"></script>
+<!-- pup staff reservation hist ajax -->
+<script src="<?= base_url() ?>public/js/ajax/pup-staff/evrsers/evrsershist.ajax.js"></script>
 
 <!-- App js -->
 <script src="<?= base_url() ?>public/js/app.js"></script>

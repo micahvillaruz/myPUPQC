@@ -1,6 +1,28 @@
 $(function () {
+	getRequestsAnalytics()
+
 	loadRequestsTable()
 })
+
+// Get Requests Analytics
+getRequestsAnalytics = () => {
+	$.ajax({
+		type: 'GET',
+		url: `${apiURL}odrs/super_admin/analytics/requests`,
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			const data = result.request_status_count
+
+			document.getElementById('pending_analytics').dataset.target = data.pending_for_clearance
+			document.getElementById('for_clearance_analytics').dataset.target = data.for_clearance
+			document.getElementById('for_evaluation_analytics').dataset.target = data.for_evaluation
+			document.getElementById('ready_for_pickup_analytics').dataset.target = data.ready_for_pickup
+
+			counter()
+		},
+	})
+}
 
 // Load Requests Table
 loadRequestsTable = () => {
@@ -220,49 +242,66 @@ viewRequestDetails = (request_id) => {
 			$('#contact_number').html(data.user_assigned_to_request.user_profiles[0].contact_number)
 
 			let documentsList = ''
-			if (data.status_of_request === 'Pending for Clearance') {
-				$('#payment').addClass('d-none')
-
-				data.documents_assigned_to_request.forEach((document) => {
-					documentsList += `
-						<tr>
-							<td>
-								<span>${document.document_information[0].document_name}</span>
-							</td>
-							<td class="text-center">${document.quantity}</td>
-						</tr>
-					`
-				})
-			} else {
-				$('#payment').removeClass('d-none')
-				data.documents_assigned_to_request.forEach((document) => {
-					documentsList += `
-						<tr>
-							<td>
-								<span>${document.document_information[0].document_name}</span>
-							</td>
-							<td class="text-center">${document.quantity}</td>
-					`
-					if (data.payment_status === 'Pending') {
-						documentsList += `
-							<td class="text-center">
-								<span class="badge bg-warning text-dark">${data.payment_status}</span>
-							</td>
-						</tr>
-						`
-					} else if (data.payment_status === 'Paid') {
-						documentsList += `
-								<td class="text-center">
-									<span class="badge bg-success">${data.payment_status}</span> <span class="badge badge-outline-dark">OR No. ${data.or_no} </span>
-								</td>
-						</tr>
-						`
-					}
-				})
-			}
+			data.documents_assigned_to_request.forEach((document) => {
+				documentsList += `
+					<tr>
+						<td>
+							<span>${document.document_information[0].document_name}</span>
+						</td>
+						<td class="text-center">${document.quantity}</td>
+					</tr>
+				`
+			})
 			$('#documents').html(documentsList)
 
 			$('#purpose').html(data.purpose_of_request)
+			$('#payment_details').addClass('d-none')
+
+			if (data.payment_status === 'Pending' && data.status_of_request !== 'Pending for Clearance') {
+				$('#payment_details').removeClass('d-none')
+				$('#payment_details').html(`
+					<div class="d-flex align-items-center justify-content-center gap-4">
+						<lord-icon src="https://cdn.lordicon.com/lqqcslws.json" trigger="loop" style="width:80px;height:80px"></lord-icon>
+						<div>
+							<h5 class="fs-14 text-info fw-semibold text-center"> Payment Details</h5>
+							<div class="d-flex gap-3 align-items-center">
+								<span class="text-black fw-semibold">Payment Status: </span>
+								<span class="w-md fs-11 badge badge-gradient-warning text-uppercase">${data.payment_status}</span>
+							</div>
+						</div>
+					</div>
+				`)
+			} else if (data.payment_status === 'Paid') {
+				$('#payment_details').removeClass('d-none')
+				$('#payment_details').html(`
+					<div class="d-flex align-items-center justify-content-center gap-4">
+						<lord-icon src="https://cdn.lordicon.com/zkidfvrs.json" trigger="loop" style="width:80px;height:80px"></lord-icon>
+						<div>
+							<h5 class="fs-14 text-info fw-semibold text-center"> Payment Details</h5>
+							<table>
+								<tbody>
+									<tr>
+										<td>
+											<span class="text-black fw-semibold">Payment Status: </span>
+										</td>
+										<td class="text-center">
+											<span class="w-md fs-11 badge badge-gradient-success text-uppercase">${data.payment_status}</span>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="text-black mb-1 fw-semibold me-3">Official Receipt No.: </span>
+										</td>
+										<td class="text-center">
+											<span class="text-dark">${data.or_no}</span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				`)
+			}
 
 			pendingforClearanceDate = `
 				${moment(data.pending_for_clearance).format('ddd')},
@@ -285,7 +324,7 @@ viewRequestDetails = (request_id) => {
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
 							<div class="d-flex align-items-center">
 								<div class="flex-shrink-0 avatar-xs">
-									<div class="avatar-title bg-danger rounded-circle">
+									<div class="avatar-title bg-danger bg-gradient rounded-circle">
 										<i class="mdi mdi-nfc-search-variant"></i>
 									</div>
 								</div>
@@ -341,7 +380,7 @@ viewRequestDetails = (request_id) => {
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 							<div class="d-flex align-items-center">
 								<div class="flex-shrink-0 avatar-xs">
-									<div class="avatar-title bg-info rounded-circle">
+									<div class="avatar-title bg-info bg-gradient rounded-circle">
 										<i class="mdi mdi-file-sign"></i>
 									</div>
 								</div>
@@ -395,7 +434,7 @@ viewRequestDetails = (request_id) => {
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
 							<div class="d-flex align-items-center">
 								<div class="flex-shrink-0 avatar-xs">
-									<div class="avatar-title bg-dark rounded-circle">
+									<div class="avatar-title bg-dark bg-gradient rounded-circle">
 										<i class="ri-user-received-2-line"></i>
 									</div>
 								</div>
@@ -442,8 +481,67 @@ viewRequestDetails = (request_id) => {
 			}
 			$('#ready_for_pickup').html(readyforPickup)
 
+			let documentRequirements = ''
+			let remarks = ''
+
+			$('#attachments').addClass('d-none')
+
 			if (data.status_of_request === 'For Clearance') {
-				remarks = `
+				documentRequirements += `
+					<div class="h6 fs-15 text-primary">Requirements</div>
+						<div class="list-group col nested-list nested-sortable">
+				`
+
+				$('#ched-letter').addClass('d-none')
+				data.documents_assigned_to_request.forEach((document) => {
+					if (document.document_information[0].document_requirements.length != 0) {
+						documentRequirements += `
+							<div class="list-group-item nested-1" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
+								<i class="mdi mdi-folder fs-16 align-middle text-warning me-2"></i>
+								<span>${document.document_information[0].document_name}</span>
+								<div class="list-group nested-list nested-sortable">`
+						document.document_information[0].document_requirements.forEach((requirement) => {
+							if (requirement.doc_req_name === 'Letter format for CHED') {
+								$('#ched-letter').removeClass('d-none')
+
+								documentRequirements += `
+								<div class="list-group-item nested-2" style="background-color: rgba(64,81,137,.07); border-color: rgba(64,81,137,.07);">
+									<i class="ri-file-word-2-fill fs-16 align-middle text-info me-2"></i>
+									<span>${requirement.doc_req_name}</span>
+								</div>
+						`
+							} else {
+								documentRequirements += `
+								<div class="list-group-item nested-2" style="background-color: rgba(64,81,137,.07); border-color: rgba(64,81,137,.07);">
+									<i class="ri-file-text-fill fs-16 align-middle text-success me-2"></i>
+									<span>${requirement.doc_req_name}</span>
+								</div>
+						`
+							}
+						})
+						documentRequirements += `
+								</div>
+							</div>
+						`
+					}
+				})
+				documentRequirements += `
+						<div class="list-group-item nested-1" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
+							<i class="mdi mdi-folder fs-16 align-middle text-warning me-2"></i>
+							<span>For Overall Request</span>
+							<div class="list-group nested-list nested-sortable">
+								<div class="list-group-item nested-2" style="background-color: rgba(64,81,137,.07); border-color: rgba(64,81,137,.07);">
+									<i class="ri-file-pdf-fill fs-16 align-middle text-danger me-2"></i>
+									Request Form
+								</div>
+							</div>
+						</div>
+					</div>
+				`
+
+				$('#attachments').removeClass('d-none')
+
+				remarks += `
 					<div class="h6 fs-15 text-primary">Remarks</div>
 					<div class="list-group">
 						<div class="list-group-item list-group-item-action">
@@ -457,9 +555,7 @@ viewRequestDetails = (request_id) => {
 								</div>
 							</div>
 							<p>
-								The Document Request is now approved. You must view the requirements needed for each of the document/s requested and download the attachments by clicking the
-									<button type="button" class="btn btn-sm btn-success text-center waves-effect waves-light"><i class="mdi mdi-file-document-multiple label-icon align-middle me-2"></i> Requirements</button>
-								button. You must go to PUP QC and bring the downloaded attachments and requirements as listed below. 
+								The Document Request is now approved. You must view the requirements needed for each of the document/s requested and download the attachments by clicking the <i class="ri-download-2-line label-icon align-middle mx-1 text-muted fs-20"></i> icon next to the attached files in this request. Go to PUP QC and bring the downloaded attachments and requirements as listed below. 
 							</p>
 							<ul class="list-unstyled ms-3 mb-0">
 				`
@@ -510,10 +606,10 @@ viewRequestDetails = (request_id) => {
 						</div>
 					</div>
 				`
-			} else {
-				remarks = ''
 			}
+
 			$('#remarks').html(remarks)
+			$('#requirements').html(documentRequirements)
 		},
 	})
 }
@@ -532,4 +628,22 @@ getRequirements = (data) => {
 	uniqueReqsArray = [...uniqueReqs]
 
 	return uniqueReqsArray
+}
+
+counter = () => {
+	var e = document.querySelectorAll('.counter-value')
+	function s(e) {
+		return e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+	}
+	e &&
+		Array.from(e).forEach(function (o) {
+			!(function e() {
+				var t = +o.getAttribute('data-target'),
+					a = +o.innerText,
+					n = t / 250
+				n < 1 && (n = 1),
+					a < t ? ((o.innerText = (a + n).toFixed(0)), setTimeout(e, 1)) : (o.innerText = s(t)),
+					s(o.innerText)
+			})()
+		})
 }

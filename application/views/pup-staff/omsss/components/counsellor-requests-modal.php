@@ -18,6 +18,9 @@
                   <h5 class="fs-13 mb-1 fw-medium">Consultation Type</h5>
                 </div>
                 <div class="col-8">
+                <div class="d-flex fs-13 fw-medium" id="view_consultation_type">New Consultation</div>
+                </div>
+                <div class="col-8">
                   <div class="d-flex fs-13 fw-medium" id="view_consultation_type">Follow-Up</div>
                 </div>
               </div>
@@ -105,13 +108,14 @@
         <div class="modal-body">
           <label class='form-label'>Status</label>
           <span class="text-danger">*</span>
-        <select class="form-select mb-3" id="consultation_status" name="consultation_status" aria-label="Change Status">
+        <select class="form-select mb-3" id="consultation_status" name="consultation_status" aria-label="Change Status" required>
           <option selected></option>
           <option value="Approved">Approved</option>
           <option value="Cancelled by Staff">Cancelled by Staff</option>
         </select>
           <label class='form-label'>Remarks</label>
-          <input type="text" class="form-control" id="remarks" name="remarks" placeholder="remarks"><br>
+          <span class="text-danger">*</span>
+          <input type="text" class="form-control" id="remarks" name="remarks" placeholder="Remarks" required><br>
           <div class="text-center d-grid">
             <button type="submit" class="btn btn-primary" aria-label="Confirm">Confirm</button>
         </div>

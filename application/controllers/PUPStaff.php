@@ -227,11 +227,57 @@ class PUPStaff extends CI_Controller
     $this->load->view('partials/head-css');
     $this->load->view('partials/pup-staff/topbar');
     $this->load->view('partials/pup-staff/sidebar');
-    $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "Reservation History and Analytics"]);
+    $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "Reservation History"]);
     $this->load->view('pup-staff/evrsers/reservation-history');
     $this->load->view('partials/footer');
     $this->load->view('pup-staff/evrsers/components/reservation-history-modal');
     $this->load->view('partials/foot-scripts');
     $this->load->view('pup-staff/evrsers/scripts/reservationhist-scripts');
   }
+
+  public function advisory()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/pup-staff/topbar');
+    $this->load->view('partials/pup-staff/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "ANNOUNCEMENT", "title" => "Advisory"]);
+    $this->load->view('pup-staff/announcement/advisory');
+    $this->load->view('partials/footer');
+    $this->load->view('pup-staff/announcement/components/announcement-modal');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('pup-staff/announcement/scripts/announcement-scripts');
+  }
+
+  public function announcement()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/pup-staff/topbar');
+    $this->load->view('partials/pup-staff/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "ANNOUNCEMENT", "title" => "Announcement"]);
+    $this->load->view('pup-staff/announcement/announcement');
+    $this->load->view('partials/footer');
+    $this->load->view('pup-staff/announcement/components/announcement-modal');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('pup-staff/announcement/scripts/announcement-scripts');
+  }
+
+  public function news()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/pup-staff/topbar');
+    $this->load->view('partials/pup-staff/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "ANNOUNCEMENT", "title" => "News"]);
+    $this->load->view('pup-staff/announcement/news');
+    $this->load->view('partials/footer');
+    $this->load->view('pup-staff/announcement/components/announcement-modal');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('pup-staff/announcement/scripts/announcement-scripts');
+  }
+  
 }

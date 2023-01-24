@@ -1,4 +1,8 @@
+<!--jquery cdn-->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<!--select2 cdn-->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <!--datatable js-->
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
@@ -13,20 +17,22 @@
 
 <script src="<?= base_url() ?>public/js/pages/datatables.init.js"></script>
 
-<!-- validation init -->
-<script src="<?= base_url() ?>public/js/pages/form-validation.init.js"></script>
+<!-- JAVASCRIPT -->
+<script src="../../public/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../public/libs/simplebar/simplebar.min.js"></script>
+<script src="../../public/libs/node-waves/waves.min.js"></script>
+<script src="../../public/libs/feather-icons/feather.min.js"></script>
+<script src="../../public/js/pages/plugins/lord-icon-2.1.0.js"></script>
+<script src="../../public/js/plugins.js"></script>
 
-<!-- flatpickr.js -->
-<script type='text/javascript' src='<?= base_url() ?>public/libs/flatpickr/flatpickr.min.js'></script>
+<script src="../../public/js/pages/select2.init.js"></script>
 
-<!-- form wizard init -->
-<script src="<?= base_url() ?>public/js/pages/form-wizard.init.js"></script>
-
-<!-- Sweet alert init js-->
-<script src="<?= base_url() ?>public/js/pages/sweetalerts.init.js"></script>
-
-<!-- student ajax -->
-<script src="<?= base_url() ?>public/js/ajax/student/evrsers/evrsers.ajax.js"></script>
+<!-- User Roles ajax -->
+<script src="<?= base_url() ?>public/js/ajax/admin/user_roles/user-roles.ajax.js"></script>
 
 <!-- App js -->
 <script src="<?= base_url() ?>public/js/app.js"></script>
+
+</body>
+
+</html>

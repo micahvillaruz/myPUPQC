@@ -127,7 +127,7 @@
                   <h5 id="student_full_name"></h5>
                   <h6 id="user_no"></h6>
                   <div class="hstack gap-3 flex-wrap">
-                    <div id="course" class="badge rounded-pill badge-soft-danger fs-12"></div>
+                    <div id="course" class="badge rounded-pill badge-soft-danger fs-12 text-wrap py-2" style="width: 350px; line-height: 15px;"></div>
                     <div class="vr"></div>
                     <div>
                       <i class="ri-mail-fill align-bottom text-info me-2"></i>
@@ -147,13 +147,13 @@
           </div>
         </div>
         <table class="mt-5 table table-bordered nowrap align-middle" style="width: 100%">
-          <thead>
-            <tr class="bg-light">
-              <th colspan="2" class="fst-italic">Requested Document/s:</th>
-            </tr>
+          <thead class="table-light text-muted">
             <tr>
-              <th class="text-uppercase">Document</th>
-              <th class="text-uppercase">Quantity</th>
+              <th colspan="2" class="bg-soft-primary text-dark">Requested Document/s:</th>
+            </tr>
+            <tr class="text-uppercase">
+              <th>Document</th>
+              <th>Quantity</th>
             </tr>
           </thead>
           <tbody id="documents">
@@ -174,7 +174,7 @@
                   <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     <div class="d-flex align-items-center">
                       <div class="flex-shrink-0 avatar-xs">
-                        <div class="avatar-title bg-warning rounded-circle">
+                        <div class="avatar-title bg-warning bg-gradient rounded-circle">
                           <i class="mdi mdi-progress-clock"></i>
                         </div>
                       </div>
@@ -301,7 +301,7 @@
                   <h5 id="view_student_name"></h5>
                   <h6 id="view_user_no"></h6>
                   <div class="hstack gap-3 flex-wrap">
-                    <div id="view_course" class="badge rounded-pill badge-soft-danger fs-12"></div>
+                    <div id="view_course" class="badge rounded-pill badge-soft-danger fs-12 text-wrap py-2" style="width: 350px; line-height: 15px;"></div>
                     <div class="vr"></div>
                     <div>
                       <i class="ri-mail-fill align-bottom text-info me-2"></i>
@@ -321,14 +321,13 @@
           </div>
         </div>
         <table class="mt-5 table table-bordered nowrap align-middle" style="width: 100%">
-          <thead>
-            <tr class="bg-light">
-              <th colspan="4" class="fst-italic">Requested Document/s:</th>
-            </tr>
+          <thead class="table-light text-muted">
             <tr>
+              <th colspan="3" class="bg-soft-primary text-dark">Requested Document/s:</th>
+            </tr>
+            <tr class="text-uppercase">
               <th>Document</th>
               <th>Quantity</th>
-              <th>Payment Status</th>
             </tr>
           </thead>
           <tbody id="view_documents">
@@ -340,8 +339,10 @@
             <p id="view_purpose" class="p-2 fw-medium"></p>
           </div>
         </div>
+        <div id="payment_details" class="alert alert-border-left alert-info" style="padding-right: 16px;" role="alert">
+        </div>
         <div class="m-2 mt-4 mb-3">
-          <div class="h6 fs-15 text-primary">Status</div>
+          <div class="h6 fs-15 text-primary">Request Status</div>
           <div class="profile-timeline">
             <div class="accordion accordion-flush" id="accordionFlushExample">
               <div class="accordion-item border-0">
@@ -349,7 +350,7 @@
                   <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     <div class="d-flex align-items-center">
                       <div class="flex-shrink-0 avatar-xs">
-                        <div class="avatar-title bg-warning rounded-circle">
+                        <div class="avatar-title bg-warning bg-gradient rounded-circle">
                           <i class="mdi mdi-progress-clock"></i>
                         </div>
                       </div>
@@ -374,7 +375,7 @@
                   <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <div class="d-flex align-items-center">
                       <div class="flex-shrink-0 avatar-xs">
-                        <div class="avatar-title bg-danger rounded-circle">
+                        <div class="avatar-title bg-danger bg-gradient rounded-circle">
                           <i class="mdi mdi-nfc-search-variant"></i>
                         </div>
                       </div>
@@ -417,6 +418,64 @@
             </div>
             <!--end accordion-->
           </div>
+        </div>
+        <div id="requirements" class="mt-4 mb-3">
+        </div>
+        <div id="attachments" class="mt-4 mb-3 d-none">
+          <div class="h6 fs-15 text-primary">Attachement/s</div>
+          <div class="row g-3">
+            <div id="ched-letter" class="col-xxl-4 col-lg-6 d-none">
+              <div class="border rounded border-dashed p-2">
+                <div class="d-flex align-items-center">
+                  <div class="flex-shrink-0 me-3">
+                    <div class="avatar-sm">
+                      <div class="avatar-title bg-light text-info rounded fs-24">
+                        <i class="ri-file-word-2-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1 overflow-hidden">
+                    <h5 class="fs-13 mb-1"><a href="<?= base_url() ?>public/file/Letter-Format-for-CHED.docx" download="Letter-Format-for-CHED" class="text-body text-truncate d-block">Letter for CHED.docx</a></h5>
+                    <div>17KB</div>
+                  </div>
+                  <div class="flex-shrink-0 ms-2">
+                    <div class="d-flex gap-1">
+                      <a href="<?= base_url() ?>public/file/Letter-Format-for-CHED.docx" download="Letter-Format-for-CHED" type="button" class="btn btn-icon text-muted btn-sm fs-18">
+                        <i class="ri-download-2-line"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end col -->
+            <div class="col-xxl-4 col-lg-6">
+              <div class="border rounded border-dashed p-2">
+                <div class="d-flex align-items-center">
+                  <div class="flex-shrink-0 me-3">
+                    <div class="avatar-sm">
+                      <div class="avatar-title bg-light text-danger rounded fs-24">
+                        <i class="ri-file-pdf-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1 overflow-hidden">
+                    <h5 class="fs-13 mb-1"><a href="<?= base_url() ?>public/file/Request-Form.pdf" download="Request Form" class="text-body text-truncate d-block">Request Form.pdf</a></h5>
+                    <div>624KB</div>
+                  </div>
+                  <div class="flex-shrink-0 ms-2">
+                    <div class="d-flex gap-1">
+                      <a href="<?= base_url() ?>public/file/Request-Form.pdf" download="Request Form" type="button" class="btn btn-icon text-muted btn-sm fs-18">
+                        <i class="ri-download-2-line"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end col -->
+          </div>
+          <!-- end row -->
         </div>
         <div id="remarks" class="mt-4 mb-3">
         </div>
@@ -505,7 +564,7 @@
             <div class="mb-2 d-flex align-items-center justify-content-center">
               <i class="ri-alert-line me-2 align-middle fs-6"></i> <strong>WARNING</strong>
             </div>
-            <span>Please make sure that the student has already <span class="fw-medium">PAID</span> the processing fee and presented the <span class="fw-medium">OFFICIAL RECEIPT</span> before you change the status of this request.</span>
+            <span>Please make sure that the student has already <span class="fw-medium">SUBMITTED</span> the requirements, <span class="fw-medium">PAID</span> the processing fee and presented the <span class="fw-medium">OFFICIAL RECEIPT</span> before you change the status of this request.</span>
           </div>
           <form id="forProcessingRequestForm" class="needs-validation" novalidate>
             <input type="hidden" id="process_request_id">
@@ -573,23 +632,58 @@
 
         <div class="mt-4">
           <h4 class="mb-3 fw-semibold">Is this Request already Released?</h4>
-          <p class="text-muted mb-4">If yes, tick the checkbox and click the Yes, It is! button. If not, click the Dismiss button.</p>
+          <p class="text-muted mb-4">If yes, select the Release Classification, tick the checkbox and click the Yes, It is! button. If not, click the Dismiss button.</p>
           <!-- Warning Alert -->
           <div class="alert alert-warning alert-border-left alert-dismissible fade show" style="padding-right: 16px;" role="alert">
             <div class="mb-2 d-flex align-items-center justify-content-center">
               <i class="ri-alert-line me-2 align-middle fs-6"></i> <strong>WARNING</strong>
             </div>
-            <span>Please make sure that the student has presented the <span class="fw-medium">CLAIM STUB</span> upon claiming of the request and has received all the <span class="fw-medium">REQUESTED DOCUMENT/S</span> before you set its status to Released.</span>
+            <span>Please make sure that the student has received all the <span class="fw-medium">REQUESTED DOCUMENT/S</span> before you set its status to Released.</span>
           </div>
+          <div id="claim-stub" class="alert alert-info alert-label-icon label-arrow fade show text-start d-none" role="alert">
+            <i class="ri-information-line label-icon"></i><span>The student should present the following requirements upon claiming of this request: </span>
+            <ul class="mb-0">
+              <li>Student ID with picture and signature</li>
+              <li>Claim Stub</li>
+            </ul>
+          </div>
+          <div id="representative" class="alert alert-info alert-label-icon label-arrow fade show text-start d-none" role="alert">
+            <i class="ri-information-line label-icon"></i><span>The representative should present the following requirements upon claiming of this request: </span>
+            <ul class="mb-0">
+              <li>Authorization Letter</li>
+              <li>lD of the student (with photocopy)</li>
+              <li>lD of the representative (with photocopy)</li>
+            </ul>
+          </div>
+          <div id="lost-claim-stub" class="alert alert-info alert-label-icon label-arrow fade show text-start d-none" role="alert">
+            <i class="ri-information-line label-icon"></i><span>The student should present the following requirements upon claiming of this request: </span>
+            <ul class="mb-0">
+              <li>Student ID with picture and signature</li>
+              <li>Duly Notarized Affidavit</li>
+            </ul>
+          </div>
+
           <form id="releasedRequestForm" class="needs-validation" novalidate>
             <input type="hidden" id="release_request_id">
-            <div class="form-check form-check-success mb-3">
+            <div class="mt-4">
+              <label for="release_classification" class="h5 form-label">Release Classification <span class="text-danger">*</span></label>
+              <select class="form-select js-example-basic-hide-search" id="release_classification" name="release_classification" required>
+                <option value="" selected disabled>Select the Release Classification</option>
+                <option value="Claim Stub">Claim Stub</option>
+                <option value="Representative">Representative</option>
+                <option value="Lost Claim Stub">Lost Claim Stub</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select the Release Classification of this request first.
+              </div>
+            </div>
+            <div class="mt-3 form-check form-check-success mb-3">
               <input class="form-check-input" type="checkbox" id="validateRelease" required>
               <label class="form-check-label" for="validateRelease">
-                I hereby certify that all the documents included in this request has been released to the student.
+                I hereby certify that the requirements for claiming of this request has been submitted and all the documents has been released.
               </label>
               <div class="invalid-feedback">
-                You must first agree that you released ALL the requested documents.
+                You must agree that you received ALL the requirements for claiming of this request and released ALL the requested documents.
               </div>
             </div>
             <div class="mt-4 justify-content-center">

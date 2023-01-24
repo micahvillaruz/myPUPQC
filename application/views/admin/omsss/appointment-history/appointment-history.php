@@ -2,7 +2,7 @@
   <div class="col-xl-6">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title mb-0">Donut Chart</h4>
+        <h4 class="card-title mb-0">Appointment Status: (Done/Cancelled/Pending/Approved/Deleted)</h4>
       </div>
       <div class="card-body">
         <canvas id="doughnut1" class="chartjs-chart" data-colors='["--vz-primary", "--vz-light"]'></canvas>
@@ -13,10 +13,10 @@
   <div class="col-xl-6">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title mb-0">Donut Chart</h4>
+        <h4 class="card-title mb-0">Appointment Type: (Number of New Consultations and Follow Ups)</h4>
       </div>
       <div class="card-body">
-        <canvas id="doughnut" class="chartjs-chart" data-colors='["--vz-primary", "--vz-light"]'></canvas>
+        <canvas id="doughnut2" class="chartjs-chart" data-colors='["--vz-primary", "--vz-light"]'></canvas>
       </div>
     </div>
   </div> <!-- end col -->
@@ -44,9 +44,9 @@
             </span>
           </div>
           <div class="flex-grow-1 ms-3">
-            <p class="text-uppercase fw-medium text-muted mb-3">Medical</p>
+          <p class="text-uppercase fw-medium text-muted mb-3"><i class="las la-clipboard-list"></i>Medical</p>
             <h4 class="fs-4 mb-3"><span class="counter-value" id="appointment_history_pending_medical" data-target="7522">0</span></h4>
-            <p class="text-muted mb-0">From 9530 last month</p>
+            <p class="text-muted mb-0">Pending Number of Appointments</p>
           </div>
           <div class="flex-shrink-0 align-self-center">
           </div>
@@ -71,14 +71,14 @@
       <div class="card-body" style="z-index: 1;">
         <div class="d-flex align-items-center">
           <div class="avatar-sm flex-shrink-0">
-            <span class="avatar-title bg-soft-danger text-danger rounded-2 fs-2">
-              <i class="mdi mdi-nfc-search-variant"></i>
+            <span class="avatar-title bg-soft-warning text-warning rounded-2 fs-2">
+            <i class="mdi mdi-clock"></i>
             </span>
           </div>
           <div class="flex-grow-1 ms-3">
-            <p class="text-uppercase fw-medium text-muted mb-3">Dental</p>
+            <p class="text-uppercase fw-medium text-muted mb-3"><i class="las la-tooth"></i>Dental</p>
             <h4 class="fs-4 mb-3"><span class="counter-value" id="appointment_history_pending_dental" data-target="2045">0</span></h4>
-            <p class="text-muted mb-0">From 1930 last month</p>
+            <p class="text-muted mb-0">Pending Number of Appointments</p>
           </div>
           <div class="flex-shrink-0 align-self-center">
           </div>
@@ -103,14 +103,14 @@
       <div class="card-body" style="z-index: 1;">
         <div class="d-flex align-items-center">
           <div class="avatar-sm flex-shrink-0">
-            <span class="avatar-title bg-soft-danger text-danger rounded-2 fs-2">
-              <i class="mdi mdi-nfc-search-variant"></i>
+          <span class="avatar-title bg-soft-warning text-warning rounded-2 fs-2">
+            <i class="mdi mdi-clock"></i>
             </span>
           </div>
           <div class="flex-grow-1 ms-3">
-            <p class="text-uppercase fw-medium text-muted mb-3">Guidance</p>
+            <p class="text-uppercase fw-medium text-muted mb-3"><i class="mdi mdi-brain me-1"></i>Guidance</p>
             <h4 class="fs-4 mb-3"><span class="counter-value" id="appointment_history_pending_guidance" data-target="2045">0</span></h4>
-            <p class="text-muted mb-0">From 1930 last month</p>
+            <p class="text-muted mb-0">Pending Number of Appointments</p>
           </div>
           <div class="flex-shrink-0 align-self-center">
           </div>
@@ -135,17 +135,17 @@
       <div class="card-body" style="z-index: 1;">
         <div class="d-flex align-items-center">
           <div class="avatar-sm flex-shrink-0">
-            <span class="avatar-title bg-soft-danger text-danger rounded-2 fs-2">
-              <i class="mdi mdi-nfc-search-variant"></i>
+          <span class="avatar-title bg-soft-success text-success rounded-2 fs-2">
+            <i class="ri-checkbox-circle-line"></i>
             </span>
           </div>
           <div class="flex-grow-1 ms-3">
-            <p class="text-uppercase fw-medium text-muted mb-3">Medical</p>
-            <h4 class="fs-4 mb-3"><span class="counter-value" data-target="2045">0</span></h4>
-            <p class="text-muted mb-0">From 1930 last month</p>
+            <p class="text-uppercase fw-medium text-muted mb-3"><i class="las la-clipboard-list"></i>Medical</p>
+            <h4 class="fs-4 mb-3"><span class="counter-value" id="appointment_history_done_medical" data-target="2045">0</span></h4>
+            <p class="text-muted mb-0">2024 Done Appoinments</p>
           </div>
           <div class="flex-shrink-0 align-self-center">
-            <span class="badge badge-soft-success fs-12"><i class="ri-arrow-right-up-line fs-13 align-middle"></i> +6.11 %<span></span></span>
+            <span class="badge badge-soft-success fs-12"></span>
           </div>
         </div>
       </div>
@@ -168,17 +168,17 @@
       <div class="card-body" style="z-index: 1;">
         <div class="d-flex align-items-center">
           <div class="avatar-sm flex-shrink-0">
-            <span class="avatar-title bg-soft-danger text-danger rounded-2 fs-2">
-              <i class="mdi mdi-nfc-search-variant"></i>
+          <span class="avatar-title bg-soft-success text-success rounded-2 fs-2">
+            <i class="ri-checkbox-circle-line"></i>
             </span>
           </div>
           <div class="flex-grow-1 ms-3">
-            <p class="text-uppercase fw-medium text-muted mb-3">Dental</p>
-            <h4 class="fs-4 mb-3"><span class="counter-value" data-target="2045">0</span></h4>
-            <p class="text-muted mb-0">From 1930 last month</p>
+            <p class="text-uppercase fw-medium text-muted mb-3"><i class="las la-tooth"></i>Dental</p>
+            <h4 class="fs-4 mb-3"><span class="counter-value" id="appointment_history_done_dental" data-target="2045">0</span></h4>
+            <p class="text-muted mb-0">2024 Done Appoinments</p>
           </div>
           <div class="flex-shrink-0 align-self-center">
-            <span class="badge badge-soft-success fs-12"><i class="ri-arrow-right-up-line fs-13 align-middle"></i> +6.11 %<span></span></span>
+            <span class="badge badge-soft-success fs-12"></span>
           </div>
         </div>
       </div>
@@ -201,17 +201,17 @@
       <div class="card-body" style="z-index: 1;">
         <div class="d-flex align-items-center">
           <div class="avatar-sm flex-shrink-0">
-            <span class="avatar-title bg-soft-info text-info rounded-2 fs-2">
-              <i class="mdi mdi-file-sign"></i>
+          <span class="avatar-title bg-soft-success text-success rounded-2 fs-2">
+            <i class="ri-checkbox-circle-line"></i>
             </span>
           </div>
           <div class="flex-grow-1 ms-3">
-            <p class="text-uppercase fw-medium text-muted mb-3">Guidance</p>
-            <h4 class="fs-4 mb-3"><span class="counter-value" data-target="405">0</span></h4>
-            <p class="text-muted mb-0">From 308 last month</p>
+            <p class="text-uppercase fw-medium text-muted mb-3"><i class="mdi mdi-brain me-1"></i>Guidance</p>
+            <h4 class="fs-4 mb-3"><span class="counter-value" id="appointment_history_done_guidance" data-target="405">0</span></h4>
+            <p class="text-muted mb-0">2024 Done Appoinments</p>
           </div>
           <div class="flex-shrink-0 align-self-center">
-            <span class="badge badge-soft-success fs-12"><i class="ri-arrow-right-up-line fs-13 align-middle"></i> +16.31 %<span></span></span>
+            <span class="badge badge-soft-success fs-12"></span>
           </div>
         </div>
       </div>

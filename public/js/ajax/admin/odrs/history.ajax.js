@@ -1,4 +1,6 @@
 $(function () {
+	getHistoryAnalytics()
+
 	loadReleasedRequests()
 	loadCancelledRequests()
 	loadDeletedRequests()
@@ -9,6 +11,27 @@ $(function () {
 		$('#deleted-requests').DataTable().columns.adjust().responsive.recalc()
 	})
 })
+
+// Get History Analytics
+getHistoryAnalytics = () => {
+	$.ajax({
+		type: 'GET',
+		url: `${apiURL}odrs/super_admin/analytics/history`,
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			const data = result.request_status_count
+
+			document.getElementById('released_analytics').dataset.target = data.released
+			document.getElementById('cancelled_student_analytics').dataset.target =
+				data.cancelled_by_student
+			document.getElementById('cancelled_staff_analytics').dataset.target = data.cancelled_by_staff
+			document.getElementById('deleted_analytics').dataset.target = data.deleted
+
+			counter()
+		},
+	})
+}
 
 // Load Released Requests Table
 loadReleasedRequests = () => {
@@ -491,12 +514,6 @@ viewRequestDetails = (request_id) => {
 
 			$('#contact_number').html(data.user_assigned_to_request.user_profiles[0].contact_number)
 
-			if (data.released !== null) {
-				$('#completion_date').html('Date Released')
-			} else {
-				$('#completion_date').html('Date Cancelled')
-			}
-
 			let documentsList = ''
 			data.documents_assigned_to_request.forEach((document) => {
 				documentsList += `
@@ -505,46 +522,63 @@ viewRequestDetails = (request_id) => {
 							<span>${document.document_information[0].document_name}</span>
 						</td>
 						<td class="text-center">${document.quantity}</td>
-					`
-				if (data.payment_status === 'Paid') {
-					documentsList += `
-						<td class="text-center">
-							<span class="badge bg-success">${data.payment_status}</span> <span class="badge badge-outline-dark">OR No. ${data.or_no} </span>
-						</td>
-					`
-				} else {
-					documentsList += `
-						<td class="text-center">
-							<span class="badge bg-danger">${data.payment_status}</span>
-						</td>
-					`
-				}
-
-				if (data.released !== null) {
-					const date = moment(data.released).format('DD, MMM. YYYY')
-					const time = moment(data.released).format('hh:mm A')
-
-					documentsList += `
-						<td>
-							<span class="ms-2">${date}<small class="text-muted ms-1">${time}</small></span>
-						</td>
 					</tr>
 				`
-				} else {
-					const date = moment(data.cancelled).format('DD, MMM. YYYY')
-					const time = moment(data.cancelled).format('hh:mm A')
-
-					documentsList += `
-						<td>
-							<span class="ms-2">${date}<small class="text-muted ms-1">${time}</small></span>
-						</td>
-					</tr>
-				`
-				}
 			})
 			$('#documents').html(documentsList)
-
 			$('#purpose_of_request').html(data.purpose_of_request)
+
+			$('#payment_status_col').removeClass()
+			$('#or_number_col').removeClass()
+			$('#release_classification_col').removeClass()
+			$('#completed_date_col').removeClass()
+
+			let date = ''
+			let time = ''
+			if (data.status_of_request === 'Released') {
+				date = moment(data.released).format('DD, MMM. YYYY')
+				time = moment(data.released).format('hh:mm A')
+				$('#payment_status_col').addClass('col-lg-3 col-sm-6')
+				$('#or_number_col').addClass('col-lg-3 col-sm-6')
+				$('#release_classification_col').addClass('col-lg-3 col-sm-6')
+				$('#completed_date_col').addClass('col-lg-3 col-sm-6')
+				$('#completed_date').html('Date Released')
+
+				$('#payment_status').html(
+					`<span class="badge bg-success fs-11">${data.payment_status}</span>`,
+				)
+				$('#or_no').html(data.or_no)
+				$('#release_classification').html(data.release_classification)
+			} else if (data.ready_for_pickup !== null) {
+				date = moment(data.cancelled).format('DD, MMM. YYYY')
+				time = moment(data.cancelled).format('hh:mm A')
+				$('#payment_status_col').addClass('col-lg-4 col-sm-12')
+				$('#or_number_col').addClass('col-lg-4 col-sm-12')
+				$('#release_classification_col').addClass('d-none')
+				$('#completed_date_col').addClass('col-lg-4 col-sm-12')
+				$('#completed_date').html('Date Cancelled')
+
+				$('#payment_status').html(
+					`<span class="badge bg-success fs-11">${data.payment_status}</span>`,
+				)
+				$('#or_no').html(data.or_no)
+			} else {
+				date = moment(data.cancelled).format('DD, MMM. YYYY')
+				time = moment(data.cancelled).format('hh:mm A')
+				$('#payment_status_col').addClass('col-lg-6 col-sm-12')
+				$('#or_number_col').addClass('d-none')
+				$('#release_classification_col').addClass('d-none')
+				$('#completed_date_col').addClass('col-lg-6 col-sm-12')
+				$('#completed_date').html('Date Cancelled')
+
+				$('#payment_status').html(
+					`<span class="badge bg-danger fs-11">${data.payment_status}</span>`,
+				)
+			}
+
+			$('#date_completed').html(
+				`<span>${date}<small class="text-muted ms-1">${time}</small></span>`,
+			)
 
 			pendingforClearanceDate = `
 				${moment(data.pending_for_clearance).format('ddd')},
@@ -560,7 +594,7 @@ viewRequestDetails = (request_id) => {
 
 			$('#pending_for_clearance_datetime').html(pendingforClearanceDateTime)
 
-			if (data.released !== null) {
+			if (data.status_of_request === 'Released') {
 				$('#for_clearance').removeClass('d-none')
 				$('#for_evaluation').removeClass('d-none')
 				$('#ready_for_pickup').removeClass('d-none')
@@ -570,7 +604,7 @@ viewRequestDetails = (request_id) => {
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
 							<div class="d-flex align-items-center">
 								<div class="flex-shrink-0 avatar-xs">
-									<div class="avatar-title bg-danger rounded-circle">
+									<div class="avatar-title bg-danger bg-gradient rounded-circle">
 										<i class="mdi mdi-nfc-search-variant"></i>
 									</div>
 								</div>
@@ -604,7 +638,7 @@ viewRequestDetails = (request_id) => {
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 							<div class="d-flex align-items-center">
 								<div class="flex-shrink-0 avatar-xs">
-									<div class="avatar-title bg-info rounded-circle">
+									<div class="avatar-title bg-info bg-gradient rounded-circle">
 										<i class="mdi mdi-file-sign"></i>
 									</div>
 								</div>
@@ -638,7 +672,7 @@ viewRequestDetails = (request_id) => {
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
 							<div class="d-flex align-items-center">
 								<div class="flex-shrink-0 avatar-xs">
-									<div class="avatar-title bg-dark rounded-circle">
+									<div class="avatar-title bg-dark bg-gradient rounded-circle">
 										<i class="ri-user-received-2-line"></i>
 									</div>
 								</div>
@@ -672,7 +706,7 @@ viewRequestDetails = (request_id) => {
 						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
 							<div class="d-flex align-items-center">
 								<div class="flex-shrink-0 avatar-xs">
-									<div class="avatar-title bg-success rounded-circle">
+									<div class="avatar-title bg-success bg-gradient rounded-circle">
 										<i class="ri-checkbox-circle-fill"></i>
 									</div>
 								</div>
@@ -701,54 +735,9 @@ viewRequestDetails = (request_id) => {
 				`
 				$('#last').html(released)
 			} else {
-				$('#for_clearance').addClass('d-none')
-				$('#for_evaluation').addClass('d-none')
-				$('#ready_for_pickup').addClass('d-none')
-
-				let cancelled = `
-					<div class="accordion-header" id="headingFive">
-						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-							<div class="d-flex align-items-center">
-								<div class="flex-shrink-0 avatar-xs">
-									<div class="avatar-title bg-danger rounded-circle">
-										<i class="mdi mdi-cancel"></i>
-									</div>
-								</div>
-								<div class="flex-grow-1 ms-3">
-									<h6 class="fs-15 mb-1 fw-semibold">
-										${data.status_of_request} -
-										<span class="fw-normal">
-										${moment(data.cancelled).format('ddd')},
-										${moment(data.cancelled).format('DD, MMM. YYYY')}
-										</span>
-									</h6>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingFives" data-bs-parent="#accordionExample">
-						<div class="accordion-body ms-2 ps-5 pt-0">
-					`
-				if (data.status_of_request === 'Cancelled by Student') {
-					cancelled += `
-							<h6 class="mb-1">The Document Request has been cancelled by the Student.</h6>
-						`
-				} else if (data.status_of_request === 'Cancelled by Staff') {
-					cancelled += `
-							<h6 class="mb-1">The Document Request has been cancelled by the PUP Staff. The student can find the reason of cancelling on the Remarks of this request.</h6>
-						`
-				}
-				cancelled += `
-							<p class="text-muted mb-0">
-								${moment(data.cancelled).format('ddd')},
-								${moment(data.cancelled).format('DD, MMM. YYYY')} -
-								${moment(data.cancelled).format('hh:mm A')}
-							</p>
-						</div>
-					</div>
-				`
-				$('#last').html(cancelled)
+				processCancelled(data)
 			}
+
 			if (data.status_of_request === 'Cancelled by Staff') {
 				remarks = `
 					<div class="h6 fs-15 text-primary">Remarks</div>
@@ -779,6 +768,281 @@ viewRequestDetails = (request_id) => {
 			}
 		},
 	})
+}
+
+processCancelled = (data) => {
+	if (data.status_of_request === 'Cancelled by Student') {
+		cancelledStudent(data)
+	} else if (data.status_of_request === 'Cancelled by Staff') {
+		cancelledStaff(data)
+	}
+}
+
+cancelledStudent = (data) => {
+	$('#for_evaluation').addClass('d-none')
+	$('#ready_for_pickup').addClass('d-none')
+
+	if (data.for_clearance !== null) {
+		$('#for_clearance').removeClass('d-none')
+
+		let forClearance = `
+            <div class="accordion-header" id="headingTwo">
+                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 avatar-xs">
+                            <div class="avatar-title bg-danger bg-gradient rounded-circle">
+                                <i class="mdi mdi-nfc-search-variant"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="fs-15 mb-0 fw-semibold">
+                                For Clearance -
+                                <span class="fw-normal">
+                                    ${moment(data.for_clearance).format('ddd')},
+                                    ${moment(data.for_clearance).format('DD, MMM. YYYY')}
+                                </span>
+                            </h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body ms-2 ps-5 pt-0">
+                    <h6 class="mb-1">The Document Request is now Approved. The student must go to PUP QC to submit the requirements and pay the processing fees.</h6>
+                    <p class="text-muted mb-0">
+                        ${moment(data.for_clearance).format('ddd')},
+                        ${moment(data.for_clearance).format('DD, MMM. YYYY')} -
+                        ${moment(data.for_clearance).format('hh:mm A')}
+                    </p>
+                </div>
+            </div>
+        `
+		$('#for_clearance').html(forClearance)
+	} else {
+		$('#for_clearance').addClass('d-none')
+	}
+
+	let cancelled = `
+        <div class="accordion-header" id="headingFive">
+            <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0 avatar-xs">
+                        <div class="avatar-title bg-primary bg-gradient rounded-circle">
+                            <i class="mdi mdi-cancel"></i>
+                        </div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h6 class="fs-15 mb-1 fw-semibold">
+                            ${data.status_of_request} -
+                            <span class="fw-normal">
+                            ${moment(data.cancelled).format('ddd')},
+                            ${moment(data.cancelled).format('DD, MMM. YYYY')}
+                            </span>
+                        </h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingFives" data-bs-parent="#accordionExample">
+            <div class="accordion-body ms-2 ps-5 pt-0">
+                <h6 class="mb-1">The Document Request has been cancelled by the Student.</h6>
+
+                <p class="text-muted mb-0">
+                    ${moment(data.cancelled).format('ddd')},
+                    ${moment(data.cancelled).format('DD, MMM. YYYY')} -
+                    ${moment(data.cancelled).format('hh:mm A')}
+                </p>
+            </div>
+        </div>
+    `
+
+	$('#last').html(cancelled)
+}
+
+cancelledStaff = (data) => {
+	if (data.ready_for_pickup !== null) {
+		$('#for_clearance').removeClass('d-none')
+		$('#for_evaluation').removeClass('d-none')
+		$('#ready_for_pickup').removeClass('d-none')
+
+		let forClearance = `
+            <div class="accordion-header" id="headingTwo">
+                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 avatar-xs">
+                            <div class="avatar-title bg-danger bg-gradient rounded-circle">
+                                <i class="mdi mdi-nfc-search-variant"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="fs-15 mb-0 fw-semibold">
+                                For Clearance -
+                                <span class="fw-normal">
+                                    ${moment(data.for_clearance).format('ddd')},
+                                    ${moment(data.for_clearance).format('DD, MMM. YYYY')}
+                                </span>
+                            </h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body ms-2 ps-5 pt-0">
+                    <h6 class="mb-1">The Document Request is now Approved. The student must go to PUP QC to submit the requirements and pay the processing fees.</h6>
+                    <p class="text-muted mb-0">
+                        ${moment(data.for_clearance).format('ddd')},
+                        ${moment(data.for_clearance).format('DD, MMM. YYYY')} -
+                        ${moment(data.for_clearance).format('hh:mm A')}
+                    </p>
+                </div>
+            </div>
+        `
+		$('#for_clearance').html(forClearance)
+
+		let forEvaluation = `
+            <div class="accordion-header" id="headingThree">
+                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 avatar-xs">
+                            <div class="avatar-title bg-info bg-gradient rounded-circle">
+                                <i class="mdi mdi-file-sign"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="fs-15 mb-1 fw-semibold">
+                                For Evaluation / Processing -
+                                <span class="fw-normal">
+                                    ${moment(data.for_evaluation).format('ddd')},
+                                    ${moment(data.for_evaluation).format('DD, MMM. YYYY')}
+                                </span>
+                            </h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body ms-2 ps-5 pt-0">
+                    <h6 class="mb-1">The Document/s are Paid and the Request is now being Processed for signature, documentary stamp and school dry seal.</h6>
+                    <p class="text-muted mb-0">
+                        ${moment(data.for_evaluation).format('ddd')},
+                        ${moment(data.for_evaluation).format('DD, MMM. YYYY')} -
+                        ${moment(data.for_evaluation).format('hh:mm A')}
+                    </p>
+                </div>
+            </div>
+        `
+		$('#for_evaluation').html(forEvaluation)
+
+		let readyforPickup = `
+            <div class="accordion-header" id="headingFour">
+                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 avatar-xs">
+                            <div class="avatar-title bg-dark bg-gradient rounded-circle">
+                                <i class="ri-user-received-2-line"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="fs-15 mb-1 fw-semibold">
+                                Ready for Pickup -
+                                <span class="fw-normal">
+                                    ${moment(data.ready_for_pickup).format('ddd')},
+                                    ${moment(data.ready_for_pickup).format('DD, MMM. YYYY')}
+                                </span>
+                            </h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                <div class="accordion-body ms-2 ps-5 pt-0">
+                    <h6 class="mb-1">The Requested Document/s can now be claimed at PUP QC. The student must bring the claim stub and other requirements, if necessary.</h6>
+                    <p class="text-muted mb-0">
+                        ${moment(data.ready_for_pickup).format('ddd')},
+                        ${moment(data.ready_for_pickup).format('DD, MMM. YYYY')} -
+                        ${moment(data.ready_for_pickup).format('hh:mm A')}
+                    </p>
+                </div>
+            </div>
+        `
+		$('#ready_for_pickup').html(readyforPickup)
+	} else if (data.for_clearance !== null) {
+		$('#for_clearance').removeClass('d-none')
+		$('#for_evaluation').addClass('d-none')
+		$('#ready_for_pickup').addClass('d-none')
+
+		let forClearance = `
+            <div class="accordion-header" id="headingTwo">
+                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 avatar-xs">
+                            <div class="avatar-title bg-danger bg-gradient rounded-circle">
+                                <i class="mdi mdi-nfc-search-variant"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="fs-15 mb-0 fw-semibold">
+                                For Clearance -
+                                <span class="fw-normal">
+                                    ${moment(data.for_clearance).format('ddd')},
+                                    ${moment(data.for_clearance).format('DD, MMM. YYYY')}
+                                </span>
+                            </h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body ms-2 ps-5 pt-0">
+                    <h6 class="mb-1">The Document Request is now Approved. The student must go to PUP QC to submit the requirements and pay the processing fees.</h6>
+                    <p class="text-muted mb-0">
+                        ${moment(data.for_clearance).format('ddd')},
+                        ${moment(data.for_clearance).format('DD, MMM. YYYY')} -
+                        ${moment(data.for_clearance).format('hh:mm A')}
+                    </p>
+                </div>
+            </div>
+        `
+		$('#for_clearance').html(forClearance)
+	} else {
+		$('#for_clearance').addClass('d-none')
+		$('#for_evaluation').addClass('d-none')
+		$('#ready_for_pickup').addClass('d-none')
+	}
+
+	let cancelled = `
+        <div class="accordion-header" id="headingFive">
+            <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0 avatar-xs">
+                        <div class="avatar-title bg-primary bg-gradient rounded-circle">
+                            <i class="mdi mdi-cancel"></i>
+                        </div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h6 class="fs-15 mb-1 fw-semibold">
+                            ${data.status_of_request} -
+                            <span class="fw-normal">
+                            ${moment(data.cancelled).format('ddd')},
+                            ${moment(data.cancelled).format('DD, MMM. YYYY')}
+                            </span>
+                        </h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingFives" data-bs-parent="#accordionExample">
+            <div class="accordion-body ms-2 ps-5 pt-0">
+				<h6 class="mb-1">The Document Request has been cancelled by the PUP Staff. The student can find the reason of cancelling on the Remarks of this request.</h6>
+				<p class="text-muted mb-0">
+					${moment(data.cancelled).format('ddd')},
+					${moment(data.cancelled).format('DD, MMM. YYYY')} -
+					${moment(data.cancelled).format('hh:mm A')}
+				</p>
+			</div>
+		</div>
+`
+	$('#last').html(cancelled)
 }
 
 // Delete Request
@@ -842,6 +1106,7 @@ deleteRequest = (request_id) => {
 						loadReleasedRequests()
 						loadCancelledRequests()
 						loadDeletedRequests()
+						getHistoryAnalytics()
 					}
 				},
 			}).fail(() => {
@@ -864,4 +1129,22 @@ deleteRequest = (request_id) => {
 			})
 		}
 	})
+}
+
+counter = () => {
+	var e = document.querySelectorAll('.counter-value')
+	function s(e) {
+		return e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+	}
+	e &&
+		Array.from(e).forEach(function (o) {
+			!(function e() {
+				var t = +o.getAttribute('data-target'),
+					a = +o.innerText,
+					n = t / 250
+				n < 1 && (n = 1),
+					a < t ? ((o.innerText = (a + n).toFixed(0)), setTimeout(e, 1)) : (o.innerText = s(t)),
+					s(o.innerText)
+			})()
+		})
 }

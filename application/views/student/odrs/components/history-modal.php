@@ -114,15 +114,13 @@
       <div class="modal-body">
         <h2 class="text-center"><span id="control_no" class="badge badge-outline-primary text-center fw-bold"></span></h2>
         <table class="mt-5 table table-bordered nowrap align-middle" style="width: 100%">
-          <thead>
-            <tr class="bg-light">
-              <th colspan="4" class="fst-italic">Requested Document/s:</th>
-            </tr>
+          <thead class="table-light text-muted">
             <tr>
+              <th colspan="2" class="bg-soft-primary text-dark">Requested Document/s:</th>
+            </tr>
+            <tr class="text-uppercase">
               <th>Document</th>
-              <th>Qty</th>
-              <th>Payment Status</th>
-              <th id="completion_date"></th>
+              <th>Quantity</th>
             </tr>
           </thead>
           <tbody id="documents">
@@ -134,8 +132,74 @@
             <p id="purpose_of_request" class="p-2 fw-medium"></p>
           </div>
         </div>
+        <div class="row mt-4">
+          <div id="payment_status_col" class="d-none">
+            <div class="p-2 border border-dashed rounded">
+              <div class="d-flex align-items-center">
+                <div class="flex-shrink-0 avatar-sm align-self-center me-3">
+                  <div class="avatar-title rounded bg-soft-primary text-dark fs-24">
+                    <i class="mdi mdi-cash-multiple"></i>
+                  </div>
+                </div>
+                <div class="flex-grow-1">
+                  <p class="text-uppercase text-muted mb-1">Payment Status :</p>
+                  <h6 id="payment_status" class="mb-0"></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end col -->
+          <div id="or_number_col" class="d-none">
+            <div class="p-2 border border-dashed rounded">
+              <div class="d-flex align-items-center">
+                <div class="flex-shrink-0 avatar-sm align-self-center me-3">
+                  <div class="avatar-title rounded bg-soft-primary text-dark fs-24">
+                    <i class="mdi mdi-clipboard-list-outline"></i>
+                  </div>
+                </div>
+                <div class="flex-grow-1">
+                  <p class="text-uppercase text-muted mb-1">OR Number :</p>
+                  <h6 id="or_no" class="mb-0"></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end col -->
+          <div id="release_classification_col" class="d-none">
+            <div class="p-2 border border-dashed rounded">
+              <div class="d-flex align-items-center">
+                <div class="flex-shrink-0 avatar-sm align-self-center me-3">
+                  <div class="avatar-title rounded bg-soft-primary text-dark fs-24">
+                    <i class="mdi mdi-briefcase-variant-outline"></i>
+                  </div>
+                </div>
+                <div class="flex-grow-1">
+                  <p class="text-uppercase text-muted mb-1">Release Classification :</p>
+                  <h6 id="release_classification" class="mb-0"></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end col -->
+          <div id="completed_date_col" class="d-none">
+            <div class="p-2 border border-dashed rounded">
+              <div class="d-flex align-items-center">
+                <div class="flex-shrink-0 avatar-sm align-self-center me-3">
+                  <div class="avatar-title rounded bg-soft-primary text-dark fs-24">
+                    <i class="mdi mdi-calendar-month-outline"></i>
+                  </div>
+                </div>
+                <div class="flex-grow-1">
+                  <p id="completed_date" class="text-uppercase text-muted mb-1"></p>
+                  <h6 id="date_completed" class="mb-0"></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end col -->
+        </div>
         <div class="m-2 mt-4 mb-3">
-          <div class="h6 fs-15 text-primary">Status</div>
+          <div class="h6 fs-15 text-primary">Request Status</div>
           <div class="profile-timeline">
             <div class="accordion accordion-flush" id="accordionFlushExample">
               <div class="accordion-item border-0">
@@ -143,7 +207,7 @@
                   <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     <div class="d-flex align-items-center">
                       <div class="flex-shrink-0 avatar-xs">
-                        <div class="avatar-title bg-warning rounded-circle">
+                        <div class="avatar-title bg-warning bg-gradient rounded-circle">
                           <i class="mdi mdi-progress-clock"></i>
                         </div>
                       </div>

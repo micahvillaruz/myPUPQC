@@ -34,7 +34,6 @@ var login = () => {
 		success: (response) => {
 			// Get result data
 			const data = response.data
-			console.log(data)
 
 			// Store token on local storage
 			localStorage.setItem('TOKEN', data.token)
@@ -45,6 +44,7 @@ var login = () => {
 			session_data += 'token=' + data.token
 			session_data += '&user_id=' + data.user_id
 			session_data += '&user_type=' + data.user_type
+			session_data += '&user_roles=' + data.user_roles
 
 			Swal.fire({
 				html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully logged in!</p></div></div>',

@@ -7,6 +7,12 @@ $(function () {
 		// pass data to API for updating of student's info
 		editPatientInformationAJAX()
 	})
+	const checkbox = document.getElementById('formCheck1')
+	const input = document.getElementById('emergency_contact_address')
+	input.disabled = !input.disabled
+	checkbox.addEventListener('change', function () {
+		input.disabled = this.checked
+	})
 })
 
 loadPersonalInfo = () => {
@@ -19,17 +25,8 @@ loadPersonalInfo = () => {
 			console.log(data)
 
 			//Load Topbar
-			$('#full_name').html(data.full_name)
-
-			// Load personal-info
-			$('#view_sex').html(data.patient_info_assigned_to_user.user_profiles[0].gender)
-			const birth_date = data.patient_info_assigned_to_user.user_profiles[0].birth_date
-			let birthDateFormatted = `${moment(birth_date).format('LL')}`
-			$('#view_birth_date').html(birthDateFormatted)
-			$('#view_full_address').html(data.patient_info_assigned_to_user.user_profiles[0].full_address)
-			$('#view_civil_status').html(data.patient_info_assigned_to_user.user_profiles[0].civil_status)
-			$('#view_citizenship').html(data.patient_info_assigned_to_user.user_profiles[0].citizenship)
-			$('#view_religion').html(data.patient_info_assigned_to_user.user_profiles[0].religion)
+			$('#view_student_name').html(data.patient_info_assigned_to_user.user_profiles[0].full_name)
+			$('#view_student_number').html(data.patient_info_assigned_to_user.user_no)
 		},
 	})
 }
@@ -44,11 +41,6 @@ editPatientInfoInput = () => {
 				// Get data from result
 				const data = result.data
 				console.log(data)
-				$('#primary_contact_no').val(
-					data.patient_info_assigned_to_user.user_profiles[0].contact_number,
-				)
-				$('#primary_email').val(data.patient_info_assigned_to_user.user_profiles[0].email_address)
-				$('#facebook_username').val(data.facebook_username)
 				$('#emergency_contact_name').val(data.emergency_contact_name)
 				$('#emergency_contact_number').val(data.emergency_contact_number)
 				$('#email').val(data.emergency_contact_email)
@@ -69,20 +61,13 @@ editPatientInformationAJAX = () => {
 		// no validation error
 		const form = new FormData($('#patientInformationForm')[0])
 
-		data = {
-			facebook_username: form.get('facebook_username'),
-			emergency_contact_name: form.get('emergency_contact_name'),
-			emergency_contact_number: form.get('emergency_contact_number'),
-			emergency_contact_email: form.get('emergency_contact_email'),
-			emergency_contact_address: form.get('emergency_contact_address'),
-			philhealth_number: form.get('philhealth_number'),
-			philhealth_id_image: form.get('philhealth_id_image'),
-		}
-		console.log(data)
 		$.ajax({
 			url: apiURL + `omsss/student/patient_information`,
 			type: 'PUT',
-			data: data,
+			data: form,
+			processData: false,
+			contentType: false,
+			cache: false,
 			dataType: 'json',
 			headers: AJAX_HEADERS,
 			success: (result) => {
@@ -96,7 +81,9 @@ editPatientInformationAJAX = () => {
 						buttonsStyling: !1,
 						showCloseButton: !0,
 					}).then(function () {
-						loadProfile()
+						setTimeout(() => {
+							location.reload()
+						}, 1000)
 					})
 				}
 			},

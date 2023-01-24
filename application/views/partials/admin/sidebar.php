@@ -49,7 +49,32 @@
 
             <li class="menu-title">
               <i class="ri-more-fill"></i>
-              <span>ODRS</span>
+              <span>Role Management</span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/role-management/roles">
+                <i class="las la-user-graduate"></i>
+                <span>Role Management</span>
+              </a>
+            </li>
+
+
+            <li class="menu-title">
+              <i class="ri-more-fill"></i>
+              <span>User Role Management</span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/user-role-management/user-roles">
+                <i class="las la-user-graduate"></i>
+                <span>User Role </span>
+              </a>
+            </li>
+
+            <li class="menu-title">
+              <i class="ri-more-fill"></i>
+              <span>ODRTS</span>
             </li>
 
             <li class="nav-item">

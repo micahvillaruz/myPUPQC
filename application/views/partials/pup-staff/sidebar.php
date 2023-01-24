@@ -28,6 +28,7 @@
               </a>
             </li>
 
+            <?php if (strpos($this->session->userdata('user_roles'), 'Organizer') !== false) { ?>
             <li class="menu-title">
               <i class="ri-more-fill"></i>
               <span>EVRSERS</span>
@@ -53,35 +54,68 @@
                 <span>Reservation History</span>
               </a>
             </li>
+            <?php } ?>
 
+            <?php if (strpos($this->session->userdata('user_roles'), 'News Reporter') !== false || strpos($this->session->userdata('user_roles'), 'Public Relations') !== false) { ?>
             <li class="menu-title">
               <i class="ri-more-fill"></i>
-              <span>ODRS</span>
+              <span>Announcement System</span>
             </li>
-
+            <?php } ?>
+            <?php if (strpos($this->session->userdata('user_roles'), 'Public Relations') !== false) { ?>
             <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/odrs/documents">
-                <i class="ri-file-copy-2-line"></i>
-                <span>Documents</span>
+              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/announcement/advisory">
+                <i class=" ri-article-line"></i>
+                <span>Advisory</span>
               </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/odrs/requests">
-                <i class="ri-archive-line"></i>
-                <span>Requests</span>
+              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/announcement/announcement">
+                <i class=" ri-notification-badge-line"></i>
+                <span>Announcement</span>
               </a>
             </li>
-
-
+            <?php } ?>
+            <?php if (strpos($this->session->userdata('user_roles'), 'News Reporter') !== false) { ?>
             <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/odrs/history">
-                <i class="mdi mdi-history"></i>
-                <span>History</span>
+              <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/announcement/news">
+                <i class=" ri-newspaper-line"></i>
+                <span>News</span>
               </a>
             </li>
+            <?php } ?>
+
+            <?php if (strpos($this->session->userdata('user_roles'), 'Student Records') !== false) { ?>
+              <li class="menu-title">
+                <i class="ri-more-fill"></i>
+                <span>ODRTS</span>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/odrs/documents">
+                  <i class="ri-file-copy-2-line"></i>
+                  <span>Documents</span>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/odrs/requests">
+                  <i class="ri-archive-line"></i>
+                  <span>Requests</span>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/odrs/history">
+                  <i class="mdi mdi-history"></i>
+                  <span>History</span>
+                </a>
+              </li>
+            <?php } ?>
 
             <!--OMSS -->
+            <?php if (strpos($this->session->userdata('user_roles'), 'Doctor') !== false) { ?>
             <li class="menu-title">
               <i class="ri-more-fill"></i>
               <span>OMSS - DOCTOR </span>
@@ -100,7 +134,9 @@
                 <span>Medical Request History</span>
               </a>
             </li>
+            <?php } ?>
 
+            <?php if (strpos($this->session->userdata('user_roles'), 'Dentist') !== false) { ?>
             <li class="menu-title">
               <i class="ri-more-fill"></i>
               <span>OMSS - DENTIST </span>
@@ -119,7 +155,9 @@
                 <span>Dental Request History</span>
               </a>
             </li>
+            <?php } ?>
 
+            <?php if (strpos($this->session->userdata('user_roles'), 'Guidance Counsellor') !== false) { ?>
             <li class="menu-title">
               <i class="ri-more-fill"></i>
               <span>OMSS - GUIDANCE COUNSELOR </span>
@@ -138,6 +176,7 @@
                 <span>Counseling History</span>
               </a>
             </li>
+            <?php } ?>
 
 
           </ul>
@@ -150,3 +189,5 @@
     <!-- Left Sidebar End -->
     <!-- Vertical Overlay-->
     <div class="vertical-overlay"></div>
+    <!-- imnport sidebar ajax -->
+    <!-- <script src="<?= base_url() ?>public\js\ajax\pup-staff\sidebar.ajax.js"></script> -->

@@ -1,4 +1,4 @@
-<div class="row">
+<div id="allow_create_request" class="row d-none">
   <div class="col-lg-12">
     <div class="card">
       <div class="card-header">
@@ -139,4 +139,15 @@
   </div>
   <!--end col-->
 </div>
-<!--end row-->
+
+<div id="decline_create_request" class="row my-5 py-5 d-none">
+  <div class="py-5 col-12 d-flex justify-content-center align-items-center text-center flex-column gap-2">
+    <lord-icon src="https://cdn.lordicon.com/yrgzpquj.json" trigger="loop" style="width:180px;height:180px"></lord-icon>
+    <h4 class="fw-bold">Existing Request is Found!</h4>
+
+    <p class="fs-15">If you want to create a New Request and the status of your request is currently <b>Pending For Clearance</b> and <b>For Clearance</b>, you must cancel your Existing Request first. <br> You can cancel the request by going to the <span class="fw-medium">Request</span> page and clicking the <button type="button" class="mx-2 mt-1 btn btn-soft-danger btn-sm mt-2 mt-sm-0"><i class="mdi mdi-archive-remove-outline align-middle me-1"></i> Cancel Request</button> button. Otherwise, wait for your request to be Released before creating a New Request.</p>
+    <span class="fs-12 mb-3 badge text-dark bg-warning">You can only cancel your existing request if the status of your request is <b>Pending For Clearance</b> and <b>For Clearance</b> only.</span>
+
+    <a href="http://localhost/myPUPQC/student/odrs/request" role="button" class="btn btn-primary bg-gradient waves-effect waves-light">Go to the Request Page</a>
+  </div>
+</div>

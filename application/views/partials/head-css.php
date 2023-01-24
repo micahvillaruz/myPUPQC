@@ -7,6 +7,8 @@
 
 		<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
+		<!-- dropzone css -->
+		<link rel="stylesheet" href="<?= base_url() ?>public/libs/dropzone/dropzone.css" type="text/css" />
 
 		<!-- fullcalendar css -->
 		<link href="<?= base_url() ?>public/libs/fullcalendar/main.min.css" rel="stylesheet" type="text/css" />
@@ -42,5 +44,7 @@
 		<link href="<?= base_url() ?>public/css/custom.css" rel="stylesheet" type="text/css" />
 
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+		<script src="https://cdn.tiny.cloud/1/as3zjmysyquizulphoal7ahxlx42xdbd7os2fqboyb32mw5l/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
 		</head>
