@@ -226,7 +226,8 @@ $route['admin/role-management/roles'] = 'admin/roles';
 | ----------------------
 */
 
-$route['admin/user-role-management/user-roles'] = 'admin/user_roles_management';
+$route['admin/user-role-management/student'] = 'admin/user_roles_student';
+$route['admin/user-role-management/staff'] = 'admin/user_roles_staff';
 
 
 /*

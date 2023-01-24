@@ -82,24 +82,38 @@ class Admin extends CI_Controller
     $this->load->view('partials/page-title', ["page_title" => "Role Management", "title" => "Roles"]);
     $this->load->view('admin/role-management/roles');
     $this->load->view('partials/footer');
-    $this->load->view('admin/roles-management/components/roles-modal');
     $this->load->view('partials/foot-scripts');
     $this->load->view('admin/role-management/scripts/roles-scripts');
   }
 
-  public function user_roles_management()
+  public function user_roles_student()
   {
     $this->load->view('partials/main');
     $this->load->view('partials/title-meta');
     $this->load->view('partials/head-css');
     $this->load->view('partials/admin/topbar');
     $this->load->view('partials/admin/sidebar');
-    $this->load->view('partials/page-title', ["page_title" => "User Role Management", "title" => "User Roles"]);
-    $this->load->view('admin/user-role-management/user-roles');
+    $this->load->view('partials/page-title', ["page_title" => "User Role Management", "title" => "Assign Roles to Student"]);
+    $this->load->view('admin/user-role-management/ur-student');
     $this->load->view('partials/footer');
-    $this->load->view('admin/user-roles-management/components/user-roles-modal');
+    $this->load->view('admin/user-role-management/components/user-roles-modal');
     $this->load->view('partials/foot-scripts');
-    $this->load->view('admin/user-role-management/scripts/user-roles-scripts');
+    $this->load->view('admin/user-role-management/scripts/ur-student-scripts');
+  }
+
+  public function user_roles_staff()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/admin/topbar');
+    $this->load->view('partials/admin/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "User Role Management", "title" => "Assign Roles to PUP Staff"]);
+    $this->load->view('admin/user-role-management/ur-staff');
+    $this->load->view('partials/footer');
+    $this->load->view('admin/user-role-management/components/user-roles-modal');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('admin/user-role-management/scripts/ur-staff-scripts');
   }
 
 

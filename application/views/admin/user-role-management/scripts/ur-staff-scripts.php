@@ -28,7 +28,7 @@
 <script src="../../public/js/pages/select2.init.js"></script>
 
 <!-- User Roles ajax -->
-<script src="<?= base_url() ?>public/js/ajax/admin/user_roles/user-roles.ajax.js"></script>
+<script src="<?= base_url() ?>public/js/ajax/admin/user_roles/ur-staff.ajax.js"></script>
 
 <!-- App js -->
 <script src="<?= base_url() ?>public/js/app.js"></script>

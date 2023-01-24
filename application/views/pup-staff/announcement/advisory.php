@@ -4,12 +4,6 @@
             <div class="flex-grow-1">
                 <button type="button" class="btn btn-success" data-bs-toggle="collapse" href="#collapseExample" aria-expanded="true" aria-controls="collapseExample"><i class="ri-add-line align-bottom me-1"></i> Add Advisory</button>
             </div>
-            <div class="flex-shrink-0">
-                <div class="hstack text-nowrap gap-2">
-                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#addmembers"><i class="ri-filter-2-line me-1 align-bottom"></i> Filters</button>
-                    <button class="btn btn-soft-info shadow-none">Import</button>
-                </div>
-            </div>
         </div>
         <div class="collapse mb-3" id="collapseExample">
             <div class="card mb-0">

@@ -66,9 +66,15 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>admin/user-role-management/user-roles">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/user-role-management/student">
                 <i class="las la-user-graduate"></i>
-                <span>User Role </span>
+                <span>For Students</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/user-role-management/staff">
+                <i class="las la-user-graduate"></i>
+                <span>For PUP Staff</span>
               </a>
             </li>
 
