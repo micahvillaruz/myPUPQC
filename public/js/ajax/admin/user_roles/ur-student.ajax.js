@@ -94,7 +94,7 @@ viewStudentDetails = (user_id) => {}
 // Populate select2 options
 populateSelect2 = () => {
 	// * First Phase: Populate select2 option: select_users which is a js-example-basic-single class
-	const select2Users = $('#select_staff')
+	const select2Users = $('#select_student')
 	$.ajax({
 		url: apiURL + 'super_admin/users_without_roles/Student',
 		type: 'GET',
@@ -218,16 +218,16 @@ addRolesToUser = () => {
 	if ($('#selectRoleToUsersForm')[0].checkValidity()) {
 		const form = new FormData($('#selectRoleToUsersForm')[0])
 
-		let users_selected = form.get('select_users')
+		let users_selected = form.get('select_student')
 		let roles_selected = []
 
 		for (var pair of form.entries()) {
-			if (pair[0] == 'select_roles') {
+			if (pair[0] == 'select_student_roles') {
 				roles_selected.push(pair[1])
 			}
 			console.log(pair[0] + ': ' + pair[1])
 		}
-
+		console.log(roles_selected)
 		roles_selected = roles_selected.join(';')
 		console.log(roles_selected)
 

@@ -19,7 +19,7 @@
 
 <!-- User Roles ajax -->
 <script src="<?= base_url() ?>public/js/ajax/admin/user_roles/ur-student.ajax.js"></script>
-
+<script src="<?= base_url() ?>public/js/pages/select2.init.js"></script>
 <!-- App js -->
 <script src="<?= base_url() ?>public/js/app.js"></script>
 
