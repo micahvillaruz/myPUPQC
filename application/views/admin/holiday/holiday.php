@@ -9,9 +9,9 @@
                     <br />
                     <strong>1. </strong>Adding New Holidays here will be used for Calendar Control in the system.
                     <br /> 
-                    <strong>2. </strong>When a Holiday is Recurring, it will be automatically added to the Calendar Control for the next year.
+                    <strong>2. </strong>When a Holiday is Recurring, it will be automatically added to the Calendar Control for the next year. This is recommended for holidays that are always on the same date every year.
                     <br /> 
-                    <strong>3. </strong>If a Holiday is not Recurring, the status of the holiday will be set to Deleted once the dates have passed.
+                    <strong>3. </strong>If a Holiday is not Recurring, the status of the holiday will be set to Deleted once the dates have passed. This is recommended for one-time holidays or holidays that changes their date every year.
                 </div>
             <div class="card-body justify-content-center text-center">
                 

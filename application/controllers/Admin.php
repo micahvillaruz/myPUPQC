@@ -262,8 +262,7 @@ class Admin extends CI_Controller
     $this->load->view('partials/page-title', ["page_title" => "Holiday", "title" => "Holiday Management"]);
     $this->load->view('admin/holiday/holiday');
     $this->load->view('partials/footer');
-    $this->load->view('admin/evrsers/components/reservation-history-modal');
     $this->load->view('partials/foot-scripts');
-    $this->load->view('admin/evrsers/scripts/reservation-history-scripts');
+    $this->load->view('admin/holiday/scripts/holiday-scripts');
   }
 }
