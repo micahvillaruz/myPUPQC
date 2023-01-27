@@ -79,19 +79,12 @@ organizationsTable = () => {
                     data: null,
                     class: 'text-center',
                     render: (data) => {
-                        if (data.reserve_status == 'Pending') {
+                        if (data.organization_status == 'Active' || data.organization_status == 'Inactive') {
                             return `
                             <div class="dropdown d-inline-block">
-                                <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewReservationModal" onclick="viewDetailsReservationAdmin('${data.reservation_id}')"><i class="ri-eye-fill fs-5"></i></button>
-                                <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editReservationModal" onclick = "editReservation('${data.reservation_id}')"><i class="ri-edit-2-fill fs-5"></i></button>
-                                <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#cancelReservationModal" onclick="deleteReservation('${data.reservation_id}')"><i class="ri-delete-bin-fill fs-5"></i></button> 
-                            </div>
-                                `
-                        } else if (data.reserve_status == 'Deleted') {
-                            return `
-                            <div class="dropdown d-inline-block">
-                                <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewReservationModal" onclick="viewDetailsReservationAdmin('${data.reservation_id}')"><i class="ri-eye-fill fs-5"></i></button>
-                                <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editReservationModal" onclick = "editReservation('${data.reservation_id}')"><i class="ri-edit-2-fill fs-5"></i></button>
+                                <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewOrganizationModal" onclick="viewOrganization('${data.organization_id}')"><i class="ri-eye-fill fs-5"></i></button>
+                                <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editOrganizationModal" onclick = "editOrganization('${data.organization_id}')"><i class="ri-edit-2-fill fs-5"></i></button>
+                                <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#deleteOrganizationModal" onclick="deleteOrganization('${data.organization_id}')"><i class="ri-delete-bin-fill fs-5"></i></button> 
                             </div>
                                 `
                         }
