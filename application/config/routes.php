@@ -272,6 +272,7 @@ $route['admin/evrsers/reservation-history'] = 'admin/reservation_history';
 */
 
 $route['admin/holiday'] = 'admin/holiday';
+$route['admin/organization'] = 'admin/organization';
 
 /*
 | -------------------------------------------------------------------------

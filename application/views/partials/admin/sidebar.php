@@ -163,6 +163,13 @@
               </a>
             </li>
 
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/organization" class="nav-link">
+                <i class="bx bx-group"></i>
+                <span>Org Management</span>
+              </a>
+            </li>
+
           </ul>
         </div>
         <!-- Sidebar -->
