@@ -265,4 +265,18 @@ class Admin extends CI_Controller
     $this->load->view('partials/foot-scripts');
     $this->load->view('admin/holiday/scripts/holiday-scripts');
   }
+
+  public function organization()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/admin/topbar');
+    $this->load->view('partials/admin/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "Organizations", "title" => "Organization Management"]);
+    $this->load->view('admin/organization/organization');
+    $this->load->view('partials/footer');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('admin/organization/scripts/org-scripts');
+  }
 }
