@@ -172,7 +172,7 @@ loadAnnouncementTables = () => {
                         </button>
                         `
 						const deleteButton = `
-                        <button type="button" class="btn btn-dark bg-gradient btn-icon waves-effect waves-light">
+                        <button type="button" class="btn btn-dark bg-gradient btn-icon waves-effect waves-light" onclick="deleteAnnouncement('${data.announcement_id}')">
                             <i class="ri-delete-bin-fill"></i>
                         </button>
                         `
@@ -240,4 +240,58 @@ addAnnouncement = () => {
 			})
 		})
 	}
+}
+
+deleteAnnouncement = (announcement_id) => {
+	Swal.fire({
+		title: `Are you sure you want to delete this announcement?`,
+		text: `By deleting this advisory, users won't able to see this announcement and in the table.`,
+		iconHtml: `<lord-icon
+        src="https://cdn.lordicon.com/gsqxdxog.json"
+        trigger="loop"
+        colors="primary:#121331,secondary:#c71f16"
+        style="width:100px;height:100px">
+        </lord-icon>`,
+		customClass: {
+			icon: 'border-white',
+		},
+		showCancelButton: true,
+		confirmButtonColor: '#f06548',
+		cancelButtonColor: '#6c757d',
+		confirmButtonText: 'Delete',
+	}).then((result) => {
+		if (result.isConfirmed) {
+			$.ajax({
+				url: apiURL + 'annsys/pup_staff/delete_announcement/' + announcement_id,
+				type: 'DELETE',
+				headers: AJAX_HEADERS,
+				success: (result) => {
+					if (result) {
+						Swal.fire({
+							html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully deleted an announcement!</p></div></div>',
+							showCancelButton: !0,
+							showConfirmButton: !1,
+							cancelButtonClass: 'btn btn-success w-xs mb-1',
+							cancelButtonText: 'Ok',
+							buttonsStyling: !1,
+							showCloseButton: !0,
+						}).then(function () {
+							// reload Pending Reservations table
+							refreshPage()
+						})
+					}
+				},
+			}).fail((xhr) => {
+				Swal.fire({
+					html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong!</h4><p class="text-muted mx-4 mb-0">${xhr.responseJSON.message}</p></div></div>`,
+					showCancelButton: !0,
+					showConfirmButton: !1,
+					cancelButtonClass: 'btn btn-danger w-xs mb-1',
+					cancelButtonText: 'Dismiss',
+					buttonsStyling: !1,
+					showCloseButton: !0,
+				})
+			})
+		}
+	})
 }
