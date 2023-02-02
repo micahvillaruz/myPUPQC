@@ -47,8 +47,8 @@
                 <div class="p-2">
                   <form id="forgotPasswordForm" class="needs-validation" novalidate>
                     <div class="mb-4">
-                      <label class="form-label">Email</label>
-                      <input type="email" class="form-control" id="email" placeholder="Enter Email">
+                      <label class="form-label">Email Address</label>
+                      <input type="email" class="form-control" id="email_address" name="email_address" placeholder="Enter Email Address">
                     </div>
 
                     <div class="text-center mt-4">
