@@ -164,9 +164,13 @@ loadNewsTables = () => {
 				{
 					data: null,
 					render: (data) => {
+						const buttonColor =
+							data.announcement_status == 'Published' ? 'btn-danger' : 'btn-success'
+						const buttonLogo =
+							data.announcement_status == 'Published' ? 'ri-close-fill' : 'ri-check-fill'
 						const viewButton = `
-                        <button type="button" class="btn btn-info btn-icon waves-effect waves-light">
-                            <i class="ri-eye-fill"></i>
+                        <button type="button" class="btn ${buttonColor} btn-icon waves-effect waves-light">
+                            <i class="${buttonLogo}"></i>
                         </button>
                         `
 						const editButton = `
@@ -175,7 +179,7 @@ loadNewsTables = () => {
                         </button>
                         `
 						const deleteButton = `
-                        <button type="button" class="btn btn-danger btn-icon waves-effect waves-light">
+                        <button type="button" class="btn btn-dark bg-gradient btn-icon waves-effect waves-light">
                             <i class="ri-delete-bin-fill"></i>
                         </button>
                         `
