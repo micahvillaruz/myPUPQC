@@ -31,8 +31,8 @@
                             <label for="holiday_type" class='form-label'>Holiday Type <span class="text-danger">*</span></label>
                             <select class="form-select" id="holiday_type" name="holiday_type">
                                 <option selected="">Choose Holiday Type...</option>
-                                <option value="Student">Regular Holiday</option>
-                                <option value="PUP Staff">Special Holiday</option>
+                                <option value="Regular Holiday">Regular Holiday</option>
+                                <option value="Special Holiday">Special Holiday</option>
                             </select>
                         </div>
                         <div class="col-sm">
@@ -47,7 +47,7 @@
                     <div class="row my-2 py-2">
                         <div class="col-sm">
                                 <label for="holiday_description" class='form-label'>Holiday Description <span class="text-danger">*</span></label>
-                                <textarea rows="3" type="text" class="form-control" id="holiday_description" name="holiday_description" placeholder="Holiday Description" required>
+                                <textarea rows="3" type="text" class="form-control" id="holiday_description" name="holiday_description" required>
                                 </textarea>
                         </div>
                     </div>

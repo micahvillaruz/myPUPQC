@@ -131,7 +131,59 @@ viewAllHolidays = () => {
 	}
 }
 
-addHolidayAJAX = () => {}
+addHolidayAJAX = () => {
+	if ($('#addHolidayForm')[0].checkValidity()) {
+		const form = new FormData($('#addHolidayForm')[0])
+		// Display the key/value pairs
+		for (var pair of form.entries()) {
+			console.log(pair[0] + ': ' + pair[1])
+		}
+
+		data = {
+			holiday_name: form.get('holiday_name'),
+			holiday_type: form.get('holiday_type'),
+			holiday_date: form.get('holiday_date'),
+			holiday_recurrence: form.get('holiday_recurrence') === 'true' ? true : false,
+			holiday_description: form.get('holiday_description'),
+		}
+
+		$.ajax({
+			url: apiURL + 'super_admin/holiday/add',
+			type: 'POST',
+			data: data,
+			dataType: 'json',
+			headers: AJAX_HEADERS,
+			success: (result) => {
+				if (result) {
+					Swal.fire({
+						html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully added a new holiday!</p></div></div>',
+						showCancelButton: !0,
+						showConfirmButton: !1,
+						cancelButtonClass: 'btn btn-success w-xs mb-1',
+						cancelButtonText: 'Ok',
+						buttonsStyling: !1,
+						showCloseButton: !0,
+					}).then(function () {
+						setTimeout(() => {
+							location.reload()
+						}, 1000)
+					})
+				}
+			},
+		}).fail((xhr) => {
+			console.log(xhr.responseJSON.message)
+			Swal.fire({
+				html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">There was an error while adding a new holiday. Please try again.</p></div></div>',
+				showCancelButton: !0,
+				showConfirmButton: !1,
+				cancelButtonClass: 'btn btn-danger w-xs mb-1',
+				cancelButtonText: 'Dismiss',
+				buttonsStyling: !1,
+				showCloseButton: !0,
+			})
+		})
+	}
+}
 
 changeHolidayStatus = (holiday_id, holiday_status) => {
 	let icon, title, text
