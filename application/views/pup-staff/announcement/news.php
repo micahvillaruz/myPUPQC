@@ -74,6 +74,7 @@
                                         <th>Description</th>
                                         <th>Created By</th>
                                         <th>Create Date</th>
+                                        <th>Status</th>
                                     </tr>
                                 </thead>
                             </table>
@@ -85,6 +86,7 @@
                                         <th>Title</th>
                                         <th>Description</th>
                                         <th>Create Date</th>
+                                        <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>

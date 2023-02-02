@@ -71,6 +71,19 @@ loadAnnouncementTables = () => {
 						return `${article_date}<br/>${article_time}`
 					},
 				},
+				// * Status
+				{
+					data: null,
+					render: (data) => {
+						// * Has three status: Published, Hidden and Deleted
+						const advisoryStatus = data.announcement_status
+						if (advisoryStatus == 'Published') {
+							return `<span class="badge rounded-pill bg-success">${advisoryStatus}</span>`
+						} else {
+							return `<span class="badge rounded-pill bg-danger">${advisoryStatus}</span>`
+						}
+					},
+				},
 			],
 			order: [[0, 'asc']],
 		})
@@ -125,6 +138,19 @@ loadAnnouncementTables = () => {
 							hour12: true,
 						})
 						return `${article_date}<br/>${article_time}`
+					},
+				},
+				// * Status
+				{
+					data: null,
+					render: (data) => {
+						// * Has three status: Published, Hidden and Deleted
+						const advisoryStatus = data.announcement_status
+						if (advisoryStatus == 'Published') {
+							return `<span class="badge rounded-pill bg-success">${advisoryStatus}</span>`
+						} else {
+							return `<span class="badge rounded-pill bg-danger">${advisoryStatus}</span>`
+						}
 					},
 				},
 				// * Action
