@@ -67,7 +67,7 @@
                     <!-- Tab panes -->
                     <div class="tab-content text-muted">
                         <div class="tab-pane active" id="all_news" role="tabpanel">
-                            <table id="all_news_table" class="table nowrap align-middle" style="width:100%">
+                            <table id="all_news_table" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
                                 <thead class="text-muted table-light">
                                     <tr class="text-uppercase">
                                         <th>Title</th>
@@ -80,7 +80,7 @@
                             </table>
                         </div>
                         <div class="tab-pane" id="my_news" role="tabpanel">
-                            <table id="my_news_table" class="table nowrap align-middle" style="width:100%">
+                            <table id="my_news_table" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
                                 <thead class="text-muted table-light">
                                     <tr class="text-uppercase">
                                         <th>Title</th>
