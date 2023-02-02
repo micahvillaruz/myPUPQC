@@ -169,7 +169,7 @@ loadNewsTables = () => {
 						const buttonLogo =
 							data.announcement_status == 'Published' ? 'ri-close-fill' : 'ri-check-fill'
 						const viewButton = `
-                        <button type="button" class="btn ${buttonColor} btn-icon waves-effect waves-light">
+                        <button type="button" class="btn ${buttonColor} btn-icon waves-effect waves-light" onclick="changeNewsStatus('${data.announcement_id}', '${data.announcement_status}')">
                             <i class="${buttonLogo}"></i>
                         </button>
                         `
@@ -244,6 +244,64 @@ addNews = () => {
 			})
 		})
 	}
+}
+
+changeNewsStatus = (announcement_id, announcement_status) => {
+	let icon, title, text
+	if (announcement_status == 'Published') {
+		icon = `<lord-icon src="https://cdn.lordicon.com/nduddlov.json" trigger="loop" colors="outline:#f06548,primary:#ffffff,secondary:#f06548" style="width:100px;height:100px">
+        </lord-icon>`
+		title = `Are you sure you want to Hide this News?`
+		text = `By hiding this news, the guests won't able to look for this news.`
+		confirmButtonColor = '#f06548'
+		cancelButtonColor = '#6c757d'
+		confirmButtonText = 'Deactivate'
+	} else {
+		icon = `<lord-icon src="https://cdn.lordicon.com/ivayzoru.json" trigger="loop" colors="outline:#ffffff,primary:#ffffff,secondary:#0ab39c" style="width:100px;height:100px">
+        </lord-icon>`
+		title = `Are you sure you want to Publish this News?`
+		text = `By publishing this news, the guests will able to look for this news.`
+		confirmButtonColor = '#0ab39c'
+		cancelButtonColor = '#6c757d'
+		confirmButtonText = 'Activate'
+	}
+	Swal.fire({
+		title: title,
+		text: text,
+		iconHtml: icon,
+		customClass: {
+			icon: 'border-white',
+		},
+		showCancelButton: true,
+		confirmButtonColor: confirmButtonColor,
+		cancelButtonColor: cancelButtonColor,
+		confirmButtonText: confirmButtonText,
+	}).then((result) => {
+		if (result.isConfirmed) {
+			$.ajax({
+				url: apiURL + 'annsys/pup_staff/change_news_status/' + announcement_id,
+				type: 'PUT',
+				headers: AJAX_HEADERS,
+				success: (response) => {
+					if (result) {
+						Swal.fire({
+							html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully changed the news status!</p></div></div>',
+							showCancelButton: !0,
+							showConfirmButton: !1,
+							cancelButtonClass: 'btn btn-success w-xs mb-1',
+							cancelButtonText: 'Ok',
+							buttonsStyling: !1,
+							showCloseButton: !0,
+						}).then(function () {
+							setTimeout(() => {
+								location.reload()
+							}, 1000)
+						})
+					}
+				},
+			})
+		}
+	})
 }
 
 deleteNews = (announcement_id) => {

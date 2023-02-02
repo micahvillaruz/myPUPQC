@@ -199,7 +199,7 @@ changeHolidayStatus = (holiday_id, holiday_status) => {
 		icon = `<lord-icon src="https://cdn.lordicon.com/ivayzoru.json" trigger="loop" colors="outline:#ffffff,primary:#ffffff,secondary:#0ab39c" style="width:100px;height:100px">
         </lord-icon>`
 		title = `Are you sure you want to activate this role?`
-		text = `By activating this role, users can't able to set schedule on the systems using the calendar on this holiday.`
+		text = `By activating this holiday, users can't able to set schedule on the systems using the calendar on this holiday.`
 		confirmButtonColor = '#0ab39c'
 		cancelButtonColor = '#6c757d'
 		confirmButtonText = 'Activate'
@@ -225,7 +225,7 @@ changeHolidayStatus = (holiday_id, holiday_status) => {
 				success: (response) => {
 					if (result) {
 						Swal.fire({
-							html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully changed the role status!</p></div></div>',
+							html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully changed the holiday status!</p></div></div>',
 							showCancelButton: !0,
 							showConfirmButton: !1,
 							cancelButtonClass: 'btn btn-success w-xs mb-1',
