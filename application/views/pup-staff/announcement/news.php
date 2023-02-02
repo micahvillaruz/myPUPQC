@@ -24,7 +24,7 @@
                         </div>
                         <div class="col-md-12">
                             <label for="announcement_image" class="form-label">Attachment <span class="text-danger">*</span></label>
-                            <input type="file" class="filepond filepond-input-multiple" id="announcement_image" multiple name="announcement_image" data-allow-reorder="true" data-max-files="1">
+                            <input type="file" class="filepond filepond-input-multiple" id="announcement_image" multiple name="announcement_image" data-allow-reorder="true" data-max-files="1" required>
                         </div>
                         <div class="col-md-12">
                             <label for="announcement_content" class="form-label">Content <span class="text-danger">*</span></label>

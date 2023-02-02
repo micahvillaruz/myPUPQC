@@ -1,9 +1,14 @@
 $(() => {
 	loadAdvisoryTables()
 
+	pond = FilePond.create(document.querySelector('#announcement_image'), {
+		instantUpload: false,
+		allowProcess: false,
+	})
+
 	$('#NewAdvisory').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
-		addAdvisory()
+		addAdvisory(pond)
 	})
 })
 
@@ -196,14 +201,21 @@ loadAdvisoryTables = () => {
 	}
 }
 
-addAdvisory = () => {
+addAdvisory = (pond) => {
 	if ($('#NewAdvisory')[0].checkValidity()) {
 		// * No error in validation
 		const form = new FormData($('#NewAdvisory')[0])
 		form.set('announcement_type', 'Advisory')
-		if (form.get('announcement_image').name == '') {
-			form.delete('announcement_image')
+		if (form.get('filepond').name != '') {
+			form.delete('filepond')
 		}
+
+		pondFiles = pond.getFiles()
+		for (var i = 0; i < pondFiles.length; i++) {
+			// append the blob file
+			form.append('announcement_image', pondFiles[i].file)
+		}
+
 		for (var pair of form.entries()) {
 			console.log(pair[0] + ': ' + pair[1])
 		}
