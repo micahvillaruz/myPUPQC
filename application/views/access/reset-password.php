@@ -39,17 +39,22 @@
                 </div>
 
                 <div class="alert alert-borderless alert-warning text-center mb-2 mx-2" role="alert">
-                  Enter your email and instructions will be sent to you!
+                  Please enter your password immediately as you will be redirected back to the Forgot Password page after 5 minutes.
                 </div>
                 <div class="p-2">
-                  <form >
+                  <form id="resetPasswordForm" class="needs-validation" novalidate>
                     <div class="mb-4">
-                      <label class="form-label">Email</label>
-                      <input type="email" class="form-control" id="email" placeholder="Enter Email">
+                      <label class="form-label">New Password</label>
+                      <input type="password" class="form-control" id="password" name="password" placeholder="Enter New Password">
+                    </div>
+
+                    <div class="mb-4">
+                      <label class="form-label">Retype Password</label>
+                      <input type="password" class="form-control" id="retype_password" name="retype_password" placeholder="Enter Retype Password">
                     </div>
 
                     <div class="text-center mt-4">
-                      <button class="btn btn-success w-100" type="submit">Send Reset Link</button>
+                      <button class="btn btn-success w-100" type="submit">Reset Password</button>
                     </div>
                   </form><!-- end form -->
                 </div>

@@ -45,7 +45,7 @@
                   Enter your email and instructions will be sent to you!
                 </div>
                 <div class="p-2">
-                  <form >
+                  <form id="forgotPasswordForm" class="needs-validation" novalidate>
                     <div class="mb-4">
                       <label class="form-label">Email</label>
                       <input type="email" class="form-control" id="email" placeholder="Enter Email">

@@ -68,7 +68,7 @@ class Auth extends CI_Controller
         $this->load->view('access/reset-password', $data);
     }
     $this->load->view('partials/foot-scripts');
-    $this->load->view('access/scripts/forgot-password-scripts');
+    $this->load->view('access/scripts/reset-password-scripts');
   }
 
   public function logout()
