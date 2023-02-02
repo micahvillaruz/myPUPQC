@@ -16,7 +16,42 @@
             <div class="card-body justify-content-center text-center">
                 
                 <form id="addHolidayForm" class="needs-validation" novalidate>
-                    "Form here..."    
+                    <div class="row my-2 py-2">
+                        <div class="col-sm">
+                            <label for="holiday_name" class='form-label'>Holiday Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="holiday_name" name="holiday_name" placeholder="Role Name" required>
+                        </div>
+                        <div class="col-sm">
+                            <label for="holiday_date" class="form-label">Holiday Date <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="holiday_date" name="holiday_date" data-provider="flatpickr" data-date-format="F j, Y" placeholder="Pick a Birth Date" required>
+                        </div>
+                    </div>
+                    <div class="row my-2 py-2">
+                        <div class="col-sm">
+                            <label for="holiday_type" class='form-label'>Holiday Type <span class="text-danger">*</span></label>
+                            <select class="form-select" id="holiday_type" name="holiday_type">
+                                <option selected="">Choose Holiday Type...</option>
+                                <option value="Student">Regular Holiday</option>
+                                <option value="PUP Staff">Special Holiday</option>
+                            </select>
+                        </div>
+                        <div class="col-sm">
+                            <label for="holiday_recurrence" class='form-label'>Is this Holiday Recurring? <span class="text-danger">*</span></label>
+                            <select class="form-select" id="holiday_recurrence" name="holiday_recurrence">
+                                <option selected="">Recurring?</option>
+                                <option value="true">Yes</option>
+                                <option value="false">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row my-2 py-2">
+                        <div class="col-sm">
+                                <label for="holiday_description" class='form-label'>Holiday Description <span class="text-danger">*</span></label>
+                                <textarea rows="3" type="text" class="form-control" id="holiday_description" name="holiday_description" placeholder="Holiday Description" required>
+                                </textarea>
+                        </div>
+                    </div>
+                    <button id="add_holiday" class="btn btn-primary waves-effect waves-light mt-2 mb-3">Submit</button>
                 </form>
             </div>
         </div>
