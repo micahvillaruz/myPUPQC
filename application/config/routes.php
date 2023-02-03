@@ -132,6 +132,7 @@ $route['admission'] = 'home/admission';
 
 // News and Dynamic Parameter
 $route['news'] = 'home/news';
+$route['news/rss'] = 'home/rss';
 $route['news/(:any)'] = 'home/news/$1';
 
 // Advisory and Dynamic Parameter

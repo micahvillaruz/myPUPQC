@@ -3,7 +3,55 @@ $(function () {
 	fetchSpecificNews(reference_id)
 
 	fetchThreeNews()
+	generateRSSFeed()
 })
+
+generateRSSFeed = () => {
+	$.ajax({
+		url: apiURL + 'news',
+		type: 'GET',
+		dataType: 'json',
+		success: (result) => {
+			let data = result.data
+			let rssFeed = `<?xml version='1.0' encoding='utf-8'?>\n<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:mypupqc="https://mypupqc.live" xmlns:atom="http://www.w3.org/2005/Atom">\n\t<channel>\n\t\t<title>MyPUPQC News</title>
+                <link>https://mypupqc.live/news</link>
+                <description>MyPUPQC News</description>
+                <atom:link rel="self" href="https://mypupqc.live/news/rss/" type="application/rss+xml"/>
+                <mypupqc:logo>https://mypupqc.live/public/images/mypupqc-logo.png</mypupqc:logo>
+                <mypupqc:icon>https://mypupqc.live/public/images/favicon.ico</mypupqc:icon>
+            `
+
+			data.forEach((item) => {
+				let date = new Date(item.created_at)
+				const article_date = date.toLocaleDateString('en-US', {
+					year: 'numeric',
+					month: 'long',
+					day: 'numeric',
+				})
+				const article_time = date.toLocaleTimeString('en-US', {
+					hour: 'numeric',
+					minute: 'numeric',
+					hour12: true,
+				})
+				const full_date = article_date + ' ' + article_time
+				rssFeed += `
+                <item>
+                    <title>${item.announcement_title}</title>
+                    <description>${item.announcement_description}</description>
+                    <link>${item.announcement_link}</link>
+                    <content><![CDATA[ ${item.announcement_content} ]]></content>
+                    <pubDate>${full_date}</pubDate>
+                </item>
+                `
+			})
+
+			//<content><![CDATA[ ${item.announcement_content}]]</content>
+			rssFeed += `\n\t</channel>\n</rss>`
+
+			$('pre').text(rssFeed)
+		},
+	})
+}
 
 fetchThreeNews = () => {
 	$.ajax({

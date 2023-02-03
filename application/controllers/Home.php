@@ -513,6 +513,15 @@ class Home extends CI_Controller
 		$this->load->view('home/scripts/news-scripts');
     }
 
+    public function rss(){
+        $this->load->view('partials/main-home');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+        $this->load->view('home/rss');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('home/scripts/news-scripts');
+    }
+
     public function advisory($go = NULL)
     {
         $data['go'] = $go;

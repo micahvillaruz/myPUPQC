@@ -48,6 +48,21 @@
                         <p class="p-1 m-3">Here are some latest PUPQC University News:</p>
                         <div id="latest_three_news"></div>
                         <hr class="p-1 m-3"/>
+                        <p class="p-1 m-3">An RSS Feed is available for PUPQC Latest News</p>
+                        <div class="d-flex flex-column align-items-center h-100">
+                            <div class="flex-grow-1">
+                                <div class="text-center d-flex flex-column">
+                                    <img src="<?= base_url() ?>public/images/mypupqc-logo.png" alt="myPUPQC logo" height="60">
+                                    
+                                    <div class="d-flex align-items-center justify-content-center h-100">
+                                        <a href="<?= base_url() ?>news/rss/" target="_blank">
+                                            <img src="<?= base_url() ?>public/images/rss.png" alt="RSS Feed" width="25" height="25"> 
+                                            <h4><strong>RSS Feed</strong></h4>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                       </div>
                       <!--end card-body-->
                     </div>
