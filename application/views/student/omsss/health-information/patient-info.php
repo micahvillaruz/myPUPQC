@@ -77,7 +77,7 @@
             <div class="card-body p-4">
                 <div class="tab-content">
                     <div class="tab-pane active" id="personalDetails" role="tabpanel">
-                        <form action="javascript:void(0);" id="patientInformationForm" enctype='multipart/form-data'>
+                        <form id="patientInformationForm" enctype='multipart/form-data'>
                             <h4 class="fw-bold text-primary">Emergency Contact Information</h4></br>
                             <div class="row mb-3">
                                 <div class="col-lg-3">
@@ -124,12 +124,19 @@
                                     <label for="uploadphilHealthInput" class="form-label">Upload PhilHealth ID / Member Data Record (MDR)</label>
                                 </div>
                                 <div class="col-lg-9">
-                                    <input class="form-control form-control-sm" id="philhealth_id_image'" name="philhealth_id_image" type="file">
+                                    <div class="row">
+                                        <div class="col-2 w-25 d-flex justify-content-center align-items-center">
+                                            <button class="btn btn-info bg-gradient w-100" onclick="">View</button>
+                                        </div>
+                                        <div class="col-7 w-75">
+                                            <input type="file" class="filepond filepond-input-multiple" id="philhealth_id_image" multiple name="philhealth_id_image" data-allow-reorder="true" data-max-files="1">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Privacy Statement -->
-                            <div class="col-lg-8">
+                            <div class=" col-lg-8">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="" id="privacy" required>
                                     <label class="form-check-label" for="privacy">

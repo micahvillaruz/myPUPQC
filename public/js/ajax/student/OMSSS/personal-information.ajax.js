@@ -2,6 +2,11 @@ $(function () {
 	loadPersonalInfo()
 	editPatientInfoInput()
 
+	pond = FilePond.create(document.querySelector('#philhealth_id_image'), {
+		instantUpload: false,
+		allowProcess: false,
+	})
+
 	$('#patientInformationForm').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
 		// pass data to API for updating of student's info
