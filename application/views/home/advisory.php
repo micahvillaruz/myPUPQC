@@ -45,7 +45,9 @@
                     <div class="card">
                       <div class="card-body">
                         <h3 class="mb-3 text-primary">Advisory</h3>
-                        micah and shane help me kailangan lagyan ng laman ito any ideas??
+                        <div id="latest_three_advisories">
+
+                        </div>
                       </div>
                       <!--end card-body-->
                     </div>

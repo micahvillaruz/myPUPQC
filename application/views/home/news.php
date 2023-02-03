@@ -45,7 +45,9 @@
                     <div class="card">
                       <div class="card-body">
                         <h3 class="mb-3 text-primary">News</h3>
-                        micah and shane help me kailangan lagyan ng laman ito any ideas??
+                        <p class="p-1 m-3">Here are some latest PUPQC University News:</p>
+                        <div id="latest_three_news"></div>
+                        <hr class="p-1 m-3"/>
                       </div>
                       <!--end card-body-->
                     </div>
