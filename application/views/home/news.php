@@ -54,10 +54,12 @@
                                 <div class="text-center d-flex flex-column">
                                     <img src="<?= base_url() ?>public/images/mypupqc-logo.png" alt="myPUPQC logo" height="60">
                                     
-                                    <div class="d-flex align-items-center justify-content-center h-100">
+                                    <div class="d-flex justify-content-center h-100">
                                         <a href="<?= base_url() ?>news/rss/" target="_blank">
-                                            <img src="<?= base_url() ?>public/images/rss.png" alt="RSS Feed" width="25" height="25"> 
-                                            <h4><strong>RSS Feed</strong></h4>
+                                            <div class="d-flex align-items-center align-self-center justify-content-center">
+                                                <img src="<?= base_url() ?>public/images/rss.png" alt="RSS Feed" width="30" height="30" class="mx-2">
+                                                <h4 class="m-0"><strong class="text-primary">RSS Feed</strong></h4>
+                                            </div>
                                         </a>
                                     </div>
                                 </div>

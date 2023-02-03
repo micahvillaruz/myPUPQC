@@ -45,9 +45,9 @@
                     <div class="card">
                       <div class="card-body">
                         <h3 class="mb-3 text-primary">Advisory</h3>
-                        <div id="latest_three_advisories">
-
-                        </div>
+                        <p class="p-1 m-3">Here are some latest PUPQC University Advisories to look out for:</p>
+                        <div id="latest_three_advisories"></div>
+                        <hr class="p-1 m-3"/>
                       </div>
                       <!--end card-body-->
                     </div>

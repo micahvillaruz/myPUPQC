@@ -7,6 +7,7 @@ $(function () {
 })
 
 generateRSSFeed = () => {
+	$('body').append('<style>body {background-color: #121212 !important; color: white;}</style>')
 	$.ajax({
 		url: apiURL + 'news',
 		type: 'GET',

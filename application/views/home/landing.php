@@ -347,7 +347,11 @@
 					<div class="col-xl-4 col-lg-4 col-xs-1">
 						<div class="card">
 							<div class="card-header">
-								<h4 class="card-title mb-0 fw-medium text-primary">PUPQC Advisories</h4>
+								<h4 class="card-title mb-0 fw-medium text-primary">
+                                    <a href="<?= base_url() ?>advisory">
+                                        PUPQC Advisories
+                                    </a>
+                                </h4>
 							</div><!-- end card header -->
 
 							<div class="card-body">
@@ -364,7 +368,17 @@
 					<div class="col-xl-6 col-lg-5 col-xs-1">
 						<div class="card">
 							<div class="card-header">
-								<h4 class="card-title mb-0 fw-medium text-primary">Latest News from the University</h4>
+								<h4 class="card-title mb-0 fw-medium text-primary d-flex align-items-center">
+                                    <a href="<?= base_url() ?>news">
+                                    Latest News from the University
+                                    </a>
+                                    <a href="<?= base_url() ?>news/rss/" target="_blank" class="mx-1">
+                                        <div class="d-flex align-items-center align-self-center justify-content-center">
+                                            <img src="<?= base_url() ?>public/images/rss.png" alt="RSS Feed" width="15" height="15" class="mx-1">
+                                            <h6 class="m-0"><strong class="text-primary">RSS Feed</strong></h6>
+                                        </div>
+                                    </a>
+                                </h4>
 							</div><!-- end card header -->
 							<div class="card-body">
 								<!-- Swiper -->
