@@ -128,7 +128,7 @@
                                         <div class="col-xl w-100">
                                             <input type="file" class="filepond filepond-input-multiple" id="philhealth_id_image" multiple data-allow-reorder="true" data-max-files="1">
                                         </div>
-                                        <div class="col-xl w-100 d-flex justify-content-center align-items-center" id="show_philhealth_button">
+                                        <div class="col-xl w-100 d-flex flex-column justify-content-center align-items-center" id="show_philhealth_button">
                                         </div>
                                     </div>
                                 </div>

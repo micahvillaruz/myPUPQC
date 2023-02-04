@@ -66,7 +66,8 @@ editPatientInfoInput = () => {
 				$('#philhealth_number').val(data.philhealth_number)
 				if (data.philhealth_id_image != null) {
 					$('#show_philhealth_button').html(`
-                        <button class="btn btn-info bg-gradient w-100" data-bs-toggle="modal" data-bs-target="#philhealth_id">View Currently Uploaded PhilHealth ID</button>
+                        <button type="button" class="btn btn-info bg-gradient w-100" data-bs-toggle="modal" data-bs-target="#philhealth_id">View Currently Uploaded PhilHealth ID</button>
+                        <button type="button" class="btn btn-danger bg-gradient w-100 mt-2" onclick="deletePhilhealthImage()">Delete PhilHealth ID</button>
                     `)
 					$('#philhealth_id_image_preview').attr('src', data.philhealth_id_image)
 				} else {
@@ -146,4 +147,9 @@ editPatientInformationAJAX = (pond) => {
 			})
 		})
 	}
+}
+
+deletePhilhealthImage = () => {
+	// next update
+	console.log('next update')
 }
