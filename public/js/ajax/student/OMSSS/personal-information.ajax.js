@@ -18,6 +18,11 @@ $(function () {
 	checkbox.addEventListener('change', function () {
 		input.disabled = this.checked
 	})
+
+	setTimeout(() => {
+		var hiddenInputValue = document.getElementById('philhealth_id_image').value
+		document.getElementById('philhealth_id_image_preview').src = hiddenInputValue
+	}, 1000)
 })
 
 loadPersonalInfo = () => {

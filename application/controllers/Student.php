@@ -113,6 +113,7 @@ class Student extends CI_Controller
         $this->load->view('partials/page-title', ["page_title" => "Medical Services", "title" => "Patient Information"]);
         $this->load->view('student/omsss/health-information/patient-info');
         $this->load->view('student/omsss/footer');
+        $this->load->view('student/omsss/components/patient-info-modal');
         $this->load->view('partials/foot-scripts');
         $this->load->view('student/omsss/health-information/scripts/patient-info-scripts');
     }

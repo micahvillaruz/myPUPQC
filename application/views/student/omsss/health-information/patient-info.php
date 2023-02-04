@@ -125,11 +125,12 @@
                                 </div>
                                 <div class="col-lg-9">
                                     <div class="row">
-                                        <div class="col-2 w-25 d-flex justify-content-center align-items-center">
-                                            <button class="btn btn-info bg-gradient w-100" onclick="">View</button>
-                                        </div>
-                                        <div class="col-7 w-75">
+                                        <div class="col-xl w-100">
                                             <input type="file" class="filepond filepond-input-multiple" id="philhealth_id_image" multiple name="philhealth_id_image" data-allow-reorder="true" data-max-files="1">
+                                        </div>
+
+                                        <div class="col-xl w-100 d-flex justify-content-center align-items-center">
+                                            <button class="btn btn-info bg-gradient w-100" data-bs-toggle="modal" data-bs-target="#philhealth_id">View Currently Uploaded PhilHealth ID</button>
                                         </div>
                                     </div>
                                 </div>
