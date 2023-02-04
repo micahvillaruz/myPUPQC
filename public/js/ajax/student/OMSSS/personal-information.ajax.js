@@ -10,7 +10,7 @@ $(function () {
 	$('#patientInformationForm').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
 		// pass data to API for updating of student's info
-		editPatientInformationAJAX()
+		editPatientInformationAJAX(pond)
 	})
 	const checkbox = document.getElementById('formCheck1')
 	const input = document.getElementById('emergency_contact_address')
@@ -18,11 +18,6 @@ $(function () {
 	checkbox.addEventListener('change', function () {
 		input.disabled = this.checked
 	})
-
-	setTimeout(() => {
-		var hiddenInputValue = document.getElementById('philhealth_id_image').value
-		document.getElementById('philhealth_id_image_preview').src = hiddenInputValue
-	}, 1000)
 })
 
 loadPersonalInfo = () => {
@@ -53,23 +48,46 @@ editPatientInfoInput = () => {
 				console.log(data)
 				$('#emergency_contact_name').val(data.emergency_contact_name)
 				$('#emergency_contact_number').val(data.emergency_contact_number)
-				$('#email').val(data.emergency_contact_email)
+				$('#emergency_contact_email').val(data.emergency_contact_email)
 				$('#emergency_contact_address').val(
 					data.patient_info_assigned_to_user.user_profiles[0].full_address,
 				)
 				$('#philhealth_number').val(data.philhealth_number)
-				$('#philhealth_id_image').val(data.philhealth_id_image)
+				if (data.philhealth_id_image != null) {
+					$('#show_philhealth_button').html(`
+                        <button class="btn btn-info bg-gradient w-100" data-bs-toggle="modal" data-bs-target="#philhealth_id">View Currently Uploaded PhilHealth ID</button>
+                    `)
+					$('#philhealth_id_image_preview').attr('src', data.philhealth_id_image)
+				} else {
+					$('#show_philhealth_button').empty()
+				}
 			}
 		},
 	}).fail(() => console.error('There was an error in retrieving patient information data'))
 }
 
 // Edit  AJAX
-editPatientInformationAJAX = () => {
+editPatientInformationAJAX = (pond) => {
 	// Get data from form
 	if ($('#patientInformationForm')[0]) {
 		// no validation error
 		const form = new FormData($('#patientInformationForm')[0])
+
+		if (form.get('filepond') == '') {
+			form.delete('filepond')
+		}
+
+		pondFiles = pond.getFiles()
+		for (var i = 0; i < pondFiles.length; i++) {
+			// append the blob file
+			if (pondFiles[i].file != null) {
+				form.append('philhealth_id_image', pondFiles[i].file)
+			}
+		}
+
+		for (var pair of form.entries()) {
+			console.log(pair[0] + ': ' + pair[1])
+		}
 
 		$.ajax({
 			url: apiURL + `omsss/student/patient_information`,

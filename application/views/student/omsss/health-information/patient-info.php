@@ -123,14 +123,12 @@
                                 <div class="col-lg-3">
                                     <label for="uploadphilHealthInput" class="form-label">Upload PhilHealth ID / Member Data Record (MDR)</label>
                                 </div>
-                                <div class="col-lg-9">
+                                <div class="col-lg-9" id="philhealth_id_content">
                                     <div class="row">
                                         <div class="col-xl w-100">
-                                            <input type="file" class="filepond filepond-input-multiple" id="philhealth_id_image" multiple name="philhealth_id_image" data-allow-reorder="true" data-max-files="1">
+                                            <input type="file" class="filepond filepond-input-multiple" id="philhealth_id_image" multiple data-allow-reorder="true" data-max-files="1">
                                         </div>
-
-                                        <div class="col-xl w-100 d-flex justify-content-center align-items-center">
-                                            <button class="btn btn-info bg-gradient w-100" data-bs-toggle="modal" data-bs-target="#philhealth_id">View Currently Uploaded PhilHealth ID</button>
+                                        <div class="col-xl w-100 d-flex justify-content-center align-items-center" id="show_philhealth_button">
                                         </div>
                                     </div>
                                 </div>
