@@ -14,9 +14,14 @@ $(function () {
 	})
 	const checkbox = document.getElementById('formCheck1')
 	const input = document.getElementById('emergency_contact_address')
-	input.disabled = !input.disabled
 	checkbox.addEventListener('change', function () {
 		input.disabled = this.checked
+		// * update the value of emergency_contact_address - check later
+		// if (this.checked) {
+		// 	$('#emergency_contact_address').val($('#view_student_address').html())
+		// } else {
+		// 	$('#emergency_contact_address').val('')
+		// }
 	})
 })
 
@@ -49,9 +54,15 @@ editPatientInfoInput = () => {
 				$('#emergency_contact_name').val(data.emergency_contact_name)
 				$('#emergency_contact_number').val(data.emergency_contact_number)
 				$('#emergency_contact_email').val(data.emergency_contact_email)
-				$('#emergency_contact_address').val(
-					data.patient_info_assigned_to_user.user_profiles[0].full_address,
-				)
+				if (data.emergency_contact_address != null) {
+					$('#emergency_contact_address').val(data.emergency_contact_address)
+					$('#formCheck1').prop('checked', false)
+				} else {
+					$('#emergency_contact_address').val(
+						data.patient_info_assigned_to_user.user_profiles[0].address,
+					)
+					$('#formCheck1').prop('checked', true)
+				}
 				$('#philhealth_number').val(data.philhealth_number)
 				if (data.philhealth_id_image != null) {
 					$('#show_philhealth_button').html(`
@@ -73,7 +84,15 @@ editPatientInformationAJAX = (pond) => {
 		// no validation error
 		const form = new FormData($('#patientInformationForm')[0])
 
-		if (form.get('filepond') == '') {
+		// * add emergency_contact_address to form if checkbox is checked
+		if ($('#formCheck1').is(':checked')) {
+			form.append('emergency_contact_address', $('#emergency_contact_address').val())
+		}
+
+		if (
+			form.get('filepond') == '' ||
+			Object.prototype.toString.call(form.get('filepond')) === '[object File]'
+		) {
 			form.delete('filepond')
 		}
 
