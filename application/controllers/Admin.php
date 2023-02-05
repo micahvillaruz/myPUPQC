@@ -275,6 +275,7 @@ class Admin extends CI_Controller
     $this->load->view('partials/admin/sidebar');
     $this->load->view('partials/page-title', ["page_title" => "Organizations", "title" => "Organization Management"]);
     $this->load->view('admin/organization/organization');
+    $this->load->view('admin/organization/components/organization-modal');
     $this->load->view('partials/footer');
     $this->load->view('partials/foot-scripts');
     $this->load->view('admin/organization/scripts/org-scripts');
