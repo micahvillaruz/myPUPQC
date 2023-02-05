@@ -34,28 +34,27 @@
                     <span>
                         <h5 class="text-muted mb-0">STUDENT</h5>
                     </span>
-                    <br>
-                    <li class="list-group-item">
-                        <div class="d-flex align-items-center">
-                            <div class="col-5">
-                                <h5 class="fs-13 mb-1 fw-medium" class="link text-dark">Student Name: </a></h5>
+                    <ul>
+                        <li class="list-group-item">
+                            <div class="d-flex align-items-center">
+                                <div class="col-5">
+                                    <h5 class="fs-13 mb-1 fw-medium" class="link text-dark">Student Name: </a></h5>
+                                </div>
+                                <div class="col-8">
+                                    <div class="d-flex fs-13 fw-medium" id="view_student_name"></div>
+                                </div>
                             </div>
-                            <div class="col-8">
-                                <div class="d-flex fs-13 fw-medium" id="view_student_name"></div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex align-items-center">
+                                <div class="col-5">
+                                    <h5 class="fs-13 mb-1 fw-medium" class="link text-dark">Student Number: </a></h5>
+                                </div>
+                                <div class="col-8">
+                                    <div class="d-flex fs-13 fw-medium" id="view_student_number"></div>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                    <!-- end list item -->
-                    <li class="list-group-item">
-                        <div class="d-flex align-items-center">
-                            <div class="col-5">
-                                <h5 class="fs-13 mb-1 fw-medium" class="link text-dark">Student Number: </a></h5>
-                            </div>
-                            <div class="col-8">
-                                <div class="d-flex fs-13 fw-medium" id="view_student_number"></div>
-                            </div>
-                        </div>
-                    </li>
+                        </li>
                     </ul>
                 </div>
             </div>
