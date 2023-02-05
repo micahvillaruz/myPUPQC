@@ -5,8 +5,8 @@
 		<nav class="navbar navbar-expand-lg navbar-landing" id="navbar">
 			<div class="container">
 				<a class="navbar-brand" href="<?= base_url() ?>">
-					<img src="<?= base_url() ?>public/images/mypupqc-logo.png" class="card-logo card-logo-dark" alt="myPUPQC logo" height="25">
-					<img src="<?= base_url() ?>public/images/mypupqc-logo.png" class="card-logo card-logo-light" alt="myPUPQC logo" height="25">
+					<img src="<?= base_url() ?>public/images/mypupqc-logo.webp" class="card-logo card-logo-dark" alt="myPUPQC logo" height="25">
+					<img src="<?= base_url() ?>public/images/mypupqc-logo.webp" class="card-logo card-logo-light" alt="myPUPQC logo" height="25">
 				</a>
 				<button class="navbar-toggler py-0 fs-20 text-body" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<i class="mdi mdi-menu"></i>
@@ -162,16 +162,16 @@
 			<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
 				<div class="carousel-inner" role="listbox">
 					<div class="carousel-item active">
-						<img class="d-block img-fluid mx-auto landing-img" src="<?= base_url() ?>public/images/landing/landing-1.jpg">
+						<img class="d-block img-fluid mx-auto landing-img" src="<?= base_url() ?>public/images/landing/landing-1.webp">
 					</div>
 					<div class="carousel-item">
-						<img class="d-block img-fluid mx-auto landing-img" src="<?= base_url() ?>public/images/landing/landing-2.png">
+						<img class="d-block img-fluid mx-auto landing-img" src="<?= base_url() ?>public/images/landing/landing-2.webp">
 					</div>
 					<div class="carousel-item">
-						<img class="d-block img-fluid mx-auto landing-img" src="<?= base_url() ?>public/images/landing/landing-3.png">
+						<img class="d-block img-fluid mx-auto landing-img" src="<?= base_url() ?>public/images/landing/landing-3.webp">
 					</div>
 					<div class="carousel-item">
-						<img class="d-block img-fluid mx-auto landing-img" src="<?= base_url() ?>public/images/landing/landing-4.png">
+						<img class="d-block img-fluid mx-auto landing-img" src="<?= base_url() ?>public/images/landing/landing-4.webp">
 					</div>
 				</div>
 				<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
@@ -222,7 +222,7 @@
 					<div class="col-services px-0">
 						<div class="card card-overlay menu-row card-animate mb-0">
 							<div class="menu-overlay"></div>
-							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-1.jpg" alt="Card image"></a>
+							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-1.webp" alt="Card image"></a>
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
 								<a href="https://sisstudents.pup.edu.ph/">
 									<div class="more-info">
@@ -241,7 +241,7 @@
 					<div class="col-services px-0">
 						<div class="card card-overlay menu-row card-animate mb-0">
 							<div class="menu-overlay"></div>
-							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-2.jpg" alt="Card image">
+							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-2.webp" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
 								<a href="<?= base_url() ?>scholarships">
 									<div class="more-info">
@@ -260,7 +260,7 @@
 					<div class="col-services px-0">
 						<div class="card card-overlay menu-row card-animate mb-0">
 							<div class="menu-overlay"></div>
-							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-3.jpg" alt="Card image">
+							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-3.webp" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
 								<a href="<?= base_url() ?>docu-request">
 									<div class="more-info">
@@ -279,7 +279,7 @@
 					<div class="col-services px-0">
 						<div class="card card-overlay menu-row card-animate mb-0">
 							<div class="menu-overlay"></div>
-							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-4.jpg" alt="Card image">
+							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-4.webp" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
 								<a href="<?= base_url() ?>student/organizations">
 									<div class="more-info">
@@ -298,7 +298,7 @@
 					<div class="col-services px-0">
 						<div class="card card-overlay menu-row card-animate mb-0">
 							<div class="menu-overlay"></div>
-							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-5.jpg" alt="Card image">
+							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-5.webp" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
 								<a href="https://osssac.pup.edu.ph">
 									<div class="more-info">
@@ -317,7 +317,7 @@
 					<div class="col-services px-0">
 						<div class="card card-overlay menu-row card-animate mb-0">
 							<div class="menu-overlay"></div>
-							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-6.jpg" alt="Card image">
+							<img class="card-img img-fluid landing-img" src="<?= base_url() ?>public/images/menu/img-6.webp" alt="Card image">
 							<div class="card-img-overlay card-bottom-overlay p-0" style="top:auto;">
 								<a href="<?= base_url() ?>calendar">
 									<div class="more-info">
@@ -394,27 +394,27 @@
 					<div class="col-xl-2 col-lg-3 col-xs-1 links">
 						<div class="mb-2">
 							<a href="https://www.pup.edu.ph/goodgovernance/transparency/2022/" target="_blank">
-								<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-1.jpg">
+								<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-1.webp">
 							</a>
 						</div>
 						<div class="mb-2">
 							<a href="https://www.foi.gov.ph/requests?agency=PUP" target="_blank">
-								<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-2.jpg">
+								<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-2.webp">
 							</a>
 						</div>
 						<div class="mb-2">
 							<a href="https://drive.google.com/file/d/1l4EAMMYbtJXTT2SilRas9LT_N8E39d4j/view?usp=sharing" target="_blank">
-								<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-3.jpg">
+								<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-3.webp">
 							</a>
 						</div>
 						<div class="mb-2">
 							<a href="https://www.pup.edu.ph/gad/" target="_blank">
-								<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-4.jpg">
+								<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-4.webp">
 							</a>
 						</div>
 						<div class="mb-2">
 							<a href="https://drive.google.com/open?id=14z_gxp97PYh7eLIAC6k4LqlGXNY_5xNa" target="_blank">
-								<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-5.jpg">
+								<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-5.webp">
 							</a>
 						</div>
 					</div>
@@ -438,7 +438,7 @@
 								<div class="swiper-slide">
 									<div class="card explore-box card-animate rounded">
 										<div class="explore-place-bid-img">
-											<img src="<?= base_url() ?>public/images/events/img-1.jpg" alt="" class="img-fluid card-img-top explore-img" />
+											<img src="<?= base_url() ?>public/images/events/img-1.webp" alt="" class="img-fluid card-img-top explore-img" />
 											<div class="bg-overlay"></div>
 										</div>
 										<div class="card-body">
@@ -453,7 +453,7 @@
 								<div class="swiper-slide">
 									<div class="card explore-box card-animate rounded">
 										<div class="explore-place-bid-img">
-											<img src="<?= base_url() ?>public/images/events/img-2.jpg" alt="" class="img-fluid card-img-top explore-img" />
+											<img src="<?= base_url() ?>public/images/events/img-2.webp" alt="" class="img-fluid card-img-top explore-img" />
 											<div class="bg-overlay"></div>
 										</div>
 										<div class="card-body">
@@ -468,7 +468,7 @@
 								<div class="swiper-slide">
 									<div class="card explore-box card-animate rounded">
 										<div class="explore-place-bid-img">
-											<img src="<?= base_url() ?>public/images/events/img-3.jpg" alt="" class="img-fluid card-img-top explore-img" />
+											<img src="<?= base_url() ?>public/images/events/img-3.webp" alt="" class="img-fluid card-img-top explore-img" />
 											<div class="bg-overlay"></div>
 										</div>
 										<div class="card-body">
@@ -483,7 +483,7 @@
 								<div class="swiper-slide">
 									<div class="card explore-box card-animate rounded">
 										<div class="explore-place-bid-img">
-											<img src="<?= base_url() ?>public/images/events/img-4.jpg" alt="" class="img-fluid card-img-top explore-img" />
+											<img src="<?= base_url() ?>public/images/events/img-4.webp" alt="" class="img-fluid card-img-top explore-img" />
 											<div class="bg-overlay"></div>
 										</div>
 										<div class="card-body">
@@ -498,7 +498,7 @@
 								<div class="swiper-slide">
 									<div class="card explore-box card-animate rounded">
 										<div class="explore-place-bid-img">
-											<img src="<?= base_url() ?>public/images/events/img-5.jpg" alt="" class="img-fluid card-img-top explore-img" />
+											<img src="<?= base_url() ?>public/images/events/img-5.webp" alt="" class="img-fluid card-img-top explore-img" />
 											<div class="bg-overlay"></div>
 										</div>
 										<div class="card-body">
