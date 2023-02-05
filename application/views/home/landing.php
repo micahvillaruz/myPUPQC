@@ -374,7 +374,7 @@
                                     </a>
                                     <a href="<?= base_url() ?>news/rss/" target="_blank" class="mx-1">
                                         <div class="d-flex align-items-center align-self-center justify-content-center">
-                                            <img src="<?= base_url() ?>public/images/rss.png" alt="RSS Feed" width="15" height="15" class="mx-1">
+                                            <img src="<?= base_url() ?>public/images/rss.webp" alt="RSS Feed" width="15" height="15" class="mx-1">
                                             <h6 class="m-0"><strong class="text-primary">RSS Feed</strong></h6>
                                         </div>
                                     </a>
