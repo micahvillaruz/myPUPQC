@@ -1,6 +1,82 @@
 $(function() {
     organizationsTable()
+
+    // on addFacility button click
+    $('#addOrganizationBtn').on('click', function(e) {
+        e.preventDefault() // prevent page refresh
+        addNewOrganization()
+    })
 })
+
+addNewOrganization = () => {
+    const organization_name = document.getElementById('organization_name')
+    const orgname = organization_name.value
+    const organization_abbreviation = document.getElementById('organization_abbreviation')
+    const orgabb = organization_abbreviation.value
+    const organization_description = document.getElementById('organization_description')
+    const orgdesc = organization_description.value
+
+    const formData = new FormData()
+    formData.append('organization_name', orgname)
+    formData.append('organization_abbreviation', orgabb)
+    formData.append('organization_description', orgdesc)
+    formData.append('organization_status', 'Active')
+
+    // console.log(orgname + "\n" + orgabb + "\n" + orgdesc)
+    for (var pair of formData.entries()) {
+        console.log(pair[0] + ': ' + pair[1])
+    }
+
+    // all values are not empty, proceed to ajax call
+    $.ajaxSetup({
+        headers: {
+            Accept: 'application/json',
+            Authorization: 'Bearer ' + TOKEN,
+        },
+    })
+
+    $.ajax({
+        type: 'POST',
+        url: apiURL + `/super_admin/organization/add_organization/`,
+        ContentType: false,
+        data: formData,
+        dataType: 'json',
+        headers: AJAX_HEADERS,
+        success: (result) => {
+            const data = result.data
+            console.log(data)
+
+            //  display success message using sweetalert2
+            if (result) {
+                $('#addOrganizationModal').modal('hide')
+                Swal.fire({
+                    html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully added a facility!</p></div></div>',
+                    showCancelButton: !0,
+                    showConfirmButton: !1,
+                    cancelButtonClass: 'btn btn-success w-xs mb-1',
+                    cancelButtonText: 'Ok',
+                    buttonsStyling: !1,
+                    showCloseButton: !0,
+                }).then(function(e) {
+                    e.preventDefault()
+                    organizationsTable()
+                })
+            }
+        },
+    }).fail((xhr) => {
+        Swal.fire({
+            html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">${
+				JSON.parse(xhr.responseText).message
+			}</p></div></div>`,
+            showCancelButton: !0,
+            showConfirmButton: !1,
+            cancelButtonClass: 'btn btn-danger w-xs mb-1',
+            cancelButtonText: 'Dismiss',
+            buttonsStyling: !1,
+            showCloseButton: !0,
+        })
+    })
+}
 
 organizationsTable = () => {
     const dt = $('#organizations-datatable')
@@ -28,7 +104,6 @@ organizationsTable = () => {
                         return meta.row + meta.settings._iDisplayStart + 1
                     },
                 },
-
 
                 // Organization Name
                 {

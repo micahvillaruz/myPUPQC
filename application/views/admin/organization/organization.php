@@ -45,23 +45,23 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="addNewOrganization" class="needs-validation" method="POST">
+                <form id="addNewOrganization" class="needs-validation form" method="POST">
                     <div class="mb-3">
-                        <div class="form">
+                        <div>
                             <label for="organization_name">Organization Name</label>
-                            <input type="text" class="form-control" id="organization_name" placeholder="Organization Name" required>
+                            <input type="text" class="form-control" id="organization_name" name="organization_name" placeholder="Organization Name" required>
                         </div>
                     </div>
                     <div class="mb-3">
                         <div class="form">
                             <label for="organization_abbreviation">Org Name Abbreviation</label>
-                            <input type="text" class="form-control" id="organization_abbreviation" placeholder="Org Name Abbreviation" required>
+                            <input type="text" class="form-control" id="organization_abbreviation" name="organization_abbrevation" placeholder="Org Name Abbreviation" required>
                         </div>
                     </div>
                     <div class="mb-2">
                         <div class="form">
                             <label for="organization_description">Organization Description</label>
-                            <textarea type="text" class="form-control" id="organization_description" placeholder="Organization Description" rows="4" required></textarea>
+                            <textarea type="text" class="form-control" id="organization_description" name="organization_description" placeholder="Organization Description" rows="4" required></textarea>
                         </div>
                     </div>
                 </form>
