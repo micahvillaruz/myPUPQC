@@ -18,7 +18,7 @@ generateRSSFeed = () => {
                 <link>https://mypupqc.live/news</link>
                 <description>MyPUPQC News</description>
                 <atom:link rel="self" href="https://mypupqc.live/news/rss/" type="application/rss+xml"/>
-                <mypupqc:logo>https://mypupqc.live/public/images/mypupqc-logo.png</mypupqc:logo>
+                <mypupqc:logo>https://mypupqc.live/public/images/mypupqc-logo.webp</mypupqc:logo>
                 <mypupqc:icon>https://mypupqc.live/public/images/favicon.ico</mypupqc:icon>
             `
 
