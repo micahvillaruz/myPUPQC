@@ -28,6 +28,7 @@
             </div>
           </div>
         </div>
+    
         <div class="col-lg-4 mt-4">
           <div>
             <h5 class="text-white mb-3 text-uppercase">Keep in touch</h5>
@@ -76,10 +77,16 @@
                 <p>Phone: 8-287-82-04 or 5335-1777</p>
                 <p>Email: inquire@pup.edu.ph</p>
               </div>
+              <div class="mt-6">
+              <h5 class="text-white mb-0 text-uppercase">myPUPQC</h5>
+              <div class="mt-3">
+                <a class ="text-muted" href="<?= base_url() ?>terms-of-use">Terms of Use</a> | <a class ="text-muted" href="<?= base_url() ?>privacy-statement">Privacy Statement</a> | <a class ="text-muted"href="<?= base_url() ?>home/about_mypupqc">About myPUPQC</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
 
       <div class="row text-center text-sm-center align-items-center mt-5">
         <div class="col-sm-12">

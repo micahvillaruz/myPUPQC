@@ -139,6 +139,11 @@ $route['news/(:any)'] = 'home/news/$1';
 $route['advisory'] = 'home/advisory';
 $route['advisory/(:any)'] = 'home/advisory/$1';
 
+// myPUPQC
+$route['terms-of-use'] = 'home/terms_of_use';
+$route['privacy-statement'] = 'home/privacy_statement';
+$route['about-mypupqc'] = 'home/about_mypupqc';
+
 /*
 | -------------------------------------------------------------------------
 | STUDENT ROUTES
