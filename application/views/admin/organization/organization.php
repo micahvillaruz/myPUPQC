@@ -13,15 +13,15 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <table id="organizations-datatable" class="table table-bordered table-responsive dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
+                    <table id="organizations-datatable" class="table table-bordered table-responsive dt-responsive table-striped align-middle text-center" style="width: 100%">
                         <thead>
                             <tr>
-                                <th>Organization #</th>
+                                <th style="width:5%;">No.</th>
                                 <th>Organization Name</th>
                                 <th>Abbreviation</th>
                                 <th>Organization Description</th>
                                 <th>Status</th>
-                                <th>Action</th>
+                                <th >Action</th>
                             </tr>
                         </thead>
                         <tbody>
