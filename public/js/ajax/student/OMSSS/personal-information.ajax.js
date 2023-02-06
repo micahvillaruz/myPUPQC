@@ -13,17 +13,26 @@ $(function () {
 	})
 	const checkbox = document.getElementById('formCheck1')
 	const input = document.getElementById('emergency_contact_address')
+	input.disabled = !this.checked
 	checkbox.addEventListener('change', function () {
 		input.disabled = this.checked
-		// * update the value of emergency_contact_address - check later
-		// if (this.checked) {
-		// 	$('#emergency_contact_address').val($('#view_student_address').html())
-		// } else {
-		// 	$('#emergency_contact_address').val('')
-		// }
+	})
+
+	$('#emergency_contact_number').on('input', function () {
+		if ($(this).val().length > 11) {
+			$(this).val($(this).val().slice(0, 11))
+		}
+	})
+
+	$('#philhealth_popover').popover({
+		trigger: 'hover',
+		placement: 'top',
+		html: true,
+		title: 'About PhilHealth IDs',
+		content:
+			"If you don't have a PhilHealth ID, you can leave this field blank.<br/><br/> Uploading a PhilHealth ID is optional and you have full control in deleting your ID completely in our database.",
 	})
 })
-
 // Edit Patient Information
 editPatientInfoInput = () => {
 	$.ajax({
@@ -35,6 +44,18 @@ editPatientInfoInput = () => {
 				// Get data from result
 				const data = result.data
 				console.log(data)
+
+				// ? Phase 1 - Populate Sidebar Information
+				$('#sb_student_number').html(data.patient_info_assigned_to_user.user_no)
+				const birthdate = new Date(data.patient_info_assigned_to_user.user_profiles[0].birth_date)
+				$('#sb_birthdate').html(
+					birthdate.toLocaleDateString('en-us', { month: 'long', day: 'numeric', year: 'numeric' }),
+				)
+				$('#sb_gender').html(data.patient_info_assigned_to_user.user_profiles[0].gender)
+				$('#sb_religion').html(data.patient_info_assigned_to_user.user_profiles[0].religion)
+				$('#sb_civil_status').html(data.patient_info_assigned_to_user.user_profiles[0].civil_status)
+
+				// ? Phase 2 - Populate Input Forms
 				$('#emergency_contact_name').val(data.emergency_contact_name)
 				$('#emergency_contact_number').val(data.emergency_contact_number)
 				$('#emergency_contact_email').val(data.emergency_contact_email)
@@ -43,7 +64,7 @@ editPatientInfoInput = () => {
 					$('#formCheck1').prop('checked', false)
 				} else {
 					$('#emergency_contact_address').val(
-						data.patient_info_assigned_to_user.user_profiles[0].address,
+						data.patient_info_assigned_to_user.user_profiles[0].full_address,
 					)
 					$('#formCheck1').prop('checked', true)
 				}
@@ -55,7 +76,7 @@ editPatientInfoInput = () => {
                     `)
 					$('#philhealth_id_image_preview').attr('src', data.philhealth_id_image)
 				} else {
-					$('#show_philhealth_button').empty()
+					$('#show_philhealth_button').remove()
 				}
 			}
 		},
