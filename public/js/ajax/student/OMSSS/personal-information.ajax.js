@@ -1,5 +1,4 @@
 $(function () {
-	loadPersonalInfo()
 	editPatientInfoInput()
 
 	pond = FilePond.create(document.querySelector('#philhealth_id_image'), {
@@ -25,21 +24,6 @@ $(function () {
 	})
 })
 
-loadPersonalInfo = () => {
-	$.ajax({
-		type: 'GET',
-		url: apiURL + `omsss/student/patient_information`,
-		headers: AJAX_HEADERS,
-		success: (result) => {
-			const data = result.data
-			console.log(data)
-
-			//Load Topbar
-			$('#view_student_name').html(data.patient_info_assigned_to_user.user_profiles[0].full_name)
-			$('#view_student_number').html(data.patient_info_assigned_to_user.user_no)
-		},
-	})
-}
 // Edit Patient Information
 editPatientInfoInput = () => {
 	$.ajax({
