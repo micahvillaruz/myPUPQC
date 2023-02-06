@@ -38,7 +38,7 @@
         <blockquote class="blockquote custom-blockquote blockquote-outline blockquote-primary rounded py-3">
             <div class="row g-0">
                 <div class="col-lg-4 quote-image">
-                    <img id="background" class="rounded-start img-fluid h-100 object-cover" src="https://theysaidso.com/img/qod/qod-inspire.jpg" alt="Card image" />
+                    <img id="background" class="rounded-start img-fluid h-100 object-cover" src="https://theysaidso.com/img/qod/qod-inspire.webp" alt="Card image" />
                 </div>
                 <div class="col-xs-12 col-lg-8 qotd">
                     <div class="card-header">
@@ -60,7 +60,7 @@
 
 <div class="row">
     <div class="col-xs-12 col-lg-4">
-        <div class="rounded" style="background: url('<?= base_url() ?>public/images/menu/img-1.jpg');background-size:cover;">
+        <div class="rounded" style="background: url('<?= base_url() ?>public/images/menu/img-1.webp');background-size:cover;">
             <div class="card rounded bg-primary bg-opacity-50">
                 <div class="card-body">
                     <div class="d-flex align-items-center">
@@ -76,7 +76,7 @@
         </div>
     </div>
     <div class="col-xs-12 col-lg-4">
-        <div class="rounded" style="background: url('<?= base_url() ?>public/images/menu/img-10.jpg');background-size:cover;">
+        <div class="rounded" style="background: url('<?= base_url() ?>public/images/menu/img-10.webp');background-size:cover;">
             <div class="card rounded bg-primary bg-opacity-50">
                 <div class="card-body">
                     <div class="d-flex align-items-center">
@@ -92,7 +92,7 @@
         </div>
     </div>
     <div class="col-xs-12 col-lg-4">
-        <div class=" rounded" style="background: url('<?= base_url() ?>public/images/menu/img-7.jpg');background-size:cover;">
+        <div class=" rounded" style="background: url('<?= base_url() ?>public/images/menu/img-7.webp');background-size:cover;">
             <div class="card rounded bg-primary bg-opacity-50">
                 <div class="card-body">
                     <div class="d-flex align-items-center">
@@ -147,7 +147,7 @@
 
 <div class="row">
     <div class="col-12">
-        <div class="rounded mb-4" style="background: url('<?= base_url() ?>public/images/menu/img-3.jpg');background-size:cover;">
+        <div class="rounded mb-4" style="background: url('<?= base_url() ?>public/images/menu/img-3.webp');background-size:cover;">
             <div class="rounded bg-primary bg-opacity-50 d-flex justify-content-center align-items-center flex-column" style="height: 300px;">
                 <h1 class="pb-4 text-white fw-medium align-center text-center text-uppercase">Online Document Request System</h1>
                 <div class="d-flex justify-content-center">
@@ -214,7 +214,7 @@
 
 <div class="row">
     <div class="col-xs-12 col-md-6">
-        <div class="rounded" style="background: url('<?= base_url() ?>public/images/menu/img-8.jpg');background-size:cover;">
+        <div class="rounded" style="background: url('<?= base_url() ?>public/images/menu/img-8.webp');background-size:cover;">
             <div class="card rounded bg-primary bg-opacity-50">
                 <div class="card-body">
                     <div class="d-flex align-items-center">
@@ -230,7 +230,7 @@
         </div>
     </div>
     <div class="col-xs-12 col-md-6">
-        <div class="rounded" style="background: url('<?= base_url() ?>public/images/menu/img-4.jpg');background-size:cover;">
+        <div class="rounded" style="background: url('<?= base_url() ?>public/images/menu/img-4.webp');background-size:cover;">
             <div class="card rounded bg-primary bg-opacity-50">
                 <div class="card-body">
                     <div class="d-flex align-items-center">
