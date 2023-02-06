@@ -20,9 +20,9 @@
             </span>
           </div>
           <div class="flex-grow-1 ms-3">
-            <p class="text-uppercase fw-medium text-muted mb-3">Pending For Clearance</p>
+            <p class="text-uppercase fw-medium  mb-3">Pending For Clearance</p>
             <h4 class="fs-4 mb-3"><span id="pending_analytics" class="counter-value" data-target="">0</span></h4>
-            <!-- <p class="text-muted mb-0">From 9530 last month</p> -->
+            <!-- <p class=" mb-0">From 9530 last month</p> -->
           </div>
           <!-- <div class="flex-shrink-0 align-self-center">
             <span class="badge badge-soft-danger fs-12"><i class="ri-arrow-right-down-line fs-13 align-middle"></i> -10.35 %<span></span></span>
@@ -53,9 +53,9 @@
             </span>
           </div>
           <div class="flex-grow-1 ms-3">
-            <p class="text-uppercase fw-medium text-muted mb-3">For Clearance</p>
+            <p class="text-uppercase fw-medium  mb-3">For Clearance</p>
             <h4 class="fs-4 mb-3"><span id="for_clearance_analytics" class="counter-value" data-target="">0</span></h4>
-            <!-- <p class="text-muted mb-0">From 1930 last month</p> -->
+            <!-- <p class=" mb-0">From 1930 last month</p> -->
           </div>
           <!-- <div class="flex-shrink-0 align-self-center">
             <span class="badge badge-soft-success fs-12"><i class="ri-arrow-right-up-line fs-13 align-middle"></i> +6.11 %<span></span></span>
@@ -86,9 +86,9 @@
             </span>
           </div>
           <div class="flex-grow-1 ms-3">
-            <p class="text-uppercase fw-medium text-muted mb-3">For Evaluation/Processing</p>
+            <p class="text-uppercase fw-medium  mb-3">For Evaluation/Processing</p>
             <h4 class="fs-4 mb-3"><span id="for_evaluation_analytics" class="counter-value" data-target="">0</span></h4>
-            <!-- <p class="text-muted mb-0">From 308 last month</p> -->
+            <!-- <p class=" mb-0">From 308 last month</p> -->
           </div>
           <!-- <div class="flex-shrink-0 align-self-center">
             <span class="badge badge-soft-success fs-12"><i class="ri-arrow-right-up-line fs-13 align-middle"></i> +16.31 %<span></span></span>
@@ -119,9 +119,9 @@
             </span>
           </div>
           <div class="flex-grow-1 ms-3">
-            <p class="text-uppercase fw-medium text-muted mb-3">Ready for Pickup</p>
+            <p class="text-uppercase fw-medium  mb-3">Ready for Pickup</p>
             <h4 class="fs-4 mb-3"><span id="ready_for_pickup_analytics" class="counter-value" data-target="">0</span></h4>
-            <!-- <p class="text-muted mb-0">From 1,750 last month</p> -->
+            <!-- <p class=" mb-0">From 1,750 last month</p> -->
           </div>
           <!-- <div class="flex-shrink-0 align-self-center">
             <span class="badge badge-soft-success fs-12"><i class="ri-arrow-right-up-line fs-13 align-middle"></i> +22.96 %<span></span></span>
@@ -153,7 +153,7 @@
       </div>
       <div class="card-body">
         <!-- Tab panes -->
-        <div class="tab-content text-muted">
+        <div class="tab-content ">
           <div class="tab-pane active" id="pending" role="tabpanel">
             <table id="pending-datatables" class="display dt-responsive table align-middle" style="width: 100%">
               <thead class="bg-light">

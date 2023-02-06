@@ -40,7 +40,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div>
-                                <div class="row pt-4 text-muted">
+                                <div class="row pt-4 ">
                                     <div class="col-xxl-9">
                                         <div class="card">
                                             <div class="card-body">
@@ -82,22 +82,22 @@
                                                 <div>
                                                     <ul class="list-group list-group-flush">
                                                         <li class="list-group-item">
-                                                            <a class="text-muted" href="<?= base_url() ?>research/researches">Research Management Office</a>
+                                                            <a class="" href="<?= base_url() ?>research/researches">Research Management Office</a>
                                                         </li>
-                                                        <li class="list-group-item text-muted">
-                                                            <a class="text-muted" href="<?= base_url() ?>research/objectives">Objectives</a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <a class="text-muted" href="<?= base_url() ?>about/logo-and-symbols">Logo</a>
+                                                        <li class="list-group-item ">
+                                                            <a class="" href="<?= base_url() ?>research/objectives">Objectives</a>
                                                         </li>
                                                         <li class="list-group-item">
-                                                            <a class="text-muted" href="<?= base_url() ?>research/services">Services and Regular Capacity <br> Building Programs / Projects</a>
+                                                            <a class="" href="<?= base_url() ?>about/logo-and-symbols">Logo</a>
                                                         </li>
                                                         <li class="list-group-item">
-                                                            <a class="text-muted" href="<?= base_url() ?>personnel">Officials and Staffs</a>
+                                                            <a class="" href="<?= base_url() ?>research/services">Services and Regular Capacity <br> Building Programs / Projects</a>
                                                         </li>
                                                         <li class="list-group-item">
-                                                            <a class="text-muted" href="<?= base_url() ?>about/contact-us">Contact Information</a>
+                                                            <a class="" href="<?= base_url() ?>personnel">Officials and Staffs</a>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <a class="" href="<?= base_url() ?>about/contact-us">Contact Information</a>
                                                         </li>
                                                     </ul>
                                                 </div>

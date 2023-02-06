@@ -164,7 +164,7 @@
             <div class="card-body">
                 <div class="text-center">
                     <h4 class="mt-4 fw-semibold">Are You Feeling Unwell?</h4>
-                    <p class="text-muted mt-3">
+                    <p class=" mt-3">
                         Expect the quality health care services as you conveniently book your appointments, and get e-prescriptions from our university doctor.
                     </p>
                     <div class="my-3">
@@ -181,7 +181,7 @@
             <div class="card-body">
                 <div class="text-center">
                     <h4 class="mt-4 fw-semibold">Do You Have a Tooth Decay?</h4>
-                    <p class="text-muted mt-3">
+                    <p class=" mt-3">
                         With regular dental check-ups, our dentists can help and give you a perfect treatment plan towards a perfect beautiful smile.
                     </p>
                     <div class="my-3">
@@ -198,7 +198,7 @@
             <div class="card-body">
                 <div class="text-center">
                     <h4 class="mt-4 fw-semibold">Want to let Your Thoughts Out?</h4>
-                    <p class="text-muted mt-3">
+                    <p class=" mt-3">
                         Our experienced psychologist offer free counselling support. Talk to us now if you're having emotional or psychological issues.
                     </p>
                     <div class="my-3">

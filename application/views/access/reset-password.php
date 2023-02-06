@@ -39,30 +39,30 @@
                 </div>
 
                 <div class="p-1 password-form-body" id="<?php echo $token ?>">
-                <div class="alert alert-borderless alert-warning text-center mb-2 mx-2" role="alert">
-                  Please enter your password immediately as you will be redirected back to the Forgot Password page after 5 minutes.
-                </div>
-                <div class="p-2">
-                  <form id="resetPasswordForm" class="needs-validation" novalidate>
-                    <div class="mb-4">
-                      <label class="form-label">New Password</label>
-                      <input type="password" class="form-control" id="password" name="password" placeholder="Enter New Password" required>
-                    </div>
+                  <div class="alert alert-borderless alert-warning text-center mb-2 mx-2" role="alert">
+                    Please enter your password immediately as you will be redirected back to the Forgot Password page after 5 minutes.
+                  </div>
+                  <div class="p-2">
+                    <form id="resetPasswordForm" class="needs-validation" novalidate>
+                      <div class="mb-4">
+                        <label class="form-label">New Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter New Password" required>
+                      </div>
 
-                    <div class="mb-4">
-                      <label class="form-label">Retype Password</label>
-                      <input type="password" class="form-control" id="retype_password" name="retype_password" placeholder="Enter Retype Password" required>
-                    </div>
+                      <div class="mb-4">
+                        <label class="form-label">Retype Password</label>
+                        <input type="password" class="form-control" id="retype_password" name="retype_password" placeholder="Enter Retype Password" required>
+                      </div>
 
-                    <div class="mb-4" id="password_error">
+                      <div class="mb-4" id="password_error">
 
-                    </div>
+                      </div>
 
-                    <div class="text-center mt-4">
-                      <button id="reset_password_button" class="btn btn-success w-100" type="submit">Reset Password</button>
-                    </div>
-                  </form><!-- end form -->
-                </div>
+                      <div class="text-center mt-4">
+                        <button id="reset_password_button" class="btn btn-success w-100" type="submit">Reset Password</button>
+                      </div>
+                    </form><!-- end form -->
+                  </div>
                 </div>
               </div>
               <!-- end card body -->
@@ -87,7 +87,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="text-center">
-              <p class="mb-0 text-muted">&copy;
+              <p class="mb-0 ">&copy;
                 <script>
                   document.write(new Date().getFullYear())
                 </script> POLYTECHNIC UNIVERSITY OF THE PHILIPPINES - QUEZON CITY BRANCH

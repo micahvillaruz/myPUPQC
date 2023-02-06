@@ -40,7 +40,7 @@
           <div class="row">
             <div class="col-lg-12">
               <div>
-                <div class="row pt-4 text-muted">
+                <div class="row pt-4 ">
                   <div class="col-xxl-9">
                     <div class="card">
                       <div class="card-body">
@@ -60,7 +60,7 @@
                                     <h5 class="mb-1">
                                       Rodolfo Y. Aquino Jr., MBA
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Instructor I
                                     </p>
                                   </div>
@@ -78,7 +78,7 @@
                                     <h5 class="mb-1">
                                       Melanie F. Bactasa, MAED
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Head, Academic Programs
                                     </p>
                                   </div>
@@ -96,7 +96,7 @@
                                     <h5 class="mb-1">
                                       Mary Grace I. Cruz, MEM
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Assistant Professor II
                                     </p>
                                   </div>
@@ -114,7 +114,7 @@
                                     <h5 class="mb-1">
                                       Edgardo S. Delmo, MGM, MBA
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Assistant Professor IV
                                     </p>
                                   </div>
@@ -132,7 +132,7 @@
                                     <h5 class="mb-1">
                                       Rodrigo S. Dolorosa, DEM
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Assistant Professor IV
                                     </p>
                                   </div>
@@ -150,7 +150,7 @@
                                     <h5 class="mb-1">
                                       Cherrylyn P. Esparagoza, MPA
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Assistant Professor I
                                     </p>
                                   </div>
@@ -168,7 +168,7 @@
                                     <h5 class="mb-1">
                                       Alma C. Fernandez, MIT
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Assistant Professor III
                                     </p>
                                   </div>
@@ -186,7 +186,7 @@
                                     <h5 class="mb-1">
                                       Doris B. Gatan, MBA
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Associate Professor V
                                     </p>
                                   </div>
@@ -204,7 +204,7 @@
                                     <h5 class="mb-1">
                                       Irynne P. Gatchalian
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Assistant Professor IV
                                     </p>
                                   </div>
@@ -222,7 +222,7 @@
                                     <h5 class="mb-1">
                                       Roseller M. Malabanan, MPA
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Assistant Professor IV
                                     </p>
                                   </div>
@@ -240,7 +240,7 @@
                                     <h5 class="mb-1">
                                       Demelyn E. Monzon, MEM
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Associate Professor II
                                     </p>
                                   </div>
@@ -258,7 +258,7 @@
                                     <h5 class="mb-1">
                                       Sheryl R. Morales, MEM
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Assistant Professor I
                                     </p>
                                   </div>
@@ -275,7 +275,7 @@
                                     <h5 class="mb-1">
                                       Rommel Y. Roxas, MBA
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Assistant Professor I
                                     </p>
                                   </div>
@@ -292,7 +292,7 @@
                                     <h5 class="mb-1">
                                       Cleotilde B. Servigon
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Assistant Professor I
                                     </p>
                                   </div>
@@ -309,7 +309,7 @@
                                     <h5 class="mb-1">
                                       Philip Sj Soberano, MPA
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Instructor I
                                     </p>
                                   </div>
@@ -326,7 +326,7 @@
                                     <h5 class="mb-1">
                                       Caroline T. Sumande, DEM
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Professor IV
                                     </p>
                                   </div>
@@ -1007,25 +1007,25 @@
                         <div>
                           <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about">PUP Quezon City Branch</a>
+                              <a class="" href="<?= base_url() ?>about">PUP Quezon City Branch</a>
                             </li>
-                            <li class="list-group-item text-muted">
-                              <a class="text-muted" href="<?= base_url() ?>about/history">History</a>
-                            </li>
-                            <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>facilities">Facilities</a>
+                            <li class="list-group-item ">
+                              <a class="" href="<?= base_url() ?>about/history">History</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>offices">Offices</a>
+                              <a class="" href="<?= base_url() ?>facilities">Facilities</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>personnel">Officials and Staff</a>
+                              <a class="" href="<?= base_url() ?>offices">Offices</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>faculty">Faculty</a>
+                              <a class="" href="<?= base_url() ?>personnel">Officials and Staff</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/contact-us">Contact Information</a>
+                              <a class="" href="<?= base_url() ?>faculty">Faculty</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="" href="<?= base_url() ?>about/contact-us">Contact Information</a>
                             </li>
                           </ul>
                         </div>

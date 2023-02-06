@@ -61,10 +61,10 @@
                         </li>
                     </ul>
                     <!-- Tab panes -->
-                    <div class="tab-content text-muted">
+                    <div class="tab-content ">
                         <div class="tab-pane active" id="all_announcements" role="tabpanel">
                             <table id="all_announcements_table" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
-                                <thead class="text-muted table-light">
+                                <thead class=" table-light">
                                     <tr class="text-uppercase">
                                         <th>Title</th>
                                         <th>Description</th>
@@ -77,7 +77,7 @@
                         </div>
                         <div class="tab-pane" id="my_announcements" role="tabpanel">
                             <table id="my_announcements_table" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
-                                <thead class="text-muted table-light">
+                                <thead class=" table-light">
                                     <tr class="text-uppercase">
                                         <th>Title</th>
                                         <th>Description</th>

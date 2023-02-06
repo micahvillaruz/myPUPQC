@@ -36,7 +36,7 @@
 
                 <div class="mt-4 pt-2">
                   <h5>You are Logged Out</h5>
-                  <p class="text-muted">
+                  <p class="">
                     Thank you for taking the time to visit
                     <span class="fw-semibold">myPUPQC</span>.
                   </p>
@@ -63,7 +63,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="text-center">
-              <p class="mb-0 text-muted">
+              <p class="mb-0 ">
                 &copy;
                 <script>
                   document.write(new Date().getFullYear())

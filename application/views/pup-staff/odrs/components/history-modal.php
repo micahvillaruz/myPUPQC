@@ -147,7 +147,7 @@
           </div>
         </div>
         <table class="mt-5 table table-bordered nowrap align-middle" style="width: 100%">
-          <thead class="table-light text-muted">
+          <thead class="table-light ">
             <tr>
               <th colspan="2" class="bg-soft-primary text-dark">Requested Document/s:</th>
             </tr>
@@ -175,7 +175,7 @@
                   </div>
                 </div>
                 <div class="flex-grow-1">
-                  <p class="text-uppercase text-muted mb-1">Payment Status :</p>
+                  <p class="text-uppercase  mb-1">Payment Status :</p>
                   <h6 id="payment_status" class="mb-0"></h6>
                 </div>
               </div>
@@ -191,7 +191,7 @@
                   </div>
                 </div>
                 <div class="flex-grow-1">
-                  <p class="text-uppercase text-muted mb-1">OR Number :</p>
+                  <p class="text-uppercase  mb-1">OR Number :</p>
                   <h6 id="or_no" class="mb-0"></h6>
                 </div>
               </div>
@@ -207,7 +207,7 @@
                   </div>
                 </div>
                 <div class="flex-grow-1">
-                  <p class="text-uppercase text-muted mb-1">Release Classification :</p>
+                  <p class="text-uppercase  mb-1">Release Classification :</p>
                   <h6 id="release_classification" class="mb-0"></h6>
                 </div>
               </div>
@@ -223,7 +223,7 @@
                   </div>
                 </div>
                 <div class="flex-grow-1">
-                  <p id="completed_date" class="text-uppercase text-muted mb-1"></p>
+                  <p id="completed_date" class="text-uppercase  mb-1"></p>
                   <h6 id="date_completed" class="mb-0"></h6>
                 </div>
               </div>
@@ -256,7 +256,7 @@
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                   <div class="accordion-body ms-2 ps-5 pt-0">
                     <h6 class="mb-1">The Document Request is Pending for Approval and is being reviewed by the Officer-in-Charge, Student Records.</h6>
-                    <p id="pending_for_clearance_datetime" class="text-muted mb-0"></p>
+                    <p id="pending_for_clearance_datetime" class=" mb-0"></p>
                   </div>
                 </div>
               </div>
