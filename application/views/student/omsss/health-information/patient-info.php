@@ -76,6 +76,11 @@
                             <i class="fas fa-home"></i> PATIENT INFORMATION
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#immunizationTab" role="tab">
+                            <i class="fas fa-home"></i> IMMUNIZATION
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="card-body p-4">
@@ -158,16 +163,67 @@
                             </div>
                             <div class="col-lg-12 mt-4">
                                 <div class="text-center d-grid">
-                                    <button class="btn btn-primary bg-gradient">Update</button>
+                                    <button type="submit" id="update_patient_information" class="btn btn-primary bg-gradient">Update Patient Information</button>
                                 </div>
                             </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane" id="immunizationTab" role="tabpanel">
+                        <form id="immunizationForm" enctype='multipart/form-data'>
+                            <h4 class="fw-bold text-primary">Immunization: Protection Against Various Diseases</h4></br>
+                            <h5 class="fw-bold text-primary">COVID-19</h5>
+                            <ul>
+                                <li> You can able to upload your COVID Vaccinination Card in this section.</li>
+                                <li> You can
+                                    <span class="fw-bold">upload</span>
+                                    <span class="d-inline-block" id="vaccination_popover">
+                                        <i class="ri-question-fill text-info text-gradient"></i>
+                                    </span>
+                                    your vaccination card by clicking
+                                    <i class="ri-upload-2-line"></i>
+                                    <span class="fw-bold">Drag and Drop you Files, </span>
+                                    below and you may able to view and delete the vaccination card you have uploaded. PUP Guarantees that the Vaccination Card stored in the database will be deleted immediately from our servers.
+                                </li>
+                                <li>Only PDF and JPG/PNG are allowed to be uploaded.</li>
+                            </ul>
+
+                            <div class="row mb-3">
+                                <div class="col-lg-12" id="vaxcard_content">
+                                    <div class="row">
+                                        <div class="col-xl w-100">
+                                            <input type="file" class="filepond filepond-input-multiple" id="vaccination_card" multiple data-allow-reorder="true" data-max-files="1">
+                                        </div>
+                                        <div class="col-xl w-100 d-flex flex-column justify-content-center align-items-center" id="show_vaxcard_button">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Privacy Statement -->
+                            <div class=" col-lg">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="privacy" required>
+                                    <label class="form-check-label" for="privacy">
+                                        By clicking the Update button, I understood and agree to PUP Online Medical Service System's
+                                        <a href="" data-bs-toggle="modal" data-bs-target="#dataPrivacy">Privacy Statement</a>.
+                                    </label>
+                                    <div class="invalid-feedback">
+                                        You must read and acknowledge the Data Privacy Statement as declared above.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 mt-4">
+                                <div class="text-center d-grid">
+                                    <button type="submit" id="update_vax_card" class="btn btn-primary bg-gradient">Update Vaccination Card</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
+                <!--end row-->
             </div>
-            <!--end row-->
         </div>
     </div>
-</div>
 </div>
 <!--end col-->
 </div>

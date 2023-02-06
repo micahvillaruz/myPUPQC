@@ -25,7 +25,10 @@
 		<!-- Filepond css -->
 		<link rel="stylesheet" href="<?= base_url() ?>public/libs/filepond/filepond.min.css" type="text/css" />
 		<link rel="stylesheet" href="<?= base_url() ?>public/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.css" />
-
+		<script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
+		<script>
+		    FilePond.registerPlugin(FilePondPluginFileValidateType);
+		</script>
 		<!-- multi.js css -->
 		<link rel="stylesheet" type="text/css" href="<?= base_url() ?>public/libs/multi.js/multi.min.css" />
 		<!-- autocomplete css -->
