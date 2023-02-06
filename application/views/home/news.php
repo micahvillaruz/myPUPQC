@@ -47,23 +47,23 @@
                         <h3 class="mb-3 text-primary">News</h3>
                         <p class="p-1 m-3">Here are some latest PUPQC University News:</p>
                         <div id="latest_three_news"></div>
-                        <hr class="p-1 m-3"/>
+                        <hr class="p-1 m-3" />
                         <p class="p-1 m-3">An RSS Feed is available for PUPQC Latest News</p>
                         <div class="d-flex flex-column align-items-center h-100">
-                            <div class="flex-grow-1">
-                                <div class="text-center d-flex flex-column">
-                                    <img src="<?= base_url() ?>public/images/mypupqc-logo.png" alt="myPUPQC logo" height="60">
-                                    
-                                    <div class="d-flex justify-content-center h-100">
-                                        <a href="<?= base_url() ?>news/rss/" target="_blank">
-                                            <div class="d-flex align-items-center align-self-center justify-content-center">
-                                                <img src="<?= base_url() ?>public/images/rss.png" alt="RSS Feed" width="30" height="30" class="mx-2">
-                                                <h4 class="m-0"><strong class="text-primary">RSS Feed</strong></h4>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
+                          <div class="flex-grow-1">
+                            <div class="text-center d-flex flex-column">
+                              <img src="<?= base_url() ?>public/images/mypupqc-logo.webp" alt="myPUPQC logo" height="60">
+
+                              <div class="d-flex justify-content-center h-100">
+                                <a href="<?= base_url() ?>news/rss/" target="_blank">
+                                  <div class="d-flex align-items-center align-self-center justify-content-center">
+                                    <img src="<?= base_url() ?>public/images/rss.png" alt="RSS Feed" width="30" height="30" class="mx-2">
+                                    <h4 class="m-0"><strong class="text-primary">RSS Feed</strong></h4>
+                                  </div>
+                                </a>
+                              </div>
                             </div>
+                          </div>
                         </div>
                       </div>
                       <!--end card-body-->

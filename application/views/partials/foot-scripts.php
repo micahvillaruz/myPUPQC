@@ -8,3 +8,4 @@
 	<script src="<?= base_url() ?>public/js/pages/plugins/lord-icon-2.1.0.js"></script>
 	<script src="<?= base_url() ?>public/js/plugins.js"></script>
 	<script src="<?= base_url() ?>public/libs/moment/min/moment.min.js"></script>
+	<script src="https://cdn.lordicon.com/ritcuqlt.js"></script>

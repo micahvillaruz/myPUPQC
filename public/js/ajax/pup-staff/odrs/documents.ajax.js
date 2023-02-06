@@ -1,5 +1,11 @@
 $(function () {
 	loadDocumentsTable()
+	populateSelect()
+	$('#document_type').select2({
+		dropdownParent: $('#addDocumentModal'),
+		minimumResultsForSearch: Infinity,
+	})
+
 	$('#addDocumentForm').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
 		addDocument()
@@ -11,6 +17,7 @@ $(function () {
 })
 var addCount = 0
 var editCount = 0
+let signatoriesList = []
 
 // Load Documents Table
 loadDocumentsTable = () => {
@@ -80,6 +87,40 @@ loadDocumentsTable = () => {
 			},
 		],
 		order: [[0, 'asc']],
+	})
+}
+
+let isPopulateSelectRunning = false
+
+populateSelect = (signatoriesList = []) => {
+	if (isPopulateSelectRunning) return
+	isPopulateSelectRunning = true
+	$('.signatories_div').removeClass('d-none')
+	const selectSignatories = $('#select_signatories')
+	selectSignatories.find('option').not(':disabled').remove()
+	selectSignatories.find('option:disabled').prop('selected', true)
+	$.ajax({
+		type: 'GET',
+		url: apiURL + 'odrs/pup_staff/view_signatory_users',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			const signatories = result.data
+			const options = signatories
+				.filter((signatory) => !signatoriesList.includes(signatory.user_id))
+				.map(
+					(signatory) =>
+						new Option(
+							signatory.user_assigned_to_role.user_profiles[0].full_name,
+							signatory.user_id,
+						),
+				)
+			selectSignatories.append(options)
+			isPopulateSelectRunning = false
+			$('#select_signatories').select2({
+				dropdownParent: $('#addDocumentModal'),
+				minimumResultsForSearch: Infinity,
+			})
+		},
 	})
 }
 
@@ -170,6 +211,12 @@ addDocument = () => {
 			showCloseButton: !0,
 		})
 	})
+
+	$('#display_list').empty()
+	$('.signatories_div').removeClass('d-none')
+	$('#select_signatories').attr('required', 'required')
+	populateSelect()
+	signatoriesList.length = 0
 }
 
 // Update Document
@@ -272,6 +319,41 @@ getDocumentInfo = (document_id) => {
 		})
 	})
 }
+
+function print_signatory() {
+	const selectedOption = $('#select_signatories option:selected')
+	const selectedOptionID = selectedOption.val()
+
+	if (selectedOptionID) {
+		if (!signatoriesList.includes(selectedOptionID)) {
+			signatoriesList.push(selectedOptionID)
+			$('#display_list').append(`
+				<li id="${selectedOptionID}" class="d-flex align-items-center justify-content-between mb-2">
+					<div class="d-flex align-items-center">
+						<i class="me-3 glowing-circle"></i>
+						<span class="fw-bold">${selectedOption.text()}</span>
+					</div>
+					<a class="link-delete fs-15">
+						<i class="ri-delete-bin-7-fill text-danger"></i>
+					</a>
+				</li>
+			`)
+			selectedOption.remove()
+			$('#select_signatories').find('option:disabled').prop('selected', true)
+
+			if ($('#select_signatories option').length === 1) {
+				$('.signatories_div').addClass('d-none')
+			}
+		}
+	}
+}
+
+$('#display_list').on('click', '.link-delete', function () {
+	const removedOptionID = $(this).parent().attr('id')
+	signatoriesList = signatoriesList.filter((value) => value !== removedOptionID)
+	$(this).parent().remove()
+	populateSelect(signatoriesList)
+})
 
 function add_new_link() {
 	addCount++
