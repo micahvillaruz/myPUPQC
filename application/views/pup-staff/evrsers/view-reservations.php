@@ -16,7 +16,7 @@
                 </ul>
             </div>
             <div class="card-body">
-                <div class="tab-content text-muted">
+                <div class="tab-content ">
                     <div class="tab-pane active" id="nav-border-top-home" role="tabpanel">
                         <div class="d-flex">
                             <div class="flex-grow-1 ms-2">

@@ -40,7 +40,7 @@
           <div class="row">
             <div class="col-lg-12">
               <div>
-                <div class="row pt-4 text-muted">
+                <div class="row pt-4 ">
                   <div class="col-xxl-9">
                     <div class="card shadow-none">
                       <div class="card-body">
@@ -387,17 +387,17 @@
                         <div>
                           <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>academic/programs">Academic Programs</a>
+                              <a class="" href="<?= base_url() ?>academic/programs">Academic Programs</a>
                             </li>
-                            <li class="list-group-item text-muted">
-                              <a class="text-muted" href="<?= base_url() ?>academic/ous">Open University System</a>
-                            </li>
-                            <li class="list-group-item">
-                              <a class="text-muted" href="https://www.pup.edu.ph/nallrc/" target="_blank">Library Services</a>
-                              <!-- <a class="text-muted" href="<?= base_url() ?>academic/library">Library Services</a> -->
+                            <li class="list-group-item ">
+                              <a class="" href="<?= base_url() ?>academic/ous">Open University System</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>academic/ovpaa">OVPAA Advisories</a>
+                              <a class="" href="https://www.pup.edu.ph/nallrc/" target="_blank">Library Services</a>
+                              <!-- <a class="" href="<?= base_url() ?>academic/library">Library Services</a> -->
+                            </li>
+                            <li class="list-group-item">
+                              <a class="" href="<?= base_url() ?>academic/ovpaa">OVPAA Advisories</a>
                             </li>
                           </ul>
                         </div>

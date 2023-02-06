@@ -40,7 +40,7 @@
           <div class="row">
             <div class="col-lg-12">
               <div>
-                <div class="row pt-4 text-muted">
+                <div class="row pt-4 ">
                   <div class="col-xxl-9">
                     <div class="card">
                       <div class="card-body">
@@ -134,15 +134,15 @@
                           </div>
                         </div>
                         <div>
-                        <ul class="list-group list-group-flush">
+                          <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                              <a class ="text-muted" href="<?= base_url() ?>terms-of-use">Terms of Use</a>
+                              <a class="" href="<?= base_url() ?>terms-of-use">Terms of Use</a>
                             </li>
-                            <li class="list-group-item text-muted">
-                              <a class ="text-muted" href="<?= base_url() ?>privacy-statement">Privacy Statement</a>
+                            <li class="list-group-item ">
+                              <a class="" href="<?= base_url() ?>privacy-statement">Privacy Statement</a>
                             </li>
-                            <li class="list-group-item text-muted">
-                              <a class ="text-muted" href="<?= base_url() ?>home/about_mypupqc">About myPUPQC</a>
+                            <li class="list-group-item ">
+                              <a class="" href="<?= base_url() ?>home/about_mypupqc">About myPUPQC</a>
                             </li>
                           </ul>
                         </div>

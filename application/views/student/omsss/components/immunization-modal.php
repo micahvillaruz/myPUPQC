@@ -41,7 +41,7 @@
                             </div>
                             end card header
                             <div class="card-body">
-                                <p class="text-muted">
+                                <p class="">
                                 </p>
                                 <input type="file" class="filepond filepond-input-multiple" multiple name="filepond" data-allow-reorder="true" data-max-file-size="3MB" data-max-files="3" />
                             </div>
@@ -74,7 +74,7 @@
         <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop" colors="primary:#405189,secondary:#f06548" style="width:90px;height:90px"></lord-icon>
         <div class="mt-4 text-center">
           <h4 class="fs-semibold">You are about to delete a record ?</h4>
-          <p class="text-muted fs-14 mb-4 pt-1">Deleting your record will remove all of your information from our database.</p>
+          <p class=" fs-14 mb-4 pt-1">Deleting your record will remove all of your information from our database.</p>
           <div class="hstack gap-2 justify-content-center remove">
             <button class="btn btn-link link-success fw-medium text-decoration-none" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Close</button>
             <button class="btn btn-danger" id="delete-record">Yes, Delete It!!</button>

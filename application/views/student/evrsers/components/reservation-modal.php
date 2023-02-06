@@ -38,7 +38,7 @@
               Anything relevant to the creation of the event request should then be included here. <br><br>
             </span>
             <span class="mt-4 fs-6">
-              <i class="text-muted">*** Note that this could help your event request application to be processed faster.</i>
+              <i class="">*** Note that this could help your event request application to be processed faster.</i>
             </span>
           </li>
         </ul>
@@ -210,7 +210,7 @@
         <lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#405189,secondary:#f06548" style="width:90px;height:90px"></lord-icon>
         <div class="mt-4 text-center">
           <h4 class="fs-semibold">Sure to cancel this pending reservation ?</h4>
-          <p class="text-muted fs-14 mb-4 pt-1">Cancelling this will remove the event information from our the reservation calendar.</p>
+          <p class=" fs-14 mb-4 pt-1">Cancelling this will remove the event information from our the reservation calendar.</p>
           <div class="hstack gap-2 justify-content-center remove">
             <button class="btn btn-link link-danger fw-medium text-decoration-none" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Close</button>
             <button class="btn btn-warning" id="cancel-reservation">Yes, Cancel It!!</button>
@@ -350,4 +350,3 @@
   </div>
   <!-- /.modal-dialog -->
 </div>
-

@@ -36,7 +36,7 @@
               <div class="card-body p-4">
                 <div class="text-center mt-2">
                   <h5 class="text-primary">Forgot Password?</h5>
-                  <p class="text-muted">Reset your password in myPUPQC.</p>
+                  <p class="">Reset your password in myPUPQC.</p>
                   <lord-icon src="https://cdn.lordicon.com/rhvddzym.json" trigger="loop" colors="primary:#0ab39c" class="avatar-xl"></lord-icon>
 
                 </div>
@@ -79,7 +79,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="text-center">
-              <p class="mb-0 text-muted">&copy;
+              <p class="mb-0 ">&copy;
                 <script>
                   document.write(new Date().getFullYear())
                 </script> POLYTECHNIC UNIVERSITY OF THE PHILIPPINES - QUEZON CITY BRANCH

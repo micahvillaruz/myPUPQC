@@ -40,7 +40,7 @@
           <div class="row">
             <div class="col-lg-12">
               <div>
-                <div class="row pt-4 text-muted">
+                <div class="row pt-4 ">
                   <div class="col-xxl-9">
                     <div class="card">
                       <div class="card-body">
@@ -59,7 +59,7 @@
                                     <h5 class="mb-1">
                                       Assoc. Prof. Jaime P. Gutierrez Jr.
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Director
                                     </p>
                                   </div>
@@ -77,7 +77,7 @@
                                     <h5 class="mb-1">
                                       Assoc. Prof. Demelyn Monzon
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Head, Academic Programs
                                     </p>
                                   </div>
@@ -95,7 +95,7 @@
                                     <h5 class="mb-1">
                                       Roseller M. Malabanan, MPA
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Administrative Officer And Property Custodian
                                     </p>
                                   </div>
@@ -113,7 +113,7 @@
                                     <h5 class="mb-1">
                                       Alma C. Fernandez, MIT
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Head, Student Affairs and Services
                                     </p>
                                   </div>
@@ -131,7 +131,7 @@
                                     <h5 class="mb-1">
                                       Irynne P. Gatchalian
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Collecting And Disbursing Officer
                                     </p>
                                   </div>
@@ -149,7 +149,7 @@
                                     <h5 class="mb-1">
                                       Cleotilde B. Servigon
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Branch Registrar
                                     </p>
                                   </div>
@@ -167,7 +167,7 @@
                                     <h5 class="mb-1">
                                       Cherryln P. Esparagoza, MPA
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       In-Charge, Admission
                                     </p>
                                   </div>
@@ -185,7 +185,7 @@
                                     <h5 class="mb-1">
                                       Melanie F. Bactasa, MAED
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Guidance Counselor
                                     </p>
                                   </div>
@@ -203,7 +203,7 @@
                                     <h5 class="mb-1">
                                       Caroline T. Sumande, DEM
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Accreditation Coordinator
                                     </p>
                                   </div>
@@ -221,7 +221,7 @@
                                     <h5 class="mb-1">
                                       Sheryl R. Morales, MEM
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Faculty Researcher
                                     </p>
                                   </div>
@@ -239,7 +239,7 @@
                                     <h5 class="mb-1">
                                       Alma C. Fernandez, MIT
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Faculty Extensionist
                                     </p>
                                   </div>
@@ -257,7 +257,7 @@
                                     <h5 class="mb-1">
                                       Melissa P. Sarapuddin, MD
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Branch Physician
                                     </p>
                                   </div>
@@ -275,7 +275,7 @@
                                     <h5 class="mb-1">
                                       Rosanna Florencia A. Ulep, DMD, MPH
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Branch Dentist
                                     </p>
                                   </div>
@@ -301,7 +301,7 @@
                                     <h5 class="mb-1">
                                       Ma. Cristina T. Abad
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Administrative Aide III
                                     </p>
                                   </div>
@@ -319,7 +319,7 @@
                                     <h5 class="mb-1">
                                       Domingo P. Bataller Jr.
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Emergency Administrative Aide III
                                     </p>
                                   </div>
@@ -337,7 +337,7 @@
                                     <h5 class="mb-1">
                                       Ednalyn A. Bataller
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Administrative Aide IV
                                     </p>
                                   </div>
@@ -355,7 +355,7 @@
                                     <h5 class="mb-1">
                                       Abraham Seth R. Bernardino
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Emergency Utility Foreman
                                     </p>
                                   </div>
@@ -373,7 +373,7 @@
                                     <h5 class="mb-1">
                                       Berna A. Bulawit, MEM
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Emergency Administrative Aide III
                                     </p>
                                   </div>
@@ -391,7 +391,7 @@
                                     <h5 class="mb-1">
                                       Geronimo A. Cuadra
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Administrative Aide VI
                                     </p>
                                   </div>
@@ -409,7 +409,7 @@
                                     <h5 class="mb-1">
                                       Edgardo C. Dandan
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Emergency Administrative Aide III
                                     </p>
                                   </div>
@@ -427,7 +427,7 @@
                                     <h5 class="mb-1">
                                       Roberto B. Doromal
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Emergency Administrative Aide III
                                     </p>
                                   </div>
@@ -445,7 +445,7 @@
                                     <h5 class="mb-1">
                                       Pedro L. Funilas
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Emergency Security Guard I
                                     </p>
                                   </div>
@@ -463,7 +463,7 @@
                                     <h5 class="mb-1">
                                       Merly B. Gonzalbo
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Administrative Officer II
                                     </p>
                                   </div>
@@ -481,7 +481,7 @@
                                     <h5 class="mb-1">
                                       Hernando Dr. Liberato
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Administrative Aide III
                                     </p>
                                   </div>
@@ -499,7 +499,7 @@
                                     <h5 class="mb-1">
                                       Johnny Rey P. Palmes
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Emergency Security Guard I
                                     </p>
                                   </div>
@@ -517,7 +517,7 @@
                                     <h5 class="mb-1">
                                       Raymund B. Santos
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Nurse II
                                     </p>
                                   </div>
@@ -534,7 +534,7 @@
                                     <h5 class="mb-1">
                                       Paciano A. Suela
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Administrative Aide IV
                                     </p>
                                   </div>
@@ -551,7 +551,7 @@
                                     <h5 class="mb-1">
                                       Henry D. Taruc
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Security Guard II
                                     </p>
                                   </div>
@@ -568,7 +568,7 @@
                                     <h5 class="mb-1">
                                       Richard S. Zubiaga
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Emergency Administrative Aide III
                                     </p>
                                   </div>
@@ -596,25 +596,25 @@
                         <div>
                           <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about">PUP Quezon City Branch</a>
+                              <a class="" href="<?= base_url() ?>about">PUP Quezon City Branch</a>
                             </li>
-                            <li class="list-group-item text-muted">
-                              <a class="text-muted" href="<?= base_url() ?>about/history">History</a>
-                            </li>
-                            <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>facilities">Facilities</a>
+                            <li class="list-group-item ">
+                              <a class="" href="<?= base_url() ?>about/history">History</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>offices">Offices</a>
+                              <a class="" href="<?= base_url() ?>facilities">Facilities</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>personnel">Officials and Staff</a>
+                              <a class="" href="<?= base_url() ?>offices">Offices</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>faculty">Faculty</a>
+                              <a class="" href="<?= base_url() ?>personnel">Officials and Staff</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/contact-us">Contact Information</a>
+                              <a class="" href="<?= base_url() ?>faculty">Faculty</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="" href="<?= base_url() ?>about/contact-us">Contact Information</a>
                             </li>
                           </ul>
                         </div>

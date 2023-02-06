@@ -1,4 +1,4 @@
-<div class="row text-muted">
+<div class="row ">
     <div class="col-lg-12">
         <div>
             <div class="card">

@@ -78,7 +78,7 @@
                 <lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#161f2e,secondary:#3080e8" style="width:100px;height:100px"></lord-icon>
                 <div class="mt-4 text-center">
                     <h4 class="fs-semibold">Add this Student as an Organizer?</h4>
-                    <p class="text-muted fs-14 mb-4 pt-1">Adding them as organizer would enable them to see and access myPUPQC's Venue Management System Features.</p>
+                    <p class=" fs-14 mb-4 pt-1">Adding them as organizer would enable them to see and access myPUPQC's Venue Management System Features.</p>
                     <div class="hstack gap-2 justify-content-center remove">
                         <button class="btn btn-link link-danger fw-medium text-decoration-none" data-bs-dismiss="modal"><i class="ri-close-line me-2 align-middle"></i>Cancel</button>
                         <button class="btn btn-success" id="add-organizer">Yes, Add Student as Organizer.</button>
@@ -100,7 +100,7 @@
                 <lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#161f2e,secondary:#f06548" style="width:90px;height:90px"></lord-icon>
                 <div class="mt-4 text-center">
                     <h4 class="fs-semibold">Remove student as Organizer?</h4>
-                    <p class="text-muted fs-14 mb-4 pt-1">Doing this will remove the student information from the organizer management page.</p>
+                    <p class=" fs-14 mb-4 pt-1">Doing this will remove the student information from the organizer management page.</p>
                     <div class="hstack gap-2 justify-content-center remove">
                         <button class="btn btn-link link-danger fw-medium text-decoration-none" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Close</button>
                         <button class="btn btn-danger" id="remove-organizer">Remove Organizer Role</button>

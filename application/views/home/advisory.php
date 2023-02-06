@@ -40,14 +40,14 @@
           <div class="row">
             <div class="col-lg-12">
               <div>
-                <div class="row pt-4 text-muted">
+                <div class="row pt-4 ">
                   <div class="col-xxl-9">
                     <div class="card">
                       <div class="card-body">
                         <h3 class="mb-3 text-primary">Advisory</h3>
                         <p class="p-1 m-3">Here are some latest PUPQC University Advisories to look out for:</p>
                         <div id="latest_three_advisories"></div>
-                        <hr class="p-1 m-3"/>
+                        <hr class="p-1 m-3" />
                       </div>
                       <!--end card-body-->
                     </div>
@@ -64,10 +64,10 @@
                         <div>
                           <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>news">News</a>
+                              <a class="" href="<?= base_url() ?>news">News</a>
                             </li>
-                            <li class="list-group-item text-muted">
-                              <a class="text-muted" href="<?= base_url() ?>advisory">Advisories</a>
+                            <li class="list-group-item ">
+                              <a class="" href="<?= base_url() ?>advisory">Advisories</a>
                             </li>
                           </ul>
                         </div>
