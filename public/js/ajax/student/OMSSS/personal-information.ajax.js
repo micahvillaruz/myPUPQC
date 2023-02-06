@@ -156,5 +156,51 @@ editPatientInformationAJAX = (pond) => {
 
 deletePhilhealthImage = () => {
 	// next update
-	console.log('next update')
+	Swal.fire({
+		title: 'Are you sure you want to delete your PhilHealth ID?',
+		text: "By deleting your PhilHealth ID, PUP guarantees that your uploads are deleted immediately in our databases and you won't be able to retrieve it.",
+		iconHtml: `<lord-icon src="https://cdn.lordicon.com/nduddlov.json" trigger="loop" colors="outline:#f06548,primary:#ffffff,secondary:#f06548" style="width:100px;height:100px"></lord-icon>`,
+		customClass: {
+			icon: 'border-white',
+		},
+		showCancelButton: true,
+		confirmButtonColor: '#f06548',
+		cancelButtonColor: '#6c757d',
+		confirmButtonText: 'Delete',
+	}).then((result) => {
+		if (result.isConfirmed) {
+			$.ajax({
+				url: apiURL + `omsss/student/patient_information/philhealth_id_image`,
+				type: 'DELETE',
+				headers: AJAX_HEADERS,
+				success: (result) => {
+					if (result) {
+						Swal.fire({
+							html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully deleted your PhilHealth ID!</p></div></div>',
+							showCancelButton: !0,
+							showConfirmButton: !1,
+							cancelButtonClass: 'btn btn-success w-xs mb-1',
+							cancelButtonText: 'Ok',
+							buttonsStyling: !1,
+							showCloseButton: !0,
+						}).then(function () {
+							setTimeout(() => {
+								location.reload()
+							}, 1000)
+						})
+					}
+				},
+			}).fail(() => {
+				Swal.fire({
+					html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">There was an error while deleting your PhilHealth ID. Please try again.</p></div></div>',
+					showCancelButton: !0,
+					showConfirmButton: !1,
+					cancelButtonClass: 'btn btn-danger w-xs mb-1',
+					cancelButtonText: 'Dismiss',
+					buttonsStyling: !1,
+					showCloseButton: !0,
+				})
+			})
+		}
+	})
 }
