@@ -3,12 +3,6 @@
         <h5 class="card-header mb-3 text-white p-3 bg-primary">Medical History</h5>
         <div class="card-body">
             <form action="javascript:void(0);" id="medicalHistoryForm">
-                <!-- Info Alert
-        <div class="alert alert-info alert-border-left alert-dismissible fade show" role="alert">
-          <h5><i class="las la-info me-3 align-middle fw-bold"></i>Data Privacy Act of 2012</h5>
-            <p>I hereby authorize PUPQC to collect and process the data indicate herein for purpose of effecting control of the covid-19 infection. I understand that any personal information is protected under Data Privacy Act of 2012, if needed, this may be used to facilitate contact tracing of PUPQC Medical Service and/or LGU and that I am required bt RA 11469 Bayanihan to Heal as One Act, to provide truthful information.</p>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div> -->
                 <p>Please <span>check</span> the items that apply to you.</p>
                 <div class="mx-5">
                     <div class="row align-item-start">
