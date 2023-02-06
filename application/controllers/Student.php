@@ -132,21 +132,6 @@ class Student extends CI_Controller
         $this->load->view('student/omsss/health-information/scripts/health-history-scripts');
     }
 
-    public function immunization()
-    {
-        $this->load->view('partials/main');
-        $this->load->view('partials/title-meta');
-        $this->load->view('partials/head-css');
-        $this->load->view('partials/student/topbar');
-        $this->load->view('partials/student/sidebar');
-        $this->load->view('partials/page-title', ["page_title" => "Medical Services", "title" => "Immunization: Protect against viruses"]);
-        $this->load->view('student/omsss/health-information/immunization');
-        $this->load->view('student/omsss/footer');
-        $this->load->view('student/omsss/components/immunization-modal');
-        $this->load->view('partials/foot-scripts');
-        $this->load->view('student/omsss/health-information/scripts/immunization-scripts');
-    }
-
     public function medical_consultation()
     {
         $this->load->view('partials/main');

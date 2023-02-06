@@ -174,7 +174,6 @@ $route['student/odrs/history'] = 'student/history';
 // Health Information
 $route['student/omsss/medical-services/patient-info'] = 'student/patient_info';
 $route['student/omsss/medical-services/health-history'] = 'student/health_history';
-$route['student/omsss/medical-services/immunization'] = 'student/immunization';
 
 // Appointment
 $route['student/omsss/medical-services/medical-consultation'] = 'student/medical_consultation';
