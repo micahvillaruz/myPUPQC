@@ -9,14 +9,14 @@
         <div class="container-boxed">
           <div class="profile-foreground position-relative mx-n4 mt-n4">
             <div class="profile-wid-bg">
-              <img src="<?= base_url() ?>public/images/pupqc-bg.jpg" alt="" class="profile-wid-img" />
+              <img src="<?= base_url() ?>public/images/pupqc-bg.webp" alt="" class="profile-wid-img" />
             </div>
           </div>
           <div class="pt-4 mb-4 mb-lg-3 pb-lg-4">
             <div class="row g-4">
               <div class="col-auto">
                 <div class="avatar-lg">
-                  <img src="<?= base_url() ?>public/images/pupqc-logo.png" class="img-thumbnail rounded-circle" />
+                  <img src="<?= base_url() ?>public/images/pupqc-logo.webp" class="img-thumbnail rounded-circle" />
                 </div>
               </div>
               <!--end col-->
@@ -47,7 +47,7 @@
                         <h3 class="mb-3 text-primary">Maps</h3>
                         <h5 class="text-primary"><i class="ri-map-pin-2-line align-middle lh-1 me-2"></i> Floor Plan</h5>
                         <div class="mx-3">
-                          <img src="<?= base_url() ?>public/images/about/floor-plan.jpeg" alt="" class="img-fluid">
+                          <img src="<?= base_url() ?>public/images/about/floor-plan.webp" alt="" class="img-fluid">
                         </div>
                         <h5 class="text-primary"><i class="ri-map-pin-2-line align-middle lh-1 me-2"></i> Vicinity Map</h5>
                         <div class="mx-4 mt-3">
