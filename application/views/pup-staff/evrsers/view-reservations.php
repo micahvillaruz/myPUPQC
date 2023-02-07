@@ -43,13 +43,28 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <!--//*  Feel free to remove these lines of code -->
+                                        <tr>
+                                            <td>RES-01202-280</td>
+                                            <td>Momol Time</td>
+                                            <td>Momol Spot</td>
+                                            <td>February 14, 2023</td>
+                                            <td>8:00 AM - 9:00 PM</td>
+                                            <td>
+                                                <span class="badge rounded-pill bg-warning">For Review</span>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-info waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#addSignModal" onclick=""><i class=" ri-quill-pen-fill fs-6 me-2 align-middle"></i>Add Signatory</button>
+                                            </td>
+                                        </tr>
+                                        <!-- //* Up to here -->
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
                     <!-- End tab pane -->
-                    <div class="tab-pane active" id="for-evaluation" role="tabpanel">
+                    <div class="tab-pane" id="for-evaluation" role="tabpanel">
                         <div class="d-flex">
                             <div class="flex-grow-1 ms-2">
                                 <table id="for-evaluation" class="table table-bordered table-responsive dt-responsive table-striped align-middle text-center" style="width: 100%">
