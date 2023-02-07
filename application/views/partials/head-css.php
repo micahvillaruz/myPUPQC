@@ -7,6 +7,11 @@
 
 		<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
+		<!-- Plugin CSS -->
+		<link href="<?= base_url() ?>public/libs/vanilla-calendar.js/vanilla-calendar.min.css" rel="stylesheet">
+		<!-- Plugin JS -->
+		<script src="<?= base_url() ?>public/libs/vanilla-calendar.js/vanilla-calendar.min.js" defer></script>
+
 		<!-- dropzone css -->
 		<link rel="stylesheet" href="<?= base_url() ?>public/libs/dropzone/dropzone.css" type="text/css" />
 
@@ -25,10 +30,6 @@
 		<!-- Filepond css -->
 		<link rel="stylesheet" href="<?= base_url() ?>public/libs/filepond/filepond.min.css" type="text/css" />
 		<link rel="stylesheet" href="<?= base_url() ?>public/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.css" />
-		<script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
-		<script>
-		    FilePond.registerPlugin(FilePondPluginFileValidateType);
-		</script>
 		<!-- multi.js css -->
 		<link rel="stylesheet" type="text/css" href="<?= base_url() ?>public/libs/multi.js/multi.min.css" />
 		<!-- autocomplete css -->
