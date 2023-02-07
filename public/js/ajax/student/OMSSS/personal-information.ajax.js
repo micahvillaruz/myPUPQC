@@ -224,12 +224,12 @@ editPatientInfoInput = () => {
 				$('#emergency_contact_email').val(data.emergency_contact_email)
 				if (data.emergency_contact_address != null) {
 					$('#emergency_contact_address').val(data.emergency_contact_address)
-					$('#formCheck1').prop('checked', false)
+					$('#formCheck1').prop('checked', true)
 				} else {
 					$('#emergency_contact_address').val(
 						data.patient_info_assigned_to_user.user_profiles[0].full_address,
 					)
-					$('#formCheck1').prop('checked', true)
+					$('#formCheck1').prop('checked', false)
 				}
 				$('#philhealth_number').val(data.philhealth_number)
 				if (data.philhealth_id_image != null) {
