@@ -143,7 +143,7 @@
                                     </td>
                                     <td>
                                         <div class="d-flex align-items-center fw-medium">
-                                            <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-woman-1.png" class="avatar-xs rounded-circle me-2">
+                                            <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-woman-8.png" class="avatar-xs rounded-circle me-2">
                                             <div>
                                                 <span class="d-block fw-medium">Zsyrhill Anne C. Soria</span>
                                                 <i class="mdi mdi-gender-female text-danger"></i>
@@ -273,7 +273,7 @@
                                     </td>
                                     <td>
                                         <div class="d-flex align-items-center fw-medium">
-                                            <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-woman-1.png" class="avatar-xs rounded-circle me-2">
+                                            <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-woman-8.png" class="avatar-xs rounded-circle me-2">
                                             <div>
                                                 <span class="d-block fw-medium">Micah M. Villaruz</span>
                                                 <i class="mdi mdi-gender-female text-danger"></i>
@@ -474,7 +474,7 @@
                                     </td>
                                     <td>
                                         <div class="d-flex align-items-center fw-medium">
-                                            <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-woman-1.png" class="avatar-xs rounded-circle me-2">
+                                            <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-woman-8.png" class="avatar-xs rounded-circle me-2">
                                             <div>
                                                 <span class="d-block fw-medium">Shane Jean A. Razal</span>
                                                 <i class="mdi mdi-gender-female text-danger"></i>
@@ -549,7 +549,7 @@
                                     </td>
                                     <td>
                                         <div class="d-flex align-items-center fw-medium">
-                                            <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-woman-1.png" class="avatar-xs rounded-circle me-2">
+                                            <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-woman-8.png" class="avatar-xs rounded-circle me-2">
                                             <div>
                                                 <span class="d-block fw-medium">Louisse Natasha Valeria</span>
                                                 <i class="mdi mdi-gender-female text-danger"></i>
