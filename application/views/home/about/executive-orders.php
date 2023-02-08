@@ -9,14 +9,14 @@
         <div class="container-boxed">
           <div class="profile-foreground position-relative mx-n4 mt-n4">
             <div class="profile-wid-bg">
-              <img src="<?= base_url() ?>public/images/pupqc-bg.webp" alt="" class="profile-wid-img" />
+              <img src="<?= base_url() ?>public/images/pupqc-bg.webp" alt="PUPQC BG" class="profile-wid-img" />
             </div>
           </div>
           <div class="pt-4 mb-4 mb-lg-3 pb-lg-4">
             <div class="row g-4">
               <div class="col-auto">
                 <div class="avatar-lg">
-                  <img src="<?= base_url() ?>public/images/pupqc-logo.webp" class="img-thumbnail rounded-circle" />
+                  <img src="<?= base_url() ?>public/images/pupqc-logo.webp" alt="PUP Logo" class="img-thumbnail rounded-circle" />
                 </div>
               </div>
               <!--end col-->
@@ -96,7 +96,7 @@
                         <div class="element-item col-xxl-3 col-xl-4 col-sm-6 exec2022" data-category="exec2022">
                           <div class="gallery-box card">
                             <div class="gallery-container">
-                              <a class="image-popup" href="<?= base_url() ?>public/images/about/executive-orders/img-1.webp" title="">
+                              <a class="image-popup" href="<?= base_url() ?>public/images/about/executive-orders/img-1.webp" alt="exec" title="">
                                 <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/executive-orders/img-1.webp" alt="" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption"> Work Arrangement Policy During Quarantine & Isolation for Covid-19</h5>
@@ -120,7 +120,7 @@
                         <div class="element-item col-xxl-3 col-xl-4 col-sm-6 exec2022" data-category="exec2022">
                           <div class="gallery-box card">
                             <div class="gallery-container">
-                              <a class="image-popup" href="<?= base_url() ?>public/images/about/executive-orders/img-2.webp" title="">
+                              <a class="image-popup" href="<?= base_url() ?>public/images/about/executive-orders/img-2.webp" alt="exec" title="">
                                 <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/executive-orders/img-2.webp" alt="" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Reconstitution of the UREDCO</h5>
@@ -143,7 +143,7 @@
                         <div class="element-item col-xxl-3 col-xl-4 col-sm-6 exec2022" data-category="exec2022">
                           <div class="gallery-box card">
                             <div class="gallery-container">
-                              <a class="image-popup" href="<?= base_url() ?>public/images/about/executive-orders/img-3.webp" title="">
+                              <a class="image-popup" href="<?= base_url() ?>public/images/about/executive-orders/img-3.webp" alt="exec" title="">
                                 <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/executive-orders/img-3.webp" alt="" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Correction and Clarification on Certain Provisions of EO 19, s. 2022</h5>
@@ -166,7 +166,7 @@
                         <div class="element-item col-xxl-3 col-xl-4 col-sm-6 exec2022" data-category="exec2022">
                           <div class="gallery-box card">
                             <div class="gallery-container">
-                              <a class="image-popup" href="<?= base_url() ?>public/images/about/executive-orders/img-4.webp" title="">
+                              <a class="image-popup" href="<?= base_url() ?>public/images/about/executive-orders/img-4.webp" alt="exec" title="">
                                 <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/executive-orders/img-4.webp" alt="" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Revised Guidelines on the Conduct of University Planning Activities for 2022</h5>
@@ -189,7 +189,7 @@
                         <div class="element-item col-xxl-3 col-xl-4 col-sm-6 exec2022" data-category="exec2022">
                           <div class="gallery-box card">
                             <div class="gallery-container">
-                              <a class="image-popup" href="<?= base_url() ?>public/images/about/executive-orders/img-5.webp" title="">
+                              <a class="image-popup" href="<?= base_url() ?>public/images/about/executive-orders/img-5.webp" alt="exec" title="">
                                 <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/executive-orders/img-5.webp" alt="" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Guidelines on the Preparation of OFOSI & OPCR for 2022</h5>
@@ -212,7 +212,7 @@
                         <div class="element-item col-xxl-3 col-xl-4 col-sm-6 exec2022" data-category="exec2022">
                           <div class="gallery-box card">
                             <div class="gallery-container">
-                              <a class="image-popup" href="<?= base_url() ?>public/images/about/executive-orders/img-6.webp" title="">
+                              <a class="image-popup" href="<?= base_url() ?>public/images/about/executive-orders/img-6.webp" alt="exec" title="">
                                 <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/executive-orders/img-6.webp" alt="" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Guidelines Governing the Use of the PUP Document Tracking System (PUP DTS)</h5>
@@ -235,7 +235,7 @@
                         <div class="element-item col-xxl-3 col-xl-4 col-sm-6 exec2022" data-category="exec2022">
                           <div class="gallery-box card">
                             <div class="gallery-container">
-                              <a class="image-popup" href="<?= base_url() ?>public/images/about/executive-orders/img-6.webp" title="">
+                              <a class="image-popup" href="<?= base_url() ?>public/images/about/executive-orders/img-6.webp" alt="exec" title="">
                                 <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/executive-orders/img-6.webp" alt="" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Guidelines Governing the Use of the PUP Document Tracking System (PUP DTS)</h5>
@@ -258,7 +258,7 @@
                         <div class="element-item col-xxl-3 col-xl-4 col-sm-6 exec2022" data-category="exec2022">
                           <div class="gallery-box card">
                             <div class="gallery-container">
-                              <a class="image-popup" href="<?= base_url() ?>public/images/about/executive-orders/img-6.webp" title="">
+                              <a class="image-popup" href="<?= base_url() ?>public/images/about/executive-orders/img-6.webp" alt="exec" title="">
                                 <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/executive-orders/img-6.webp" alt="" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Guidelines Governing the Use of the PUP Document Tracking System (PUP DTS)</h5>
@@ -281,7 +281,7 @@
                         <div class="element-item col-xxl-3 col-xl-4 col-sm-6 exec2022" data-category="exec2022">
                           <div class="gallery-box card">
                             <div class="gallery-container">
-                              <a class="image-popup" href="<?= base_url() ?>public/images/about/executive-orders/img-6.webp" title="">
+                              <a class="image-popup" href="<?= base_url() ?>public/images/about/executive-orders/img-6.webp" alt="exec" title="">
                                 <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/executive-orders/img-6.webp" alt="" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Guidelines Governing the Use of the PUP Document Tracking System (PUP DTS)</h5>
@@ -304,7 +304,7 @@
                         <div class="element-item col-xxl-3 col-xl-4 col-sm-6 exec2022" data-category="exec2022">
                           <div class="gallery-box card">
                             <div class="gallery-container">
-                              <a class="image-popup" href="<?= base_url() ?>public/images/about/executive-orders/img-6.webp" title="">
+                              <a class="image-popup" href="<?= base_url() ?>public/images/about/executive-orders/img-6.webp" alt="exec" title="">
                                 <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/executive-orders/img-6.webp" alt="" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Guidelines Governing the Use of the PUP Document Tracking System (PUP DTS)</h5>
@@ -327,7 +327,7 @@
                         <div class="element-item col-xxl-3 col-xl-4 col-sm-6 exec2022" data-category="exec2022">
                           <div class="gallery-box card">
                             <div class="gallery-container">
-                              <a class="image-popup" href="<?= base_url() ?>public/images/about/executive-orders/img-6.webp" title="">
+                              <a class="image-popup" href="<?= base_url() ?>public/images/about/executive-orders/img-6.webp" alt="exec" title="">
                                 <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/executive-orders/img-6.webp" alt="" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Guidelines Governing the Use of the PUP Document Tracking System (PUP DTS)</h5>
@@ -350,7 +350,7 @@
                         <div class="element-item col-xxl-3 col-xl-4 col-sm-6 exec2022" data-category="exec2022">
                           <div class="gallery-box card">
                             <div class="gallery-container">
-                              <a class="image-popup" href="<?= base_url() ?>public/images/about/executive-orders/img-6.webp" title="">
+                              <a class="image-popup" href="<?= base_url() ?>public/images/about/executive-orders/img-6.webp" alt="exec" title="">
                                 <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/executive-orders/img-6.webp" alt="" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Guidelines Governing the Use of the PUP Document Tracking System (PUP DTS)</h5>

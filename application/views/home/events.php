@@ -9,14 +9,14 @@
         <div class="container-boxed">
           <div class="profile-foreground position-relative mx-n4 mt-n4">
             <div class="profile-wid-bg">
-              <img src="<?= base_url() ?>public/images/pupqc-bg.webp" alt="" class="profile-wid-img" />
+              <img src="<?= base_url() ?>public/images/pupqc-bg.webp" alt="PUPQC BG" class="profile-wid-img" />
             </div>
           </div>
           <div class="pt-4 mb-4 mb-lg-3 pb-lg-4">
             <div class="row g-4">
               <div class="col-auto">
                 <div class="avatar-lg">
-                  <img src="<?= base_url() ?>public/images/pupqc-logo.webp" class="img-thumbnail rounded-circle" />
+                  <img src="<?= base_url() ?>public/images/pupqc-logo.webp" alt="PUP Logo" class="img-thumbnail rounded-circle" />
                 </div>
               </div>
               <!--end col-->
@@ -97,7 +97,7 @@
                           <div class="gallery-box card">
                             <div class="gallery-container">
                               <a class="image-popup" href="<?= base_url() ?>public/images/events/img-1.jpg" title="">
-                                <img class="gallery-img img-fluid mx-auto events-img" src="<?= base_url() ?>public/images/events/img-1.jpg" alt="" />
+                                <img class="gallery-img img-fluid mx-auto events-img" src="<?= base_url() ?>public/images/events/img-1.jpg" alt="event" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Online Recognition of TOP Achievers for the second semester of Academic Year 2022</h5>
                                 </div>
@@ -121,7 +121,7 @@
                           <div class="gallery-box card">
                             <div class="gallery-container">
                               <a class="image-popup" href="<?= base_url() ?>public/images/events/img-6.jpg" title="">
-                                <img class="gallery-img img-fluid mx-auto events-img" src="<?= base_url() ?>public/images/events/img-6.jpg" alt="" />
+                                <img class="gallery-img img-fluid mx-auto events-img" src="<?= base_url() ?>public/images/events/img-6.jpg" alt="event" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Innovation Grant Program for the young, tech-savvy, Filipino innovators</h5>
                                 </div>
@@ -145,7 +145,7 @@
                           <div class="gallery-box card">
                             <div class="gallery-container">
                               <a class="image-popup" href="<?= base_url() ?>public/images/events/img-2.jpg" title="">
-                                <img class="gallery-img img-fluid mx-auto events-img" src="<?= base_url() ?>public/images/events/img-2.jpg" alt="" />
+                                <img class="gallery-img img-fluid mx-auto events-img" src="<?= base_url() ?>public/images/events/img-2.jpg" alt="event" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Cross Worlds Beginner's Guide with a theme of "Mission Unlock: Dive Into Your New Career Path"</h5>
                                 </div>
@@ -169,7 +169,7 @@
                           <div class="gallery-box card">
                             <div class="gallery-container">
                               <a class="image-popup" href="<?= base_url() ?>public/images/events/img-7.jpg" title="">
-                                <img class="gallery-img img-fluid mx-auto events-img" src="<?= base_url() ?>public/images/events/img-7.jpg" alt="" />
+                                <img class="gallery-img img-fluid mx-auto events-img" src="<?= base_url() ?>public/images/events/img-7.jpg" alt="event" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">A webinar prepared about the Basics in Esports and Careers</h5>
                                 </div>
@@ -193,7 +193,7 @@
                           <div class="gallery-box card">
                             <div class="gallery-container">
                               <a class="image-popup" href="<?= base_url() ?>public/images/events/img-8.jpg" title="">
-                                <img class="gallery-img img-fluid mx-auto events-img" src="<?= base_url() ?>public/images/events/img-8.jpg" alt="" />
+                                <img class="gallery-img img-fluid mx-auto events-img" src="<?= base_url() ?>public/images/events/img-8.jpg" alt="event" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">I'M CONNECTED: Linked by One Goal Through One Message</h5>
                                 </div>
@@ -217,7 +217,7 @@
                           <div class="gallery-box card">
                             <div class="gallery-container">
                               <a class="image-popup" href="<?= base_url() ?>public/images/events/img-5.jpg" title="">
-                                <img class="gallery-img img-fluid mx-auto events-img" src="<?= base_url() ?>public/images/events/img-5.jpg" alt="" />
+                                <img class="gallery-img img-fluid mx-auto events-img" src="<?= base_url() ?>public/images/events/img-5.jpg" alt="event" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">In-house Leadership Training and Capacity-Building Program with the theme, “Building Foundational Leadership Inside Out”</h5>
                                 </div>
@@ -241,7 +241,7 @@
                           <div class="gallery-box card">
                             <div class="gallery-container">
                               <a class="image-popup" href="<?= base_url() ?>public/images/events/img-4.jpg" title="">
-                                <img class="gallery-img img-fluid mx-auto events-img" src="<?= base_url() ?>public/images/events/img-4.jpg" alt="" />
+                                <img class="gallery-img img-fluid mx-auto events-img" src="<?= base_url() ?>public/images/events/img-4.jpg" alt="event" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">#Unfiltered: Behind the Scenes of Content Creation in Social Media Marketing</h5>
                                 </div>
@@ -265,7 +265,7 @@
                           <div class="gallery-box card">
                             <div class="gallery-container">
                               <a class="image-popup" href="<?= base_url() ?>public/images/events/img-11.jpg" title="">
-                                <img class="gallery-img img-fluid mx-auto events-img" src="<?= base_url() ?>public/images/events/img-11.jpg" alt="" />
+                                <img class="gallery-img img-fluid mx-auto events-img" src="<?= base_url() ?>public/images/events/img-11.jpg" alt="event" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Equality Can't Be Spelled Without Quality: Embrace it, Feel it, Celebrate it</h5>
                                 </div>
@@ -289,7 +289,7 @@
                           <div class="gallery-box card">
                             <div class="gallery-container">
                               <a class="image-popup" href="<?= base_url() ?>public/images/events/img-10.jpg" title="">
-                                <img class="gallery-img img-fluid mx-auto events-img" src="<?= base_url() ?>public/images/events/img-10.jpg" alt="" />
+                                <img class="gallery-img img-fluid mx-auto events-img" src="<?= base_url() ?>public/images/events/img-10.jpg" alt="event" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">In-depth understanding of R.A. 11650: Uplifting the rights and privileges of learners with additional needs</h5>
                                 </div>
@@ -313,7 +313,7 @@
                           <div class="gallery-box card">
                             <div class="gallery-container">
                               <a class="image-popup" href="<?= base_url() ?>public/images/events/img-9.jpg" title="">
-                                <img class="gallery-img img-fluid mx-auto events-img" src="<?= base_url() ?>public/images/events/img-9.jpg" alt="" />
+                                <img class="gallery-img img-fluid mx-auto events-img" src="<?= base_url() ?>public/images/events/img-9.jpg" alt="event" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Interstellar: Filling the Marketing Gaps Through Analytical Exploration</h5>
                                 </div>
@@ -337,7 +337,7 @@
                           <div class="gallery-box card">
                             <div class="gallery-container">
                               <a class="image-popup" href="<?= base_url() ?>public/images/events/img-12.png" title="">
-                                <img class="gallery-img img-fluid mx-auto events-img" src="<?= base_url() ?>public/images/events/img-12.png" alt="" />
+                                <img class="gallery-img img-fluid mx-auto events-img" src="<?= base_url() ?>public/images/events/img-12.png" alt="event" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">PUPQC Virtual Career Fair 2022; “Unlocking your Future, Choose to Go Beyond.”</h5>
                                 </div>
@@ -361,7 +361,7 @@
                           <div class="gallery-box card">
                             <div class="gallery-container">
                               <a class="image-popup" href="<?= base_url() ?>public/images/events/img-13.jpg" title="">
-                                <img class="gallery-img img-fluid mx-auto events-img" src="<?= base_url() ?>public/images/events/img-13.jpg" alt="" />
+                                <img class="gallery-img img-fluid mx-auto events-img" src="<?= base_url() ?>public/images/events/img-13.jpg" alt="event" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">PUP - The Programmers' Guild : 5-day Tech-Oriented Workshop Series</h5>
                                 </div>

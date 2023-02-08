@@ -9,14 +9,14 @@
         <div class="container-boxed">
           <div class="profile-foreground position-relative mx-n4 mt-n4">
             <div class="profile-wid-bg">
-              <img src="<?= base_url() ?>public/images/pupqc-bg.webp" alt="" class="profile-wid-img" />
+              <img src="<?= base_url() ?>public/images/pupqc-bg.webp" alt="PUPQC BG" class="profile-wid-img" />
             </div>
           </div>
           <div class="pt-4 mb-4 mb-lg-3 pb-lg-4">
             <div class="row g-4">
               <div class="col-auto">
                 <div class="avatar-lg">
-                  <img src="<?= base_url() ?>public/images/pupqc-logo.webp" class="img-thumbnail rounded-circle" />
+                  <img src="<?= base_url() ?>public/images/pupqc-logo.webp" alt="PUP Logo" class="img-thumbnail rounded-circle" />
                 </div>
               </div>
               <!--end col-->
@@ -47,7 +47,7 @@
                         <h3 class="mb-3 text-primary">Student Council</h3>
                         <div class="mx-3">
                           <div class="mb-3 d-flex justify-content-center">
-                            <img src="<?= base_url() ?>public/images/about/student/ssclogo.webp" alt="" class="img-thumbnail w-25">
+                            <img src="<?= base_url() ?>public/images/about/student/ssclogo.webp" alt="SCC Logo" class="img-thumbnail w-25">
                           </div>
                           <p>
                             The Supreme Student Council, also known as SSC, is the highest policy-making and student-governing body of PUP Quezon City Branch that upholds a nationalist, scientific, and mass-oriented system of education.
@@ -141,7 +141,7 @@
                           </table>
                           </p>
                           <div class="mb-3 d-flex justify-content-center">
-                            <img src="<?= base_url() ?>public/images/about/student/ssc.webp" alt="" class="img-fluid">
+                            <img src="<?= base_url() ?>public/images/about/student/ssc.webp" alt="SSC" class="img-fluid">
                           </div>
                           <p>
                             <b><i>Honest. Committed. Data-driven.</i></b>
