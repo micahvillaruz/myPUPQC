@@ -49,51 +49,51 @@
                           <div class="row mb-3">
                             <div class="col-6">
                               <span class="badge badge-soft-primary badge-border fs-14 mb-2">Rothlener Building</span>
-                              <img src="<?= base_url() ?>public/images/facilities/img-1.jpg" alt="" class="facilities-img">
+                              <img src="<?= base_url() ?>public/images/facilities/img-1.webp" alt="" class="facilities-img">
                             </div>
                             <div class="col-6">
                               <span class="badge badge-soft-primary badge-border fs-14 mb-2">Miserior Building</span>
-                              <img src="<?= base_url() ?>public/images/facilities/img-2.jpg" alt="" class="facilities-img">
+                              <img src="<?= base_url() ?>public/images/facilities/img-2.webp" alt="" class="facilities-img">
                             </div>
                           </div>
                           <div class="row mb-3">
                             <div class="col-6">
                               <span class="badge badge-soft-primary badge-border fs-14 mb-2">Academic Building</span>
-                              <img src="<?= base_url() ?>public/images/facilities/img-3.jpg" alt="" class="facilities-img">
+                              <img src="<?= base_url() ?>public/images/facilities/img-3.webp" alt="" class="facilities-img">
                             </div>
                             <div class="col-6">
                               <span class="badge badge-soft-primary badge-border fs-14 mb-2">Learning Resource Center</span>
-                              <img src="<?= base_url() ?>public/images/facilities/img-4.jpg" alt="" class="facilities-img">
+                              <img src="<?= base_url() ?>public/images/facilities/img-4.webp" alt="" class="facilities-img">
                             </div>
                           </div>
                           <div class="row mb-3">
                             <div class="col-6">
                               <span class="badge badge-soft-primary badge-border fs-14 mb-2">Covered Court</span>
-                              <img src="<?= base_url() ?>public/images/facilities/img-5.jpg" alt="" class="facilities-img">
+                              <img src="<?= base_url() ?>public/images/facilities/img-5.webp" alt="" class="facilities-img">
                             </div>
                             <div class="col-6">
                               <span class="badge badge-soft-primary badge-border fs-14 mb-2">Audio-Visual Room(AVR) / Computer Laboratory</span>
-                              <img src="<?= base_url() ?>public/images/facilities/img-6.jpg" alt="" class="facilities-img">
+                              <img src="<?= base_url() ?>public/images/facilities/img-6.webp" alt="" class="facilities-img">
                             </div>
                           </div>
                           <div class="row mb-3">
                             <div class="col-6">
                               <span class="badge badge-soft-primary badge-border fs-14 mb-2">Student Lounge</span>
-                              <img src="<?= base_url() ?>public/images/facilities/img-7.jpg" alt="" class="facilities-img">
+                              <img src="<?= base_url() ?>public/images/facilities/img-7.webp" alt="" class="facilities-img">
                             </div>
                             <div class="col-6">
                               <span class="badge badge-soft-primary badge-border fs-14 mb-2">Ecumenical Chapel / Multipurpose Hall</span>
-                              <img src="<?= base_url() ?>public/images/facilities/img-8.jpg" alt="" class="facilities-img">
+                              <img src="<?= base_url() ?>public/images/facilities/img-8.webp" alt="" class="facilities-img">
                             </div>
                           </div>
                           <div class="row mb-3">
                             <div class="col-6">
                               <span class="badge badge-soft-primary badge-border fs-14 mb-2">Department of Military Science and Tactics</span>
-                              <img src="<?= base_url() ?>public/images/facilities/img-9.jpg" alt="" class="facilities-img">
+                              <img src="<?= base_url() ?>public/images/facilities/img-9.webp" alt="" class="facilities-img">
                             </div>
                             <div class="col-6">
                               <span class="badge badge-soft-primary badge-border fs-14 mb-2">PUPQC Canteen</span>
-                              <img src="<?= base_url() ?>public/images/facilities/img-10.jpg" alt="" class="facilities-img">
+                              <img src="<?= base_url() ?>public/images/facilities/img-10.webp" alt="" class="facilities-img">
                             </div>
                           </div>
                         </div>

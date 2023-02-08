@@ -52,7 +52,7 @@
                                 <div class="d-flex align-items-start">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-1.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-1.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -70,7 +70,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-2.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-2.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -88,7 +88,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-3.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-3.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -106,7 +106,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-4.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-4.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -124,7 +124,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-5.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-5.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -142,7 +142,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-6.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-6.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -160,7 +160,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-7.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-7.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -178,7 +178,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-8.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-8.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -196,7 +196,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-9.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-9.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -214,7 +214,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-10.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-10.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -232,7 +232,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-4.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-4.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -250,7 +250,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-11.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-11.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -268,7 +268,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-12.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-12.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -294,7 +294,7 @@
                                 <div class="d-flex align-items-start">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-14.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-14.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -312,7 +312,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-15.jpg" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-15.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -330,7 +330,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-16.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-16.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -348,7 +348,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-17.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-17.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -366,7 +366,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-18.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-18.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -384,7 +384,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-19.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-19.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -402,7 +402,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-20.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-20.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -420,7 +420,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-22.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-22.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -438,7 +438,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-23.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-23.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -456,7 +456,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-24.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-24.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -474,7 +474,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-25.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-25.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -492,7 +492,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-26.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-26.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -510,7 +510,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-27.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-27.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -527,7 +527,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-28.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-28.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -544,7 +544,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-29.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-29.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -561,7 +561,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-30.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-30.webp" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
