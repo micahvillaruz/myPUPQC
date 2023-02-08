@@ -1,7 +1,74 @@
 $(function () {
 	loadMedicalTable()
 
-	$('#NewMedicalCaseForm').on('submit', function (e) {
+	const currentDate = new Date()
+	const offset = currentDate.getTimezoneOffset()
+	const nextSevenDays = new Date(
+		currentDate.getTime() + 6 * 24 * 60 * 60 * 1000 - offset * 60 * 1000,
+	)
+	const dates = []
+
+	let current = new Date(currentDate.getTime() - offset * 60 * 1000)
+	while (current <= nextSevenDays) {
+		if (current.getDay() !== 0 && current.getDay() !== 6) {
+			dates.push(current.toISOString().split('T')[0])
+		}
+		current = new Date(current.getTime() + 24 * 60 * 60 * 1000)
+	}
+
+	console.log(dates)
+
+	let completeHolidayDetails
+	let holidayDates = []
+	$.ajax({
+		url: apiURL + 'student/holidays',
+		type: 'GET',
+		async: false,
+		success: (data) => {
+			completeHolidayDetails = data.data
+		},
+	})
+
+	completeHolidayDetails.forEach((holiday) => {
+		holidayDates.push(holiday.holiday_date)
+	})
+
+	const updatedDates = dates.filter((date) => !holidayDates.includes(date))
+
+	const currentMonth = currentDate.getMonth()
+	const currentYear = currentDate.getFullYear()
+
+	const calendarEl = document.querySelector('#medical-calendar')
+	const calendar = new VanillaCalendar(calendarEl, {
+		// Options
+		settings: {
+			iso8601: false,
+			range: {
+				min: new Date(currentYear, currentMonth, 1),
+				max: new Date(currentYear, currentMonth + 1, 0),
+				enabled: updatedDates,
+			},
+			selection: {
+				month: false,
+				year: false,
+			},
+			visibility: {
+				today: false,
+			},
+			popups: {},
+		},
+		CSSClasses: {
+			weekDay: 'text-primary',
+			weekDayWeekend: 'text-success',
+		},
+	})
+	calendar.init()
+
+	$('#addMedicalAppointment').on('click', function (e) {
+		// ganito magpull ng value sa calendar, ipapasok mo siya sa may function kapag nagsubmit ka na
+		const selectedDate = calendar.selectedDates[0]
+		console.log(`Selected date: ${selectedDate}`)
+
 		e.preventDefault() // prevent page refresh
 		addNewMedicalCase()
 	})

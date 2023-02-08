@@ -2,27 +2,70 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-header d-flex align-items-center">
-                <h5 class="card-title mb-0 flex-grow-1 fw-bold text-primary">Medical Case: Monday to Friday @ 08:00 AM - 05:00 PM</h5>
-                <div>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addMedicalModal">New Medical Case</button>
+                <div class="d-flex flex-row w-100 justify-content-between flex-wrap">
+                    <h5 class="card-title mb-0 fw-bold text-primary d-flex align-items-center">MEDICAL CONSULTATION: APPOINTMENT FORM</h5>
+                    <div class="d-flex align-items-center">
+                        <div class="alert mb-0 alert-info alert-label-icon rounded-label" role="alert">
+                            <i class="ri-error-warning-line fw-bold label-icon"></i>
+                            <i>This form is available only at <u>8:00 AM to 5:00 PM</u>.</i>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="card-body">
-                <p>You can only make a <u><span class="fw-bold">face to face consultation</span></u> during the schedule shown above.</p>
-                <table id="medical-datatable" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
-                    <thead>
-                        <tr>
-                            <th>Appointment Code</th>
-                            <th>Consultation Type</th>
-                            <th>Status</th>
-                            <th>Attending Consultant</th>
-                            <th>Appointment Date</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
+            <div class="card-body m-3">
+                <form>
+                    <ul>
+                        <li>As of now, you can only able to request a <u><span class="fw-bold">face to face consultation</span></u>.</li>
+                        <li>Only the dates shown are the available dates that you can set an appointment for medical consultation.</li>
+                        <li>Be <u><span class="fw-bold">specific</span></u> with your consultation request and state it in the reason input field so that the Attending Consultant assigned to you will get to know your case.</li>
+                        <li>There will be no consultations during weekends and holidays.</li>
+                    </ul>
+                    <hr class="p-1" />
+                    <div class="row" id="appointment_form">
+                        <div class="col-6">
+                            <label for="consultationType" class="form-label"> Consultation Type</label><span class="text-danger"> *</span></label>
+                            <div class="d-flex gap-5 mb-3">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="consultation_type" id="consultation_type" value="New Consultation">
+                                    <label class="form-check-label" for="new_consultation">
+                                        New Consultation
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="consultation_type" id="consultation_type" value="Follow Up">
+                                    <label class="form-check-label" for="followup_consultation">
+                                        Follow-up
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="reasonInput" class="form-label"> Reason for Consultation <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="consultation_reason" name="consultation_reason" placeholder="Enter your reason" required>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="exampleInputdate" class="form-label"> Appointment Date </label><span class="text-danger"> *</span></label>
+                            <div class="d-flex justify-content-center">
+                                <div id="medical-calendar">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info alert-dismissible alert-label-icon rounded-label" role="alert">
+                        <i class="ri-error-warning-line fw-bold label-icon"></i>
+                        <strong>
+                            <h4>Data Privacy Act of 2012</h4>
+                        </strong>
+                        I hereby authorize PUPQC to collect and process the data indicate herein for purpose of effecting control of the covid-19 infection.
+                        I understand that any personal information is protected under Data Privacy Act of 2012, if needed, this may be used to facilitate contact tracing of PUPQC Medical Service and/or LGU and that I am required at RA 11469 Bayanihan to Heal as One Act, to provide truthful information.
+                    </div>
+
+                    <div class="d-grid text-center">
+                        <button type="submit" class="btn btn-primary" id="addMedicalAppointment">Submit Appointment</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
