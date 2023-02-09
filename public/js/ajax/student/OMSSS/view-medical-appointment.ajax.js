@@ -2,20 +2,19 @@ $(function () {
 	loadMedicalTable()
 
 	const currentDate = new Date()
+	const currentYear = currentDate.getFullYear()
+	const currentMonth = currentDate.getMonth()
+	const lastDayOfMonth = new Date(currentYear, currentMonth + 1, 0)
 	const offset = currentDate.getTimezoneOffset()
-	const nextSevenDays = new Date(
-		currentDate.getTime() + 6 * 24 * 60 * 60 * 1000 - offset * 60 * 1000,
-	)
 	const dates = []
 
 	let current = new Date(currentDate.getTime() - offset * 60 * 1000)
-	while (current <= nextSevenDays) {
+	while (current.getMonth() === currentMonth) {
 		if (current.getDay() !== 0 && current.getDay() !== 6) {
 			dates.push(current.toISOString().split('T')[0])
 		}
 		current = new Date(current.getTime() + 24 * 60 * 60 * 1000)
 	}
-
 	console.log(dates)
 
 	let completeHolidayDetails
@@ -33,10 +32,9 @@ $(function () {
 		holidayDates.push(holiday.holiday_date)
 	})
 
-	const updatedDates = dates.filter((date) => !holidayDates.includes(date))
+	console.log(holidayDates)
 
-	const currentMonth = currentDate.getMonth()
-	const currentYear = currentDate.getFullYear()
+	const updatedDates = dates.filter((date) => !holidayDates.includes(date))
 
 	const calendarEl = document.querySelector('#medical-calendar')
 	const calendar = new VanillaCalendar(calendarEl, {
@@ -65,12 +63,8 @@ $(function () {
 	calendar.init()
 
 	$('#addMedicalAppointment').on('click', function (e) {
-		// ganito magpull ng value sa calendar, ipapasok mo siya sa may function kapag nagsubmit ka na
-		const selectedDate = calendar.selectedDates[0]
-		console.log(`Selected date: ${selectedDate}`)
-
 		e.preventDefault() // prevent page refresh
-		addNewMedicalCase()
+		addNewMedicalCase(calendar)
 	})
 })
 // Load datatables
@@ -170,20 +164,23 @@ loadMedicalTable = () => {
 	}
 }
 
-addNewMedicalCase = () => {
+addNewMedicalCase = (calendar) => {
+	// ganito magpull ng value sa calendar, ipapasok mo siya sa may function kapag nagsubmit ka na
+	const selectedDate = calendar.selectedDates[0]
+	console.log(`Selected date: ${selectedDate}`)
+
 	// New Medical Case
 	if ($('#NewMedicalCaseForm')[0].checkValidity()) {
 		// no validation error
 		const form = new FormData($('#NewMedicalCaseForm')[0])
 		for (var pair of form.entries()) {
-			console.log(pair[0] + ', ' + pair[1])
+			console.log(pair[0] + ': ' + pair[1])
 		}
 		data = {
 			appointment_type: 'Medical',
 			consultation_type: form.get('consultation_type'),
 			consultation_reason: form.get('consultation_reason'),
-			symptoms_date: form.get('symptoms_date'),
-			consultation_date: form.get('consultation_date'),
+			consultation_date: selectedDate,
 		}
 		console.log(data)
 		$.ajax({
@@ -203,11 +200,9 @@ addNewMedicalCase = () => {
 						buttonsStyling: !1,
 						showCloseButton: !0,
 					}).then(function () {
-						$('#addMedicalModal').modal('hide')
-						$('form#NewMedicalCaseForm')[0].reset()
-
-						// Reload Medical Consultation Datatable
-						loadMedicalTable()
+						setTimeout(() => {
+							location.reload()
+						}, 1000)
 					})
 				}
 			},

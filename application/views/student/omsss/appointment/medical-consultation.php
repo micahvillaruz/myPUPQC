@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="card-body m-3">
-                <form>
+                <form id="NewMedicalCaseForm" class="needs-validation" novalidate>
                     <ul>
                         <li>As of now, you can only able to request a <u><span class="fw-bold">face to face consultation</span></u>.</li>
                         <li>Only the dates shown are the available dates that you can set an appointment for medical consultation.</li>
@@ -26,13 +26,13 @@
                             <label for="consultationType" class="form-label"> Consultation Type</label><span class="text-danger"> *</span></label>
                             <div class="d-flex gap-5 mb-3">
                                 <div class="form-check mb-2">
-                                    <input class="form-check-input" type="radio" name="consultation_type" id="consultation_type" value="New Consultation">
+                                    <input class="form-check-input" type="radio" name="consultation_type" id="consultation_type" name="consultation_type" value="New Consultation">
                                     <label class="form-check-label" for="new_consultation">
                                         New Consultation
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="consultation_type" id="consultation_type" value="Follow Up">
+                                    <input class="form-check-input" type="radio" name="consultation_type" id="consultation_type" name="consultation_type" value="Follow Up">
                                     <label class="form-check-label" for="followup_consultation">
                                         Follow-up
                                     </label>
@@ -40,7 +40,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="reasonInput" class="form-label"> Reason for Consultation <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="consultation_reason" name="consultation_reason" placeholder="Enter your reason" required>
+                                <textarea type="text" class="form-control" id="consultation_reason" name="consultation_reason" style="resize:none" rows="8" required></textarea>
                             </div>
                         </div>
                         <div class="col-6">
