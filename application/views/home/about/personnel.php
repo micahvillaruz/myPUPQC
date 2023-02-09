@@ -9,14 +9,14 @@
         <div class="container-boxed">
           <div class="profile-foreground position-relative mx-n4 mt-n4">
             <div class="profile-wid-bg">
-              <img src="<?= base_url() ?>public/images/pupqc-bg.webp" alt="" class="profile-wid-img" />
+              <img src="<?= base_url() ?>public/images/pupqc-bg.webp" alt="PUPQC BG" class="profile-wid-img" />
             </div>
           </div>
           <div class="pt-4 mb-4 mb-lg-3 pb-lg-4">
             <div class="row g-4">
               <div class="col-auto">
                 <div class="avatar-lg">
-                  <img src="<?= base_url() ?>public/images/pupqc-logo.webp" class="img-thumbnail rounded-circle" />
+                  <img src="<?= base_url() ?>public/images/pupqc-logo.webp" alt="PUP Logo" class="img-thumbnail rounded-circle" />
                 </div>
               </div>
               <!--end col-->
@@ -52,7 +52,7 @@
                                 <div class="d-flex align-items-start">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-1.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-1.webp" alt="Director"/>
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -70,7 +70,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-2.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-2.webp" alt="Head, Academic Programs" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -88,7 +88,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-3.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-3.webp" alt="Administrative Officer And Property Custodian" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -106,7 +106,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-4.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-4.webp" alt="Head, Student Affairs and Services" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -124,7 +124,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-5.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-5.webp" alt="Collecting And Disbursing Officer" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -142,7 +142,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-6.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-6.webp" alt="Branch Registrar" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -160,7 +160,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-7.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-7.webp" alt="In-Charge, Admission" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -178,7 +178,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-8.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-8.webp" alt="Guidance Counselor" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -196,7 +196,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-9.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-9.webp" alt="Accreditation Coordinator" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -214,7 +214,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-10.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-10.webp" alt="Faculty Researcher" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -232,7 +232,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-4.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-4.webp" alt="Faculty Extensionist" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -250,7 +250,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-11.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-11.webp" alt="Branch Physician" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -268,7 +268,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-12.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-12.webp" alt="Branch Dentist" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -294,7 +294,7 @@
                                 <div class="d-flex align-items-start">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-14.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-14.webp" alt="Administrative Aide III" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -312,7 +312,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-15.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-15.webp" alt="Emergency Administrative Aide III" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -330,7 +330,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-16.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-16.webp" alt="Administrative Aide IV" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -348,7 +348,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-17.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-17.webp" alt="Emergency Utility Foreman" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -366,7 +366,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-18.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-18.webp" alt="Emergency Administrative Aide III" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -384,7 +384,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-19.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-19.webp" alt="Administrative Aide VI" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -402,7 +402,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-20.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-20.webp" alt="Emergency Administrative Aide III" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -420,7 +420,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-22.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-22.webp" alt="Emergency Administrative Aide III" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -438,7 +438,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-23.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-23.webp" alt="Emergency Security Guard I" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -456,7 +456,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-24.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-24.webp" alt="Administrative Officer II" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -474,7 +474,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-25.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-25.webp" alt="Administrative Aide III" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -492,7 +492,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-26.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-26.webp" alt="Emergency Security Guard I" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -510,7 +510,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-27.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-27.webp" alt="Nurse II" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -527,7 +527,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-28.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-28.webp" alt="Administrative Aide IV" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -544,7 +544,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-29.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-29.webp" alt="Security Guard II" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -561,7 +561,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-30.webp" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/officials/img-30.webp" alt="Emergency Administrative Aide III" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">

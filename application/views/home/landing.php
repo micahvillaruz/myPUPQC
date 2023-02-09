@@ -162,16 +162,16 @@
 		<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
 			<div class="carousel-inner" role="listbox">
 				<div class="carousel-item active">
-					<img class="d-block img-fluid mx-auto landing-img" src="<?= base_url() ?>public/images/landing/landing-1.webp">
+					<img class="d-block img-fluid mx-auto landing-img" src="<?= base_url() ?>public/images/landing/landing-1.webp" alt="landing-1" >
 				</div>
 				<div class="carousel-item">
-					<img class="d-block img-fluid mx-auto landing-img" src="<?= base_url() ?>public/images/landing/landing-2.webp">
+					<img class="d-block img-fluid mx-auto landing-img" src="<?= base_url() ?>public/images/landing/landing-2.webp" alt="landing-2" >
 				</div>
 				<div class="carousel-item">
-					<img class="d-block img-fluid mx-auto landing-img" src="<?= base_url() ?>public/images/landing/landing-3.webp">
+					<img class="d-block img-fluid mx-auto landing-img" src="<?= base_url() ?>public/images/landing/landing-3.webp" alt="landing-3" >
 				</div>
 				<div class="carousel-item">
-					<img class="d-block img-fluid mx-auto landing-img" src="<?= base_url() ?>public/images/landing/landing-4.webp">
+					<img class="d-block img-fluid mx-auto landing-img" src="<?= base_url() ?>public/images/landing/landing-4.webp" alt="landing-4" >
 				</div>
 			</div>
 			<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
@@ -394,27 +394,27 @@
 				<div class="col-xl-2 col-lg-3 col-xs-1 links">
 					<div class="mb-2">
 						<a href="https://www.pup.edu.ph/goodgovernance/transparency/2022/" target="_blank">
-							<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-1.webp">
+							<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-1.webp" alt="Philippine Transparency Seal" >
 						</a>
 					</div>
 					<div class="mb-2">
 						<a href="https://www.foi.gov.ph/requests?agency=PUP" target="_blank">
-							<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-2.webp">
+							<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-2.webp" alt="e-FOI Portal" >
 						</a>
 					</div>
 					<div class="mb-2">
 						<a href="https://drive.google.com/file/d/1l4EAMMYbtJXTT2SilRas9LT_N8E39d4j/view?usp=sharing" target="_blank">
-							<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-3.webp">
+							<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-3.webp" alt="PUP Data Privacy Manual" >
 						</a>
 					</div>
 					<div class="mb-2">
 						<a href="https://www.pup.edu.ph/gad/" target="_blank">
-							<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-4.webp">
+							<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-4.webp" alt="Gender And Development" >
 						</a>
 					</div>
 					<div class="mb-2">
 						<a href="https://drive.google.com/open?id=14z_gxp97PYh7eLIAC6k4LqlGXNY_5xNa" target="_blank">
-							<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-5.webp">
+							<img class="rounded-3" width="200" src="<?= base_url() ?>public/images/links/img-5.webp" alt="ISO 9001:2015" >
 						</a>
 					</div>
 				</div>
@@ -438,7 +438,7 @@
 							<div class="swiper-slide">
 								<div class="card explore-box card-animate rounded">
 									<div class="explore-place-bid-img">
-										<img src="<?= base_url() ?>public/images/events/img-1.webp" alt="" class="img-fluid card-img-top explore-img" />
+										<img src="<?= base_url() ?>public/images/events/img-1.webp" alt="events" class="img-fluid card-img-top explore-img" />
 										<div class="bg-overlay"></div>
 									</div>
 									<div class="card-body">
@@ -453,7 +453,7 @@
 							<div class="swiper-slide">
 								<div class="card explore-box card-animate rounded">
 									<div class="explore-place-bid-img">
-										<img src="<?= base_url() ?>public/images/events/img-2.webp" alt="" class="img-fluid card-img-top explore-img" />
+										<img src="<?= base_url() ?>public/images/events/img-2.webp" alt="events" class="img-fluid card-img-top explore-img" />
 										<div class="bg-overlay"></div>
 									</div>
 									<div class="card-body">
@@ -468,7 +468,7 @@
 							<div class="swiper-slide">
 								<div class="card explore-box card-animate rounded">
 									<div class="explore-place-bid-img">
-										<img src="<?= base_url() ?>public/images/events/img-3.webp" alt="" class="img-fluid card-img-top explore-img" />
+										<img src="<?= base_url() ?>public/images/events/img-3.webp" alt="events" class="img-fluid card-img-top explore-img" />
 										<div class="bg-overlay"></div>
 									</div>
 									<div class="card-body">
@@ -483,7 +483,7 @@
 							<div class="swiper-slide">
 								<div class="card explore-box card-animate rounded">
 									<div class="explore-place-bid-img">
-										<img src="<?= base_url() ?>public/images/events/img-4.webp" alt="" class="img-fluid card-img-top explore-img" />
+										<img src="<?= base_url() ?>public/images/events/img-4.webp" alt="events" class="img-fluid card-img-top explore-img" />
 										<div class="bg-overlay"></div>
 									</div>
 									<div class="card-body">
@@ -498,7 +498,7 @@
 							<div class="swiper-slide">
 								<div class="card explore-box card-animate rounded">
 									<div class="explore-place-bid-img">
-										<img src="<?= base_url() ?>public/images/events/img-5.webp" alt="" class="img-fluid card-img-top explore-img" />
+										<img src="<?= base_url() ?>public/images/events/img-5.webp" alt="events" class="img-fluid card-img-top explore-img" />
 										<div class="bg-overlay"></div>
 									</div>
 									<div class="card-body">

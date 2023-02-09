@@ -343,7 +343,8 @@ a:hover {
 	}
 }
 
-.link-delete:hover {
+.link-delete:hover,
+.accordion-button:hover {
 	text-decoration: none !important;
 }
 

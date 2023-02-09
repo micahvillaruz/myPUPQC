@@ -9,14 +9,14 @@
                 <div class="container-boxed">
                     <div class="profile-foreground position-relative mx-n4 mt-n4">
                         <div class="profile-wid-bg">
-                            <img src="<?= base_url() ?>public/images/pupqc-bg.webp" alt="" class="profile-wid-img" />
+                            <img src="<?= base_url() ?>public/images/pupqc-bg.webp" alt="PUPQC BG" class="profile-wid-img" />
                         </div>
                     </div>
                     <div class="pt-4 mb-4 mb-lg-3 pb-lg-4">
                         <div class="row g-4">
                             <div class="col-auto">
                                 <div class="avatar-lg">
-                                    <img src="<?= base_url() ?>public/images/pupqc-logo.webp" class="img-thumbnail rounded-circle" />
+                                    <img src="<?= base_url() ?>public/images/pupqc-logo.webp" alt="PUP Logo" class="img-thumbnail rounded-circle" />
                                 </div>
                             </div>
                             <!--end col-->
@@ -109,7 +109,7 @@
                                                     </div>
                                                     <div>
                                                         <div class="mb-3 d-flex justify-content-center">
-                                                            <img src="<?= base_url() ?>public/images/orgs/domtcs.webp" alt="DOMTCS" class="img-thumbnail w-25">
+                                                            <img src="<?= base_url() ?>public/images/orgs/domtcs.webp" alt="DOMT.CS" class="img-thumbnail w-25">
                                                         </div>
                                                         <h3 class="text-center text-primary">Distinguished Organization of Management Technologist and Corporate Specialist (DOMT.CS)</h3>
                                                         <div class="row my-5">
@@ -129,7 +129,7 @@
                                                     </div>
                                                     <div>
                                                         <div class="mb-3 d-flex justify-content-center">
-                                                            <img src="<?= base_url() ?>public/images/orgs/fbto.webp" alt="FBTO" class="img-thumbnail w-25">
+                                                            <img src="<?= base_url() ?>public/images/orgs/fbto.webp" alt="Future Business Teachers Organization (FBTO)" class="img-thumbnail w-25">
                                                         </div>
                                                         <h3 class="text-center text-primary">Future Business Teachers Organization (FBTO)</h3>
                                                         <div class="row my-5">
@@ -149,7 +149,7 @@
                                                     </div>
                                                     <div>
                                                         <div class="mb-3 d-flex justify-content-center">
-                                                            <img src="<?= base_url() ?>public/images/orgs/jms.webp" alt="JMS" class="img-thumbnail w-25">
+                                                            <img src="<?= base_url() ?>public/images/orgs/jms.webp" alt="Junior Marketing Society (JMS)" class="img-thumbnail w-25">
                                                         </div>
                                                         <h3 class="text-center text-primary">Junior Marketing Society (JMS)</h3>
                                                         <div class="row my-5">
@@ -169,7 +169,7 @@
                                                     </div>
                                                     <div>
                                                         <div class="mb-3 d-flex justify-content-center">
-                                                            <img src="<?= base_url() ?>public/images/orgs/yes.webp" alt="YES" class="img-thumbnail w-25">
+                                                            <img src="<?= base_url() ?>public/images/orgs/yes.webp" alt="Youth Entrepreneurs Society (YES)" class="img-thumbnail w-25">
                                                         </div>
                                                         <h3 class="text-center text-primary">Youth Entrepreneurs Society (YES)</h3>
                                                         <div class="row my-5">
@@ -190,7 +190,7 @@
                                                     <h3 class="mb-3 text-dark text-center">Non-Academic Organizations</h3>
                                                     <div>
                                                         <div class="mb-3 d-flex justify-content-center">
-                                                            <img src="<?= base_url() ?>public/images/orgs/irock.webp" alt="iROCK" class="img-thumbnail w-25">
+                                                            <img src="<?= base_url() ?>public/images/orgs/irock.webp" alt="I Reach Out For Christ's Kingdom (iROCK)" class="img-thumbnail w-25">
                                                         </div>
                                                         <h3 class="text-center text-primary">I Reach Out For Christ's Kingdom (iROCK)</h3>
                                                         <div class="row my-5">
@@ -198,7 +198,7 @@
                                                     </div>
                                                     <div>
                                                         <div class="mb-3 d-flex justify-content-center">
-                                                            <img src="<?= base_url() ?>public/images/orgs/kataga.webp" alt="KATAGA" class="img-thumbnail w-25">
+                                                            <img src="<?= base_url() ?>public/images/orgs/kataga.webp" alt="Kapatiran ng Talino at Galing (KATAGA)" class="img-thumbnail w-25">
                                                         </div>
                                                         <h3 class="text-center text-primary">Kapatiran ng Talino at Galing (KATAGA)</h3>
                                                         <div class="row my-5">
@@ -206,7 +206,7 @@
                                                     </div>
                                                     <div>
                                                         <div class="mb-3 d-flex justify-content-center">
-                                                            <img src="<?= base_url() ?>public/images/orgs/musa.webp" alt="MUSA" class="img-thumbnail w-25">
+                                                            <img src="<?= base_url() ?>public/images/orgs/musa.webp" alt="Mag-Aaral ng Unibersidad sa Sining at Adhika (MUSA)" class="img-thumbnail w-25">
                                                         </div>
                                                         <h3 class="text-center text-primary">Mag-Aaral ng Unibersidad sa Sining at Adhika (MUSA)</h3>
                                                         <div class="row my-5">
@@ -228,7 +228,7 @@
                                                     </div>
                                                     <div>
                                                         <div class="mb-3 d-flex justify-content-center">
-                                                            <img src="<?= base_url() ?>public/images/orgs/psc.webp" alt="PUP-QC-Sports-Club-(PSC)" class="img-thumbnail w-25">
+                                                            <img src="<?= base_url() ?>public/images/orgs/psc.webp" alt="PUP QC Sports Club (PSC)" class="img-thumbnail w-25">
                                                         </div>
                                                         <h3 class="text-center text-primary">PUP QC Sports Club (PSC)</h3>
                                                         <div class="row my-5">
@@ -236,7 +236,7 @@
                                                     </div>
                                                     <div>
                                                         <div class="mb-3 d-flex justify-content-center">
-                                                            <img src="<?= base_url() ?>public/images/orgs/rcy.webp" alt="Red-Cross-Youth-(RCY)" class="img-thumbnail w-25">
+                                                            <img src="<?= base_url() ?>public/images/orgs/rcy.webp" alt="Red Cross Youth (RCY)" class="img-thumbnail w-25">
                                                         </div>
                                                         <h3 class="text-center text-primary">Red Cross Youth (RCY)</h3>
                                                         <div class="row my-5">
@@ -244,7 +244,7 @@
                                                     </div>
                                                     <div>
                                                         <div class="mb-3 d-flex justify-content-center">
-                                                            <img src="<?= base_url() ?>public/images/orgs/vox.webp" alt="Vox-Nova" class="img-thumbnail w-25">
+                                                            <img src="<?= base_url() ?>public/images/orgs/vox.webp" alt="Vox Nova" class="img-thumbnail w-25">
                                                         </div>
                                                         <h3 class="text-center text-primary">Vox Nova</h3>
                                                         <div class="row my-5">
