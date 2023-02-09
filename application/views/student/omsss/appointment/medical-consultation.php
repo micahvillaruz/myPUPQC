@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-12">
-        <div class="card">
+        <div class="card" id="fullMedicalFormDetails">
             <div class="card-header d-flex align-items-center">
                 <div class="d-flex flex-row w-100 justify-content-between flex-wrap">
                     <h5 class="card-title mb-0 fw-bold text-primary d-flex align-items-center">MEDICAL CONSULTATION: APPOINTMENT FORM</h5>
@@ -67,6 +67,9 @@
                     </div>
                 </form>
             </div>
+        </div>
+        <div class="card" id="medicalAppointmentCard">
+            magpapakita dito kapag may existing appointment
         </div>
     </div>
     <!--end col-->
