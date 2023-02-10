@@ -19,6 +19,7 @@
                         <li>Only the dates shown are the available dates that you can set an appointment for guidance consultation.</li>
                         <li>Be <u><span class="fw-bold">specific</span></u> with your consultation request and state it in the reason input field so that the Attending Consultant assigned to you will get to know your case.</li>
                         <li>There will be no consultations during weekends and holidays.</li>
+                        <li>Make sure that you are sure with the date of your consultation. The Appointment System will only move your cancelled consultation in the <a href="<?= base_url() ?>student/omsss/medical-logs"><b>Medical Logs</b></a> page when the cancelled appointment date lapses.</li>
                     </ul>
                     <hr class="p-1" />
                     <div class="row" id="appointment_form">

@@ -16,8 +16,6 @@ $(() => {
 		current = new Date(current.getTime() + 24 * 60 * 60 * 1000)
 	}
 
-	console.log(dates)
-
 	let completeHolidayDetails
 	let holidayDates = []
 	$.ajax({

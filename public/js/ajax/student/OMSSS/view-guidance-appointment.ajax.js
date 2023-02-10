@@ -67,7 +67,7 @@ $(function () {
 })
 
 verifyGuidanceConsultationTime = () => {
-	const currentTime = new Date(new Date().setHours(7, 0, 0, 0)).getHours()
+	const currentTime = new Date().getHours()
 
 	// runs only if the current time is between 6am to 9pm
 	if (currentTime >= 6 && currentTime <= 21) {
