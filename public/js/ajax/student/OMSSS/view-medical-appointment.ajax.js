@@ -68,7 +68,6 @@ verifyMedicalConsultationTime = () => {
 	const currentTime = new Date().getHours()
 
 	// runs only if the current time is between 6am to 9pm
-	console.log(currentTime, currentTime >= 6 && currentTime <= 21)
 	if (currentTime >= 6 && currentTime <= 21) {
 		// * kapag 6AM to 9PM
 		$('#no_medical_consultation').removeClass('d-none')
@@ -155,15 +154,14 @@ verifyMedicalAppointment = () => {
 addNewMedicalCase = (calendar) => {
 	// ganito magpull ng value sa calendar, ipapasok mo siya sa may function kapag nagsubmit ka na
 	const selectedDate = calendar.selectedDates[0]
-	console.log(`Selected date: ${selectedDate}`)
 
 	// New Medical Case
 	if ($('#NewMedicalCaseForm')[0].checkValidity()) {
 		// no validation error
 		const form = new FormData($('#NewMedicalCaseForm')[0])
-		for (var pair of form.entries()) {
-			console.log(pair[0] + ': ' + pair[1])
-		}
+		// for (var pair of form.entries()) {
+		// 	console.log(pair[0] + ': ' + pair[1])
+		// }
 		data = {
 			appointment_type: 'Medical',
 			consultation_type: form.get('consultation_type'),
