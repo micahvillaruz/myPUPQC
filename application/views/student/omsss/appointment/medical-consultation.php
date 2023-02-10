@@ -131,7 +131,6 @@
             </div>
         </div>
     </div>
-    <!--  -->
 </div>
 
 <div id="scheduled_medical_message" class="row d-none">

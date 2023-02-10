@@ -100,7 +100,11 @@ verifyMedicalAppointment = () => {
 						? 'Not Assigned Yet'
 						: appointmentDetails.health_appointment_assigned_to_physician.user_profiles[0].full_name
 				let consultationStatus = appointmentDetails.consultation_status
-
+				if (consultationStatus == 'Approved' || consultationStatus == 'Pending') {
+					$('#cancelButton').html(`
+                <button role="button" onclick="cancelAppointment('${appointmentDetails.health_appointment_id}')" class="btn btn-danger bg-gradient waves-effect waves-light"><i class="mdi mdi-archive-remove-outline align-middle me-1"></i> Cancel Appointment</button>
+                `)
+				}
 				if (consultationStatus == 'Pending') {
 					consultationStatus = `<span class="badge rounded-pill bg-warning">${consultationStatus}</span>`
 					$('#existingConsultationMessage').html(`
@@ -117,11 +121,7 @@ verifyMedicalAppointment = () => {
 				} else if (consultationStatus == 'Done' || consultationStatus == 'Approved') {
 					consultationStatus = `<span class="badge badge rounded-pill bg-success">${consultationStatus}</span>`
 				}
-				if (consultationStatus == 'Approved' || consultationStatus == 'Pending') {
-					$('#cancelButton').html(`
-                <button role="button" onclick="cancelAppointment('${appointmentDetails.health_appointment_id}')" class="btn btn-danger bg-gradient waves-effect waves-light"><i class="mdi mdi-archive-remove-outline align-middle me-1"></i> Cancel Appointment</button>
-                `)
-				}
+
 				let consultationDate = new Date(appointmentDetails.consultation_date)
 				consultationDate = consultationDate.toLocaleDateString('en-US', {
 					year: 'numeric',
