@@ -63,6 +63,10 @@
                                     <td id="view_medical_history"></td>
                                 </tr>
                                 <tr>
+                                    <td class="fw-medium">Family History</td>
+                                    <td id="view_family_history"></td>
+                                </tr>
+                                <tr>
                                     <td class="fw-medium">Social History</td>
                                     <td id="view_social_history"></td>
                                 </tr>

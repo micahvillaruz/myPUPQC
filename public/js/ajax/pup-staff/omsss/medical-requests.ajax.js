@@ -227,6 +227,47 @@ viewMedicalDetails = (health_appointment_id) => {
 				success: (result) => {
 					const data = result.data
 					console.log(data)
+					const medical_history = data.medical_history ?? []
+					// * loop through each medical history and in bullet
+					let bullet = ''
+					medical_history.forEach((history) => {
+						bullet += `<li>${history}</li>`
+					})
+					$('#view_medical_history').html(`<ul>${bullet}</ul>`)
+
+					bullet = ''
+					const family_history = data.family_history ?? []
+					family_history.forEach((history) => {
+						bullet += `<li>${history}</li>`
+					})
+					$('#view_family_history').html(`<ul>${bullet}</ul>`)
+
+					bullet = ''
+					const allergies = data.allergy ?? []
+					allergies.forEach((history) => {
+						bullet += `<li>${history}</li>`
+					})
+					console.log(bullet)
+					$('#view_allergies').html(`<ul>${bullet}</ul>`)
+
+					bullet = ''
+					const medication = data.medications ?? []
+					medication.forEach((history) => {
+						bullet += `<li>${history}</li>`
+					})
+					$('#view_medications').html(`<ul>${bullet}</ul>`)
+
+					const social_history = data.social_history
+					console.log(social_history)
+					// * value {smoker: false, alcoholic: true}
+					// * Create a badge if smoker or non smoker and alcholic or non alcoholic
+					let smoker = social_history.smoker
+						? `<span class="badge bg-info">Smoker</span>`
+						: `<span class="badge bg-danger">Non Smoker</span>`
+					let alcoholic = social_history.alcoholic
+						? `<span class="badge bg-info">Alcoholic</span>`
+						: `<span class="badge bg-danger">Non Alcoholic</span>`
+					$('#view_social_history').html(`${smoker} ${alcoholic}`)
 				},
 			})
 			// * Patient Information (kadugtong ng Personal Information sa baba)
