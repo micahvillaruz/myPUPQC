@@ -89,7 +89,7 @@
                             </tr>
                             <tr>
                                 <th scope="col">Appointment Date</th>
-                                <th scope="col">Attending Physician</th>
+                                <th scope="col">Personnel Assigned</th>
                                 <th scope="col">Status</th>
                             </tr>
                         </thead>

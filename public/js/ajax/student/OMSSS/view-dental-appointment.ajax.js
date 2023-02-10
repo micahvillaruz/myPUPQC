@@ -2,17 +2,21 @@ $(function () {
 	verifyDentalAppointment()
 
 	const currentDate = new Date()
-	const currentYear = currentDate.getFullYear()
-	const currentMonth = currentDate.getMonth()
+	const tzoffset = currentDate.getTimezoneOffset() * 60000
+	const localISOTime = new Date(currentDate.getTime() - tzoffset)
+	const currentYear = localISOTime.getFullYear()
+	const currentMonth = localISOTime.getMonth()
 	const dates = []
 
-	let current = new Date(currentDate)
+	let current = new Date(localISOTime)
 	while (current.getMonth() === currentMonth) {
 		if (current.getDay() !== 0 && current.getDay() !== 6) {
 			dates.push(current.toISOString().split('T')[0])
 		}
 		current = new Date(current.getTime() + 24 * 60 * 60 * 1000)
 	}
+
+	console.log(dates)
 
 	let completeHolidayDetails
 	let holidayDates = []

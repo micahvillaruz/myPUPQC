@@ -2,17 +2,21 @@ $(() => {
 	verifyMedicalAppointment()
 
 	const currentDate = new Date()
-	const currentYear = currentDate.getFullYear()
-	const currentMonth = currentDate.getMonth()
+	const tzoffset = currentDate.getTimezoneOffset() * 60000
+	const localISOTime = new Date(currentDate.getTime() - tzoffset)
+	const currentYear = localISOTime.getFullYear()
+	const currentMonth = localISOTime.getMonth()
 	const dates = []
 
-	let current = new Date(currentDate)
+	let current = new Date(localISOTime)
 	while (current.getMonth() === currentMonth) {
 		if (current.getDay() !== 0 && current.getDay() !== 6) {
 			dates.push(current.toISOString().split('T')[0])
 		}
 		current = new Date(current.getTime() + 24 * 60 * 60 * 1000)
 	}
+
+	console.log(dates)
 
 	let completeHolidayDetails
 	let holidayDates = []
@@ -104,12 +108,12 @@ verifyMedicalAppointment = () => {
 					$('#cancelButton').html(`
                 <button role="button" onclick="cancelAppointment('${appointmentDetails.health_appointment_id}')" class="btn btn-danger bg-gradient waves-effect waves-light"><i class="mdi mdi-archive-remove-outline align-middle me-1"></i> Cancel Appointment</button>
                 `)
-				}
-				if (consultationStatus == 'Pending') {
-					consultationStatus = `<span class="badge rounded-pill bg-warning">${consultationStatus}</span>`
 					$('#existingConsultationMessage').html(`
                     <p class="fs-15">If you want to create a New Appointment and the status of your consultation is currently <b id="view_consultation_status"></b> and for <b id="view_appointment_type"></b> Appointment, you must cancel your Existing Appointment first. You'll be receiving updates by refreshing the page or through your email. <br /><br /> You can cancel the appointment by clicking the <b>Cancel Appointment</b> button below. Otherwise, wait for your appointment to be Done or Cancelled before creating a New Consultation.</p>
                     `)
+				}
+				if (consultationStatus == 'Pending') {
+					consultationStatus = `<span class="badge rounded-pill bg-warning">${consultationStatus}</span>`
 				} else if (
 					consultationStatus == 'Cancelled by Student' ||
 					consultationStatus == 'Cancelled by Staff'
