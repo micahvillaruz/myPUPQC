@@ -1,6 +1,6 @@
-<div class="row">
+<div id="no_medical_consultation" class="row d-none">
     <div class="col-lg-12">
-        <div class="card" id="fullMedicalFormDetails">
+        <div class="card">
             <div class="card-header d-flex align-items-center">
                 <div class="d-flex flex-row w-100 justify-content-between flex-wrap">
                     <h5 class="card-title mb-0 fw-bold text-primary d-flex align-items-center">MEDICAL CONSULTATION: APPOINTMENT FORM</h5>
@@ -68,21 +68,66 @@
                 </form>
             </div>
         </div>
-        <div class="card" id="medicalAppointmentCard">
-            magpapakita dito kapag may existing appointment
-        </div>
     </div>
     <!--end col-->
 </div>
 
-<div id="decline_create_request" class="row my-5 py-5 d-none">
-    <div class="py-5 col-12 d-flex justify-content-center align-items-center text-center flex-column gap-2">
-        <lord-icon src="https://cdn.lordicon.com/yrgzpquj.json" trigger="loop" style="width:180px;height:180px"></lord-icon>
-        <h4 class="fw-bold">Existing Request is Found!</h4>
+<div id="existing_medical_consultation" class="row d-none">
+    <div id="cardForExistingAppointment" class="cold-xl-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="d-flex align-items-center justify-content-center">
+                    <h5 id="control_no" class="fs-4 badge badge-outline-primary fw-bold mb-0"></h5>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive table-card">
+                    <table class="table table-nowrap align-middle table-borderless mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th colspan="3" class="bg-soft-primary text-dark">Consultation Details:</th>
+                            </tr>
+                            <tr>
+                                <th scope="col">Appointment Date</th>
+                                <th scope="col">Attending Physician</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="medicalDetails">
 
-        <p class="fs-15">If you want to create a New Request and the status of your request is currently <b>Pending For Medical Appointment</b> and <b>For Medical Appointment</b>, you must cancel your Existing Request first. <br> You can cancel the request by going to the <span class="fw-medium">Mendical Consultation</span> page and clicking the <button type="button" class="mx-2 mt-1 btn btn-soft-danger btn-sm mt-2 mt-sm-0"><i class="mdi mdi-archive-remove-outline align-middle me-1"></i> Cancel Medical Appoinment</button> button. Otherwise, wait for your appointment to be Done or Cancelled before creating a New Request.</p>
-        <span class="fs-12 mb-3 badge text-dark bg-warning">You can only cancel your existing request if the status of your request is <b>Pending For Medical Appoinment</b> and <b>For Medical Appoinment</b> only.</span>
+                        </tbody>
+                    </table>
+                    <div class="mt-4 mx-3">
+                        <span class="badge rounded-pill bg-primary fs-12">Consultation Reason</span>
+                        <div class="bg-soft-secondary ms-1 text-wrap">
+                            <p id="consultation_reason_value" class="p-2 fw-medium"></p>
+                        </div>
+                    </div>
+                    <div class="mt-4 mx-3">
+                        <span class="badge rounded-pill bg-primary fs-12">Remarks</span>
+                        <div class="bg-soft-secondary ms-1 text-wrap">
+                            <p id="view_remarks" class="p-2 fw-medium"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="consultation_status" class="card">
+            <div id="request_status" class="card mb-0">
+                <div class="card-body mx-3 mb-3">
+                    <div class="col-12 d-flex justify-content-center align-items-center text-center flex-column">
+                        <lord-icon src="https://cdn.lordicon.com/yrgzpquj.json" trigger="loop" style="width:180px;height:180px"></lord-icon>
+                        <h4 class="fw-bold">Existing Consultation is Found!</h4>
 
-        <a href="http://localhost/myPUPQC/student/omsss/medical-services/medical-consultation" role="button" class="btn btn-primary bg-gradient waves-effect waves-light">Go to the Medical Consultation Page</a>
+                        <p class="fs-15">If you want to create a New Appointment and the status of your consultation is currently <b id="view_consultation_status"></b> and for <b id="view_appointment_type"></b> Appointment, you must cancel your Existing Appointment first. You'll be receiving updates by refreshing the page or through your email. <br /><br /> You can cancel the appointment by clicking the <b>Cancel Appointment</b> button below. Otherwise, wait for your appointment to be Done or Cancelled before creating a New Consultation.</p>
+
+                        <div id="cancelButton">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <!--  -->
 </div>

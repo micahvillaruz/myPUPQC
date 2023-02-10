@@ -1,5 +1,4 @@
-$(function () {
-	//loadMedicalTable()
+$(() => {
 	verifyMedicalAppointment()
 
 	const currentDate = new Date()
@@ -16,7 +15,6 @@ $(function () {
 		}
 		current = new Date(current.getTime() + 24 * 60 * 60 * 1000)
 	}
-	console.log(dates)
 
 	let completeHolidayDetails
 	let holidayDates = []
@@ -33,8 +31,6 @@ $(function () {
 	completeHolidayDetails.forEach((holiday) => {
 		holidayDates.push(holiday.holiday_date)
 	})
-
-	console.log(holidayDates)
 
 	const updatedDates = dates.filter((date) => !holidayDates.includes(date))
 
@@ -68,6 +64,8 @@ $(function () {
 		e.preventDefault() // prevent page refresh
 		addNewMedicalCase(calendar)
 	})
+
+	$('#')
 })
 
 // Remove form and load card
@@ -78,112 +76,60 @@ verifyMedicalAppointment = () => {
 		headers: AJAX_HEADERS,
 		success: (data) => {
 			if (data.data.length > 0) {
-				$('#fullMedicalFormDetails').remove()
-				$('#medicalAppointmentCard').removeClass('d-none')
-				$('#medicalAppointmentCard').addClass('d-block')
+				// * kapag merong consultation data...
+				$('#existing_medical_consultation').removeClass('d-none')
+				$('#no_medical_consultation').addClass('d-none')
+
+				// Load card details
+				const appointmentDetails = data.data[0]
+				console.log(appointmentDetails)
+				const caseControlNumber = appointmentDetails.case_control_number
+				const consultationReason = appointmentDetails.consultation_reason
+				const attendingPhysician =
+					appointmentDetails.attending_physician == null
+						? 'Not Assigned Yet'
+						: appointmentDetails.health_appointment_assigned_to_physician.user_profiles[0].full_name
+				let consultationStatus = appointmentDetails.consultation_status
+				if (consultationStatus == 'Pending') {
+					consultationStatus = `<span class="badge rounded-pill bg-warning">${consultationStatus}</span>`
+				} else if (
+					consultationStatus == 'Cancelled by Student' ||
+					consultationStatus == 'Cancelled by Staff'
+				) {
+					consultationStatus = `<span class="badge rounded-pill bg-info">${consultationStatus}</span>`
+				} else if (consultationStatus == 'Done' || consultationStatus == 'Approved') {
+					consultationStatus = `<span class="badge badge rounded-pill bg-success">${consultationStatus}</span>`
+				}
+				let consultationDate = new Date(appointmentDetails.consultation_date)
+				consultationDate = consultationDate.toLocaleDateString('en-US', {
+					year: 'numeric',
+					month: 'long',
+					day: 'numeric',
+				})
+
+				let consultationList = `
+                <tr>
+                    <td>${consultationDate}</td>
+                    <td>${attendingPhysician}</td>
+                    <td>${consultationStatus}</td>
+                </tr>
+                `
+				$('#medicalDetails').html(consultationList)
+				$('#control_no').html(caseControlNumber)
+				console.log(consultationReason)
+				$('#consultation_reason_value').html(consultationReason)
+				$('#view_consultation_status').html(consultationStatus)
+				$('#view_appointment_type').html(appointmentDetails.appointment_type)
+				$('#view_remarks').html(appointmentDetails.remarks)
+				$('#cancelButton').html(`
+                <button role="button" onclick="cancelAppointment('${appointmentDetails.health_appointment_id}')" class="btn btn-danger bg-gradient waves-effect waves-light"><i class="mdi mdi-archive-remove-outline align-middle me-1"></i> Cancel Appointment</button>
+                `)
 			} else {
-				$('#medicalAppointmentCard').removeClass('d-block')
-				$('#medicalAppointmentCard').addClass('d-none')
+				// * kapag walang consultation data...
+				$('#no_medical_consultation').removeClass('d-none')
 			}
 		},
 	})
-}
-
-// Load datatables
-loadMedicalTable = () => {
-	const dt = $('#medical-datatable')
-
-	$.ajaxSetup({
-		headers: {
-			Accept: 'application/json',
-			Authorization: 'Bearer ' + TOKEN,
-			ContentType: 'application/x-www-form-urlencoded',
-		},
-	})
-
-	if (dt.length) {
-		dt.DataTable({
-			bDestroy: true,
-			ajax: {
-				url: apiURL + 'omsss/student/view_medical_appointment',
-				type: 'GET',
-				// ContentType: 'application/x-www-form-urlencoded',
-			},
-			columns: [
-				// Appointment Code/Case Control No.
-				{
-					data: null,
-					render: (data) => {
-						const caseNo = data.case_control_number
-						return `${caseNo}`
-					},
-				},
-
-				// Consultation Type
-				{
-					data: null,
-					render: (data) => {
-						const consType = data.consultation_type
-						return `${consType}`
-					},
-				},
-
-				// Status
-				{
-					data: null,
-					render: (data) => {
-						const consultation_status = data.consultation_status
-						console.log(consultation_status)
-						if (consultation_status == 'Pending') {
-							return `<span class="badge rounded-pill bg-warning">Pending</span>`
-						} else if (consultation_status == 'Approved') {
-							return `<span class="badge rounded-pill bg-success">Approved</span>`
-						} else if (consultation_status == 'Cancelled by Staff') {
-							return `<span class="badge rounded-pill bg-info">Cancelled by Staff</span>`
-						} else if (consultation_status == 'Cancelled by Student') {
-							return `<span class="badge rounded-pill bg-info">Cancelled by Student</span>`
-						}
-					},
-				},
-
-				// Attending Consultant
-				{
-					data: null,
-					render: (data) => {
-						if (data.health_appointment_assigned_to_physician) {
-							const healthPhysician =
-								data.health_appointment_assigned_to_physician.user_profiles[0].full_name
-						}
-						const healthPhysician = 'N/A'
-						return `${healthPhysician}`
-					},
-				},
-
-				// Appointment Date
-				{
-					data: null,
-					render: (data) => {
-						const consultation_date = moment(data.consultation_date).format('LL')
-						return `${consultation_date}`
-					},
-				},
-
-				//Action
-				{
-					data: null,
-					class: 'text-center',
-					render: (data) => {
-						return `
-        <div class="dropdown d-inline-block">
-        <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewMedicalDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill fs-5"></i></button>
-				<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="cancelMedical('${data.health_appointment_id}')"><i class="bx bxs-user-x fs-4"></i></button>
-				</div`
-					},
-				},
-			],
-			order: [[0, 'asc']],
-		})
-	}
 }
 
 addNewMedicalCase = (calendar) => {
@@ -242,51 +188,6 @@ addNewMedicalCase = (calendar) => {
 	}
 }
 
-// View Medical Consultation details
-viewMedicalDetails = (health_appointment_id) => {
-	$.ajaxSetup({
-		headers: {
-			Accept: 'application/json',
-			Authorization: 'Bearer ' + TOKEN,
-			ContentType: 'application/x-www-form-urlencoded',
-		},
-	})
-
-	$.ajax({
-		type: 'GET',
-		cache: false,
-		url: apiURL + `omsss/student/view_appointment/${health_appointment_id}`,
-		dataType: 'json',
-		success: (result) => {
-			console.log(result)
-			const userData = result.data
-			if (result.data.health_appointment_assigned_to_physician) {
-				const userProfileData = data.health_appointment_assigned_to_physician.user_profiles[0]
-			}
-			const userProfileData = null
-
-			$('#view_case_details').html(userData.case_control_number)
-			$('#view_consultation_type').html(userData.consultation_type)
-			$('#view_consultation_reason').html(userData.consultation_reason)
-			$('#view_health_physcian').html(userProfileData != null ? userProfileData.full_name : 'N/A')
-			$('#view_date_of_symptom').html(moment(userData.symptoms_date).format('LL'))
-			$('#view_consultation_date').html(moment(userData.consultation_date).format('LL'))
-			const consultation_status_data = userData.consultation_status
-			let consultation_value
-			if (consultation_status_data == 'Pending') {
-				consultation_value = `<span class="badge rounded-pill bg-warning">Pending</span>`
-			} else if (consultation_status_data == 'Approved') {
-				consultation_value = `<span class="badge rounded-pill bg-success">Approved</span>`
-			} else if (consultation_status_data == 'Cancelled by Staff') {
-				consultation_value = `<span class="badge rounded-pill bg-info">Cancelled by Staff</span>`
-			} else if (consultation_status_data == 'Cancelled by Student') {
-				consultation_value = `<span class="badge rounded-pill bg-info">Cancelled by Student</span>`
-			}
-			$('#view_status').html(consultation_value)
-		},
-	})
-}
-
 // Cancel Medical Consultation
 cancelMedical = (health_appointment_id) => {
 	$.ajaxSetup({
@@ -296,7 +197,9 @@ cancelMedical = (health_appointment_id) => {
 			ContentType: 'application/x-www-form-urlencoded',
 		},
 	})
+}
 
+cancelAppointment = (health_appointment_id) => {
 	Swal.fire({
 		html:
 			'<div class="mt-3">' +
@@ -318,6 +221,7 @@ cancelMedical = (health_appointment_id) => {
 				url: apiURL + 'omsss/student/cancel_appointment/' + health_appointment_id,
 				type: 'PUT',
 				dataType: 'json',
+				headers: AJAX_HEADERS,
 				success: (result) => {
 					if (result) {
 						Swal.fire({
@@ -331,17 +235,19 @@ cancelMedical = (health_appointment_id) => {
 								'</div>',
 							showCancelButton: !0,
 							showConfirmButton: !1,
-							cancelButtonClass: 'btn btn-danger w-xs mb-1',
+							cancelButtonClass: 'btn btn-success w-xs mb-1',
 							cancelButtonText: 'Ok',
 							buttonsStyling: !1,
 							showCloseButton: !0,
 						}).then(function () {
-							// Reload Staff Datatable
-							window.location.reload()
+							setTimeout(() => {
+								location.reload()
+							}, 1000)
 						})
 					}
 				},
-			}).fail(() => {
+			}).fail((xhr) => {
+				console.log(xhr)
 				Swal.fire({
 					html:
 						'<div class="mt-3">' +
