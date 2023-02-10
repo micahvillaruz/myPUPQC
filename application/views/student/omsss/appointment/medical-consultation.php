@@ -7,7 +7,7 @@
                     <div class="d-flex align-items-center">
                         <div class="alert mb-0 alert-info alert-label-icon rounded-label" role="alert">
                             <i class="ri-error-warning-line fw-bold label-icon"></i>
-                            <i>This form is available only at <u>8:00 AM to 5:00 PM</u>.</i>
+                            <i>This form is available only at <u>6:00 AM to 9:00 PM</u>.</i>
                         </div>
                     </div>
                 </div>
@@ -119,7 +119,9 @@
                         <lord-icon src="https://cdn.lordicon.com/yrgzpquj.json" trigger="loop" style="width:180px;height:180px"></lord-icon>
                         <h4 class="fw-bold">Existing Consultation is Found!</h4>
 
-                        <p class="fs-15">If you want to create a New Appointment and the status of your consultation is currently <b id="view_consultation_status"></b> and for <b id="view_appointment_type"></b> Appointment, you must cancel your Existing Appointment first. You'll be receiving updates by refreshing the page or through your email. <br /><br /> You can cancel the appointment by clicking the <b>Cancel Appointment</b> button below. Otherwise, wait for your appointment to be Done or Cancelled before creating a New Consultation.</p>
+                        <div id="existingConsultationMessage">
+
+                        </div>
 
                         <div id="cancelButton">
 
@@ -130,4 +132,14 @@
         </div>
     </div>
     <!--  -->
+</div>
+
+<div id="scheduled_medical_message" class="row d-none">
+    <div class="py-5 col-12 d-flex justify-content-center align-items-center text-center flex-column gap-2">
+        <lord-icon src="https://cdn.lordicon.com/kbtmbyzy.json" trigger="loop" delay="1000" colors="primary:#911710,secondary:#e8e230" stroke="70" style="width:180px;height:180px"></lord-icon>
+        <h4 class="fw-bold">Appointment Scheduling is Not Available!</h4>
+        <p class="fs-15">You can only schedule appointments at 6AM to 9PM. You can go back to these indicated time.<br />In the mean time, we encourage you to update your Patient Information, Health History, or Vaccination Cards on their respective pages.</p>
+        <a href="<?= base_url() ?>student/omsss/medical-services/patient-info" role="button" class="btn btn-primary bg-gradient waves-effect waves-light">Patient Information</a>
+        <a href="<?= base_url() ?>student/omsss/medical-services/health-history" role="button" class="btn btn-primary bg-gradient waves-effect waves-light">Health History</a>
+    </div>
 </div>

@@ -4,11 +4,9 @@ $(() => {
 	const currentDate = new Date()
 	const currentYear = currentDate.getFullYear()
 	const currentMonth = currentDate.getMonth()
-	const lastDayOfMonth = new Date(currentYear, currentMonth + 1, 0)
-	const offset = currentDate.getTimezoneOffset()
 	const dates = []
 
-	let current = new Date(currentDate.getTime() - offset * 60 * 1000)
+	let current = new Date(currentDate)
 	while (current.getMonth() === currentMonth) {
 		if (current.getDay() !== 0 && current.getDay() !== 6) {
 			dates.push(current.toISOString().split('T')[0])
@@ -64,9 +62,23 @@ $(() => {
 		e.preventDefault() // prevent page refresh
 		addNewMedicalCase(calendar)
 	})
-
-	$('#')
 })
+
+verifyMedicalConsultationTime = () => {
+	const currentTime = new Date().getHours()
+
+	// runs only if the current time is between 6am to 9pm
+	console.log(currentTime, currentTime >= 6 && currentTime <= 21)
+	if (currentTime >= 6 && currentTime <= 21) {
+		// * kapag 6AM to 9PM
+		$('#no_medical_consultation').removeClass('d-none')
+		$('#scheduled_medical_message').addClass('d-none')
+	} else {
+		// * kapag 9PM to 6AM
+		$('#scheduled_medical_message').removeClass('d-none')
+		$('#no_medical_consultation').addClass('d-none')
+	}
+}
 
 // Remove form and load card
 verifyMedicalAppointment = () => {
@@ -82,7 +94,6 @@ verifyMedicalAppointment = () => {
 
 				// Load card details
 				const appointmentDetails = data.data[0]
-				console.log(appointmentDetails)
 				const caseControlNumber = appointmentDetails.case_control_number
 				const consultationReason = appointmentDetails.consultation_reason
 				const attendingPhysician =
@@ -90,15 +101,27 @@ verifyMedicalAppointment = () => {
 						? 'Not Assigned Yet'
 						: appointmentDetails.health_appointment_assigned_to_physician.user_profiles[0].full_name
 				let consultationStatus = appointmentDetails.consultation_status
+
 				if (consultationStatus == 'Pending') {
 					consultationStatus = `<span class="badge rounded-pill bg-warning">${consultationStatus}</span>`
+					$('#existingConsultationMessage').html(`
+                    <p class="fs-15">If you want to create a New Appointment and the status of your consultation is currently <b id="view_consultation_status"></b> and for <b id="view_appointment_type"></b> Appointment, you must cancel your Existing Appointment first. You'll be receiving updates by refreshing the page or through your email. <br /><br /> You can cancel the appointment by clicking the <b>Cancel Appointment</b> button below. Otherwise, wait for your appointment to be Done or Cancelled before creating a New Consultation.</p>
+                    `)
 				} else if (
 					consultationStatus == 'Cancelled by Student' ||
 					consultationStatus == 'Cancelled by Staff'
 				) {
 					consultationStatus = `<span class="badge rounded-pill bg-info">${consultationStatus}</span>`
+					$('#existingConsultationMessage').html(`
+                    <p class="fs-15">The status of your consultation is currently <b id="view_consultation_status"></b> and for <b id="view_appointment_type"></b> Appointment. You'll be able to set a new consultation again once your consultation date passes.</p>
+                    `)
 				} else if (consultationStatus == 'Done' || consultationStatus == 'Approved') {
 					consultationStatus = `<span class="badge badge rounded-pill bg-success">${consultationStatus}</span>`
+				}
+				if (consultationStatus == 'Approved' || consultationStatus == 'Pending') {
+					$('#cancelButton').html(`
+                <button role="button" onclick="cancelAppointment('${appointmentDetails.health_appointment_id}')" class="btn btn-danger bg-gradient waves-effect waves-light"><i class="mdi mdi-archive-remove-outline align-middle me-1"></i> Cancel Appointment</button>
+                `)
 				}
 				let consultationDate = new Date(appointmentDetails.consultation_date)
 				consultationDate = consultationDate.toLocaleDateString('en-US', {
@@ -116,17 +139,14 @@ verifyMedicalAppointment = () => {
                 `
 				$('#medicalDetails').html(consultationList)
 				$('#control_no').html(caseControlNumber)
-				console.log(consultationReason)
 				$('#consultation_reason_value').html(consultationReason)
 				$('#view_consultation_status').html(consultationStatus)
 				$('#view_appointment_type').html(appointmentDetails.appointment_type)
 				$('#view_remarks').html(appointmentDetails.remarks)
-				$('#cancelButton').html(`
-                <button role="button" onclick="cancelAppointment('${appointmentDetails.health_appointment_id}')" class="btn btn-danger bg-gradient waves-effect waves-light"><i class="mdi mdi-archive-remove-outline align-middle me-1"></i> Cancel Appointment</button>
-                `)
 			} else {
 				// * kapag walang consultation data...
-				$('#no_medical_consultation').removeClass('d-none')
+				// * verify time naman kung 6AM to 9PM naman siya
+				verifyMedicalConsultationTime()
 			}
 		},
 	})
@@ -150,7 +170,6 @@ addNewMedicalCase = (calendar) => {
 			consultation_reason: form.get('consultation_reason'),
 			consultation_date: selectedDate,
 		}
-		console.log(data)
 		$.ajax({
 			url: apiURL + 'omsss/student/add_appointment',
 			type: 'POST',
@@ -186,17 +205,6 @@ addNewMedicalCase = (calendar) => {
 			})
 		})
 	}
-}
-
-// Cancel Medical Consultation
-cancelMedical = (health_appointment_id) => {
-	$.ajaxSetup({
-		headers: {
-			Accept: 'application/json',
-			Authorization: 'Bearer ' + TOKEN,
-			ContentType: 'application/x-www-form-urlencoded',
-		},
-	})
 }
 
 cancelAppointment = (health_appointment_id) => {
@@ -247,7 +255,6 @@ cancelAppointment = (health_appointment_id) => {
 					}
 				},
 			}).fail((xhr) => {
-				console.log(xhr)
 				Swal.fire({
 					html:
 						'<div class="mt-3">' +
