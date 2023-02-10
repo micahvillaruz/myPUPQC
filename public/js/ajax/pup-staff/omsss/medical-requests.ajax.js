@@ -163,6 +163,7 @@ loadMedicalConsultationApprovedTable = () => {
 
 // View Medical Consultation details
 viewMedicalDetails = (health_appointment_id) => {
+	// * Personal and Case Details
 	$.ajax({
 		type: 'GET',
 		cache: false,
@@ -173,28 +174,73 @@ viewMedicalDetails = (health_appointment_id) => {
 			console.log(result)
 			const userData = result.data
 			if (result.data.health_appointment_assigned_to_physician) {
-				const userProfileData = data.health_appointment_assigned_to_physician.user_profiles[0]
+				const userProfileData = userData.health_appointment_assigned_to_physician.user_profiles[0]
 			}
 			const userProfileData = null
 
-			$('#view_case_details').html(userData.case_control_number)
+			// * User Personal Information
+			$('#view_full_name').html(
+				userData.health_appointment_assigned_to_user.user_profiles[0].full_name,
+			)
+			$('#view_student_number').html(userData.health_appointment_assigned_to_user.user_no)
+			$('#view_address').html(
+				userData.health_appointment_assigned_to_user.user_profiles[0].full_address,
+			)
+			let birthdate = new Date(
+				userData.health_appointment_assigned_to_user.user_profiles[0].birth_date,
+			).getTime()
+			let currentTimestamp = new Date().getTime()
+			let ageInMilliseconds = currentTimestamp - birthdate
+			let ageInYears = ageInMilliseconds / (1000 * 60 * 60 * 24 * 365.25)
+			$('#view_age').html(Math.floor(ageInYears))
+			$('#view_gender').html(userData.health_appointment_assigned_to_user.user_profiles[0].gender)
+			$('#view_civil_status').html(
+				userData.health_appointment_assigned_to_user.user_profiles[0].civil_status,
+			)
+			$('#view_contact_number').html(
+				userData.health_appointment_assigned_to_user.user_profiles[0].contact_number,
+			)
+			$('#view_email_address').html(
+				userData.health_appointment_assigned_to_user.user_profiles[0].email_address,
+			)
+
+			// * Case Detail
+			$('#control_no').html(userData.case_control_number)
 			$('#view_consultation_type').html(userData.consultation_type)
 			$('#view_consultation_reason').html(userData.consultation_reason)
-			$('#view_health_physcian').html(userProfileData != null ? userProfileData.full_name : 'N/A')
-			$('#view_symptoms_date').html(moment(userData.symptoms_date).utc().format('LL'))
-			$('#view_consultation_date').html(moment(userData.consultation_date).format('LL'))
-			const consultation_status_data = userData.consultation_status
-			let consultation_value
-			if (consultation_status_data == 'Pending') {
-				consultation_value = `<span class="badge rounded-pill bg-warning">Pending</span>`
-			} else if (consultation_status_data == 'Approved') {
-				consultation_value = `<span class="badge rounded-pill bg-success">Approved</span>`
-			} else if (consultation_status_data == 'Cancelled by Staff') {
-				consultation_value = `<span class="badge rounded-pill bg-info">Cancelled by Staff</span>`
-			} else if (consultation_status_data == 'Cancelled by Student') {
-				consultation_value = `<span class="badge rounded-pill bg-info">Cancelled by Student</span>`
-			}
-			$('#view_status').html(consultation_value)
+			let consultationDate = new Date(userData.consultation_date)
+			consultationDate = consultationDate.toLocaleDateString('en-US', {
+				year: 'numeric',
+				month: 'long',
+				day: 'numeric',
+			})
+
+			$('#view_consultation_date').html(consultationDate)
+			// % =================================
+			// * Health Information (Medical History)
+			$.ajax({
+				type: 'GET',
+				cache: false,
+				url: apiURL + `omsss/pup_staff/medical_history/${userData.user_id}`,
+				dataType: 'json',
+				headers: AJAX_HEADERS,
+				success: (result) => {
+					const data = result.data
+					console.log(data)
+				},
+			})
+			// * Patient Information (kadugtong ng Personal Information sa baba)
+			$.ajax({
+				type: 'GET',
+				cache: false,
+				url: apiURL + `omsss/pup_staff/patient_information/${userData.user_id}`,
+				dataType: 'json',
+				headers: AJAX_HEADERS,
+				success: (result) => {
+					const data = result.data
+					console.log(data)
+				},
+			})
 		},
 	})
 }
