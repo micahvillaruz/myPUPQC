@@ -1,27 +1,26 @@
 $(function () {
-	loadConsellingAnalyticsTable()
+	loadGuidanceDoneTable()
+	loadDentalCancelledStaffTable()
+	loadMedicalCancelledStudentTable()
 	getCounselingAnalytics()
 })
 
 // Load datatables
-loadConsellingAnalyticsTable = () => {
-	const dt = $('#conselling-analytics-datatable')
-
-	$.ajaxSetup({
-		headers: {
-			Accept: 'application/json',
-			Authorization: 'Bearer ' + TOKEN,
-			ContentType: 'application/x-www-form-urlencoded',
-		},
-	})
-
+loadGuidanceDoneTable = () => {
+	const dt = $('#done_appointments_table')
 	if (dt.length) {
 		dt.DataTable({
 			bDestroy: true,
 			ajax: {
 				url: apiURL + 'omsss/pup_staff/view_appointment_analytics/Guidance',
 				type: 'GET',
-				// ContentType: 'application/x-www-form-urlencoded',
+				headers: AJAX_HEADERS,
+				dataSrc: (data) => {
+					let filterData = data.data.filter((item) => {
+						return item.consultation_status == 'Done'
+					})
+					return filterData
+				},
 			},
 			columns: [
 				// Case Control No.
@@ -32,15 +31,6 @@ loadConsellingAnalyticsTable = () => {
 						return `${caseNo}`
 					},
 				},
-
-				// // Consultation Type
-				// {
-				// 	data: null,
-				// 	render: (data) => {
-				// 		const consType = data.consultation_type
-				// 		return `${consType}`
-				// 	},
-				// },
 
 				// Student
 				{
@@ -59,18 +49,7 @@ loadConsellingAnalyticsTable = () => {
 					data: null,
 					render: (data) => {
 						const consultation_status = data.consultation_status
-						console.log(consultation_status)
-						if (consultation_status == 'Pending') {
-							return `<span class="badge rounded-pill bg-warning">Pending</span>`
-						} else if (consultation_status == 'Approved') {
-							return `<span class="badge rounded-pill bg-success">Approved</span>`
-						} else if (consultation_status == 'Cancelled by Staff') {
-							return `<span class="badge rounded-pill bg-info">Cancelled by Staff</span>`
-						} else if (consultation_status == 'Cancelled by Student') {
-							return `<span class="badge rounded-pill bg-info">Cancelled by Student</span>`
-						} else if (consultation_status == 'Done') {
-							return `<span class="badge rounded-pill bg-success">Done</span>`
-						}
+						return `<span class="badge rounded-pill bg-success">${consultation_status}</span>`
 					},
 				},
 
@@ -89,9 +68,9 @@ loadConsellingAnalyticsTable = () => {
 					class: 'text-center',
 					render: (data) => {
 						return `
-        <div class="dropdown d-inline-block">
-        <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewMedicalDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewGuidanceModal"><i class="ri-eye-fill fs-5"></i></button>
-				</div>`
+                        <div class="dropdown d-inline-block">
+                            <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewDentalDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewDentalModal"><i class="ri-eye-fill fs-5"></i></button>
+				        </div>`
 					},
 				},
 			],
