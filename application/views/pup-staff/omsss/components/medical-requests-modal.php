@@ -13,6 +13,7 @@
                         <h4 class="mb-0">Personal Information</h4>
                     </div>
                     <div class="card-body">
+                        <h5>About the Student</h5>
                         <table class="table mb-0">
                             <tbody>
                                 <tr>
@@ -48,6 +49,40 @@
                                     <td id="view_contact_number"></td>
                                 </tr>
                             </tbody>
+                        </table>
+                        <hr />
+                        <h5>Emergency Contacts</h5>
+                        <table class="table mb-0">
+                            <tbody>
+                                <tr>
+                                    <td class="fw-medium">Guardian Name</td>
+                                    <td id="view_guardian_name"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-medium">Contact Number</td>
+                                    <td id="view_guardian_number"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-medium">Address</td>
+                                    <td id="view_guardian_address"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-medium">Email Address</td>
+                                    <td id="view_guardian_email"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <hr />
+                        <h5>Immunization</h5>
+                        <table class="table mb-0">
+                            <tr>
+                                <td class="fw-medium">PhilHealth ID</td>
+                                <td id="view_philhealth_id"></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-medium">Vaccination Card</td>
+                                <td id="view_vaccination_card"></td>
+                            </tr>
                         </table>
                     </div>
                 </div>

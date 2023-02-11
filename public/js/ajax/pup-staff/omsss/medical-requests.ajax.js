@@ -258,7 +258,6 @@ viewMedicalDetails = (health_appointment_id) => {
 					$('#view_medications').html(`<ul>${bullet}</ul>`)
 
 					const social_history = data.social_history
-					console.log(social_history)
 					// * value {smoker: false, alcoholic: true}
 					// * Create a badge if smoker or non smoker and alcholic or non alcoholic
 					let smoker = social_history.smoker
@@ -270,6 +269,7 @@ viewMedicalDetails = (health_appointment_id) => {
 					$('#view_social_history').html(`${smoker} ${alcoholic}`)
 				},
 			})
+			// % =================================
 			// * Patient Information (kadugtong ng Personal Information sa baba)
 			$.ajax({
 				type: 'GET',
@@ -279,7 +279,42 @@ viewMedicalDetails = (health_appointment_id) => {
 				headers: AJAX_HEADERS,
 				success: (result) => {
 					const data = result.data
-					console.log(data)
+					const guardian_name = data.emergency_contact_name
+					const guardian_contact_number = data.emergency_contact_number
+					const guardian_address =
+						data.emergency_contact_address == null ? 'No Data' : data.emergency_contact_address
+					const guardian_email = data.emergency_contact_email
+					const philhealth_id_image = data.philhealth_id_image
+					let button_philhealth =
+						philhealth_id_image != null
+							? `<a href="${philhealth_id_image}" target="_blank" class="btn btn-primary btn-sm">View PhilHealth ID</a>`
+							: 'No Data'
+
+					$('#view_guardian_name').html(guardian_name)
+					$('#view_guardian_number').html(guardian_contact_number)
+					$('#view_guardian_address').html(guardian_address)
+					$('#view_guardian_email').html(guardian_email)
+					$('#view_philhealth_id').html(button_philhealth)
+				},
+			})
+			// % =================================
+			// * Immunization
+			$.ajax({
+				type: 'GET',
+				cache: false,
+				url: apiURL + `omsss/pup_staff/view_immunization/${userData.user_id}`,
+				dataType: 'json',
+				headers: AJAX_HEADERS,
+				success: (result) => {
+					const data = result.data
+					const vaccination_card = data.vaccination_card
+
+					let button_vaccination =
+						vaccination_card != null
+							? `<a href="${vaccination_card}" target="_blank" class="btn btn-primary btn-sm">View Vaccination Card</a>`
+							: 'No Data'
+
+					$('#view_vaccination_card').html(button_vaccination)
 				},
 			})
 		},
