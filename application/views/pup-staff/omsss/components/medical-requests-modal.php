@@ -127,6 +127,12 @@
                             <h5 id="control_no" class="fs-4 badge badge-outline-primary fw-bold mb-0"></h5>
                         </div>
                         <div class="mt-4 mx-3">
+                            <span class="badge rounded-pill bg-primary fs-12">Consultation Type</span>
+                            <div class="bg-soft-secondary ms-1 text-wrap">
+                                <p id="view_consultation_type" class="p-2 fw-medium"></p>
+                            </div>
+                        </div>
+                        <div class="mt-4 mx-3">
                             <span class="badge rounded-pill bg-primary fs-12">Consultation Date</span>
                             <div class="bg-soft-secondary ms-1 text-wrap">
                                 <p id="view_consultation_date" class="p-2 fw-medium"></p>

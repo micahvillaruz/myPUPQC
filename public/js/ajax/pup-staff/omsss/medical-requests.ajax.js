@@ -305,13 +305,17 @@ viewMedicalDetails = (health_appointment_id) => {
 					const social_history = data.social_history
 					// * value {smoker: false, alcoholic: true}
 					// * Create a badge if smoker or non smoker and alcholic or non alcoholic
-					let smoker = social_history.smoker
-						? `<span class="badge bg-info">Smoker</span>`
-						: `<span class="badge bg-danger">Non Smoker</span>`
-					let alcoholic = social_history.alcoholic
-						? `<span class="badge bg-info">Alcoholic</span>`
-						: `<span class="badge bg-danger">Non Alcoholic</span>`
-					$('#view_social_history').html(`${smoker} ${alcoholic}`)
+					if (social_history != null) {
+						let smoker = social_history.smoker
+							? `<span class="badge bg-info">Smoker</span>`
+							: `<span class="badge bg-danger">Non Smoker</span>`
+						let alcoholic = social_history.alcoholic
+							? `<span class="badge bg-info">Alcoholic</span>`
+							: `<span class="badge bg-danger">Non Alcoholic</span>`
+						$('#view_social_history').html(`${smoker} ${alcoholic}`)
+					} else {
+						$('#view_social_history').html(`<span class="badge bg-danger">No Data</span>`)
+					}
 				},
 			})
 			// % =================================
@@ -324,22 +328,24 @@ viewMedicalDetails = (health_appointment_id) => {
 				headers: AJAX_HEADERS,
 				success: (result) => {
 					const data = result.data
-					const guardian_name = data.emergency_contact_name
-					const guardian_contact_number = data.emergency_contact_number
+					const guardian_name =
+						data.emergency_contact_name ?? `<span class="badge bg-danger">No Data</span>`
+					const guardian_contact_number =
+						data.emergency_contact_number ?? `<span class="badge bg-danger">No Data</span>`
 					const guardian_address =
-						data.emergency_contact_address == null ? 'No Data' : data.emergency_contact_address
-					const guardian_email = data.emergency_contact_email
-					const philhealth_id_image = data.philhealth_id_image
-					let button_philhealth =
-						philhealth_id_image != null
-							? `<a href="${philhealth_id_image}" target="_blank" class="btn btn-primary btn-sm">View PhilHealth ID</a>`
-							: 'No Data'
+						data.emergency_contact_address ?? `<span class="badge bg-danger">No Data</span>`
+					const guardian_email =
+						data.emergency_contact_email ?? `<span class="badge bg-danger">No Data</span>`
+					const philhealth_id_image =
+						data.philhealth_id_image != null
+							? `<a href="${data.philhealth_id_image}" target="_blank" class="btn btn-primary btn-sm">View PhilHealth ID</a>`
+							: `<span class="badge bg-danger">No Data</span>`
 
 					$('#view_guardian_name').html(guardian_name)
 					$('#view_guardian_number').html(guardian_contact_number)
 					$('#view_guardian_address').html(guardian_address)
 					$('#view_guardian_email').html(guardian_email)
-					$('#view_philhealth_id').html(button_philhealth)
+					$('#view_philhealth_id').html(philhealth_id_image)
 				},
 			})
 			// % =================================
@@ -357,7 +363,7 @@ viewMedicalDetails = (health_appointment_id) => {
 					let button_vaccination =
 						vaccination_card != null
 							? `<a href="${vaccination_card}" target="_blank" class="btn btn-primary btn-sm">View Vaccination Card</a>`
-							: 'No Data'
+							: `<span class="badge bg-danger">No Data</span>`
 
 					$('#view_vaccination_card').html(button_vaccination)
 				},
@@ -409,11 +415,7 @@ editAppointmentStatus = (health_appointment_id, consultation_status, remarks) =>
 					buttonsStyling: !1,
 					showCloseButton: !0,
 				}).then(function () {
-					// Hide the update student details modal
-					$('#updateAppointmentStatusModal').modal('hide')
-
-					// Reload Student Datatable
-					loadMedicalRequestTable()
+					refreshPage()
 				})
 			}
 		},

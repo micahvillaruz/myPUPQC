@@ -2,7 +2,7 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-header d-flex align-items-center justify-content-between pb-0 pe-0">
-                <h5 class="card-title mb-0 flex-grow-1">MEDICAL CONSULTATION</h5>
+                <h2 class="card-title mb-0 flex-grow-1 fw-bold text-primary">MEDICAL CONSULTATION</h2>
                 <div class="flex-shrink-0">
                     <ul class="nav nav-pills nav-customs nav-danger" role="tablist">
                         <li class="nav-item">
