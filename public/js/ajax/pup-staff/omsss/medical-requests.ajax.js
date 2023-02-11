@@ -2,11 +2,42 @@ $(function () {
 	loadMedicalConsultationPendingTable()
 	loadMedicalConsultationApprovedTable()
 
-	$('#updateAppointmentStatusModal').on('submit', function (e) {
-		e.preventDefault() // prevent page refresh
+	$('#approveAppointmentForm').submit((e) => {
+		e.preventDefault() // prevent the form from submitting
 
-		// pass data to API for updating of student's info
-		editAppointmentStatus($('#edit_health_appointment_id').val())
+		// get the values of the inputs
+		let approve_appointment_id = $('#approve_appointment_id').val()
+		let approve_consultation_status = $('#approve_consultation_status').val()
+		let approve_remarks = $('#approve_remarks').val()
+
+		// you can now use these values for further processing
+		editAppointmentStatus(approve_appointment_id, approve_consultation_status, approve_remarks)
+	})
+
+	$('#cancelAppointmentForm').submit((e) => {
+		e.preventDefault() // prevent the form from submitting
+
+		// get the values of the inputs
+		let cancel_appointment_id = $('#cancel_appointment_id').val()
+		let cancel_consultation_status = $('#cancel_consultation_status').val()
+		let cancel_remarks = $('#cancel_remarks').val()
+
+		// you can now use these values for further processing
+		editAppointmentStatus(cancel_appointment_id, cancel_consultation_status, cancel_remarks)
+	})
+
+	$('#doneAppointmentForm').submit((e) => {
+		e.preventDefault() // prevent the form from submitting
+
+		// get the values of the inputs
+		let done_appointment_id = $('#done_appointment_id').val()
+		let done_consultation_status = $('#done_consultation_status').val()
+		let done_remarks = $('#done_remarks').val()
+
+		console.log(done_appointment_id, done_consultation_status, done_remarks)
+
+		// you can now use these values for further processing
+		//editAppointmentStatus(done_appointment_id, done_consultation_status, done_remarks)
 	})
 })
 
@@ -76,7 +107,12 @@ loadMedicalConsultationPendingTable = () => {
 						return `
                             <div class="dropdown d-inline-block">
                                 <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewMedicalDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill fs-5"></i></button>
-				                <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" onclick = "editAppointmentDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#updateAppointmentStatusModal" ><i class="ri-edit-2-fill fs-5"></i></button>
+				                <button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#approveAppointmentModal" onclick="approveAppointment('${data.health_appointment_id}')">
+									<i class="ri-check-fill fs-5 fw-bold"></i>
+								</button>
+								<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#cancelAppointmentModal" onclick="cancelAppointment('${data.health_appointment_id}')">
+									<i class="ri-close-fill fs-5 fw-bold"></i>
+								</button>
 				            </div>`
 					},
 				},
@@ -148,11 +184,20 @@ loadMedicalConsultationApprovedTable = () => {
 					data: null,
 					class: 'text-center',
 					render: (data) => {
+						const today = new Date()
+						const consultationDate = new Date(data.consultation_date)
+						let showDoneButton = ''
+						if (today >= consultationDate) {
+							// the button should be displayed
+							showDoneButton = `<button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#doneAppointmentModal" onclick="doneAppointment('${data.health_appointment_id}')">
+                            <i class="ri-calendar-check-fill fs-5 fw-bold"></i>
+                            </button>`
+						}
 						return `
                             <div class="dropdown d-inline-block">
                                 <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewMedicalDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill fs-5"></i></button>
-				                <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" onclick = "editAppointmentDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#updateAppointmentStatusModal" ><i class="ri-edit-2-fill fs-5"></i></button>
-				            </div>`
+                                ${showDoneButton}
+                            </div>`
 					},
 				},
 			],
@@ -321,73 +366,67 @@ viewMedicalDetails = (health_appointment_id) => {
 	})
 }
 
-getAppointment = (health_appointment_id) => {
-	$.ajax({
-		url: apiURL + `omsss/pup_staff/view_specific_appointment/${health_appointment_id}`,
-		type: 'GET',
-		headers: AJAX_HEADERS,
-		success: (result) => {
-			if (result) {
-				// Get data from result
-				const data = result.data
-				console.log(data)
-				// $('#edit_image').val(data.user_profiles[0].image)
-				$('#edit_health_appointment_id').val(data.health_appointment_id)
-			}
-		},
-	}).fail(() => console.error('There was an error in retrieving medical request data'))
+approveAppointment = (health_appointment_id) => {
+	console.log('testing approved')
+	$('#approve_appointment_id').val(health_appointment_id)
+	$('#approve_consultation_status').val('Approved')
 }
 
-editAppointmentDetails = (health_appointment_id) => getAppointment(health_appointment_id)
-// Edit Student Details
-editAppointmentStatus = (health_appointment_id) => {
-	if ($('#updateAppointmentStatusForm')[0].checkValidity()) {
-		// no validation error
-		const form = new FormData($('#updateAppointmentStatusForm')[0])
-		for (var pair of form.entries()) {
-			console.log(pair[0] + ', ' + pair[1])
-		}
-		data = {
-			consultation_status: form.get('consultation_status'),
-			remarks: form.get('remarks'),
-		}
-		console.log(data)
-		$.ajax({
-			url: apiURL + `omsss/pup_staff/status/${health_appointment_id}`,
-			type: 'PUT',
-			data: data,
-			dataType: 'json',
-			headers: AJAX_HEADERS,
-			success: (result) => {
-				console.log(result)
-				if (result) {
-					Swal.fire({
-						html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully updated a appointment status!</p></div></div>',
-						showCancelButton: !0,
-						showConfirmButton: !1,
-						cancelButtonClass: 'btn btn-success w-xs mb-1',
-						cancelButtonText: 'Ok',
-						buttonsStyling: !1,
-						showCloseButton: !0,
-					}).then(function () {
-						// Hide the update student details modal
-						$('#updateAppointmentStatusModal').modal('hide')
+cancelAppointment = (health_appointment_id) => {
+	console.log('testing cancelled by staff')
+	$('#cancel_appointment_id').val(health_appointment_id)
+	$('#cancel_consultation_status').val('Cancelled by Staff')
+}
 
-						// Reload Student Datatable
-						loadMedicalRequestTable()
-					})
-				}
-			},
-		}).fail(() => {
-			Swal.fire({
-				html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">There was an error while updating a appointment status. Please try again.</p></div></div>',
-				showCancelButton: !0,
-				showConfirmButton: !1,
-				cancelButtonClass: 'btn btn-danger w-xs mb-1',
-				cancelButtonText: 'Dismiss',
-				buttonsStyling: !1,
-				showCloseButton: !0,
-			})
-		})
+doneAppointment = (health_appointment_id) => {
+	console.log('testing done')
+	$('#done_appointment_id').val(health_appointment_id)
+	$('#done_consultation_status').val('Done')
+}
+
+// Edit Student Details
+editAppointmentStatus = (health_appointment_id, consultation_status, remarks) => {
+	data = {
+		consultation_status: consultation_status,
+		remarks: remarks,
 	}
+	console.log(data)
+	$.ajax({
+		url: apiURL + `omsss/pup_staff/status/${health_appointment_id}`,
+		type: 'PUT',
+		data: data,
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			console.log(result)
+			if (result) {
+				Swal.fire({
+					html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully updated a appointment status!</p></div></div>',
+					showCancelButton: !0,
+					showConfirmButton: !1,
+					cancelButtonClass: 'btn btn-success w-xs mb-1',
+					cancelButtonText: 'Ok',
+					buttonsStyling: !1,
+					showCloseButton: !0,
+				}).then(function () {
+					// Hide the update student details modal
+					$('#updateAppointmentStatusModal').modal('hide')
+
+					// Reload Student Datatable
+					loadMedicalRequestTable()
+				})
+			}
+		},
+	}).fail((xhr) => {
+		console.log(xhr)
+		Swal.fire({
+			html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">There was an error while updating a appointment status. Please try again.</p></div></div>',
+			showCancelButton: !0,
+			showConfirmButton: !1,
+			cancelButtonClass: 'btn btn-danger w-xs mb-1',
+			cancelButtonText: 'Dismiss',
+			buttonsStyling: !1,
+			showCloseButton: !0,
+		})
+	})
 }

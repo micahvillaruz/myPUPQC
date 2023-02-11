@@ -145,35 +145,95 @@
     </div>
 </div>
 
-<!-- Medical Request Status modal -->
-<div id="updateAppointmentStatusModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content border-0 overflow-hidden">
-            <div class="modal-content">
-                <form id="updateAppointmentStatusForm" class="needs-validation" novalidate>
-                    <input type="hidden" id="edit_health_appointment_id" name="edit_health_appointment_id">
-                    <div class="modal-header p-3">
-                        <h4 class="card-title mb-0">Appoinment Status</h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <label class='form-label'>Status</label>
-                        <span class="text-danger">*</span>
-                        <select class="form-select mb-3" id="consultation_status" name="consultation_status" aria-label="Change Status" required>
-                            <option selected></option>
-                            <option value="Approved">Approved</option>
-                            <option value="Cancelled by Staff">Cancelled by Staff</option>
-                        </select>
-                        <label class='form-label'>Remarks</label>
-                        <span class="text-danger">*</span>
-                        <input type="text" class="form-control" id="remarks" name="remarks" placeholder="Remarks" required><br>
-                        <div class="text-center d-grid">
-                            <button type="submit" class="btn btn-primary" aria-label="Confirm">Confirm</button>
+<div class="modal fade" id="approveAppointmentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="approveThisRequest" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center px-4">
+                <lord-icon src="https://cdn.lordicon.com/ivayzoru.json" trigger="loop" colors="outline:#ffffff,primary:#ffffff,secondary:#0ab39c" style="width:100px;height:100px">
+                </lord-icon>
+
+                <div class="mt-4">
+                    <h4 class="mb-3 fw-semibold">Approve this Appointment?</h4>
+                    <p class="text-muted mb-4">If yes, indicate what are the things that the students should do when they visit for the appointment in school.</p>
+                    <form id="approveAppointmentForm" class="needs-validation" novalidate>
+                        <input type="hidden" id="approve_appointment_id">
+                        <input type="hidden" id="approve_consultation_status">
+                        <div class="mt-4">
+                            <label for="remarks" class="h5 form-label">Remarks <span class="text-danger">*</span></label>
+                            <textarea class="form-control mt-2" id="approve_remarks" name="approve_remarks" rows="5" placeholder="As the Staff, be specific and concise with the remarks you'll provide to the student in preparation of the appointment." required></textarea>
+                            <div class="invalid-feedback">
+                                Please indicate your availability at the remarks above.
+                            </div>
                         </div>
-                </form>
+                        <div class="mt-4 justify-content-center">
+                            <button type="submit" class="w-100 btn btn-success bg-gradient fw-medium waves-effect waves-light">Yes, Approve It!</button>
+                        </div>
+                    </form>
+                    <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
+                </div>
             </div>
         </div>
-        <!-- /.modal-content -->
     </div>
-    <!-- /.modal-dialog -->
+</div>
+
+<div class="modal fade" id="cancelAppointmentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="cancelThisRequest" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center px-4">
+                <lord-icon src="https://cdn.lordicon.com/nduddlov.json" trigger="loop" colors="outline:#f06548,primary:#ffffff,secondary:#f06548" style="width:100px;height:100px">
+                </lord-icon>
+
+                <div class="mt-4">
+                    <h4 class="mb-3 fw-semibold">Cancel this Appointment?</h4>
+                    <p class="text-muted mb-4">If yes, indicate on the Remarks the reason why you are cancelling this appointment. If not, click the Dismiss button.</p>
+                    <form id="cancelAppointmentForm" class="needs-validation" novalidate>
+                        <input type="hidden" id="cancel_appointment_id">
+                        <input type="hidden" id="cancel_consultation_status">
+                        <div class="mt-4">
+                            <label for="remarks" class="h5 form-label">Remarks <span class="text-danger">*</span></label>
+                            <textarea class="form-control mt-2" id="cancel_remarks" name="cancel_remarks" rows="5" placeholder="Enter the reason why you are cancelling the appointment and the instructions, if any, that the student must comply before appointing for a consultation again." required></textarea>
+                            <div class="invalid-feedback">
+                                Please indicate your reason for cancelling.
+                            </div>
+                        </div>
+                        <div class="mt-4 justify-content-center">
+                            <button type="submit" class="w-100 btn btn-danger bg-gradient fw-medium waves-effect waves-light">Yes, Cancel It!</button>
+                        </div>
+                    </form>
+                    <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="doneAppointmentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="doneThisAppointment" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center px-4">
+                <lord-icon src="https://cdn.lordicon.com/zpxybbhl.json" trigger="loop" delay="1000" colors="primary:#c71f16,secondary:#ffbe00" style="width:180px;height:180px">
+                </lord-icon>
+
+                <div class="mt-4">
+                    <h4 class="mb-3 fw-semibold">Done with this Appointment?</h4>
+                    <p class="text-muted mb-4">If yes, indicate on the Remarks for closing this consultation. Provide any message to the student such as reminders. If not, click the Dismiss button.</p>
+                    <form id="doneAppointmentForm" class="needs-validation" novalidate>
+                        <input type="hidden" id="done_appointment_id">
+                        <input type="hidden" id="done_consultation_status">
+                        <div class="mt-4">
+                            <label for="remarks" class="h5 form-label">Remarks <span class="text-danger">*</span></label>
+                            <textarea class="form-control mt-2" id="done_remarks" name="done_remarks" rows="5" placeholder="Enter the remarks before finishing this consultation appointment." required></textarea>
+                            <div class="invalid-feedback">
+                                Please indicate the reason for closing the appointment.
+                            </div>
+                        </div>
+                        <div class="mt-4 justify-content-center">
+                            <button type="submit" class="w-100 btn btn-primary bg-gradient fw-medium waves-effect waves-light">Finish Up!</button>
+                        </div>
+                    </form>
+                    <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
