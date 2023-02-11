@@ -182,7 +182,8 @@
                                                 <h6 class="fs-14 mb-1">
                                                     Cleotilde B. Servigon
                                                 </h6>
-                                                <small class="text-muted">Registrar</small>
+                                                <small class="text-muted">Registrar</small> <br>
+                                                <span class="mt-1 badge badge-soft-info text-uppercase">Ongoing</span>
                                             </div>
                                         </div>
                                     </a>
@@ -202,7 +203,8 @@
                                                 <h6 class="fs-14 mb-1">
                                                     Assoc. Prof. Jaime P. Gutierrez Jr.
                                                 </h6>
-                                                <small class="text-muted">Director</small>
+                                                <small class="text-muted">Director</small> <br>
+                                                <span class="mt-1 badge badge-soft-warning text-uppercase">Pending</span>
                                             </div>
                                         </div>
                                     </a>
@@ -1057,7 +1059,8 @@
                                                 <h6 class="fs-14 mb-1">
                                                     Assoc. Prof. Jaime P. Gutierrez Jr.
                                                 </h6>
-                                                <small class="text-muted">Director</small>
+                                                <small class="text-muted">Director</small> <br>
+                                                <span class="mt-1 badge badge-soft-warning text-uppercase">Pending</span>
                                             </div>
                                         </div>
                                     </a>
@@ -1255,6 +1258,25 @@
                     </div>
                     <!--end accordion-->
                 </div>
+                <h6 class="mt-3 mb-3 text-primary">Remarks</h6>
+                <div class="list-group">
+                    <div class="list-group-item list-group-item-action">
+                        <div class="d-flex mb-2 align-items-center">
+                            <div class="flex-shrink-0">
+                                <img src="<?= base_url() ?>public/images/officials/img-6.png" alt="" class="avatar-xs rounded-circle" />
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6 class="list-title mb-1">Cleotilde B. Servigon</h6>
+                                <p class="list-text mb-0 fs-12">Registrar</p>
+                            </div>
+                        </div>
+                        <p>Good Day! Please be advised that the Transcript of Records and the Informative Copy of Grades must be printed in a long bond paper with documentary stamp and school dry seal before handing it for signature. Kindly comply with this requirements so that the processing of the document/s will be started right away.</p>
+                        <p class="d-flex fw-medium align-items-center">
+                            <i class="ri-error-warning-fill me-2 fs-4 text-warning"></i>
+                            <span class="text-danger">Reminder: If you have further questions regarding the on hold document/s, please call us at <b>8-287-82-04</b>.</span>
+                        </p>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
@@ -1422,7 +1444,7 @@
                         <input type="hidden" id="hold_request_id">
                         <div class="mt-4">
                             <label for="remarks" class="h5 form-label">Remarks <span class="text-danger">*</span></label>
-                            <textarea class="form-control mt-2" id="remarks" name="remarks" rows="5" placeholder="Enter the reason why you are holding the processing of the selected document/s and the instructions which the OIC, Student Records must comply with for its evaluation to proceed." required></textarea>
+                            <textarea class="form-control mt-2" id="remarks" name="remarks" rows="5" placeholder="Enter the reason why you are holding the processing of the selected document/s and the instructions which the OIC, Student Records must comply for the evaluation to proceed." required></textarea>
                             <div class="invalid-feedback">
                                 Please indicate your reason for holding the selected document/s.
                             </div>
@@ -1460,8 +1482,8 @@
                         <input type="hidden" id="revertt_request_id">
                         <div class="mt-4 form-check form-check-success mb-3">
                             <input class="form-check-input" type="checkbox" id="validateRevert" required>
-                            <label class="form-check-label" for="validateRelease">
-                                I hereby certify that the remarks I stated for holding the document/s has been followed by the OIC, Student Records.
+                            <label class="form-check-label" for="validateRevert">
+                                I hereby certify that the remarks I stated for holding the document/s has been resolved by the OIC, Student Records.
                             </label>
                             <div class="invalid-feedback">
                                 You must agree that the OIC, Student Records complied with the remarks for the processing of the On Hold Document/s.
