@@ -1,6 +1,6 @@
 $(function () {
-	loadPendingGuidanceRequestTable()
-	loadApprovedGuidanceRequestTable()
+	loadPendingGuidanceConsultationTable()
+	loadApprovedGuidanceConsultationTable()
 
 	$('#approveAppointmentForm').submit((e) => {
 		e.preventDefault() // prevent the form from submitting
@@ -46,7 +46,7 @@ $(function () {
 })
 
 // Load datatables
-loadPendingGuidanceRequestTable = () => {
+loadPendingGuidanceConsultationTable = () => {
 	const dt = $('#pending_guidance_consultation_table')
 
 	if (dt.length) {
@@ -126,7 +126,7 @@ loadPendingGuidanceRequestTable = () => {
 	}
 }
 
-loadApprovedGuidanceRequestTable = () => {
+loadApprovedGuidanceConsultationTable = () => {
 	const dt = $('#approved_guidance_consultation_table')
 
 	if (dt.length) {

@@ -1,6 +1,6 @@
 $(function () {
-	loadPendingDentalRequestTable()
-	loadApprovedDentalRequestTable()
+	loadPendingDentalConsultationTable()
+	loadApprovedDentalConsultationTable()
 
 	$('#approveAppointmentForm').submit((e) => {
 		e.preventDefault() // prevent the form from submitting
@@ -46,7 +46,7 @@ $(function () {
 })
 
 // Load datatables
-loadPendingDentalRequestTable = () => {
+loadPendingDentalConsultationTable = () => {
 	const dt = $('#pending_dental_consultation_table')
 
 	if (dt.length) {
@@ -126,7 +126,7 @@ loadPendingDentalRequestTable = () => {
 	}
 }
 
-loadApprovedDentalRequestTable = () => {
+loadApprovedDentalConsultationTable = () => {
 	const dt = $('#approved_dental_consultation_table')
 
 	if (dt.length) {
