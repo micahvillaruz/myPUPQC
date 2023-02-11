@@ -1,128 +1,244 @@
-<!-- View Guidance modal -->
-<div class="modal fade" id="viewGuidanceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalScrollableTitle">
-          Guidance Case
-        </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div data-simplebar class="mx-n3">
-          <ul class="list list-group list-group-flush mb-0">
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Consultation Type</h5>
+<div id="viewGuidanceModal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="viewGuidanceModal" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered dialog-scrollable modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="ri-information-line fs-3 text-info me-2"></i>
+                <h3 class="modal-title d-flex align-items-center" id="dental_information_title"> Patient Profile</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
+            </div>
+            <div class="modal-body w-100">
+                <div class="card mb-2">
+                    <div class="card-header bg-soft-primary text-dark">
+                        <h4 class="mb-0">Personal Information</h4>
+                    </div>
+                    <div class="card-body">
+                        <h5>About the Student</h5>
+                        <table class="table mb-0">
+                            <tbody>
+                                <tr>
+                                    <td class="fw-medium">Name</td>
+                                    <td id="view_full_name"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-medium">Student Number</td>
+                                    <td id="view_student_number"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-medium">Address</td>
+                                    <td id="view_address"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-medium">Age</td>
+                                    <td id="view_age"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-medium">Gender</td>
+                                    <td id="view_gender"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-medium">Civil Status</td>
+                                    <td id="view_civil_status"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-medium">Email Address</td>
+                                    <td id="view_email_address"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-medium">Contact Number</td>
+                                    <td id="view_contact_number"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <hr />
+                        <h5>Emergency Contacts</h5>
+                        <table class="table mb-0">
+                            <tbody>
+                                <tr>
+                                    <td class="fw-medium">Guardian Name</td>
+                                    <td id="view_guardian_name"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-medium">Contact Number</td>
+                                    <td id="view_guardian_number"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-medium">Address</td>
+                                    <td id="view_guardian_address"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-medium">Email Address</td>
+                                    <td id="view_guardian_email"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <hr />
+                        <h5>Immunization</h5>
+                        <table class="table mb-0">
+                            <tr>
+                                <td class="fw-medium">PhilHealth ID</td>
+                                <td id="view_philhealth_id"></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-medium">Vaccination Card</td>
+                                <td id="view_vaccination_card"></td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-                <div class="col-8">
-                <div class="d-flex fs-13 fw-medium" id="view_consultation_type">New Consultation</div>
+                <div class="card mb-2">
+                    <div class="card-header bg-soft-primary text-dark">
+                        <h4 class="mb-0">Health Information</h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table mb-0">
+                            <tbody>
+                                <tr>
+                                    <td class="fw-medium">Medical History</td>
+                                    <td id="view_medical_history"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-medium">Family History</td>
+                                    <td id="view_family_history"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-medium">Social History</td>
+                                    <td id="view_social_history"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-medium">Allergies</td>
+                                    <td id="view_allergies"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-medium">Medications</td>
+                                    <td id="view_medications"></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_consultation_type">Follow-Up</div>
+                <div class="card mb-2">
+                    <div class="card-header bg-soft-primary text-dark">
+                        <h4 class="mb-0 ">Case Details</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-center mb-4">
+                            <h5 id="control_no" class="fs-4 badge badge-outline-primary fw-bold mb-0"></h5>
+                        </div>
+                        <div class="mt-4 mx-3">
+                            <span class="badge rounded-pill bg-primary fs-12">Consultation Type</span>
+                            <div class="bg-soft-secondary ms-1 text-wrap">
+                                <p id="view_consultation_type" class="p-2 fw-medium"></p>
+                            </div>
+                        </div>
+                        <div class="mt-4 mx-3">
+                            <span class="badge rounded-pill bg-primary fs-12">Consultation Date</span>
+                            <div class="bg-soft-secondary ms-1 text-wrap">
+                                <p id="view_consultation_date" class="p-2 fw-medium"></p>
+                            </div>
+                        </div>
+                        <div class="mt-4 mx-3">
+                            <span class="badge rounded-pill bg-primary fs-12">Consultation Reason</span>
+                            <div class="bg-soft-secondary ms-1 text-wrap">
+                                <p id="view_consultation_reason" class="p-2 fw-medium"></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Reason for consultation</h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_consultation_reason">Anxiety</div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Psychologist</h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_health_physcian">Melanie Bactasa</div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1">Appoinment Date</h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_consultation_date">12-13-2022</div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1">Time</h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_consultation_time">9:00AM - 10:00AM</div>
-                </div>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Status</h5>
-                </div>
-                <div class="col-8" id="view_status"><span class="badge rounded-pill bg-warning"> Pending </span>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-          </ul>
-          <!-- end ul list -->
+            </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-light" data-bs-dismiss="modal">
-          Close
-        </button>
-      </div>
     </div>
-    <!-- /.modal-content -->
-  </div>
-  <!-- /.modal-dialog -->
 </div>
 
-<!-- Counseling Request Status modal -->
-<div id="updateGuidanceAppointmentStatusModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content border-0 overflow-hidden">
-      <div class="modal-content">
-      <form id="updateGuidanceAppointmentStatusForm" class="needs-validation" novalidate>
-      <input type="hidden" id="edit_health_appointment_id" name="edit_health_appointment_id">
-      <div class="modal-header p-3">
-        <h4 class="card-title mb-0">Appoinment Status</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-        <div class="modal-body">
-          <label class='form-label'>Status</label>
-          <span class="text-danger">*</span>
-        <select class="form-select mb-3" id="consultation_status" name="consultation_status" aria-label="Change Status" required>
-          <option selected></option>
-          <option value="Approved">Approved</option>
-          <option value="Cancelled by Staff">Cancelled by Staff</option>
-        </select>
-          <label class='form-label'>Remarks</label>
-          <span class="text-danger">*</span>
-          <input type="text" class="form-control" id="remarks" name="remarks" placeholder="Remarks" required><br>
-          <div class="text-center d-grid">
-            <button type="submit" class="btn btn-primary" aria-label="Confirm">Confirm</button>
+<div class="modal fade" id="approveAppointmentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="approveThisRequest" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center px-4">
+                <lord-icon src="https://cdn.lordicon.com/ivayzoru.json" trigger="loop" colors="outline:#ffffff,primary:#ffffff,secondary:#0ab39c" style="width:100px;height:100px">
+                </lord-icon>
+
+                <div class="mt-4">
+                    <h4 class="mb-3 fw-semibold">Approve this Appointment?</h4>
+                    <p class="text-muted mb-4">If yes, indicate what are the things that the students should do when they visit for the appointment in school.</p>
+                    <form id="approveAppointmentForm" class="needs-validation" novalidate>
+                        <input type="hidden" id="approve_appointment_id">
+                        <input type="hidden" id="approve_consultation_status">
+                        <div class="mt-4">
+                            <label for="remarks" class="h5 form-label">Remarks <span class="text-danger">*</span></label>
+                            <textarea class="form-control mt-2" id="approve_remarks" name="approve_remarks" rows="5" placeholder="As the Staff, be specific and concise with the remarks you'll provide to the student in preparation of the appointment." required></textarea>
+                            <div class="invalid-feedback">
+                                Please indicate your availability at the remarks above.
+                            </div>
+                        </div>
+                        <div class="mt-4 justify-content-center">
+                            <button type="submit" class="w-100 btn btn-success bg-gradient fw-medium waves-effect waves-light">Yes, Approve It!</button>
+                        </div>
+                    </form>
+                    <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
+                </div>
+            </div>
         </div>
-      </form>
-      </div>
     </div>
-    <!-- /.modal-content -->
-  </div>
-  <!-- /.modal-dialog -->
+</div>
+
+<div class="modal fade" id="cancelAppointmentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="cancelThisRequest" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center px-4">
+                <lord-icon src="https://cdn.lordicon.com/nduddlov.json" trigger="loop" colors="outline:#f06548,primary:#ffffff,secondary:#f06548" style="width:100px;height:100px">
+                </lord-icon>
+
+                <div class="mt-4">
+                    <h4 class="mb-3 fw-semibold">Cancel this Appointment?</h4>
+                    <p class="text-muted mb-4">If yes, indicate on the Remarks the reason why you are cancelling this appointment. If not, click the Dismiss button.</p>
+                    <form id="cancelAppointmentForm" class="needs-validation" novalidate>
+                        <input type="hidden" id="cancel_appointment_id">
+                        <input type="hidden" id="cancel_consultation_status">
+                        <div class="mt-4">
+                            <label for="remarks" class="h5 form-label">Remarks <span class="text-danger">*</span></label>
+                            <textarea class="form-control mt-2" id="cancel_remarks" name="cancel_remarks" rows="5" placeholder="Enter the reason why you are cancelling the appointment and the instructions, if any, that the student must comply before appointing for a consultation again." required></textarea>
+                            <div class="invalid-feedback">
+                                Please indicate your reason for cancelling.
+                            </div>
+                        </div>
+                        <div class="mt-4 justify-content-center">
+                            <button type="submit" class="w-100 btn btn-danger bg-gradient fw-medium waves-effect waves-light">Yes, Cancel It!</button>
+                        </div>
+                    </form>
+                    <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="doneAppointmentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="doneThisAppointment" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center px-4">
+                <lord-icon src="https://cdn.lordicon.com/zpxybbhl.json" trigger="loop" delay="1000" colors="primary:#c71f16,secondary:#ffbe00" style="width:180px;height:180px">
+                </lord-icon>
+
+                <div class="mt-4">
+                    <h4 class="mb-3 fw-semibold">Done with this Appointment?</h4>
+                    <p class="text-muted mb-4">If yes, indicate on the Remarks for closing this consultation. Provide any message to the student such as reminders. If not, click the Dismiss button.</p>
+                    <form id="doneAppointmentForm" class="needs-validation" novalidate>
+                        <input type="hidden" id="done_appointment_id">
+                        <input type="hidden" id="done_consultation_status">
+                        <div class="mt-4">
+                            <label for="remarks" class="h5 form-label">Remarks <span class="text-danger">*</span></label>
+                            <textarea class="form-control mt-2" id="done_remarks" name="done_remarks" rows="5" placeholder="Enter the remarks before finishing this consultation appointment." required></textarea>
+                            <div class="invalid-feedback">
+                                Please indicate the reason for closing the appointment.
+                            </div>
+                        </div>
+                        <div class="mt-4 justify-content-center">
+                            <button type="submit" class="w-100 btn btn-primary bg-gradient fw-medium waves-effect waves-light">Finish Up!</button>
+                        </div>
+                    </form>
+                    <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

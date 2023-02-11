@@ -188,10 +188,20 @@ loadApprovedDentalRequestTable = () => {
 					data: null,
 					class: 'text-center',
 					render: (data) => {
+						const today = new Date()
+						const consultationDate = new Date(data.consultation_date)
+						let showDoneButton = ''
+						if (today >= consultationDate) {
+							// the button should be displayed
+							showDoneButton = `<button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#doneAppointmentModal" onclick="doneAppointment('${data.health_appointment_id}')">
+                            <i class="ri-calendar-check-fill fs-5 fw-bold"></i>
+                            </button>`
+						}
 						return `
-                        <div class="dropdown d-inline-block">
-                        <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewDentalDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewDentalModal"><i class="ri-eye-fill fs-5"></i></button>
-                        `
+                            <div class="dropdown d-inline-block">
+                                <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewMedicalDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill fs-5"></i></button>
+                                ${showDoneButton}
+                            </div>`
 					},
 				},
 			],
