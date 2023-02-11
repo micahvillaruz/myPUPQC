@@ -131,7 +131,7 @@
                                     <th>Control Number</th>
                                     <th>Student</th>
                                     <th>Date Filed</th>
-                                    <th>Document/s Requested</th>
+                                    <th>Document/s for Approval</th>
                                     <th>Details</th>
                                     <th>Action</th>
                                 </tr>
@@ -341,7 +341,7 @@
                                 <tr>
                                     <th>Control Number</th>
                                     <th>Student</th>
-                                    <th>Document/s Requested</th>
+                                    <th>Document/s Approved</th>
                                     <th>Details</th>
                                     <th>Request Status</th>
                                     <th>Date Approved</th>
@@ -536,7 +536,7 @@
                                     <th>Control Number</th>
                                     <th>Student</th>
                                     <th>Date Filed</th>
-                                    <th>Document/s Requested</th>
+                                    <th>Document/s On Hold</th>
                                     <th>Details</th>
                                     <th>Date On Hold</th>
                                     <th>Action</th>
