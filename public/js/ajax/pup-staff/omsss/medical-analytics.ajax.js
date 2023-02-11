@@ -1,19 +1,13 @@
 $(function () {
-	loadMedicalAnalyticsTable()
+	loadMedicalDoneTable()
+	loadMedicalCancelledStaffTable()
+	loadMedicalCancelledStudentTable()
 	getMedicalAnalytics()
 })
 
 // Load datatables
-loadMedicalAnalyticsTable = () => {
-	const dt = $('#medical-analytics-datatable')
-
-	$.ajaxSetup({
-		headers: {
-			Accept: 'application/json',
-			Authorization: 'Bearer ' + TOKEN,
-			ContentType: 'application/x-www-form-urlencoded',
-		},
-	})
+loadMedicalDoneTable = () => {
+	const dt = $('#done_appointments_table')
 
 	if (dt.length) {
 		dt.DataTable({
@@ -21,7 +15,13 @@ loadMedicalAnalyticsTable = () => {
 			ajax: {
 				url: apiURL + 'omsss/pup_staff/view_appointment_analytics/Medical',
 				type: 'GET',
-				// ContentType: 'application/x-www-form-urlencoded',
+				headers: AJAX_HEADERS,
+				dataSrc: (data) => {
+					let filterData = data.data.filter((item) => {
+						return item.consultation_status == 'Done'
+					})
+					return filterData
+				},
 			},
 			columns: [
 				// Case Control No.
@@ -50,17 +50,7 @@ loadMedicalAnalyticsTable = () => {
 					data: null,
 					render: (data) => {
 						const consultation_status = data.consultation_status
-						if (consultation_status == 'Pending') {
-							return `<span class="badge rounded-pill bg-warning">Pending</span>`
-						} else if (consultation_status == 'Approved') {
-							return `<span class="badge rounded-pill bg-success">Approved</span>`
-						} else if (consultation_status == 'Cancelled by Staff') {
-							return `<span class="badge rounded-pill bg-info">Cancelled by Staff</span>`
-						} else if (consultation_status == 'Cancelled by Student') {
-							return `<span class="badge rounded-pill bg-info">Cancelled by Student</span>`
-						} else if (consultation_status == 'Done') {
-							return `<span class="badge rounded-pill bg-success">Done</span>`
-						}
+						return `<span class="badge rounded-pill bg-success">${consultation_status}</span>`
 					},
 				},
 
@@ -82,6 +72,154 @@ loadMedicalAnalyticsTable = () => {
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewMedicalDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill fs-5"></i></button>
 				        </div>`
+					},
+				},
+			],
+			order: [[0, 'asc']],
+		})
+	}
+}
+
+loadMedicalCancelledStaffTable = () => {
+	const dt = $('#cancelled_staff_appointments_table')
+
+	if (dt.length) {
+		dt.DataTable({
+			bDestroy: true,
+			ajax: {
+				url: apiURL + 'omsss/pup_staff/view_appointment_analytics/Medical',
+				type: 'GET',
+				headers: AJAX_HEADERS,
+				dataSrc: (data) => {
+					let filterData = data.data.filter((item) => {
+						return item.consultation_status == 'Cancelled by Staff'
+					})
+					return filterData
+				},
+			},
+			columns: [
+				// Case Control No.
+				{
+					data: null,
+					render: (data) => {
+						const caseNo = data.case_control_number
+						return `${caseNo}`
+					},
+				},
+
+				// Student
+				{
+					data: null,
+					render: (data) => {
+						if (data.health_appointment_assigned_to_user) {
+							const studentName =
+								data.health_appointment_assigned_to_user.user_profiles[0].full_name
+							return `${studentName}`
+						}
+					},
+				},
+
+				// Status
+				{
+					data: null,
+					render: (data) => {
+						const consultation_status = data.consultation_status
+						return `<span class="badge rounded-pill bg-danger">${consultation_status}</span>`
+					},
+				},
+
+				// Schedule
+				{
+					data: null,
+					render: (data) => {
+						const consultation_date = moment(data.consultation_date).format('LL')
+						return `${consultation_date}`
+					},
+				},
+
+				//Action
+				{
+					data: null,
+					class: 'text-center',
+					render: (data) => {
+						return `
+                        <div class="dropdown d-inline-block">
+                            <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewMedicalDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill fs-5"></i></button>
+                        </div>`
+					},
+				},
+			],
+			order: [[0, 'asc']],
+		})
+	}
+}
+
+loadMedicalCancelledStudentTable = () => {
+	const dt = $('#cancelled_student_appointments_table')
+
+	if (dt.length) {
+		dt.DataTable({
+			bDestroy: true,
+			ajax: {
+				url: apiURL + 'omsss/pup_staff/view_appointment_analytics/Medical',
+				type: 'GET',
+				headers: AJAX_HEADERS,
+				dataSrc: (data) => {
+					let filterData = data.data.filter((item) => {
+						return item.consultation_status == 'Cancelled by Student'
+					})
+					return filterData
+				},
+			},
+			columns: [
+				// Case Control No.
+				{
+					data: null,
+					render: (data) => {
+						const caseNo = data.case_control_number
+						return `${caseNo}`
+					},
+				},
+
+				// Student
+				{
+					data: null,
+					render: (data) => {
+						if (data.health_appointment_assigned_to_user) {
+							const studentName =
+								data.health_appointment_assigned_to_user.user_profiles[0].full_name
+							return `${studentName}`
+						}
+					},
+				},
+
+				// Status
+				{
+					data: null,
+					render: (data) => {
+						const consultation_status = data.consultation_status
+						return `<span class="badge rounded-pill bg-danger">${consultation_status}</span>`
+					},
+				},
+
+				// Schedule
+				{
+					data: null,
+					render: (data) => {
+						const consultation_date = moment(data.consultation_date).format('LL')
+						return `${consultation_date}`
+					},
+				},
+
+				//Action
+				{
+					data: null,
+					class: 'text-center',
+					render: (data) => {
+						return `
+                        <div class="dropdown d-inline-block">
+                            <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewMedicalDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewMedicalModal"><i class="ri-eye-fill fs-5"></i></button>
+                        </div>`
 					},
 				},
 			],
@@ -215,6 +353,8 @@ viewMedicalDetails = (health_appointment_id) => {
 							? `<span class="badge bg-info">Alcoholic</span>`
 							: `<span class="badge bg-danger">Non Alcoholic</span>`
 						$('#view_social_history').html(`${smoker} ${alcoholic}`)
+					} else {
+						$('#view_social_history').html(`<span class="badge bg-danger">No Data</span>`)
 					}
 				},
 			})
@@ -228,22 +368,24 @@ viewMedicalDetails = (health_appointment_id) => {
 				headers: AJAX_HEADERS,
 				success: (result) => {
 					const data = result.data
-					const guardian_name = data.emergency_contact_name
-					const guardian_contact_number = data.emergency_contact_number
+					const guardian_name =
+						data.emergency_contact_name ?? `<span class="badge bg-danger">No Data</span>`
+					const guardian_contact_number =
+						data.emergency_contact_number ?? `<span class="badge bg-danger">No Data</span>`
 					const guardian_address =
-						data.emergency_contact_address == null ? 'No Data' : data.emergency_contact_address
-					const guardian_email = data.emergency_contact_email
-					const philhealth_id_image = data.philhealth_id_image
-					let button_philhealth =
-						philhealth_id_image != null
-							? `<a href="${philhealth_id_image}" target="_blank" class="btn btn-primary btn-sm">View PhilHealth ID</a>`
-							: 'No Data'
+						data.emergency_contact_address ?? `<span class="badge bg-danger">No Data</span>`
+					const guardian_email =
+						data.emergency_contact_email ?? `<span class="badge bg-danger">No Data</span>`
+					const philhealth_id_image =
+						data.philhealth_id_image != null
+							? `<a href="${data.philhealth_id_image}" target="_blank" class="btn btn-primary btn-sm">View PhilHealth ID</a>`
+							: `<span class="badge bg-danger">No Data</span>`
 
 					$('#view_guardian_name').html(guardian_name)
 					$('#view_guardian_number').html(guardian_contact_number)
 					$('#view_guardian_address').html(guardian_address)
 					$('#view_guardian_email').html(guardian_email)
-					$('#view_philhealth_id').html(button_philhealth)
+					$('#view_philhealth_id').html(philhealth_id_image)
 				},
 			})
 			// % =================================
@@ -261,7 +403,7 @@ viewMedicalDetails = (health_appointment_id) => {
 					let button_vaccination =
 						vaccination_card != null
 							? `<a href="${vaccination_card}" target="_blank" class="btn btn-primary btn-sm">View Vaccination Card</a>`
-							: 'No Data'
+							: `<span class="badge bg-danger">No Data</span>`
 
 					$('#view_vaccination_card').html(button_vaccination)
 				},
