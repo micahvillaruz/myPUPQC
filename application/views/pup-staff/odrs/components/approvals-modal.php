@@ -1262,3 +1262,218 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="approveRequestModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="approveRequest" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center px-4">
+                <lord-icon src="https://cdn.lordicon.com/ncouatyu.json" trigger="loop" colors="primary:#000000,secondary:#fad3d1" style="width:130px;height:130px">
+                </lord-icon>
+
+                <div class="mt-2">
+                    <h4 class="mb-3 fw-semibold">Approve Document/s?</h4>
+                    <p class="text-muted mb-4">This request contains the following document/s requiring your approval. Select the document/s you wish to approve and click the Approve button. Otherwise, click the Dismiss button.</p>
+                    <div class="vstack gap-2 mb-4">
+                        <div class="form-check card-radio shadow bg-opacity-10" style="background-color: rgba(75,56,179,.18)!important">
+                            <input id="documentApprove" name="documentApprove" type="checkbox" class="form-check-input">
+                            <label class="form-check-label" for="documentApprove" style="background-color: #fff5da">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0">
+                                        <div class="avatar-xs">
+                                            <div class="avatar-title bg-primary text-white fs-18 rounded">
+                                                <i class="ri-file-text-line"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h6 class="mb-1 fw-semibold">Informative Copy of Grades</h6>
+                                        <p class="text-muted mb-0">Type: Certifications</p>
+                                    </div>
+                                    <div class="flex-shrink-0 align-self-center">
+                                        <span class="badge bg-dark"></i>QTY: 2<span>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="text-start card mt-3 card-height-100 border shadow">
+                        <div class="card-body p-0">
+                            <div class="alert alert-danger border-0 rounded-top alert-solid alert-label-icon rounded-0 m-0 d-flex align-items-center" style="background-color: #4b38b3!important" role="alert">
+                                <i class="mdi mdi-file-sign label-icon"></i>
+                                <div class="flex-grow-1 text-truncate">
+                                    Signatories in this approval workflow
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <div class="acitivity-timeline acitivity-main">
+                                    <div class="acitivity-item d-flex">
+                                        <div class="flex-shrink-0">
+                                            <img src="<?= base_url() ?>public/images/officials/img-6.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h6 class="mb-1">Cleotilde B. Servigon</h6>
+                                            <p class="text-muted mb-1">Registrar</p>
+                                            <span class="mb-4 badge badge-soft-info text-uppercase">Ongoing</span>
+                                        </div>
+                                    </div>
+                                    <div class="acitivity-item d-flex">
+                                        <div class="flex-shrink-0">
+                                            <img src="<?= base_url() ?>public/images/officials/img-1.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h6 class="mb-1">Assoc. Prof. Jaime P. Gutierrez Jr.</h6>
+                                            <p class="text-muted mb-1">Director</p>
+                                            <span class="badge badge-soft-warning text-uppercase">Pending</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- end card body -->
+                    </div><!-- end card -->
+
+                    <form id="approveRequestForm" class="needs-validation" novalidate>
+                        <input type="hidden" id="approve_request_id">
+                        <div class="mt-4">
+                            <label for="remarks" class="h5 form-label">Remarks</label><small class="ms-1">(optional)</small>
+                            <textarea class="form-control mt-2" id="remarks" name="remarks" rows="5" placeholder="If you have additional remarks for the OIC, Student Records, feel free to indicate it here. You can also state here any comments you have regarding the selected documents for approval."></textarea>
+                        </div>
+                        <div class="mt-4 justify-content-center">
+                            <button type="submit" class="w-100 btn btn-success bg-gradient fw-medium waves-effect waves-light">Yes, Approve It!</button>
+                        </div>
+                    </form>
+                    <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="onHoldRequestModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="holdRequest" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center px-4">
+                <lord-icon src="https://cdn.lordicon.com/wwneckwc.json" trigger="loop" style="width:130px;height:130px">
+                </lord-icon>
+
+                <div class="mt-2">
+                    <h4 class="mb-3 fw-semibold">Hold Document/s?</h4>
+                    <p class="text-muted mb-4">This request contains document/s requiring your approval. Select the document/s you wish to hold and state on the remarks the reason for holding the document/s. Otherwise, click the Dismiss button.</p>
+                    <div class="vstack gap-2 mb-4">
+                        <div class="form-check card-radio shadow bg-opacity-10" style="background-color: rgba(75,56,179,.18)!important">
+                            <input id="documentOnHold" name="documentOnHold" type="checkbox" class="form-check-input">
+                            <label class="form-check-label" for="documentOnHold" style="background-color: #fff5da">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0">
+                                        <div class="avatar-xs">
+                                            <div class="avatar-title bg-primary text-white fs-18 rounded">
+                                                <i class="ri-file-text-line"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h6 class="mb-1 fw-semibold">Informative Copy of Grades</h6>
+                                        <p class="text-muted mb-0">Type: Certifications</p>
+                                    </div>
+                                    <div class="flex-shrink-0 align-self-center">
+                                        <span class="badge bg-dark"></i>QTY: 2<span>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="text-start card mt-3 card-height-100 border shadow">
+                        <div class="card-body p-0">
+                            <div class="alert alert-danger border-0 rounded-top alert-solid alert-label-icon rounded-0 m-0 d-flex align-items-center" style="background-color: #4b38b3!important" role="alert">
+                                <i class="mdi mdi-file-sign label-icon"></i>
+                                <div class="flex-grow-1 text-truncate">
+                                    Signatories in this approval workflow
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <div class="acitivity-timeline acitivity-main">
+                                    <div class="acitivity-item d-flex">
+                                        <div class="flex-shrink-0">
+                                            <img src="<?= base_url() ?>public/images/officials/img-6.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h6 class="mb-1">Cleotilde B. Servigon</h6>
+                                            <p class="text-muted mb-1">Registrar</p>
+                                            <span class="mb-4 badge badge-soft-info text-uppercase">Ongoing</span>
+                                        </div>
+                                    </div>
+                                    <div class="acitivity-item d-flex">
+                                        <div class="flex-shrink-0">
+                                            <img src="<?= base_url() ?>public/images/officials/img-1.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h6 class="mb-1">Assoc. Prof. Jaime P. Gutierrez Jr.</h6>
+                                            <p class="text-muted mb-1">Director</p>
+                                            <span class="badge badge-soft-warning text-uppercase">Pending</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- end card body -->
+                    </div><!-- end card -->
+
+                    <form id="holdRequestForm" class="needs-validation" novalidate>
+                        <input type="hidden" id="hold_request_id">
+                        <div class="mt-4">
+                            <label for="remarks" class="h5 form-label">Remarks <span class="text-danger">*</span></label>
+                            <textarea class="form-control mt-2" id="remarks" name="remarks" rows="5" placeholder="Enter the reason why you are holding the processing of the selected document/s and the instructions which the OIC, Student Records must comply with for its evaluation to proceed." required></textarea>
+                            <div class="invalid-feedback">
+                                Please indicate your reason for holding the selected document/s.
+                            </div>
+                        </div>
+                        <div class="mt-4 justify-content-center">
+                            <button type="submit" class="w-100 btn btn-danger bg-gradient fw-medium waves-effect waves-light">Yes, Hold it!</button>
+                        </div>
+                    </form>
+                    <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="revertModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="revertRequest" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center px-4">
+                <lord-icon src="https://cdn.lordicon.com/avdqoblt.json" trigger="loop" style="width:100px;height:100px">
+                </lord-icon>
+
+                <div class="mt-4">
+                    <h4 class="mb-3 fw-semibold">Is the Remarks already Resolved?</h4>
+                    <p class="text-muted mb-4">If yes, tick the checkbox and click the Yes, It is! button. The On Hold Document/s will be subjected again for your approval and moved on the "Requests for Approval" tab. Otherwise, click the Dismiss button.</p>
+                    <!-- Warning Alert -->
+                    <div class="alert alert-warning alert-border-left alert-dismissible fade show" style="padding-right: 16px;" role="alert">
+                        <div class="mb-2 d-flex align-items-center justify-content-center">
+                            <i class="ri-alert-line me-2 align-middle fs-6"></i> <strong>WARNING</strong>
+                        </div>
+                        <span>Please make sure that the OIC, Student Records has complied with all the <span class="fw-medium">REMARKS</span> indicated especifically for the <span class="fw-medium">ON HOLD DOCUMENT/S</span> before you set its status back to For Approval.</span>
+                    </div>
+
+                    <form id="revertRequestForm" class="needs-validation" novalidate>
+                        <input type="hidden" id="revertt_request_id">
+                        <div class="mt-4 form-check form-check-success mb-3">
+                            <input class="form-check-input" type="checkbox" id="validateRevert" required>
+                            <label class="form-check-label" for="validateRelease">
+                                I hereby certify that the remarks I stated for holding the document/s has been followed by the OIC, Student Records.
+                            </label>
+                            <div class="invalid-feedback">
+                                You must agree that the OIC, Student Records complied with the remarks for the processing of the On Hold Document/s.
+                            </div>
+                        </div>
+                        <div class="mt-4 justify-content-center">
+                            <button type="submit" class="w-100 btn btn-success bg-gradient fw-medium waves-effect waves-light">Yes, It is!</button>
+                        </div>
+                    </form>
+                    <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
