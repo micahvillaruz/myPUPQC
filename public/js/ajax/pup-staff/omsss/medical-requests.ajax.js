@@ -34,10 +34,10 @@ $(function () {
 		let done_consultation_status = $('#done_consultation_status').val()
 		let done_remarks = $('#done_remarks').val()
 
-		console.log(done_appointment_id, done_consultation_status, done_remarks)
+		// console.log(done_appointment_id, done_consultation_status, done_remarks)
 
 		// you can now use these values for further processing
-		//editAppointmentStatus(done_appointment_id, done_consultation_status, done_remarks)
+		editAppointmentStatus(done_appointment_id, done_consultation_status, done_remarks)
 	})
 })
 
