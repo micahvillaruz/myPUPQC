@@ -1295,72 +1295,150 @@
                 <div class="mt-2">
                     <h4 class="mb-3 fw-semibold">Approve Document/s?</h4>
                     <p class="text-muted mb-4">This request contains the following document/s requiring your approval. Select the document/s you wish to approve and click the Approve button. Otherwise, click the Dismiss button.</p>
-                    <div class="vstack gap-2 mb-4">
-                        <div class="form-check card-radio shadow bg-opacity-10" style="background-color: rgba(75,56,179,.18)!important">
-                            <input id="documentApprove" name="documentApprove" type="checkbox" class="form-check-input">
-                            <label class="form-check-label" for="documentApprove" style="background-color: #fff5da">
-                                <div class="d-flex align-items-center">
-                                    <div class="flex-shrink-0">
-                                        <div class="avatar-xs">
-                                            <div class="avatar-title bg-primary text-white fs-18 rounded">
-                                                <i class="ri-file-text-line"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex-grow-1 ms-3">
-                                        <h6 class="mb-1 fw-semibold">Informative Copy of Grades</h6>
-                                        <p class="text-muted mb-0">Type: Certifications</p>
-                                    </div>
-                                    <div class="flex-shrink-0 align-self-center">
-                                        <span class="badge bg-dark"></i>QTY: 2<span>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="text-start card mt-3 card-height-100 border shadow">
-                        <div class="card-body p-0">
-                            <div class="alert alert-danger border-0 rounded-top alert-solid alert-label-icon rounded-0 m-0 d-flex align-items-center" style="background-color: #4b38b3!important" role="alert">
-                                <i class="mdi mdi-file-sign label-icon"></i>
-                                <div class="flex-grow-1 text-truncate">
-                                    Signatories in this approval workflow
-                                </div>
-                            </div>
-                            <div class="p-3">
-                                <div class="acitivity-timeline acitivity-main">
-                                    <div class="acitivity-item d-flex">
-                                        <div class="flex-shrink-0">
-                                            <img src="<?= base_url() ?>public/images/officials/img-6.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <h6 class="mb-1">Cleotilde B. Servigon</h6>
-                                            <p class="text-muted mb-1">Registrar</p>
-                                            <span class="mb-4 badge badge-soft-info text-uppercase">Ongoing</span>
-                                        </div>
-                                    </div>
-                                    <div class="acitivity-item d-flex">
-                                        <div class="flex-shrink-0">
-                                            <img src="<?= base_url() ?>public/images/officials/img-1.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <h6 class="mb-1">Assoc. Prof. Jaime P. Gutierrez Jr.</h6>
-                                            <p class="text-muted mb-1">Director</p>
-                                            <span class="badge badge-soft-warning text-uppercase">Pending</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- end card body -->
-                    </div><!-- end card -->
 
                     <form id="approveRequestForm" class="needs-validation" novalidate>
                         <input type="hidden" id="approve_request_id">
-                        <div class="mt-4">
-                            <label for="remarks" class="h5 form-label">Remarks</label><small class="ms-1">(optional)</small>
-                            <textarea class="form-control mt-2" id="remarks" name="remarks" rows="5" placeholder="If you have additional remarks for the OIC, Student Records, feel free to indicate it here. You can also state here any comments you have regarding the selected documents for approval."></textarea>
+                        <div class="vstack gap-2 mb-4">
+                            <div class="form-check card-checkbox shadow">
+                                <input id="approveDocument1" name="approveDocument1" type="checkbox" class="form-check-input" data-bs-toggle="collapse" data-bs-target="#showApproveRemarksDoc1" aria-expanded="false" aria-controls="showApproveRemarksDoc1">
+                                <label class="form-check-label" for="approveDocument1" style="background-color: #fff5da">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0">
+                                            <div class="avatar-xs">
+                                                <div class="avatar-title bg-primary text-white fs-18 rounded">
+                                                    <i class="ri-file-text-line"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h6 class="mb-1 fw-semibold">Informative Copy of Grades</h6>
+                                            <p class="text-muted mb-0">Type: Certifications</p>
+                                        </div>
+                                        <div class="flex-shrink-0 align-self-center">
+                                            <span class="badge bg-dark"></i>QTY: 2<span>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
                         </div>
-                        <div class="mt-4 justify-content-center">
+
+                        <div class="text-start card mt-3 card-height-100 border shadow">
+                            <div class="card-body p-0">
+                                <div class="alert alert-danger border-0 rounded-top alert-solid alert-label-icon rounded-0 m-0 d-flex align-items-center" style="background-color: #4b38b3!important" role="alert">
+                                    <i class="mdi mdi-file-sign label-icon"></i>
+                                    <div class="flex-grow-1 text-truncate">
+                                        Signatories in this approval workflow
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="acitivity-timeline acitivity-main">
+                                        <div class="acitivity-item d-flex">
+                                            <div class="flex-shrink-0">
+                                                <img src="<?= base_url() ?>public/images/officials/img-6.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h6 class="mb-1">Cleotilde B. Servigon</h6>
+                                                <p class="text-muted mb-1">Registrar</p>
+                                                <span class="mb-4 badge badge-soft-info text-uppercase">Ongoing</span>
+                                            </div>
+                                        </div>
+                                        <div class="acitivity-item d-flex">
+                                            <div class="flex-shrink-0">
+                                                <img src="<?= base_url() ?>public/images/officials/img-1.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h6 class="mb-1">Assoc. Prof. Jaime P. Gutierrez Jr.</h6>
+                                                <p class="text-muted mb-1">Director</p>
+                                                <span class="badge badge-soft-warning text-uppercase">Pending</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end card body -->
+                        </div><!-- end card -->
+                        <div class="my-4 collapse" id="showApproveRemarksDoc1">
+                            <label for="remarks" class="h5 form-label">Remarks for Informative Copy of Grades</label>
+                            <textarea class="form-control mt-2" id="remarks" name="remarks" rows="5" placeholder="If you have additional remarks for the OIC, Student Records regarding this document, feel free to indicate it here. You can also set this document for approval with changes by indicating what needs to be revised here."></textarea>
+                        </div>
+
+                        <div class="vstack gap-2 mb-4">
+                            <div class="form-check card-checkbox shadow">
+                                <input id="approveDocument2" name="approveDocument2" type="checkbox" class="form-check-input">
+                                <label class="form-check-label" for="approveDocument2" style="background-color: #fff5da" data-bs-toggle="collapse" data-bs-target="#showApproveRemarksDoc2" aria-expanded="false" aria-controls="showApproveRemarksDoc2">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0">
+                                            <div class="avatar-xs">
+                                                <div class="avatar-title bg-primary text-white fs-18 rounded">
+                                                    <i class="ri-file-text-line"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h6 class="mb-1 fw-semibold">Certificate of Good Moral Character</h6>
+                                            <p class="text-muted mb-0">Type: Certifications</p>
+                                        </div>
+                                        <div class="flex-shrink-0 align-self-center">
+                                            <span class="badge bg-dark"></i>QTY: 1<span>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="text-start card mt-3 card-height-100 border shadow">
+                            <div class="card-body p-0">
+                                <div class="alert alert-danger border-0 rounded-top alert-solid alert-label-icon rounded-0 m-0 d-flex align-items-center" style="background-color: #4b38b3!important" role="alert">
+                                    <i class="mdi mdi-file-sign label-icon"></i>
+                                    <div class="flex-grow-1 text-truncate">
+                                        Signatories in this approval workflow
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="acitivity-timeline acitivity-main">
+                                        <div class="acitivity-item d-flex">
+                                            <div class="flex-shrink-0">
+                                                <img src="<?= base_url() ?>public/images/officials/img-2.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                                            </div>
+                                            <div class="flex-grow-1 ms-3 mb-4">
+                                                <h6 class="mb-1">Demelyn E. Monzon</h6>
+                                                <p class="text-muted mb-1">Head, Academic Programs</p>
+                                                <span class="badge badge-soft-success text-uppercase">Approved</span><br>
+                                                <div class="d-flex align-items-center text-muted mt-1 gap-2">
+                                                    <i class="ri-calendar-todo-fill text-primary"></i>
+                                                    <small> 29 Nov. 2022, 07:45 AM</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="acitivity-item d-flex">
+                                            <div class="flex-shrink-0">
+                                                <img src="<?= base_url() ?>public/images/officials/img-6.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h6 class="mb-1">Cleotilde B. Servigon</h6>
+                                                <p class="text-muted mb-1">Registrar</p>
+                                                <span class="mb-4 badge badge-soft-info text-uppercase">Ongoing</span>
+                                            </div>
+                                        </div>
+                                        <div class="acitivity-item d-flex">
+                                            <div class="flex-shrink-0">
+                                                <img src="<?= base_url() ?>public/images/officials/img-1.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h6 class="mb-1">Assoc. Prof. Jaime P. Gutierrez Jr.</h6>
+                                                <p class="text-muted mb-1">Director</p>
+                                                <span class="badge badge-soft-warning text-uppercase">Pending</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end card body -->
+                        </div><!-- end card -->
+                        <div class="my-4 collapse" id="showApproveRemarksDoc2">
+                            <label for="remarks" class="h5 form-label">Remarks for Certificate of Good Moral Character</label>
+                            <textarea class="form-control mt-2" id="remarks" name="remarks" rows="5" placeholder="If you have additional remarks for the OIC, Student Records regarding this document, feel free to indicate it here. You can also set this document for approval with changes by indicating what needs to be revised here."></textarea>
+                        </div>
+
+                        <div class="justify-content-center">
                             <button type="submit" class="w-100 btn btn-success bg-gradient fw-medium waves-effect waves-light">Yes, Approve It!</button>
                         </div>
                     </form>
@@ -1381,76 +1459,157 @@
                 <div class="mt-2">
                     <h4 class="mb-3 fw-semibold">Hold Document/s?</h4>
                     <p class="text-muted mb-4">This request contains document/s requiring your approval. Select the document/s you wish to hold and state on the remarks the reason for holding the document/s. Otherwise, click the Dismiss button.</p>
-                    <div class="vstack gap-2 mb-4">
-                        <div class="form-check card-radio shadow bg-opacity-10" style="background-color: rgba(75,56,179,.18)!important">
-                            <input id="documentOnHold" name="documentOnHold" type="checkbox" class="form-check-input">
-                            <label class="form-check-label" for="documentOnHold" style="background-color: #fff5da">
-                                <div class="d-flex align-items-center">
-                                    <div class="flex-shrink-0">
-                                        <div class="avatar-xs">
-                                            <div class="avatar-title bg-primary text-white fs-18 rounded">
-                                                <i class="ri-file-text-line"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex-grow-1 ms-3">
-                                        <h6 class="mb-1 fw-semibold">Informative Copy of Grades</h6>
-                                        <p class="text-muted mb-0">Type: Certifications</p>
-                                    </div>
-                                    <div class="flex-shrink-0 align-self-center">
-                                        <span class="badge bg-dark"></i>QTY: 2<span>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="text-start card mt-3 card-height-100 border shadow">
-                        <div class="card-body p-0">
-                            <div class="alert alert-danger border-0 rounded-top alert-solid alert-label-icon rounded-0 m-0 d-flex align-items-center" style="background-color: #4b38b3!important" role="alert">
-                                <i class="mdi mdi-file-sign label-icon"></i>
-                                <div class="flex-grow-1 text-truncate">
-                                    Signatories in this approval workflow
-                                </div>
-                            </div>
-                            <div class="p-3">
-                                <div class="acitivity-timeline acitivity-main">
-                                    <div class="acitivity-item d-flex">
-                                        <div class="flex-shrink-0">
-                                            <img src="<?= base_url() ?>public/images/officials/img-6.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <h6 class="mb-1">Cleotilde B. Servigon</h6>
-                                            <p class="text-muted mb-1">Registrar</p>
-                                            <span class="mb-4 badge badge-soft-info text-uppercase">Ongoing</span>
-                                        </div>
-                                    </div>
-                                    <div class="acitivity-item d-flex">
-                                        <div class="flex-shrink-0">
-                                            <img src="<?= base_url() ?>public/images/officials/img-1.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <h6 class="mb-1">Assoc. Prof. Jaime P. Gutierrez Jr.</h6>
-                                            <p class="text-muted mb-1">Director</p>
-                                            <span class="badge badge-soft-warning text-uppercase">Pending</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- end card body -->
-                    </div><!-- end card -->
 
                     <form id="holdRequestForm" class="needs-validation" novalidate>
                         <input type="hidden" id="hold_request_id">
-                        <div class="mt-4">
-                            <label for="remarks" class="h5 form-label">Remarks <span class="text-danger">*</span></label>
-                            <textarea class="form-control mt-2" id="remarks" name="remarks" rows="5" placeholder="Enter the reason why you are holding the processing of the selected document/s and the instructions which the OIC, Student Records must comply for the evaluation to proceed." required></textarea>
-                            <div class="invalid-feedback">
-                                Please indicate your reason for holding the selected document/s.
+                        <div class="vstack gap-2 mb-4">
+                            <div class="form-check card-checkbox shadow">
+                                <input id="holdDocument1" name="holdDocument1" type="checkbox" class="form-check-input" data-bs-toggle="collapse" data-bs-target="#showHoldRemarksDoc1" aria-expanded="false" aria-controls="showHoldRemarksDoc1">
+                                <label class="form-check-label" for="holdDocument1" style="background-color: #fff5da">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0">
+                                            <div class="avatar-xs">
+                                                <div class="avatar-title bg-primary text-white fs-18 rounded">
+                                                    <i class="ri-file-text-line"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h6 class="mb-1 fw-semibold">Informative Copy of Grades</h6>
+                                            <p class="text-muted mb-0">Type: Certifications</p>
+                                        </div>
+                                        <div class="flex-shrink-0 align-self-center">
+                                            <span class="badge bg-dark"></i>QTY: 2<span>
+                                        </div>
+                                    </div>
+                                </label>
                             </div>
                         </div>
-                        <div class="mt-4 justify-content-center">
-                            <button type="submit" class="w-100 btn btn-danger bg-gradient fw-medium waves-effect waves-light">Yes, Hold it!</button>
+
+                        <div class="text-start card mt-3 card-height-100 border shadow">
+                            <div class="card-body p-0">
+                                <div class="alert alert-danger border-0 rounded-top alert-solid alert-label-icon rounded-0 m-0 d-flex align-items-center" style="background-color: #4b38b3!important" role="alert">
+                                    <i class="mdi mdi-file-sign label-icon"></i>
+                                    <div class="flex-grow-1 text-truncate">
+                                        Signatories in this approval workflow
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="acitivity-timeline acitivity-main">
+                                        <div class="acitivity-item d-flex">
+                                            <div class="flex-shrink-0">
+                                                <img src="<?= base_url() ?>public/images/officials/img-6.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h6 class="mb-1">Cleotilde B. Servigon</h6>
+                                                <p class="text-muted mb-1">Registrar</p>
+                                                <span class="mb-4 badge badge-soft-info text-uppercase">Ongoing</span>
+                                            </div>
+                                        </div>
+                                        <div class="acitivity-item d-flex">
+                                            <div class="flex-shrink-0">
+                                                <img src="<?= base_url() ?>public/images/officials/img-1.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h6 class="mb-1">Assoc. Prof. Jaime P. Gutierrez Jr.</h6>
+                                                <p class="text-muted mb-1">Director</p>
+                                                <span class="badge badge-soft-warning text-uppercase">Pending</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end card body -->
+                        </div><!-- end card -->
+                        <div class="my-4 collapse" id="showHoldRemarksDoc1">
+                            <label for="remarks" class="h5 form-label">Remarks for Informative Copy of Grades <span class="text-danger">*</span></label>
+                            <textarea class="form-control mt-2" id="remarks" name="remarks" rows="5" placeholder="Enter the reason why you are holding the processing of the selected document and the instructions which the OIC, Student Records must comply for the evaluation to proceed." required></textarea>
+                            <div class="invalid-feedback">
+                                Please indicate your reason for holding the selected document.
+                            </div>
+                        </div>
+
+                        <div class="vstack gap-2 mb-4">
+                            <div class="form-check card-checkbox shadow">
+                                <input id="holdDocument2" name="holdDocument2" type="checkbox" class="form-check-input">
+                                <label class="form-check-label" for="holdDocument2" style="background-color: #fff5da" data-bs-toggle="collapse" data-bs-target="#showHoldRemarksDoc2" aria-expanded="false" aria-controls="showHoldRemarksDoc2">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0">
+                                            <div class="avatar-xs">
+                                                <div class="avatar-title bg-primary text-white fs-18 rounded">
+                                                    <i class="ri-file-text-line"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h6 class="mb-1 fw-semibold">Certificate of Good Moral Character</h6>
+                                            <p class="text-muted mb-0">Type: Certifications</p>
+                                        </div>
+                                        <div class="flex-shrink-0 align-self-center">
+                                            <span class="badge bg-dark"></i>QTY: 1<span>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="text-start card mt-3 card-height-100 border shadow">
+                            <div class="card-body p-0">
+                                <div class="alert alert-danger border-0 rounded-top alert-solid alert-label-icon rounded-0 m-0 d-flex align-items-center" style="background-color: #4b38b3!important" role="alert">
+                                    <i class="mdi mdi-file-sign label-icon"></i>
+                                    <div class="flex-grow-1 text-truncate">
+                                        Signatories in this approval workflow
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="acitivity-timeline acitivity-main">
+                                        <div class="acitivity-item d-flex">
+                                            <div class="flex-shrink-0">
+                                                <img src="<?= base_url() ?>public/images/officials/img-2.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                                            </div>
+                                            <div class="flex-grow-1 ms-3 mb-4">
+                                                <h6 class="mb-1">Demelyn E. Monzon</h6>
+                                                <p class="text-muted mb-1">Head, Academic Programs</p>
+                                                <span class="badge badge-soft-success text-uppercase">Approved</span><br>
+                                                <div class="d-flex align-items-center text-muted mt-1 gap-2">
+                                                    <i class="ri-calendar-todo-fill text-primary"></i>
+                                                    <small> 29 Nov. 2022, 07:45 AM</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="acitivity-item d-flex">
+                                            <div class="flex-shrink-0">
+                                                <img src="<?= base_url() ?>public/images/officials/img-6.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h6 class="mb-1">Cleotilde B. Servigon</h6>
+                                                <p class="text-muted mb-1">Registrar</p>
+                                                <span class="mb-4 badge badge-soft-info text-uppercase">Ongoing</span>
+                                            </div>
+                                        </div>
+                                        <div class="acitivity-item d-flex">
+                                            <div class="flex-shrink-0">
+                                                <img src="<?= base_url() ?>public/images/officials/img-1.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h6 class="mb-1">Assoc. Prof. Jaime P. Gutierrez Jr.</h6>
+                                                <p class="text-muted mb-1">Director</p>
+                                                <span class="badge badge-soft-warning text-uppercase">Pending</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end card body -->
+                        </div><!-- end card -->
+                        <div class="my-4 collapse" id="showHoldRemarksDoc2">
+                            <label for="remarks" class="h5 form-label">Remarks for Certificate of Good Moral Character <span class="text-danger">*</span></label>
+                            <textarea class="form-control mt-2" id="remarks" name="remarks" rows="5" placeholder="Enter the reason why you are holding the processing of the selected document and the instructions which the OIC, Student Records must comply for the evaluation to proceed." required></textarea>
+                            <div class="invalid-feedback">
+                                Please indicate your reason for holding the selected document.
+                            </div>
+                        </div>
+
+                        <div class="justify-content-center">
+                            <button type="submit" class="w-100 btn btn-danger bg-gradient fw-medium waves-effect waves-light">Yes, Hold It!</button>
                         </div>
                     </form>
                     <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>

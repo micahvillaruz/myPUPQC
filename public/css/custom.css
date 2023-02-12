@@ -351,3 +351,40 @@ a:hover {
 .link-delete {
 	cursor: pointer;
 }
+
+.card-checkbox {
+	padding: 0;
+}
+.card-checkbox .form-check-label {
+	background-color: var(--vz-card-bg);
+	border: 1px solid rgba(0, 0, 0, 0.125);
+	border-radius: 0.25rem;
+	padding: 1rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: block;
+	position: relative;
+	padding-right: 32px;
+}
+.card-checkbox .form-check-label:hover {
+	cursor: pointer;
+}
+.card-checkbox .form-check-input {
+	display: none;
+}
+.card-checkbox .form-check-input:checked + .form-check-label {
+	border-color: #700101 !important;
+}
+.card-checkbox .form-check-input:checked + .form-check-label:before {
+	content: '\eb80';
+	font-family: 'remixicon';
+	position: absolute;
+	top: 2px;
+	right: 6px;
+	font-size: 16px;
+	color: #700101;
+}
+.card-checkbox.dark .form-check-input:checked + .form-check-label:before {
+	color: #fff;
+}
