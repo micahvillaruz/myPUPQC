@@ -837,7 +837,7 @@
               <p>Provide the Original Copy of the Transcript of Records and indicate the number of Certified True Copies that the student has requested over the year. Bring the documents at the Accounting Office once the requirement indicated here has been completed. Thanks.</p>
             </div>
           </div>
-          <button class="mt-4 w-100 btn btn-primary bg-gradient fw-medium waves-effect waves-light" data-bs-dismiss="modal">Close</button>
+          <button class="mt-4 w-100 btn fw-medium waves-effect waves-light" style="background-color: rgb(75,56,179, 0.25)" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
