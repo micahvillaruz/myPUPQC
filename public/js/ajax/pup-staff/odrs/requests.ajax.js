@@ -389,11 +389,19 @@ loadApprovedRequests = () => {
 								</button>
 							`
 						} else if (requestStatus === 'For Evaluation/Processing') {
-							return `
+							if (true) {
+								return `
+									<button type="button" class="btn btn-icon waves-effect waves-light text-white" style="background-color: #4b38b3;" data-bs-toggle="modal" data-bs-target="#approvalWorkflowModal" onclick="addId('${data.request_id}', 'trace_approval_request')">
+										<i class="ri-file-search-line fs-5"></i>
+									</button>
+								`
+							} else {
+								return `
 								<button type="button" class="btn btn-dark btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#readyforPickupModal" onclick="addId('${data.request_id}', 'pickup_request')">
 									<i class="ri-user-received-2-line fs-5"></i>
 								</button>
 							`
+							}
 						} else if (requestStatus === 'Ready for Pickup') {
 							return `
 								<button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#releasedModal" onclick="addId('${data.request_id}', 'release_request')">

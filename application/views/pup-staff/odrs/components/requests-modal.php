@@ -586,6 +586,265 @@
   </div>
 </div>
 
+<div class="modal fade" id="approvalWorkflowModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="approvalWorkflow" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body text-center px-4">
+        <lord-icon src="https://cdn.lordicon.com/lzpqzjob.json" trigger="loop" style="width:120px;height:120px">
+        </lord-icon>
+
+        <div class="mt-4">
+          <h4 class="mb-3 fw-semibold">Trace Request Approval</h4>
+          <p class="text-muted mb-4">All of the documents included in this request and the audit trail of the signatories for each document is displayed below. The document can be <span class="fw-medium">On Hold</span> or <span class="fw-medium">Approved</span> and you must comply with the remarks indicated by the signatories for smooth facilitation of request.</p>
+
+          <div class="vstack gap-2 mb-4">
+            <div class="form-check card-radio shadow">
+              <div class="form-check-label" style="background-color: #fff5da">
+                <div class="d-flex align-items-center">
+                  <div class="flex-shrink-0">
+                    <div class="avatar-xs">
+                      <div class="avatar-title bg-primary text-white fs-18 rounded">
+                        <i class="ri-file-text-line"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1 ms-3">
+                    <h6 class="mb-1 fw-semibold">Informative Copy of Grades</h6>
+                    <p class="text-muted mb-0">Type: Certifications</p>
+                  </div>
+                  <div class="flex-shrink-0 align-self-center">
+                    <span class="badge bg-dark"></i>QTY: 2<span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-start card mt-3 card-height-100 border shadow">
+            <div class="card-body p-0">
+              <div class="alert alert-danger border-0 rounded-top alert-solid alert-label-icon rounded-0 m-0 d-flex align-items-center" style="background-color: #4b38b3!important" role="alert">
+                <i class="mdi mdi-file-sign label-icon"></i>
+                <div class="flex-grow-1 text-truncate">
+                  Signatories in this approval workflow
+                </div>
+              </div>
+              <div class="p-3">
+                <div class="acitivity-timeline acitivity-main">
+                  <div class="acitivity-item d-flex">
+                    <div class="flex-shrink-0">
+                      <img src="<?= base_url() ?>public/images/officials/img-6.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                    </div>
+                    <div class="flex-grow-1 ms-3 mb-4">
+                      <h6 class="mb-1">Cleotilde B. Servigon</h6>
+                      <p class="text-muted mb-1">Registrar</p>
+                      <span class="badge badge-soft-danger text-uppercase">On Hold</span><br>
+                      <div class="d-flex align-items-center text-muted mt-1 gap-2">
+                        <i class="ri-calendar-todo-fill text-primary"></i>
+                        <small> 14 Dec. 2022, 03:00 PM</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="acitivity-item d-flex">
+                    <div class="flex-shrink-0">
+                      <img src="<?= base_url() ?>public/images/officials/img-1.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                      <h6 class="mb-1">Assoc. Prof. Jaime P. Gutierrez Jr.</h6>
+                      <p class="text-muted mb-1">Director</p>
+                      <span class="badge badge-soft-warning text-uppercase">Pending</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- end card body -->
+          </div><!-- end card -->
+
+          <div class="vstack gap-2 mb-4">
+            <div class="form-check card-radio shadow">
+              <div class="form-check-label" style="background-color: #fff5da">
+                <div class="d-flex align-items-center">
+                  <div class="flex-shrink-0">
+                    <div class="avatar-xs">
+                      <div class="avatar-title bg-primary text-white fs-18 rounded">
+                        <i class="ri-file-text-line"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1 ms-3">
+                    <h6 class="mb-1 fw-semibold">CAV-CHED (Commission on Higher Education)</h6>
+                    <p class="text-muted mb-0">Type: CAV (CHED/DFA/WES/CES)</p>
+                  </div>
+                  <div class="flex-shrink-0 align-self-center">
+                    <span class="badge bg-dark"></i>QTY: 3<span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-start card mt-3 card-height-100 border shadow">
+            <div class="card-body p-0">
+              <div class="alert alert-danger border-0 rounded-top alert-solid alert-label-icon rounded-0 m-0 d-flex align-items-center" style="background-color: #4b38b3!important" role="alert">
+                <i class="mdi mdi-file-sign label-icon"></i>
+                <div class="flex-grow-1 text-truncate">
+                  Signatories in this approval workflow
+                </div>
+              </div>
+              <div class="p-3">
+                <div class="acitivity-timeline acitivity-main">
+                  <div class="acitivity-item d-flex">
+                    <div class="flex-shrink-0">
+                      <img src="<?= base_url() ?>public/images/officials/img-7.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                    </div>
+                    <div class="flex-grow-1 ms-3 mb-4">
+                      <h6 class="mb-1">Cherryln P. Esparagoza, MPA</h6>
+                      <p class="text-muted mb-1">In-Charge, Admission</p>
+                      <span class="badge badge-soft-success text-uppercase">Approved</span><br>
+                      <div class="d-flex align-items-center text-muted mt-1 gap-2">
+                        <i class="ri-calendar-todo-fill text-primary"></i>
+                        <small> 29 Nov. 2022, 07:45 AM</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="acitivity-item d-flex">
+                    <div class="flex-shrink-0">
+                      <img src="<?= base_url() ?>public/images/officials/img-4.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                      <h6 class="mb-1">Alma C. Fernandez, MIT</h6>
+                      <p class="text-muted mb-1">Head, Student Affairs and Services</p>
+                      <span class="mb-4 badge badge-soft-info text-uppercase">Ongoing</span>
+                    </div>
+                  </div>
+                  <div class="acitivity-item d-flex">
+                    <div class="flex-shrink-0">
+                      <img src="<?= base_url() ?>public/images/officials/img-1.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                      <h6 class="mb-1">Assoc. Prof. Jaime P. Gutierrez Jr.</h6>
+                      <p class="text-muted mb-1">Director</p>
+                      <span class="badge badge-soft-warning text-uppercase">Pending</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- end card body -->
+          </div><!-- end card -->
+
+          <div class="vstack gap-2 mb-4">
+            <div class="form-check card-radio shadow">
+              <div class="form-check-label" style="background-color: #fff5da">
+                <div class="d-flex align-items-center">
+                  <div class="flex-shrink-0">
+                    <div class="avatar-xs">
+                      <div class="avatar-title bg-primary text-white fs-18 rounded">
+                        <i class="ri-file-text-line"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1 ms-3">
+                    <h6 class="mb-1 fw-semibold">Certified True Copy of Transcript of Records</h6>
+                    <p class="text-muted mb-0">Type: Transcript of Records</p>
+                  </div>
+                  <div class="flex-shrink-0 align-self-center">
+                    <span class="badge bg-dark"></i>QTY: 1<span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-start card mt-3 card-height-100 border shadow">
+            <div class="card-body p-0">
+              <div class="alert alert-danger border-0 rounded-top alert-solid alert-label-icon rounded-0 m-0 d-flex align-items-center" style="background-color: #4b38b3!important" role="alert">
+                <i class="mdi mdi-file-sign label-icon"></i>
+                <div class="flex-grow-1 text-truncate">
+                  Signatories in this approval workflow
+                </div>
+              </div>
+              <div class="p-3">
+                <div class="acitivity-timeline acitivity-main">
+                  <div class="acitivity-item d-flex">
+                    <div class="flex-shrink-0">
+                      <img src="<?= base_url() ?>public/images/officials/img-16.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                    </div>
+                    <div class="flex-grow-1 ms-3 mb-4">
+                      <h6 class="mb-1">Ednalyn A. Bataller</h6>
+                      <p class="text-muted mb-1">Administrative Aide IV</p>
+                      <span class="badge badge-soft-success text-uppercase">Approved</span><br>
+                      <div class="d-flex align-items-center text-muted mt-1 gap-2">
+                        <i class="ri-calendar-todo-fill text-primary"></i>
+                        <small> 29 Nov. 2022, 07:45 AM</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="acitivity-item d-flex">
+                    <div class="flex-shrink-0">
+                      <img src="<?= base_url() ?>public/images/officials/img-18.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                    </div>
+                    <div class="flex-grow-1 ms-3 mb-4">
+                      <h6 class="mb-1">Berna A. Bulawit, MEM</h6>
+                      <p class="text-muted mb-1">Emergency Administrative Aide III</p>
+                      <span class="badge badge-soft-danger text-uppercase">On Hold</span><br>
+                      <div class="d-flex align-items-center text-muted mt-1 gap-2">
+                        <i class="ri-calendar-todo-fill text-primary"></i>
+                        <small> 14 Dec. 2022, 03:00 PM</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="acitivity-item d-flex">
+                    <div class="flex-shrink-0">
+                      <img src="<?= base_url() ?>public/images/officials/img-1.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                      <h6 class="mb-1">Assoc. Prof. Demelyn Monzon</h6>
+                      <p class="text-muted mb-1">Head, Academic Programs</p>
+                      <span class="badge badge-soft-warning text-uppercase">Pending</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- end card body -->
+          </div><!-- end card -->
+
+          <h6 class="mt-4 mb-3 text-start text-primary">Remarks</h6>
+          <div class="list-group text-start">
+            <div class="list-group-item list-group-item-action list-group-item-danger">
+              <div class="d-flex mb-2 align-items-center">
+                <div class="flex-shrink-0">
+                  <img src="<?= base_url() ?>public/images/officials/img-6.png" alt="" class="avatar-xs rounded-circle" />
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <h6 class="list-title mb-1">Cleotilde B. Servigon</h6>
+                  <p class="list-text mb-0 fs-12">Registrar</p>
+                </div>
+              </div>
+              <p>Good Day! Please be advised that the the Informative Copy of Grades must be printed in a long bond paper with documentary stamp and school dry seal before handing it for signature. Kindly comply with this requirements so that the processing of the document/s will be started right away.</p>
+            </div>
+          </div>
+          <br>
+          <div class="list-group text-start">
+            <div class="list-group-item list-group-item-action list-group-item-danger">
+              <div class="d-flex mb-2 align-items-center">
+                <div class="flex-shrink-0">
+                  <img src="<?= base_url() ?>public/images/officials/img-18.png" alt="" class="avatar-xs rounded-circle" />
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <h6 class="list-title mb-1">Berna A. Bulawit, MEM</h6>
+                  <p class="list-text mb-0 fs-12">Emergency Administrative Aide III</p>
+                </div>
+              </div>
+              <p>Provide the Original Copy of the Transcript of Records and indicate the number of Certified True Copies that the student has requested over the year. Bring the documents at the Accounting Office once the requirement indicated here has been completed. Thanks.</p>
+            </div>
+          </div>
+          <button class="mt-4 w-100 btn btn-primary bg-gradient fw-medium waves-effect waves-light" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="modal fade" id="readyforPickupModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="pickupThisRequest" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
