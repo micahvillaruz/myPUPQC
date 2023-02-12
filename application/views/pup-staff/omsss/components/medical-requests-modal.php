@@ -10,6 +10,34 @@
             <div class="modal-body w-100">
                 <div class="card mb-2">
                     <div class="card-header bg-soft-primary text-dark">
+                        <h4 class="mb-0 ">Case Details</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-center mb-4">
+                            <h5 id="control_no" class="fs-4 badge badge-outline-primary fw-bold mb-0"></h5>
+                        </div>
+                        <div class="mt-4 mx-3">
+                            <span class="badge rounded-pill bg-primary fs-12">Consultation Type</span>
+                            <div class="bg-soft-secondary ms-1 text-wrap">
+                                <p id="view_consultation_type" class="p-2 fw-medium"></p>
+                            </div>
+                        </div>
+                        <div class="mt-4 mx-3">
+                            <span class="badge rounded-pill bg-primary fs-12">Consultation Date</span>
+                            <div class="bg-soft-secondary ms-1 text-wrap">
+                                <p id="view_consultation_date" class="p-2 fw-medium"></p>
+                            </div>
+                        </div>
+                        <div class="mt-4 mx-3">
+                            <span class="badge rounded-pill bg-primary fs-12">Consultation Reason</span>
+                            <div class="bg-soft-secondary ms-1 text-wrap">
+                                <p id="view_consultation_reason" class="p-2 fw-medium"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-2">
+                    <div class="card-header bg-soft-primary text-dark">
                         <h4 class="mb-0">Personal Information</h4>
                     </div>
                     <div class="card-body">
@@ -116,34 +144,6 @@
 
                             </tbody>
                         </table>
-                    </div>
-                </div>
-                <div class="card mb-2">
-                    <div class="card-header bg-soft-primary text-dark">
-                        <h4 class="mb-0 ">Case Details</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex align-items-center justify-content-center mb-4">
-                            <h5 id="control_no" class="fs-4 badge badge-outline-primary fw-bold mb-0"></h5>
-                        </div>
-                        <div class="mt-4 mx-3">
-                            <span class="badge rounded-pill bg-primary fs-12">Consultation Type</span>
-                            <div class="bg-soft-secondary ms-1 text-wrap">
-                                <p id="view_consultation_type" class="p-2 fw-medium"></p>
-                            </div>
-                        </div>
-                        <div class="mt-4 mx-3">
-                            <span class="badge rounded-pill bg-primary fs-12">Consultation Date</span>
-                            <div class="bg-soft-secondary ms-1 text-wrap">
-                                <p id="view_consultation_date" class="p-2 fw-medium"></p>
-                            </div>
-                        </div>
-                        <div class="mt-4 mx-3">
-                            <span class="badge rounded-pill bg-primary fs-12">Consultation Reason</span>
-                            <div class="bg-soft-secondary ms-1 text-wrap">
-                                <p id="view_consultation_reason" class="p-2 fw-medium"></p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
