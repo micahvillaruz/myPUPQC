@@ -1,18 +1,12 @@
 $(function () {
-	loadMedicalLogsTable()
+	loadDoneLogsTable()
+	loadCancelledStaffLogsTable()
+	loadCancelledStudentLogsTable()
 })
 
 // Load datatables
-loadMedicalLogsTable = () => {
-	const dt = $('#medical-logs-datatable')
-
-	$.ajaxSetup({
-		headers: {
-			Accept: 'application/json',
-			Authorization: 'Bearer ' + TOKEN,
-			ContentType: 'application/x-www-form-urlencoded',
-		},
-	})
+loadDoneLogsTable = () => {
+	const dt = $('#done_logs_table')
 
 	if (dt.length) {
 		dt.DataTable({
@@ -20,7 +14,13 @@ loadMedicalLogsTable = () => {
 			ajax: {
 				url: apiURL + 'omsss/student/appointment_logs',
 				type: 'GET',
-				// ContentType: 'application/x-www-form-urlencoded',
+				headers: AJAX_HEADERS,
+				dataSrc: (data) => {
+					let filterData = data.data.filter((item) => {
+						return item.consultation_status == 'Done'
+					})
+					return filterData
+				},
 			},
 			columns: [
 				// Case Control No.
@@ -45,11 +45,13 @@ loadMedicalLogsTable = () => {
 				{
 					data: null,
 					render: (data) => {
-						if (data.health_appointment_assigned_to_physician) {
-							const healthPhysician =
+						let healthPhysician
+						if (data.attending_physician == null) {
+							healthPhysician = 'N/A'
+						} else {
+							healthPhysician =
 								data.health_appointment_assigned_to_physician.user_profiles[0].full_name
 						}
-						const healthPhysician = 'N/A'
 
 						return `${healthPhysician}`
 					},
@@ -69,16 +71,7 @@ loadMedicalLogsTable = () => {
 					data: null,
 					render: (data) => {
 						const consultation_status = data.consultation_status
-						console.log(consultation_status)
-						if (consultation_status == 'Pending') {
-							return `<span class="badge rounded-pill bg-warning">Pending</span>`
-						} else if (consultation_status == 'Approved') {
-							return `<span class="badge rounded-pill bg-success">Approved</span>`
-						} else if (consultation_status == 'Cancelled by Staff') {
-							return `<span class="badge rounded-pill bg-info">Cancelled by Staff</span>`
-						} else if (consultation_status == 'Cancelled by Student') {
-							return `<span class="badge rounded-pill bg-info">Cancelled by Student</span>`
-						}
+						return `<span class="badge rounded-pill bg-success">${consultation_status}</span>`
 					},
 				},
 
@@ -87,24 +80,178 @@ loadMedicalLogsTable = () => {
 					data: null,
 					class: 'text-center',
 					render: (data) => {
-						console.log(data)
 						const appointment_type = data.appointment_type
-						let modal_to_use, AJAX_to_use
-						if (appointment_type == 'Medical') {
-							modal_to_use = '#viewMedicalModal'
-							AJAX_to_use = `viewMedicalDetails('${data.health_appointment_id}')`
-						} else if (appointment_type == 'Dental') {
-							modal_to_use = '#viewDentalModal'
-							AJAX_to_use = `viewDentalDetails('${data.health_appointment_id}')`
-						} else if (appointment_type == 'Guidance') {
-							modal_to_use = '#viewGuidanceModal'
-							AJAX_to_use = `viewGuidanceDetails('${data.health_appointment_id}')`
+						return `buttons d2 wait ka lang...`
+					},
+				},
+			],
+			order: [[0, 'asc']],
+		})
+	}
+}
+
+loadCancelledStaffLogsTable = () => {
+	const dt = $('#cancelled_staff_logs_table')
+
+	if (dt.length) {
+		dt.DataTable({
+			bDestroy: true,
+			ajax: {
+				url: apiURL + 'omsss/student/appointment_logs',
+				type: 'GET',
+				headers: AJAX_HEADERS,
+				dataSrc: (data) => {
+					let filterData = data.data.filter((item) => {
+						return item.consultation_status == 'Cancelled by Staff'
+					})
+					return filterData
+				},
+			},
+			columns: [
+				// Case Control No.
+				{
+					data: null,
+					render: (data) => {
+						const caseNo = data.case_control_number
+						return `${caseNo}`
+					},
+				},
+
+				// Consultation Type
+				{
+					data: null,
+					render: (data) => {
+						const consType = data.consultation_type
+						return `${consType}`
+					},
+				},
+
+				// Attending Consultant
+				{
+					data: null,
+					render: (data) => {
+						let healthPhysician
+						if (data.attending_physician == null) {
+							healthPhysician = 'N/A'
+						} else {
+							healthPhysician =
+								data.health_appointment_assigned_to_physician.user_profiles[0].full_name
 						}
-						console.log(appointment_type, modal_to_use, AJAX_to_use)
-						return `
-        <div class="dropdown d-inline-block">
-        <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="${AJAX_to_use}" data-bs-toggle="modal" data-bs-target="${modal_to_use}"><i class="ri-eye-fill fs-5"></i></button>
-				</div>`
+
+						return `${healthPhysician}`
+					},
+				},
+
+				// Schedule
+				{
+					data: null,
+					render: (data) => {
+						const consultation_date = moment(data.consultation_date).format('LL')
+						return `${consultation_date}`
+					},
+				},
+
+				// Status
+				{
+					data: null,
+					render: (data) => {
+						const consultation_status = data.consultation_status
+						return `<span class="badge rounded-pill bg-info">${consultation_status}</span>`
+					},
+				},
+
+				//Action
+				{
+					data: null,
+					class: 'text-center',
+					render: (data) => {
+						const appointment_type = data.appointment_type
+						return `buttons d2 wait ka lang...`
+					},
+				},
+			],
+			order: [[0, 'asc']],
+		})
+	}
+}
+
+loadCancelledStudentLogsTable = () => {
+	const dt = $('#cancelled_student_logs_table')
+
+	if (dt.length) {
+		dt.DataTable({
+			bDestroy: true,
+			ajax: {
+				url: apiURL + 'omsss/student/appointment_logs',
+				type: 'GET',
+				headers: AJAX_HEADERS,
+				dataSrc: (data) => {
+					let filterData = data.data.filter((item) => {
+						return item.consultation_status == 'Cancelled by Student'
+					})
+					return filterData
+				},
+			},
+			columns: [
+				// Case Control No.
+				{
+					data: null,
+					render: (data) => {
+						const caseNo = data.case_control_number
+						return `${caseNo}`
+					},
+				},
+
+				// Consultation Type
+				{
+					data: null,
+					render: (data) => {
+						const consType = data.consultation_type
+						return `${consType}`
+					},
+				},
+
+				// Attending Consultant
+				{
+					data: null,
+					render: (data) => {
+						let healthPhysician
+						if (data.attending_physician == null) {
+							healthPhysician = 'N/A'
+						} else {
+							healthPhysician =
+								data.health_appointment_assigned_to_physician.user_profiles[0].full_name
+						}
+
+						return `${healthPhysician}`
+					},
+				},
+
+				// Schedule
+				{
+					data: null,
+					render: (data) => {
+						const consultation_date = moment(data.consultation_date).format('LL')
+						return `${consultation_date}`
+					},
+				},
+
+				// Status
+				{
+					data: null,
+					render: (data) => {
+						const consultation_status = data.consultation_status
+						return `<span class="badge rounded-pill bg-danger">${consultation_status}</span>`
+					},
+				},
+
+				//Action
+				{
+					data: null,
+					class: 'text-center',
+					render: (data) => {
+						const appointment_type = data.appointment_type
+						return `buttons d2 wait ka lang...`
 					},
 				},
 			],
@@ -176,13 +323,11 @@ viewDentalDetails = (health_appointment_id) => {
 		url: apiURL + `omsss/student/view_appointment/${health_appointment_id}`,
 		dataType: 'json',
 		success: (result) => {
-			console.log(result)
 			const userData = result.data
 			if (result.data.health_appointment_assigned_to_physician) {
 				const userProfileData = data.health_appointment_assigned_to_physician.user_profiles[0]
 			}
 			const userProfileData = null
-			console.log(userData.consultation_type)
 			$('#view_dental_case_details').html(userData.case_control_number)
 			$('#view_dental_consultation_type').html(userData.consultation_type)
 			$('#view_dental_consultation_reason').html(userData.consultation_reason)
