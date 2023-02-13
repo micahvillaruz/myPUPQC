@@ -2,6 +2,8 @@ $(function() {
 
     viewAllReservationHistoryStaff()
 
+    viewAllCancelledByStaff()
+
 })
 
 viewDetailsReservationStaff = (reservation_id) => {
@@ -102,7 +104,7 @@ viewDetailsReservationStaff = (reservation_id) => {
 
 //View All Reservation History
 viewAllReservationHistoryStaff = () => {
-    const dt = $('#done-reservations')
+    const dt = $('#done-reservations-table')
 
     $.ajaxSetup({
         headers: {
@@ -193,6 +195,210 @@ viewAllReservationHistoryStaff = () => {
                                 `
                     },
                 },
+            ],
+            order: [
+                [4, 'desc']
+            ],
+        })
+    }
+}
+
+//View All Cancelled By Staff
+viewAllCancelledByStaff = () => {
+    const dt = $('#cancelled-staff-table')
+
+    if (dt.length) {
+        dt.DataTable({
+            bDestroy: true,
+            ajax: {
+                url: apiURL + `evrsers/pup_staff/view_cancelled/`,
+                type: 'GET',
+                ContentType: 'application/x-www-form-urlencoded',
+                dataSrc: (data) => {
+                    let filterData = data.data.filter((item) => {
+                        return item.reserve_status == 'Cancelled by Staff'
+                    })
+                    return filterData
+                },
+            },
+            columns: [
+                // Reservation Control Number
+                {
+                    data: null,
+                    render: (data) => {
+                        console.log(data)
+                        const reservation_number = data.reservation_number
+                        return `${reservation_number}`
+                    },
+                },
+                // Event Title
+                {
+                    data: null,
+                    render: (data) => {
+                        const event_title = data.event_title
+                        return `${event_title}`
+                    },
+                },
+
+                // Venue
+                {
+                    data: null,
+                    render: (data) => {
+                        const facility_name = data.facilities_assigned_to_reservation.facility_name
+                        return `${facility_name}`
+                    },
+                },
+
+                // Date
+                {
+                    data: null,
+                    render: (data) => {
+                        const reserve_date = moment(data.reserve_date).format('LL')
+                        return `${reserve_date}`
+                    },
+                },
+
+                // Time
+                {
+                    data: null,
+                    render: (data) => {
+                        const time_from = data.time_from
+                        const time_to = data.time_to
+                        return `${time_from + ' - ' + time_to}`
+                    },
+                },
+
+                // Status
+                {
+                    data: null,
+                    class: 'text-center',
+                    render: (data) => {
+                        const reserve_status = data.reserve_status
+                        if (reserve_status == "Done") {
+                            return `<span class="badge rounded-pill bg-success">Done</span>`
+                        } else if (reserve_status == "Cancelled by Staff") {
+                            return `<span class="badge rounded-pill badge-soft-danger">Cancelled by Staff</span>`
+                        } else if (reserve_status == "Cancelled by Student") {
+                            return `<span class="badge rounded-pill badge-soft-danger">Cancelled by Student</span>`
+                        }
+                    },
+                },
+                //Action
+                {
+                    data: null,
+                    class: 'text-center',
+                    render: (data) => {
+                        // console.log(data.reservation_id)
+                        return `
+                            <div class="dropdown d-inline-block">
+                                <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewReservationModal" onclick="viewDetailsReservationStaff('${data.reservation_id}')"><i class="ri-eye-fill fs-5"></i></button>
+                            </div>
+                                `
+                    },
+                },
+
+            ],
+            order: [
+                [4, 'desc']
+            ],
+        })
+    }
+}
+
+//View All Cancelled By Student
+viewAllCancelledByStudent = () => {
+    const dt = $('#cancelled-student-table')
+
+    if (dt.length) {
+        dt.DataTable({
+            bDestroy: true,
+            ajax: {
+                url: apiURL + `evrsers/pup_staff/view_cancelled/`,
+                type: 'GET',
+                ContentType: 'application/x-www-form-urlencoded',
+                dataSrc: (data) => {
+                    let filterData = data.data.filter((item) => {
+                        return item.reserve_status == 'Cancelled by Student'
+                    })
+                    return filterData
+                },
+            },
+            columns: [
+                // Reservation Control Number
+                {
+                    data: null,
+                    render: (data) => {
+                        console.log(data)
+                        const reservation_number = data.reservation_number
+                        return `${reservation_number}`
+                    },
+                },
+                // Event Title
+                {
+                    data: null,
+                    render: (data) => {
+                        const event_title = data.event_title
+                        return `${event_title}`
+                    },
+                },
+
+                // Venue
+                {
+                    data: null,
+                    render: (data) => {
+                        const facility_name = data.facilities_assigned_to_reservation.facility_name
+                        return `${facility_name}`
+                    },
+                },
+
+                // Date
+                {
+                    data: null,
+                    render: (data) => {
+                        const reserve_date = moment(data.reserve_date).format('LL')
+                        return `${reserve_date}`
+                    },
+                },
+
+                // Time
+                {
+                    data: null,
+                    render: (data) => {
+                        const time_from = data.time_from
+                        const time_to = data.time_to
+                        return `${time_from + ' - ' + time_to}`
+                    },
+                },
+
+                // Status
+                {
+                    data: null,
+                    class: 'text-center',
+                    render: (data) => {
+                        const reserve_status = data.reserve_status
+                        if (reserve_status == "Done") {
+                            return `<span class="badge rounded-pill bg-success">Done</span>`
+                        } else if (reserve_status == "Cancelled by Staff") {
+                            return `<span class="badge rounded-pill badge-soft-danger">Cancelled by Staff</span>`
+                        } else if (reserve_status == "Cancelled by Student") {
+                            return `<span class="badge rounded-pill badge-soft-danger">Cancelled by Student</span>`
+                        }
+                    },
+                },
+                //Action
+                {
+                    data: null,
+                    class: 'text-center',
+                    render: (data) => {
+                        // console.log(data.reservation_id)
+                        return `
+                            <div class="dropdown d-inline-block">
+                                <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewReservationModal" onclick="viewDetailsReservationStaff('${data.reservation_id}')"><i class="ri-eye-fill fs-5"></i></button>
+                            </div>
+                                `
+                    },
+                },
+
             ],
             order: [
                 [4, 'desc']
