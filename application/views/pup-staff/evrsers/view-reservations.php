@@ -20,12 +20,7 @@
                                 Approved & Released
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#cancelled" role="tab">
-                                Cancelled
-                            </a>
-                        </li>
-                    </ul>
+                        </ul>
                 </div>
             </div>
             <div class="card-body">
@@ -94,28 +89,6 @@
                         <div class="d-flex">
                             <div class="flex-grow-1 ms-2">
                                 <table id="approved-and-released-table" class="table table-responsive dt-responsive table-striped align-middle text-center" style="width: 100%">
-                                    <thead class="bg-light">
-                                        <tr>
-                                            <th>Reservation Control #</th>
-                                            <th>Event Title</th>
-                                            <th>Venue</th>
-                                            <th>Date</th>
-                                            <th>Time</th>
-                                            <th>Status</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End tab pane -->
-                    <div class="tab-pane" id="cancelled" role="tabpanel">
-                        <div class="d-flex">
-                            <div class="flex-grow-1 ms-2">
-                                <table id="cancelled-table" class="table table-responsive dt-responsive table-striped align-middle text-center" style="width: 100%">
                                     <thead class="bg-light">
                                         <tr>
                                             <th>Reservation Control #</th>
