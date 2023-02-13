@@ -41,7 +41,7 @@ $(function () {
 		// console.log(done_appointment_id, done_consultation_status, done_remarks)
 
 		// you can now use these values for further processing
-		editAppointmentStatus(done_appointment_id, done_consultation_status, done_remarks)
+		editDentalAppointmentStatus(done_appointment_id, done_consultation_status, done_remarks)
 	})
 })
 
