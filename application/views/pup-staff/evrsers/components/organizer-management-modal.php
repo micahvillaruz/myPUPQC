@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="text-center mb-3">
-                            <img src="../../public/images/users/user-dummy-img.jpg" alt="" class="rounded-circle avatar-xl img-thumbnail" id="student-profile-pic">
+                            <img src="<?= base_url() ?>public/images/users/user-dummy-img.jpg" alt="" class="rounded-circle avatar-xl img-thumbnail" id="student-profile-pic">
                         </div>
                     </div>
                     <div class="col-lg-9">
@@ -19,7 +19,7 @@
                             <h1 class="text-dark fw-bold mb-2" id="student-name"></h1>
                             <div class="row">
                                 <hr>
-                                <h6 class="text-medium">STUDENT INFORMATION</h6>
+                                <h6 class="text-medium">USER INFORMATION</h6>
                                 <div class="col-lg-6">
                                     <h6 class="text-medium">ADDRESS</h6>
                                     <p id="address" class="fw-medium"></p>
