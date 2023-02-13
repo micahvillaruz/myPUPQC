@@ -19,13 +19,13 @@
     <div class="col-lg-7">
         <div class="card">
             <div class="card-header d-flex align-items-center">
-                <h5 class="card-title mb-0 flex-grow-1">Student Organizers</h5>
+                <h5 class="card-title mb-0 flex-grow-1">Organizers</h5>
             </div>
             <div class="card-body">
                 <table id="students-no-organizer-table" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center w-100">
                     <thead>
                         <tr>
-                            <th>Student #</th>
+                            <th>Student # or Email</th>
                             <th>Full Name</th>
                             <th>Status</th>
                             <th>Action</th>
