@@ -10,7 +10,7 @@
 <script src="<?= base_url() ?>public/libs/node-waves/waves.min.js"></script>
 <script src="<?= base_url() ?>public/libs/feather-icons/feather.min.js"></script>
 <script src="<?= base_url() ?>public/js/pages/plugins/lord-icon-2.1.0.js"></script>
-<script src="<?= base_url() ?>public/js/plugins.js"></script>
+<!-- <script src="<?= base_url() ?>public/js/plugins.js"></script> -->
 
 <!-- form picker js -->
 <script src="<?= base_url() ?>public/js/pages/form-pickers.init.js"></script>
@@ -24,7 +24,7 @@
 <script src="<?= base_url() ?>public/libs/filepond-plugin-image-exif-orientation/filepond-plugin-image-exif-orientation.min.js"></script>
 <script src="<?= base_url() ?>public/libs/filepond-plugin-file-encode/filepond-plugin-file-encode.min.js"></script>
 
-<script src="<?= base_url() ?>public/js/pages/form-file-upload.init.js"></script>
+<!-- <script src="<?= base_url() ?>public/js/pages/form-file-upload.init.js"></script> -->
 
 <!-- form wizard init -->
 <script src="<?= base_url() ?>public/js/pages/form-wizard.init.js"></script>
