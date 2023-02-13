@@ -26,6 +26,8 @@ checkCreatePermission = () => {
 
                 loadFacilities()
 
+                loadOrganizations()
+
                 $('#addNewReservation').on('submit', function(e) {
                     e.preventDefault() // prevent page refresh
                     addNewReservation()
@@ -296,4 +298,47 @@ loadHolidays = () => {
             timeTo.remove(0);
         }
     }
+}
+
+// load organizations as options in orgfloatingInput using ajax /student/view_organization
+loadOrganizations = () => {
+    $.ajaxSetup({
+        headers: {
+            Accept: 'application/json',
+            Authorization: 'Bearer ' + TOKEN,
+        },
+    })
+
+    $.ajax({
+        type: 'GET',
+        url: apiURL + `evrsers/student/view_organization`,
+        // filter by organization status == active using dataSrc
+        dataSrc: (data) => {
+            let filterData = data.data.filter((item) => {
+                return item.reserve_status == 'Active'
+            })
+            return filterData
+        },
+        success: (result) => {
+            const data = result.data
+            console.log(data)
+
+            if (result) {
+                data.forEach((organization) => {
+                    if (organization.organization_abbreviation === '') {
+                        $('#orgfloatingInput').append(
+                            `<option value="${organization.organization_name}">${organization.organization_name}</option>
+                            `
+                        )
+                    } else {
+                        $('#orgfloatingInput').append(
+                            `<option value="${organization.organization_abbreviation}">${organization.organization_abbreviation}</option>
+                            `
+                        )
+                    }
+                })
+                $('#orgfloatingInput').append(`<option>Other</option>`)
+            }
+        },
+    })
 }
