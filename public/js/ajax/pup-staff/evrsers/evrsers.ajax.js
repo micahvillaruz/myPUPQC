@@ -143,9 +143,9 @@ viewDetailsReservationStaff = (reservation_id) => {
     })
 }
 
-//View All Own Reservations
+//View All Pending / For Review Reservations
 viewAllPendingReservation = () => {
-    const dt = $('#pending-reservations')
+    const dt = $('#for-review-table')
 
     $.ajaxSetup({
         headers: {
@@ -194,7 +194,6 @@ viewAllPendingReservation = () => {
                     data: null,
                     render: (data) => {
                         const reserve_date = moment(data.reserve_date).format('LL')
-
                         return `${reserve_date}`
                     },
                 },
@@ -226,7 +225,8 @@ viewAllPendingReservation = () => {
                     render: (data) => {
                         return `
                             <div class="dropdown d-inline-block">
-                                <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewReservationModal" onclick="viewDetailsReservationStaff('${data.reservation_id}')"><i class="ri-eye-fill fs-5"></i></button>
+                                <button type="button" class="btn btn-info btn-icon waves-effect waves-light mb-2" data-bs-toggle="modal" data-bs-target="#addSignModal" onclick=""><i class=" ri-eye-fill fs-6 align-middle"></i></button>
+                                <button type="button" class="btn btn-success waves-effect waves-light mb-2" data-bs-toggle="modal" data-bs-target="#addSignModal" onclick=""><i class=" ri-quill-pen-fill fs-6 me-2 align-middle"></i>Add Signatories</button>
                             </div>
                                 `
                     },
@@ -240,7 +240,7 @@ viewAllPendingReservation = () => {
 }
 
 viewAllApprovedReservation = () => {
-    const dt = $('#approved-reservations')
+    const dt = $('#approved-and-released-table')
 
     $.ajaxSetup({
         headers: {

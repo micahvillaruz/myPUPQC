@@ -80,9 +80,9 @@ loadFacilities = () => {
             $('#facilities').html(facilitiesHTML)
 
             // enable next button upon selecting a facility
-            $('input[name="facility"]').on('change', function() {
-                $('#nextBtn').prop('disabled', false)
-            })
+            // $('input[name="facility"]').on('change', function() {
+            //     $('#nextBtn').prop('disabled', false)
+            // })
         },
     })
 }
@@ -180,3 +180,33 @@ addNewReservation = () => {
         })
     }
 }
+
+// Calendar functions for new reservation
+//Disable sundays for flatpickr reserveDatefloatingInput using disable option
+
+var coolDates = [Date.parse('2023-2-13'), Date.parse('2023-2-11')];
+var style = document.createElement('style');
+style.innerHTML = '.cool-date { background: #f5c076; }';
+document.head.appendChild(style);
+
+flatpickr('#reserveDatefloatingInput', {
+    dateFormat: 'd M, Y',
+    defaultDate: 'today',
+    minDate: 'today',
+    inline: true,
+    disable: [
+        function(date) {
+            return date.getDay() === 0;
+        }
+    ],
+    onDayCreate: function(dObj, dStr, fp, dayElem) {
+        // Checking to see if the current day object is in our array
+        // The `+` is just a shortcut for parsing the date
+        if (coolDates.indexOf(+dayElem.dateObj) !== -1) {
+            dayElem.className += " cool-date";
+        }
+    }
+});
+
+
+//
