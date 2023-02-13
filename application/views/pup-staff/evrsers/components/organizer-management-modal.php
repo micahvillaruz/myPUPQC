@@ -1,9 +1,9 @@
 <!-- View Student Information Modal -->
-<div class="modal fade zoomIn" id="viewStudentInfoModal" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="viewStudentInfoModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-dark" id="viewStudentInfoModalTitle">View Student</h5>
+                <h5 class="modal-title text-dark" id="viewStudentInfoModalTitle">View Details</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"></button>
             </div>
             <div class="modal-body">
