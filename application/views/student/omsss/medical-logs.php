@@ -32,6 +32,7 @@
                                     <tr>
                                         <th>Appointment Code</th>
                                         <th>Consultation Type</th>
+                                        <th>Appointment Type</th>
                                         <th>Attending Consultant</th>
                                         <th>Appointment Date</th>
                                         <th>Status</th>
@@ -48,6 +49,7 @@
                                     <tr>
                                         <th>Appointment Code</th>
                                         <th>Consultation Type</th>
+                                        <th>Appointment Type</th>
                                         <th>Attending Consultant</th>
                                         <th>Appointment Date</th>
                                         <th>Status</th>
@@ -64,6 +66,7 @@
                                     <tr>
                                         <th>Appointment Code</th>
                                         <th>Consultation Type</th>
+                                        <th>Appointment Type</th>
                                         <th>Attending Consultant</th>
                                         <th>Appointment Date</th>
                                         <th>Status</th>

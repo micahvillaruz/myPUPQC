@@ -1,7 +1,19 @@
-$(function () {
+$(() => {
 	loadDoneLogsTable()
 	loadCancelledStaffLogsTable()
 	loadCancelledStudentLogsTable()
+
+	$('#addEvaluationForm').submit((e) => {
+		e.preventDefault() // prevent the form from submitting
+
+		if ($('#addEvaluationForm')[0].checkValidity()) {
+			const form = new FormData($('#addEvaluationForm')[0])
+
+			addNewEvaluation(form, $('#add_health_appointment_id').val())
+		}
+
+		// you can now use these values for further processing
+	})
 })
 
 // Load datatables
@@ -38,6 +50,15 @@ loadDoneLogsTable = () => {
 					render: (data) => {
 						const consType = data.consultation_type
 						return `${consType}`
+					},
+				},
+
+				// Appointment Type
+				{
+					data: null,
+					render: (data) => {
+						const appointmentType = data.appointment_type
+						return `${appointmentType}`
 					},
 				},
 
@@ -80,9 +101,17 @@ loadDoneLogsTable = () => {
 					data: null,
 					class: 'text-center',
 					render: (data) => {
+						const health_appointment_id = data.health_appointment_id
+						let buttonEvaluation
+						if (data.is_evaluated == false) {
+							buttonEvaluation = `<button type="button" class="btn btn-success btn-icon waves-effect waves-light" onclick="addEvaluationDetails('${health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewEvaluationModal"><i class="ri-chat-check-fill fs-5"></i></button>`
+						} else {
+							buttonEvaluation = `<button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewEvaluationDetails('${health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#aboutEvaluationModal"><i class="ri-clipboard-fill fs-5"></i></button>`
+						}
 						return `
                         <div class="dropdown d-inline-block">
-                        <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewOverallDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewOverallModal"><i class="ri-eye-fill fs-5"></i></button>
+                            <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewOverallDetails('${data.health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewOverallModal"><i class="ri-eye-fill fs-5"></i></button>
+                            ${buttonEvaluation}
                         </div>
                         `
 					},
@@ -126,6 +155,15 @@ loadCancelledStaffLogsTable = () => {
 					render: (data) => {
 						const consType = data.consultation_type
 						return `${consType}`
+					},
+				},
+
+				// Appointment Type
+				{
+					data: null,
+					render: (data) => {
+						const appointmentType = data.appointment_type
+						return `${appointmentType}`
 					},
 				},
 
@@ -214,6 +252,15 @@ loadCancelledStudentLogsTable = () => {
 					render: (data) => {
 						const consType = data.consultation_type
 						return `${consType}`
+					},
+				},
+
+				// Appointment Type
+				{
+					data: null,
+					render: (data) => {
+						const appointmentType = data.appointment_type
+						return `${appointmentType}`
 					},
 				},
 
@@ -354,7 +401,6 @@ viewOverallDetails = (health_appointment_id) => {
 					allergies.forEach((history) => {
 						bullet += `<li>${history}</li>`
 					})
-					console.log(bullet)
 					$('#view_allergies').html(`<ul>${bullet}</ul>`)
 
 					bullet = ''
@@ -431,5 +477,113 @@ viewOverallDetails = (health_appointment_id) => {
 				},
 			})
 		},
+	})
+}
+
+addEvaluationDetails = (health_appointment_id) => {
+	$('#add_health_appointment_id').val(health_appointment_id)
+	$.ajax({
+		type: 'GET',
+		cache: false,
+		url: apiURL + `omsss/student/view_appointment/${health_appointment_id}`,
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+	}).then((result) => {
+		// * Case Detail
+		const userData = result.data
+		$('#control_no_evaluation').html(userData.case_control_number)
+		$('#view_consultation_type_evaluation').html(userData.consultation_type)
+		$('#view_consultation_reason_evaluation').html(userData.consultation_reason)
+		let consultationDate = new Date(userData.consultation_date)
+		consultationDate = consultationDate.toLocaleDateString('en-US', {
+			year: 'numeric',
+			month: 'long',
+			day: 'numeric',
+		})
+
+		$('#view_consultation_date_evaluation').html(consultationDate)
+		$('#view_physician_evaluation').html(
+			userData.health_appointment_assigned_to_physician.user_profiles[0].full_name,
+		)
+	})
+}
+
+viewEvaluationDetails = (health_appointment_id) => {
+	$.ajax({
+		type: 'GET',
+		cache: false,
+		url: apiURL + `omsss/student/view_evaluation/${health_appointment_id}`,
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+	}).then((result) => {
+		const data = result.data
+		console.log(data)
+
+		// * Case Detail
+		$('#control_no_details').html(data.health_appointment_evaluation.case_control_number)
+		$('#view_physician_details').html(
+			data.health_appointment_evaluation_physician.user_profiles[0].full_name,
+		)
+
+		let tableID = ['#quality_rating_stars', '#timeliness_rating_stars', '#courtesy_rating_stars']
+		let rating = [data.quality_rating, data.timeliness_rating, data.courtesy_rating]
+
+		for (let i = 0; i < tableID.length; i++) {
+			let starsHTML = ''
+			for (let j = 1; j <= 5; j++) {
+				if (j <= rating[i]) {
+					starsHTML += '⭐'
+				}
+			}
+			$(tableID[i]).html(starsHTML)
+		}
+
+		$('#evaluation_comments_details').html(data.evaluation_comment)
+	})
+}
+
+addNewEvaluation = (form, health_appointment_id) => {
+	// * Create the data to be sent
+	const data = {
+		quality_rating: form.get('quality_rating'),
+		timeliness_rating: form.get('timeliness_rating'),
+		courtesy_rating: form.get('courtesy_rating'),
+		evaluation_comment: form.get('evaluation_comment'),
+	}
+
+	// * Send the data to the server
+	$.ajax({
+		type: 'POST',
+		url: apiURL + `omsss/student/add_evaluation/${health_appointment_id}`,
+		data: data,
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			if (result) {
+				Swal.fire({
+					html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully added the evaluation!</p></div></div>',
+					showCancelButton: !0,
+					showConfirmButton: !1,
+					cancelButtonClass: 'btn btn-success w-xs mb-1',
+					cancelButtonText: 'Ok',
+					buttonsStyling: !1,
+					showCloseButton: !0,
+				}).then(function () {
+					setTimeout(() => {
+						location.reload()
+					}, 1000)
+				})
+			}
+		},
+	}).fail(() => {
+		Swal.fire({
+			html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">There was an error while adding your evaluation. Please try again.</p></div></div>',
+			showCancelButton: !0,
+			showConfirmButton: !1,
+			cancelButtonClass: 'btn btn-danger w-xs mb-1',
+			cancelButtonText: 'Dismiss',
+			buttonsStyling: !1,
+			showCloseButton: !0,
+		})
 	})
 }

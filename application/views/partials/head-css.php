@@ -35,6 +35,10 @@
 		<!-- autocomplete css -->
 		<link rel="stylesheet" href="<?= base_url() ?>public/libs/@tarekraafat/autocomplete.js/css/autoComplete.css" />
 
+		<!-- rater js -->
+		<script src='<?= base_url() ?>public/libs/rater-js/index.js'></script>
+
+
 		<!-- Layout config Js -->
 		<script src="<?= base_url() ?>public/js/layout.js"></script>
 		<!-- Bootstrap Css -->
