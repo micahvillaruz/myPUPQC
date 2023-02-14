@@ -2,11 +2,6 @@ $(function() {
 
     viewReservationDetails()
 
-    $('#addNewReservation').on('submit', function(e) {
-        e.preventDefault() // prevent page refresh
-        addNewReservation()
-    })
-
 })
 
 viewReservationDetails = () => {
@@ -36,22 +31,42 @@ viewReservationDetails = () => {
             // console.log(venue)
 
             $('#reserve_number').html(userData.reservation_number)
-            let organization_name = userData.organization_name
-            if (
-                organization_name == 'CHRS' ||
-                'COMMITS' ||
-                'DOMT.CS' ||
-                'FBTO' ||
-                'JMS' ||
-                'SPAS' ||
-                'YES'
-            ) {
-                $('#organization').html(`<span class="fs-5 badge badge-outline-info fw-bold mb-0">${organization_name}</span>`)
-            } else if (organization_name == 'KATAGA' || 'MUSA' || 'PSC' || 'Vox Nova' || 'Other') {
-                $('#organization').html(`<h5 class="fs-5 badge badge-outline-danger fw-bold mb-0">${organization_name}</h5>`)
-            } else if (organization_name == 'SSC' || 'COL') {
-                $('#organization').html(`<h5 class="fs-5 badge badge-outline-dark fw-bold mb-0">${organization_name}</h5>`)
+            let organization_name = userData.organization_assigned_to_reservations.organization_abbreviation
+            if (organization_name != '') {
+                if (
+                    organization_name === 'CHRS' ||
+                    'COMMITS' ||
+                    'DOMT.CS' ||
+                    'FBTO' ||
+                    'JMS' ||
+                    'SPAS' ||
+                    'YES'
+                ) {
+                    $('#organization').html(`<span class="fs-4 badge badge-outline-info fw-bold mb-0">${organization_name}</span>`)
+                } else if (organization_name === 'KATAGA' || 'MUSA' || 'PSC' || 'Vox Nova' || 'Other') {
+                    $('#organization').html(`<h5 class="fs-4 badge badge-outline-danger fw-bold mb-0">${organization_name}</h5>`)
+                } else if (organization_name === 'SSC' || 'COL') {
+                    $('#organization').html(`<h5 class="fs-4 badge badge-outline-dark fw-bold mb-0">${organization_name}</h5>`)
+                }
+            } else {
+                organization_name = userData.organization_assigned_to_reservations.organization_name
+                if (
+                    organization_name === 'CHRS' ||
+                    'COMMITS' ||
+                    'DOMT.CS' ||
+                    'FBTO' ||
+                    'JMS' ||
+                    'SPAS' ||
+                    'YES'
+                ) {
+                    $('#organization').html(`<span class="fs-5 badge badge-outline-info fw-bold mb-0">${organization_name}</span>`)
+                } else if (organization_name === 'KATAGA' || 'MUSA' || 'PSC' || 'Vox Nova' || 'Other') {
+                    $('#organization').html(`<h5 class="fs-5 badge badge-outline-danger fw-bold mb-0">${organization_name}</h5>`)
+                } else if (organization_name === 'SSC' || 'COL') {
+                    $('#organization').html(`<h5 class="fs-5 badge badge-outline-dark fw-bold mb-0">${organization_name}</h5>`)
+                }
             }
+
 
             event_title = userData.event_title
                 // convert to all caps
@@ -59,21 +74,38 @@ viewReservationDetails = () => {
             $('#event_title').html(event_title)
                 // $('#facility_name').html(venue)
             $('#event_details').html(userData.event_details)
+                // format objectives text 
+            var objectives = userData.pup_objectives
+                // check if there is a hyphen in the middle of the string
+            if (objectives.includes('-')) {
+                // split the string into an array
+                objectives = objectives.split('-')
+                    // loop through the array
+                objectives.forEach((objective, index) => {
+                    // display the array elements as list items
+                    objectives[index] = `<li>${objective}</li>`
+                })
+                objectives.splice(0, 1)
+                objectives = objectives.join('')
+            }
+
+            $('#objectives').html(objectives)
+            $('#pillar').html(userData.pup_pillars)
             $('#reserve_date').html(moment(userData.reserve_date).format('LL'))
             const time = `${userData.time_from} - ${userData.time_to}`
             $('#time').html(time)
             $('#remarks').html(userData.remarks)
             $('#attachment1').html(
-                `<i class="ri-file-fill text-primary me-2"></i><a href="${userData.reserve_attachments_1}" target="_blank" class="link fw-bold">Event Request</a>`,
+                `<i class="ri-file-fill text-primary me-2"></i><a href="${userData.event_request}" target="_blank" class="link fw-bold">Event Request</a>`,
             )
             $('#attachment2').html(
-                `<i class="ri-file-text-fill text-primary me-2"></i><a href="${userData.reserve_attachments_2}" target="_blank" class="link fw-bold">Concept Paper</a>`,
+                `<i class="ri-file-text-fill text-primary me-2"></i><a href="${userData.concept_paper}" target="_blank" class="link fw-bold">Concept Paper</a>`,
             )
             $('#attachment3').html(
-                `<i class="ri-file-copy-2-fill text-primary me-2"></i><a href="${userData.reserve_attachments_2}" target="_blank" class="link fw-bold">Others</a>`,
+                `<i class="ri-file-copy-2-fill text-primary me-2"></i><a href="${userData.others}" target="_blank" class="link fw-bold">Others</a>`,
             )
             let reservation_status = userData.reserve_status
-            if (reservation_status == 'Pending') {
+            if (reservation_status == 'For Review' || 'For Evaluation' || 'For Revision') {
                 $('#reservation-status').html(
                     `<div class="card card-secondary">
                         <div class="card-body">
@@ -84,46 +116,13 @@ viewReservationDetails = () => {
                         </div>
                     </div>`,
                 )
-            } else if (reservation_status == 'Approved') {
+            } else if (reservation_status == 'Approved & Released') {
                 $('#reservation-status').html(
                     `<div class="card card-success">
                         <div class="card-body">
                             <div class="d-flex position-relative">
                                 <i class="bx fs-1 bx-calendar-check fw-medium me-2"></i>
                                 <h3 class="card-text fw-medium text-white my-auto">${reservation_status}</h3>
-                            </div>
-                        </div>
-                    </div>`,
-                )
-            } else if (reservation_status == 'Done') {
-                $('#reservation-status').html(
-                    `<div class="card card-success">
-                        <div class="card-body">
-                            <div class="d-flex position-relative">
-                                <i class="bx fs-1 bx-check fw-medium me-2"></i>
-                                <h3 class="card-text fw-medium text-white my-auto">${reservation_status}</h3>
-                            </div>
-                        </div>
-                    </div>`,
-                )
-            } else if (reservation_status == 'Cancelled by Student') {
-                $('#reservation-status').html(
-                    `<div class="card card-danger">
-                        <div class="card-body">
-                            <div class="d-flex position-relative">
-                                <i class="bx fs-1 bx-x fw-medium me-2"></i>
-                                <h3 class="card-text fw-medium text-white my-auto">Cancelled</h3>
-                            </div>
-                        </div>
-                    </div>`,
-                )
-            } else if (reservation_status == 'Cancelled by Staff') {
-                $('#reservation-status').html(
-                    `<div class="card card-danger">
-                        <div class="card-body">
-                            <div class="d-flex position-relative">
-                                <i class="bx fs-1 bx-x fw-medium me-2"></i>
-                                <h3 class="card-text fw-medium text-white my-auto">Cancelled</h3>
                             </div>
                         </div>
                     </div>`,
