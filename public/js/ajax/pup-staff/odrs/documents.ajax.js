@@ -139,13 +139,19 @@ loadDocumentInfo = (document_id) => {
 			)
 			$('#view_document_name').html(data.document_name)
 			$('#view_document_details').html(data.document_details)
+			$('#view_document_signatories').empty()
+			data.document_signatories.forEach((signatory) => {
+				$('#view_document_signatories').append(`
+					<li>${signatory.signatory_for_user.user_profiles[0].full_name}</li>
+				`)
+			})
 			$('#view_document_requirements').empty()
 			if (data.document_requirements.length === 0) {
 				$('#view_document_requirements').html('<i>No requirements are needed.</i>')
 			} else {
-				data.document_requirements.forEach((item) => {
+				data.document_requirements.forEach((requirement) => {
 					$('#view_document_requirements').append(`
-						<li>${item.doc_req_name}</li>
+						<li>${requirement.doc_req_name}</li>
 					`)
 				})
 			}
