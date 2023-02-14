@@ -193,7 +193,7 @@
 
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/omsss/evaluation">
-                                <i class="ri-bar-chart-2-fill"></i>
+                                <i class="ri-line-chart-line"></i>
                                 <span>Evaluation Analytics</span>
                             </a>
                         </li>
