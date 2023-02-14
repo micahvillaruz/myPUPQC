@@ -131,8 +131,8 @@
                                     <th>Control Number</th>
                                     <th>Student</th>
                                     <th>Date Filed</th>
-                                    <th>Document/s for Approval</th>
                                     <th>Details</th>
+                                    <th>Document/s for Approval</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -157,14 +157,6 @@
                                             <span class="ms-2">08 Sep, 2022<small class="text-muted ms-1">06:15 PM</small></span>
                                         </div>
                                     </td>
-                                    <td width="25%">
-                                        <div id="documents" class="list-group col nested-list nested-sortable">
-                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
-                                                <i class="ri-file-text-fill fs-16 text-success me-3"></i>
-                                                <span class="fw-medium" style="font-size: 12px;">Informative Copy of Grades</span>
-                                            </div>
-                                        </div>
-                                    </td>
                                     <td width="27%">
                                         <table>
                                             <tbody>
@@ -185,6 +177,14 @@
                                         <div class="mt-3 d-flex flex-column justify-content-end">
                                             <button type="button" class="btn btn-sm btn-info bg-gradient waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewforApprovalRequest" onclick="viewforApprovalRequest('${data.request_id}')">View Details</button>
                                             <small class="d-block fst-italic text-center">Always "View Details" for more information</small>
+                                        </div>
+                                    </td>
+                                    <td width="25%">
+                                        <div id="documents" class="list-group col nested-list">
+                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
+                                                <i class="ri-file-text-fill fs-16 text-success me-3"></i>
+                                                <span class="fw-medium" style="font-size: 12px;">Informative Copy of Grades</span>
+                                            </div>
                                         </div>
                                     </td>
                                     <td class="text-center">
@@ -218,22 +218,6 @@
                                             <span class="ms-2">01 Sep, 2022<small class="text-muted ms-1">03:00 PM</small></span>
                                         </div>
                                     </td>
-                                    <td width="25%">
-                                        <div id="documents" class="list-group col nested-list nested-sortable">
-                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
-                                                <i class="ri-file-text-fill fs-16 align-middle text-success me-3"></i>
-                                                <span class="fw-medium" style="font-size: 12px;">Certificate of Good Moral Character</span>
-                                            </div>
-                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
-                                                <i class="ri-file-text-fill fs-16 align-middle text-success me-3"></i>
-                                                <span class="fw-medium" style="font-size: 12px;">Transcript of Records - For evaluation/reference (Undergraduate) 1st Year</span>
-                                            </div>
-                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
-                                                <i class="ri-file-text-fill fs-16 align-middle text-success me-3"></i>
-                                                <span class="fw-medium" style="font-size: 12px;">Informative Copy of Grades</span>
-                                            </div>
-                                        </div>
-                                    </td>
                                     <td width="27%">
                                         <table>
                                             <tbody>
@@ -256,14 +240,48 @@
                                             <small class="d-block fst-italic text-center">Always "View Details" for more information</small>
                                         </div>
                                     </td>
+                                    <td width="25%">
+                                        <div id="documents" class="list-group col nested-list">
+                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
+                                                <i class="ri-file-text-fill fs-16 align-middle text-success me-3"></i>
+                                                <span class="fw-medium" style="font-size: 12px;">Certificate of Good Moral Character</span>
+                                            </div>
+                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
+                                                <i class="ri-file-text-fill fs-16 align-middle text-success me-3"></i>
+                                                <span class="fw-medium" style="font-size: 12px;">Transcript of Records - For evaluation/reference (Undergraduate) 1st Year</span>
+                                            </div>
+                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
+                                                <i class="ri-file-text-fill fs-16 align-middle text-success me-3"></i>
+                                                <span class="fw-medium" style="font-size: 12px;">Informative Copy of Grades</span>
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td class="text-center">
-                                        <div class="dropdown d-inline-block">
-                                            <button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#approveRequestModal" onclick="addId('${data.request_id}', 'approve_request')">
-                                                <i class="mdi mdi-thumb-up fs-5 fw-bold"></i>
-                                            </button>
-                                            <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#onHoldRequestModal" onclick="addId('${data.request_id}', 'on_hold_request')">
-                                                <i class="mdi mdi-hand-back-left fs-5 fw-bold"></i>
-                                            </button>
+                                        <div class="d-flex flex-column gap-2">
+                                            <div class="dropdown d-inline-block">
+                                                <button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#approveRequestModal" onclick="addId('${data.request_id}', 'approve_request')">
+                                                    <i class="mdi mdi-thumb-up fs-5 fw-bold"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#onHoldRequestModal" onclick="addId('${data.request_id}', 'on_hold_request')">
+                                                    <i class="mdi mdi-hand-back-left fs-5 fw-bold"></i>
+                                                </button>
+                                            </div>
+                                            <div class="dropdown d-inline-block">
+                                                <button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#approveRequestModal" onclick="addId('${data.request_id}', 'approve_request')">
+                                                    <i class="mdi mdi-thumb-up fs-5 fw-bold"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#onHoldRequestModal" onclick="addId('${data.request_id}', 'on_hold_request')">
+                                                    <i class="mdi mdi-hand-back-left fs-5 fw-bold"></i>
+                                                </button>
+                                            </div>
+                                            <div class="dropdown d-inline-block">
+                                                <button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#approveRequestModal" onclick="addId('${data.request_id}', 'approve_request')">
+                                                    <i class="mdi mdi-thumb-up fs-5 fw-bold"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#onHoldRequestModal" onclick="addId('${data.request_id}', 'on_hold_request')">
+                                                    <i class="mdi mdi-hand-back-left fs-5 fw-bold"></i>
+                                                </button>
+                                            </div>
                                         </div>
                                     </td>
                                 </tr>
@@ -285,18 +303,6 @@
                                         <div class="d-flex align-items-center">
                                             <i class="ri-calendar-todo-fill text-primary"></i>
                                             <span class="ms-2">28 Aug, 2022<small class="text-muted ms-1">08:00 AM</small></span>
-                                        </div>
-                                    </td>
-                                    <td width="25%">
-                                        <div id="documents" class="list-group col nested-list nested-sortable">
-                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
-                                                <i class="ri-file-text-fill fs-16 align-middle text-success me-3"></i>
-                                                <span class="fw-medium" style="font-size: 12px;">Transcript of Records - For evaluation/reference (Undergraduate) 1st Year</span>
-                                            </div>
-                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
-                                                <i class="ri-file-text-fill fs-16 align-middle text-success me-3"></i>
-                                                <span class="fw-medium" style="font-size: 12px;">Certificate of Good Moral Character</span>
-                                            </div>
                                         </div>
                                     </td>
                                     <td width="27%">
@@ -321,14 +327,36 @@
                                             <small class="d-block fst-italic text-center">Always "View Details" for more information</small>
                                         </div>
                                     </td>
+                                    <td width="25%">
+                                        <div id="documents" class="list-group col nested-list">
+                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
+                                                <i class="ri-file-text-fill fs-16 align-middle text-success me-3"></i>
+                                                <span class="fw-medium" style="font-size: 12px;">Transcript of Records - For evaluation/reference (Undergraduate) 1st Year</span>
+                                            </div>
+                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
+                                                <i class="ri-file-text-fill fs-16 align-middle text-success me-3"></i>
+                                                <span class="fw-medium" style="font-size: 12px;">Certificate of Good Moral Character</span>
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td class="text-center">
-                                        <div class="dropdown d-inline-block">
-                                            <button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#approveRequestModal" onclick="addId('${data.request_id}', 'approve_request')">
-                                                <i class="mdi mdi-thumb-up fs-5 fw-bold"></i>
-                                            </button>
-                                            <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#onHoldRequestModal" onclick="addId('${data.request_id}', 'on_hold_request')">
-                                                <i class="mdi mdi-hand-back-left fs-5 fw-bold"></i>
-                                            </button>
+                                        <div class="d-flex flex-column gap-2">
+                                            <div class="dropdown d-inline-block">
+                                                <button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#approveRequestModal" onclick="addId('${data.request_id}', 'approve_request')">
+                                                    <i class="mdi mdi-thumb-up fs-5 fw-bold"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#onHoldRequestModal" onclick="addId('${data.request_id}', 'on_hold_request')">
+                                                    <i class="mdi mdi-hand-back-left fs-5 fw-bold"></i>
+                                                </button>
+                                            </div>
+                                            <div class="dropdown d-inline-block">
+                                                <button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#approveRequestModal" onclick="addId('${data.request_id}', 'approve_request')">
+                                                    <i class="mdi mdi-thumb-up fs-5 fw-bold"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#onHoldRequestModal" onclick="addId('${data.request_id}', 'on_hold_request')">
+                                                    <i class="mdi mdi-hand-back-left fs-5 fw-bold"></i>
+                                                </button>
+                                            </div>
                                         </div>
                                     </td>
                                 </tr>
@@ -363,7 +391,7 @@
                                         </div>
                                     </td>
                                     <td width="25%">
-                                        <div id="documents" class="list-group col nested-list nested-sortable">
+                                        <div id="documents" class="list-group col nested-list">
                                             <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
                                                 <i class="ri-file-text-fill fs-16 text-success me-3"></i>
                                                 <span class="fw-medium" style="font-size: 12px;">Transcript of Records - For evaluation/reference (Undergraduate) 1st Year</span>
@@ -421,7 +449,7 @@
                                         </div>
                                     </td>
                                     <td width="25%">
-                                        <div id="documents" class="list-group col nested-list nested-sortable">
+                                        <div id="documents" class="list-group col nested-list">
                                             <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
                                                 <i class="ri-file-text-fill fs-16 text-success me-3"></i>
                                                 <span class="fw-medium" style="font-size: 12px;">Informative Copy of Grades</span>
@@ -483,7 +511,7 @@
                                         </div>
                                     </td>
                                     <td width="25%">
-                                        <div id="documents" class="list-group col nested-list nested-sortable">
+                                        <div id="documents" class="list-group col nested-list">
                                             <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
                                                 <i class="ri-file-text-fill fs-16 text-success me-3"></i>
                                                 <span class="fw-medium" style="font-size: 12px;">Informative Copy of Grades</span>
@@ -536,9 +564,9 @@
                                     <th>Control Number</th>
                                     <th>Student</th>
                                     <th>Date Filed</th>
-                                    <th>Document/s On Hold</th>
                                     <th>Details</th>
                                     <th>Date On Hold</th>
+                                    <th>Document/s On Hold</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -561,18 +589,6 @@
                                         <div class="d-flex align-items-center">
                                             <i class="ri-calendar-todo-fill text-primary"></i>
                                             <span class="ms-2">09 Dec, 2022</span>
-                                        </div>
-                                    </td>
-                                    <td width="25%">
-                                        <div id="documents" class="list-group col nested-list nested-sortable">
-                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
-                                                <i class="ri-file-text-fill fs-16 text-success me-3"></i>
-                                                <span class="fw-medium" style="font-size: 12px;">Certificate of Good Moral Character</span>
-                                            </div>
-                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
-                                                <i class="ri-file-text-fill fs-16 text-success me-3"></i>
-                                                <span class="fw-medium" style="font-size: 12px;">Transcript of Records - For evaluation/reference (Undergraduate) 1st Year</span>
-                                            </div>
                                         </div>
                                     </td>
                                     <td width="30%">
@@ -603,10 +619,27 @@
                                             <span class="ms-2">10 Dec, 2022</span>
                                         </div>
                                     </td>
+                                    <td width="25%">
+                                        <div id="documents" class="list-group col nested-list">
+                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
+                                                <i class="ri-file-text-fill fs-16 text-success me-3"></i>
+                                                <span class="fw-medium" style="font-size: 12px;">Certificate of Good Moral Character</span>
+                                            </div>
+                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
+                                                <i class="ri-file-text-fill fs-16 text-success me-3"></i>
+                                                <span class="fw-medium" style="font-size: 12px;">Transcript of Records - For evaluation/reference (Undergraduate) 1st Year</span>
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td>
-                                        <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#revertModal" onclick="addId('${data.request_id}', 'revert_request')">
-                                            <i class="ri-arrow-go-back-fill fs-5"></i>
-                                        </button>
+                                        <div class="d-flex flex-column gap-2">
+                                            <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#revertModal" onclick="addId('${data.request_id}', 'revert_request')">
+                                                <i class="ri-arrow-go-back-fill fs-5"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#revertModal" onclick="addId('${data.request_id}', 'revert_request')">
+                                                <i class="ri-arrow-go-back-fill fs-5"></i>
+                                            </button>
+                                        </div>
                                     </td>
                                 </tr>
                                 <tr>
@@ -627,18 +660,6 @@
                                         <div class="d-flex align-items-center">
                                             <i class="ri-calendar-todo-fill text-primary"></i>
                                             <span class="ms-2">12 Dec, 2022</span>
-                                        </div>
-                                    </td>
-                                    <td width="25%">
-                                        <div id="documents" class="list-group col nested-list nested-sortable">
-                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
-                                                <i class="ri-file-text-fill fs-16 text-success me-3"></i>
-                                                <span class="fw-medium" style="font-size: 12px;">Transcript of Records - For evaluation/reference (Undergraduate) 1st Year</span>
-                                            </div>
-                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
-                                                <i class="ri-file-text-fill fs-16 text-success me-3"></i>
-                                                <span class="fw-medium" style="font-size: 12px;">Informative Copy of Grades</span>
-                                            </div>
                                         </div>
                                     </td>
                                     <td width="30%">
@@ -669,10 +690,27 @@
                                             <span class="ms-2">14 Dec, 2022</span>
                                         </div>
                                     </td>
+                                    <td width="25%">
+                                        <div id="documents" class="list-group col nested-list">
+                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
+                                                <i class="ri-file-text-fill fs-16 text-success me-3"></i>
+                                                <span class="fw-medium" style="font-size: 12px;">Transcript of Records - For evaluation/reference (Undergraduate) 1st Year</span>
+                                            </div>
+                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
+                                                <i class="ri-file-text-fill fs-16 text-success me-3"></i>
+                                                <span class="fw-medium" style="font-size: 12px;">Informative Copy of Grades</span>
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td>
-                                        <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#revertModal" onclick="addId('${data.request_id}', 'revert_request')">
-                                            <i class="ri-arrow-go-back-fill fs-5"></i>
-                                        </button>
+                                        <div class="d-flex flex-column gap-2">
+                                            <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#revertModal" onclick="addId('${data.request_id}', 'revert_request')">
+                                                <i class="ri-arrow-go-back-fill fs-5"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#revertModal" onclick="addId('${data.request_id}', 'revert_request')">
+                                                <i class="ri-arrow-go-back-fill fs-5"></i>
+                                            </button>
+                                        </div>
                                     </td>
                                 </tr>
                                 <tr>
@@ -693,14 +731,6 @@
                                         <div class="d-flex align-items-center">
                                             <i class="ri-calendar-todo-fill text-primary"></i>
                                             <span class="ms-2">13 Dec, 2022</span>
-                                        </div>
-                                    </td>
-                                    <td width="25%">
-                                        <div id="documents" class="list-group col nested-list nested-sortable">
-                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
-                                                <i class="ri-file-text-fill fs-16 text-success me-3"></i>
-                                                <span class="fw-medium" style="font-size: 12px;">Certificate of Good Moral Character</span>
-                                            </div>
                                         </div>
                                     </td>
                                     <td width="30%">
@@ -729,6 +759,14 @@
                                         <div class="d-flex align-items-center">
                                             <i class="ri-calendar-todo-fill text-primary"></i>
                                             <span class="ms-2">14 Dec, 2022</span>
+                                        </div>
+                                    </td>
+                                    <td width="25%">
+                                        <div id="documents" class="list-group col nested-list">
+                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
+                                                <i class="ri-file-text-fill fs-16 text-success me-3"></i>
+                                                <span class="fw-medium" style="font-size: 12px;">Certificate of Good Moral Character</span>
+                                            </div>
                                         </div>
                                     </td>
                                     <td>
