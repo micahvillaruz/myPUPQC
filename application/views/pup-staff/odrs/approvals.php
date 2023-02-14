@@ -564,9 +564,9 @@
                                     <th>Control Number</th>
                                     <th>Student</th>
                                     <th>Date Filed</th>
-                                    <th>Document/s On Hold</th>
                                     <th>Details</th>
                                     <th>Date On Hold</th>
+                                    <th>Document/s On Hold</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -589,18 +589,6 @@
                                         <div class="d-flex align-items-center">
                                             <i class="ri-calendar-todo-fill text-primary"></i>
                                             <span class="ms-2">09 Dec, 2022</span>
-                                        </div>
-                                    </td>
-                                    <td width="25%">
-                                        <div id="documents" class="list-group col nested-list">
-                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
-                                                <i class="ri-file-text-fill fs-16 text-success me-3"></i>
-                                                <span class="fw-medium" style="font-size: 12px;">Certificate of Good Moral Character</span>
-                                            </div>
-                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
-                                                <i class="ri-file-text-fill fs-16 text-success me-3"></i>
-                                                <span class="fw-medium" style="font-size: 12px;">Transcript of Records - For evaluation/reference (Undergraduate) 1st Year</span>
-                                            </div>
                                         </div>
                                     </td>
                                     <td width="30%">
@@ -631,10 +619,27 @@
                                             <span class="ms-2">10 Dec, 2022</span>
                                         </div>
                                     </td>
+                                    <td width="25%">
+                                        <div id="documents" class="list-group col nested-list">
+                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
+                                                <i class="ri-file-text-fill fs-16 text-success me-3"></i>
+                                                <span class="fw-medium" style="font-size: 12px;">Certificate of Good Moral Character</span>
+                                            </div>
+                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
+                                                <i class="ri-file-text-fill fs-16 text-success me-3"></i>
+                                                <span class="fw-medium" style="font-size: 12px;">Transcript of Records - For evaluation/reference (Undergraduate) 1st Year</span>
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td>
-                                        <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#revertModal" onclick="addId('${data.request_id}', 'revert_request')">
-                                            <i class="ri-arrow-go-back-fill fs-5"></i>
-                                        </button>
+                                        <div class="d-flex flex-column gap-2">
+                                            <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#revertModal" onclick="addId('${data.request_id}', 'revert_request')">
+                                                <i class="ri-arrow-go-back-fill fs-5"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#revertModal" onclick="addId('${data.request_id}', 'revert_request')">
+                                                <i class="ri-arrow-go-back-fill fs-5"></i>
+                                            </button>
+                                        </div>
                                     </td>
                                 </tr>
                                 <tr>
@@ -655,18 +660,6 @@
                                         <div class="d-flex align-items-center">
                                             <i class="ri-calendar-todo-fill text-primary"></i>
                                             <span class="ms-2">12 Dec, 2022</span>
-                                        </div>
-                                    </td>
-                                    <td width="25%">
-                                        <div id="documents" class="list-group col nested-list">
-                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
-                                                <i class="ri-file-text-fill fs-16 text-success me-3"></i>
-                                                <span class="fw-medium" style="font-size: 12px;">Transcript of Records - For evaluation/reference (Undergraduate) 1st Year</span>
-                                            </div>
-                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
-                                                <i class="ri-file-text-fill fs-16 text-success me-3"></i>
-                                                <span class="fw-medium" style="font-size: 12px;">Informative Copy of Grades</span>
-                                            </div>
                                         </div>
                                     </td>
                                     <td width="30%">
@@ -697,10 +690,27 @@
                                             <span class="ms-2">14 Dec, 2022</span>
                                         </div>
                                     </td>
+                                    <td width="25%">
+                                        <div id="documents" class="list-group col nested-list">
+                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
+                                                <i class="ri-file-text-fill fs-16 text-success me-3"></i>
+                                                <span class="fw-medium" style="font-size: 12px;">Transcript of Records - For evaluation/reference (Undergraduate) 1st Year</span>
+                                            </div>
+                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
+                                                <i class="ri-file-text-fill fs-16 text-success me-3"></i>
+                                                <span class="fw-medium" style="font-size: 12px;">Informative Copy of Grades</span>
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td>
-                                        <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#revertModal" onclick="addId('${data.request_id}', 'revert_request')">
-                                            <i class="ri-arrow-go-back-fill fs-5"></i>
-                                        </button>
+                                        <div class="d-flex flex-column gap-2">
+                                            <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#revertModal" onclick="addId('${data.request_id}', 'revert_request')">
+                                                <i class="ri-arrow-go-back-fill fs-5"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#revertModal" onclick="addId('${data.request_id}', 'revert_request')">
+                                                <i class="ri-arrow-go-back-fill fs-5"></i>
+                                            </button>
+                                        </div>
                                     </td>
                                 </tr>
                                 <tr>
@@ -721,14 +731,6 @@
                                         <div class="d-flex align-items-center">
                                             <i class="ri-calendar-todo-fill text-primary"></i>
                                             <span class="ms-2">13 Dec, 2022</span>
-                                        </div>
-                                    </td>
-                                    <td width="25%">
-                                        <div id="documents" class="list-group col nested-list">
-                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
-                                                <i class="ri-file-text-fill fs-16 text-success me-3"></i>
-                                                <span class="fw-medium" style="font-size: 12px;">Certificate of Good Moral Character</span>
-                                            </div>
                                         </div>
                                     </td>
                                     <td width="30%">
@@ -757,6 +759,14 @@
                                         <div class="d-flex align-items-center">
                                             <i class="ri-calendar-todo-fill text-primary"></i>
                                             <span class="ms-2">14 Dec, 2022</span>
+                                        </div>
+                                    </td>
+                                    <td width="25%">
+                                        <div id="documents" class="list-group col nested-list">
+                                            <div class="list-group-item nested-1 d-flex align-items-center" style="background-color: rgba(64,81,137,.05); border-color: rgba(64,81,137,.05);">
+                                                <i class="ri-file-text-fill fs-16 text-success me-3"></i>
+                                                <span class="fw-medium" style="font-size: 12px;">Certificate of Good Moral Character</span>
+                                            </div>
                                         </div>
                                     </td>
                                     <td>

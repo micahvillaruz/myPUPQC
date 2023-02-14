@@ -1470,24 +1470,110 @@
 
                 <div class="mt-4">
                     <h4 class="mb-3 fw-semibold">Is the Remarks already Resolved?</h4>
-                    <p class="text-muted mb-4">If yes, tick the checkbox and click the Yes, It is! button. The On Hold Document/s will be subjected again for your approval and moved on the "Requests for Approval" tab. Otherwise, click the Dismiss button.</p>
-                    <!-- Warning Alert -->
-                    <div class="alert alert-warning alert-border-left alert-dismissible fade show" style="padding-right: 16px;" role="alert">
-                        <div class="mb-2 d-flex align-items-center justify-content-center">
-                            <i class="ri-alert-line me-2 align-middle fs-6"></i> <strong>WARNING</strong>
+                    <p class="text-muted mb-4">If yes, tick the checkbox and click the Yes, It is! button. The On Hold Document will be subjected again for your approval and moved on the "Requests for Approval" tab. Otherwise, click the Dismiss button.</p>
+
+                    <div class="vstack gap-2 mt-4 mb-4">
+                        <div class="form-check card-checkbox shadow">
+                            <input id="approveDocument" name="approveDocument" class="form-check-input">
+                            <label class="form-check-label" for="approveDocument" style="background-color: #fff5da">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0">
+                                        <div class="avatar-xs">
+                                            <div class="avatar-title bg-primary text-white fs-18 rounded">
+                                                <i class="ri-file-text-line"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h6 class="mb-1 fw-semibold">Certificate of Good Moral Character</h6>
+                                        <p class="text-muted mb-0">Type: Certifications</p>
+                                    </div>
+                                    <div class="flex-shrink-0 align-self-center">
+                                        <span class="badge bg-dark"></i>QTY: 1<span>
+                                    </div>
+                                </div>
+                            </label>
                         </div>
-                        <span>Please make sure that the OIC, Student Records has complied with all the <span class="fw-medium">REMARKS</span> indicated especifically for the <span class="fw-medium">ON HOLD DOCUMENT/S</span> before you set its status back to For Approval.</span>
+                    </div>
+
+                    <div class="text-start card mt-3 card-height-100 border shadow">
+                        <div class="card-body p-0">
+                            <div class="alert alert-danger border-0 rounded-top alert-solid alert-label-icon rounded-0 m-0 d-flex align-items-center" style="background-color: #4b38b3!important" role="alert">
+                                <i class="mdi mdi-file-sign label-icon"></i>
+                                <div class="flex-grow-1 text-truncate">
+                                    Signatories in this approval workflow
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <div class="acitivity-timeline acitivity-main">
+                                    <div class="acitivity-item d-flex">
+                                        <div class="flex-shrink-0">
+                                            <img src="<?= base_url() ?>public/images/officials/img-2.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                                        </div>
+                                        <div class="flex-grow-1 ms-3 mb-4">
+                                            <h6 class="mb-1">Demelyn E. Monzon</h6>
+                                            <p class="text-muted mb-1">Head, Academic Programs</p>
+                                            <span class="badge badge-soft-success text-uppercase">Approved</span><br>
+                                            <div class="d-flex align-items-center text-muted mt-1 gap-2">
+                                                <i class="ri-calendar-todo-fill text-primary"></i>
+                                                <small> 29 Nov. 2022, 07:45 AM</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="acitivity-item d-flex">
+                                        <div class="flex-shrink-0">
+                                            <img src="<?= base_url() ?>public/images/officials/img-6.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                                        </div>
+                                        <div class="flex-grow-1 ms-3 mb-4">
+                                            <h6 class="mb-1">Cleotilde B. Servigon</h6>
+                                            <p class="text-muted mb-1">Registrar</p>
+                                            <span class="badge badge-soft-danger text-uppercase">On Hold</span><br>
+                                            <div class="d-flex align-items-center text-muted mt-1 gap-2">
+                                                <i class="ri-calendar-todo-fill text-primary"></i>
+                                                <small> 29 Nov. 2022, 02:00 PM</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="acitivity-item d-flex">
+                                        <div class="flex-shrink-0">
+                                            <img src="<?= base_url() ?>public/images/officials/img-1.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h6 class="mb-1">Assoc. Prof. Jaime P. Gutierrez Jr.</h6>
+                                            <p class="text-muted mb-1">Director</p>
+                                            <span class="badge badge-soft-warning text-uppercase">Pending</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- end card body -->
+                    </div><!-- end card -->
+
+                    <h6 class="mt-4 mb-3 text-start text-primary">Remarks</h6>
+                    <div class="list-group text-start">
+                        <div class="list-group-item list-group-item-action list-group-item-danger">
+                            <div class="d-flex mb-2 align-items-center">
+                                <div class="flex-shrink-0">
+                                    <img src="<?= base_url() ?>public/images/officials/img-6.png" alt="" class="avatar-xs rounded-circle" />
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="list-title mb-1">Cleotilde B. Servigon</h6>
+                                    <p class="list-text mb-0 fs-12">Registrar</p>
+                                </div>
+                            </div>
+                            <p>Good Day! Please be advised that the the Informative Copy of Grades must be printed in a long bond paper with documentary stamp and school dry seal before handing it for signature. Kindly comply with this requirements so that the processing of the document/s will be started right away.</p>
+                        </div>
                     </div>
 
                     <form id="revertRequestForm" class="needs-validation" novalidate>
-                        <input type="hidden" id="revertt_request_id">
+                        <input type="hidden" id="revert_request_id">
                         <div class="mt-4 form-check form-check-success mb-3">
                             <input class="form-check-input" type="checkbox" id="validateRevert" required>
                             <label class="form-check-label" for="validateRevert">
-                                I hereby certify that the remarks I stated for holding the document/s has been resolved by the OIC, Student Records.
+                                I hereby certify that the remarks I stated for holding this document has been resolved by the OIC, Student Records.
                             </label>
                             <div class="invalid-feedback">
-                                You must agree that the OIC, Student Records complied with the remarks for the processing of the On Hold Document/s.
+                                You must agree that the OIC, Student Records complied with the remarks for this document before it is subjected for another round of evaluation.
                             </div>
                         </div>
                         <div class="mt-4 justify-content-center">
