@@ -1,6 +1,8 @@
 $(function() {
     viewAllPendingReservation()
 
+    viewAllForEvaluation()
+
     viewAllApprovedReservation()
 })
 
@@ -27,15 +29,7 @@ viewDetailsReservationStaff = (reservation_id) => {
 
             $('#reserve_number').html(userData.reservation_number)
             let organization_name = userData.organization_name
-            if (
-                organization_name == 'CHRS' ||
-                'COMMITS' ||
-                'DOMT.CS' ||
-                'FBTO' ||
-                'JMS' ||
-                'SPAS' ||
-                'YES'
-            ) {
+            if (organization_name == 'CHRS' || 'COMMITS' || 'DOMT.CS' || 'FBTO' || 'JMS' || 'SPAS' || 'YES') {
                 $('#organization').html(`<span>${organization_name}</span>`)
             } else if (organization_name == 'KATAGA' || 'MUSA' || 'PSC' || 'Vox Nova' || 'Other') {
                 $('#organization').html(`<span>${organization_name}</span>`)
@@ -53,17 +47,17 @@ viewDetailsReservationStaff = (reservation_id) => {
             const time = `${userData.time_from} - ${userData.time_to}`
             $('#time').html(time)
             $('#remarks').html(userData.remarks)
-            $('#attachment1').html(
+            $('#event_request').html(
                 `<i class="ri-file-fill text-primary me-2"></i><a href="${userData.reserve_attachments_1}" target="_blank" class="link fw-bold">Event Request</a>`,
             )
-            $('#attachment2').html(
+            $('#concept_paper').html(
                 `<i class="ri-file-text-fill text-primary me-2"></i><a href="${userData.reserve_attachments_2}" target="_blank" class="link fw-bold">Concept Paper</a>`,
             )
-            $('#attachment3').html(
+            $('#others').html(
                 `<i class="ri-file-copy-2-fill text-primary me-2"></i><a href="${userData.reserve_attachments_2}" target="_blank" class="link fw-bold">Others</a>`,
             )
             let reservation_status = userData.reserve_status
-            if (reservation_status == 'Pending') {
+            if (reservation_status == 'For Review') {
                 // add class for div change-status
                 $('#change-status').removeClass('d-none')
                 $('#reservation-status').html(
@@ -76,7 +70,20 @@ viewDetailsReservationStaff = (reservation_id) => {
                         </div>
                     </div>`,
                 )
-            } else if (reservation_status == 'Approved') {
+            } else if (reservation_status == 'For Evaluation' || reservation_status == 'For Approval') {
+                // add class for div change-status
+                $('#change-status').removeClass('d-none')
+                $('#reservation-status').html(
+                    `<div class="card card-warning">
+                        <div class="card-body">
+                            <div class="d-flex position-relative">
+                                <i class="ri-2x ri-loader-3-fill fw-medium me-2"></i>
+                                <h3 class="card-text fw-medium text-white my-auto">${reservation_status}</h3>
+                            </div>
+                        </div>
+                    </div>`,
+                )
+            } else if (reservation_status == 'Approved & Released') {
                 // add class for div change-status
                 $('#change-status').addClass('d-none')
                 $('#reservation-status').html(
@@ -102,20 +109,7 @@ viewDetailsReservationStaff = (reservation_id) => {
                         </div>
                     </div>`,
                 )
-            } else if (reservation_status == 'Cancelled by Student') {
-                // add class for div change-status
-                $('#change-status').addClass('d-none')
-                $('#reservation-status').html(
-                    `<div class="card card-danger">
-                        <div class="card-body">
-                            <div class="d-flex position-relative">
-                                <i class="ri-2x ri-close-line fw-medium me-2"></i>
-                                <h3 class="card-text fw-medium text-white my-auto">Cancelled</h3>
-                            </div>
-                        </div>
-                    </div>`,
-                )
-            } else if (reservation_status == 'Cancelled by Staff') {
+            } else if (reservation_status == 'Cancelled by Student' || reservation_status == 'Cancelled by Staff') {
                 // add class for div change-status
                 $('#change-status').addClass('d-none')
                 $('#reservation-status').html(
@@ -225,8 +219,9 @@ viewAllPendingReservation = () => {
                     render: (data) => {
                         return `
                             <div class="dropdown d-inline-block">
-                                <button type="button" class="btn btn-info btn-icon waves-effect waves-light mb-2" data-bs-toggle="modal" data-bs-target="#addSignModal" onclick=""><i class=" ri-eye-fill fs-6 align-middle"></i></button>
-                                <button type="button" class="btn btn-success waves-effect waves-light mb-2" data-bs-toggle="modal" data-bs-target="#addSignModal" onclick=""><i class=" ri-quill-pen-fill fs-6 me-2 align-middle"></i>Add Signatories</button>
+                                <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewReservationModal" onclick="viewDetailsReservationStaff('${data.reservation_id}')"><i class=" ri-eye-fill fs-6 align-middle"></i></button>
+                                <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#cancelReservationModal" onclick="cancelReservation('${data.reservation_id}')"><i class=" ri-delete-bin-fill fs-6 align-middle"></i></button>
+                                <button type="button" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#addSignModal" onclick=""><i class=" ri-quill-pen-fill fs-6 me-2 align-middle"></i>Add Signatories</button>
                             </div>
                                 `
                     },
@@ -239,6 +234,103 @@ viewAllPendingReservation = () => {
     }
 }
 
+//View All For Evaluation Reservations
+viewAllForEvaluation = () => {
+    const dt = $('#for-evaluation-table')
+
+    $.ajaxSetup({
+        headers: {
+            Accept: 'application/json',
+            Authorization: 'Bearer ' + TOKEN,
+            ContentType: 'application/x-www-form-urlencoded',
+        },
+    })
+    if (dt.length) {
+        dt.DataTable({
+            bDestroy: true,
+            ajax: {
+                url: apiURL + 'evrsers/pup_staff/view_for_evaluation/',
+                type: 'GET',
+                ContentType: 'application/x-www-form-urlencoded',
+            },
+            columns: [
+                // Reservation Control Number
+                {
+                    data: null,
+                    render: (data) => {
+                        const reservation_number = data.reservation_number
+                        return `${reservation_number}`
+                    },
+                },
+                // Event Title
+                {
+                    data: null,
+                    render: (data) => {
+                        const event_title = data.event_title
+                        return `${event_title}`
+                    },
+                },
+
+                // Venue
+                {
+                    data: null,
+                    render: (data) => {
+                        const facility_name = data.facilities_assigned_to_reservation.facility_name
+                        return `${facility_name}`
+                    },
+                },
+
+                // Date
+                {
+                    data: null,
+                    render: (data) => {
+                        const reserve_date = moment(data.reserve_date).format('LL')
+
+                        return `${reserve_date}`
+                    },
+                },
+
+                // Time
+                {
+                    data: null,
+                    render: (data) => {
+                        const time_from = data.time_from
+                        const time_to = data.time_to
+                        return `${time_from + ' - ' + time_to}`
+                    },
+                },
+
+                // Status
+                {
+                    data: null,
+                    class: 'text-center',
+                    render: (data) => {
+                        const reserve_status = data.reserve_status
+                        return `<span class="badge rounded-pill bg-success">${reserve_status}</span>`
+                    },
+                },
+
+                //Action
+                {
+                    data: null,
+                    class: 'text-center',
+                    render: (data) => {
+                        return `
+                            <div class="dropdown d-inline-block">
+                                <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewReservationModal" onclick="viewDetailsReservationStaff('${data.reservation_id}')"><i class="ri-eye-fill fs-5"></i></button>
+                            </div>
+                                `
+                    },
+                },
+            ],
+            order: [
+                [4, 'desc']
+            ],
+        })
+    }
+}
+
+//View All Approved Reservations
 viewAllApprovedReservation = () => {
     const dt = $('#approved-and-released-table')
 
@@ -334,6 +426,7 @@ viewAllApprovedReservation = () => {
     }
 }
 
+// ! To be revised
 approveReservation = (reservation_id) => {
     console.log(reservation_id)
     $('#viewReservationModal').modal('hide')

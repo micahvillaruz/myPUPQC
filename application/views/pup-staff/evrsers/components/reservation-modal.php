@@ -134,9 +134,9 @@
                 </div>
                 <h6 class="text-medium">RESERVATION ATTACHMENTS</h6>
                 <div class="ms-2">
-                  <span class="fs-5" id="attachment1"></span><br>
-                  <span class="fs-5" id="attachment2"></span><br>
-                  <span class="fs-5" id="attachment3"></span><br>
+                  <span class="fs-5" id="event_request"></span><br>
+                  <span class="fs-5" id="concept_paper"></span><br>
+                  <span class="fs-5" id="others"></span><br>
                 </div>
               </div>
               <div class="col-lg-4">

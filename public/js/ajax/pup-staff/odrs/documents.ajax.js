@@ -172,6 +172,9 @@ addDocument = () => {
 		document_requirements: values.map((item) => {
 			return { doc_req_name: item }
 		}),
+		document_signatories: signatoriesList.map((element, index) => {
+			return { user_id: element, hierarchy_number: index + 1 }
+		}),
 	}
 
 	$.ajax({
@@ -323,6 +326,7 @@ getDocumentInfo = (document_id) => {
 function print_signatory() {
 	const selectedOption = $('#select_signatories option:selected')
 	const selectedOptionID = selectedOption.val()
+	$('#select_signatories').removeAttr('required')
 
 	if (selectedOptionID) {
 		if (!signatoriesList.includes(selectedOptionID)) {
@@ -353,6 +357,11 @@ $('#display_list').on('click', '.link-delete', function () {
 	signatoriesList = signatoriesList.filter((value) => value !== removedOptionID)
 	$(this).parent().remove()
 	populateSelect(signatoriesList)
+
+	if (!$('#display_list li').length) {
+		// No li elements found inside the ul tag with the id of display_list
+		$('#select_signatories').prop('required', true)
+	}
 })
 
 function add_new_link() {

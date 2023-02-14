@@ -17,12 +17,54 @@ checkCreatePermission = () => {
             } else {
                 $('#decline_create_reservation').addClass('d-none')
                 $('#allow_create_reservation').removeClass('d-none')
+
                 loadFullName()
+
+                loadHolidays()
+
+                dateAndTimeSelectFunctions()
+
                 loadFacilities()
+
+                loadOrganizations()
 
                 $('#addNewReservation').on('submit', function(e) {
                     e.preventDefault() // prevent page refresh
                     addNewReservation()
+                })
+
+                const attachmentsFileTypes = [
+                    'file/pdf',
+                    'file/docx',
+                    'application/msword',
+                    'application/pdf',
+                    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                ]
+
+                pond = FilePond.create(document.querySelector('#attachments'), {
+                    instantUpload: false,
+                    allowProcess: false,
+                    acceptedFileTypes: attachmentsFileTypes,
+                    beforeAddFile: (file) => {
+                        if (!attachmentsFileTypes.includes(file.fileType)) {
+                            Swal.fire({
+                                iconHtml: `<lord-icon src="https://cdn.lordicon.com/nduddlov.json" trigger="loop-on-hover" colors="outline:#f06548,primary:#ffffff,secondary:#f06548" style="width:100px;height:100px"></lord-icon>`,
+                                customClass: {
+                                    icon: 'border-white',
+                                },
+                                title: 'Oops...',
+                                text: `Only PDF and Document files are allowed! The one you are uploading is a: ${file.fileType}`,
+                                showCancelButton: !0,
+                                showConfirmButton: !1,
+                                cancelButtonClass: 'btn btn-danger w-xs mb-1',
+                                cancelButtonText: 'Dismiss',
+                                buttonsStyling: !1,
+                                showCloseButton: !0,
+                            })
+                            return false
+                        }
+                        return true
+                    },
                 })
             }
         },
@@ -80,9 +122,9 @@ loadFacilities = () => {
             $('#facilities').html(facilitiesHTML)
 
             // enable next button upon selecting a facility
-            // $('input[name="facility"]').on('change', function() {
-            //     $('#nextBtn').prop('disabled', false)
-            // })
+            $('input[name="facility"]').on('change', function() {
+                $('#nextBtn').prop('disabled', false)
+            })
         },
     })
 }
@@ -184,29 +226,119 @@ addNewReservation = () => {
 // Calendar functions for new reservation
 //Disable sundays for flatpickr reserveDatefloatingInput using disable option
 
-var coolDates = [Date.parse('2023-2-13'), Date.parse('2023-2-11')];
-var style = document.createElement('style');
-style.innerHTML = '.cool-date { background: #f5c076; }';
-document.head.appendChild(style);
+loadHolidays = () => {
+    var coolDates = [Date.parse('2023-2-13'), Date.parse('2023-2-11')]
+    var style = document.createElement('style')
+    style.innerHTML = '.cool-date { background: #f5c076; }'
+    document.head.appendChild(style)
 
-flatpickr('#reserveDatefloatingInput', {
-    dateFormat: 'd M, Y',
-    defaultDate: 'today',
-    minDate: 'today',
-    inline: true,
-    disable: [
-        function(date) {
-            return date.getDay() === 0;
+    flatpickr('#reserveDatefloatingInput', {
+        dateFormat: 'd M, Y',
+        defaultDate: 'today',
+        minDate: 'today',
+        inline: true,
+        disable: [
+            function(date) {
+                return date.getDay() === 0
+            },
+        ],
+        onDayCreate: function(dObj, dStr, fp, dayElem) {
+            // Checking to see if the current day object is in our array
+            // The `+` is just a shortcut for parsing the date
+            if (coolDates.indexOf(+dayElem.dateObj) !== -1) {
+                dayElem.className += ' cool-date'
+            }
+        },
+    })
+
+    dateAndTimeSelectFunctions = () => {
+        // enable #nextBtn1 upon selecting date, time from and time to in one line
+        const reserveDateInput = document.querySelector('#reserveDatefloatingInput')
+        const timeFromInput = document.querySelector('#timeFromfloatingInput')
+        const timeToInput = document.querySelector('#timeTofloatingInput')
+        const nextBtn1 = document.querySelector('#nextBtn1')
+
+        let inputsFilled = 0
+
+        reserveDateInput.addEventListener('change', checkInputs)
+        timeFromInput.addEventListener('change', checkInputs)
+        timeToInput.addEventListener('change', checkInputs)
+
+        function checkInputs() {
+            inputsFilled += 1
+
+            if (inputsFilled === 3) {
+                nextBtn1.removeAttribute('disabled')
+            }
         }
-    ],
-    onDayCreate: function(dObj, dStr, fp, dayElem) {
-        // Checking to see if the current day object is in our array
-        // The `+` is just a shortcut for parsing the date
-        if (coolDates.indexOf(+dayElem.dateObj) !== -1) {
-            dayElem.className += " cool-date";
+
+        // disable previous options if time from is greater than time to
+        const timeFrom = document.getElementById("timeFromfloatingInput");
+        const timeTo = document.getElementById("timeTofloatingInput");
+        let timeToOptions = [];
+
+        timeFrom.addEventListener("change", function() {
+            const selectedTimeFrom = timeFrom.value;
+            updateTimeToOptions(selectedTimeFrom);
+        });
+
+        function updateTimeToOptions(selectedTimeFrom) {
+            timeToOptions = [];
+
+            for (let i = 0; i < timeTo.options.length; i++) {
+                timeToOptions.push(timeTo.options[i].value);
+            }
+
+            for (let i = timeTo.options.length - 1; i >= 0; i--) {
+                if (timeToOptions[i] <= selectedTimeFrom) {
+                    timeTo.remove(i);
+                }
+            }
+
+            timeTo.remove(0);
         }
     }
-});
+}
 
+// load organizations as options in orgfloatingInput using ajax /student/view_organization
+loadOrganizations = () => {
+    $.ajaxSetup({
+        headers: {
+            Accept: 'application/json',
+            Authorization: 'Bearer ' + TOKEN,
+        },
+    })
 
-//
+    $.ajax({
+        type: 'GET',
+        url: apiURL + `evrsers/student/view_organization`,
+        // filter by organization status == active using dataSrc
+        dataSrc: (data) => {
+            let filterData = data.data.filter((item) => {
+                return item.reserve_status == 'Active'
+            })
+            return filterData
+        },
+        success: (result) => {
+            const data = result.data
+            console.log(data)
+
+            if (result) {
+                data.forEach((organization) => {
+                    if (organization.organization_abbreviation === '') {
+                        $('#orgfloatingInput').append(
+                            `<option value="${organization.organization_name}">${organization.organization_name}</option>
+                            `
+                        )
+                    } else {
+                        $('#orgfloatingInput').append(
+                            `<option value="${organization.organization_abbreviation}">${organization.organization_abbreviation}</option>
+                            `
+                        )
+                    }
+                })
+                $('#orgfloatingInput').append(`<option>Other</option>`)
+            }
+        },
+    })
+}

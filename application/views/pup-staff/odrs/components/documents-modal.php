@@ -12,7 +12,7 @@
       <div class="modal-body py-4">
         <form id="addDocumentForm" class="needs-validation" novalidate>
           <div class="mb-3">
-            <label for="adocument_name" class="form-label">Document Name <span class="text-danger">*</span></label>
+            <label for="document_name" class="form-label">Document Name <span class="text-danger">*</span></label>
             <input type="text" id="document_name" name="document_name" class="form-control" placeholder="Enter the name of the Document" required>
             <div class="invalid-feedback">
               Please enter the Document's Name.
@@ -20,7 +20,7 @@
           </div>
           <div class="mb-3">
             <label for="document_type" class="form-label">Document Type <span class="text-danger">*</span></label>
-            <select id="document_type" name="document_type" class="form-control js-example-basic-single" required>
+            <select id="document_type" name="document_type" class="form-select js-example-basic-single" required>
               <option value="" selected disabled>Select the Type of the Document</option>
               <option value="Transcript of Records">Transcript of Records</option>
               <option value="Certifications">Certifications</option>
@@ -41,7 +41,7 @@
           <div class="mb-3">
             <label for="document_type" class="form-label">Document Signatories <span class="text-danger">*</span></label>
             <div class="d-flex align-items-center signatories_div">
-              <select id="select_signatories" name="select_signatories" class="form-control js-example-basic-single" required>
+              <select id="select_signatories" name="select_signatories" class="form-select js-example-basic-single" required>
                 <option value="" selected disabled>Select the signatories for this Document</option>
               </select>
               <button onclick="print_signatory()" type="button" class="btn btn-info btn-icon waves-effect"><i class="mdi mdi-file-sign fs-5"></i></button>

@@ -32,48 +32,48 @@
                             <diV class="d-flex">
                                 <div class="col-lg mx-4 mb-2">
                                     <div class="mb-3">
-                                            <p class="text-muted fw-medium fs-9">Reserve Date</p>
-                                            <input type="text" id="reserveDatefloatingInput" name="reserveDatefloatingInput" class="form-control mb-3 d-none"/>
+                                        <p class="text-muted fw-medium fs-9">Reserve Date</p>
+                                        <input type="text" id="reserveDatefloatingInput" name="reserveDatefloatingInput" class="form-control mb-3 d-none" />
                                     </div>
                                 </div>
                                 <div class="col-lg vstack gap-3 align-middle justify-content-center">
                                     <div class="mb-2">
                                         <!-- <p class="text-muted fw-medium fs-9 mx-4">Reserve Time</p> -->
                                         <div class="form-floating w-75 mx-auto">
-                                            <select class="form-select" id="timeFromfloatingInput" placeholder="" required>
+                                            <select class="form-select" id="timeFromfloatingInput" name="timeFromfloatingInput" placeholder="" required>
                                                 <option selected disabled>- Select Time -</option>
-                                                <option>8:00 AM</option>
-                                                <option>9:00 AM</option>
-                                                <option>10:00 AM</option>
-                                                <option>11:00 AM</option>
-                                                <option>1:00 PM</option>
-                                                <option>2:00 PM</option>
-                                                <option>3:00 PM</option>
-                                                <option>4:00 PM</option>
-                                                <option>5:00 PM</option>
-                                                <option>6:00 PM</option>
-                                                <option>7:00 PM</option>
-                                                <option>8:00 PM</option>
+                                                <option value="8:00AM">8:00 AM</option>
+                                                <option value="9:00AM">9:00 AM</option>
+                                                <option value="10:00AM">10:00 AM</option>
+                                                <option value="11:00AM">11:00 AM</option>
+                                                <option value="1:00PM">1:00 PM</option>
+                                                <option value="2:00PM">2:00 PM</option>
+                                                <option value="3:00PM">3:00 PM</option>
+                                                <option value="4:00PM">4:00 PM</option>
+                                                <option value="5:00PM">5:00 PM</option>
+                                                <option value="6:00PM">6:00 PM</option>
+                                                <option value="7:00PM">7:00 PM</option>
+                                                <option value="8:00PM">8:00 PM</option>
                                             </select>
                                             <label for="timeFromfloatingInput">Time From</label>
                                         </div>
                                     </div>
                                     <div class="mb-2">
                                         <div class="form-floating w-75 mx-auto">
-                                            <select class="form-select" id="timeTofloatingInput" placeholder="" required>
+                                            <select class="form-select" id="timeTofloatingInput" name="timeTofloatingInput" placeholder="" required>
                                                 <option selected disabled>- Select Time -</option>
-                                                <option>9:00 AM</option>
-                                                <option>10:00 AM</option>
-                                                <option>11:00 AM</option>
-                                                <option>1:00 PM</option>
-                                                <option>2:00 PM</option>
-                                                <option>3:00 PM</option>
-                                                <option>4:00 PM</option>
-                                                <option>5:00 PM</option>
-                                                <option>6:00 PM</option>
-                                                <option>7:00 PM</option>
-                                                <option>8:00 PM</option>
-                                                <option>9:00 PM</option>
+                                                <option value="9:00AM">9:00 AM</option>
+                                                <option value="10:00AM">10:00 AM</option>
+                                                <option value="11:00AM">11:00 AM</option>
+                                                <option value="1:00PM">1:00 PM</option>
+                                                <option value="2:00PM">2:00 PM</option>
+                                                <option value="3:00PM">3:00 PM</option>
+                                                <option value="4:00PM">4:00 PM</option>
+                                                <option value="5:00PM">5:00 PM</option>
+                                                <option value="6:00PM">6:00 PM</option>
+                                                <option value="7:00PM">7:00 PM</option>
+                                                <option value="8:00PM">8:00 PM</option>
+                                                <option value="9:00PM">9:00 PM</option>
                                             </select>
                                             <label for="timeTofloatingInput">Time To</label>
                                         </div>
@@ -81,7 +81,7 @@
                                 </div>
                             </diV>
                             <div class="d-flex align-items-start gap-3 mt-4">
-                                <button id="nextBtn" type="button" class="btn btn-success btn-label right ms-auto nexttab" data-nexttab="venue-selection-tab">
+                                <button id="nextBtn1" type="button" class="btn btn-success btn-label right ms-auto nexttab" data-nexttab="venue-selection-tab" disabled>
                                     <i class="ri-arrow-right-line label-icon align-middle fs-16 ms-2"></i>Next
                                 </button>
                             </div>
@@ -100,7 +100,7 @@
                                     <i class="ri-arrow-left-line label-icon align-middle fs-16 me-2"></i>
                                     Back to Date & Time Selection
                                 </button>
-                                <button id="nextBtn" type="button" class="btn btn-success btn-label right ms-auto nexttab" data-nexttab="event-details-tab">
+                                <button id="nextBtn" type="button" class="btn btn-success btn-label right ms-auto nexttab" data-nexttab="event-details-tab" disabled>
                                     <i class="ri-arrow-right-line label-icon align-middle fs-16 ms-2"></i>Next
                                 </button>
                             </div>
@@ -118,22 +118,8 @@
                                     </div>
                                     <div class="col-lg mb-3">
                                         <div class="form-floating">
-                                            <select class="form-select" id="orgfloatingInput" placeholder="" required>
+                                            <select class="form-select fs-6" id="orgfloatingInput" placeholder="" required>
                                                 <option selected disabled>- Select Organization -</option>
-                                                <option>SSC</option>
-                                                <option>CHRS</option>
-                                                <option>COL</option>
-                                                <option>COMMITS</option>
-                                                <option>DOMT.CS</option>
-                                                <option>FBTO</option>
-                                                <option>JMS</option>
-                                                <option>KATAGA</option>
-                                                <option>MUSA</option>
-                                                <option>PSC</option>
-                                                <option>SPAS</option>
-                                                <option>Vox Nova</option>
-                                                <option>YES</option>
-                                                <option>Other</option>
                                             </select>
                                             <label for="orgfloatingInput">Organization</label>
                                         </div>
@@ -154,26 +140,48 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <!-- Add objectives textarea -->
                                     <div class="col-lg-6 mb-3">
-                                        <div class="form-control">
-                                            <label for="attachfloatingInput">Relevant Attachments</label>
-                                            <button type="button" class="btn btn-icon btn-info btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bx bx-question-mark"></i></button>
-                                            <div class="input-group mt-2">
-                                                <input type="file" name="inputGroupFile01" class="form-control" id="inputGroupFile01">
-                                                <label class="input-group-text" for="inputGroupFile01">Event Request</label>
-                                            </div>
-                                            <div class="input-group mt-2">
-                                                <input type="file" name="inputGroupFile02" class="form-control" id="inputGroupFile02">
-                                                <label class="input-group-text" for="inputGroupFile02">Concept Paper</label>
-                                            </div>
-                                            <div class="input-group mt-2">
-                                                <input type="file" name="inputGroupFile03" class="form-control" id="inputGroupFile03">
-                                                <label class="input-group-text" for="inputGroupFile03">Others</label>
-                                            </div>
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Add Objectives" id="objectivesfloatingInput" style="height: 90px" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="This should answer your event's timeliness & relevance. Separate each objective with a new line beginning with a hyphen '-'."></textarea>
+                                            <label for="objectivesfloatingInput">Objectives</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 mb-3">
-                                        <div class="card border card-border-info">
+                                        <div class="form-floating">
+                                            <select class="form-select fs-5" id="pillarsfloatingInput" placeholder="" style="height: 90px" required>
+                                                <option selected disabled>- Select a PUP Pillar that gives relevance to your event -</option>
+                                                <option value="Pillar1">Pillar 1: Dynamic, Transformational and Responsible Leadership.</option>
+                                                <option value="Pillar2">Pillar 2: Responsive and Innovative Curricula and Instruction.</option>
+                                                <option value="Pillar3">Pillar 3: Enabling and Productive Learning Environment.</option>
+                                                <option value="Pillar4">Pillar 4: Holistic Student Development and Engagement.</option>
+                                                <option value="Pillar5">Pillar 5: Empowered Faculty Members and Employees.</option>
+                                                <option value="Pillar6">Pillar 6: Vigorous Research Production and Utilization.</option>
+                                                <option value="Pillar7">Pillar 7: Global Academic Standards and Excellence.</option>
+                                                <option value="Pillar8">Pillar 8: Synergistic, Productive, Strategic Networks and Partnerships.</option>
+                                                <option value="Pillar9">Pillar 9: Active and Sustained Stakeholders' Engagement</option>
+                                                <option value="Pillar10">Pillar 10: Sustainable Social Development Programs and Projects.</option>
+                                            </select>
+                                            <label for="pillarsfloatingInput">PUP Pillars</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 mb-3">
+                                        <div class="card border card-border-primary">
+                                            <div class="card-header hstack">
+                                                <h4 class="card-title text-dark mb-0">Relevant Attachments</h4>
+                                                <button type="button" class="btn btn-icon btn-info btn-sm rounded-pill ms-auto" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bx bx-question-mark"></i></button>
+                                            </div>
+                                            <!-- end card header -->
+                                            <div class="card-body">
+                                                <input id="attachments" type="file" class="filepond filepond-input-multiple" multiple name="filepond" data-allow-reorder="true" data-max-file-size="3MB" data-max-files="2" />
+                                            </div>
+                                            <!-- end card body -->
+                                        </div>
+                                        <!-- end card -->
+                                    </div>
+                                    <!-- end col -->
+                                    <div class="col-lg-6 mt-0 mb-3">
+                                        <div class="card border card-border-primary">
                                             <div class="card-header">
                                                 <h6 class="card-title text-dark mb-0">
                                                     Before proceeding...
