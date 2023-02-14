@@ -1,7 +1,7 @@
 $(function() {
     organizationsTable()
 
-    // on addFacility button click
+    // on addOrg button click
     $('#addOrganizationBtn').on('click', function(e) {
         e.preventDefault() // prevent page refresh
         addNewOrganization()

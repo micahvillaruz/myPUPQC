@@ -4,6 +4,8 @@ $(function() {
 
     viewAllCancelledByStaff()
 
+    viewAllCancelledByStudent()
+
 })
 
 viewDetailsReservationStaff = (reservation_id) => {
