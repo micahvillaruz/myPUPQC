@@ -86,6 +86,19 @@
                         </li>
                     <?php } ?>
 
+                    <?php if (strpos($this->session->userdata('user_roles'), 'Signatory') !== false) { ?>
+                        <li class="menu-title">
+                            <i class="ri-more-fill"></i>
+                            <span>ODRTS</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/odrs/approvals">
+                                <i class="mdi mdi-file-sign"></i>
+                                <span>Approvals</span>
+                            </a>
+                        </li>
+                    <?php } ?>
+
                     <?php if (strpos($this->session->userdata('user_roles'), 'Student Records') !== false) { ?>
                         <li class="menu-title">
                             <i class="ri-more-fill"></i>
@@ -103,13 +116,6 @@
                             <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/odrs/requests">
                                 <i class="ri-archive-line"></i>
                                 <span>Requests</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/odrs/approvals">
-                                <i class="mdi mdi-file-sign"></i>
-                                <span>Approvals</span>
                             </a>
                         </li>
 
