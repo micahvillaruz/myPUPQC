@@ -26,7 +26,6 @@
 
 		<!-- Sweet Alert css-->
 		<link href="<?= base_url() ?>public/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
-
 		<!-- Filepond css -->
 		<link rel="stylesheet" href="<?= base_url() ?>public/libs/filepond/filepond.min.css" type="text/css" />
 		<link rel="stylesheet" href="<?= base_url() ?>public/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.css" />
@@ -34,10 +33,6 @@
 		<link rel="stylesheet" type="text/css" href="<?= base_url() ?>public/libs/multi.js/multi.min.css" />
 		<!-- autocomplete css -->
 		<link rel="stylesheet" href="<?= base_url() ?>public/libs/@tarekraafat/autocomplete.js/css/autoComplete.css" />
-
-		<!-- rater js -->
-		<script src='<?= base_url() ?>public/libs/rater-js/index.js'></script>
-
 
 		<!-- Layout config Js -->
 		<script src="<?= base_url() ?>public/js/layout.js"></script>

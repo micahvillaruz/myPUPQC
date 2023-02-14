@@ -25,6 +25,10 @@
 <!-- Sweet alert init js-->
 <script src="<?= base_url() ?>public/js/pages/sweetalerts.init.js"></script>
 
+<!-- echarts js -->
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+
+
 <!-- dental ajax -->
 <script src="<?= base_url() ?>public/js/ajax/pup-staff/omsss/evaluation.ajax.js"></script>
 
