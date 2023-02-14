@@ -1,6 +1,7 @@
 $(function () {
 	loadDocumentsTable()
 	populateSelect()
+
 	$('#document_type').select2({
 		dropdownParent: $('#addDocumentModal'),
 		minimumResultsForSearch: Infinity,
@@ -18,6 +19,7 @@ $(function () {
 var addCount = 0
 var editCount = 0
 let signatoriesList = []
+let filteredSignatoriesList = []
 
 // Load Documents Table
 loadDocumentsTable = () => {
@@ -95,7 +97,6 @@ let isPopulateSelectRunning = false
 populateSelect = (signatoriesList = []) => {
 	if (isPopulateSelectRunning) return
 	isPopulateSelectRunning = true
-	$('.signatories_div').removeClass('d-none')
 	const selectSignatories = $('#select_signatories')
 	selectSignatories.find('option').not(':disabled').remove()
 	selectSignatories.find('option:disabled').prop('selected', true)
@@ -157,6 +158,21 @@ addDocument = () => {
 	// Add Documents
 	if (!$('#addDocumentForm')[0].checkValidity()) return ''
 
+	let numSignatories = 0
+	numSignatories = $('#display_list').find('li').length
+	if (numSignatories == 0) {
+		Swal.fire({
+			html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Fix Signatory Input!</h4><p class="text-muted mx-4 mb-0">You must click the button beside the Document Signatory to add them on the Approval Workflow.</p></div></div>',
+			showCancelButton: !0,
+			showConfirmButton: !1,
+			cancelButtonClass: 'btn btn-danger w-xs mb-1',
+			cancelButtonText: 'Dismiss',
+			buttonsStyling: !1,
+			showCloseButton: !0,
+		})
+		return ''
+	}
+
 	const form = new FormData($('#addDocumentForm')[0])
 
 	var values = $("input[name='add_document_requirement']")
@@ -198,6 +214,11 @@ addDocument = () => {
 					$('form#addDocumentForm')[0].reset()
 					$('#document_requirements_list').empty()
 					addCount = 0
+					$('#display_list').empty()
+					$('.signatories_div').removeClass('d-none')
+					$('#select_signatories').attr('required', 'required')
+					populateSelect()
+					signatoriesList.length = 0
 					// Reload Document Datatable
 					loadDocumentsTable()
 				})
@@ -214,32 +235,43 @@ addDocument = () => {
 			showCloseButton: !0,
 		})
 	})
-
-	$('#display_list').empty()
-	$('.signatories_div').removeClass('d-none')
-	$('#select_signatories').attr('required', 'required')
-	populateSelect()
-	signatoriesList.length = 0
 }
 
 // Update Document
 updateDocument = (document_id) => {
 	if (!$('#editDocumentForm')[0].checkValidity()) return ''
 
-	const form = new FormData($('#editDocumentForm')[0])
+	let numSignatories = 0
+	numSignatories = $('#signatories_list').find('li').length
+	if (numSignatories == 0) {
+		Swal.fire({
+			html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Fix Signatory Input!</h4><p class="text-muted mx-4 mb-0">You must click the button beside the Document Signatory to add them on the Approval Workflow.</p></div></div>',
+			showCancelButton: !0,
+			showConfirmButton: !1,
+			cancelButtonClass: 'btn btn-danger w-xs mb-1',
+			cancelButtonText: 'Dismiss',
+			buttonsStyling: !1,
+			showCloseButton: !0,
+		})
+		return ''
+	}
 
+	const form = new FormData($('#editDocumentForm')[0])
 	var values = $("input[name='edit_document_requirement']")
 		.map(function () {
 			return $(this).val()
 		})
 		.get()
-
 	const data = {
 		document_name: form.get('document_name'),
 		document_details: form.get('document_details'),
 		document_type: form.get('document_type'),
+
 		document_requirements: values.map((item) => {
 			return { doc_req_name: item }
+		}),
+		document_signatories: filteredSignatoriesList.map((element, index) => {
+			return { user_id: element, hierarchy_number: index + 1 }
 		}),
 	}
 
@@ -295,6 +327,26 @@ getDocumentInfo = (document_id) => {
 				$('#edit_document_name').empty().val(result.data.document_name)
 				$('#edit_document_details').empty().html(result.data.document_details)
 				$('#edit_document_type').val(result.data.document_type)
+
+				const document_signatories = result.data.document_signatories
+				$('#signatories_list').empty()
+				document_signatories.forEach((signatory) => {
+					$('#signatories_list').append(`
+					<li id="${signatory.user_id}" class="d-flex align-items-center justify-content-between mb-2">
+						<div class="d-flex align-items-center">
+							<i class="me-3 glowing-circle"></i>
+							<span class="fw-bold">${signatory.signatory_for_user.user_profiles[0].full_name}</span>
+						</div>
+						<a class="link-delete fs-15">
+							<i class="ri-delete-bin-7-fill text-danger"></i>
+						</a>
+					</li>
+				`)
+				})
+
+				filteredSignatoriesList = document_signatories.map((signatory) => signatory.user_id)
+				filterSelect(filteredSignatoriesList)
+
 				const document_requirements = result.data.document_requirements
 				$('#edit_document_requirements_list').empty()
 				editCount = document_requirements.length
@@ -355,6 +407,8 @@ function print_signatory() {
 
 			if ($('#select_signatories option').length === 1) {
 				$('.signatories_div').addClass('d-none')
+			} else {
+				$('.signatories_div').removeClass('d-none')
 			}
 		}
 	}
@@ -369,6 +423,89 @@ $('#display_list').on('click', '.link-delete', function () {
 	populateSelect(signatoriesList)
 
 	checkSignatoryStatus()
+})
+
+filterSelect = (filteredSignatories) => {
+	const selectSignatories = $('#edit_signatories')
+	selectSignatories.find('option').not(':disabled').remove()
+	selectSignatories.find('option:disabled').prop('selected', true)
+
+	$.ajax({
+		type: 'GET',
+		url: apiURL + 'odrs/pup_staff/view_signatory_users',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			const signatories = result.data
+			const options = signatories
+				.filter((signatory) => !filteredSignatories.includes(signatory.user_id))
+				.map(
+					(signatory) =>
+						new Option(
+							signatory.user_assigned_to_role.user_profiles[0].full_name,
+							signatory.user_id,
+						),
+				)
+			selectSignatories.append(options)
+			if (selectSignatories.find('option').length > 1) {
+				$('.signatories_div').removeClass('d-none')
+			} else {
+				$('.signatories_div').addClass('d-none')
+			}
+			selectSignatories.val(null).trigger('change')
+			selectSignatories.select2({
+				dropdownParent: $('#updateDocumentModal'),
+				minimumResultsForSearch: Infinity,
+			})
+		},
+	})
+}
+
+function validationChecker() {
+	if ($('#signatories_list').find('li').length === 0) {
+		// No li elements found inside the ul tag with the id of display_list
+		$('#edit_signatories').prop('required', true)
+	} else {
+		$('#edit_signatories').removeAttr('required')
+	}
+}
+
+function edit_signatory() {
+	const selectedOption = $('#edit_signatories option:selected')
+	const selectedOptionID = selectedOption.val()
+
+	if (selectedOptionID) {
+		if (!signatoriesList.includes(selectedOptionID)) {
+			filteredSignatoriesList.push(selectedOptionID)
+			$('#signatories_list').append(`
+				<li id="${selectedOptionID}" class="d-flex align-items-center justify-content-between mb-2">
+					<div class="d-flex align-items-center">
+						<i class="me-3 glowing-circle"></i>
+						<span class="fw-bold">${selectedOption.text()}</span>
+					</div>
+					<a class="link-delete fs-15">
+						<i class="ri-delete-bin-7-fill text-danger"></i>
+					</a>
+				</li>
+			`)
+			selectedOption.remove()
+			$('#edit_signatories').find('option:disabled').prop('selected', true)
+
+			if ($('#select_signatories option').length > 1) {
+				$('.signatories_div').removeClass('d-none')
+			}
+		}
+	}
+
+	validationChecker()
+}
+
+$('#signatories_list').on('click', '.link-delete', function () {
+	const removedOptionID = $(this).parent().attr('id')
+	filteredSignatoriesList = filteredSignatoriesList.filter((value) => value !== removedOptionID)
+	$(this).parent().remove()
+	filterSelect(filteredSignatoriesList)
+
+	validationChecker()
 })
 
 function add_new_link() {

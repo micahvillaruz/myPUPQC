@@ -39,7 +39,7 @@
             </div>
           </div>
           <div class="mb-3">
-            <label for="document_type" class="form-label">Document Signatories <span class="text-danger">*</span></label>
+            <label for="select_signatories" class="form-label">Document Signatories <span class="text-danger">*</span></label>
             <div class="d-flex align-items-center signatories_div">
               <select id="select_signatories" name="select_signatories" class="form-select js-example-basic-single" required>
                 <option value="" selected disabled>Select the signatories for this Document</option>
@@ -140,6 +140,18 @@
             </div>
           </div>
           <div class="mb-3">
+            <label for="edit_signatories" class="form-label">Document Signatories <span class="text-danger">*</span></label>
+            <div class="d-flex align-items-center signatories_div d-none">
+              <select id="edit_signatories" name="edit_signatories" class="form-select js-example-basic-single" required>
+                <option value="" selected disabled>Select the signatories for this Document</option>
+              </select>
+              <button onclick="edit_signatory()" type="button" class="btn btn-info btn-icon waves-effect"><i class="mdi mdi-file-sign fs-5"></i></button>
+            </div>
+            <small class="signatories_div text-danger d-none">Click the button beside the option to add the selected signatory.</small>
+          </div>
+          <ul id="signatories_list" class="mt-2 list-unstyled">
+          </ul>
+          <div class="mt-4 mb-3">
             <div class="d-flex justify-content-between align-items-center mb-3">
               <label class="form-label mb-0">Document Requirements</label>
               <a href="javascript:edit_new_link()" class="btn btn-success py-1 rounded-pill">Add New</a>
