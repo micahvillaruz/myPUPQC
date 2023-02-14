@@ -323,10 +323,18 @@ getDocumentInfo = (document_id) => {
 	})
 }
 
+function checkSignatoryStatus() {
+	if ($('#display_list').find('li').length == 0) {
+		// No li elements found inside the ul tag with the id of display_list
+		$('#select_signatories').prop('required', true)
+	} else {
+		$('#select_signatories').removeAttr('required')
+	}
+}
+
 function print_signatory() {
 	const selectedOption = $('#select_signatories option:selected')
 	const selectedOptionID = selectedOption.val()
-	$('#select_signatories').removeAttr('required')
 
 	if (selectedOptionID) {
 		if (!signatoriesList.includes(selectedOptionID)) {
@@ -350,6 +358,8 @@ function print_signatory() {
 			}
 		}
 	}
+
+	checkSignatoryStatus()
 }
 
 $('#display_list').on('click', '.link-delete', function () {
@@ -358,10 +368,7 @@ $('#display_list').on('click', '.link-delete', function () {
 	$(this).parent().remove()
 	populateSelect(signatoriesList)
 
-	if (!$('#display_list li').length) {
-		// No li elements found inside the ul tag with the id of display_list
-		$('#select_signatories').prop('required', true)
-	}
+	checkSignatoryStatus()
 })
 
 function add_new_link() {
