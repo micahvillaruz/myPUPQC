@@ -133,15 +133,8 @@ addNewReservation = () => {
     if ($('#addNewReservation')[0].checkValidity()) {
         // no validation error
         const form = new FormData($('#addNewReservation')[0])
-            // with the id's: orgfloatingInput, eventTitlefloatingInput, eventDetailsfloatingInput,
-            // reserveDatefloatingInput, timeFromfloatingInput, timeTofloatingInput
-            // inputGroupFile01, inputGroupFile02, inputGroupFile03
-        const org = document.getElementById('orgfloatingInput')
-        const organization_name = org.value
-        const title = document.getElementById('eventTitlefloatingInput')
-        const event_title = title.value
-        const details = document.getElementById('eventDetailsfloatingInput')
-        const event_details = details.value
+
+        //* Date and Time Selection
         const date = document.getElementById('reserveDatefloatingInput')
         const reserve_date = date.value
         const timefrom = document.getElementById('timeFromfloatingInput')
@@ -149,28 +142,49 @@ addNewReservation = () => {
         const timeto = document.getElementById('timeTofloatingInput')
         const time_to = timeto.value
         console.log(reserve_date, time_from + ' - ' + time_to)
-        const file1 = form.get('inputGroupFile01')
-        const file2 = form.get('inputGroupFile02')
-        const file3 = form.get('inputGroupFile03')
-            // convert file1, file2, file3 to blob
-        const file1Blob = new Blob([file1], { type: file1.type })
-        const file2Blob = new Blob([file2], { type: file2.type })
-        const file3Blob = new Blob([file3], { type: file3.type })
+
+        // * Facility Selection
         const facility_id = $('input[name="facility"]:checked').attr('id')
 
+        // * Event Details
+        const org = document.getElementById('orgfloatingInput')
+        const organization = org.value
+        const title = document.getElementById('eventTitlefloatingInput')
+        const event_title = title.value
+        const details = document.getElementById('eventDetailsfloatingInput')
+        const event_details = details.value
+        const objectives = document.getElementById('objectivesfloatingInput')
+        const event_objectives = objectives.value
+        const pillars = document.getElementById('pillarsfloatingInput')
+            // get inner html of the selected option
+        const event_pillars = pillars.options[pillars.selectedIndex].innerHTML
+
+        pondFiles = pond.getFiles()
+
         const formData = new FormData()
-        formData.append('organization_name', organization_name)
-        formData.append('event_title', event_title)
-        formData.append('event_details', event_details)
+            // * Append Date and Time Selection
         formData.append('reserve_date', reserve_date)
         formData.append('time_from', time_from)
         formData.append('time_to', time_to)
-            // append the blob to formData
-        formData.append('reserve_attachments_1', file1Blob)
-        formData.append('reserve_attachments_2', file2Blob)
-        formData.append('reserve_attachments_3', file3Blob)
+
+        // * Append Facility Selection
         formData.append('facility_id', facility_id)
-        formData.append('reserve_status', 'Pending')
+
+        // * Append Event Details
+        formData.append('organization_id', organization)
+        formData.append('event_title', event_title)
+        formData.append('event_details', event_details)
+        formData.append('pup_objectives', event_objectives)
+        formData.append('pup_pillars', event_pillars)
+        for (var i = 0; i < pondFiles.length; i++) {
+            // append the blob file
+            if (pondFiles[i].file != null) {
+                formData.append('event_request', pondFiles[0].file)
+                formData.append('concept_paper', pondFiles[1].file)
+                formData.append('others', pondFiles[2].file)
+            }
+        }
+        formData.append('reserve_status', 'For Review')
         formData.append('remarks', 'Please wait for admin approval.')
 
         // all values are not empty, proceed to ajax call
@@ -273,29 +287,29 @@ loadHolidays = () => {
         }
 
         // disable previous options if time from is greater than time to
-        const timeFrom = document.getElementById("timeFromfloatingInput");
-        const timeTo = document.getElementById("timeTofloatingInput");
-        let timeToOptions = [];
+        const timeFrom = document.getElementById('timeFromfloatingInput')
+        const timeTo = document.getElementById('timeTofloatingInput')
+        let timeToOptions = []
 
-        timeFrom.addEventListener("change", function() {
-            const selectedTimeFrom = timeFrom.value;
-            updateTimeToOptions(selectedTimeFrom);
-        });
+        timeFrom.addEventListener('change', function() {
+            const selectedTimeFrom = timeFrom.value
+            updateTimeToOptions(selectedTimeFrom)
+        })
 
         function updateTimeToOptions(selectedTimeFrom) {
-            timeToOptions = [];
+            timeToOptions = []
 
             for (let i = 0; i < timeTo.options.length; i++) {
-                timeToOptions.push(timeTo.options[i].value);
+                timeToOptions.push(timeTo.options[i].value)
             }
 
             for (let i = timeTo.options.length - 1; i >= 0; i--) {
                 if (timeToOptions[i] <= selectedTimeFrom) {
-                    timeTo.remove(i);
+                    timeTo.remove(i)
                 }
             }
 
-            timeTo.remove(0);
+            timeTo.remove(0)
         }
     }
 }
@@ -327,13 +341,13 @@ loadOrganizations = () => {
                 data.forEach((organization) => {
                     if (organization.organization_abbreviation === '') {
                         $('#orgfloatingInput').append(
-                            `<option value="${organization.organization_name}">${organization.organization_name}</option>
-                            `
+                            `<option value="${organization.organization_id}">${organization.organization_name}</option>
+                            `,
                         )
                     } else {
                         $('#orgfloatingInput').append(
-                            `<option value="${organization.organization_abbreviation}">${organization.organization_abbreviation}</option>
-                            `
+                            `<option value="${organization.organization_id}">${organization.organization_abbreviation}</option>
+                            `,
                         )
                     }
                 })
