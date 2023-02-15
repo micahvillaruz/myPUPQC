@@ -118,7 +118,7 @@ loadPendingRequests = () => {
 						} else {
 							return `
 							<div class="d-flex align-items-center fw-medium">
-								<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-1.png" class="avatar-xs rounded-circle me-2">
+								<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-8.png" class="avatar-xs rounded-circle me-2">
 								<div>
 									<span class="d-block fw-medium">${fullName}</span>
 									<i class="mdi mdi-gender-female text-danger"></i>
@@ -258,7 +258,7 @@ loadApprovedRequests = () => {
 						} else {
 							return `
 							<div class="d-flex align-items-center fw-medium">
-								<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-1.png" class="avatar-xs rounded-circle me-2">
+								<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-8.png" class="avatar-xs rounded-circle me-2">
 								<div>
 									<span class="d-block fw-medium">${fullName}</span>
 									<i class="mdi mdi-gender-female text-danger"></i>
@@ -438,7 +438,7 @@ viewPendingRequest = (request_id) => {
 				`
 			} else {
 				image += `
-					<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-1.png" class="avatar-md" />
+					<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-8.png" class="avatar-md" />
 				`
 			}
 			$('#image').html(image)
@@ -506,7 +506,7 @@ viewApprovedRequest = (request_id) => {
 				`
 			} else {
 				image += `
-					<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-1.png" class="avatar-md" />
+					<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-8.png" class="avatar-md" />
 				`
 			}
 			$('#view_picture').html(image)
