@@ -16,16 +16,13 @@ loadNewsTables = () => {
 	// * Phase 1: Populate all_news_table (except user's own news)
 	const all_news_dt = $('#all_news_table')
 
-	$.ajaxSetup({
-		headers: AJAX_HEADERS,
-	})
-
 	if (all_news_dt.length) {
 		all_news_dt.DataTable({
 			bDestroy: true,
 			ajax: {
 				url: apiURL + 'annsys/pup_staff/get_all_news',
 				type: 'GET',
+				headers: AJAX_HEADERS,
 			},
 			columns: [
 				// * Advisory Title
