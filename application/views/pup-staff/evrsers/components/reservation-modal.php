@@ -32,8 +32,8 @@
           </div>
           <div class="modal-body">
             <div class="row">
-              <div class="col-lg-8">
-                <h5 class="fs-5 badge badge-outline-info fw-bold mb-3" id="organization"></h5><br>
+              <div class="col-lg">
+                <div class="fs-3 mb-1" id="organization"></div><br>
                 <div class="alert alert-border-left alert-primary mb-4 me-3 ms-2">
                   <div class="row">
                     <h6 class="text-medium">EVENT TITLE</h6>
@@ -49,38 +49,51 @@
                       <h6 class="text-medium">TIME</h6>
                       <p id="time" class="fw-medium"></p>
                     </div>
-                    <hr>
                   </div>
+                  <hr>
+                  <div class="row">
+                    <h4 class="mx-auto text-center">
+                      <span class="badge bg-primary">
+                        <i class="mdi mdi-pillar me-3"></i>
+                        <span class="me-3 fs-6 mx-auto" id="pillar"></span>
+                      </span>
+                    </h4>
+                  </div>
+                  <div class="row">
+                    <h6 class="text-medium">OBJECTIVES</h6>
+                    <p id="objectives" class="fw-medium"></p>
+                  </div>
+                  <hr>
                   <div class="row">
                     <h6 class="text-medium">REMARKS</h6>
                     <p id="remarks" class="fw-medium"></p>
                   </div>
                 </div>
                 <h6 class="text-medium">RESERVATION ATTACHMENTS</h6>
-                <div class="ms-2">
+                <div class="ms-2 mb-3">
                   <span class="fs-5" id="event_request"></span><br>
                   <span class="fs-5" id="concept_paper"></span><br>
                   <span class="fs-5" id="others"></span><br>
                 </div>
               </div>
-              <div class="col-lg-4">
-                <div class="row">
-                  <div class="col-lg">
-                    <h6 class="text-medium mb-3">RESERVATION STATUS</h6>
-                    <div id="reservation-status">
-                    </div>
+
+              <div class="row">
+                <div class="col-lg">
+                  <h6 class="text-medium mb-3">RESERVATION STATUS</h6>
+                  <div id="reservation-status">
                   </div>
                 </div>
-                <div class="row" id="change-status">
-                  <div class="col-lg">
-                    <h6 class="text-medium mb-3">CANCEL RESERVATION</h6>
-                    <div class="vstack gap-2">
-                      <button type="button" class="btn waves-effect waves-light btn-danger btn-label fw-medium" id="cancelBtn"><i class=" ri-close-line label-icon align-middle fs-16 me-2"></i>Cancel</button>
-                    </div>
+              </div>
+              <div class="row" id="change-status">
+                <div class="col-lg">
+                  <h6 class="text-medium mb-3">CANCEL RESERVATION</h6>
+                  <div class="vstack gap-2">
+                    <button type="button" class="btn waves-effect waves-light btn-danger btn-label fw-medium" id="cancelBtn"><i class=" ri-close-line label-icon align-middle fs-16 me-2"></i>Cancel</button>
                   </div>
                 </div>
               </div>
             </div>
+
             <div class="modal-footer">
               <button type="button" class="btn btn-light" data-bs-dismiss="modal">
                 Close
@@ -114,6 +127,7 @@
                 </div>
               </div>
               <div id="reservation-signatories" class="col-6">
+                <!-- //* Delete boilerplate from here -->
                 <div class="mb-3">
                   <label for="signatory" class="form-label">Signatory 1</label>
                   <div class="hstack gap-1">
@@ -136,6 +150,7 @@
                   </div>
                 </div>
               </div>
+              <!-- //* Delete boilerplate to here -->
               <div class="modal-footer">
                 <button type="button" class="btn btn-light" data-bs-dismiss="modal">
                   Close

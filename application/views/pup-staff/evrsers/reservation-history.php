@@ -3,8 +3,10 @@
         <div class="card">
             <div class="card-header d-flex align-items-center justify-content-between pb-0 pe-0">
                 <h5 class="card-title align-middle mb-2">Venue Reservation History</h5>
+            </div>
+            <div class="card-body">
                 <div class="flex-shrink-0">
-                    <ul class="nav nav-pills nav-customs gap-3" role="tablist">
+                    <ul class="nav nav-pills nav-primary nav-custom-warning arrow-navtabs nav-justified gap-3" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" data-bs-toggle="tab" href="#done" role="tab">
                                 Done
@@ -22,11 +24,8 @@
                         </li>
                         </ul>
                 </div>
-            </div>
-            <div class="card-body">
                 <div class="tab-content mt-3">
                     <div class="tab-pane active" id="done" role="tabpanel">
-                        <div class="d-flex">
                             <div class="flex-grow-1 ms-2">
                                 <table id="done-reservations-table" class="table table-responsive table-striped dt-responsive align-middle text-center" style="width: 100%">
                                     <thead class="bg-light">
@@ -44,11 +43,10 @@
                                     </tbody>
                                 </table>
                             </div>
-                        </div>
                     </div>
                     <!-- End tab pane -->
                     <div class="tab-pane" id="cancelled-by-staff" role="tabpanel">
-                        <div class="d-flex">
+                        <div>
                             <div class="flex-grow-1 ms-2">
                                 <table id="cancelled-staff-table" class="table table-responsive dt-responsive table-striped align-middle text-center" style="width: 100%">
                                     <thead class="bg-light">
@@ -70,7 +68,7 @@
                     </div>
                     <!-- End tab pane -->
                     <div class="tab-pane" id="cancelled-by-student" role="tabpanel">
-                        <div class="d-flex">
+                        <div>
                             <div class="flex-grow-1 ms-2">
                                 <table id="cancelled-student-table" class="table table-responsive dt-responsive table-striped align-middle text-center" style="width: 100%">
                                     <thead class="bg-light">
