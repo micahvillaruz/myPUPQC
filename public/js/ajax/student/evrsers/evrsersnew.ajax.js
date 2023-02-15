@@ -176,7 +176,7 @@ addNewReservation = () => {
         formData.append('event_details', event_details)
         formData.append('pup_objectives', event_objectives)
         formData.append('pup_pillars', event_pillars)
-        if (pondFiles[i].file != null) {
+        if (pondFiles.file != null) {
             formData.append('event_request', pondFiles[0].file)
             formData.append('concept_paper', pondFiles[1].file)
             formData.append('others', pondFiles[2].file)
@@ -239,10 +239,22 @@ addNewReservation = () => {
 //Disable sundays for flatpickr reserveDatefloatingInput using disable option
 
 loadHolidays = () => {
-    var coolDates = [Date.parse('2023-2-13'), Date.parse('2023-2-11')]
-    var style = document.createElement('style')
-    style.innerHTML = '.cool-date { background: #f5c076; }'
-    document.head.appendChild(style)
+    let completeHolidayDetails
+    let holidayDates = []
+    $.ajax({
+        url: apiURL + 'student/holidays',
+        type: 'GET',
+        headers: AJAX_HEADERS,
+        async: false,
+        success: (data) => {
+            completeHolidayDetails = data.data
+        },
+    })
+    completeHolidayDetails.forEach((holiday) => {
+        // push holidaay.holiday_date to holidayDates and parrse it to Date.parse(date)
+        holidayDates.push(Date.parse(holiday.holiday_date))
+    })
+
 
     flatpickr('#reserveDatefloatingInput', {
         dateFormat: 'd M, Y',
@@ -253,14 +265,9 @@ loadHolidays = () => {
             function(date) {
                 return date.getDay() === 0
             },
+            ...holidayDates,
         ],
-        onDayCreate: function(dObj, dStr, fp, dayElem) {
-            // Checking to see if the current day object is in our array
-            // The `+` is just a shortcut for parsing the date
-            if (coolDates.indexOf(+dayElem.dateObj) !== -1) {
-                dayElem.className += ' cool-date'
-            }
-        },
+
     })
 
     dateAndTimeSelectFunctions = () => {
