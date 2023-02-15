@@ -4,6 +4,7 @@ $(function() {
     viewAllForEvaluation()
 
     viewAllApprovedReservation()
+
 })
 
 // View Own Reservation details
@@ -218,10 +219,9 @@ viewAllPendingReservation = () => {
                     class: 'text-center',
                     render: (data) => {
                         return `
-                            <div class="dropdown d-inline-block">
-                                <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewReservationModal" onclick="viewDetailsReservationStaff('${data.reservation_id}')"><i class=" ri-eye-fill fs-6 align-middle"></i></button>
-                                <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#cancelReservationModal" onclick="cancelReservation('${data.reservation_id}')"><i class=" ri-delete-bin-fill fs-6 align-middle"></i></button>
-                                <button type="button" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#addSignModal" onclick=""><i class=" ri-quill-pen-fill fs-6 me-2 align-middle"></i>Add Signatories</button>
+                            <div class="dropdown d-inline-block mt-2">
+                                <button type="button" class="btn btn-info btn-icon waves-effect waves-light mb-2" data-bs-toggle="modal" data-bs-target="#viewReservationModal" onclick="viewDetailsReservationStaff('${data.reservation_id}')"><i class=" ri-eye-fill fs-6 align-middle"></i></button>
+                                <button type="button" class="btn btn-success waves-effect waves-light mb-2" data-bs-toggle="modal" data-bs-target="#addSignModal" onclick="addSignatory('${data.reservation_id}')"><i class=" ri-quill-pen-fill fs-6 me-2 align-middle"></i>Add Signatories</button>
                             </div>
                                 `
                     },
@@ -426,33 +426,31 @@ viewAllApprovedReservation = () => {
     }
 }
 
-// ! To be revised
-approveReservation = (reservation_id) => {
+cancelReservation = (reservation_id) => {
     console.log(reservation_id)
     $('#viewReservationModal').modal('hide')
-    $('#approveReservationModal').modal('show')
-    $('#approve-reservation').on('click', function() {
-        const reservation_status = 'Approved'
-
+    $('#cancelReservationModal').modal('show')
+    $('#cancel-reservation').on('click', function() {
+        // change reservation status through ajax
         $.ajaxSetup({
             headers: {
                 Accept: 'application/json',
                 Authorization: 'Bearer ' + TOKEN,
-                ContentType: 'application/x-www-form-urlencoded',
+                contentType: 'application/x-www-form-urlencoded',
             },
         })
         $.ajax({
             url: apiURL + `evrsers/pup_staff/edit_status/${reservation_id}`,
             type: 'PUT',
             data: {
-                reservation_status: reservation_status,
+                reserve_status: 'Cancelled by Staff',
+                remarks: 'Event not approved by the Director',
             },
-            ContentType: 'application/x-www-form-urlencoded',
             success: (result) => {
-                $('#approveReservationModal').modal('hide')
+                $('#cancelReservationModal').modal('hide')
                 if (result) {
                     Swal.fire({
-                        html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully added an organizer!</p></div></div>',
+                        html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have cancelled a reservation!</p></div></div>',
                         showCancelButton: !0,
                         showConfirmButton: !1,
                         cancelButtonClass: 'btn btn-success w-xs mb-1',
@@ -466,7 +464,8 @@ approveReservation = (reservation_id) => {
                 }
             },
         }).fail((xhr) => {
-            $('#approveReservationModal').modal('hide')
+            $('#cancelReservationModal').modal('hide')
+            console.log(xhr)
             Swal.fire({
                 html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong!</h4><p class="text-muted mx-4 mb-0">${
 					JSON.parse(xhr.responseText).message
@@ -482,58 +481,46 @@ approveReservation = (reservation_id) => {
     })
 }
 
-cancelReservation = (reservation_id) => {
-    console.log(reservation_id)
-    $('#viewReservationModal').modal('hide')
-    $('#cancelReservationModal').modal('show')
-    $('#cancel-reservation').on('click', function() {
-        const reservation_status = 'Cancelled by Staff'
-        console.log(reservation_id)
-            // change reservation status through ajax
-        $.ajaxSetup({
-            headers: {
-                Accept: 'application/json',
-                Authorization: 'Bearer ' + TOKEN,
-                contentType: 'application/x-www-form-urlencoded',
-            },
-        })
-        $.ajax({
-            url: apiURL + `evrsers/pup_staff/edit_status/${reservation_id}`,
-            type: 'PUT',
-            data: {
-                reservation_status: reservation_status,
-            },
-            contentType: 'application/x-www-form-urlencoded',
-            success: (result) => {
-                $('#cancelReservationModal').modal('hide')
-                if (result) {
-                    Swal.fire({
-                        html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully removed an organizer!</p></div></div>',
-                        showCancelButton: !0,
-                        showConfirmButton: !1,
-                        cancelButtonClass: 'btn btn-success w-xs mb-1',
-                        cancelButtonText: 'Ok',
-                        buttonsStyling: !1,
-                        showCloseButton: !0,
-                    }).then(function() {
-                        // reload Pending Reservations table
-                        viewAllPendingReservation()
-                    })
-                }
-            },
-        }).fail((xhr) => {
-            $('#cancelReservationModal').modal('hide')
-            Swal.fire({
-                html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong!</h4><p class="text-muted mx-4 mb-0">${
-					JSON.parse(xhr.responseText).message
-				}</p></div></div>`,
-                showCancelButton: !0,
-                showConfirmButton: !1,
-                cancelButtonClass: 'btn btn-danger w-xs mb-1',
-                cancelButtonText: 'Dismiss',
-                buttonsStyling: !1,
-                showCloseButton: !0,
-            })
-        })
+// Get All signatories and populate signatory_names select
+fetchSignatories = () => {
+    $.ajaxSetup({
+        headers: {
+            Accept: 'application/json',
+            Authorization: 'Bearer ' + TOKEN,
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
     })
+
+    $.ajax({
+        url: apiURL + 'evrsers/pup_staff/signatory/signatory/view_signatories/',
+        type: 'GET',
+        ContentType: 'application/x-www-form-urlencoded',
+        success: (data) => {
+            const signatories = data.data
+            const select2 = $('#signatory-names')
+            signatory.forEach((signatories) => {
+                // console.log(student)
+                const userNo = signatory.user_no
+                const fullName = signatory.user_profiles[0].full_name
+                const option = new Option(`${userNo} - ${fullName}`, signatory.user_no, false, false)
+                select2.append(option)
+            })
+
+            // if option is selected and add-student-organizer button is clicked, get student.user_id
+            // and pass it to addStudentOrganizer function and prevent page from reloading
+            $('#add-as-signatory').on('click', function(e) {
+                // get selected option user_id
+                const selectedOption = select2.find(':selected')
+                const signatory = signatory.find((signatory) => signatory.user_no === selectedOption.val())
+                    // prevent page from reloading
+                e.preventDefault()
+                addSignatory(signatory.user_id)
+            })
+        },
+    })
+}
+
+// Add Signatory
+addSignatory = (reservation_id) => {
+
 }
