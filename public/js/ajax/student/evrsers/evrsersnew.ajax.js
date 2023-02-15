@@ -179,11 +179,11 @@ addNewReservation = () => {
         formData.append('pup_pillars', event_pillars)
 
         // for files in pondFiles
-        pondFiles.forEach((file) => {
-            formData.append('event_request', file.file)
-            formData.append('concept_paper', file.file)
-            formData.append('others', file.file)
-        })
+        for (let i = 0; i < pondFiles.length; i++) {
+            formData.append('event_request', pondFiles[0].file)
+            formData.append('concept_paper', pondFiles[1].file)
+            formData.append('others', pondFiles[2].file)
+        }
 
         formData.append('reserve_status', 'For Review')
         formData.append('remarks', 'Please wait for admin approval.')
