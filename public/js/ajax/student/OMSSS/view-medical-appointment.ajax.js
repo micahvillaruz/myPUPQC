@@ -8,11 +8,19 @@ $(() => {
 	const currentMonth = localISOTime.getMonth()
 	const dates = []
 
-	let current = new Date(localISOTime)
+	let current = new Date()
 	while (current.getMonth() === currentMonth) {
+		const year = current.getFullYear()
+		const month = (current.getMonth() + 1).toString().padStart(2, '0')
+		const day = current.getDate().toString().padStart(2, '0')
+		const date = `${year}-${month}-${day}`
+
+		console.log(current, current.getDay(), current.getDay() !== 0, current.getDay() !== 6, date)
+
 		if (current.getDay() !== 0 && current.getDay() !== 6) {
-			dates.push(current.toISOString().split('T')[0])
+			dates.push(date)
 		}
+
 		current = new Date(current.getTime() + 24 * 60 * 60 * 1000)
 	}
 
