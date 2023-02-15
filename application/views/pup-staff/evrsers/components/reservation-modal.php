@@ -1,79 +1,3 @@
-<!-- Add Signatory Modal -->
-<div class="modal fade" id="addSignModal" tabindex="-1" role="dialog" aria-labelledby="signatory-label" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
-    <div class="modal-content">
-      <div class="modal-header position-relative my-1">
-        <div class="d-flex">
-          <h5 class="fs-4 text-primary fw-bold">Add Signatory</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-6">
-            <div class="mb-3 vstack position-absolute translate-middle top-50 start-50 w-75">
-              <select class="form-select mb-3" id="signatory" name="signatory">
-                <option value="" selected disabled>Select Signatory</option>
-              </select>
-              <button type="button" class="btn btn-primary waves-effect waves-light mx-5">Add as Signatory</button>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="mb-3">
-              <label for="signatory" class="form-label">Signatory 1</label>
-              <div class="hstack gap-1">
-                <input type="text" class="form-control" id="signatory1" name="signatory1" placeholder="Signatory 1" disabled>
-                <button type="button" class="btn btn-info btn-danger waves-effect waves-light"><i class="ri-subtract-line fs-5"></i></button>
-              </div>
-            </div>
-            <div class="mb-3">
-              <label for="signatory" class="form-label">Signatory 2</label>
-              <div class="hstack gap-1">
-              <input type="text" class="form-control" id="signatory2" name="signatory1" placeholder="Signatory 2" disabled>
-              <button type="button" class="btn btn-info btn-danger waves-effect waves-light"><i class="ri-subtract-line fs-5"></i></button>
-              </div>
-            </div>
-            <div class="mb-3">
-              <label for="signatory" class="form-label">Signatory 3</label>
-              <div class="hstack gap-1">
-              <input type="text" class="form-control" id="signatory3" name="signatory1" placeholder="Signatory 3" disabled>
-              <button type="button" class="btn btn-info btn-danger waves-effect waves-light"><i class="ri-subtract-line fs-5"></i></button>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-light" data-bs-dismiss="modal">
-              Close
-            </button>
-          </div>
-        </div>
-        <!-- /.modal-content -->
-      </div>
-      <!-- /.modal-dialog -->
-    </div>
-
-    <!-- Approve Reservation modal -->
-    <div class="modal fade zoomIn" id="approveReservationModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"></button>
-          </div>
-          <div class="modal-body p-5 text-center">
-            <lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#161f2e,secondary:#3080e8" style="width:100px;height:100px"></lord-icon>
-            <div class="mt-4 text-center">
-              <h4 class="fs-semibold">Approve This Event?</h4>
-              <p class=" fs-14 mb-4 pt-1">Doing so would add the event in the University Activity Calendar.</p>
-              <div class="hstack gap-2 justify-content-center remove">
-                <button class="btn btn-link link-danger fw-medium text-decoration-none" data-bs-dismiss="modal"><i class="ri-close-line me-2 align-middle"></i>Cancel</button>
-                <button class="btn btn-success" id="approve-reservation">Yes, Approve Reservation.</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Cancel Reservation modal -->
     <div class="modal fade zoomIn" id="cancelReservationModal" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
@@ -149,9 +73,8 @@
                 </div>
                 <div class="row" id="change-status">
                   <div class="col-lg">
-                    <h6 class="text-medium mb-3">CHANGE STATUS</h6>
+                    <h6 class="text-medium mb-3">CANCEL RESERVATION</h6>
                     <div class="vstack gap-2">
-                      <button type="button" class="btn waves-effect waves-light btn-success btn-label fw-medium" id="approveBtn"><i class="ri-check-double-line label-icon align-middle fs-16 me-2"></i>Approve</button>
                       <button type="button" class="btn waves-effect waves-light btn-danger btn-label fw-medium" id="cancelBtn"><i class=" ri-close-line label-icon align-middle fs-16 me-2"></i>Cancel</button>
                     </div>
                   </div>
@@ -168,3 +91,80 @@
         </div>
         <!-- /.modal-dialog -->
       </div>
+    </div>
+
+    <!-- Add Signatory Modal -->
+    <div class="modal fade" id="addSignModal" tabindex="-1" role="dialog" aria-labelledby="signatory-label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header position-relative my-1">
+            <div class="d-flex">
+              <h5 class="fs-4 text-primary fw-bold">Add Signatory</h5>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-6">
+                <div class="mb-3 vstack gap-3 position-absolute translate-middle top-50 start-50 w-75">
+                  <select class="js-example-basic-single" name="signatory-names" id="signatory-names">
+                    <option class="text-center" value="" selected disabled>- Select Signatory -</option>
+                  </select>
+                  <button id="add-as-signatory" type="button" class="btn btn-primary waves-effect waves-light mx-5">Add as Signatory</button>
+                </div>
+              </div>
+              <div id="reservation-signatories" class="col-6">
+                <div class="mb-3">
+                  <label for="signatory" class="form-label">Signatory 1</label>
+                  <div class="hstack gap-1">
+                    <input type="text" class="form-control" id="signatory1" name="signatory1" placeholder="Signatory 1" disabled>
+                    <button type="button" class="btn btn-info btn-danger waves-effect waves-light"><i class="ri-subtract-line fs-5"></i></button>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="signatory" class="form-label">Signatory 2</label>
+                  <div class="hstack gap-1">
+                    <input type="text" class="form-control" id="signatory2" name="signatory1" placeholder="Signatory 2" disabled>
+                    <button type="button" class="btn btn-info btn-danger waves-effect waves-light"><i class="ri-subtract-line fs-5"></i></button>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="signatory" class="form-label">Signatory 3</label>
+                  <div class="hstack gap-1">
+                    <input type="text" class="form-control" id="signatory3" name="signatory1" placeholder="Signatory 3" disabled>
+                    <button type="button" class="btn btn-info btn-danger waves-effect waves-light"><i class="ri-subtract-line fs-5"></i></button>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">
+                  Close
+                </button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+
+        <!-- Approve Reservation modal -->
+        <div class="modal fade zoomIn" id="approveReservationModal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"></button>
+              </div>
+              <div class="modal-body p-5 text-center">
+                <lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#161f2e,secondary:#3080e8" style="width:100px;height:100px"></lord-icon>
+                <div class="mt-4 text-center">
+                  <h4 class="fs-semibold">Approve This Event?</h4>
+                  <p class=" fs-14 mb-4 pt-1">Doing so would add the event in the University Activity Calendar.</p>
+                  <div class="hstack gap-2 justify-content-center remove">
+                    <button class="btn btn-link link-danger fw-medium text-decoration-none" data-bs-dismiss="modal"><i class="ri-close-line me-2 align-middle"></i>Cancel</button>
+                    <button class="btn btn-success" id="approve-reservation">Yes, Approve Reservation.</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
