@@ -119,7 +119,7 @@ viewAllReservationHistoryStaff = () => {
         dt.DataTable({
             bDestroy: true,
             ajax: {
-                url: apiURL + `evrsers/pup_staff/view_done/`,
+                url: apiURL + `evrsers/pup_staff/view_all_done/`,
                 type: 'GET',
                 ContentType: 'application/x-www-form-urlencoded',
             },
