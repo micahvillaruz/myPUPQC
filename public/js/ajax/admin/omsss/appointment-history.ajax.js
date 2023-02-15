@@ -4,41 +4,11 @@ $(function () {
 	getDoneAppointmentHistory()
 	getConsultationStatusCount()
 	getConsultationTypeCount()
-
-	// var isdoughnutchart = document.getElementById('doughnut1')
-	// ;(doughnutChartColors = getChartColorsArray('doughnut1')),
-	// 	doughnutChartColors &&
-	// 		(lineChart = new Chart(isdoughnutchart, {
-	// 			type: 'doughnut',
-	// 			data: {
-	// 				labels: ['Desktops', 'Tablets'],
-	// 				datasets: [
-	// 					{
-	// 						data: [300, 210],
-	// 						backgroundColor: doughnutChartColors,
-	// 						hoverBackgroundColor: doughnutChartColors,
-	// 						hoverBorderColor: '#fff',
-	// 					},
-	// 				],
-	// 			},
-	// 			options: {
-	// 				plugins: { legend: { labels: { font: { family: 'Poppins' } } } },
-	// 			},
-	// 		}))
 })
 
 // Load datatables
 loadAppointmentHistoryTable = () => {
-	const dt = $('#appointment-history-datatable')
-	console.log(dt.length)
-
-	$.ajaxSetup({
-		headers: {
-			Accept: 'application/json',
-			Authorization: 'Bearer ' + TOKEN,
-			ContentType: 'application/x-www-form-urlencoded',
-		},
-	})
+	const dt = $('#appointment_history_table')
 
 	if (dt.length) {
 		dt.DataTable({
@@ -46,7 +16,7 @@ loadAppointmentHistoryTable = () => {
 			ajax: {
 				url: apiURL + 'omsss/super_admin/view_done_appointments',
 				type: 'GET',
-				// ContentType: 'application/x-www-form-urlencoded',
+				headers: AJAX_HEADERS,
 			},
 			columns: [
 				// Case Control No.
@@ -75,18 +45,7 @@ loadAppointmentHistoryTable = () => {
 					data: null,
 					render: (data) => {
 						const consultation_status = data.consultation_status
-						console.log(consultation_status)
-						if (consultation_status == 'Pending') {
-							return `<span class="badge rounded-pill bg-warning">Pending</span>`
-						} else if (consultation_status == 'Approved') {
-							return `<span class="badge rounded-pill bg-success">Approved</span>`
-						} else if (consultation_status == 'Cancelled by Staff') {
-							return `<span class="badge rounded-pill bg-info">Cancelled by Staff</span>`
-						} else if (consultation_status == 'Cancelled by Student') {
-							return `<span class="badge rounded-pill bg-info">Cancelled by Student</span>`
-						} else if (consultation_status == 'Done') {
-							return `<span class="badge rounded-pill bg-success">Done</span>`
-						}
+						return `<span class="badge rounded-pill bg-success">${consultation_status}</span>`
 					},
 				},
 
@@ -104,7 +63,6 @@ loadAppointmentHistoryTable = () => {
 					data: null,
 					class: 'text-center',
 					render: (data) => {
-						console.log(data)
 						const appointment_type = data.appointment_type
 						let modal_to_use, AJAX_to_use
 						if (appointment_type == 'Medical') {
@@ -117,7 +75,6 @@ loadAppointmentHistoryTable = () => {
 							modal_to_use = '#viewGuidanceModal'
 							AJAX_to_use = `viewGuidanceDetails('${data.health_appointment_id}')`
 						}
-						console.log(appointment_type, modal_to_use, AJAX_to_use)
 						return `
         <div class="dropdown d-inline-block">
         <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="${AJAX_to_use}" data-bs-toggle="modal" data-bs-target="${modal_to_use}"><i class="ri-eye-fill fs-5"></i></button>
@@ -135,6 +92,7 @@ getConsultationStatusCount = () => {
 	$.ajax({
 		url: apiURL + `omsss/super_admin/analytics/pie_chart_consultation_status`,
 		type: 'GET',
+		headers: AJAX_HEADERS,
 		success: function (data) {
 			// process the data and update the chart
 			var chartData = {
@@ -163,6 +121,7 @@ getConsultationTypeCount = () => {
 	$.ajax({
 		url: apiURL + `omsss/super_admin/analytics/consultation_type_count`,
 		type: 'GET',
+		headers: AJAX_HEADERS,
 		success: function (data) {
 			// process the data and update the chart
 			var chartData = {
@@ -191,17 +150,22 @@ getPendingAppointmentHistory = () => {
 		url: apiURL + `omsss/super_admin/analytics/view_pending_appointment`,
 		type: 'GET',
 		headers: AJAX_HEADERS,
-		success: (result) => {
-			if (result) {
-				// Get data from result
-				const data = result.appointment_pending_count
-				console.log(data)
-				$('#appointment_history_pending_medical').attr('data-target', data.Medical)
-				$('#appointment_history_pending_dental').attr('data-target', data.Dental)
-				$('#appointment_history_pending_guidance').attr('data-target', data.Guidance)
-			}
+		success: function (data) {
+			console.log(data)
 		},
-	}).fail(() => console.error('There was an error in retrieving appointment history request data'))
+		error: function (xhr, status, error) {
+			console.log(error)
+		},
+	})
+
+	// if (result) {
+	//     // Get data from result
+	//     const data = result.appointment_pending_count
+	//     console.log(data)
+	//     $('#appointment_history_pending_medical').attr('data-target', data.Medical)
+	//     $('#appointment_history_pending_dental').attr('data-target', data.Dental)
+	//     $('#appointment_history_pending_guidance').attr('data-target', data.Guidance)
+	// }
 }
 
 getDoneAppointmentHistory = () => {
@@ -222,143 +186,167 @@ getDoneAppointmentHistory = () => {
 	}).fail(() => console.error('There was an error in retrieving appointment history request data'))
 }
 
-// View Medical Consultation details
-viewMedicalDetails = (health_appointment_id) => {
-	$.ajaxSetup({
-		headers: {
-			Accept: 'application/json',
-			Authorization: 'Bearer ' + TOKEN,
-			ContentType: 'application/x-www-form-urlencoded',
-		},
-	})
-
+viewOverallDetails = (health_appointment_id) => {
+	// * Personal and Case Details
 	$.ajax({
 		type: 'GET',
 		cache: false,
 		url: apiURL + `omsss/super_admin/view_appointment/${health_appointment_id}`,
 		dataType: 'json',
+		headers: AJAX_HEADERS,
 		success: (result) => {
 			console.log(result)
 			const userData = result.data
+			const user_id = userData.user_id
 			if (result.data.health_appointment_assigned_to_physician) {
 				const userProfileData = userData.health_appointment_assigned_to_physician.user_profiles[0]
 			}
 			const userProfileData = null
 
-			$('#view_medical_case_details').html(userData.case_control_number)
-			$('#view_medical_consultation_type').html(userData.consultation_type)
-			console.log(userData.consultation_type)
-			$('#view_medical_consultation_reason').html(userData.consultation_reason)
-			$('#view_medical_health_physcian').html(
-				userProfileData != null ? userProfileData.full_name : 'N/A',
+			// * User Personal Information
+			$('#view_full_name').html(
+				userData.health_appointment_assigned_to_user.user_profiles[0].full_name,
 			)
-			$('#view_medical_date_of_symptom').html(moment(userData.symptoms_date).format('LL'))
-			$('#view_medical_consultation_date').html(moment(userData.consultation_date).format('LL'))
-			const consultation_status_data = userData.consultation_status
-			let consultation_value
-			if (consultation_status_data == 'Pending') {
-				consultation_value = `<span class="badge rounded-pill bg-warning">Pending</span>`
-			} else if (consultation_status_data == 'Approved') {
-				consultation_value = `<span class="badge rounded-pill bg-success">Approved</span>`
-			} else if (consultation_status_data == 'Cancelled by Staff') {
-				consultation_value = `<span class="badge rounded-pill bg-info">Cancelled by Staff</span>`
-			} else if (consultation_status_data == 'Cancelled by Student') {
-				consultation_value = `<span class="badge rounded-pill bg-info">Cancelled by Student</span>`
-			}
-			$('#view_medical_status').html(consultation_value)
-		},
-	})
-}
-
-// View Dental Consultation details
-viewDentalDetails = (health_appointment_id) => {
-	$.ajaxSetup({
-		headers: {
-			Accept: 'application/json',
-			Authorization: 'Bearer ' + TOKEN,
-			ContentType: 'application/x-www-form-urlencoded',
-		},
-	})
-
-	$.ajax({
-		type: 'GET',
-		cache: false,
-		url: apiURL + `omsss/super_admin/view_appointment/${health_appointment_id}`,
-		dataType: 'json',
-		success: (result) => {
-			console.log(result)
-			const userData = result.data
-			if (result.data.health_appointment_assigned_to_physician) {
-				const userProfileData = userData.health_appointment_assigned_to_physician.user_profiles[0]
-			}
-			const userProfileData = null
-			console.log(userData.consultation_type)
-			$('#view_dental_case_details').html(userData.case_control_number)
-			$('#view_dental_consultation_type').html(userData.consultation_type)
-			$('#view_dental_consultation_reason').html(userData.consultation_reason)
-			$('#view_dental_health_physcian').html(
-				userProfileData != null ? userProfileData.full_name : 'N/A',
+			$('#view_student_number').html(userData.health_appointment_assigned_to_user.user_no)
+			$('#view_address').html(
+				userData.health_appointment_assigned_to_user.user_profiles[0].full_address,
 			)
-			$('#view_dental_symptoms_date').html(moment(userData.symptoms_date).utc().format('LL'))
-			$('#view_dental_consultation_date').html(moment(userData.consultation_date).format('LL'))
-			const consultation_status_data = userData.consultation_status
-			let consultation_value
-			if (consultation_status_data == 'Pending') {
-				consultation_value = `<span class="badge rounded-pill bg-warning">Pending</span>`
-			} else if (consultation_status_data == 'Approved') {
-				consultation_value = `<span class="badge rounded-pill bg-success">Approved</span>`
-			} else if (consultation_status_data == 'Cancelled by Staff') {
-				consultation_value = `<span class="badge rounded-pill bg-info">Cancelled by Staff</span>`
-			} else if (consultation_status_data == 'Cancelled by Student') {
-				consultation_value = `<span class="badge rounded-pill bg-info">Cancelled by Student</span>`
-			}
-			$('#view_dental_status').html(consultation_value)
-		},
-	})
-}
-
-// View Guidance Consultation details
-viewGuidanceDetails = (health_appointment_id) => {
-	$.ajaxSetup({
-		headers: {
-			Accept: 'application/json',
-			Authorization: 'Bearer ' + TOKEN,
-			ContentType: 'application/x-www-form-urlencoded',
-		},
-	})
-
-	$.ajax({
-		type: 'GET',
-		cache: false,
-		url: apiURL + `omsss/super_admin/view_appointment/${health_appointment_id}`,
-		dataType: 'json',
-		success: (result) => {
-			const userData = result.data
-			if (result.data.health_appointment_assigned_to_physician) {
-				const userProfileData = userData.health_appointment_assigned_to_physician.user_profiles[0]
-			}
-			const userProfileData = null
-
-			$('#view_guidance_case_details').html(userData.case_control_number)
-			$('#view_guidance_consultation_type').html(userData.consultation_type)
-			$('#view_guidance_consultation_reason').html(userData.consultation_reason)
-			$('#view_guidance_consultation_date').html(moment(userData.consultation_date).format('LL'))
-			$('#view_guidance_health_physcian').html(
-				userProfileData != null ? userProfileData.full_name : 'N/A',
+			let birthdate = new Date(
+				userData.health_appointment_assigned_to_user.user_profiles[0].birth_date,
+			).getTime()
+			let currentTimestamp = new Date().getTime()
+			let ageInMilliseconds = currentTimestamp - birthdate
+			let ageInYears = ageInMilliseconds / (1000 * 60 * 60 * 24 * 365.25)
+			$('#view_age').html(Math.floor(ageInYears))
+			$('#view_gender').html(userData.health_appointment_assigned_to_user.user_profiles[0].gender)
+			$('#view_civil_status').html(
+				userData.health_appointment_assigned_to_user.user_profiles[0].civil_status,
 			)
-			// $('#view_date_of_symptoms').html(moment(userData.symptoms_date).format('LL'))
-			const consultation_status_data = userData.consultation_status
-			let consultation_value
-			if (consultation_status_data == 'Pending') {
-				consultation_value = `<span class="badge rounded-pill bg-warning">Pending</span>`
-			} else if (consultation_status_data == 'Approved') {
-				consultation_value = `<span class="badge rounded-pill bg-success">Approved</span>`
-			} else if (consultation_status_data == 'Cancelled by Staff') {
-				consultation_value = `<span class="badge rounded-pill bg-info">Cancelled by Staff</span>`
-			} else if (consultation_status_data == 'Cancelled by Student') {
-				consultation_value = `<span class="badge rounded-pill bg-info">Cancelled by Student</span>`
-			}
-			$('#view_guidance_status').html(consultation_value)
+			$('#view_contact_number').html(
+				userData.health_appointment_assigned_to_user.user_profiles[0].contact_number,
+			)
+			$('#view_email_address').html(
+				userData.health_appointment_assigned_to_user.user_profiles[0].email_address,
+			)
+
+			// * Case Detail
+			$('#control_no').html(userData.case_control_number)
+			$('#view_consultation_type').html(userData.consultation_type)
+			$('#view_consultation_reason').html(userData.consultation_reason)
+			let consultationDate = new Date(userData.consultation_date)
+			consultationDate = consultationDate.toLocaleDateString('en-US', {
+				year: 'numeric',
+				month: 'long',
+				day: 'numeric',
+			})
+
+			$('#view_consultation_date').html(consultationDate)
+			// % =================================
+			// * Health Information (Medical History)
+			$.ajax({
+				type: 'GET',
+				cache: false,
+				url: apiURL + `omsss/super_admin/medical_history/${user_id}`,
+				dataType: 'json',
+				headers: AJAX_HEADERS,
+				success: (result) => {
+					const data = result.data
+					console.log(data)
+					const medical_history = data.medical_history ?? []
+					// * loop through each medical history and in bullet
+					let bullet = ''
+					medical_history.forEach((history) => {
+						bullet += `<li>${history}</li>`
+					})
+					$('#view_medical_history').html(`<ul>${bullet}</ul>`)
+
+					bullet = ''
+					const family_history = data.family_history ?? []
+					family_history.forEach((history) => {
+						bullet += `<li>${history}</li>`
+					})
+					$('#view_family_history').html(`<ul>${bullet}</ul>`)
+
+					bullet = ''
+					const allergies = data.allergy ?? []
+					allergies.forEach((history) => {
+						bullet += `<li>${history}</li>`
+					})
+					$('#view_allergies').html(`<ul>${bullet}</ul>`)
+
+					bullet = ''
+					const medication = data.medications ?? []
+					medication.forEach((history) => {
+						bullet += `<li>${history}</li>`
+					})
+					$('#view_medications').html(`<ul>${bullet}</ul>`)
+
+					const social_history = data.social_history
+					// * value {smoker: false, alcoholic: true}
+					// * Create a badge if smoker or non smoker and alcholic or non alcoholic
+					if (social_history != null) {
+						let smoker = social_history.smoker
+							? `<span class="badge bg-info">Smoker</span>`
+							: `<span class="badge bg-danger">Non Smoker</span>`
+						let alcoholic = social_history.alcoholic
+							? `<span class="badge bg-info">Alcoholic</span>`
+							: `<span class="badge bg-danger">Non Alcoholic</span>`
+						$('#view_social_history').html(`${smoker} ${alcoholic}`)
+					} else {
+						$('#view_social_history').html(`<span class="badge bg-danger">No Data</span>`)
+					}
+				},
+			})
+			// % =================================
+			// * Patient Information (kadugtong ng Personal Information sa baba)
+			$.ajax({
+				type: 'GET',
+				cache: false,
+				url: apiURL + `omsss/super_admin/patient_information/${user_id}`,
+				dataType: 'json',
+				headers: AJAX_HEADERS,
+				success: (result) => {
+					const data = result.data
+					const guardian_name =
+						data.emergency_contact_name ?? `<span class="badge bg-danger">No Data</span>`
+					const guardian_contact_number =
+						data.emergency_contact_number ?? `<span class="badge bg-danger">No Data</span>`
+					const guardian_address =
+						data.emergency_contact_address ?? `<span class="badge bg-danger">No Data</span>`
+					const guardian_email =
+						data.emergency_contact_email ?? `<span class="badge bg-danger">No Data</span>`
+					const philhealth_id_image =
+						data.philhealth_id_image != null
+							? `<a href="${data.philhealth_id_image}" target="_blank" class="btn btn-primary btn-sm">View PhilHealth ID</a>`
+							: `<span class="badge bg-danger">No Data</span>`
+
+					$('#view_guardian_name').html(guardian_name)
+					$('#view_guardian_number').html(guardian_contact_number)
+					$('#view_guardian_address').html(guardian_address)
+					$('#view_guardian_email').html(guardian_email)
+					$('#view_philhealth_id').html(philhealth_id_image)
+				},
+			})
+			// % =================================
+			// * Immunization
+			$.ajax({
+				type: 'GET',
+				cache: false,
+				url: apiURL + `omsss/super_admin/view_immunization/${user_id}`,
+				dataType: 'json',
+				headers: AJAX_HEADERS,
+				success: (result) => {
+					const data = result.data
+					const vaccination_card = data.vaccination_card
+
+					let button_vaccination =
+						vaccination_card != null
+							? `<a href="${vaccination_card}" target="_blank" class="btn btn-primary btn-sm">View Vaccination Card</a>`
+							: `<span class="badge bg-danger">No Data</span>`
+
+					$('#view_vaccination_card').html(button_vaccination)
+				},
+			})
 		},
 	})
 }
