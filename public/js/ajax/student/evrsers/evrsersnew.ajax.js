@@ -297,27 +297,30 @@ loadHolidays = () => {
         // disable previous options if time from is greater than time to
         const timeFrom = document.getElementById('timeFromfloatingInput')
         const timeTo = document.getElementById('timeTofloatingInput')
-        let timeToOptions = []
 
         timeFrom.addEventListener('change', function() {
             const selectedTimeFrom = timeFrom.value
-            updateTimeToOptions(selectedTimeFrom)
+            console.log(selectedTimeFrom)
+
+            if (selectedTimeFrom !== '8:00 AM') {
+                updateTimeToOptions(selectedTimeFrom)
+            }
         })
 
-        function updateTimeToOptions(selectedTimeFrom) {
-            timeToOptions = []
+        updateTimeToOptions = (selectedTimeFrom) => {
+            const timeToOptions = ["9:00AM", "10:00AM", "11:00AM", "1:00PM", "2:00PM", "3:00PM", "4:00PM", "5:00PM", "6:00PM", "7:00PM", "8:00PM", "9:00PM"]
 
-            for (let i = 0; i < timeTo.options.length; i++) {
-                timeToOptions.push(timeTo.options[i].value)
-            }
+            // Get the index of the selected time from and remove previous values from array
+            const index = timeToOptions.indexOf(selectedTimeFrom)
+            console.log(index)
+            timeToOptions.splice(0, index + 1)
+            console.log(timeToOptions)
 
-            for (let i = timeTo.options.length - 1; i >= 0; i--) {
-                if (timeToOptions[i] <= selectedTimeFrom) {
-                    timeTo.remove(i)
-                }
-            }
-
-            timeTo.remove(0)
+            // append the values in the timeTofloatingInput
+            timeTo.innerHTML = ''
+            timeToOptions.forEach((timeToOption) => {
+                timeTo.innerHTML += `<option value="${timeToOption}">${timeToOption}</option>`
+            })
         }
     }
 }

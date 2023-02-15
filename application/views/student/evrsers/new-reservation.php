@@ -62,7 +62,7 @@
                                         <div class="form-floating w-75 mx-auto">
                                             <select class="form-select" id="timeTofloatingInput" name="timeTofloatingInput" placeholder="" required>
                                                 <option selected disabled>- Select Time -</option>
-                                                <option value="9:00AM">9:00 AM</option>
+                                                <!-- <option value="9:00AM">9:00 AM</option>
                                                 <option value="10:00AM">10:00 AM</option>
                                                 <option value="11:00AM">11:00 AM</option>
                                                 <option value="1:00PM">1:00 PM</option>
@@ -73,7 +73,7 @@
                                                 <option value="6:00PM">6:00 PM</option>
                                                 <option value="7:00PM">7:00 PM</option>
                                                 <option value="8:00PM">8:00 PM</option>
-                                                <option value="9:00PM">9:00 PM</option>
+                                                <option value="9:00PM">9:00 PM</option> -->
                                             </select>
                                             <label for="timeTofloatingInput">Time To</label>
                                         </div>
