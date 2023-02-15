@@ -20,7 +20,7 @@
                                 Approved & Released
                             </a>
                         </li>
-                        </ul>
+                    </ul>
                 </div>
             </div>
             <div class="card-body">
