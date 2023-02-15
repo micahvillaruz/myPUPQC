@@ -176,14 +176,12 @@ addNewReservation = () => {
         formData.append('event_details', event_details)
         formData.append('pup_objectives', event_objectives)
         formData.append('pup_pillars', event_pillars)
-        for (var i = 0; i < pondFiles.length; i++) {
-            // append the blob file
-            if (pondFiles[i].file != null) {
-                formData.append('event_request', pondFiles[0].file)
-                formData.append('concept_paper', pondFiles[1].file)
-                formData.append('others', pondFiles[2].file)
-            }
+        if (pondFiles[i].file != null) {
+            formData.append('event_request', pondFiles[0].file)
+            formData.append('concept_paper', pondFiles[1].file)
+            formData.append('others', pondFiles[2].file)
         }
+
         formData.append('reserve_status', 'For Review')
         formData.append('remarks', 'Please wait for admin approval.')
 
