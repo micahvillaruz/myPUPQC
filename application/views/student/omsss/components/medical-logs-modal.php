@@ -1,4 +1,3 @@
-<!-- Modal for PhilHealth ID -->
 <div id="viewOverallModal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="viewOverallModal" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-dialog-centered dialog-scrollable modal-lg" role="document">
         <div class="modal-content">
