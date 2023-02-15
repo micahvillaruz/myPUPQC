@@ -27,7 +27,7 @@
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="done" role="tabpanel">
-                        <table id="done_history" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
+                        <table id="done_history" class="table table-responsive table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
                             <thead>
                                 <tr>
                                     <th>Reservation Control #</th>
@@ -42,7 +42,7 @@
                         </table>
                     </div>
                     <div class="tab-pane" id="cancelled_staff" role="tabpanel">
-                        <table id="cancelled_by_staff_history" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
+                        <table id="cancelled_by_staff_history" class="table table-responsive table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
                             <thead>
                                 <tr>
                                     <th>Reservation Control #</th>
@@ -57,7 +57,7 @@
                         </table>
                     </div>
                     <div class="tab-pane" id="cancelled_student" role="tabpanel">
-                        <table id="cancelled_by_student_history" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
+                        <table id="cancelled_by_student_history" class="table table-responsive table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
                             <thead>
                                 <tr>
                                     <th>Reservation Control #</th>
