@@ -162,7 +162,8 @@ addNewReservation = () => {
         pondFiles = pond.getFiles()
 
         const formData = new FormData()
-            // * Append Date and Time Selection
+
+        // * Append Date and Time Selection
         formData.append('reserve_date', reserve_date)
         formData.append('time_from', time_from)
         formData.append('time_to', time_to)
@@ -176,11 +177,13 @@ addNewReservation = () => {
         formData.append('event_details', event_details)
         formData.append('pup_objectives', event_objectives)
         formData.append('pup_pillars', event_pillars)
-        if (pondFiles.file != null) {
-            formData.append('event_request', pondFiles[0].file)
-            formData.append('concept_paper', pondFiles[1].file)
-            formData.append('others', pondFiles[2].file)
-        }
+
+        // for files in pondFiles
+        pondFiles.forEach((file) => {
+            formData.append('event_request', file.file)
+            formData.append('concept_paper', file.file)
+            formData.append('others', file.file)
+        })
 
         formData.append('reserve_status', 'For Review')
         formData.append('remarks', 'Please wait for admin approval.')
