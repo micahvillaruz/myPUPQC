@@ -4,7 +4,6 @@ $(function() {
     viewAllForEvaluation()
 
     viewAllApprovedReservation()
-
 })
 
 // View Own Reservation details
@@ -29,95 +28,135 @@ viewDetailsReservationStaff = (reservation_id) => {
                 // console.log(venue)
 
             $('#reserve_number').html(userData.reservation_number)
-            let organization_name = userData.organization_name
-            if (organization_name == 'CHRS' || 'COMMITS' || 'DOMT.CS' || 'FBTO' || 'JMS' || 'SPAS' || 'YES') {
-                $('#organization').html(`<span>${organization_name}</span>`)
-            } else if (organization_name == 'KATAGA' || 'MUSA' || 'PSC' || 'Vox Nova' || 'Other') {
-                $('#organization').html(`<span>${organization_name}</span>`)
-            } else if (organization_name == 'SSC' || 'COL') {
-                $('#organization').html(`<span>${organization_name}</span>`)
+
+            let organization_name =
+                userData.organization_assigned_to_reservations.display_name
+            console.log(organization_name)
+            let acadorg = ['CHRS', 'COMMITS', 'DOMT.CS', 'FBTO', 'JMS', 'SPAS', 'YES']
+            let nonacadorg = ['KATAGA', 'MUSA', 'PSC', 'Vox Nova', 'Other']
+            let studgov = ['SSC', 'COL']
+
+            if (acadorg.includes(organization_name)) {
+                console.log('True')
+                $('#organization').html(
+                    `<span class="fs-4 badge badge-outline-info fw-bold mb-0">${organization_name}</span>`,
+                )
+            } else if (nonacadorg.includes(organization_name)) {
+                console.log('True')
+                $('#organization').html(
+                    `<h5 class="fs-4 badge badge-outline-danger fw-bold mb-0">${organization_name}</h5>`,
+                )
+            } else if (studgov.includes(organization_name)) {
+                console.log('True')
+                $('#organization').html(
+                    `<h5 class="fs-4 badge badge-outline-dark fw-bold mb-0">${organization_name}</h5>`,
+                )
             }
-            $('#organization').html(userData.organization_name)
+
             event_title = userData.event_title
                 // convert to all caps
             event_title = event_title.toUpperCase()
             $('#event_title').html(event_title)
-                // $('#facility_name').html(venue)
             $('#event_details').html(userData.event_details)
             $('#reserve_date').html(moment(userData.reserve_date).format('LL'))
             const time = `${userData.time_from} - ${userData.time_to}`
             $('#time').html(time)
             $('#remarks').html(userData.remarks)
+            var objectives = userData.pup_objectives
+                // check if there is a hyphen in the middle of the string
+            if (objectives.includes('-')) {
+                // split the string into an array
+                objectives = objectives.split('-')
+                    // loop through the array
+                objectives.forEach((objective, index) => {
+                    // display the array elements as list items
+                    objectives[index] = `<li>${objective}</li>`
+                })
+                objectives.splice(0, 1)
+                objectives = objectives.join('')
+            }
+
+            $('#objectives').html(objectives)
+            $('#pillar').html(userData.pup_pillars)
             $('#event_request').html(
-                `<i class="ri-file-fill text-primary me-2"></i><a href="${userData.reserve_attachments_1}" target="_blank" class="link fw-bold">Event Request</a>`,
+                `<i class="ri-file-fill text-primary me-2"></i><a href="${userData.event_request}" target="_blank" class="link fw-bold">Event Request</a>`,
             )
             $('#concept_paper').html(
-                `<i class="ri-file-text-fill text-primary me-2"></i><a href="${userData.reserve_attachments_2}" target="_blank" class="link fw-bold">Concept Paper</a>`,
+                `<i class="ri-file-text-fill text-primary me-2"></i><a href="${userData.concept_paper}" target="_blank" class="link fw-bold">Concept Paper</a>`,
             )
             $('#others').html(
-                `<i class="ri-file-copy-2-fill text-primary me-2"></i><a href="${userData.reserve_attachments_2}" target="_blank" class="link fw-bold">Others</a>`,
+                `<i class="ri-file-copy-2-fill text-primary me-2"></i><a href="${userData.others}" target="_blank" class="link fw-bold">Others</a>`,
             )
             let reservation_status = userData.reserve_status
             if (reservation_status == 'For Review') {
-                // add class for div change-status
-                $('#change-status').removeClass('d-none')
                 $('#reservation-status').html(
                     `<div class="card card-secondary">
                         <div class="card-body">
                             <div class="d-flex position-relative">
-                                <i class="ri-2x ri-loader-2-fill fw-medium me-2"></i>
-                                <h3 class="card-text fw-medium text-white my-auto">${reservation_status}</h3>
-                            </div>
-                        </div>
-                    </div>`,
-                )
-            } else if (reservation_status == 'For Evaluation' || reservation_status == 'For Approval') {
-                // add class for div change-status
-                $('#change-status').removeClass('d-none')
-                $('#reservation-status').html(
-                    `<div class="card card-warning">
-                        <div class="card-body">
-                            <div class="d-flex position-relative">
-                                <i class="ri-2x ri-loader-3-fill fw-medium me-2"></i>
-                                <h3 class="card-text fw-medium text-white my-auto">${reservation_status}</h3>
+                            <lord-icon
+                                class="lord-icon my-auto me-4"
+                                colors="primary:#ffffff"
+                                src="https://cdn.lordicon.com/zncllhmn.json"
+                                trigger="hover"
+                                style="width:50px;height:50px;">
+                            </lord-icon>
+                                <h2 class="card-text fw-medium text-white my-auto" style="font-size:30px;">${reservation_status}</h2>
                             </div>
                         </div>
                     </div>`,
                 )
             } else if (reservation_status == 'Approved & Released') {
-                // add class for div change-status
                 $('#change-status').addClass('d-none')
                 $('#reservation-status').html(
                     `<div class="card card-success">
                         <div class="card-body">
                             <div class="d-flex position-relative">
-                                <i class="ri-2x ri-check-line fw-medium me-2"></i>
-                                <h3 class="card-text fw-medium text-white my-auto">${reservation_status}</h3>
+                            <lord-icon
+                                class="lord-icon my-auto me-4"
+                                colors="primary:#ffffff"
+                                src="https://cdn.lordicon.com/egiwmiit.json"
+                                trigger="hover"
+                                style="width:50px;height:50px;">
+                            </lord-icon>
+                                <h3 class="card-text fw-medium text-white my-auto" style="font-size:30px;">${reservation_status}</h3>
                             </div>
                         </div>
                     </div>`,
                 )
-            } else if (reservation_status == 'Done') {
-                // add class for div change-status
-                $('#change-status').addClass('d-none')
+            } else if (reservation_status == 'For Evaluation / Processing' || 'For Revision') {
                 $('#reservation-status').html(
-                    `<div class="card card-success">
+                    `<div class="card card-info">
                         <div class="card-body">
                             <div class="d-flex position-relative">
-                                <i class="ri-2x ri-check-line fw-medium me-2"></i>
-                                <h3 class="card-text fw-medium text-white my-auto">${reservation_status}</h3>
+                            <lord-icon
+                                class="lord-icon my-auto me-4"
+                                colors="primary:#ffffff"
+                                src="https://cdn.lordicon.com/frjgvxce.json"
+                                trigger="hover"
+                                style="width:50px;height:50px;">
+                            </lord-icon>
+                                <h3 class="card-text fw-medium text-white my-auto" style="font-size:30px;">${reservation_status}</h3>
                             </div>
                         </div>
                     </div>`,
                 )
-            } else if (reservation_status == 'Cancelled by Student' || reservation_status == 'Cancelled by Staff') {
+            } else if (
+                reservation_status == 'Cancelled by Student' ||
+                reservation_status == 'Cancelled by Staff'
+            ) {
                 // add class for div change-status
                 $('#change-status').addClass('d-none')
                 $('#reservation-status').html(
                     `<div class="card card-danger">
                         <div class="card-body">
                             <div class="d-flex position-relative">
-                                <i class="ri-2x ri-close-line fw-medium me-2"></i>
+                            <lord-icon
+                                class="lord-icon my-auto me-4"
+                                colors="primary:#ffffff"
+                                src="https://cdn.lordicon.com/nhfyhmlt.json"
+                                trigger="hover"
+                                style="width:50px;height:50px;">
+                            </lord-icon>
                                 <h3 class="card-text fw-medium text-white my-auto">Cancelled</h3>
                             </div>
                         </div>
@@ -306,7 +345,7 @@ viewAllForEvaluation = () => {
                     class: 'text-center',
                     render: (data) => {
                         const reserve_status = data.reserve_status
-                        return `<span class="badge rounded-pill bg-success">${reserve_status}</span>`
+                        return `<span class="badge rounded-pill bg-info">${reserve_status}</span>`
                     },
                 },
 
@@ -521,6 +560,4 @@ fetchSignatories = () => {
 }
 
 // Add Signatory
-addSignatory = (reservation_id) => {
-
-}
+addSignatory = (reservation_id) => {}
