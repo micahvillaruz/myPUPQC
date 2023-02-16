@@ -129,7 +129,7 @@
             <div id="reservation-signatories" class="row w-50 d-none mx-auto d-flex justify-content-center">
               <h5 class="text-dark text-center my-3">Signatories</h5>
             </div>
-            <div id="showConfirmButton" class="mx-auto d-flex justify-content-center d-none">
+            <div id="ConfirmButton" class="mx-auto d-flex justify-content-center d-none">
               <button type="button" class="w-25 btn btn-success waves-effect waves-light" id="confirmSignatory">Confirm</button>
             </div>
             <div class="modal-footer">
