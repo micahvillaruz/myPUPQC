@@ -137,7 +137,8 @@ chartTwo = () => {
 		const data = result.data
 		console.log(data)
 
-		const avgRatingOverall = parseFloat(data[0].average_rating_overall).toFixed(3)
+		const averageRatingFormat = parseFloat(data[0].average_rating_overall).toFixed(3)
+		const avgRatingOverall = isNaN(averageRatingFormat) ? 0 : averageRatingFormat
 		const htmlContent = `<div class="number"><h1 class="display-1 text-primary">${avgRatingOverall}</h1></div><p class="fs-5 text-center font-italic">Average Overall Rating for 2023</p>`
 
 		chartNumberTwo.innerHTML = htmlContent
