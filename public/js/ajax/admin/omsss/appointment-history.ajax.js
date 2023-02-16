@@ -471,7 +471,7 @@ cancelMedical = (health_appointment_id) => {
 								'</div>',
 							showCancelButton: !0,
 							showConfirmButton: !1,
-							cancelButtonClass: 'btn btn-danger w-xs mb-1',
+							cancelButtonClass: 'btn btn-success w-xs mb-1',
 							cancelButtonText: 'Ok',
 							buttonsStyling: !1,
 							showCloseButton: !0,
