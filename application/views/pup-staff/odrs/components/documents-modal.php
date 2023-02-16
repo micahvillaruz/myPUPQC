@@ -56,10 +56,6 @@
               <button type="button" class="btn btn-success py-1 rounded-pill" id="addDocReq">Add New</button>
             </div>
             <div id="add_doc_req_container"></div>
-            <div id="add_document_requirements_list">
-            </div>
-            <div id="add_newForm" style="display: none;">
-            </div>
           </div>
           <button type="submit" class="btn btn-primary w-100 mt-3 bg-gradient">Submit</button>
         </form>

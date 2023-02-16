@@ -16,7 +16,6 @@ $(function () {
 		updateDocument($('#edit_document_id').val())
 	})
 })
-var addCount = 0
 var editCount = 0
 let addCounter = 0
 let signatoriesList = []
@@ -359,7 +358,7 @@ getDocumentInfo = (document_id) => {
 				document_requirements.forEach((item, i) => {
 					$('#edit_document_requirements_list').append(`
 					<div id=${i + 1}>
-					<div class="row"><div class="hstack gap-2 justify-content-end mb-3"><input type="text" name="document_requirement" class="form-control" value="${
+					<div class="row"><div class="hstack gap-2 justify-content-end mb-3"><input type="text" name="edit_document_requirement" class="form-control" value="${
 						item.doc_req_name
 					}" required><a class="btn btn-danger rounded-pill" href="javascript:deleteEl(${
 						i + 1
@@ -513,15 +512,6 @@ $('#signatories_list').on('click', '.link-delete', function () {
 
 	validationChecker()
 })
-
-function add_new_link() {
-	addCount++
-	let o = document.createElement('div'),
-		e = `<div class="row"><div class="hstack gap-2 justify-content-end mb-3"><input type="text" name="add_document_requirement" class="form-control" placeholder="Enter a requirement for this Document" required><a class="btn btn-danger rounded-pill" href="javascript:deleteEl(${(o.id =
-			addCount)}, 'add')">Delete</a></div><div class="invalid-feedback">Please select the Document Requirement.</div></div>`
-	;(o.innerHTML = document.getElementById('add_newForm').innerHTML + e),
-		document.getElementById('add_document_requirements_list').appendChild(o)
-}
 
 function edit_new_link() {
 	editCount++
