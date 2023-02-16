@@ -213,47 +213,6 @@
                         </div>
                         <!--end accordion-->
                     </div>
-                    <h6 class="mt-2 mb-3 text-dark">Other documents included in this request</h6>
-                    <ul class="list-group mb-4">
-                        <li class="list-group-item">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-grow-1">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-soft-info text-info rounded">
-                                                <i class="ri-file-text-fill"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-shrink-0 ms-2">
-                                            <h6 class="mb-0">WES Form, ICES Form, IQAS Form</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex-shrink-0">
-                                    <span>Qty: 2</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-grow-1">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-soft-info text-info rounded">
-                                                <i class="ri-file-text-fill"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-shrink-0 ms-2">
-                                            <h6 class="mb-0">Certificate of Transfer Credential (Honorable Dismissal)</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex-shrink-0">
-                                    <span>Qty: 3</span>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
                 <h6 class="mt-3 mb-3 text-primary">Student Details</h6>
                 <ul class="list list-group list-group-flush mb-0">
@@ -308,119 +267,6 @@
                         </div>
                     </li>
                 </ul>
-                <h6 class="mt-3 mb-3 text-primary">Request Status</h6>
-                <div class="ms-3 profile-timeline">
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item border-0">
-                            <div class="accordion-header" id="headingOne">
-                                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-warning bg-gradient rounded-circle">
-                                                <i class="mdi mdi-progress-clock"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <p class="mb-0 fw-semibold text-dark">
-                                                Pending for Clearance -
-                                                <span class="fw-normal">Thu, 08, Sep. 2022</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                <div class="accordion-body ms-2 ps-5 pt-0">
-                                    <p class="mb-1 text-dark">The Document Request is Pending for Approval and is being reviewed by the Officer-in-Charge, Student Records.</p>
-                                    <p class="mb-0">Thu, 08, Sep. 2022 - 06:15 PM</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item border-0">
-                            <div class="accordion-header" id="headingTwo">
-                                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-danger bg-gradient rounded-circle">
-                                                <i class="mdi mdi-nfc-search-variant"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <p class="mb-0 fw-semibold text-dark">
-                                                For Clearance -
-                                                <span class="fw-normal">Fri, 09, Sep. 2022</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                <div class="accordion-body ms-2 ps-5 pt-0">
-                                    <p class="mb-1 text-dark">The Document Request is now Approved. The student must go to PUP QC to submit the requirements and pay the processing fees.</p>
-                                    <p class="mb-0">Fri, 09, Sep. 2022 - 07:00 AM</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item border-0">
-                            <div class="accordion-header" id="headingThree">
-                                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-info bg-gradient rounded-circle">
-                                                <i class="mdi mdi-file-sign"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <p class="mb-1 fw-semibold text-dark">
-                                                For Evaluation / Processing -
-                                                <span class="fw-normal">Sat, 10, Sep. 2022</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                <div class="accordion-body ms-2 ps-5 pt-0">
-                                    <p class="mb-1 text-dark">The Document/s are Paid and the Request is now being Processed for signature, documentary stamp and school dry seal.</p>
-                                    <p class="mb-0">Sat, 10, Sep. 2022 - 03:00 PM</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item border-0">
-                            <div class="accordion-header" id="headingFour">
-                                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-light text-dark rounded-circle">
-                                                <i class="ri-user-received-2-line"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <p class="mb-1 fw-semibold text-dark">Ready for Pickup</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="accordion-item border-0">
-                            <div class="accordion-header" id="headingFive">
-                                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-light text-success rounded-circle">
-                                                <i class="ri-checkbox-circle-fill"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <p class="mb-0 fw-semibold text-dark">Released</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end accordion-->
-                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
@@ -643,28 +489,6 @@
                         </div>
                         <!--end accordion-->
                     </div>
-                    <h6 class="mt-2 mb-3 text-dark">Other documents included in this request</h6>
-                    <ul class="list-group mb-4">
-                        <li class="list-group-item">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-grow-1">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-soft-info text-info rounded">
-                                                <i class="ri-file-text-fill"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-shrink-0 ms-2">
-                                            <h6 class="mb-0">Certification of Non-Issuance of Special Order (S.O.)</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex-shrink-0">
-                                    <span>Qty: 1</span>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
                 <h6 class="mt-3 mb-3 text-primary">Student Details</h6>
                 <ul class="list list-group list-group-flush mb-0">
@@ -1069,28 +893,6 @@
                         </div>
                         <!--end accordion-->
                     </div>
-                    <h6 class="mt-2 mb-3 text-dark">Other documents included in this request</h6>
-                    <ul class="list-group mb-4">
-                        <li class="list-group-item">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-grow-1">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-soft-info text-info rounded">
-                                                <i class="ri-file-text-fill"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-shrink-0 ms-2">
-                                            <h6 class="mb-0">Certification of English as Medium Of instruction for Japan</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex-shrink-0">
-                                    <span>Qty: 1</span>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
                 <h6 class="mt-3 mb-3 text-primary">Student Details</h6>
                 <ul class="list list-group list-group-flush mb-0">
@@ -1145,119 +947,6 @@
                         </div>
                     </li>
                 </ul>
-                <h6 class="mt-3 mb-3 text-primary">Request Status</h6>
-                <div class="ms-3 profile-timeline">
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item border-0">
-                            <div class="accordion-header" id="headingOne">
-                                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-warning bg-gradient rounded-circle">
-                                                <i class="mdi mdi-progress-clock"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <p class="mb-0 fw-semibold text-dark">
-                                                Pending for Clearance -
-                                                <span class="fw-normal">Mon, 12, Dec. 2022</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                <div class="accordion-body ms-2 ps-5 pt-0">
-                                    <p class="mb-1 text-dark">The Document Request is Pending for Approval and is being reviewed by the Officer-in-Charge, Student Records.</p>
-                                    <p class="mb-0">Mon, 12, Dec. 2022 - 11:57 AM</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item border-0">
-                            <div class="accordion-header" id="headingTwo">
-                                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-danger bg-gradient rounded-circle">
-                                                <i class="mdi mdi-nfc-search-variant"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <p class="mb-0 fw-semibold text-dark">
-                                                For Clearance -
-                                                <span class="fw-normal">Tue, 13, Dec. 2022</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                <div class="accordion-body ms-2 ps-5 pt-0">
-                                    <p class="mb-1 text-dark">The Document Request is now Approved. The student must go to PUP QC to submit the requirements and pay the processing fees.</p>
-                                    <p class="mb-0">Tue, 13, Dec. 2022 - 04:29 PM</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item border-0">
-                            <div class="accordion-header" id="headingThree">
-                                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-info bg-gradient rounded-circle">
-                                                <i class="mdi mdi-file-sign"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <p class="mb-1 fw-semibold text-dark">
-                                                For Evaluation / Processing -
-                                                <span class="fw-normal">Wed, 14, Dec. 2022</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                <div class="accordion-body ms-2 ps-5 pt-0">
-                                    <p class="mb-1 text-dark">The Document/s are Paid and the Request is now being Processed for signature, documentary stamp and school dry seal.</p>
-                                    <p class="mb-0">Wed, 14, Dec. 2022 - 09:12 AM</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item border-0">
-                            <div class="accordion-header" id="headingFour">
-                                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-light text-dark rounded-circle">
-                                                <i class="ri-user-received-2-line"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <p class="mb-1 fw-semibold text-dark">Ready for Pickup</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="accordion-item border-0">
-                            <div class="accordion-header" id="headingFive">
-                                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-light text-success rounded-circle">
-                                                <i class="ri-checkbox-circle-fill"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <p class="mb-0 fw-semibold text-dark">Released</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end accordion-->
-                </div>
                 <h6 class="mt-3 mb-3 text-primary">Remarks</h6>
                 <div class="list-group">
                     <div class="list-group-item list-group-item-action">
