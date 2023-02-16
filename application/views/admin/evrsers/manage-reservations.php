@@ -3,9 +3,6 @@
         <div class="card">
             <div class="card-header d-flex align-items-center">
                 <h5 class="card-title mb-0 flex-grow-1">Venue Reservations</h5>
-                <div>
-                    <!-- <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addStaffModal">Add Faculty/Staff</button> -->
-                </div>
             </div>
             <div class="card-body">
                 <ul class="nav nav-pills nav-primary nav-custom-warning arrow-navtabs nav-justified mb-3" role="tablist">

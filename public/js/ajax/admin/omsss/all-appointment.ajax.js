@@ -1,10 +1,13 @@
 $(function () {
-	loadAllAppointmentsTable()
+	loadAllPendingAppointmentTable()
+	loadAllApprovedAppointmentTable()
+	loadAllCancelledStudentAppointmentTable()
+	loadAllCancelledStaffAppointmentTable()
+	loadAllDeletedAppointmentTable()
 })
 
-// Load datatables
-loadAllAppointmentsTable = () => {
-	const dt = $('#all_appointments')
+loadAllPendingAppointmentTable = () => {
+	const dt = $('#all_pending_appointment_table')
 
 	if (dt.length) {
 		dt.DataTable({
@@ -13,6 +16,14 @@ loadAllAppointmentsTable = () => {
 				url: apiURL + 'omsss/super_admin/view_appointments_except_done',
 				type: 'GET',
 				headers: AJAX_HEADERS,
+				// * Filter Pending Appointments
+				dataSrc: (result) => {
+					const data = result.data
+					const filteredData = data.filter((item) => {
+						return item.consultation_status == 'Pending'
+					})
+					return filteredData
+				},
 			},
 			columns: [
 				// Case Control No.
@@ -41,17 +52,7 @@ loadAllAppointmentsTable = () => {
 					data: null,
 					render: (data) => {
 						const consultation_status = data.consultation_status
-						if (consultation_status == 'Pending') {
-							return `<span class="badge rounded-pill bg-warning">Pending</span>`
-						} else if (consultation_status == 'Approved') {
-							return `<span class="badge rounded-pill bg-success">Approved</span>`
-						} else if (consultation_status == 'Cancelled by Staff') {
-							return `<span class="badge rounded-pill bg-info">Cancelled by Staff</span>`
-						} else if (consultation_status == 'Cancelled by Student') {
-							return `<span class="badge rounded-pill bg-info">Cancelled by Student</span>`
-						} else if (consultation_status == 'Deleted') {
-							return `<span class="badge rounded-pill bg-dark">Deleted</span>`
-						}
+						return `<span class="badge rounded-pill bg-warning">${consultation_status}</span>`
 					},
 				},
 
@@ -75,6 +76,304 @@ loadAllAppointmentsTable = () => {
                             <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewOverallDetails('${health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewOverallModal"><i class="ri-eye-fill fs-5"></i></button>
                             <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="deleteAppointment('${data.health_appointment_id}')"><i class="bx bxs-user-x fs-4"></i></button>
                         </div>`
+					},
+				},
+			],
+			order: [[0, 'asc']],
+		})
+	}
+}
+
+loadAllApprovedAppointmentTable = () => {
+	const dt = $('#all_approved_appointment_table')
+
+	if (dt.length) {
+		dt.DataTable({
+			bDestroy: true,
+			ajax: {
+				url: apiURL + 'omsss/super_admin/view_appointments_except_done',
+				type: 'GET',
+				headers: AJAX_HEADERS,
+				// * Filter Pending Appointments
+				dataSrc: (result) => {
+					const data = result.data
+					const filteredData = data.filter((item) => {
+						return item.consultation_status == 'Approved'
+					})
+					return filteredData
+				},
+			},
+			columns: [
+				// Case Control No.
+				{
+					data: null,
+					render: (data) => {
+						const caseNo = data.case_control_number
+						return `${caseNo}`
+					},
+				},
+
+				// Student
+				{
+					data: null,
+					render: (data) => {
+						if (data.health_appointment_assigned_to_user) {
+							const studentName =
+								data.health_appointment_assigned_to_user.user_profiles[0].full_name
+							return `${studentName}`
+						}
+					},
+				},
+
+				// Status
+				{
+					data: null,
+					render: (data) => {
+						const consultation_status = data.consultation_status
+						return `<span class="badge rounded-pill bg-success">${consultation_status}</span>`
+					},
+				},
+
+				// Schedule
+				{
+					data: null,
+					render: (data) => {
+						const consultation_date = moment(data.consultation_date).format('LL')
+						return `${consultation_date}`
+					},
+				},
+
+				//Action
+				{
+					data: null,
+					class: 'text-center',
+					render: (data) => {
+						const health_appointment_id = data.health_appointment_id
+						return `
+                        <div class="dropdown d-inline-block">
+                            <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewOverallDetails('${health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewOverallModal"><i class="ri-eye-fill fs-5"></i></button>
+                            <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="deleteAppointment('${data.health_appointment_id}')"><i class="bx bxs-user-x fs-4"></i></button>
+                        </div>`
+					},
+				},
+			],
+			order: [[0, 'asc']],
+		})
+	}
+}
+
+loadAllCancelledStudentAppointmentTable = () => {
+	const dt = $('#all_cancelled_student_appointment_table')
+
+	if (dt.length) {
+		dt.DataTable({
+			bDestroy: true,
+			ajax: {
+				url: apiURL + 'omsss/super_admin/view_appointments_except_done',
+				type: 'GET',
+				headers: AJAX_HEADERS,
+				// * Filter Pending Appointments
+				dataSrc: (result) => {
+					const data = result.data
+					const filteredData = data.filter((item) => {
+						return item.consultation_status == 'Cancelled by Student'
+					})
+					return filteredData
+				},
+			},
+			columns: [
+				// Case Control No.
+				{
+					data: null,
+					render: (data) => {
+						const caseNo = data.case_control_number
+						return `${caseNo}`
+					},
+				},
+
+				// Student
+				{
+					data: null,
+					render: (data) => {
+						if (data.health_appointment_assigned_to_user) {
+							const studentName =
+								data.health_appointment_assigned_to_user.user_profiles[0].full_name
+							return `${studentName}`
+						}
+					},
+				},
+
+				// Status
+				{
+					data: null,
+					render: (data) => {
+						const consultation_status = data.consultation_status
+						return `<span class="badge rounded-pill bg-info">${consultation_status}</span>`
+					},
+				},
+
+				// Schedule
+				{
+					data: null,
+					render: (data) => {
+						const consultation_date = moment(data.consultation_date).format('LL')
+						return `${consultation_date}`
+					},
+				},
+
+				//Action
+				{
+					data: null,
+					class: 'text-center',
+					render: (data) => {
+						const health_appointment_id = data.health_appointment_id
+						return `
+                        <div class="dropdown d-inline-block">
+                            <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewOverallDetails('${health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewOverallModal"><i class="ri-eye-fill fs-5"></i></button>
+                            <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="deleteAppointment('${data.health_appointment_id}')"><i class="bx bxs-user-x fs-4"></i></button>
+                        </div>`
+					},
+				},
+			],
+			order: [[0, 'asc']],
+		})
+	}
+}
+
+loadAllCancelledStaffAppointmentTable = () => {
+	const dt = $('#all_cancelled_staff_appointment_table')
+
+	if (dt.length) {
+		dt.DataTable({
+			bDestroy: true,
+			ajax: {
+				url: apiURL + 'omsss/super_admin/view_appointments_except_done',
+				type: 'GET',
+				headers: AJAX_HEADERS,
+				// * Filter Pending Appointments
+				dataSrc: (result) => {
+					const data = result.data
+					const filteredData = data.filter((item) => {
+						return item.consultation_status == 'Cancelled by Staff'
+					})
+					return filteredData
+				},
+			},
+			columns: [
+				// Case Control No.
+				{
+					data: null,
+					render: (data) => {
+						const caseNo = data.case_control_number
+						return `${caseNo}`
+					},
+				},
+
+				// Student
+				{
+					data: null,
+					render: (data) => {
+						if (data.health_appointment_assigned_to_user) {
+							const studentName =
+								data.health_appointment_assigned_to_user.user_profiles[0].full_name
+							return `${studentName}`
+						}
+					},
+				},
+
+				// Status
+				{
+					data: null,
+					render: (data) => {
+						const consultation_status = data.consultation_status
+						return `<span class="badge rounded-pill bg-info">${consultation_status}</span>`
+					},
+				},
+
+				// Schedule
+				{
+					data: null,
+					render: (data) => {
+						const consultation_date = moment(data.consultation_date).format('LL')
+						return `${consultation_date}`
+					},
+				},
+
+				//Action
+				{
+					data: null,
+					class: 'text-center',
+					render: (data) => {
+						const health_appointment_id = data.health_appointment_id
+						return `
+                        <div class="dropdown d-inline-block">
+                            <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewOverallDetails('${health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewOverallModal"><i class="ri-eye-fill fs-5"></i></button>
+                            <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="deleteAppointment('${data.health_appointment_id}')"><i class="bx bxs-user-x fs-4"></i></button>
+                        </div>`
+					},
+				},
+			],
+			order: [[0, 'asc']],
+		})
+	}
+}
+
+loadAllDeletedAppointmentTable = () => {
+	const dt = $('#all_deleted_appointment_table')
+
+	if (dt.length) {
+		dt.DataTable({
+			bDestroy: true,
+			ajax: {
+				url: apiURL + 'omsss/super_admin/view_appointments_except_done',
+				type: 'GET',
+				headers: AJAX_HEADERS,
+				// * Filter Pending Appointments
+				dataSrc: (result) => {
+					const data = result.data
+					const filteredData = data.filter((item) => {
+						return item.consultation_status == 'Deleted'
+					})
+					return filteredData
+				},
+			},
+			columns: [
+				// Case Control No.
+				{
+					data: null,
+					render: (data) => {
+						const caseNo = data.case_control_number
+						return `${caseNo}`
+					},
+				},
+
+				// Student
+				{
+					data: null,
+					render: (data) => {
+						if (data.health_appointment_assigned_to_user) {
+							const studentName =
+								data.health_appointment_assigned_to_user.user_profiles[0].full_name
+							return `${studentName}`
+						}
+					},
+				},
+
+				// Status
+				{
+					data: null,
+					render: (data) => {
+						const consultation_status = data.consultation_status
+						return `<span class="badge rounded-pill bg-dark bg-gradient">${consultation_status}</span>`
+					},
+				},
+
+				// Schedule
+				{
+					data: null,
+					render: (data) => {
+						const consultation_date = moment(data.consultation_date).format('LL')
+						return `${consultation_date}`
 					},
 				},
 			],
@@ -290,7 +589,7 @@ deleteAppointment = (health_appointment_id) => {
 							buttonsStyling: !1,
 							showCloseButton: !0,
 						}).then(function () {
-							reloadPage()
+							window.location.reload()
 						})
 					}
 				},
