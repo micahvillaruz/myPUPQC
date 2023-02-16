@@ -18,6 +18,7 @@ $(function () {
 })
 var addCount = 0
 var editCount = 0
+let addCounter = 0
 let signatoriesList = []
 let filteredSignatoriesList = []
 
@@ -219,7 +220,6 @@ addDocument = () => {
 					$('#addDocumentModal').modal('hide')
 					$('form#addDocumentForm')[0].reset()
 					$('#document_requirements_list').empty()
-					addCount = 0
 					$('#display_list').empty()
 					$('.signatories_div').removeClass('d-none')
 					$('#select_signatories').attr('required', 'required')
@@ -537,3 +537,33 @@ function deleteEl(o, val) {
 	o = d.getElementById(o)
 	d.getElementById(`${val}_document_requirements_list`).removeChild(o)
 }
+
+document.getElementById('addDocReq').addEventListener('click', function () {
+	const container = document.getElementById('add_doc_req_container')
+
+	const div = document.createElement('div')
+	div.classList.add('hstack', 'gap-2', 'justify-content-end', 'mb-3')
+
+	const textField = document.createElement('input')
+	textField.type = 'text'
+	textField.id = `textField-${addCounter}`
+	textField.classList.add('form-control')
+	textField.placeholder = 'Enter a requirement for this Document'
+	textField.required = true
+	textField.name = 'add_document_requirement'
+
+	const deleteBtn = document.createElement('button')
+	deleteBtn.innerHTML = 'Delete'
+	deleteBtn.id = `deleteBtn-${addCounter}`
+	deleteBtn.classList.add('btn', 'btn-danger', 'rounded-pill')
+
+	deleteBtn.addEventListener('click', function () {
+		container.removeChild(div)
+	})
+
+	div.appendChild(textField)
+	div.appendChild(deleteBtn)
+	container.appendChild(div)
+
+	addCounter++
+})
