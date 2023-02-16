@@ -584,7 +584,7 @@ fetchAllStaff = (reservation_id) => {
 
                 // Remove d-none class from reservation-signatories
                 $('#reservation-signatories').removeClass('d-none')
-                $('#showConfirmButton').removeClass('d-none')
+                $('#ConfirmButton').removeClass('d-none')
 
                 console.log(count + ' - ' + staffName)
                 console.log(signatoryList)
@@ -602,7 +602,7 @@ fetchAllStaff = (reservation_id) => {
                 }
 
                 // Do code once showConfirmButton is clicked
-                $('#showConfirmButton').on('click', function(e) {
+                $('#ConfirmButton').on('click', function(e) {
                     e.preventDefault()
                     addSignatory(signatoryList, reservation_id)
                 })
@@ -615,6 +615,54 @@ fetchAllStaff = (reservation_id) => {
 addSignatory = (signatoryList, reservation_id) => {
     console.log("Adding signatories for reservation_id: " + reservation_id)
     console.log(signatoryList)
+
+    // hide modal
+    $('#addSignModal').modal('hide')
+
+    $.ajaxSetup({
+        headers: {
+            Accept: 'application/json',
+            Authorization: 'Bearer ' + TOKEN,
+        },
+    })
+
+    $.ajax({
+        url: apiURL + `evrsers/pup_staff/signatory/add_signatories/${reservation_id}`,
+        type: 'PUT',
+        ContentType: 'application/x-www-form-urlencoded',
+        data: {
+            signatories: signatoryList,
+        },
+        success: (data) => {
+            console.log(data)
+            Swal.fire({
+                html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully added signatory to this event!</p></div></div>',
+                showCancelButton: !0,
+                showConfirmButton: !1,
+                cancelButtonClass: 'btn btn-success w-xs mb-1',
+                cancelButtonText: 'Ok',
+                buttonsStyling: !1,
+                showCloseButton: !0,
+            }).then(function() {
+                location.reload()
+            })
+        },
+        error: (xhr) => {
+            console.log(xhr)
+            Swal.fire({
+                html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong!</h4><p class="text-muted mx-4 mb-0">${
+                    JSON.parse(xhr.responseText).message
+                }</p></div></div>`,
+                showCancelButton: !0,
+                showConfirmButton: !1,
+                cancelButtonClass: 'btn btn-danger w-xs mb-1',
+                cancelButtonText: 'Dismiss',
+                buttonsStyling: !1,
+                showCloseButton: !0,
+            })
+        }
+    })
+
 }
 
 // Load signatories through function
