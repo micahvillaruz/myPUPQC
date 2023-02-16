@@ -389,7 +389,7 @@ loadApprovedRequests = () => {
 								</button>
 							`
 						} else if (requestStatus === 'For Evaluation/Processing') {
-							if (true) {
+							if (!data.is_approved_all) {
 								return `
 									<button type="button" class="btn btn-icon waves-effect waves-light text-white" style="background-color: #4b38b3;" data-bs-toggle="modal" data-bs-target="#approvalWorkflowModal" onclick="addId('${data.request_id}', 'trace_approval_request')">
 										<i class="ri-file-search-line fs-5"></i>
