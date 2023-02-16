@@ -74,7 +74,7 @@ loadAllPendingAppointmentTable = () => {
 						return `
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewOverallDetails('${health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewOverallModal"><i class="ri-eye-fill fs-5"></i></button>
-                            <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="deleteAppointment('${data.health_appointment_id}')"><i class="bx bxs-user-x fs-4"></i></button>
+                            <button type="button" class="btn btn-dark bg-gradient btn-icon waves-effect waves-light" onclick="deleteAppointment('${data.health_appointment_id}')"><i class="bx bxs-trash fs-5"></i></button>
                         </div>`
 					},
 				},
@@ -152,7 +152,7 @@ loadAllApprovedAppointmentTable = () => {
 						return `
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewOverallDetails('${health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewOverallModal"><i class="ri-eye-fill fs-5"></i></button>
-                            <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="deleteAppointment('${data.health_appointment_id}')"><i class="bx bxs-user-x fs-4"></i></button>
+                            <button type="button" class="btn btn-dark bg-gradient btn-icon waves-effect waves-light" onclick="deleteAppointment('${data.health_appointment_id}')"><i class="bx bxs-trash fs-5"></i></button>
                         </div>`
 					},
 				},
@@ -230,7 +230,7 @@ loadAllCancelledStudentAppointmentTable = () => {
 						return `
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewOverallDetails('${health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewOverallModal"><i class="ri-eye-fill fs-5"></i></button>
-                            <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="deleteAppointment('${data.health_appointment_id}')"><i class="bx bxs-user-x fs-4"></i></button>
+                            <button type="button" class="btn btn-dark bg-gradient btn-icon waves-effect waves-light" onclick="deleteAppointment('${data.health_appointment_id}')"><i class="bx bxs-trash fs-5"></i></button>
                         </div>`
 					},
 				},
@@ -308,7 +308,7 @@ loadAllCancelledStaffAppointmentTable = () => {
 						return `
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewOverallDetails('${health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewOverallModal"><i class="ri-eye-fill fs-5"></i></button>
-                            <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="deleteAppointment('${data.health_appointment_id}')"><i class="bx bxs-user-x fs-4"></i></button>
+                            <button type="button" class="btn btn-dark bg-gradient btn-icon waves-effect waves-light" onclick="deleteAppointment('${data.health_appointment_id}')"><i class="bx bxs-trash fs-5"></i></button>
                         </div>`
 					},
 				},
@@ -437,112 +437,6 @@ viewOverallDetails = (health_appointment_id) => {
 			})
 
 			$('#view_consultation_date').html(consultationDate)
-			// % =================================
-			// * Health Information (Medical History)
-			$.ajax({
-				type: 'GET',
-				cache: false,
-				url: apiURL + `omsss/super_admin/medical_history/${user_id}`,
-				dataType: 'json',
-				headers: AJAX_HEADERS,
-				success: (result) => {
-					const data = result.data
-					console.log(data)
-					const medical_history = data.medical_history ?? []
-					// * loop through each medical history and in bullet
-					let bullet = ''
-					medical_history.forEach((history) => {
-						bullet += `<li>${history}</li>`
-					})
-					$('#view_medical_history').html(`<ul>${bullet}</ul>`)
-
-					bullet = ''
-					const family_history = data.family_history ?? []
-					family_history.forEach((history) => {
-						bullet += `<li>${history}</li>`
-					})
-					$('#view_family_history').html(`<ul>${bullet}</ul>`)
-
-					bullet = ''
-					const allergies = data.allergy ?? []
-					allergies.forEach((history) => {
-						bullet += `<li>${history}</li>`
-					})
-					$('#view_allergies').html(`<ul>${bullet}</ul>`)
-
-					bullet = ''
-					const medication = data.medications ?? []
-					medication.forEach((history) => {
-						bullet += `<li>${history}</li>`
-					})
-					$('#view_medications').html(`<ul>${bullet}</ul>`)
-
-					const social_history = data.social_history
-					// * value {smoker: false, alcoholic: true}
-					// * Create a badge if smoker or non smoker and alcholic or non alcoholic
-					if (social_history != null) {
-						let smoker = social_history.smoker
-							? `<span class="badge bg-info">Smoker</span>`
-							: `<span class="badge bg-danger">Non Smoker</span>`
-						let alcoholic = social_history.alcoholic
-							? `<span class="badge bg-info">Alcoholic</span>`
-							: `<span class="badge bg-danger">Non Alcoholic</span>`
-						$('#view_social_history').html(`${smoker} ${alcoholic}`)
-					} else {
-						$('#view_social_history').html(`<span class="badge bg-danger">No Data</span>`)
-					}
-				},
-			})
-			// % =================================
-			// * Patient Information (kadugtong ng Personal Information sa baba)
-			$.ajax({
-				type: 'GET',
-				cache: false,
-				url: apiURL + `omsss/super_admin/patient_information/${user_id}`,
-				dataType: 'json',
-				headers: AJAX_HEADERS,
-				success: (result) => {
-					const data = result.data
-					const guardian_name =
-						data.emergency_contact_name ?? `<span class="badge bg-danger">No Data</span>`
-					const guardian_contact_number =
-						data.emergency_contact_number ?? `<span class="badge bg-danger">No Data</span>`
-					const guardian_address =
-						data.emergency_contact_address ?? `<span class="badge bg-danger">No Data</span>`
-					const guardian_email =
-						data.emergency_contact_email ?? `<span class="badge bg-danger">No Data</span>`
-					const philhealth_id_image =
-						data.philhealth_id_image != null
-							? `<a href="${data.philhealth_id_image}" target="_blank" class="btn btn-primary btn-sm">View PhilHealth ID</a>`
-							: `<span class="badge bg-danger">No Data</span>`
-
-					$('#view_guardian_name').html(guardian_name)
-					$('#view_guardian_number').html(guardian_contact_number)
-					$('#view_guardian_address').html(guardian_address)
-					$('#view_guardian_email').html(guardian_email)
-					$('#view_philhealth_id').html(philhealth_id_image)
-				},
-			})
-			// % =================================
-			// * Immunization
-			$.ajax({
-				type: 'GET',
-				cache: false,
-				url: apiURL + `omsss/super_admin/view_immunization/${user_id}`,
-				dataType: 'json',
-				headers: AJAX_HEADERS,
-				success: (result) => {
-					const data = result.data
-					const vaccination_card = data.vaccination_card
-
-					let button_vaccination =
-						vaccination_card != null
-							? `<a href="${vaccination_card}" target="_blank" class="btn btn-primary btn-sm">View Vaccination Card</a>`
-							: `<span class="badge bg-danger">No Data</span>`
-
-					$('#view_vaccination_card').html(button_vaccination)
-				},
-			})
 		},
 	})
 }
