@@ -29,8 +29,7 @@ viewDetailsReservationStaff = (reservation_id) => {
 
             $('#reserve_number').html(userData.reservation_number)
 
-            let organization_name =
-                userData.organization_assigned_to_reservations.display_name
+            let organization_name = userData.organization_assigned_to_reservations.display_name
             console.log(organization_name)
             let acadorg = ['CHRS', 'COMMITS', 'DOMT.CS', 'FBTO', 'JMS', 'SPAS', 'YES']
             let nonacadorg = ['KATAGA', 'MUSA', 'PSC', 'Vox Nova', 'Other']
@@ -260,7 +259,7 @@ viewAllPendingReservation = () => {
                         return `
                             <div class="dropdown d-inline-block mt-2">
                                 <button type="button" class="btn btn-info btn-icon waves-effect waves-light mb-2" data-bs-toggle="modal" data-bs-target="#viewReservationModal" onclick="viewDetailsReservationStaff('${data.reservation_id}')"><i class=" ri-eye-fill fs-6 align-middle"></i></button>
-                                <button type="button" class="btn btn-success waves-effect waves-light mb-2" data-bs-toggle="modal" data-bs-target="#addSignModal" onclick="addSignatory('${data.reservation_id}')"><i class=" ri-quill-pen-fill fs-6 me-2 align-middle"></i>Add Signatories</button>
+                                <button type="button" class="btn btn-success waves-effect waves-light mb-2" data-bs-toggle="modal" data-bs-target="#addSignModal" onclick="fetchAllStaff('${data.reservation_id}'); loadSignatories('${data.reservation_id}')"><i class=" ri-quill-pen-fill fs-6 me-2 align-middle"></i>Add Signatories</button>
                             </div>
                                 `
                     },
@@ -466,7 +465,7 @@ viewAllApprovedReservation = () => {
 }
 
 cancelReservation = (reservation_id) => {
-    console.log(reservation_id)
+    console.log('Reservation ID:', reservation_id)
     $('#viewReservationModal').modal('hide')
     $('#cancelReservationModal').modal('show')
     $('#cancel-reservation').on('click', function() {
@@ -521,7 +520,9 @@ cancelReservation = (reservation_id) => {
 }
 
 // Get All signatories and populate signatory_names select
-fetchSignatories = () => {
+fetchAllStaff = (reservation_id) => {
+    console.log('Reservation ID:', reservation_id)
+
     $.ajaxSetup({
         headers: {
             Accept: 'application/json',
@@ -531,33 +532,93 @@ fetchSignatories = () => {
     })
 
     $.ajax({
-        url: apiURL + 'evrsers/pup_staff/signatory/signatory/view_signatories/',
+        url: apiURL + 'evrsers/pup_staff/signatory/view_all_staff/',
         type: 'GET',
         ContentType: 'application/x-www-form-urlencoded',
         success: (data) => {
-            const signatories = data.data
+            const staffs = data.data
             const select2 = $('#signatory-names')
-            signatory.forEach((signatories) => {
-                // console.log(student)
-                const userNo = signatory.user_no
-                const fullName = signatory.user_profiles[0].full_name
-                const option = new Option(`${userNo} - ${fullName}`, signatory.user_no, false, false)
+            staffs.forEach((staff) => {
+                console.log(staff)
+                const userNo = staff.user_no
+                const fullName = staff.user_profiles[0].full_name
+                const option = new Option(`${fullName} - ${userNo}`, staff.user_no, false, false)
                 select2.append(option)
             })
 
+            // Set select2 dropdownParent to modal
+            select2.select2({
+                dropdownParent: $('#addSignModal'),
+            })
+
+            // Console log selection value on change
+            select2.on('change', function() {
+                console.log(select2.find(':selected').val())
+            })
+
+            let signatoryList = []
+            var count = 1
+
             // if option is selected and add-student-organizer button is clicked, get student.user_id
             // and pass it to addStudentOrganizer function and prevent page from reloading
+
             $('#add-as-signatory').on('click', function(e) {
                 // get selected option user_id
                 const selectedOption = select2.find(':selected')
-                const signatory = signatory.find((signatory) => signatory.user_no === selectedOption.val())
-                    // prevent page from reloading
-                e.preventDefault()
-                addSignatory(signatory.user_id)
+                let staff = staffs.find((staff) => staff.user_no === selectedOption.val())
+                let staffName = staff.user_profiles[0].full_name
+                let user_id = staff.user_id
+
+                // push user_id to signatoryList
+                signatoryList.push(user_id)
+
+                // Show result using dynamic html element that could be removed if removeSignatory is clicked
+                $('#reservation-signatories').append(`
+                <div class="mb-4">
+                  <div class="hstack gap-1">
+                    <input type="text" class="form-control" id="signatory${count}" name="signatory${count}" placeholder="${staffName}" disabled>
+                    <button id="${user_id}" type="button" class="btn btn-info btn-danger waves-effect waves-light" onclick="removeStaffArray('${user_id}')"><i class="ri-subtract-line fs-5"></i></button>
+                  </div>
+                </div>
+                `)
+
+                // Remove d-none class from reservation-signatories
+                $('#reservation-signatories').removeClass('d-none')
+                $('#showConfirmButton').removeClass('d-none')
+
+                console.log(count + ' - ' + staffName)
+                console.log(signatoryList)
+
+                count++
+
+                removeStaffArray = (user_id) => {
+                    // remove user_id from signatoryList
+                    signatoryList = signatoryList.filter((id) => id !== user_id)
+
+                    // remove element from html
+                    $(`#${user_id}`).parent().parent().remove()
+
+                    count--
+                }
+
+                // Do code once showConfirmButton is clicked
+                $('#showConfirmButton').on('click', function(e) {
+                    e.preventDefault()
+                    addSignatory(signatoryList, reservation_id)
+                })
             })
         },
     })
 }
 
 // Add Signatory
-addSignatory = (reservation_id) => {}
+addSignatory = (signatoryList, reservation_id) => {
+    console.log("Adding signatories for reservation_id: " + reservation_id)
+    console.log(signatoryList)
+}
+
+// Load signatories through function
+loadSignatories = (reservation_id) => {
+    console.log('Reservation ID:', reservation_id)
+        // Check if reservation_id has reservation_signatories
+}
