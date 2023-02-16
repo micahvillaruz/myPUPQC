@@ -15,8 +15,6 @@ $(function () {
 		const day = current.getDate().toString().padStart(2, '0')
 		const date = `${year}-${month}-${day}`
 
-		console.log(current, current.getDay(), current.getDay() !== 0, current.getDay() !== 6, date)
-
 		if (current.getDay() !== 0 && current.getDay() !== 6) {
 			dates.push(date)
 		}
