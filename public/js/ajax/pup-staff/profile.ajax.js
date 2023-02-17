@@ -12,6 +12,7 @@ loadProfile = () => {
 
 			//Load Topbar
 			$('#full_name').html(data.full_name)
+			$('#user_id').val(data.user_id)
 			$('#welcome').html(`Welcome ${data.first_name}!`)
 
 			// Load User Profile
