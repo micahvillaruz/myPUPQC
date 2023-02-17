@@ -302,7 +302,7 @@ loadHolidays = () => {
             const selectedTimeFrom = timeFrom.value
             console.log(selectedTimeFrom)
 
-            if (selectedTimeFrom !== '8:00 AM') {
+            if (selectedTimeFrom != '8:00 AM') {
                 updateTimeToOptions(selectedTimeFrom)
             }
         })
