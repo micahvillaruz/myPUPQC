@@ -577,7 +577,7 @@
                     <p class="text-muted mb-4">If yes, input on the remarks the reason for puting this document on hold and the steps the OIC, Student Records must follow for the document's next round of evaluation. Lastly, make sure to click the Hold button. Otherwise, click the Dismiss button.</p>
 
                     <form id="holdRequestForm" class="needs-validation" novalidate>
-                        <input type="hidden" id="hold_request_id">
+                        <input type="hidden" id="hold_request_signatory_id">
                         <div class="vstack gap-2 mb-4">
                             <div class="form-check card-checkbox shadow">
                                 <input id="holdDocument" name="holdDocument" class="form-check-input">
