@@ -60,6 +60,9 @@ charts = () => {
 	chartEight()
 	chartNine()
 	chartTen()
+	chartAppointment()
+	chartRequest()
+	chartReservation()
 }
 
 chartOne = () => {
@@ -461,5 +464,243 @@ chartTen = () => {
 		const htmlContent = `<div class="number"><h1 class="display-1 text-primary">${numberOfUsers}</h1></div><p class="fs-5 text-center font-italic">Reservations</p>`
 
 		chartNumberTen.innerHTML = htmlContent
+	})
+}
+
+chartAppointment = () => {
+	var chartAppointment = echarts.init(document.getElementById('chartAppointment'))
+
+	$.ajax({
+		type: 'GET',
+		cache: false,
+		url: apiURL + 'super_admin/analytics/three_year_appointment_count',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+	}).then((result) => {
+		const data = result.data.three_year_appointment_count
+
+		// Convert data object to array of objects
+		const chartData = Object.entries(data).map(([name, value], index) => {
+			return {
+				value: value,
+				name: name,
+			}
+		})
+
+		// Create options object for chart
+		const option = {
+			title: {
+				text: 'Appointment Count',
+				subtext: 'All Appoinments for the past 3 years',
+				left: 'center',
+			},
+			toolbox: {
+				show: true,
+				feature: {
+					saveAsImage: {
+						show: true,
+						title: 'Save as Image',
+						name: `(myPUPQC) chartAppointment_${new Date()
+							.toISOString()
+							.slice(0, 10)}_appointment_count`,
+					},
+				},
+			},
+			legend: {
+				orient: 'vertical',
+				left: 'left',
+				scroll: true,
+			},
+			tooltip: {
+				trigger: 'item',
+				formatter: '<b>{b}</b>: {c}',
+			},
+			xAxis: {
+				type: 'category',
+				data: chartData.map((data) => data.name),
+			},
+			yAxis: {
+				type: 'value',
+			},
+			series: [
+				{
+					type: 'bar',
+					itemStyle: {
+						borderRadius: 10,
+						borderColor: '#fff',
+						borderWidth: 2,
+					},
+					emphasis: {
+						label: {
+							show: true,
+							fontSize: 16,
+							fontWeight: 'bold',
+						},
+					},
+					data: chartData.map((data) => data.value),
+				},
+			],
+		}
+
+		// Set options to chart
+		chartAppointment.setOption(option)
+	})
+}
+
+chartRequest = () => {
+	var chartRequest = echarts.init(document.getElementById('chartRequest'))
+
+	$.ajax({
+		type: 'GET',
+		cache: false,
+		url: apiURL + 'super_admin/analytics/three_year_request_count',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+	}).then((result) => {
+		const data = result.data.three_year_request_count
+
+		// Convert data object to array of objects
+		const chartData = Object.entries(data).map(([name, value], index) => {
+			return {
+				value: value,
+				name: name,
+			}
+		})
+
+		// Create options object for chart
+		const option = {
+			title: {
+				text: 'Request Count',
+				subtext: 'All Requests for the past 3 years',
+				left: 'center',
+			},
+			toolbox: {
+				show: true,
+				feature: {
+					saveAsImage: {
+						show: true,
+						title: 'Save as Image',
+						name: `(myPUPQC) chartRequest_${new Date().toISOString().slice(0, 10)}_request_count`,
+					},
+				},
+			},
+			legend: {
+				orient: 'vertical',
+				left: 'left',
+				scroll: true,
+			},
+			tooltip: {
+				trigger: 'item',
+				formatter: '<b>{b}</b>: {c}',
+			},
+			xAxis: {
+				type: 'category',
+				data: chartData.map((data) => data.name),
+			},
+			yAxis: {
+				type: 'value',
+			},
+			series: [
+				{
+					type: 'bar',
+					itemStyle: {
+						borderRadius: 10,
+						borderColor: '#fff',
+						borderWidth: 2,
+					},
+					emphasis: {
+						label: {
+							show: true,
+							fontSize: 16,
+							fontWeight: 'bold',
+						},
+					},
+					data: chartData.map((data) => data.value),
+				},
+			],
+		}
+
+		// Set options to chart
+		chartRequest.setOption(option)
+	})
+}
+
+chartReservation = () => {
+	var chartReservation = echarts.init(document.getElementById('chartReservation'))
+
+	$.ajax({
+		type: 'GET',
+		cache: false,
+		url: apiURL + 'super_admin/analytics/three_year_reservation_count',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+	}).then((result) => {
+		const data = result.data.three_year_reservation_count
+
+		// Convert data object to array of objects
+		const chartData = Object.entries(data).map(([name, value], index) => {
+			return {
+				value: value,
+				name: name,
+			}
+		})
+
+		// Create options object for chart
+		const option = {
+			title: {
+				text: 'Reservation Count',
+				subtext: 'All Reservation for the past 3 years',
+				left: 'center',
+			},
+			toolbox: {
+				show: true,
+				feature: {
+					saveAsImage: {
+						show: true,
+						title: 'Save as Image',
+						name: `(myPUPQC) chartReservation_${new Date()
+							.toISOString()
+							.slice(0, 10)}_reservation_count`,
+					},
+				},
+			},
+			legend: {
+				orient: 'vertical',
+				left: 'left',
+				scroll: true,
+			},
+			tooltip: {
+				trigger: 'item',
+				formatter: '<b>{b}</b>: {c}',
+			},
+			xAxis: {
+				type: 'category',
+				data: chartData.map((data) => data.name),
+			},
+			yAxis: {
+				type: 'value',
+			},
+			series: [
+				{
+					type: 'bar',
+					itemStyle: {
+						borderRadius: 10,
+						borderColor: '#fff',
+						borderWidth: 2,
+					},
+					emphasis: {
+						label: {
+							show: true,
+							fontSize: 16,
+							fontWeight: 'bold',
+						},
+					},
+					data: chartData.map((data) => data.value),
+				},
+			],
+		}
+
+		// Set options to chart
+		chartReservation.setOption(option)
 	})
 }
