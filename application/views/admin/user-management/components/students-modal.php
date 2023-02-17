@@ -30,10 +30,6 @@
                         <input type="text" class="form-control" id="user_no" name="user_no" placeholder="Enter Student Number" required />
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required />
-                    </div>
-                    <div class="mb-3">
                         <label for="first_name" class="form-label">First Name <span class="text-danger">*</span></label>
                         <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter First Name" required>
                     </div>

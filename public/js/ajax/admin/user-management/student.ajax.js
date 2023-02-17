@@ -160,7 +160,6 @@ enrollStudent = () => {
 		data = {
 			image: form.get('profile-img-file-input'),
 			user_no: form.get('user_no'),
-			password: form.get('password'),
 			first_name: form.get('first_name'),
 			middle_name: form.get('middle_name'),
 			last_name: form.get('last_name'),
