@@ -515,6 +515,7 @@
 
                     <form id="approveRequestForm" class="needs-validation" novalidate>
                         <input type="hidden" id="approve_request_id">
+                        <input type="hidden" id="approve_document_id">
                         <div class="vstack gap-2 mb-4">
                             <div class="form-check card-checkbox shadow">
                                 <input id="approveDocument" name="approveDocument" class="form-check-input">
