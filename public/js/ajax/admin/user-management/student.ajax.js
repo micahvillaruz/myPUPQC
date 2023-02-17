@@ -54,41 +54,12 @@ loadStudentTable = () => {
 					},
 				},
 
-				// Address
-				{
-					data: null,
-					render: (data) => {
-						const address = data.user_profiles[0].full_address
-						return `${address}`
-					},
-				},
-
 				// Gender
 				{
 					data: null,
 					render: (data) => {
 						const igender = data.user_profiles[0].gender
 						return `${igender}`
-					},
-				},
-
-				// Birthday
-				{
-					data: null,
-					render: (data) => {
-						const birth_date = moment(data.user_profiles[0].birth_date).format('LL')
-
-						return `${birth_date}`
-					},
-				},
-
-				// Contact Number
-				{
-					data: null,
-					render: (data) => {
-						const contact_number = data.user_profiles[0].contact_number
-
-						return `${contact_number}`
 					},
 				},
 
@@ -99,6 +70,16 @@ loadStudentTable = () => {
 						return data.is_blacklist
 							? `<span class="badge rounded-pill bg-danger">Inactive</span>`
 							: `<span class="badge rounded-pill bg-success">Active</span>`
+					},
+				},
+
+				// Education Profile
+				{
+					data: null,
+					render: (data) => {
+						return `
+                        <button type="button" class="btn btn-secondary bg-gradient btn-icon waves-effect waves-light" onclick="populateEducationProfile('${data.user_id}')" data-bs-toggle="modal" data-bs-target="#updateEducationProfile"><i class="bx bxs-graduation fs-4"></i></button>
+                        `
 					},
 				},
 
@@ -475,3 +456,5 @@ activateStudent = (user_id) => {
 		}
 	})
 }
+
+populateEducationProfile = (user_id) => {}
