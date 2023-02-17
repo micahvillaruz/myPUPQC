@@ -665,6 +665,7 @@ function viewRevertRequestModal(request_id, document_id) {
 	})
 }
 
+// View For Approval Request Details
 viewforApprovalRequest = (request_id) => {
 	$.ajax({
 		type: 'GET',
@@ -928,6 +929,423 @@ viewforApprovalRequest = (request_id) => {
 				}
 			}
 			$('#remarks').html(remarks)
+		},
+	})
+}
+
+// View Approved Request Details
+viewApprovedRequest = (request_id) => {
+	$.ajax({
+		type: 'GET',
+		url: `${apiURL}odrs/pup_staff/view_signatory/${request_id}`,
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			const data = result.data
+
+			$('#requestNo').html(data.control_no)
+
+			const date = moment(data.pending_for_clearance).format('DD, MMM. YYYY')
+			const time = moment(data.pending_for_clearance).format('hh:mm A')
+			$('#dateFiled').html(`<p class="mb-0">${date} <small class="ms-1">${time}</small></p>`)
+
+			$('#purposeReq').html(data.purpose_of_request)
+
+			const documents = data.documents_assigned_to_request
+			let signatoryWorkflow = ''
+			for (const document of documents) {
+				signatoryWorkflow += `
+					<div class="row justify-content-center">
+						<div class="col-xxl-10">
+							<div class="card card-light">
+								<div class="card-body">
+									<div class="d-flex align-items-center">
+										<div class="flex-shrink-0">
+											<img src="${baseURL}public/images/documents.png" alt="document" class="avatar-sm rounded-circle">
+										</div>
+										<div class="flex-grow-1 ms-4">
+											<p class="card-text fw-medium">${document.document_information[0].document_name}</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h6 class="mt-2 ms-5 mb-4 text-dark">Signatories in this approval workflow</h6>
+					<div class="profile-timeline ms-5 mb-4">
+						<div class="accordion accordion-flush">`
+
+				for (const signatory of data.signatories_assigned_to_request) {
+					if (document.document_id == signatory.document_id) {
+						if (signatory.hierarchy_number == 1) {
+							signatoryWorkflow += `
+							<div class="accordion-item border-0">
+								<div class="accordion-header">`
+							if (signatory.is_signed == true && signatory.is_onhold == false) {
+								signatoryWorkflow += `
+												<a class="accordion-button ps-3 pt-0 pb-0 shadow-none">
+												<div class="d-flex">
+													<div class="flex-shrink-0">
+													<i class="h5 ri-checkbox-blank-circle-fill text-success"></i>
+												`
+							} else if (signatory.is_signed == false && signatory.is_onhold == true) {
+								signatoryWorkflow += `
+												<a class="accordion-button ps-3 pt-0 pb-0 shadow-none">
+												<div class="d-flex">
+													<div class="flex-shrink-0">
+													<i class="h5 ri-checkbox-blank-circle-fill text-danger"></i>
+												`
+							} else {
+								signatoryWorkflow += `
+									<a class="accordion-button ps-3 pt-0 pb-0 shadow-none">
+									<div class="d-flex">
+										<div class="flex-shrink-0">
+									<i class="h5 ri-checkbox-blank-circle-fill text-warning"></i>
+							`
+							}
+							signatoryWorkflow += `				
+											</div>
+											<div class="flex-grow-1 ms-3">`
+
+							if (signatory.signatory_for_user.user_profiles[0].gender == 'Female') {
+								signatoryWorkflow += `
+									<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-8.png" class="avatar-xs rounded-circle shadow" />
+								`
+							} else {
+								signatoryWorkflow += `
+								<img src="${baseURL}public/images/profile/flat-faces-icons-circle-man-2.png" class="avatar-xs rounded-circle shadow" />
+							`
+							}
+
+							signatoryWorkflow += `	
+											</div>
+											<div class="flex-grow-1 ms-3">
+												<h6 class="fs-14 mb-1">
+													${signatory.signatory_for_user.user_profiles[0].full_name}
+												</h6>`
+							if (
+								signatory.is_signed == false &&
+								(signatory.is_onhold == false) & ($('#user_id').val() === signatory.user_id)
+							) {
+								signatoryWorkflow += `
+									<span class="mt-1 badge badge-soft-info text-uppercase">Ongoing</span>
+								`
+							} else if (signatory.is_signed == false && signatory.is_onhold == false) {
+								signatoryWorkflow += `
+									<span class="mt-1 badge badge-soft-warning text-uppercase">Pending</span>
+								`
+							} else if (signatory.is_signed == true && signatory.is_onhold == false) {
+								signatoryWorkflow += `
+									<span class="mt-2 my-1 badge badge-soft-success text-uppercase">Approved</span><br>
+									<div class="d-flex align-items-center text-muted mt-1 gap-2">
+										<i class="ri-calendar-todo-fill text-primary"></i>
+										<small> ${moment(data.approved).format('ddd')},
+										${moment(data.approved).format('DD, MMM. YYYY')} -
+										${moment(data.approved).format('hh:mm A')}</small>
+									</div>
+								`
+							} else if (signatory.is_signed == false && signatory.is_onhold == true) {
+								signatoryWorkflow += `
+								<span class="mt-2 my-1 badge badge-soft-danger text-uppercase">On Hold</span><br>
+								<div class="d-flex align-items-center text-muted mt-1 gap-2">
+									<i class="ri-calendar-todo-fill text-primary"></i>
+									<small> ${moment(data.onhold).format('ddd')},
+									${moment(data.onhold).format('DD, MMM. YYYY')} -
+									${moment(data.onhold).format('hh:mm A')}</small>
+								</div>
+							`
+							}
+
+							signatoryWorkflow += `
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						`
+						} else {
+							signatoryWorkflow += `
+							<div class="accordion-item border-0">
+								<div class="accordion-header">`
+							if (signatory.is_signed == true && signatory.is_onhold == false) {
+								signatoryWorkflow += `
+												<a class="accordion-button ps-3 pt-4 pb-0 shadow-none">
+												<div class="d-flex">
+													<div class="flex-shrink-0">
+													<i class="h5 ri-checkbox-blank-circle-fill text-success"></i>
+												`
+							} else if (signatory.is_signed == false && signatory.is_onhold == true) {
+								signatoryWorkflow += `
+												<a class="accordion-button ps-3 pt-4 pb-0 shadow-none">
+												<div class="d-flex">
+													<div class="flex-shrink-0">
+													<i class="h5 ri-checkbox-blank-circle-fill text-danger"></i>
+												`
+							} else {
+								signatoryWorkflow += `
+									<a class="accordion-button ps-3 pt-4 pb-0 shadow-none">
+									<div class="d-flex">
+										<div class="flex-shrink-0">
+									<i class="h5 ri-checkbox-blank-circle-line text-warning"></i>
+							`
+							}
+							signatoryWorkflow += `				
+											</div>
+											<div class="flex-grow-1 ms-3">`
+
+							if (signatory.signatory_for_user.user_profiles[0].gender == 'Female') {
+								signatoryWorkflow += `
+									<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-8.png" class="avatar-xs rounded-circle shadow" />
+								`
+							} else {
+								signatoryWorkflow += `
+								<img src="${baseURL}public/images/profile/flat-faces-icons-circle-man-2.png" class="avatar-xs rounded-circle shadow" />
+							`
+							}
+
+							signatoryWorkflow += `	
+											</div>
+											<div class="flex-grow-1 ms-3">
+												<h6 class="fs-14 mb-1">
+													${signatory.signatory_for_user.user_profiles[0].full_name}
+												</h6>`
+							if (
+								signatory.is_signed == false &&
+								(signatory.is_onhold == false) & ($('#user_id').val() === signatory.user_id)
+							) {
+								signatoryWorkflow += `
+									<span class="mt-1 badge badge-soft-info text-uppercase">Ongoing</span>
+								`
+							} else if (signatory.is_signed == false && signatory.is_onhold == false) {
+								signatoryWorkflow += `
+									<span class="mt-1 badge badge-soft-warning text-uppercase">Pending</span>
+								`
+							} else if (signatory.is_signed == true && signatory.is_onhold == false) {
+								signatoryWorkflow += `
+									<span class="mt-2 my-1 badge badge-soft-success text-uppercase">Approved</span><br>
+									<div class="d-flex align-items-center text-muted mt-1 gap-2">
+										<i class="ri-calendar-todo-fill text-primary"></i>
+										<small> ${moment(data.approved).format('ddd')},
+										${moment(data.approved).format('DD, MMM. YYYY')} -
+										${moment(data.approved).format('hh:mm A')}</small>
+									</div>
+								`
+							} else if (signatory.is_signed == false && signatory.is_onhold == true) {
+								signatoryWorkflow += `
+								<span class="mt-2 my-1 badge badge-soft-danger text-uppercase">On Hold</span><br>
+								<div class="d-flex align-items-center text-muted mt-1 gap-2">
+									<i class="ri-calendar-todo-fill text-primary"></i>
+									<small> ${moment(data.onhold).format('ddd')},
+									${moment(data.onhold).format('DD, MMM. YYYY')} -
+									${moment(data.onhold).format('hh:mm A')}</small>
+								</div>
+							`
+							}
+
+							signatoryWorkflow += `
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						`
+						}
+					}
+				}
+				signatoryWorkflow += `
+						</div>
+					</div>
+				`
+			}
+
+			$('#documentWorkflow').html(signatoryWorkflow)
+
+			$('#studNo').html(data.user_assigned_to_request.user_no)
+			$('#studName').html(data.user_assigned_to_request.user_profiles[0].full_name)
+			$('#studCourse').html(data.user_assigned_to_request.education_profile.user_course)
+			$('#studEmail').html(data.user_assigned_to_request.user_profiles[0].email_address)
+			$('#mobileNum').html(data.user_assigned_to_request.user_profiles[0].contact_number)
+
+			pendingforClearanceDate = `
+				${moment(data.pending_for_clearance).format('ddd')},
+				${moment(data.pending_for_clearance).format('DD, MMM. YYYY')}
+			`
+			$('#pending_date').html(pendingforClearanceDate)
+
+			pendingforClearanceDateTime = `
+			${moment(data.pending_for_clearance).format('ddd')},
+			${moment(data.pending_for_clearance).format('DD, MMM. YYYY')} -
+			${moment(data.pending_for_clearance).format('hh:mm A')}
+		`
+
+			$('#pending_datetime').html(pendingforClearanceDateTime)
+
+			forClearanceDate = `
+			${moment(data.for_clearance).format('ddd')},
+			${moment(data.for_clearance).format('DD, MMM. YYYY')}
+		`
+			$('#for_clearance_date').html(forClearanceDate)
+
+			forClearanceDateTime = `
+			${moment(data.for_clearance).format('ddd')},
+			${moment(data.for_clearance).format('DD, MMM. YYYY')} -
+			${moment(data.for_clearance).format('hh:mm A')}
+		`
+			$('#for_clearance_datetime').html(forClearanceDateTime)
+
+			processingDate = `
+			${moment(data.for_evaluation).format('ddd')},
+			${moment(data.for_evaluation).format('DD, MMM. YYYY')}
+		`
+			$('#processing_date').html(processingDate)
+
+			processingDateTime = `
+			${moment(data.for_evaluation).format('ddd')},
+			${moment(data.for_evaluation).format('DD, MMM. YYYY')} -
+			${moment(data.for_evaluation).format('hh:mm A')}
+		`
+			$('#processing_datetime').html(processingDateTime)
+
+			let readyforPickup = ''
+			if (data.ready_for_pickup !== null) {
+				readyforPickup += `
+					<div class="accordion-header" id="headingFour">
+						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+							<div class="d-flex align-items-center">
+								<div class="flex-shrink-0 avatar-xs">
+									<div class="avatar-title bg-dark bg-gradient rounded-circle">
+										<i class="ri-user-received-2-line"></i>
+									</div>
+								</div>
+								<div class="flex-grow-1 ms-3">
+									<p class="mb-1 fw-semibold text-dark">
+										Ready for Pickup -
+										<span class="fw-normal">
+											${moment(data.ready_for_pickup).format('ddd')},
+											${moment(data.ready_for_pickup).format('DD, MMM. YYYY')}
+										</span>
+									</p>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+						<div class="accordion-body ms-2 ps-5 pt-0">
+							<p class="mb-1 text-dark">The Requested Document/s can now be claimed at PUP QC. The student must bring the claim stub and other requirements, if necessary.</p>
+							<p class="mb-0">
+								${moment(data.ready_for_pickup).format('ddd')},
+								${moment(data.ready_for_pickup).format('DD, MMM. YYYY')} -
+								${moment(data.ready_for_pickup).format('hh:mm A')}
+							</p>
+						</div>
+					</div>
+				`
+			} else if (data.ready_for_pickup === null) {
+				readyforPickup += `
+					<div class="accordion-header" id="headingFour">
+						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false">
+							<div class="d-flex align-items-center">
+								<div class="flex-shrink-0 avatar-xs">
+									<div class="avatar-title bg-light text-dark rounded-circle">
+										<i class="ri-user-received-2-line"></i>
+									</div>
+								</div>
+								<div class="flex-grow-1 ms-3">
+									<p class="mb-1 fw-semibold text-dark">Ready for Pickup</p>
+								</div>
+							</div>
+						</a>
+					</div>
+				`
+			}
+			$('#ready_for_pickup').html(readyforPickup)
+
+			let last = ''
+			if (data.released !== null) {
+				last += `
+					<div class="accordion-header" id="headingFive">
+						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+							<div class="d-flex align-items-center">
+								<div class="flex-shrink-0 avatar-xs">
+									<div class="avatar-title bg-success bg-gradient rounded-circle">
+										<i class="ri-checkbox-circle-fill"></i>
+									</div>
+								</div>
+								<div class="flex-grow-1 ms-3">
+									<p class="mb-1 fw-semibold text-dark">
+										Released -
+										<span class="fw-normal">
+										${moment(data.released).format('ddd')},
+										${moment(data.released).format('DD, MMM. YYYY')}
+									</span>
+									</p>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+						<div class="accordion-body ms-2 ps-5 pt-0">
+							<p class="mb-1 text-dark">The requested documents has been successfully claimed by the student.</p>
+							<p class="mb-0">
+								${moment(data.released).format('ddd')},
+								${moment(data.released).format('DD, MMM. YYYY')} -
+								${moment(data.released).format('hh:mm A')}
+							</p>
+						</div>
+					</div>
+				`
+			} else if (data.cancelled !== null) {
+				last += `
+					<div class="accordion-header" id="headingFive">
+						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+							<div class="d-flex align-items-center">
+								<div class="flex-shrink-0 avatar-xs">
+									<div class="avatar-title bg-primary bg-gradient rounded-circle">
+										<i class="mdi mdi-cancel"></i>
+									</div>
+								</div>
+								<div class="flex-grow-1 ms-3">
+									<p class="mb-1 fw-semibold text-dark">
+										${data.status_of_request} -
+										<span class="fw-normal">
+										${moment(data.cancelled).format('ddd')},
+										${moment(data.cancelled).format('DD, MMM. YYYY')}
+										</span>
+									</p>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingFives" data-bs-parent="#accordionExample">
+						<div class="accordion-body ms-2 ps-5 pt-0">
+							<p class="mb-1 text-dark">The Document Request has been cancelled by the PUP Staff. The student can find the reason of cancelling on the Remarks of this request.</p>
+							<p class="text-muted mb-0">
+								${moment(data.cancelled).format('ddd')},
+								${moment(data.cancelled).format('DD, MMM. YYYY')} -
+								${moment(data.cancelled).format('hh:mm A')}
+							</p>
+						</div>
+					</div>
+				`
+			} else {
+				last += `
+					<div class="accordion-header" id="headingFive">
+						<a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false">
+							<div class="d-flex align-items-center">
+								<div class="flex-shrink-0 avatar-xs">
+									<div class="avatar-title bg-light text-success rounded-circle">
+										<i class="ri-checkbox-circle-fill"></i>
+									</div>
+								</div>
+								<div class="flex-grow-1 ms-3">
+									<p class="fs-14 mb-0 fw-semibold text-dark">Released</p>
+								</div>
+							</div>
+						</a>
+					</div>
+				`
+			}
+			$('#last').html(last)
 		},
 	})
 }

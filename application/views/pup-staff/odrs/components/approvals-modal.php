@@ -209,7 +209,6 @@
     </div>
 </div>
 
-
 <div id="viewApprovedRequest" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="viewApprovedRequest" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
@@ -222,7 +221,7 @@
                                 <h5 class="fs-13 mb-1 text-dark">Request Number</h5>
                             </div>
                             <div class="col-6">
-                                <p class="fw-medium mb-0">20224955-0392</p>
+                                <p id="requestNo" class="fw-medium mb-0"></p>
                             </div>
                         </div>
                     </li>
@@ -231,8 +230,7 @@
                             <div class="col-6">
                                 <h5 class="fs-13 mb-1 text-dark">Date Filed</h5>
                             </div>
-                            <div class="col-6">
-                                <p class="mb-0">27 Nov, 2022<small class="ms-1">10:15 AM</small></p>
+                            <div id="dateFiled" class="col-6">
                             </div>
                         </div>
                     </li>
@@ -242,7 +240,7 @@
                                 <h5 class="fs-13 mb-1 text-dark">Purpose of Request</h5>
                             </div>
                             <div class="col-6">
-                                <p class="mb-0">Transfer to Another School</p>
+                                <p id="purposeReq" class="mb-0"></p>
                             </div>
                         </div>
                     </li>
@@ -250,182 +248,10 @@
                 </ul>
                 <div class="ms-3">
                     <h6 class="mt-3 mb-3 text-dark">Document/s Requested</h6>
-                    <div class="row justify-content-center">
-                        <div class="col-xxl-10">
-                            <div class="card card-light">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0">
-                                            <img src="<?= base_url() ?>public/images/documents.png" alt="" class="avatar-sm rounded-circle">
-                                        </div>
-                                        <div class="flex-grow-1 ms-4">
-                                            <p class="card-text fw-medium">Informative Copy of Grades</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="text-center">
-                                        <a href="javascript:void(0);" class="link-dark">Quantity : 1</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <h6 class="mt-2 mb-4 text-dark">Signatories in this approval workflow</h6>
-                    <div class="profile-timeline mb-3">
-                        <div class="accordion accordion-flush">
-                            <div class="accordion-item border-0">
-                                <div class="accordion-header" id="headingOne">
-                                    <a class="accordion-button ps-3 pt-0 pb-0 shadow-none" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="true">
-                                        <div class="d-flex">
-                                            <div class="flex-shrink-0">
-                                                <i class="h5 ri-checkbox-blank-circle-fill text-success"></i>
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <img src="<?= base_url() ?>public/images/officials/img-6.png" alt="" class="avatar-xs rounded-circle shadow" />
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <h6 class="fs-14 mb-0">
-                                                    Cleotilde B. Servigon
-                                                </h6>
-                                                <span class="mt-2 my-1 badge badge-soft-success text-uppercase">Approved</span><br>
-                                                <div class="d-flex align-items-center text-muted mt-1 gap-2">
-                                                    <i class="ri-calendar-todo-fill text-primary"></i>
-                                                    <small> 29 Nov. 2022, 07:45 AM</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="accordion-item border-0">
-                                <div class="accordion-header" id="headingTwo">
-                                    <a class="accordion-button ps-3 pt-4 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true">
-                                        <div class="d-flex">
-                                            <div class="flex-shrink-0">
-                                                <i class="h5 ri-checkbox-blank-circle-fill text-success"></i>
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <img src="<?= base_url() ?>public/images/officials/img-1.png" alt="" class="avatar-xs rounded-circle shadow" />
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <h6 class="fs-14 mb-1">
-                                                    Assoc. Prof. Jaime P. Gutierrez Jr.
-                                                </h6>
-                                                <span class="mt-2 my-1 badge badge-soft-success text-uppercase">Approved</span><br>
-                                                <div class="d-flex align-items-center text-muted mt-1 gap-2">
-                                                    <i class="ri-calendar-todo-fill text-primary"></i>
-                                                    <small> 29 Nov. 2022, 01:40 PM</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end accordion-->
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-xxl-10">
-                            <div class="card card-light">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0">
-                                            <img src="<?= base_url() ?>public/images/documents.png" alt="" class="avatar-sm rounded-circle">
-                                        </div>
-                                        <div class="flex-grow-1 ms-4">
-                                            <p class="card-text fw-medium">Certificate of Good Moral Character</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="text-center">
-                                        <a href="javascript:void(0);" class="link-dark">Quantity : 3</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <h6 class="mt-2 mb-4 text-dark">Signatories in this approval workflow</h6>
-                    <div class="profile-timeline mb-3">
-                        <div class="accordion accordion-flush">
-                            <div class="accordion-item border-0">
-                                <div class="accordion-header" id="headingOne">
-                                    <a class="accordion-button ps-3 pt-0 pb-0 shadow-none" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="true">
-                                        <div class="d-flex">
-                                            <div class="flex-shrink-0">
-                                                <i class="h5 ri-checkbox-blank-circle-fill text-success"></i>
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <img src="<?= base_url() ?>public/images/officials/img-2.png" alt="" class="avatar-xs rounded-circle shadow" />
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <h6 class="fs-14 mb-1">
-                                                    Demelyn E. Monzon
-                                                </h6>
-                                                <span class="mt-2 my-1 badge badge-soft-success text-uppercase">Approved</span><br>
-                                                <div class="d-flex align-items-center text-muted mt-1 gap-2">
-                                                    <i class="ri-calendar-todo-fill text-primary"></i>
-                                                    <small> 29 Nov. 2022, 06:30 AM</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="accordion-item border-0">
-                                <div class="accordion-header" id="headingTwo">
-                                    <a class="accordion-button ps-3 mt-3 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="false">
-                                        <div class="d-flex">
-                                            <div class="flex-shrink-0">
-                                                <i class="h5 ri-checkbox-blank-circle-fill text-success"></i>
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <img src="<?= base_url() ?>public/images/officials/img-6.png" alt="" class="avatar-xs rounded-circle shadow" />
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <h6 class="fs-14 mb-1">
-                                                    Cleotilde B. Servigon
-                                                </h6>
-                                                <span class="mt-2 my-1 badge badge-soft-success text-uppercase">Approved</span><br>
-                                                <div class="d-flex align-items-center text-muted mt-1 gap-2">
-                                                    <i class="ri-calendar-todo-fill text-primary"></i>
-                                                    <small> 29 Nov. 2022, 07:45 AM</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="accordion-item border-0">
-                                <div class="accordion-header" id="headingThree">
-                                    <a class="accordion-button ps-3 pt-4 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="true">
-                                        <div class="d-flex">
-                                            <div class="flex-shrink-0">
-                                                <i class="h5 ri-checkbox-blank-circle-fill text-success"></i>
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <img src="<?= base_url() ?>public/images/officials/img-1.png" alt="" class="avatar-xs rounded-circle shadow" />
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <h6 class="fs-14 mb-1">
-                                                    Assoc. Prof. Jaime P. Gutierrez Jr.
-                                                </h6>
-                                                <span class="mt-2 my-1 badge badge-soft-success text-uppercase">Approved</span><br>
-                                                <div class="d-flex align-items-center text-muted mt-1 gap-2">
-                                                    <i class="ri-calendar-todo-fill text-primary"></i>
-                                                    <small> 29 Nov. 2022, 01:40 PM</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end accordion-->
+                    <div id="documentWorkflow">
                     </div>
                 </div>
-                <h6 class="mt-3 mb-3 text-primary">Student Details</h6>
+                <h6 class="mt-5 mb-3 text-primary">Student Details</h6>
                 <ul class="list list-group list-group-flush mb-0">
                     <li class="list-group-item">
                         <div class="row">
@@ -433,7 +259,7 @@
                                 <h5 class="fs-13 mb-1 text-dark">Student Number</h5>
                             </div>
                             <div class="col-6">
-                                <p class="mb-0">2019-000002-CM-0</p>
+                                <p id="studNo" class="mb-0"></p>
                             </div>
                         </div>
                     </li>
@@ -443,7 +269,7 @@
                                 <h5 class="fs-13 mb-1 text-dark">Student Name</h5>
                             </div>
                             <div class="col-6">
-                                <p class="mb-0">Kim John C. Defiesta</p>
+                                <p id="studName" class="mb-0"></p>
                             </div>
                         </div>
                     </li>
@@ -453,7 +279,7 @@
                                 <h5 class="fs-13 mb-1 text-dark">Course</h5>
                             </div>
                             <div class="col-6">
-                                <p class="mb-0">Bachelor of Science in Information Technology</p>
+                                <p id="studCourse" class="mb-0"></p>
                             </div>
                         </div>
                     </li>
@@ -463,7 +289,7 @@
                                 <h5 class="fs-13 mb-1 text-dark">Email Address</h5>
                             </div>
                             <div class="col-6">
-                                <p class="mb-0">kjdfiesta@outlook.com</p>
+                                <p id="studEmail" class="mb-0"></p>
                             </div>
                         </div>
                     </li>
@@ -473,12 +299,12 @@
                                 <h5 class="fs-13 mb-1 text-dark">Mobile Number</h5>
                             </div>
                             <div class="col-6">
-                                <p class="mb-0">09483829839</p>
+                                <p id="mobileNum" class="mb-0"></p>
                             </div>
                         </div>
                     </li>
                 </ul>
-                <h6 class="mt-3 mb-3 text-primary">Request Status</h6>
+                <h6 class="mt-4 mb-3 text-primary">Request Status</h6>
                 <div class="ms-3 profile-timeline">
                     <div class="accordion accordion-flush" id="accordionFlushExample">
                         <div class="accordion-item border-0">
@@ -493,7 +319,7 @@
                                         <div class="flex-grow-1 ms-3">
                                             <p class="mb-0 fw-semibold text-dark">
                                                 Pending for Clearance -
-                                                <span class="fw-normal">Sun, 27, Nov. 2022</span>
+                                                <span id="pending_date" class="fw-normal"></span>
                                             </p>
                                         </div>
                                     </div>
@@ -502,7 +328,7 @@
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                 <div class="accordion-body ms-2 ps-5 pt-0">
                                     <p class="mb-1 text-dark">The Document Request is Pending for Approval and is being reviewed by the Officer-in-Charge, Student Records.</p>
-                                    <p class="mb-0">Sun, 27, Nov. 2022 - 10:15 AM</p>
+                                    <p id="pending_datetime" class="mb-0"></p>
                                 </div>
                             </div>
                         </div>
@@ -518,7 +344,7 @@
                                         <div class="flex-grow-1 ms-3">
                                             <p class="mb-0 fw-semibold text-dark">
                                                 For Clearance -
-                                                <span class="fw-normal">Mon, 28, Nov. 2022</span>
+                                                <span id="for_clearance_date" class="fw-normal">Mon, 28, Nov. 2022</span>
                                             </p>
                                         </div>
                                     </div>
@@ -527,7 +353,7 @@
                             <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                 <div class="accordion-body ms-2 ps-5 pt-0">
                                     <p class="mb-1 text-dark">The Document Request is now Approved. The student must go to PUP QC to submit the requirements and pay the processing fees.</p>
-                                    <p class="mb-0">Mon, 28, Nov. 2022 - 02:35 PM</p>
+                                    <p id="for_clearance_datetime" class="mb-0"></p>
                                 </div>
                             </div>
                         </div>
@@ -543,7 +369,7 @@
                                         <div class="flex-grow-1 ms-3">
                                             <p class="mb-1 fw-semibold text-dark">
                                                 For Evaluation / Processing -
-                                                <span class="fw-normal">Tue, 29, Nov. 2022</span>
+                                                <span id="processing_date" class="fw-normal"></span>
                                             </p>
                                         </div>
                                     </div>
@@ -552,59 +378,13 @@
                             <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                 <div class="accordion-body ms-2 ps-5 pt-0">
                                     <p class="mb-1 text-dark">The Document/s are Paid and the Request is now being Processed for signature, documentary stamp and school dry seal.</p>
-                                    <p class="mb-0">Tue, 29, Nov. 2022 - 07:45 AM</p>
+                                    <p id="processing_datetime" class="mb-0"></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item border-0">
-                            <div class="accordion-header" id="headingFour">
-                                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-dark bg-gradient rounded-circle">
-                                                <i class="ri-user-received-2-line"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <p class="mb-1 fw-semibold text-dark">
-                                                Ready for Pickup -
-                                                <span class="fw-normal">Wed, 30, Nov. 2022</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                                <div class="accordion-body ms-2 ps-5 pt-0">
-                                    <p class="mb-1 text-dark">The Requested Document/s can now be claimed at PUP QC. The student must bring the claim stub and other requirements, if necessary.</p>
-                                    <p class="mb-0">Wed, 30, Nov. 2022 - 08:30 AM</p>
-                                </div>
-                            </div>
+                        <div id="ready_for_pickup" class="accordion-item border-0">
                         </div>
-                        <div class="accordion-item border-0">
-                            <div class="accordion-header" id="headingFive">
-                                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-success bg-gradient rounded-circle">
-                                                <i class="ri-checkbox-circle-fill"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <p class="mb-1 fw-semibold text-dark">
-                                                Released -
-                                                <span class="fw-normal">Thu, 01, Dec. 2022</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-                                <div class="accordion-body ms-2 ps-5 pt-0">
-                                    <p class="mb-1 text-dark">The requested documents has been successfully claimed by the student.</p>
-                                    <p class="mb-0">Thu, 01, Dec. 2022 - 06:48 PM</p>
-                                </div>
-                            </div>
+                        <div id="last" class="accordion-item border-0">
                         </div>
                     </div>
                     <!--end accordion-->
