@@ -108,6 +108,7 @@
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-body">
+                <input type="hidden" id="user_id" name="user_id">
                 <h6 class="mt-3 mb-3 text-primary">Request Details</h6>
                 <ul class="list list-group list-group-flush mb-0">
                     <li class="list-group-item">
@@ -116,7 +117,7 @@
                                 <h5 class="fs-13 mb-1 text-dark">Request Number</h5>
                             </div>
                             <div class="col-6">
-                                <p class="fw-medium mb-0">20220770-0043</p>
+                                <p id="request_no" class="fw-medium mb-0"></p>
                             </div>
                         </div>
                     </li>
@@ -125,9 +126,7 @@
                             <div class="col-6">
                                 <h5 class="fs-13 mb-1 text-dark">Date Filed</h5>
                             </div>
-                            <div class="col-6">
-                                <p class="mb-0">08 Sep, 2022<small class="ms-1">06:15 PM</small></p>
-                            </div>
+                            <div id="date_filed" class="col-6"></div>
                         </div>
                     </li>
                     <li class="list-group-item">
@@ -136,7 +135,7 @@
                                 <h5 class="fs-13 mb-1 text-dark">Purpose of Request</h5>
                             </div>
                             <div class="col-6">
-                                <p class="mb-0">For Internship/OJT</p>
+                                <p id="purpose" class="mb-0"></p>
                             </div>
                         </div>
                     </li>
@@ -144,77 +143,10 @@
                 </ul>
                 <div class="ms-3">
                     <h6 class="mt-3 mb-3 text-dark">Document/s Requested</h6>
-                    <div class="row justify-content-center">
-                        <div class="col-xxl-10">
-                            <div class="card card-light">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0">
-                                            <img src="<?= base_url() ?>public/images/documents.png" alt="" class="avatar-sm rounded-circle">
-                                        </div>
-                                        <div class="flex-grow-1 ms-4">
-                                            <p class="card-text fw-medium">Informative Copy of Grades</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="text-center">
-                                        <a href="javascript:void(0);" class="link-dark">Quantity : 2</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <h6 class="mt-2 mb-4 text-dark">Signatories in this approval workflow</h6>
-                    <div class="profile-timeline mb-3">
-                        <div class="accordion accordion-flush" id="todayExample">
-                            <div class="accordion-item border-0">
-                                <div class="accordion-header" id="headingOne">
-                                    <a class="accordion-button ps-3 pt-0 pb-0 shadow-none" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="true">
-                                        <div class="d-flex">
-                                            <div class="flex-shrink-0">
-                                                <i class="h5 ri-checkbox-blank-circle-fill text-warning"></i>
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <img src="<?= base_url() ?>public/images/officials/img-6.png" alt="" class="avatar-xs rounded-circle shadow" />
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <h6 class="fs-14 mb-1">
-                                                    Cleotilde B. Servigon
-                                                </h6>
-                                                <small class="text-muted">Registrar</small> <br>
-                                                <span class="mt-1 badge badge-soft-info text-uppercase">Ongoing</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="accordion-item border-0">
-                                <div class="accordion-header" id="headingTwo">
-                                    <a class="accordion-button ps-3 pt-4 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true">
-                                        <div class="d-flex">
-                                            <div class="flex-shrink-0">
-                                                <i class="h5 ri-checkbox-blank-circle-line text-warning"></i>
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <img src="<?= base_url() ?>public/images/officials/img-1.png" alt="" class="avatar-xs rounded-circle shadow" />
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <h6 class="fs-14 mb-1">
-                                                    Assoc. Prof. Jaime P. Gutierrez Jr.
-                                                </h6>
-                                                <small class="text-muted">Director</small> <br>
-                                                <span class="mt-1 badge badge-soft-warning text-uppercase">Pending</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end accordion-->
+                    <div id="document_workflow">
                     </div>
                 </div>
-                <h6 class="mt-3 mb-3 text-primary">Student Details</h6>
+                <h6 class="mt-5 mb-3 text-primary">Student Details</h6>
                 <ul class="list list-group list-group-flush mb-0">
                     <li class="list-group-item">
                         <div class="row">
@@ -222,7 +154,7 @@
                                 <h5 class="fs-13 mb-1 text-dark">Student Number</h5>
                             </div>
                             <div class="col-6">
-                                <p class="mb-0">2019-000001-CM-0</p>
+                                <p id="stud_no" class="mb-0"></p>
                             </div>
                         </div>
                     </li>
@@ -232,7 +164,7 @@
                                 <h5 class="fs-13 mb-1 text-dark">Student Name</h5>
                             </div>
                             <div class="col-6">
-                                <p class="mb-0">Zsyrhill Anne C. Soria</p>
+                                <p id="stud_name" class="mb-0"></p>
                             </div>
                         </div>
                     </li>
@@ -242,7 +174,7 @@
                                 <h5 class="fs-13 mb-1 text-dark">Course</h5>
                             </div>
                             <div class="col-6">
-                                <p class="mb-0">Bachelor of Science in Information Technology</p>
+                                <p id="course" class="mb-0"></p>
                             </div>
                         </div>
                     </li>
@@ -252,7 +184,7 @@
                                 <h5 class="fs-13 mb-1 text-dark">Email Address</h5>
                             </div>
                             <div class="col-6">
-                                <p class="mb-0">zacsoria@gmail.com</p>
+                                <p id="stud_email" class="mb-0"></p>
                             </div>
                         </div>
                     </li>
@@ -262,11 +194,13 @@
                                 <h5 class="fs-13 mb-1 text-dark">Mobile Number</h5>
                             </div>
                             <div class="col-6">
-                                <p class="mb-0">09372819876</p>
+                                <p id="stud_phone" class="mb-0"></p>
                             </div>
                         </div>
                     </li>
                 </ul>
+                <h6 class="mt-4 mb-3 text-start text-primary">Remarks</h6>
+                <div id="remarks"></div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
@@ -274,6 +208,7 @@
         </div>
     </div>
 </div>
+
 
 <div id="viewApprovedRequest" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="viewApprovedRequest" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">

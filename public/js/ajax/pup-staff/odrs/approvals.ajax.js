@@ -409,7 +409,7 @@ loadOnHoldRequests = () => {
 				// Details
 				{
 					data: null,
-					width: '30%',
+					width: '27%',
 					render: (data) => {
 						const course = data.user_assigned_to_request.education_profile.course_when_admitted
 						const purpose = data.purpose_of_request
@@ -661,6 +661,273 @@ function viewRevertRequestModal(request_id, document_id) {
 					`)
 				}
 			})
+		},
+	})
+}
+
+viewforApprovalRequest = (request_id) => {
+	$.ajax({
+		type: 'GET',
+		url: `${apiURL}odrs/pup_staff/view_signatory/${request_id}`,
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			const data = result.data
+
+			$('#request_no').html(data.control_no)
+
+			const date = moment(data.pending_for_clearance).format('DD, MMM. YYYY')
+			const time = moment(data.pending_for_clearance).format('hh:mm A')
+			$('#date_filed').html(`<p class="mb-0">${date} <small class="ms-1">${time}</small></p>`)
+
+			$('#purpose').html(data.purpose_of_request)
+
+			const documents = data.documents_assigned_to_request
+			let signatoryWorkflow = ''
+			for (const document of documents) {
+				signatoryWorkflow += `
+					<div class="row justify-content-center">
+						<div class="col-xxl-10">
+							<div class="card card-light">
+								<div class="card-body">
+									<div class="d-flex align-items-center">
+										<div class="flex-shrink-0">
+											<img src="${baseURL}public/images/documents.png" alt="document" class="avatar-sm rounded-circle">
+										</div>
+										<div class="flex-grow-1 ms-4">
+											<p class="card-text fw-medium">${document.document_information[0].document_name}</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h6 class="mt-2 ms-5 mb-4 text-dark">Signatories in this approval workflow</h6>
+					<div class="profile-timeline ms-5 mb-4">
+						<div class="accordion accordion-flush">`
+
+				for (const signatory of data.signatories_assigned_to_request) {
+					if (document.document_id == signatory.document_id) {
+						if (signatory.hierarchy_number == 1) {
+							signatoryWorkflow += `
+							<div class="accordion-item border-0">
+								<div class="accordion-header">`
+							if (signatory.is_signed == true && signatory.is_onhold == false) {
+								signatoryWorkflow += `
+												<a class="accordion-button ps-3 pt-0 pb-0 shadow-none">
+												<div class="d-flex">
+													<div class="flex-shrink-0">
+													<i class="h5 ri-checkbox-blank-circle-fill text-success"></i>
+												`
+							} else if (signatory.is_signed == false && signatory.is_onhold == true) {
+								signatoryWorkflow += `
+												<a class="accordion-button ps-3 pt-0 pb-0 shadow-none">
+												<div class="d-flex">
+													<div class="flex-shrink-0">
+													<i class="h5 ri-checkbox-blank-circle-fill text-danger"></i>
+												`
+							} else {
+								signatoryWorkflow += `
+									<a class="accordion-button ps-3 pt-0 pb-0 shadow-none">
+									<div class="d-flex">
+										<div class="flex-shrink-0">
+									<i class="h5 ri-checkbox-blank-circle-fill text-warning"></i>
+							`
+							}
+							signatoryWorkflow += `				
+											</div>
+											<div class="flex-grow-1 ms-3">`
+
+							if (signatory.signatory_for_user.user_profiles[0].gender == 'Female') {
+								signatoryWorkflow += `
+									<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-8.png" class="avatar-xs rounded-circle shadow" />
+								`
+							} else {
+								signatoryWorkflow += `
+								<img src="${baseURL}public/images/profile/flat-faces-icons-circle-man-2.png" class="avatar-xs rounded-circle shadow" />
+							`
+							}
+
+							signatoryWorkflow += `	
+											</div>
+											<div class="flex-grow-1 ms-3">
+												<h6 class="fs-14 mb-1">
+													${signatory.signatory_for_user.user_profiles[0].full_name}
+												</h6>`
+							if (
+								signatory.is_signed == false &&
+								(signatory.is_onhold == false) & ($('#user_id').val() === signatory.user_id)
+							) {
+								signatoryWorkflow += `
+									<span class="mt-1 badge badge-soft-info text-uppercase">Ongoing</span>
+								`
+							} else if (signatory.is_signed == false && signatory.is_onhold == false) {
+								signatoryWorkflow += `
+									<span class="mt-1 badge badge-soft-warning text-uppercase">Pending</span>
+								`
+							} else if (signatory.is_signed == true && signatory.is_onhold == false) {
+								signatoryWorkflow += `
+									<span class="mt-2 my-1 badge badge-soft-success text-uppercase">Approved</span><br>
+									<div class="d-flex align-items-center text-muted mt-1 gap-2">
+										<i class="ri-calendar-todo-fill text-primary"></i>
+										<small> ${moment(data.approved).format('ddd')},
+										${moment(data.approved).format('DD, MMM. YYYY')} -
+										${moment(data.approved).format('hh:mm A')}</small>
+									</div>
+								`
+							} else if (signatory.is_signed == false && signatory.is_onhold == true) {
+								signatoryWorkflow += `
+								<span class="mt-2 my-1 badge badge-soft-danger text-uppercase">On Hold</span><br>
+								<div class="d-flex align-items-center text-muted mt-1 gap-2">
+									<i class="ri-calendar-todo-fill text-primary"></i>
+									<small> ${moment(data.onhold).format('ddd')},
+									${moment(data.onhold).format('DD, MMM. YYYY')} -
+									${moment(data.onhold).format('hh:mm A')}</small>
+								</div>
+							`
+							}
+
+							signatoryWorkflow += `
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						`
+						} else {
+							signatoryWorkflow += `
+							<div class="accordion-item border-0">
+								<div class="accordion-header">`
+							if (signatory.is_signed == true && signatory.is_onhold == false) {
+								signatoryWorkflow += `
+												<a class="accordion-button ps-3 pt-4 pb-0 shadow-none">
+												<div class="d-flex">
+													<div class="flex-shrink-0">
+													<i class="h5 ri-checkbox-blank-circle-fill text-success"></i>
+												`
+							} else if (signatory.is_signed == false && signatory.is_onhold == true) {
+								signatoryWorkflow += `
+												<a class="accordion-button ps-3 pt-4 pb-0 shadow-none">
+												<div class="d-flex">
+													<div class="flex-shrink-0">
+													<i class="h5 ri-checkbox-blank-circle-fill text-danger"></i>
+												`
+							} else {
+								signatoryWorkflow += `
+									<a class="accordion-button ps-3 pt-4 pb-0 shadow-none">
+									<div class="d-flex">
+										<div class="flex-shrink-0">
+									<i class="h5 ri-checkbox-blank-circle-line text-warning"></i>
+							`
+							}
+							signatoryWorkflow += `				
+											</div>
+											<div class="flex-grow-1 ms-3">`
+
+							if (signatory.signatory_for_user.user_profiles[0].gender == 'Female') {
+								signatoryWorkflow += `
+									<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-8.png" class="avatar-xs rounded-circle shadow" />
+								`
+							} else {
+								signatoryWorkflow += `
+								<img src="${baseURL}public/images/profile/flat-faces-icons-circle-man-2.png" class="avatar-xs rounded-circle shadow" />
+							`
+							}
+
+							signatoryWorkflow += `	
+											</div>
+											<div class="flex-grow-1 ms-3">
+												<h6 class="fs-14 mb-1">
+													${signatory.signatory_for_user.user_profiles[0].full_name}
+												</h6>`
+							if (
+								signatory.is_signed == false &&
+								(signatory.is_onhold == false) & ($('#user_id').val() === signatory.user_id)
+							) {
+								signatoryWorkflow += `
+									<span class="mt-1 badge badge-soft-info text-uppercase">Ongoing</span>
+								`
+							} else if (signatory.is_signed == false && signatory.is_onhold == false) {
+								signatoryWorkflow += `
+									<span class="mt-1 badge badge-soft-warning text-uppercase">Pending</span>
+								`
+							} else if (signatory.is_signed == true && signatory.is_onhold == false) {
+								signatoryWorkflow += `
+									<span class="mt-2 my-1 badge badge-soft-success text-uppercase">Approved</span><br>
+									<div class="d-flex align-items-center text-muted mt-1 gap-2">
+										<i class="ri-calendar-todo-fill text-primary"></i>
+										<small> ${moment(data.approved).format('ddd')},
+										${moment(data.approved).format('DD, MMM. YYYY')} -
+										${moment(data.approved).format('hh:mm A')}</small>
+									</div>
+								`
+							} else if (signatory.is_signed == false && signatory.is_onhold == true) {
+								signatoryWorkflow += `
+								<span class="mt-2 my-1 badge badge-soft-danger text-uppercase">On Hold</span><br>
+								<div class="d-flex align-items-center text-muted mt-1 gap-2">
+									<i class="ri-calendar-todo-fill text-primary"></i>
+									<small> ${moment(data.onhold).format('ddd')},
+									${moment(data.onhold).format('DD, MMM. YYYY')} -
+									${moment(data.onhold).format('hh:mm A')}</small>
+								</div>
+							`
+							}
+
+							signatoryWorkflow += `
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						`
+						}
+					}
+				}
+				signatoryWorkflow += `
+						</div>
+					</div>
+				`
+			}
+
+			$('#document_workflow').html(signatoryWorkflow)
+
+			$('#stud_no').html(data.user_assigned_to_request.user_no)
+			$('#stud_name').html(data.user_assigned_to_request.user_profiles[0].full_name)
+			$('#course').html(data.user_assigned_to_request.education_profile.user_course)
+			$('#stud_email').html(data.user_assigned_to_request.user_profiles[0].email_address)
+			$('#stud_phone').html(data.user_assigned_to_request.user_profiles[0].contact_number)
+
+			let remarks = ''
+			for (const signatory of data.signatories_assigned_to_request) {
+				if (signatory.remarks !== null) {
+					remarks += `
+					<div class="d-block mb-3 list-group text-start">
+						<div class="list-group-item list-group-item-action list-group-item-info">
+							<div class="d-flex mb-2 align-items-center">
+								<div class="flex-shrink-0">`
+					if (signatory.signatory_for_user.user_profiles[0].gender == 'Female') {
+						remarks += `
+											<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-8.png" class="avatar-xs rounded-circle shadow" />
+										`
+					} else {
+						remarks += `
+										<img src="${baseURL}public/images/profile/flat-faces-icons-circle-man-2.png" class="avatar-xs rounded-circle shadow" />
+									`
+					}
+					remarks += `
+								</div>
+								<div class="flex-grow-1 ms-3">
+									<h6 class="list-title mb-1">${signatory.signatory_for_user.user_profiles[0].full_name}</h6>
+									<p class="list-text mb-0 fs-12">Document: ${signatory.signatory_for_document.document_name}</p>
+								</div>
+							</div>
+							<p>${signatory.remarks}</p>
+						</div>
+					</div>
+					`
+				}
+			}
+			$('#remarks').html(remarks)
 		},
 	})
 }
