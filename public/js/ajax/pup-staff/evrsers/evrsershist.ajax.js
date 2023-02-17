@@ -4,6 +4,8 @@ $(function() {
 
     viewAllCancelledByStaff()
 
+    viewAllCancelledByStudent()
+
 })
 
 viewDetailsReservationStaff = (reservation_id) => {
@@ -27,23 +29,30 @@ viewDetailsReservationStaff = (reservation_id) => {
                 // console.log(venue)
 
             $('#reserve_number').html(userData.reservation_number)
-            let organization_name = userData.organization_name
-            if (
-                organization_name == 'CHRS' ||
-                'COMMITS' ||
-                'DOMT.CS' ||
-                'FBTO' ||
-                'JMS' ||
-                'SPAS' ||
-                'YES'
-            ) {
-                $('#organization').html(`<span>${organization_name}</span>`)
-            } else if (organization_name == 'KATAGA' || 'MUSA' || 'PSC' || 'Vox Nova' || 'Other') {
-                $('#organization').html(`<span>${organization_name}</span>`)
-            } else if (organization_name == 'SSC' || 'COL') {
-                $('#organization').html(`<span>${organization_name}</span>`)
+            let organization_name =
+                userData.organization_assigned_to_reservations.organization_abbreviation
+            console.log(organization_name)
+            let acadorg = ['CHRS', 'COMMITS', 'DOMT.CS', 'FBTO', 'JMS', 'SPAS', 'YES']
+            let nonacadorg = ['KATAGA', 'MUSA', 'PSC', 'Vox Nova', 'Other']
+            let studgov = ['SSC', 'COL']
+
+            if (acadorg.includes(organization_name)) {
+                console.log('True')
+                $('#organization').html(
+                    `<span class="fs-4 badge badge-outline-info fw-bold mb-0">${organization_name}</span>`,
+                )
+            } else if (nonacadorg.includes(organization_name)) {
+                console.log('True')
+                $('#organization').html(
+                    `<h5 class="fs-4 badge badge-outline-danger fw-bold mb-0">${organization_name}</h5>`,
+                )
+            } else if (studgov.includes(organization_name)) {
+                console.log('True')
+                $('#organization').html(
+                    `<h5 class="fs-4 badge badge-outline-dark fw-bold mb-0">${organization_name}</h5>`,
+                )
             }
-            $('#organization').html(userData.organization_name)
+
             event_title = userData.event_title
                 // convert to all caps
             event_title = event_title.toUpperCase()
@@ -53,15 +62,33 @@ viewDetailsReservationStaff = (reservation_id) => {
             $('#reserve_date').html(moment(userData.reserve_date).format('LL'))
             const time = `${userData.time_from} - ${userData.time_to}`
             $('#time').html(time)
+
+            var objectives = userData.pup_objectives
+                // check if there is a hyphen in the middle of the string
+            if (objectives.includes('-')) {
+                // split the string into an array
+                objectives = objectives.split('-')
+                    // loop through the array
+                objectives.forEach((objective, index) => {
+                    // display the array elements as list items
+                    objectives[index] = `<li>${objective}</li>`
+                })
+                objectives.splice(0, 1)
+                objectives = objectives.join('')
+            }
+
+            $('#objectives').html(objectives)
+            $('#pillar').html(userData.pup_pillars)
+
             $('#remarks').html(userData.remarks)
             $('#attachment1').html(
-                `<i class="ri-file-fill text-primary me-2"></i><a href="${userData.reserve_attachments_1}" target="_blank" class="link fw-bold">Event Request</a>`,
+                `<i class="ri-file-fill text-primary me-2"></i><a href="${userData.event_request}" target="_blank" class="link fw-bold">Event Request</a>`,
             )
             $('#attachment2').html(
-                `<i class="ri-file-text-fill text-primary me-2"></i><a href="${userData.reserve_attachments_2}" target="_blank" class="link fw-bold">Concept Paper</a>`,
+                `<i class="ri-file-text-fill text-primary me-2"></i><a href="${userData.concept_paper}" target="_blank" class="link fw-bold">Concept Paper</a>`,
             )
             $('#attachment3').html(
-                `<i class="ri-file-copy-2-fill text-primary me-2"></i><a href="${userData.reserve_attachments_2}" target="_blank" class="link fw-bold">Others</a>`,
+                `<i class="ri-file-copy-2-fill text-primary me-2"></i><a href="${userData.others}" target="_blank" class="link fw-bold">Others</a>`,
             )
             let reservation_status = userData.reserve_status
             if (reservation_status == 'Done') {
@@ -117,7 +144,7 @@ viewAllReservationHistoryStaff = () => {
         dt.DataTable({
             bDestroy: true,
             ajax: {
-                url: apiURL + `evrsers/pup_staff/view_done/`,
+                url: apiURL + `evrsers/pup_staff/view_all_done/`,
                 type: 'GET',
                 ContentType: 'application/x-www-form-urlencoded',
             },

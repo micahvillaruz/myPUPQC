@@ -1,6 +1,7 @@
 $(function () {
 	loadDocumentsTable()
 	populateSelect()
+
 	$('#document_type').select2({
 		dropdownParent: $('#addDocumentModal'),
 		minimumResultsForSearch: Infinity,
@@ -15,9 +16,10 @@ $(function () {
 		updateDocument($('#edit_document_id').val())
 	})
 })
-var addCount = 0
 var editCount = 0
+let addCounter = 0
 let signatoriesList = []
+let filteredSignatoriesList = []
 
 // Load Documents Table
 loadDocumentsTable = () => {
@@ -95,7 +97,6 @@ let isPopulateSelectRunning = false
 populateSelect = (signatoriesList = []) => {
 	if (isPopulateSelectRunning) return
 	isPopulateSelectRunning = true
-	$('.signatories_div').removeClass('d-none')
 	const selectSignatories = $('#select_signatories')
 	selectSignatories.find('option').not(':disabled').remove()
 	selectSignatories.find('option:disabled').prop('selected', true)
@@ -138,13 +139,19 @@ loadDocumentInfo = (document_id) => {
 			)
 			$('#view_document_name').html(data.document_name)
 			$('#view_document_details').html(data.document_details)
+			$('#view_document_signatories').empty()
+			data.document_signatories.forEach((signatory) => {
+				$('#view_document_signatories').append(`
+					<li>${signatory.signatory_for_user.user_profiles[0].full_name}</li>
+				`)
+			})
 			$('#view_document_requirements').empty()
 			if (data.document_requirements.length === 0) {
 				$('#view_document_requirements').html('<i>No requirements are needed.</i>')
 			} else {
-				data.document_requirements.forEach((item) => {
+				data.document_requirements.forEach((requirement) => {
 					$('#view_document_requirements').append(`
-						<li>${item.doc_req_name}</li>
+						<li>${requirement.doc_req_name}</li>
 					`)
 				})
 			}
@@ -156,6 +163,21 @@ loadDocumentInfo = (document_id) => {
 addDocument = () => {
 	// Add Documents
 	if (!$('#addDocumentForm')[0].checkValidity()) return ''
+
+	let numSignatories = 0
+	numSignatories = $('#display_list').find('li').length
+	if (numSignatories == 0) {
+		Swal.fire({
+			html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Fix Signatory Input!</h4><p class="text-muted mx-4 mb-0">You must click the button beside the Document Signatory to add them on the Approval Workflow.</p></div></div>',
+			showCancelButton: !0,
+			showConfirmButton: !1,
+			cancelButtonClass: 'btn btn-danger w-xs mb-1',
+			cancelButtonText: 'Dismiss',
+			buttonsStyling: !1,
+			showCloseButton: !0,
+		})
+		return ''
+	}
 
 	const form = new FormData($('#addDocumentForm')[0])
 
@@ -197,7 +219,11 @@ addDocument = () => {
 					$('#addDocumentModal').modal('hide')
 					$('form#addDocumentForm')[0].reset()
 					$('#document_requirements_list').empty()
-					addCount = 0
+					$('#display_list').empty()
+					$('.signatories_div').removeClass('d-none')
+					$('#select_signatories').attr('required', 'required')
+					populateSelect()
+					signatoriesList.length = 0
 					// Reload Document Datatable
 					loadDocumentsTable()
 				})
@@ -214,32 +240,43 @@ addDocument = () => {
 			showCloseButton: !0,
 		})
 	})
-
-	$('#display_list').empty()
-	$('.signatories_div').removeClass('d-none')
-	$('#select_signatories').attr('required', 'required')
-	populateSelect()
-	signatoriesList.length = 0
 }
 
 // Update Document
 updateDocument = (document_id) => {
 	if (!$('#editDocumentForm')[0].checkValidity()) return ''
 
-	const form = new FormData($('#editDocumentForm')[0])
+	let numSignatories = 0
+	numSignatories = $('#signatories_list').find('li').length
+	if (numSignatories == 0) {
+		Swal.fire({
+			html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Fix Signatory Input!</h4><p class="text-muted mx-4 mb-0">You must click the button beside the Document Signatory to add them on the Approval Workflow.</p></div></div>',
+			showCancelButton: !0,
+			showConfirmButton: !1,
+			cancelButtonClass: 'btn btn-danger w-xs mb-1',
+			cancelButtonText: 'Dismiss',
+			buttonsStyling: !1,
+			showCloseButton: !0,
+		})
+		return ''
+	}
 
+	const form = new FormData($('#editDocumentForm')[0])
 	var values = $("input[name='edit_document_requirement']")
 		.map(function () {
 			return $(this).val()
 		})
 		.get()
-
 	const data = {
 		document_name: form.get('document_name'),
 		document_details: form.get('document_details'),
 		document_type: form.get('document_type'),
+
 		document_requirements: values.map((item) => {
 			return { doc_req_name: item }
+		}),
+		document_signatories: filteredSignatoriesList.map((element, index) => {
+			return { user_id: element, hierarchy_number: index + 1 }
 		}),
 	}
 
@@ -295,13 +332,33 @@ getDocumentInfo = (document_id) => {
 				$('#edit_document_name').empty().val(result.data.document_name)
 				$('#edit_document_details').empty().html(result.data.document_details)
 				$('#edit_document_type').val(result.data.document_type)
+
+				const document_signatories = result.data.document_signatories
+				$('#signatories_list').empty()
+				document_signatories.forEach((signatory) => {
+					$('#signatories_list').append(`
+					<li id="${signatory.user_id}" class="d-flex align-items-center justify-content-between mb-2">
+						<div class="d-flex align-items-center">
+							<i class="me-3 glowing-circle"></i>
+							<span class="fw-bold">${signatory.signatory_for_user.user_profiles[0].full_name}</span>
+						</div>
+						<a class="link-delete fs-15">
+							<i class="ri-delete-bin-7-fill text-danger"></i>
+						</a>
+					</li>
+				`)
+				})
+
+				filteredSignatoriesList = document_signatories.map((signatory) => signatory.user_id)
+				filterSelect(filteredSignatoriesList)
+
 				const document_requirements = result.data.document_requirements
 				$('#edit_document_requirements_list').empty()
 				editCount = document_requirements.length
 				document_requirements.forEach((item, i) => {
 					$('#edit_document_requirements_list').append(`
 					<div id=${i + 1}>
-					<div class="row"><div class="hstack gap-2 justify-content-end mb-3"><input type="text" name="document_requirement" class="form-control" value="${
+					<div class="row"><div class="hstack gap-2 justify-content-end mb-3"><input type="text" name="edit_document_requirement" class="form-control" value="${
 						item.doc_req_name
 					}" required><a class="btn btn-danger rounded-pill" href="javascript:deleteEl(${
 						i + 1
@@ -323,10 +380,18 @@ getDocumentInfo = (document_id) => {
 	})
 }
 
+function checkSignatoryStatus() {
+	if ($('#display_list').find('li').length == 0) {
+		// No li elements found inside the ul tag with the id of display_list
+		$('#select_signatories').prop('required', true)
+	} else {
+		$('#select_signatories').removeAttr('required')
+	}
+}
+
 function print_signatory() {
 	const selectedOption = $('#select_signatories option:selected')
 	const selectedOptionID = selectedOption.val()
-	$('#select_signatories').removeAttr('required')
 
 	if (selectedOptionID) {
 		if (!signatoriesList.includes(selectedOptionID)) {
@@ -347,9 +412,13 @@ function print_signatory() {
 
 			if ($('#select_signatories option').length === 1) {
 				$('.signatories_div').addClass('d-none')
+			} else {
+				$('.signatories_div').removeClass('d-none')
 			}
 		}
 	}
+
+	checkSignatoryStatus()
 }
 
 $('#display_list').on('click', '.link-delete', function () {
@@ -358,20 +427,91 @@ $('#display_list').on('click', '.link-delete', function () {
 	$(this).parent().remove()
 	populateSelect(signatoriesList)
 
-	if (!$('#display_list li').length) {
-		// No li elements found inside the ul tag with the id of display_list
-		$('#select_signatories').prop('required', true)
-	}
+	checkSignatoryStatus()
 })
 
-function add_new_link() {
-	addCount++
-	let o = document.createElement('div'),
-		e = `<div class="row"><div class="hstack gap-2 justify-content-end mb-3"><input type="text" name="add_document_requirement" class="form-control" placeholder="Enter a requirement for this Document" required><a class="btn btn-danger rounded-pill" href="javascript:deleteEl(${(o.id =
-			addCount)}, 'add')">Delete</a></div><div class="invalid-feedback">Please select the Document Requirement.</div></div>`
-	;(o.innerHTML = document.getElementById('add_newForm').innerHTML + e),
-		document.getElementById('add_document_requirements_list').appendChild(o)
+filterSelect = (filteredSignatories) => {
+	const selectSignatories = $('#edit_signatories')
+	selectSignatories.find('option').not(':disabled').remove()
+	selectSignatories.find('option:disabled').prop('selected', true)
+
+	$.ajax({
+		type: 'GET',
+		url: apiURL + 'odrs/pup_staff/view_signatory_users',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			const signatories = result.data
+			const options = signatories
+				.filter((signatory) => !filteredSignatories.includes(signatory.user_id))
+				.map(
+					(signatory) =>
+						new Option(
+							signatory.user_assigned_to_role.user_profiles[0].full_name,
+							signatory.user_id,
+						),
+				)
+			selectSignatories.append(options)
+			if (selectSignatories.find('option').length > 1) {
+				$('.signatories_div').removeClass('d-none')
+			} else {
+				$('.signatories_div').addClass('d-none')
+			}
+			selectSignatories.val(null).trigger('change')
+			selectSignatories.select2({
+				dropdownParent: $('#updateDocumentModal'),
+				minimumResultsForSearch: Infinity,
+			})
+		},
+	})
 }
+
+function validationChecker() {
+	if ($('#signatories_list').find('li').length === 0) {
+		// No li elements found inside the ul tag with the id of display_list
+		$('#edit_signatories').prop('required', true)
+	} else {
+		$('#edit_signatories').removeAttr('required')
+	}
+}
+
+function edit_signatory() {
+	const selectedOption = $('#edit_signatories option:selected')
+	const selectedOptionID = selectedOption.val()
+
+	if (selectedOptionID) {
+		if (!signatoriesList.includes(selectedOptionID)) {
+			filteredSignatoriesList.push(selectedOptionID)
+			$('#signatories_list').append(`
+				<li id="${selectedOptionID}" class="d-flex align-items-center justify-content-between mb-2">
+					<div class="d-flex align-items-center">
+						<i class="me-3 glowing-circle"></i>
+						<span class="fw-bold">${selectedOption.text()}</span>
+					</div>
+					<a class="link-delete fs-15">
+						<i class="ri-delete-bin-7-fill text-danger"></i>
+					</a>
+				</li>
+			`)
+			selectedOption.remove()
+			$('#edit_signatories').find('option:disabled').prop('selected', true)
+
+			if ($('#select_signatories option').length > 1) {
+				$('.signatories_div').removeClass('d-none')
+			}
+		}
+	}
+
+	validationChecker()
+}
+
+$('#signatories_list').on('click', '.link-delete', function () {
+	const removedOptionID = $(this).parent().attr('id')
+	filteredSignatoriesList = filteredSignatoriesList.filter((value) => value !== removedOptionID)
+	$(this).parent().remove()
+	filterSelect(filteredSignatoriesList)
+
+	validationChecker()
+})
 
 function edit_new_link() {
 	editCount++
@@ -387,3 +527,33 @@ function deleteEl(o, val) {
 	o = d.getElementById(o)
 	d.getElementById(`${val}_document_requirements_list`).removeChild(o)
 }
+
+document.getElementById('addDocReq').addEventListener('click', function () {
+	const container = document.getElementById('add_doc_req_container')
+
+	const div = document.createElement('div')
+	div.classList.add('hstack', 'gap-2', 'justify-content-end', 'mb-3')
+
+	const textField = document.createElement('input')
+	textField.type = 'text'
+	textField.id = `textField-${addCounter}`
+	textField.classList.add('form-control')
+	textField.placeholder = 'Enter a requirement for this Document'
+	textField.required = true
+	textField.name = 'add_document_requirement'
+
+	const deleteBtn = document.createElement('button')
+	deleteBtn.innerHTML = 'Delete'
+	deleteBtn.id = `deleteBtn-${addCounter}`
+	deleteBtn.classList.add('btn', 'btn-danger', 'rounded-pill')
+
+	deleteBtn.addEventListener('click', function () {
+		container.removeChild(div)
+	})
+
+	div.appendChild(textField)
+	div.appendChild(deleteBtn)
+	container.appendChild(div)
+
+	addCounter++
+})

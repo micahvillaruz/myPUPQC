@@ -1,10 +1,5 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-<!--select2 cdn-->
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<script src="<?= base_url() ?>public/js/pages/select2.init.js"></script>
-
 <!--datatable js-->
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
@@ -30,8 +25,12 @@
 <!-- Sweet alert init js-->
 <script src="<?= base_url() ?>public/js/pages/sweetalerts.init.js"></script>
 
-<!-- pup-staff ajax -->
-<script src="<?= base_url() ?>public/js/ajax/pup-staff/evrsers/evrsers.ajax.js"></script>
+<!-- echarts js -->
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+
+
+<!-- dental ajax -->
+<script src="<?= base_url() ?>public/js/ajax/pup-staff/omsss/evaluation.ajax.js"></script>
 
 <!-- App js -->
 <script src="<?= base_url() ?>public/js/app.js"></script>

@@ -1,259 +1,85 @@
-<!-- View Medical modal -->
-<div class="modal fade" id="viewMedicalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalScrollableTitle">
-          Medical Case
-        </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div data-simplebar class="mx-n3">
-          <ul class="list list-group list-group-flush mb-0">
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Consultation Type</h5>
+<div id="viewOverallModal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="viewOverallModal" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered dialog-scrollable modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="ri-information-line fs-3 text-info me-2"></i>
+                <h3 class="modal-title d-flex align-items-center" id="overall_information_title"> Patient Profile</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
+            </div>
+            <div class="modal-body w-100">
+                <div class="card mb-2">
+                    <div class="card-header bg-soft-primary text-dark">
+                        <h4 class="mb-0 ">Case Details</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-center mb-4">
+                            <h5 id="control_no" class="fs-4 badge badge-outline-primary fw-bold mb-0"></h5>
+                        </div>
+                        <div class="mt-4 mx-3">
+                            <span class="badge rounded-pill bg-primary fs-12">Consultation Type</span>
+                            <div class="bg-soft-secondary ms-1 text-wrap">
+                                <p id="view_consultation_type" class="p-2 fw-medium"></p>
+                            </div>
+                        </div>
+                        <div class="mt-4 mx-3">
+                            <span class="badge rounded-pill bg-primary fs-12">Consultation Date</span>
+                            <div class="bg-soft-secondary ms-1 text-wrap">
+                                <p id="view_consultation_date" class="p-2 fw-medium"></p>
+                            </div>
+                        </div>
+                        <div class="mt-4 mx-3">
+                            <span class="badge rounded-pill bg-primary fs-12">Consultation Reason</span>
+                            <div class="bg-soft-secondary ms-1 text-wrap">
+                                <p id="view_consultation_reason" class="p-2 fw-medium"></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_medical_consultation_type"></div>
+                <div class="card mb-2">
+                    <div class="card-header bg-soft-primary text-dark">
+                        <h4 class="mb-0">Personal Information</h4>
+                    </div>
+                    <div class="card-body">
+                        <h5>About the Student</h5>
+                        <table class="table mb-0">
+                            <tbody>
+                                <tr>
+                                    <td class="fw-medium">Name</td>
+                                    <td id="view_full_name"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-medium">Student Number</td>
+                                    <td id="view_student_number"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-medium">Address</td>
+                                    <td id="view_address"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-medium">Age</td>
+                                    <td id="view_age"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-medium">Gender</td>
+                                    <td id="view_gender"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-medium">Civil Status</td>
+                                    <td id="view_civil_status"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-medium">Email Address</td>
+                                    <td id="view_email_address"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-medium">Contact Number</td>
+                                    <td id="view_contact_number"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Reason consultation</h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_medical_consultation_reason"></div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Doctor</h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_medical_health_physcian"></div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Date of start of symptoms</h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_medical_date_of_symptom"></div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1">Appointment Date</h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_medical_consultation_date"></div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Status</h5>
-                </div>
-                <div class="col-8" id="view_medical_status">
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-          </ul>
-          <!-- end ul list -->
+            </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-light" data-bs-dismiss="modal">
-          Close
-        </button>
-      </div>
     </div>
-    <!-- /.modal-content -->
-  </div>
-  <!-- /.modal-dialog -->
-</div>
-
-<!-- View Dental modal -->
-<div class="modal fade" id="viewDentalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalScrollableTitle">
-          Dental Case
-        </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div data-simplebar class="mx-n3">
-          <ul class="list list-group list-group-flush mb-0">
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Consultation Type</h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_dental_consultation_type"></div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Reason for consultation</h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_dental_consultation_reason"></div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Dentist</h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_dental_health_physcian"></div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1">Appointment Date</h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_dental_consultation_date"></div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Status</h5>
-                </div>
-                <div class="col-8" id="view_dental_status">
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-          </ul>
-          <!-- end ul list -->
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-light" data-bs-dismiss="modal">
-          Close
-        </button>
-      </div>
-    </div>
-    <!-- /.modal-content -->
-  </div>
-  <!-- /.modal-dialog -->
-</div>
-
-<!-- View Guidance modal -->
-<div class="modal fade" id="viewGuidanceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalScrollableTitle">
-          Guidance Case
-        </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div data-simplebar class="mx-n3">
-          <ul class="list list-group list-group-flush mb-0">
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Consultation Type</h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_guidance_consultation_type"></div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Reason for consultation</h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_guidance_consultation_reason"></div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Psychologist</h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_guidance_health_physcian"></div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1">Appoinment Date</h5>
-                </div>
-                <div class="col-8">
-                  <div class="d-flex fs-13 fw-medium" id="view_guidance_consultation_date"></div>
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-            <li class="list-group-item">
-              <div class="d-flex align-items-center">
-                <div class="col-4">
-                  <h5 class="fs-13 mb-1 fw-medium">Status</h5>
-                </div>
-                <div class="col-8" id="view_guidance_status">
-                </div>
-              </div>
-            </li>
-            <!-- end list item -->
-          </ul>
-          <!-- end ul list -->
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-light" data-bs-dismiss="modal">
-          Close
-        </button>
-      </div>
-    </div>
-    <!-- /.modal-content -->
-  </div>
-  <!-- /.modal-dialog -->
 </div>

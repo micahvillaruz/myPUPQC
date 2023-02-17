@@ -429,6 +429,8 @@ editAppointmentStatus = (health_appointment_id, consultation_status, remarks) =>
 			cancelButtonText: 'Dismiss',
 			buttonsStyling: !1,
 			showCloseButton: !0,
+		}).then(function () {
+			refreshPage()
 		})
 	})
 }

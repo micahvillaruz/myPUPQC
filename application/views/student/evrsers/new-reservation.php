@@ -62,7 +62,7 @@
                                         <div class="form-floating w-75 mx-auto">
                                             <select class="form-select" id="timeTofloatingInput" name="timeTofloatingInput" placeholder="" required>
                                                 <option selected disabled>- Select Time -</option>
-                                                <option value="9:00AM">9:00 AM</option>
+                                                <!-- <option value="9:00AM">9:00 AM</option>
                                                 <option value="10:00AM">10:00 AM</option>
                                                 <option value="11:00AM">11:00 AM</option>
                                                 <option value="1:00PM">1:00 PM</option>
@@ -73,7 +73,7 @@
                                                 <option value="6:00PM">6:00 PM</option>
                                                 <option value="7:00PM">7:00 PM</option>
                                                 <option value="8:00PM">8:00 PM</option>
-                                                <option value="9:00PM">9:00 PM</option>
+                                                <option value="9:00PM">9:00 PM</option> -->
                                             </select>
                                             <label for="timeTofloatingInput">Time To</label>
                                         </div>
@@ -150,7 +150,7 @@
                                     <div class="col-lg-6 mb-3">
                                         <div class="form-floating">
                                             <select class="form-select fs-5" id="pillarsfloatingInput" placeholder="" style="height: 90px" required>
-                                                <option selected disabled>- Select a PUP Pillar that gives relevance to your event -</option>
+                                                <option selected disabled>- Select a PUP Pillar that is relevant to your event -</option>
                                                 <option value="Pillar1">Pillar 1: Dynamic, Transformational and Responsible Leadership.</option>
                                                 <option value="Pillar2">Pillar 2: Responsive and Innovative Curricula and Instruction.</option>
                                                 <option value="Pillar3">Pillar 3: Enabling and Productive Learning Environment.</option>
@@ -173,7 +173,7 @@
                                             </div>
                                             <!-- end card header -->
                                             <div class="card-body">
-                                                <input id="attachments" type="file" class="filepond filepond-input-multiple" multiple name="filepond" data-allow-reorder="true" data-max-file-size="3MB" data-max-files="2" />
+                                                <input id="attachments" type="file" class="filepond filepond-input-multiple" multiple name="filepond" data-allow-reorder="true" data-max-file-size="3MB" data-max-files="3" />
                                             </div>
                                             <!-- end card body -->
                                         </div>
@@ -232,6 +232,6 @@
         <h4 class="fw-bold">Existing Reservation is Found!</h4>
         <p class="fs-15">If you want to create a New Reservation and the status of your request is currently <b class="text-secondary">Pending</b> you must cancel your Existing Reservation first. <br> You can cancel the request by going to the <span class="fw-bold">Reservations</span> page and clicking the <button type="button" class="mx-2 mt-1 btn btn-soft-danger btn-sm mt-2 mt-sm-0"><i class="mdi mdi-archive-remove-outline align-middle me-1"></i> Cancel Reservation</button> button.<br> Otherwise, wait for your reservation to be Done or Cancelled before creating a New Request.</p>
         <span class="fs-13 mb-3 badge text-dark bg-warning">You can only cancel your existing reservation if the status of your reservation is <b>Pending For Approval</b> only.</span>
-        <a href="http://localhost/myPUPQC/student/evrsers/view-reservation" role="button" class="btn btn-primary bg-gradient waves-effect waves-light">Go to the Reservation Page</a>
+        <a href="<?= base_url() ?>student/evrsers/view-reservation" role="button" class="btn btn-primary bg-gradient waves-effect waves-light">Go to the Reservation Page</a>
     </div>
 </div>

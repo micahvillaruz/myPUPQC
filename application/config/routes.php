@@ -295,6 +295,7 @@ $route['pupstaff/omsss/dentist/dental-requests'] = 'pupstaff/dental_requests';
 $route['pupstaff/omsss/dentist/analytics-and-history'] = 'pupstaff/dental_analytics';
 $route['pupstaff/omsss/counsellor/counsel-requests'] = 'pupstaff/counsellor_requests';
 $route['pupstaff/omsss/counsellor/analytics-and-history'] = 'pupstaff/counsellor_analytics';
+$route['pupstaff/omsss/evaluation'] = 'pupstaff/omsss_evaluation';
 
 /*
 | --------------

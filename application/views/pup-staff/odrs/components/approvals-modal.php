@@ -213,47 +213,6 @@
                         </div>
                         <!--end accordion-->
                     </div>
-                    <h6 class="mt-2 mb-3 text-dark">Other documents included in this request</h6>
-                    <ul class="list-group mb-4">
-                        <li class="list-group-item">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-grow-1">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-soft-info text-info rounded">
-                                                <i class="ri-file-text-fill"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-shrink-0 ms-2">
-                                            <h6 class="mb-0">WES Form, ICES Form, IQAS Form</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex-shrink-0">
-                                    <span>Qty: 2</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-grow-1">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-soft-info text-info rounded">
-                                                <i class="ri-file-text-fill"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-shrink-0 ms-2">
-                                            <h6 class="mb-0">Certificate of Transfer Credential (Honorable Dismissal)</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex-shrink-0">
-                                    <span>Qty: 3</span>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
                 <h6 class="mt-3 mb-3 text-primary">Student Details</h6>
                 <ul class="list list-group list-group-flush mb-0">
@@ -308,119 +267,6 @@
                         </div>
                     </li>
                 </ul>
-                <h6 class="mt-3 mb-3 text-primary">Request Status</h6>
-                <div class="ms-3 profile-timeline">
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item border-0">
-                            <div class="accordion-header" id="headingOne">
-                                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-warning bg-gradient rounded-circle">
-                                                <i class="mdi mdi-progress-clock"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <p class="mb-0 fw-semibold text-dark">
-                                                Pending for Clearance -
-                                                <span class="fw-normal">Thu, 08, Sep. 2022</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                <div class="accordion-body ms-2 ps-5 pt-0">
-                                    <p class="mb-1 text-dark">The Document Request is Pending for Approval and is being reviewed by the Officer-in-Charge, Student Records.</p>
-                                    <p class="mb-0">Thu, 08, Sep. 2022 - 06:15 PM</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item border-0">
-                            <div class="accordion-header" id="headingTwo">
-                                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-danger bg-gradient rounded-circle">
-                                                <i class="mdi mdi-nfc-search-variant"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <p class="mb-0 fw-semibold text-dark">
-                                                For Clearance -
-                                                <span class="fw-normal">Fri, 09, Sep. 2022</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                <div class="accordion-body ms-2 ps-5 pt-0">
-                                    <p class="mb-1 text-dark">The Document Request is now Approved. The student must go to PUP QC to submit the requirements and pay the processing fees.</p>
-                                    <p class="mb-0">Fri, 09, Sep. 2022 - 07:00 AM</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item border-0">
-                            <div class="accordion-header" id="headingThree">
-                                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-info bg-gradient rounded-circle">
-                                                <i class="mdi mdi-file-sign"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <p class="mb-1 fw-semibold text-dark">
-                                                For Evaluation / Processing -
-                                                <span class="fw-normal">Sat, 10, Sep. 2022</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                <div class="accordion-body ms-2 ps-5 pt-0">
-                                    <p class="mb-1 text-dark">The Document/s are Paid and the Request is now being Processed for signature, documentary stamp and school dry seal.</p>
-                                    <p class="mb-0">Sat, 10, Sep. 2022 - 03:00 PM</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item border-0">
-                            <div class="accordion-header" id="headingFour">
-                                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-light text-dark rounded-circle">
-                                                <i class="ri-user-received-2-line"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <p class="mb-1 fw-semibold text-dark">Ready for Pickup</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="accordion-item border-0">
-                            <div class="accordion-header" id="headingFive">
-                                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-light text-success rounded-circle">
-                                                <i class="ri-checkbox-circle-fill"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <p class="mb-0 fw-semibold text-dark">Released</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end accordion-->
-                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
@@ -643,28 +489,6 @@
                         </div>
                         <!--end accordion-->
                     </div>
-                    <h6 class="mt-2 mb-3 text-dark">Other documents included in this request</h6>
-                    <ul class="list-group mb-4">
-                        <li class="list-group-item">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-grow-1">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-soft-info text-info rounded">
-                                                <i class="ri-file-text-fill"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-shrink-0 ms-2">
-                                            <h6 class="mb-0">Certification of Non-Issuance of Special Order (S.O.)</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex-shrink-0">
-                                    <span>Qty: 1</span>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
                 <h6 class="mt-3 mb-3 text-primary">Student Details</h6>
                 <ul class="list list-group list-group-flush mb-0">
@@ -1069,28 +893,6 @@
                         </div>
                         <!--end accordion-->
                     </div>
-                    <h6 class="mt-2 mb-3 text-dark">Other documents included in this request</h6>
-                    <ul class="list-group mb-4">
-                        <li class="list-group-item">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-grow-1">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-soft-info text-info rounded">
-                                                <i class="ri-file-text-fill"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-shrink-0 ms-2">
-                                            <h6 class="mb-0">Certification of English as Medium Of instruction for Japan</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex-shrink-0">
-                                    <span>Qty: 1</span>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
                 <h6 class="mt-3 mb-3 text-primary">Student Details</h6>
                 <ul class="list list-group list-group-flush mb-0">
@@ -1145,119 +947,6 @@
                         </div>
                     </li>
                 </ul>
-                <h6 class="mt-3 mb-3 text-primary">Request Status</h6>
-                <div class="ms-3 profile-timeline">
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item border-0">
-                            <div class="accordion-header" id="headingOne">
-                                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-warning bg-gradient rounded-circle">
-                                                <i class="mdi mdi-progress-clock"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <p class="mb-0 fw-semibold text-dark">
-                                                Pending for Clearance -
-                                                <span class="fw-normal">Mon, 12, Dec. 2022</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                <div class="accordion-body ms-2 ps-5 pt-0">
-                                    <p class="mb-1 text-dark">The Document Request is Pending for Approval and is being reviewed by the Officer-in-Charge, Student Records.</p>
-                                    <p class="mb-0">Mon, 12, Dec. 2022 - 11:57 AM</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item border-0">
-                            <div class="accordion-header" id="headingTwo">
-                                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-danger bg-gradient rounded-circle">
-                                                <i class="mdi mdi-nfc-search-variant"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <p class="mb-0 fw-semibold text-dark">
-                                                For Clearance -
-                                                <span class="fw-normal">Tue, 13, Dec. 2022</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                <div class="accordion-body ms-2 ps-5 pt-0">
-                                    <p class="mb-1 text-dark">The Document Request is now Approved. The student must go to PUP QC to submit the requirements and pay the processing fees.</p>
-                                    <p class="mb-0">Tue, 13, Dec. 2022 - 04:29 PM</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item border-0">
-                            <div class="accordion-header" id="headingThree">
-                                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-info bg-gradient rounded-circle">
-                                                <i class="mdi mdi-file-sign"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <p class="mb-1 fw-semibold text-dark">
-                                                For Evaluation / Processing -
-                                                <span class="fw-normal">Wed, 14, Dec. 2022</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                <div class="accordion-body ms-2 ps-5 pt-0">
-                                    <p class="mb-1 text-dark">The Document/s are Paid and the Request is now being Processed for signature, documentary stamp and school dry seal.</p>
-                                    <p class="mb-0">Wed, 14, Dec. 2022 - 09:12 AM</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item border-0">
-                            <div class="accordion-header" id="headingFour">
-                                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-light text-dark rounded-circle">
-                                                <i class="ri-user-received-2-line"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <p class="mb-1 fw-semibold text-dark">Ready for Pickup</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="accordion-item border-0">
-                            <div class="accordion-header" id="headingFive">
-                                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-light text-success rounded-circle">
-                                                <i class="ri-checkbox-circle-fill"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <p class="mb-0 fw-semibold text-dark">Released</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end accordion-->
-                </div>
                 <h6 class="mt-3 mb-3 text-primary">Remarks</h6>
                 <div class="list-group">
                     <div class="list-group-item list-group-item-action">
@@ -1293,15 +982,15 @@
                 </lord-icon>
 
                 <div class="mt-2">
-                    <h4 class="mb-3 fw-semibold">Approve Document/s?</h4>
-                    <p class="text-muted mb-4">This request contains the following document/s requiring your approval. Select the document/s you wish to approve and click the Approve button. Otherwise, click the Dismiss button.</p>
+                    <h4 class="mb-3 fw-semibold">Approve Informative Copy of Grades?</h4>
+                    <p class="text-muted mb-4">If yes, enter any comment you have regarding this document. Please ba advised that the remarks is optional and you can use it to enter instructions for the OIC, Student Records. Lastly, make sure to click the Approve button. Otherwise, click the Dismiss button.</p>
 
                     <form id="approveRequestForm" class="needs-validation" novalidate>
                         <input type="hidden" id="approve_request_id">
                         <div class="vstack gap-2 mb-4">
                             <div class="form-check card-checkbox shadow">
-                                <input id="approveDocument1" name="approveDocument1" type="checkbox" class="form-check-input" data-bs-toggle="collapse" data-bs-target="#showApproveRemarksDoc1" aria-expanded="false" aria-controls="showApproveRemarksDoc1">
-                                <label class="form-check-label" for="approveDocument1" style="background-color: #fff5da">
+                                <input id="approveDocument" name="approveDocument" class="form-check-input">
+                                <label class="form-check-label" for="approveDocument" style="background-color: #fff5da">
                                     <div class="d-flex align-items-center">
                                         <div class="flex-shrink-0">
                                             <div class="avatar-xs">
@@ -1356,86 +1045,9 @@
                                 </div>
                             </div><!-- end card body -->
                         </div><!-- end card -->
-                        <div class="my-4 collapse" id="showApproveRemarksDoc1">
+                        <div class="my-4">
                             <label for="remarks" class="h5 form-label">Remarks for Informative Copy of Grades</label>
-                            <textarea class="form-control mt-2" id="remarks" name="remarks" rows="5" placeholder="If you have additional remarks for the OIC, Student Records regarding this document, feel free to indicate it here. You can also set this document for approval with changes by indicating what needs to be revised here."></textarea>
-                        </div>
-
-                        <div class="vstack gap-2 mb-4">
-                            <div class="form-check card-checkbox shadow">
-                                <input id="approveDocument2" name="approveDocument2" type="checkbox" class="form-check-input">
-                                <label class="form-check-label" for="approveDocument2" style="background-color: #fff5da" data-bs-toggle="collapse" data-bs-target="#showApproveRemarksDoc2" aria-expanded="false" aria-controls="showApproveRemarksDoc2">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0">
-                                            <div class="avatar-xs">
-                                                <div class="avatar-title bg-primary text-white fs-18 rounded">
-                                                    <i class="ri-file-text-line"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <h6 class="mb-1 fw-semibold">Certificate of Good Moral Character</h6>
-                                            <p class="text-muted mb-0">Type: Certifications</p>
-                                        </div>
-                                        <div class="flex-shrink-0 align-self-center">
-                                            <span class="badge bg-dark"></i>QTY: 1<span>
-                                        </div>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="text-start card mt-3 card-height-100 border shadow">
-                            <div class="card-body p-0">
-                                <div class="alert alert-danger border-0 rounded-top alert-solid alert-label-icon rounded-0 m-0 d-flex align-items-center" style="background-color: #4b38b3!important" role="alert">
-                                    <i class="mdi mdi-file-sign label-icon"></i>
-                                    <div class="flex-grow-1 text-truncate">
-                                        Signatories in this approval workflow
-                                    </div>
-                                </div>
-                                <div class="p-3">
-                                    <div class="acitivity-timeline acitivity-main">
-                                        <div class="acitivity-item d-flex">
-                                            <div class="flex-shrink-0">
-                                                <img src="<?= base_url() ?>public/images/officials/img-2.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
-                                            </div>
-                                            <div class="flex-grow-1 ms-3 mb-4">
-                                                <h6 class="mb-1">Demelyn E. Monzon</h6>
-                                                <p class="text-muted mb-1">Head, Academic Programs</p>
-                                                <span class="badge badge-soft-success text-uppercase">Approved</span><br>
-                                                <div class="d-flex align-items-center text-muted mt-1 gap-2">
-                                                    <i class="ri-calendar-todo-fill text-primary"></i>
-                                                    <small> 29 Nov. 2022, 07:45 AM</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="acitivity-item d-flex">
-                                            <div class="flex-shrink-0">
-                                                <img src="<?= base_url() ?>public/images/officials/img-6.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <h6 class="mb-1">Cleotilde B. Servigon</h6>
-                                                <p class="text-muted mb-1">Registrar</p>
-                                                <span class="mb-4 badge badge-soft-info text-uppercase">Ongoing</span>
-                                            </div>
-                                        </div>
-                                        <div class="acitivity-item d-flex">
-                                            <div class="flex-shrink-0">
-                                                <img src="<?= base_url() ?>public/images/officials/img-1.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <h6 class="mb-1">Assoc. Prof. Jaime P. Gutierrez Jr.</h6>
-                                                <p class="text-muted mb-1">Director</p>
-                                                <span class="badge badge-soft-warning text-uppercase">Pending</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- end card body -->
-                        </div><!-- end card -->
-                        <div class="my-4 collapse" id="showApproveRemarksDoc2">
-                            <label for="remarks" class="h5 form-label">Remarks for Certificate of Good Moral Character</label>
-                            <textarea class="form-control mt-2" id="remarks" name="remarks" rows="5" placeholder="If you have additional remarks for the OIC, Student Records regarding this document, feel free to indicate it here. You can also set this document for approval with changes by indicating what needs to be revised here."></textarea>
+                            <textarea class="form-control mt-2" id="remarks" name="remarks" rows="5" placeholder="If you have additional remarks for the OIC, Student Records regarding this document, feel free to indicate it here. You can also set this document for approval with changes by indicating what needs to be revised in the document."></textarea>
                         </div>
 
                         <div class="justify-content-center">
@@ -1457,15 +1069,15 @@
                 </lord-icon>
 
                 <div class="mt-2">
-                    <h4 class="mb-3 fw-semibold">Hold Document/s?</h4>
-                    <p class="text-muted mb-4">This request contains document/s requiring your approval. Select the document/s you wish to hold and state on the remarks the reason for holding the document/s. Otherwise, click the Dismiss button.</p>
+                    <h4 class="mb-3 fw-semibold">Hold Informative Copy of Grades?</h4>
+                    <p class="text-muted mb-4">If yes, input on the remarks the reason for puting this document on hold and the steps the OIC, Student Records must follow for the document's next round of evaluation. Lastly, make sure to click the Hold button. Otherwise, click the Dismiss button.</p>
 
                     <form id="holdRequestForm" class="needs-validation" novalidate>
                         <input type="hidden" id="hold_request_id">
                         <div class="vstack gap-2 mb-4">
                             <div class="form-check card-checkbox shadow">
-                                <input id="holdDocument1" name="holdDocument1" type="checkbox" class="form-check-input" data-bs-toggle="collapse" data-bs-target="#showHoldRemarksDoc1" aria-expanded="false" aria-controls="showHoldRemarksDoc1">
-                                <label class="form-check-label" for="holdDocument1" style="background-color: #fff5da">
+                                <input id="holdDocument" name="holdDocument" class="form-check-input">
+                                <label class="form-check-label" for="holdDocument" style="background-color: #fff5da">
                                     <div class="d-flex align-items-center">
                                         <div class="flex-shrink-0">
                                             <div class="avatar-xs">
@@ -1520,94 +1132,13 @@
                                 </div>
                             </div><!-- end card body -->
                         </div><!-- end card -->
-                        <div class="my-4 collapse" id="showHoldRemarksDoc1">
+                        <div class="my-4" id="showHoldRemarksDoc1">
                             <label for="remarks" class="h5 form-label">Remarks for Informative Copy of Grades <span class="text-danger">*</span></label>
-                            <textarea class="form-control mt-2" id="remarks" name="remarks" rows="5" placeholder="Enter the reason why you are holding the processing of the selected document and the instructions which the OIC, Student Records must comply for the evaluation to proceed." required></textarea>
+                            <textarea class="form-control mt-2" id="remarks" name="remarks" rows="5" placeholder="Enter the reason why you are holding the processing of this document and the instructions that the OIC, Student Records must comply with for the smooth facilitation of request. Be sure to indicate revisions that must be done in the document." required></textarea>
                             <div class="invalid-feedback">
-                                Please indicate your reason for holding the selected document.
+                                Please indicate your reason for holding this document.
                             </div>
                         </div>
-
-                        <div class="vstack gap-2 mb-4">
-                            <div class="form-check card-checkbox shadow">
-                                <input id="holdDocument2" name="holdDocument2" type="checkbox" class="form-check-input">
-                                <label class="form-check-label" for="holdDocument2" style="background-color: #fff5da" data-bs-toggle="collapse" data-bs-target="#showHoldRemarksDoc2" aria-expanded="false" aria-controls="showHoldRemarksDoc2">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0">
-                                            <div class="avatar-xs">
-                                                <div class="avatar-title bg-primary text-white fs-18 rounded">
-                                                    <i class="ri-file-text-line"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <h6 class="mb-1 fw-semibold">Certificate of Good Moral Character</h6>
-                                            <p class="text-muted mb-0">Type: Certifications</p>
-                                        </div>
-                                        <div class="flex-shrink-0 align-self-center">
-                                            <span class="badge bg-dark"></i>QTY: 1<span>
-                                        </div>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="text-start card mt-3 card-height-100 border shadow">
-                            <div class="card-body p-0">
-                                <div class="alert alert-danger border-0 rounded-top alert-solid alert-label-icon rounded-0 m-0 d-flex align-items-center" style="background-color: #4b38b3!important" role="alert">
-                                    <i class="mdi mdi-file-sign label-icon"></i>
-                                    <div class="flex-grow-1 text-truncate">
-                                        Signatories in this approval workflow
-                                    </div>
-                                </div>
-                                <div class="p-3">
-                                    <div class="acitivity-timeline acitivity-main">
-                                        <div class="acitivity-item d-flex">
-                                            <div class="flex-shrink-0">
-                                                <img src="<?= base_url() ?>public/images/officials/img-2.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
-                                            </div>
-                                            <div class="flex-grow-1 ms-3 mb-4">
-                                                <h6 class="mb-1">Demelyn E. Monzon</h6>
-                                                <p class="text-muted mb-1">Head, Academic Programs</p>
-                                                <span class="badge badge-soft-success text-uppercase">Approved</span><br>
-                                                <div class="d-flex align-items-center text-muted mt-1 gap-2">
-                                                    <i class="ri-calendar-todo-fill text-primary"></i>
-                                                    <small> 29 Nov. 2022, 07:45 AM</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="acitivity-item d-flex">
-                                            <div class="flex-shrink-0">
-                                                <img src="<?= base_url() ?>public/images/officials/img-6.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <h6 class="mb-1">Cleotilde B. Servigon</h6>
-                                                <p class="text-muted mb-1">Registrar</p>
-                                                <span class="mb-4 badge badge-soft-info text-uppercase">Ongoing</span>
-                                            </div>
-                                        </div>
-                                        <div class="acitivity-item d-flex">
-                                            <div class="flex-shrink-0">
-                                                <img src="<?= base_url() ?>public/images/officials/img-1.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <h6 class="mb-1">Assoc. Prof. Jaime P. Gutierrez Jr.</h6>
-                                                <p class="text-muted mb-1">Director</p>
-                                                <span class="badge badge-soft-warning text-uppercase">Pending</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- end card body -->
-                        </div><!-- end card -->
-                        <div class="my-4 collapse" id="showHoldRemarksDoc2">
-                            <label for="remarks" class="h5 form-label">Remarks for Certificate of Good Moral Character <span class="text-danger">*</span></label>
-                            <textarea class="form-control mt-2" id="remarks" name="remarks" rows="5" placeholder="Enter the reason why you are holding the processing of the selected document and the instructions which the OIC, Student Records must comply for the evaluation to proceed." required></textarea>
-                            <div class="invalid-feedback">
-                                Please indicate your reason for holding the selected document.
-                            </div>
-                        </div>
-
                         <div class="justify-content-center">
                             <button type="submit" class="w-100 btn btn-danger bg-gradient fw-medium waves-effect waves-light">Yes, Hold It!</button>
                         </div>
@@ -1628,24 +1159,110 @@
 
                 <div class="mt-4">
                     <h4 class="mb-3 fw-semibold">Is the Remarks already Resolved?</h4>
-                    <p class="text-muted mb-4">If yes, tick the checkbox and click the Yes, It is! button. The On Hold Document/s will be subjected again for your approval and moved on the "Requests for Approval" tab. Otherwise, click the Dismiss button.</p>
-                    <!-- Warning Alert -->
-                    <div class="alert alert-warning alert-border-left alert-dismissible fade show" style="padding-right: 16px;" role="alert">
-                        <div class="mb-2 d-flex align-items-center justify-content-center">
-                            <i class="ri-alert-line me-2 align-middle fs-6"></i> <strong>WARNING</strong>
+                    <p class="text-muted mb-4">If yes, tick the checkbox and click the Yes, It is! button. The On Hold Document will be subjected again for your approval and moved on the "Requests for Approval" tab. Otherwise, click the Dismiss button.</p>
+
+                    <div class="vstack gap-2 mt-4 mb-4">
+                        <div class="form-check card-checkbox shadow">
+                            <input id="approveDocument" name="approveDocument" class="form-check-input">
+                            <label class="form-check-label" for="approveDocument" style="background-color: #fff5da">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0">
+                                        <div class="avatar-xs">
+                                            <div class="avatar-title bg-primary text-white fs-18 rounded">
+                                                <i class="ri-file-text-line"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h6 class="mb-1 fw-semibold">Certificate of Good Moral Character</h6>
+                                        <p class="text-muted mb-0">Type: Certifications</p>
+                                    </div>
+                                    <div class="flex-shrink-0 align-self-center">
+                                        <span class="badge bg-dark"></i>QTY: 1<span>
+                                    </div>
+                                </div>
+                            </label>
                         </div>
-                        <span>Please make sure that the OIC, Student Records has complied with all the <span class="fw-medium">REMARKS</span> indicated especifically for the <span class="fw-medium">ON HOLD DOCUMENT/S</span> before you set its status back to For Approval.</span>
+                    </div>
+
+                    <div class="text-start card mt-3 card-height-100 border shadow">
+                        <div class="card-body p-0">
+                            <div class="alert alert-danger border-0 rounded-top alert-solid alert-label-icon rounded-0 m-0 d-flex align-items-center" style="background-color: #4b38b3!important" role="alert">
+                                <i class="mdi mdi-file-sign label-icon"></i>
+                                <div class="flex-grow-1 text-truncate">
+                                    Signatories in this approval workflow
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <div class="acitivity-timeline acitivity-main">
+                                    <div class="acitivity-item d-flex">
+                                        <div class="flex-shrink-0">
+                                            <img src="<?= base_url() ?>public/images/officials/img-2.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                                        </div>
+                                        <div class="flex-grow-1 ms-3 mb-4">
+                                            <h6 class="mb-1">Demelyn E. Monzon</h6>
+                                            <p class="text-muted mb-1">Head, Academic Programs</p>
+                                            <span class="badge badge-soft-success text-uppercase">Approved</span><br>
+                                            <div class="d-flex align-items-center text-muted mt-1 gap-2">
+                                                <i class="ri-calendar-todo-fill text-primary"></i>
+                                                <small> 29 Nov. 2022, 07:45 AM</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="acitivity-item d-flex">
+                                        <div class="flex-shrink-0">
+                                            <img src="<?= base_url() ?>public/images/officials/img-6.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                                        </div>
+                                        <div class="flex-grow-1 ms-3 mb-4">
+                                            <h6 class="mb-1">Cleotilde B. Servigon</h6>
+                                            <p class="text-muted mb-1">Registrar</p>
+                                            <span class="badge badge-soft-danger text-uppercase">On Hold</span><br>
+                                            <div class="d-flex align-items-center text-muted mt-1 gap-2">
+                                                <i class="ri-calendar-todo-fill text-primary"></i>
+                                                <small> 29 Nov. 2022, 02:00 PM</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="acitivity-item d-flex">
+                                        <div class="flex-shrink-0">
+                                            <img src="<?= base_url() ?>public/images/officials/img-1.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h6 class="mb-1">Assoc. Prof. Jaime P. Gutierrez Jr.</h6>
+                                            <p class="text-muted mb-1">Director</p>
+                                            <span class="badge badge-soft-warning text-uppercase">Pending</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- end card body -->
+                    </div><!-- end card -->
+
+                    <h6 class="mt-4 mb-3 text-start text-primary">Remarks</h6>
+                    <div class="list-group text-start">
+                        <div class="list-group-item list-group-item-action list-group-item-danger">
+                            <div class="d-flex mb-2 align-items-center">
+                                <div class="flex-shrink-0">
+                                    <img src="<?= base_url() ?>public/images/officials/img-6.png" alt="" class="avatar-xs rounded-circle" />
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="list-title mb-1">Cleotilde B. Servigon</h6>
+                                    <p class="list-text mb-0 fs-12">Registrar</p>
+                                </div>
+                            </div>
+                            <p>Good Day! Please be advised that the the Informative Copy of Grades must be printed in a long bond paper with documentary stamp and school dry seal before handing it for signature. Kindly comply with this requirements so that the processing of the document/s will be started right away.</p>
+                        </div>
                     </div>
 
                     <form id="revertRequestForm" class="needs-validation" novalidate>
-                        <input type="hidden" id="revertt_request_id">
+                        <input type="hidden" id="revert_request_id">
                         <div class="mt-4 form-check form-check-success mb-3">
                             <input class="form-check-input" type="checkbox" id="validateRevert" required>
                             <label class="form-check-label" for="validateRevert">
-                                I hereby certify that the remarks I stated for holding the document/s has been resolved by the OIC, Student Records.
+                                I hereby certify that the remarks I stated for holding this document has been resolved by the OIC, Student Records.
                             </label>
                             <div class="invalid-feedback">
-                                You must agree that the OIC, Student Records complied with the remarks for the processing of the On Hold Document/s.
+                                You must agree that the OIC, Student Records complied with the remarks for this document before it is subjected for another round of evaluation.
                             </div>
                         </div>
                         <div class="mt-4 justify-content-center">

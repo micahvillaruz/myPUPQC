@@ -12,17 +12,13 @@ $(function () {
 viewAllHolidays = () => {
 	const dt = $('#holiday-table')
 
-	$.ajaxSetup({
-		headers: AJAX_HEADERS,
-	})
-
 	if (dt.length) {
 		dt.DataTable({
 			bDestroy: true,
 			ajax: {
 				url: apiURL + 'super_admin/holiday',
 				type: 'GET',
-				ContentType: 'application/x-www-form-urlencoded',
+				headers: AJAX_HEADERS,
 			},
 			columns: [
 				// Holiday Name
