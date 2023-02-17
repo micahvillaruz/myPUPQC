@@ -163,7 +163,6 @@ viewDetailsReservationStaff = (reservation_id) => {
             }
             const reservation_id = userData.reservation_id
 
-
             $('#cancelBtn').on('click', function() {
                 console.log(reservation_id)
                 cancelReservation(reservation_id)
@@ -177,7 +176,7 @@ viewDetailsReservationStaff = (reservation_id) => {
                     <div class="d-flex justify-content-center align-middle my-4">
                         <h6 class="mx-auto fw-medium text muted">No signatories yet</h6>
                     </div>
-                    `
+                    `,
                 )
             }
         },
@@ -304,6 +303,7 @@ viewAllForEvaluation = () => {
                 {
                     data: null,
                     render: (data) => {
+                        console.log(data)
                         const reservation_number = data.reservation_number
                         return `${reservation_number}`
                     },
@@ -365,11 +365,13 @@ viewAllForEvaluation = () => {
                     data: null,
                     class: 'text-center',
                     render: (data) => {
-                        return `
+                        if (data.reserve_status == 'For Revision') {
+                            return `
                             <div class="dropdown d-inline-block">
                                 <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewReservationModal" onclick="viewDetailsReservationStaff('${data.reservation_id}')"><i class="ri-eye-fill fs-5"></i></button>
                             </div>
                                 `
+                        }
                     },
                 },
             ],

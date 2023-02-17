@@ -1,5 +1,7 @@
 $(function() {
     viewSignatoryRequests()
+
+    viewSignatoryRevisions()
 })
 
 // View Own Reservation details
@@ -258,6 +260,100 @@ viewSignatoryRequests = () => {
     }
 }
 
+//  Check if user has sinatory requests
+viewSignatoryRevisions = () => {
+    // get currently logged in user_id
+    const dt = $('#revisions-table')
+
+    $.ajaxSetup({
+        headers: {
+            Accept: 'application/json',
+            Authorization: 'Bearer ' + TOKEN,
+        },
+    })
+    if (dt.length) {
+        dt.DataTable({
+            bDestroy: true,
+            ajax: {
+                url: apiURL + `evrsers/pup_staff/signatory/view_user_onhold_reservations/`,
+                type: 'GET',
+                ContentType: 'application/x-www-form-urlencoded',
+                dataSrc: (data) => {
+                    let filterData = data.data.filter((item) => {
+                        return item.assigned_reservation.reserve_status != 'Cancelled by Staff'
+                    })
+                    return filterData
+                },
+            },
+            columns: [
+                // Reservation Control Number
+                {
+                    data: null,
+                    render: (data) => {
+                        console.log(data)
+                        const reservation_number = data.assigned_reservation.reservation_number
+                        return `${reservation_number}`
+                    },
+                },
+                // Event Title
+                {
+                    data: null,
+                    render: (data) => {
+                        const event_title = data.assigned_reservation.event_title
+                        return `${event_title}`
+                    },
+                },
+
+                // Date
+                {
+                    data: null,
+                    render: (data) => {
+                        const reserve_date = moment(data.assigned_reservation.reserve_date).format('LL')
+                        return `${reserve_date}`
+                    },
+                },
+
+                // Time
+                {
+                    data: null,
+                    render: (data) => {
+                        const time_from = data.assigned_reservation.time_from
+                        const time_to = data.assigned_reservation.time_to
+                        return `${time_from + ' - ' + time_to}`
+                    },
+                },
+
+                // Status
+                {
+                    data: null,
+                    class: 'text-center',
+                    render: (data) => {
+                        const reserve_status = data.assigned_reservation.reserve_status
+                        return `<span class="badge rounded-pill bg-info">${reserve_status}</span>`
+                    },
+                },
+
+                //Action
+                {
+                    data: null,
+                    class: 'text-center',
+                    render: (data) => {
+                        // console.log(data)
+                        return `
+                                <div class="dropdown d-inline-block mt-2">
+                                <button type="button" class="btn btn-icon btn-success waves-effect waves-light" onclick="revertOnHold('${data.reservation_signatory_id}')"><i class="ri-refresh-line fs-5"></i></button>
+                                </div>
+                                    `
+                    },
+                },
+            ],
+            order: [
+                [4, 'desc']
+            ],
+        })
+    }
+}
+
 // Load signatory in reservation details modal
 loadSignatory = (reservation_id, reservation_signatory_id) => {
     $('#approve_request_id').val(reservation_id)
@@ -464,5 +560,47 @@ approveRequest = (reservation_id, reservation_signatory_id) => {
                 showCloseButton: !0,
             })
         },
+    })
+}
+
+revertOnHold = (reservation_signatory_id) => {
+    $.ajaxSetup({
+        headers: {
+            Accept: 'application/json',
+            Authorization: 'Bearer ' + TOKEN,
+            ContentType: 'application/x-www-form-urlencoded',
+        },
+    })
+    $.ajax({
+        url: apiURL + `evrsers/pup_staff/signatory/revert_onhold_reservation/${reservation_signatory_id}`,
+        type: 'PUT',
+        ContentType: 'application/x-www-form-urlencoded',
+        success: (result) => {
+            if (result) {
+                Swal.fire({
+                    html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully changed reservation status!</p></div></div>',
+                    showCancelButton: !0,
+                    showConfirmButton: !1,
+                    cancelButtonClass: 'btn btn-success w-xs mb-1',
+                    cancelButtonText: 'Ok',
+                    buttonsStyling: !1,
+                    showCloseButton: !0,
+                }).then(function() {
+                    location.reload()
+                })
+            }
+        },
+    }).fail((xhr) => {
+        Swal.fire({
+            html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">${
+					JSON.parse(xhr.responseText).message
+				}</p></div></div>`,
+            showCancelButton: !0,
+            showConfirmButton: !1,
+            cancelButtonClass: 'btn btn-danger w-xs mb-1',
+            cancelButtonText: 'Dismiss',
+            buttonsStyling: !1,
+            showCloseButton: !0,
+        })
     })
 }
