@@ -56,6 +56,17 @@
                         </li>
                     <?php } ?>
 
+                    <li class="menu-title">
+                        <i class="ri-more-fill"></i>
+                        <span>EVRSERS</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/evrsers/reservation-approval">
+                            <i class="mdi mdi-file-sign"></i>
+                            <span>Event Approvals</span>
+                        </a>
+                    </li>
+
                     <?php if (strpos($this->session->userdata('user_roles'), 'News Reporter') !== false || strpos($this->session->userdata('user_roles'), 'Public Relations') !== false) { ?>
                         <li class="menu-title">
                             <i class="ri-more-fill"></i>

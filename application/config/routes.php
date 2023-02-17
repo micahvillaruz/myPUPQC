@@ -330,3 +330,6 @@ $route['pupstaff/evrsers/organizer-management'] = 'pupstaff/organizer_management
 // Reservations
 $route['pupstaff/evrsers/manage-reservations'] = 'pupstaff/manage_reservations';
 $route['pupstaff/evrsers/reservation-history'] = 'pupstaff/reservation_history';
+
+// Event Approvals
+$route['pupstaff/evrsers/reservation-approval'] = 'pupstaff/event_approvals';
