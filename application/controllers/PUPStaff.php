@@ -250,6 +250,21 @@ class PUPStaff extends CI_Controller
         $this->load->view('pup-staff/evrsers/scripts/reservationhist-scripts');
     }
 
+    public function event_approvals()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/pup-staff/topbar');
+        $this->load->view('partials/pup-staff/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "Signatory Approvals"]);
+        $this->load->view('pup-staff/evrsers/reservation-approval');
+        $this->load->view('partials/footer');
+        $this->load->view('pup-staff/evrsers/components/reservation-approval-modal');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('pup-staff/evrsers/scripts/reservation-approval-scripts');
+    }
+
     public function advisory()
     {
         $this->load->view('partials/main');
