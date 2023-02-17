@@ -26,7 +26,9 @@ viewDetailsReservationStaff = (reservation_id) => {
             const userData = result.data
 
             const signatories = userData.reservation_signatories
-            console.log(signatories)
+            signatories.forEach((signatory) => {
+                console.log(signatory)
+            })
 
             $('#reserve_number').html(userData.reservation_number)
 
@@ -162,15 +164,22 @@ viewDetailsReservationStaff = (reservation_id) => {
             const reservation_id = userData.reservation_id
 
 
-
             $('#cancelBtn').on('click', function() {
                 console.log(reservation_id)
                 cancelReservation(reservation_id)
             })
 
-            $('#approveBtn').on('click', function() {
-                approveReservation(reservation_id)
-            })
+            if (signatories.length != 0) {
+                loadSignatory(reservation_id)
+            } else {
+                $('#signatories-container').html(
+                    `
+                    <div class="d-flex justify-content-center align-middle my-4">
+                        <h6 class="mx-auto fw-medium text muted">No signatories yet</h6>
+                      </div>
+                    `
+                )
+            }
         },
     })
 }
@@ -600,7 +609,6 @@ fetchAllStaff = (reservation_id) => {
 
                     count--
                 }
-
             })
 
             // Do code once showConfirmButton is clicked
@@ -614,7 +622,7 @@ fetchAllStaff = (reservation_id) => {
 
 // Add Signatory
 addSignatory = (signatoryList, reservation_id) => {
-    console.log("Adding signatories for reservation_id: " + reservation_id)
+    console.log('Adding signatories for reservation_id: ' + reservation_id)
     console.log(signatoryList)
 
     // hide modal
@@ -652,8 +660,8 @@ addSignatory = (signatoryList, reservation_id) => {
             console.log(xhr)
             Swal.fire({
                 html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong!</h4><p class="text-muted mx-4 mb-0">${
-                    JSON.parse(xhr.responseText).message
-                }</p></div></div>`,
+					JSON.parse(xhr.responseText).message
+				}</p></div></div>`,
                 showCancelButton: !0,
                 showConfirmButton: !1,
                 cancelButtonClass: 'btn btn-danger w-xs mb-1',
@@ -661,6 +669,59 @@ addSignatory = (signatoryList, reservation_id) => {
                 buttonsStyling: !1,
                 showCloseButton: !0,
             })
-        }
+        },
+    })
+}
+
+// Load signatory in reservation details modal
+loadSignatory = (reservation_id) => {
+    // $('#show-signatories').removeClass('d-none')
+    let signatoriesHTML = ''
+    $.ajax({
+        type: 'GET',
+        cache: false,
+        url: apiURL +
+            `evrsers/pup_staff/signatory/view_specific_reservation_and_signatories/${reservation_id}`,
+        dataType: 'json',
+        success: (result) => {
+            signatoriesHTML += `<div class="profile-timeline mb-3 mt-2">
+                    <div class="accordion accordion-flush" id="todayExample">`
+
+            const userData = result.data
+            console.log(userData.length)
+                // for each user in userData, append to reservation-signatories
+            userData.forEach((user) => {
+                const user_info = user.user_assigned_to_reservation_signatory.user_profiles[0]
+                    // append in the div with id todayExample
+                signatoriesHTML += `<div class="accordion-item border-0">
+                            <div class="accordion-header" id="heading${user.hierarchy_number}">
+                                <a class="accordion-button ps-3 pt-0 pb-0 shadow-none" data-bs-toggle="collapse" href="#collapse${user.hierarchy_number}" aria-expanded="true">
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0" id="icon-sign-status${user.hierarchy_number}">`
+                if (user.is_signed === false) {
+                    signatoriesHTML += `<i class="h5 ri-checkbox-blank-circle-line text-warning"></i>`
+                } else {
+                    signatoriesHTML += `<i class="h5 ri-checkbox-blank-circle-line text-success"></i>`
+                }
+                signatoriesHTML += `</div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h6 class="fs-14 mb-1" id="signatory-name">${user_info.full_name}</h6>
+                                                <small class="text-muted">Signatory ${user.hierarchy_number}</small> <br>`
+                if (user.is_signed === false) {
+                    signatoriesHTML += `<span class="mt-1 badge badge-soft-info text-uppercase" id="sign-status${user.hierarchy_number}">Evaluating</span>`
+                } else {
+                    signatoriesHTML += `<span class="mt-1 badge badge-soft-success text-uppercase" id="sign-status${user.hierarchy_number}">Approved</span>`
+                }
+                signatoriesHTML += `
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </a>
+                                        </div>`
+            })
+
+            signatoriesHTML += `</div></div>`
+            $('#signatories-container').html(signatoriesHTML)
+        },
     })
 }

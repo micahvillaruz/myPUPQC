@@ -8,6 +8,20 @@ $(function () {
 		$('#approved-requests-sign').DataTable().columns.adjust().responsive.recalc()
 		$('#onhold-requests-sign').DataTable().columns.adjust().responsive.recalc()
 	})
+	$('#approveRequestForm').on('submit', function (e) {
+		e.preventDefault() // prevent page refresh
+		const request_id = $('#approve_request_id').val()
+		const document_id = $('#approve_document_id').val()
+
+		approveRequest(request_id, document_id)
+	})
+
+	$('#holdRequestForm').on('submit', function (e) {
+		e.preventDefault() // prevent page refresh
+		const request_signatory_id = $('#hold_request_signatory_id').val()
+
+		onHoldRequest(request_signatory_id)
+	})
 })
 
 // Load Requests for Approval Table
@@ -152,7 +166,7 @@ loadForApprovalRequests = () => {
 									<button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#approveRequestModal" onclick="viewApproveRequestModal('${data.request_id}','${document.signatory_for_document.document_id}')">
 										<i class="mdi mdi-thumb-up fs-5 fw-bold"></i>
 									</button>
-									<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#onHoldRequestModal" onclick="viewOnHoldRequestModal('${data.request_id}','${document.signatory_for_document.document_id}')">
+									<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#onHoldRequestModal" onclick="viewOnHoldRequestModal('${data.request_id}','${document.signatory_for_document.document_id}', '${document.request_signatory_id}')">
 										<i class="mdi mdi-hand-back-left fs-5 fw-bold"></i>
 									</button>
 								</div>
@@ -505,8 +519,121 @@ loadOnHoldRequests = () => {
 	}
 }
 
+// Approve Request
+approveRequest = (request_id, document_id) => {
+	const form = new FormData($('#approveRequestForm')[0])
+
+	$.ajax({
+		url: `${apiURL}odrs/pup_staff/approve_signatory/${request_id}/${document_id}`,
+		type: 'PUT',
+		data: {
+			remarks: form.get('remarks'),
+		},
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+		success: (response) => {
+			if (response) {
+				Swal.fire({
+					html:
+						'<div class="mt-3">' +
+						'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
+						'<div class="mt-4 pt-2 fs-15">' +
+						'<h4>Well done!</h4>' +
+						'<p class="text-muted mx-4 mb-0">You have successfully approved this document!</p>' +
+						'</div>' +
+						'</div>',
+					showCancelButton: !0,
+					showConfirmButton: !1,
+					cancelButtonClass: 'btn btn-success w-xs mb-1',
+					cancelButtonText: 'Ok',
+					buttonsStyling: !1,
+					showCloseButton: !0,
+				}).then(function () {
+					$('#approveRequestModal').modal('hide')
+					$('form#approveRequestForm')[0].reset()
+
+					// Reload Datatable
+					loadForApprovalRequests()
+					loadApprovedRequests()
+					loadOnHoldRequests()
+				})
+			}
+		},
+	}).fail((xhr) => {
+		Swal.fire({
+			html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">${
+				JSON.parse(xhr.responseText).message
+			}</p></div></div>`,
+			showCancelButton: !0,
+			showConfirmButton: !1,
+			cancelButtonClass: 'btn btn-danger w-xs mb-1',
+			cancelButtonText: 'Dismiss',
+			buttonsStyling: !1,
+			showCloseButton: !0,
+		})
+	})
+}
+
+// On Hold Request
+onHoldRequest = (request_signatory_id) => {
+	const form = new FormData($('#holdRequestForm')[0])
+
+	$.ajax({
+		url: `${apiURL}odrs/pup_staff/onhold_signatory/${request_signatory_id}`,
+		type: 'PUT',
+		data: {
+			remarks: form.get('remarks'),
+		},
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+		success: (response) => {
+			if (response) {
+				Swal.fire({
+					html:
+						'<div class="mt-3">' +
+						'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
+						'<div class="mt-4 pt-2 fs-15">' +
+						'<h4>Well done!</h4>' +
+						'<p class="text-muted mx-4 mb-0">You have successfully On Hold this document!</p>' +
+						'</div>' +
+						'</div>',
+					showCancelButton: !0,
+					showConfirmButton: !1,
+					cancelButtonClass: 'btn btn-success w-xs mb-1',
+					cancelButtonText: 'Ok',
+					buttonsStyling: !1,
+					showCloseButton: !0,
+				}).then(function () {
+					$('#onHoldRequestModal').modal('hide')
+					$('form#holdRequestForm')[0].reset()
+
+					// Reload Datatable
+					loadForApprovalRequests()
+					loadApprovedRequests()
+					loadOnHoldRequests()
+				})
+			}
+		},
+	}).fail((xhr) => {
+		Swal.fire({
+			html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">${
+				JSON.parse(xhr.responseText).message
+			}</p></div></div>`,
+			showCancelButton: !0,
+			showConfirmButton: !1,
+			cancelButtonClass: 'btn btn-danger w-xs mb-1',
+			cancelButtonText: 'Dismiss',
+			buttonsStyling: !1,
+			showCloseButton: !0,
+		})
+	})
+}
+
 // View Approved Request Modal
 function viewApproveRequestModal(request_id, document_id) {
+	$('#approve_request_id').val(request_id)
+	$('#approve_document_id').val(document_id)
+
 	$.ajax({
 		url: `${apiURL}odrs/pup_staff/view_request_signatory/${request_id}/${document_id}`,
 		type: 'GET',
@@ -556,7 +683,9 @@ function viewApproveRequestModal(request_id, document_id) {
 }
 
 // View On Hold Request Modal
-function viewOnHoldRequestModal(request_id, document_id) {
+function viewOnHoldRequestModal(request_id, document_id, request_signatory_id) {
+	$('#hold_request_signatory_id').val(request_signatory_id)
+
 	$.ajax({
 		url: `${apiURL}odrs/pup_staff/view_request_signatory/${request_id}/${document_id}`,
 		type: 'GET',
