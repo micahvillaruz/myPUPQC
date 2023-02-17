@@ -149,7 +149,7 @@ loadForApprovalRequests = () => {
 						documentsAction.forEach((document) => {
 							actionButton += `
 								<div class="dropdown d-inline-block">
-									<button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#approveRequestModal" onclick="addId('${document.signatory_for_document.document_id}', 'approve_document')">
+									<button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#approveRequestModal" onclick="viewApproveRequestModal('${data.request_id}','${document.signatory_for_document.document_id}')">
 										<i class="mdi mdi-thumb-up fs-5 fw-bold"></i>
 									</button>
 									<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#onHoldRequestModal" onclick="addId('${document.signatory_for_document.document_id}', 'on_hold_document')">
@@ -503,4 +503,50 @@ loadOnHoldRequests = () => {
 			order: [[0, 'desc']],
 		})
 	}
+}
+
+// View Approved Request Modal
+function viewApproveRequestModal(request_id, document_id) {
+	$.ajax({
+		url: `${apiURL}odrs/pup_staff/view_request_signatory/${request_id}/${document_id}`,
+		type: 'GET',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+		success: (response) => {
+			const data = response.data
+
+			$('#approve_docname_header').html(`Approve ${data[0].signatory_for_document.document_name}?`)
+			$('#approve_doc_info').html(`
+								<h6 class="mb-1 fw-semibold">${data[0].signatory_for_document.document_name}</h6>
+                <p class="text-muted mb-0">Type: ${data[0].signatory_for_document.document_type}</p>
+			`)
+
+			$('#approve_approval_workflow').html('')
+			data.forEach((signatory, i) => {
+				$('#approve_approval_workflow').append(`
+				<div class="acitivity-item d-flex">
+				<div class="flex-shrink-0">
+						<img src="${baseURL}public/images/profile/flat-faces-icons-circle-man-6.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+				</div>
+				<div class="flex-grow-1 ms-3" id="signatory_status_${i}">
+						<h6 class="mb-1">${signatory.signatory_for_user.user_profiles[0].full_name}</h6>
+				</div>
+				</div>
+				`)
+				if (!signatory.is_signed && !signatory.is_onhold) {
+					$(`#signatory_status_${i}`).append(`
+					<span class="mb-4 badge badge-soft-warning text-uppercase">Pending</span>
+					`)
+				} else if (signatory.is_signed) {
+					$(`#signatory_status_${i}`).append(`
+					<span class="mb-4 badge badge-soft-success text-uppercase">Approved</span>
+					`)
+				} else if (signatory.is_onhold) {
+					$(`#signatory_status_${i}`).append(`
+					<span class="mb-4 badge badge-soft-danger text-uppercase">On Hold</span>
+					`)
+				}
+			})
+		},
+	})
 }

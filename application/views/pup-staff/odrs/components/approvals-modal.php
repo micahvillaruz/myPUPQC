@@ -982,7 +982,7 @@
                 </lord-icon>
 
                 <div class="mt-2">
-                    <h4 class="mb-3 fw-semibold">Approve Informative Copy of Grades?</h4>
+                    <h4 class="mb-3 fw-semibold" id="approve_docname_header"></h4>
                     <p class="text-muted mb-4">If yes, enter any comment you have regarding this document. Please ba advised that the remarks is optional and you can use it to enter instructions for the OIC, Student Records. Lastly, make sure to click the Approve button. Otherwise, click the Dismiss button.</p>
 
                     <form id="approveRequestForm" class="needs-validation" novalidate>
@@ -999,12 +999,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <h6 class="mb-1 fw-semibold">Informative Copy of Grades</h6>
-                                            <p class="text-muted mb-0">Type: Certifications</p>
-                                        </div>
-                                        <div class="flex-shrink-0 align-self-center">
-                                            <span class="badge bg-dark"></i>QTY: 2<span>
+                                        <div class="flex-grow-1 ms-3" id="approve_doc_info">
                                         </div>
                                     </div>
                                 </label>
@@ -1020,27 +1015,7 @@
                                     </div>
                                 </div>
                                 <div class="p-3">
-                                    <div class="acitivity-timeline acitivity-main">
-                                        <div class="acitivity-item d-flex">
-                                            <div class="flex-shrink-0">
-                                                <img src="<?= base_url() ?>public/images/officials/img-6.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <h6 class="mb-1">Cleotilde B. Servigon</h6>
-                                                <p class="text-muted mb-1">Registrar</p>
-                                                <span class="mb-4 badge badge-soft-info text-uppercase">Ongoing</span>
-                                            </div>
-                                        </div>
-                                        <div class="acitivity-item d-flex">
-                                            <div class="flex-shrink-0">
-                                                <img src="<?= base_url() ?>public/images/officials/img-1.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <h6 class="mb-1">Assoc. Prof. Jaime P. Gutierrez Jr.</h6>
-                                                <p class="text-muted mb-1">Director</p>
-                                                <span class="badge badge-soft-warning text-uppercase">Pending</span>
-                                            </div>
-                                        </div>
+                                    <div class="acitivity-timeline acitivity-main" id="approve_approval_workflow">
                                     </div>
                                 </div>
                             </div><!-- end card body -->
