@@ -55,6 +55,8 @@ charts = () => {
 	chartThree()
 	chartFour()
 	chartFive()
+	chartSix()
+	chartSeven()
 }
 
 chartOne = () => {
@@ -255,5 +257,149 @@ chartFive = () => {
 
 		// Set options to chart
 		chartNumberFive.setOption(option)
+	})
+}
+
+chartSix = () => {
+	var chartNumberSix = echarts.init(document.getElementById('chartNumberSix'))
+
+	$.ajax({
+		type: 'GET',
+		cache: false,
+		url: apiURL + 'super_admin/analytics/user_role_count',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+	}).then((result) => {
+		const data = result.data.role_count
+
+		// Convert data object to array of objects
+		const chartData = Object.entries(data).map(([name, value], index) => {
+			return {
+				value: value,
+				name: name,
+			}
+		})
+
+		// Create options object for chart
+		const option = {
+			title: {
+				text: 'User Roles Count',
+				subtext: 'All Users',
+				left: 'center',
+			},
+			toolbox: {
+				show: true,
+				feature: {
+					saveAsImage: {
+						show: true,
+						title: 'Save as Image',
+						name: `(myPUPQC) chartSix_${new Date().toISOString().slice(0, 10)}user_region_count`,
+					},
+				},
+			},
+			legend: {
+				orient: 'vertical',
+				left: 'left',
+				scroll: true,
+			},
+			tooltip: {
+				trigger: 'item',
+				formatter: '<b>{b}</b>: {c} ({d}%)',
+			},
+			series: [
+				{
+					type: 'pie',
+					radius: ['50%', '70%'],
+					itemStyle: {
+						borderRadius: 10,
+						borderColor: '#fff',
+						borderWidth: 2,
+					},
+					emphasis: {
+						label: {
+							show: true,
+							fontSize: 16,
+							fontWeight: 'bold',
+						},
+					},
+					data: chartData.sort((a, b) => b.value - a.value),
+				},
+			],
+		}
+
+		// Set options to chart
+		chartNumberSix.setOption(option)
+	})
+}
+
+chartSeven = () => {
+	var chartNumberSeven = echarts.init(document.getElementById('chartNumberSeven'))
+
+	$.ajax({
+		type: 'GET',
+		cache: false,
+		url: apiURL + 'super_admin/analytics/announcement_count',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+	}).then((result) => {
+		const data = result.data.announcement_count
+
+		// Convert data object to array of objects
+		const chartData = Object.entries(data).map(([name, value], index) => {
+			return {
+				value: value,
+				name: name,
+			}
+		})
+
+		// Create options object for chart
+		const option = {
+			title: {
+				text: 'Announcement Count',
+				subtext: 'All Users',
+				left: 'center',
+			},
+			toolbox: {
+				show: true,
+				feature: {
+					saveAsImage: {
+						show: true,
+						title: 'Save as Image',
+						name: `(myPUPQC) chartSix_${new Date().toISOString().slice(0, 10)}user_region_count`,
+					},
+				},
+			},
+			legend: {
+				orient: 'vertical',
+				left: 'left',
+				scroll: true,
+			},
+			tooltip: {
+				trigger: 'item',
+				formatter: '<b>{b}</b>: {c} ({d}%)',
+			},
+			series: [
+				{
+					type: 'pie',
+					radius: ['50%', '70%'],
+					itemStyle: {
+						borderRadius: 10,
+						borderColor: '#fff',
+						borderWidth: 2,
+					},
+					emphasis: {
+						label: {
+							show: true,
+							fontSize: 16,
+							fontWeight: 'bold',
+						},
+					},
+					data: chartData.sort((a, b) => b.value - a.value),
+				},
+			],
+		}
+
+		// Set options to chart
+		chartNumberSeven.setOption(option)
 	})
 }

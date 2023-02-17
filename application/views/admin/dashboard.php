@@ -127,6 +127,31 @@
                         </div>
                     </div>
                 </div>
+                <!-- Analytics for UserRoles and Announcements -->
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="card card-animate">
+                            <div class="card-header alert alert-info border-0 rounded-top rounded-0 d-flex align-items-center" role="alert">
+                                <i class="ri-line-chart-line text-info me-2 fs-20 fw-bold"></i>
+                                <span class="fw-bold fs-15">Donut Chart for User Roles</span>
+                            </div>
+                            <div class="card-body d-flex align-items-center justify-content-center">
+                                <div id="chartNumberSix" style="width: 500px; height: 500px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="card card-animate">
+                            <div class="card-header alert alert-info border-0 rounded-top rounded-0 d-flex align-items-center" role="alert">
+                                <i class="ri-line-chart-line text-info me-2 fs-20 fw-bold"></i>
+                                <span class="fw-bold fs-15">Donut Chart for Announcements</span>
+                            </div>
+                            <div class="card-body d-flex align-items-center justify-content-center">
+                                <div id="chartNumberSeven" style="width: 500px; height: 500px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- Analytics for 3 Years: Appointment (OMSSS) -->
                 <div class="row">
                     <div class="col-xl-12">
@@ -136,7 +161,7 @@
                                 <span class="fw-bold fs-15">Appointment (OMSSS): 3 Years Data</span>
                             </div>
                             <div class="card-body">
-                                <div id="chartNumberSix" class="d-flex align-items-center justify-content-center flex-column m-3 p-3"></div>
+                                <div id="chartAppointment" class="d-flex align-items-center justify-content-center flex-column m-3 p-3"></div>
                             </div>
                         </div>
                     </div>
@@ -150,7 +175,7 @@
                                 <span class="fw-bold fs-15">Request (ODRTS): 3 Years Data</span>
                             </div>
                             <div class="card-body">
-                                <div id="chartNumberSeven" class="d-flex align-items-center justify-content-center flex-column m-3 p-3"></div>
+                                <div id="chartRequest" class="d-flex align-items-center justify-content-center flex-column m-3 p-3"></div>
                             </div>
                         </div>
                     </div>
@@ -164,7 +189,7 @@
                                 <span class="fw-bold fs-15">Reservation (EVRSERS): 3 Years Data</span>
                             </div>
                             <div class="card-body">
-                                <div id="chartNumberEight" class="d-flex align-items-center justify-content-center flex-column m-3 p-3"></div>
+                                <div id="chartReservation" class="d-flex align-items-center justify-content-center flex-column m-3 p-3"></div>
                             </div>
                         </div>
                     </div>
