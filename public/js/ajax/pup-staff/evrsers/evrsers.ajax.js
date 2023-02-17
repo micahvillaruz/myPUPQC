@@ -176,7 +176,7 @@ viewDetailsReservationStaff = (reservation_id) => {
                     `
                     <div class="d-flex justify-content-center align-middle my-4">
                         <h6 class="mx-auto fw-medium text muted">No signatories yet</h6>
-                      </div>
+                    </div>
                     `
                 )
             }
@@ -352,7 +352,11 @@ viewAllForEvaluation = () => {
                     class: 'text-center',
                     render: (data) => {
                         const reserve_status = data.reserve_status
-                        return `<span class="badge rounded-pill bg-info">${reserve_status}</span>`
+                        if (reserve_status == 'For Evaluation / Processing') {
+                            return `<span class="badge rounded-pill bg-info">${reserve_status}</span>`
+                        } else if (reserve_status == 'For Revision') {
+                            return `<span class="badge rounded-pill bg-warning">${reserve_status}</span>`
+                        }
                     },
                 },
 
@@ -699,15 +703,17 @@ loadSignatory = (reservation_id) => {
                                     <div class="d-flex">
                                         <div class="flex-shrink-0" id="icon-sign-status${user.hierarchy_number}">`
                 if (user.is_signed === false) {
-                    signatoriesHTML += `<i class="h5 ri-checkbox-blank-circle-line text-warning"></i>`
+                    signatoriesHTML += `<i class="fs-5 ri-checkbox-blank-circle-line text-warning"></i>`
                 } else {
-                    signatoriesHTML += `<i class="h5 ri-checkbox-blank-circle-line text-success"></i>`
+                    signatoriesHTML += `<i class="fs-5 ri-checkbox-blank-circle-fill text-success"></i>`
                 }
                 signatoriesHTML += `</div>
                                             <div class="flex-grow-1 ms-3">
                                                 <h6 class="fs-14 mb-1" id="signatory-name">${user_info.full_name}</h6>
                                                 <small class="text-muted">Signatory ${user.hierarchy_number}</small> <br>`
-                if (user.is_signed === false) {
+                if (user.is_onhold === true) {
+                    signatoriesHTML += `<span class="mt-1 badge badge-soft-danger text-uppercase" id="sign-status${user.hierarchy_number}">For Revision</span>`
+                } else if (user.is_signed === false) {
                     signatoriesHTML += `<span class="mt-1 badge badge-soft-info text-uppercase" id="sign-status${user.hierarchy_number}">Evaluating</span>`
                 } else {
                     signatoriesHTML += `<span class="mt-1 badge badge-soft-success text-uppercase" id="sign-status${user.hierarchy_number}">Approved</span>`
