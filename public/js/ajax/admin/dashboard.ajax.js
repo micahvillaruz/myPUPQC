@@ -57,6 +57,9 @@ charts = () => {
 	chartFive()
 	chartSix()
 	chartSeven()
+	chartEight()
+	chartNine()
+	chartTen()
 }
 
 chartOne = () => {
@@ -401,5 +404,62 @@ chartSeven = () => {
 
 		// Set options to chart
 		chartNumberSeven.setOption(option)
+	})
+}
+
+chartEight = () => {
+	var chartNumberEight = document.getElementById('chartNumberEight')
+
+	$.ajax({
+		type: 'GET',
+		cache: false,
+		url: apiURL + 'super_admin/analytics/all_system_count',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+	}).then((result) => {
+		const data = result.data.health_appointment_count
+
+		const numberOfUsers = parseInt(data)
+		const htmlContent = `<div class="number"><h1 class="display-1 text-primary">${numberOfUsers}</h1></div><p class="fs-5 text-center font-italic">Appointments</p>`
+
+		chartNumberEight.innerHTML = htmlContent
+	})
+}
+
+chartNine = () => {
+	var chartNumberNine = document.getElementById('chartNumberNine')
+
+	$.ajax({
+		type: 'GET',
+		cache: false,
+		url: apiURL + 'super_admin/analytics/all_system_count',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+	}).then((result) => {
+		const data = result.data.request_count
+
+		const numberOfUsers = parseInt(data)
+		const htmlContent = `<div class="number"><h1 class="display-1 text-primary">${numberOfUsers}</h1></div><p class="fs-5 text-center font-italic">Requests</p>`
+
+		chartNumberNine.innerHTML = htmlContent
+	})
+}
+
+chartTen = () => {
+	var chartNumberTen = document.getElementById('chartNumberTen')
+
+	$.ajax({
+		type: 'GET',
+		cache: false,
+		url: apiURL + 'super_admin/analytics/all_system_count',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+	}).then((result) => {
+		const data = result.data.reservation_count
+
+		const numberOfUsers = parseInt(data)
+		const htmlContent = `<div class="number"><h1 class="display-1 text-primary">${numberOfUsers}</h1></div><p class="fs-5 text-center font-italic">Reservations</p>`
+
+		chartNumberTen.innerHTML = htmlContent
 	})
 }

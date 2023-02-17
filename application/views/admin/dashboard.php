@@ -152,6 +152,42 @@
                         </div>
                     </div>
                 </div>
+                <!-- Analytics for Appointments/Requests/Reservations -->
+                <div class="row">
+                    <div class="col-xl-4">
+                        <div class="card card-animate">
+                            <div class="card-header alert alert-info border-0 rounded-top rounded-0 d-flex align-items-center" role="alert">
+                                <i class="ri-line-chart-line text-info me-2 fs-20 fw-bold"></i>
+                                <span class="fw-bold fs-15">Total Number of Appointments</span>
+                            </div>
+                            <div class="card-body">
+                                <div id="chartNumberEight" class="d-flex align-items-center justify-content-center flex-column m-3 p-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="card card-animate">
+                            <div class="card-header alert alert-info border-0 rounded-top rounded-0 d-flex align-items-center" role="alert">
+                                <i class="ri-line-chart-line text-info me-2 fs-20 fw-bold"></i>
+                                <span class="fw-bold fs-15">Total Number of Requests</span>
+                            </div>
+                            <div class="card-body">
+                                <div id="chartNumberNine" class="d-flex align-items-center justify-content-center flex-column m-3 p-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="card card-animate">
+                            <div class="card-header alert alert-info border-0 rounded-top rounded-0 d-flex align-items-center" role="alert">
+                                <i class="ri-line-chart-line text-info me-2 fs-20 fw-bold"></i>
+                                <span class="fw-bold fs-15">Total Number of Reservations</span>
+                            </div>
+                            <div class="card-body">
+                                <div id="chartNumberTen" class="d-flex align-items-center justify-content-center flex-column m-3 p-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- Analytics for 3 Years: Appointment (OMSSS) -->
                 <div class="row">
                     <div class="col-xl-12">
