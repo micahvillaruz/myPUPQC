@@ -74,13 +74,8 @@
   </div>
 </div>
 
-<!-- 
-// * Still need to add the following:
-// * - Edit Reservation endpoints
-// * - Edit Reservation success modal
--->
 <!-- Edit Reservation modal -->
-<div id="editReservationModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
+<div id="editReservationModal" class="modal fade" data-bs-backdrop="static" tabindex="-1" aria-hidden="true" style="display: none">
   <div class="modal-dialog modal-dialog-centered modal-lg modal-fullscreen-md-down">
     <div class="modal-content border-0 overflow-hidden">
       <div class="modal-header p-3">
@@ -89,113 +84,47 @@
       </div>
 
       <div class="modal-body">
-        <form class="needs-validation" novalidate>
-          <div class="row mb-3">
-            <h5 class="fs-13 fw-medium col-5"><a href="#" class="link text-dark">Reservation Control #:</a></h5>
-            <div class="d-flex fs-13 fw-medium col-5" id="reserve-number"></div>
-          </div>
-          <div class="row">
-            <div class="col-md mb-3">
-              <label for="edit-organization">Organization</label>
-              <select class="form-select" id="edit-organization" placeholder="" required>
-                <option selected disabled>- Select Organization -</option>
-                <option>SSC</option>
-                <option>CHRS</option>
-                <option>COL</option>
-                <option>COMMITS</option>
-                <option>DOMT.CS</option>
-                <option>FBTO</option>
-                <option>JMS</option>
-                <option>KATAGA</option>
-                <option>MUSA</option>
-                <option>PSC</option>
-                <option>SPAS</option>
-                <option>Vox Nova</option>
-                <option>YES</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="col-md mb-3">
-              <label for="facility_name">Venue</label>
-              <select class="form-select" id="facilty_name" placeholder="" required>
-                <option selected disabled>- Select Venue -</option>
-                <option>PUPQC Gymnasium</option>
-                <option>PUPQC Chapel</option>
-                <option>Audio-Visual Room</option>
-                <option>Computer Lab</option>
-              </select>
+        <form id="edit-reservation-form" class="needs-validation" novalidate>
+          <div class="row mb-2">
+            <div class="d-flex justify-content-center fs-13 fw-medium">
+              <h5 id="reserve_number_edit" class="fs-4 badge badge-outline-primary fw-bold mb-0"></h5>
             </div>
           </div>
-          <div class="mb-3">
+          <div class="mb-3 px-2">
             <label for="edit-title" class="form-label">Event Title</label>
             <input type="text" class="form-control" id="edit-title" placeholder="Enter event title" />
           </div>
-          <div class="mb-3">
+          <div class="mb-3 px-2">
             <label for="edit-details" class="form-label">Event Details</label>
             <textarea class="form-control" id="edit-details" placeholder="Enter event details"></textarea>
           </div>
-          <div class="row">
-            <div class="col-md mb-3">
-              <label for="edit-date">Reserve Date</label>
-              <input type="date" class="form-control" id="eedit-date" placeholder="Reservation Date / Event Date" required>
-            </div>
-            <div class="col-md mb-3">
-              <label for="edit-timefrom" class="form-label">Time From</label>
-              <select class="form-select mb-3" id="edit-timefrom">
-                <option selected disabled>- Select Time -</option>
-                <option>8:00 AM</option>
-                <option>9:00 AM</option>
-                <option>10:00 AM</option>
-                <option>11:00 AM</option>
-                <option>1:00 PM</option>
-                <option>2:00 PM</option>
-                <option>3:00 PM</option>
-                <option>4:00 PM</option>
-                <option>5:00 PM</option>
-                <option>6:00 PM</option>
-                <option>7:00 PM</option>
-                <option>8:00 PM</option>
-              </select>
-            </div>
-            <div class="col-md mb-3">
-              <label for="edit-timeto" class="form-label">Time To</label>
-              <select class="form-select mb-3" id="edit-timeto">
-                <option selected disabled>- Select Time -</option>
-                <option>9:00 AM</option>
-                <option>10:00 AM</option>
-                <option>11:00 AM</option>
-                <option>1:00 PM</option>
-                <option>2:00 PM</option>
-                <option>3:00 PM</option>
-                <option>4:00 PM</option>
-                <option>5:00 PM</option>
-                <option>6:00 PM</option>
-                <option>7:00 PM</option>
-                <option>8:00 PM</option>
-                <option>9:00 PM</option>
-              </select>
-            </div>
-            <div class="col-md col-lg-8">
-              <div class="mb-2">
-                <label for="edit-attachments">Edit Attachments</label>
-                <button type="button" class="btn rounded-pill btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#attachment-info"><i class="bx bx-question-mark"></i></button>
-              </div>
-              <div class="input-group mb-2" id="edit-attachments">
-                <input type="file" class="form-control" id="edit-inputGroupFile01">
-                <label class="input-group-text" for="edit-inputGroupFile01">Event Request</label>
-              </div>
-              <div class="input-group mb-2">
-                <input type="file" class="form-control" id="edit-inputGroupFile02">
-                <label class="input-group-text" for="edit-inputGroupFile02">Concept Paper</label>
-              </div>
-              <div class="input-group mb-2">
-                <input type="file" class="form-control" id="edit-inputGroupFile03">
-                <label class="input-group-text" for="edit-inputGroupFile03">Others</label>
-              </div>
-            </div>
-            <div class="text-end">
-              <button type="submit" class="btn btn-primary mt-3">Edit Reservation</button>
-            </div>
+          <div class="mb-3 px-2">
+            <label for="edit-objectives" class="form-label">Objectives</label>
+            <textarea class="form-control" id="edit-objectives" placeholder="Enter event Objectives. Begin every objective with a new line & a hyphen. (e.g. '- To help students learn more about IT.')" rows="4"></textarea>
+          </div>
+          <div class="mb-2 px-2">
+            <label for="edit-pillars">PUP Pillar</label>
+            <select class="form-select fs-6" id="edit-pillars" placeholder="" required>
+              <option selected disabled>- Select a PUP Pillar that is relevant to your event -</option>
+              <option value="Pillar1">Pillar 1: Dynamic, Transformational and Responsible Leadership.</option>
+              <option value="Pillar2">Pillar 2: Responsive and Innovative Curricula and Instruction.</option>
+              <option value="Pillar3">Pillar 3: Enabling and Productive Learning Environment.</option>
+              <option value="Pillar4">Pillar 4: Holistic Student Development and Engagement.</option>
+              <option value="Pillar5">Pillar 5: Empowered Faculty Members and Employees.</option>
+              <option value="Pillar6">Pillar 6: Vigorous Research Production and Utilization.</option>
+              <option value="Pillar7">Pillar 7: Global Academic Standards and Excellence.</option>
+              <option value="Pillar8">Pillar 8: Synergistic, Productive, Strategic Networks and Partnerships.</option>
+              <option value="Pillar9">Pillar 9: Active and Sustained Stakeholders' Engagement</option>
+              <option value="Pillar10">Pillar 10: Sustainable Social Development Programs and Projects.</option>
+            </select>
+          </div>
+          <div class="row pt-2 px-3" id="edit-attachments-row">
+            <label for="edit-attachments">Edit Attachments</label>
+              <input id="edit-attachments" type="file" class="filepond filepond-input-multiple" multiple name="filepond" data-allow-reorder="true" data-max-file-size="3MB" data-max-files="3" />
+          </div>
+          <div class="text-end">
+            <button type="submit" class="btn btn-primary mt-3">Edit Reservation</button>
+          </div>
         </form>
       </div>
     </div>

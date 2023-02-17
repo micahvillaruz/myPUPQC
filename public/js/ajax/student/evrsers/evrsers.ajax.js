@@ -36,6 +36,40 @@ $(function() {
             return true
         },
     })
+
+    const attachmentsFileTypes = [
+        'file/pdf',
+        'file/docx',
+        'application/msword',
+        'application/pdf',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    ]
+
+    pond = FilePond.create(document.querySelector('#edit-attachments'), {
+        instantUpload: false,
+        allowProcess: false,
+        acceptedFileTypes: attachmentsFileTypes,
+        beforeAddFile: (file) => {
+            if (!attachmentsFileTypes.includes(file.fileType)) {
+                Swal.fire({
+                    iconHtml: `<lord-icon src="https://cdn.lordicon.com/nduddlov.json" trigger="loop-on-hover" colors="outline:#f06548,primary:#ffffff,secondary:#f06548" style="width:100px;height:100px"></lord-icon>`,
+                    customClass: {
+                        icon: 'border-white',
+                    },
+                    title: 'Oops...',
+                    text: `Only PDF and Document files are allowed! The one you are uploading is a: ${file.fileType}`,
+                    showCancelButton: !0,
+                    showConfirmButton: !1,
+                    cancelButtonClass: 'btn btn-danger w-xs mb-1',
+                    cancelButtonText: 'Dismiss',
+                    buttonsStyling: !1,
+                    showCloseButton: !0,
+                })
+                return false
+            }
+            return true
+        },
+    })
 })
 
 viewReservationDetails = () => {
@@ -61,8 +95,19 @@ viewReservationDetails = () => {
                 $('#existing_reservation').removeClass('d-none')
                 $('#no_reservation').addClass('d-none')
             }
-            // const venue = userData.facilities_assigned_to_reservation.facility_name
-            // console.log(venue)
+
+            // load details in the editReservationModal
+            $('#reserve_number_edit').val(userData.reservation_number)
+            $('#edit-title').val(userData.event_title)
+            $('#edit-details').val(userData.event_details)
+            $('#edit-objectives').val(userData.pup_objectives)
+
+            // select option in edit-pillars where the innerHTML is equal to userData.pup_pillars
+            $('#edit-pillars option').each(function() {
+                if ($(this).html() == userData.pup_pillars) {
+                    $(this).attr('selected', 'selected')
+                }
+            })
 
             $('#reserve_number').html(userData.reservation_number)
             let organization_name =
@@ -143,9 +188,29 @@ viewReservationDetails = () => {
                         </div>
                     </div>`,
                 )
-            } else if (reservation_status == 'For Evaluation' || 'For Revision') {
+            } else if (reservation_status == 'For Evaluation / Processing') {
+                $('#cancelBtn').addClass('d-none')
+                $('#editBtn').addClass('d-none')
                 $('#reservation-status').html(
                     `<div class="card card-info">
+                        <div class="card-body">
+                            <div class="d-flex position-relative">
+                            <lord-icon
+                                class="lord-icon me-4"
+                                colors="primary:#ffffff"
+                                src="https://cdn.lordicon.com/frjgvxce.json"
+                                trigger="hover"
+                                style="width:50px;height:50px;">
+                            </lord-icon>
+                                <h3 class="card-text fw-medium text-white my-auto" style="font-size:30px;">${reservation_status}</h3>
+                            </div>
+                        </div>
+                    </div>`,
+                )
+            } else if (reservation_status == 'For Revision') {
+                $('#cancelBtn').addClass('d-none')
+                $('#reservation-status').html(
+                    `<div class="card card-danger">
                         <div class="card-body">
                             <div class="d-flex position-relative">
                             <lord-icon
@@ -181,9 +246,147 @@ viewReservationDetails = () => {
 
             const reservation_id = userData.reservation_id
 
+            loadSignatory(reservation_id)
+
             $('#cancelBtn').on('click', function() {
                 cancelReservation(reservation_id)
             })
+
+            // on edit-reservation-form submit
+            $('#edit-reservation-form').on('submit', function(e) {
+                e.preventDefault()
+
+                const title = document.getElementById('edit-title')
+                const event_title = title.value
+                const details = document.getElementById('edit-details')
+                const event_details = details.value
+                const objectives = document.getElementById('edit-objectives')
+                const event_objectives = objectives.value
+                const pillars = document.getElementById('edit-pillars')
+                    // get inner html of the selected option
+                const event_pillars = pillars.options[pillars.selectedIndex].innerHTML
+
+                pondFiles = pond.getFiles()
+
+                const formData = new FormData()
+                formData.append('reservation_id', reservation_id)
+
+                // * Append Event Details
+                formData.append('event_title', event_title)
+                formData.append('event_details', event_details)
+                formData.append('pup_objectives', event_objectives)
+                formData.append('pup_pillars', event_pillars)
+
+                // for files in pondFiles
+                for (let i = 0; i < pondFiles.length; i++) {
+                    formData.append('event_request', pondFiles[0].file)
+                    formData.append('concept_paper', pondFiles[1].file)
+                    formData.append('others', pondFiles[2].file)
+                }
+
+                formData.append('reserve_status', 'For Review')
+
+                updateReservation(reservation_id, formData)
+            })
+        },
+    })
+}
+
+updateReservation = (reservation_id, formData) => {
+    $.ajax({
+        type: 'PUT',
+        cache: false,
+        url: apiURL + `evrsers/student/edit_reservation/${reservation_id}`,
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: (result) => {
+            if (result) {
+                Swal.fire({
+                    html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully edited a reservation!</p></div></div>',
+                    showCancelButton: !0,
+                    showConfirmButton: !1,
+                    cancelButtonClass: 'btn btn-success w-xs mb-1',
+                    cancelButtonText: 'Ok',
+                    buttonsStyling: !1,
+                    showCloseButton: !0,
+                }).then(function() {
+                    window.location.href = `${baseURL}student/evrsers/view-reservation`
+                })
+            }
+        },
+    }).fail((xhr) => {
+        Swal.fire({
+            html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">${
+				JSON.parse(xhr.responseText).message
+			}</p></div></div>`,
+            showCancelButton: !0,
+            showConfirmButton: !1,
+            cancelButtonClass: 'btn btn-danger w-xs mb-1',
+            cancelButtonText: 'Dismiss',
+            buttonsStyling: !1,
+            showCloseButton: !0,
+        })
+    })
+}
+
+// Load signatory in reservation details modal
+loadSignatory = (reservation_id) => {
+    // $('#show-signatories').removeClass('d-none')
+    let signatoriesHTML = ''
+    $.ajax({
+        type: 'GET',
+        cache: false,
+        url: apiURL + `evrsers/student/view_signatories/${reservation_id}`,
+        dataType: 'json',
+        success: (result) => {
+            const userData = result.data
+            signatoriesHTML += `
+            <h6 class="text-medium mb-4 mt-3">EVENT SIGNATORIES</h6>
+            <div class="profile-timeline mb-3 mt-2">
+                    <div class="accordion accordion-flush" id="todayExample">`
+
+            console.log(userData.length)
+                // for each user in userData, append to reservation-signatories
+            userData.forEach((user) => {
+                const user_info = user.user_assigned_to_reservation_signatory.user_profiles[0]
+                    // append in the div with id todayExample
+                signatoriesHTML += `<div class="accordion-item border-0">
+                            <div class="accordion-header" id="heading${user.hierarchy_number}">
+                                <a class="accordion-button ps-3 pt-0 pb-0 shadow-none" data-bs-toggle="collapse" href="#collapse${user.hierarchy_number}" aria-expanded="true">
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0" id="icon-sign-status${user.hierarchy_number}">`
+                if (user.is_signed === false) {
+                    signatoriesHTML += `<i class="h5 ri-checkbox-blank-circle-line text-warning"></i>`
+                } else {
+                    signatoriesHTML += `<i class="h5 ri-checkbox-blank-circle-fill text-success"></i>`
+                }
+                signatoriesHTML += `</div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h6 class="fs-14 mb-1" id="signatory-name">${user_info.full_name}</h6>
+                                                <small class="text-muted">Signatory ${user.hierarchy_number}</small> <br>`
+                if (user.is_onhold === true) {
+                    signatoriesHTML += `<span class="mt-1 badge badge-soft-danger text-uppercase" id="sign-status${user.hierarchy_number}">For Revision</span><br>`
+                } else if (user.is_signed === false) {
+                    signatoriesHTML += `<span class="mt-1 badge badge-soft-info text-uppercase" id="sign-status${user.hierarchy_number}">Evaluating</span>`
+                } else {
+                    signatoriesHTML += `<span class="mt-1 badge badge-soft-success text-uppercase" id="sign-status${user.hierarchy_number}">Approved</span>`
+                }
+
+                signatoriesHTML += ` </div> 
+                </div> 
+                </div> 
+                </a> 
+                </div>`
+                if (user.remarks != null) {
+                    signatoriesHTML += `<hr>
+                    <h6 class="text-medium mb-2 mt-4">SIGNATORY REMARKS</h6>
+                    <p class="text-muted fw-medium">${user.remarks}</p>`
+                }
+            })
+
+            signatoriesHTML += `</div></div>`
+            $('#signatories-container').html(signatoriesHTML)
         },
     })
 }

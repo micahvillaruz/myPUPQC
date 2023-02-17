@@ -57,7 +57,8 @@
                         </div>
                     </div>
                     <div class="col-lg-4 vstack">
-                        <div class="mb-2">
+                        <div class="mb-2" id="button-container">
+                            <button id="editBtn" type="button" class="btn btn-soft-warning float-end text-start fw-medium mt-2 mt-sm-0 w-100 fs-5 mb-3" data-bs-toggle="modal" data-bs-target="#editReservationModal"><i class="ri-edit-2-line me-3 fs-4 align-middle"></i> Edit Reservation</button>
                             <button id="cancelBtn" type="button" class="btn btn-soft-danger float-end text-start fw-medium mt-2 mt-sm-0 w-100 fs-5 mb-3"><i class="mdi mdi-archive-remove-outline me-3 fs-4 align-middle"></i> Cancel Reservation</button>
                         </div>
                         <div class="mb-2">
@@ -77,56 +78,7 @@
                             <h6 class="text-medium mb-3">RESERVATION STATUS</h6>
                             <span id="reservation-status"></span>
                         </div>
-                        <div class="alert alert-info alert-top-border">
-                            <!-- <i class="ri-airplay-line me-3 align-middle fs-16 text-info"></i><strong>Info</strong> - Top border alert -->
-                            <h6 class="text-medium mb-4 mt-2">EVENT SIGNATORIES</h6>
-                            <div class="profile-timeline mb-3">
-                                <div class="accordion accordion-flush" id="todayExample">
-                                    <div class="accordion-item border-0">
-                                        <div class="accordion-header" id="headingOne">
-                                            <a class="accordion-button ps-3 pt-0 pb-0 shadow-none" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="true">
-                                                <div class="d-flex">
-                                                    <div class="flex-shrink-0">
-                                                        <i class="h5 ri-checkbox-blank-circle-fill text-warning"></i>
-                                                    </div>
-                                                    <div class="flex-grow-1 ms-3">
-                                                        <img src="<?= base_url() ?>public/images/officials/img-6.png" alt="" class="avatar-xs rounded-circle shadow" />
-                                                    </div>
-                                                    <div class="flex-grow-1 ms-3">
-                                                        <h6 class="fs-14 mb-1">
-                                                            Cleotilde B. Servigon
-                                                        </h6>
-                                                        <small class="text-muted">Registrar</small> <br>
-                                                        <span class="mt-1 badge badge-soft-success text-uppercase">Approved</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item border-0">
-                                        <div class="accordion-header" id="headingTwo">
-                                            <a class="accordion-button ps-3 pt-4 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true">
-                                                <div class="d-flex">
-                                                    <div class="flex-shrink-0">
-                                                        <i class="h5 ri-checkbox-blank-circle-fill text-warning"></i>
-                                                    </div>
-                                                    <div class="flex-grow-1 ms-3">
-                                                        <img src="<?= base_url() ?>public/images/officials/img-1.png" alt="" class="avatar-xs rounded-circle shadow" />
-                                                    </div>
-                                                    <div class="flex-grow-1 ms-3">
-                                                        <h6 class="fs-14 mb-1">
-                                                            Assoc. Prof. Jaime P. Gutierrez Jr.
-                                                        </h6>
-                                                        <small class="text-muted">Director</small> <br>
-                                                        <span class="mt-1 badge badge-soft-info text-uppercase">Evaluating</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--end accordion-->
-                            </div>
+                        <div class="alert alert-info alert-top-border" id="signatories-container">
                         </div>
                     </div>
                 </div>
