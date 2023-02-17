@@ -1021,7 +1021,7 @@
                             </div><!-- end card body -->
                         </div><!-- end card -->
                         <div class="my-4">
-                            <label for="remarks" class="h5 form-label">Remarks for Informative Copy of Grades</label>
+                            <label for="remarks" class="h5 form-label" id="approve_docname_remarks"></label>
                             <textarea class="form-control mt-2" id="remarks" name="remarks" rows="5" placeholder="If you have additional remarks for the OIC, Student Records regarding this document, feel free to indicate it here. You can also set this document for approval with changes by indicating what needs to be revised in the document."></textarea>
                         </div>
 
@@ -1044,7 +1044,7 @@
                 </lord-icon>
 
                 <div class="mt-2">
-                    <h4 class="mb-3 fw-semibold">Hold Informative Copy of Grades?</h4>
+                    <h4 class="mb-3 fw-semibold" id="onhold_docname_header"></h4>
                     <p class="text-muted mb-4">If yes, input on the remarks the reason for puting this document on hold and the steps the OIC, Student Records must follow for the document's next round of evaluation. Lastly, make sure to click the Hold button. Otherwise, click the Dismiss button.</p>
 
                     <form id="holdRequestForm" class="needs-validation" novalidate>
@@ -1061,12 +1061,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <h6 class="mb-1 fw-semibold">Informative Copy of Grades</h6>
-                                            <p class="text-muted mb-0">Type: Certifications</p>
-                                        </div>
-                                        <div class="flex-shrink-0 align-self-center">
-                                            <span class="badge bg-dark"></i>QTY: 2<span>
+                                        <div class="flex-grow-1 ms-3" id="onhold_doc_info">
                                         </div>
                                     </div>
                                 </label>
@@ -1082,33 +1077,13 @@
                                     </div>
                                 </div>
                                 <div class="p-3">
-                                    <div class="acitivity-timeline acitivity-main">
-                                        <div class="acitivity-item d-flex">
-                                            <div class="flex-shrink-0">
-                                                <img src="<?= base_url() ?>public/images/officials/img-6.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <h6 class="mb-1">Cleotilde B. Servigon</h6>
-                                                <p class="text-muted mb-1">Registrar</p>
-                                                <span class="mb-4 badge badge-soft-info text-uppercase">Ongoing</span>
-                                            </div>
-                                        </div>
-                                        <div class="acitivity-item d-flex">
-                                            <div class="flex-shrink-0">
-                                                <img src="<?= base_url() ?>public/images/officials/img-1.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <h6 class="mb-1">Assoc. Prof. Jaime P. Gutierrez Jr.</h6>
-                                                <p class="text-muted mb-1">Director</p>
-                                                <span class="badge badge-soft-warning text-uppercase">Pending</span>
-                                            </div>
-                                        </div>
+                                    <div class="acitivity-timeline acitivity-main" id="onhold_approval_workflow">
                                     </div>
                                 </div>
                             </div><!-- end card body -->
                         </div><!-- end card -->
                         <div class="my-4" id="showHoldRemarksDoc1">
-                            <label for="remarks" class="h5 form-label">Remarks for Informative Copy of Grades <span class="text-danger">*</span></label>
+                            <label for="remarks" class="h5 form-label" id="onhold_docname_remarks"></label>
                             <textarea class="form-control mt-2" id="remarks" name="remarks" rows="5" placeholder="Enter the reason why you are holding the processing of this document and the instructions that the OIC, Student Records must comply with for the smooth facilitation of request. Be sure to indicate revisions that must be done in the document." required></textarea>
                             <div class="invalid-feedback">
                                 Please indicate your reason for holding this document.
