@@ -488,7 +488,7 @@ loadOnHoldRequests = () => {
 
 						documentsAction.forEach((document) => {
 							actionButton += `
-								<button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#revertModal" onclick="addId('${document.signatory_for_document.document_id}', 'revert_document')">
+								<button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#revertModal" onclick="viewRevertRequestModal('${data.request_id}','${document.signatory_for_document.document_id}')">
 									<i class="ri-arrow-go-back-fill fs-5"></i>
 								</button>
 							`
@@ -599,6 +599,68 @@ function viewOnHoldRequestModal(request_id, document_id) {
 			$('#onhold_docname_remarks').html(
 				`Remarks for ${data[0].signatory_for_document.document_name} <span class="text-danger">*</span>`,
 			)
+		},
+	})
+}
+
+// View Revert Request Modal
+function viewRevertRequestModal(request_id, document_id) {
+	$.ajax({
+		url: `${apiURL}odrs/pup_staff/view_request_signatory/${request_id}/${document_id}`,
+		type: 'GET',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+		success: (response) => {
+			const data = response.data
+
+			$('#revert_doc_info').html(`
+								<h6 class="mb-1 fw-semibold">${data[0].signatory_for_document.document_name}</h6>
+								<p class="text-muted mb-0">Type: ${data[0].signatory_for_document.document_type}</p>
+								`)
+			$('#revert_approval_workflow').html('')
+
+			$('#revert_remarks_modal').html('')
+			data.forEach((signatory, i) => {
+				$('#revert_approval_workflow').append(`
+					<div class="acitivity-item d-flex">
+					<div class="flex-shrink-0">
+							<img src="${baseURL}public/images/profile/flat-faces-icons-circle-man-6.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+					</div>
+					<div class="flex-grow-1 ms-3" id="revert_signatory_status_${i}">
+							<h6 class="mb-1">${signatory.signatory_for_user.user_profiles[0].full_name}</h6>
+					</div>
+					</div>
+					`)
+				if (!signatory.is_signed && !signatory.is_onhold) {
+					$(`#revert_signatory_status_${i}`).append(`
+						<span class="mb-4 badge badge-soft-warning text-uppercase">Pending</span>
+						`)
+				} else if (signatory.is_signed) {
+					$(`#revert_signatory_status_${i}`).append(`
+						<span class="mb-4 badge badge-soft-success text-uppercase">Approved</span>
+						`)
+				} else if (signatory.is_onhold) {
+					$(`#revert_signatory_status_${i}`).append(`
+						<span class="mb-4 badge badge-soft-danger text-uppercase">On Hold</span>
+						`)
+				}
+
+				if (signatory.remarks != null) {
+					$('#revert_remarks_modal').append(`
+												<div class="mb-3 list-group-item list-group-item-action list-group-item-danger">
+                            <div class="d-flex mb-2 align-items-center">
+                                <div class="flex-shrink-0">
+                                    <img src="${baseURL}public/images/profile/flat-faces-icons-circle-man-6.png" alt="" class="avatar-xs rounded-circle" />
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="list-title mb-1">${signatory.signatory_for_user.user_profiles[0].full_name}</h6>
+                                </div>
+                            </div>
+                            <p>${signatory.remarks}</p>
+                        </div>
+					`)
+				}
+			})
 		},
 	})
 }

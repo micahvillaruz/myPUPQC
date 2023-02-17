@@ -1113,8 +1113,8 @@
 
                     <div class="vstack gap-2 mt-4 mb-4">
                         <div class="form-check card-checkbox shadow">
-                            <input id="approveDocument" name="approveDocument" class="form-check-input">
-                            <label class="form-check-label" for="approveDocument" style="background-color: #fff5da">
+                            <input id="revertDocument" name="revertDocument" class="form-check-input">
+                            <label class="form-check-label" for="revertDocument" style="background-color: #fff5da">
                                 <div class="d-flex align-items-center">
                                     <div class="flex-shrink-0">
                                         <div class="avatar-xs">
@@ -1123,12 +1123,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="flex-grow-1 ms-3">
-                                        <h6 class="mb-1 fw-semibold">Certificate of Good Moral Character</h6>
-                                        <p class="text-muted mb-0">Type: Certifications</p>
-                                    </div>
-                                    <div class="flex-shrink-0 align-self-center">
-                                        <span class="badge bg-dark"></i>QTY: 1<span>
+                                    <div class="flex-grow-1 ms-3" id="revert_doc_info">
                                     </div>
                                 </div>
                             </label>
@@ -1144,64 +1139,14 @@
                                 </div>
                             </div>
                             <div class="p-3">
-                                <div class="acitivity-timeline acitivity-main">
-                                    <div class="acitivity-item d-flex">
-                                        <div class="flex-shrink-0">
-                                            <img src="<?= base_url() ?>public/images/officials/img-2.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
-                                        </div>
-                                        <div class="flex-grow-1 ms-3 mb-4">
-                                            <h6 class="mb-1">Demelyn E. Monzon</h6>
-                                            <p class="text-muted mb-1">Head, Academic Programs</p>
-                                            <span class="badge badge-soft-success text-uppercase">Approved</span><br>
-                                            <div class="d-flex align-items-center text-muted mt-1 gap-2">
-                                                <i class="ri-calendar-todo-fill text-primary"></i>
-                                                <small> 29 Nov. 2022, 07:45 AM</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="acitivity-item d-flex">
-                                        <div class="flex-shrink-0">
-                                            <img src="<?= base_url() ?>public/images/officials/img-6.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
-                                        </div>
-                                        <div class="flex-grow-1 ms-3 mb-4">
-                                            <h6 class="mb-1">Cleotilde B. Servigon</h6>
-                                            <p class="text-muted mb-1">Registrar</p>
-                                            <span class="badge badge-soft-danger text-uppercase">On Hold</span><br>
-                                            <div class="d-flex align-items-center text-muted mt-1 gap-2">
-                                                <i class="ri-calendar-todo-fill text-primary"></i>
-                                                <small> 29 Nov. 2022, 02:00 PM</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="acitivity-item d-flex">
-                                        <div class="flex-shrink-0">
-                                            <img src="<?= base_url() ?>public/images/officials/img-1.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <h6 class="mb-1">Assoc. Prof. Jaime P. Gutierrez Jr.</h6>
-                                            <p class="text-muted mb-1">Director</p>
-                                            <span class="badge badge-soft-warning text-uppercase">Pending</span>
-                                        </div>
-                                    </div>
+                                <div class="acitivity-timeline acitivity-main" id="revert_approval_workflow">
                                 </div>
                             </div>
                         </div><!-- end card body -->
                     </div><!-- end card -->
 
                     <h6 class="mt-4 mb-3 text-start text-primary">Remarks</h6>
-                    <div class="list-group text-start">
-                        <div class="list-group-item list-group-item-action list-group-item-danger">
-                            <div class="d-flex mb-2 align-items-center">
-                                <div class="flex-shrink-0">
-                                    <img src="<?= base_url() ?>public/images/officials/img-6.png" alt="" class="avatar-xs rounded-circle" />
-                                </div>
-                                <div class="flex-grow-1 ms-3">
-                                    <h6 class="list-title mb-1">Cleotilde B. Servigon</h6>
-                                    <p class="list-text mb-0 fs-12">Registrar</p>
-                                </div>
-                            </div>
-                            <p>Good Day! Please be advised that the the Informative Copy of Grades must be printed in a long bond paper with documentary stamp and school dry seal before handing it for signature. Kindly comply with this requirements so that the processing of the document/s will be started right away.</p>
-                        </div>
+                    <div class="list-group text-start" id="revert_remarks_modal">
                     </div>
 
                     <form id="revertRequestForm" class="needs-validation" novalidate>
