@@ -22,6 +22,13 @@ $(function () {
 
 		onHoldRequest(request_signatory_id)
 	})
+
+	$('#revertRequestForm').on('submit', function (e) {
+		e.preventDefault() // prevent page refresh
+		const request_signatory_id = $('#revert_request_signatory_id').val()
+
+		revertRequest(request_signatory_id)
+	})
 })
 
 // Load Requests for Approval Table
@@ -502,7 +509,7 @@ loadOnHoldRequests = () => {
 
 						documentsAction.forEach((document) => {
 							actionButton += `
-								<button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#revertModal" onclick="viewRevertRequestModal('${data.request_id}','${document.signatory_for_document.document_id}')">
+								<button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#revertModal" onclick="viewRevertRequestModal('${data.request_id}','${document.signatory_for_document.document_id}', '${document.request_signatory_id}')">
 									<i class="ri-arrow-go-back-fill fs-5"></i>
 								</button>
 							`
@@ -606,6 +613,56 @@ onHoldRequest = (request_signatory_id) => {
 				}).then(function () {
 					$('#onHoldRequestModal').modal('hide')
 					$('form#holdRequestForm')[0].reset()
+
+					// Reload Datatable
+					loadForApprovalRequests()
+					loadApprovedRequests()
+					loadOnHoldRequests()
+				})
+			}
+		},
+	}).fail((xhr) => {
+		Swal.fire({
+			html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">${
+				JSON.parse(xhr.responseText).message
+			}</p></div></div>`,
+			showCancelButton: !0,
+			showConfirmButton: !1,
+			cancelButtonClass: 'btn btn-danger w-xs mb-1',
+			cancelButtonText: 'Dismiss',
+			buttonsStyling: !1,
+			showCloseButton: !0,
+		})
+	})
+}
+
+// Revert On Hold Request
+revertRequest = (request_signatory_id) => {
+	$.ajax({
+		url: `${apiURL}odrs/pup_staff/revert_onhold/${request_signatory_id}`,
+		type: 'PUT',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+		success: (response) => {
+			if (response) {
+				Swal.fire({
+					html:
+						'<div class="mt-3">' +
+						'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
+						'<div class="mt-4 pt-2 fs-15">' +
+						'<h4>Well done!</h4>' +
+						'<p class="text-muted mx-4 mb-0">You have successfully revert this onhold document!</p>' +
+						'</div>' +
+						'</div>',
+					showCancelButton: !0,
+					showConfirmButton: !1,
+					cancelButtonClass: 'btn btn-success w-xs mb-1',
+					cancelButtonText: 'Ok',
+					buttonsStyling: !1,
+					showCloseButton: !0,
+				}).then(function () {
+					$('#revertModal').modal('hide')
+					$('form#revertRequestForm')[0].reset()
 
 					// Reload Datatable
 					loadForApprovalRequests()
@@ -733,7 +790,9 @@ function viewOnHoldRequestModal(request_id, document_id, request_signatory_id) {
 }
 
 // View Revert Request Modal
-function viewRevertRequestModal(request_id, document_id) {
+function viewRevertRequestModal(request_id, document_id, request_signatory_id) {
+	$('#revert_request_signatory_id').val(request_signatory_id)
+
 	$.ajax({
 		url: `${apiURL}odrs/pup_staff/view_request_signatory/${request_id}/${document_id}`,
 		type: 'GET',

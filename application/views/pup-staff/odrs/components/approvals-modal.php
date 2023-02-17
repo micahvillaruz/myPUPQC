@@ -679,7 +679,7 @@
                     </div>
 
                     <form id="revertRequestForm" class="needs-validation" novalidate>
-                        <input type="hidden" id="revert_request_id">
+                        <input type="hidden" id="revert_request_signatory_id">
                         <div class="mt-4 form-check form-check-success mb-3">
                             <input class="form-check-input" type="checkbox" id="validateRevert" required>
                             <label class="form-check-label" for="validateRevert">
