@@ -77,6 +77,14 @@
                 </div>
               </div>
 
+              <div class="row" id="show-signatories">
+                <div class="col-lg">
+                  <h6 class="text-medium mb-3">SIGNATORIES</h6>
+                    <div class="alert alert-info alert-top-border" id="signatories-container">
+                    </div>
+                </div>
+              </div>
+
               <div class="row">
                 <div class="col-lg">
                   <h6 class="text-medium mb-3">RESERVATION STATUS</h6>
