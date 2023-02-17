@@ -233,7 +233,7 @@
                                 <span class="fw-bold fs-15">Comparison of All Systems</span>
                             </div>
                             <div class="card-body d-flex align-items-center justify-content-center">
-                                <div id="finalChart" style="width: 500px; height: 500px;"></div>
+                                <div id="finalChart" style="width: 1500px; height: 500px;"></div>
                             </div>
                         </div>
                     </div>
