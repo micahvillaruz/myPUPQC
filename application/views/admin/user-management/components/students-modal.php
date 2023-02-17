@@ -341,8 +341,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
             </div>
             <div class="modal-body">
-                <form id="addEvaluationForm" class="needs-validation" novalidate>
-                    <input type="hidden" id="add_health_appointment_id" />
+                <form id="updateEducationProfileForm" class="needs-validation" novalidate>
+                    <input type="hidden" id="hidden_user_id" />
                     <p class="fs-5">Education Profile is the current scholastic performance of the student. Edit/Update this only if the student has changed their status in SIS.</p>
                     <table class="table mb-0">
                         <tbody>
@@ -351,8 +351,7 @@
                                 <td>
                                     <select class="form-select mb-3" id="user_course" name="user_course" required>
                                         <option selected>User Course</option>
-                                        <option value="Bachelor of Public Administration Major in Public Financial Management">Bachelor of Public Administration Major in Public Financial Management</option>
-                                        <option value="Diploma in Office Management Technology">[DOMT] Diploma in Office Management Technology</option>
+                                        <option value="Bachelor of Public Administration Major in Public Financial Management Diploma in Office Management Technology">[DOMT] Diploma in Office Management Technology</option>
                                         <option value="Bachelor of Science in Business Administration Major in Entrepreneurship">[ENTREP] Bachelor of Science in Business Administration Major in Entrepreneurship</option>
                                         <option value="Bachelor of Science in Business Administration Major in Human Resource Development Management">[HRDM] Bachelor of Science in Business Administration Major in Human Resource Development Management</option>
                                         <option value="Bachelor of Science in Business Administration Major in Marketing Management">[MM] Bachelor of Science in Business Administration Major in Marketing Management</option>
@@ -401,25 +400,25 @@
                             <tr>
                                 <td class="align-middle fw-medium"><label for="reasonInput" class="form-label"> High School Graduated <span class="text-danger">*</span></label></td>
                                 <td>
-                                    <input type="text" class="form-control" id="high_school_gruaduated" name="high_school_gruaduated" placeholder="Enter High School" required>
+                                    <input type="text" class="form-control" id="high_school_graduated" name="high_school_graduated" placeholder="Enter High School" required>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="align-middle fw-medium"><label for="reasonInput" class="form-label"> High School Graduated Year <span class="text-danger">*</span></label></td>
                                 <td>
-                                    <input type="text" class="form-control" id="high_school_gruaduated_year" name="high_school_gruaduated_year" placeholder="Enter High School Graduated Year" required>
+                                    <input type="text" class="form-control" id="high_school_graduated_year" name="high_school_graduated_year" placeholder="Enter High School Graduated Year" required>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="align-middle fw-medium"><label for="reasonInput" class="form-label"> Elementary Graduated <span class="text-danger">*</span></label></td>
                                 <td>
-                                    <input type="text" class="form-control" id="elementary_gruaduated" name="elementary_gruaduated" placeholder="Enter Elementary" required>
+                                    <input type="text" class="form-control" id="elementary_graduated" name="elementary_graduated" placeholder="Enter Elementary" required>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="align-middle fw-medium"><label for="reasonInput" class="form-label"> Elementary Graduated Year <span class="text-danger">*</span></label></td>
                                 <td>
-                                    <input type="text" class="form-control" id="elementary_gruaduated_year" name="elementary_gruaduated_year" placeholder="Enter Elementary Graduated Year" required>
+                                    <input type="text" class="form-control" id="elementary_graduated_year" name="elementary_graduated_year" placeholder="Enter Elementary Graduated Year" required>
                                 </td>
                             </tr>
                         </tbody>
