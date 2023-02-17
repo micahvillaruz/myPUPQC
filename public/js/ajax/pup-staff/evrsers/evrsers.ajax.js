@@ -24,29 +24,26 @@ viewDetailsReservationStaff = (reservation_id) => {
         success: (result) => {
             console.log(result)
             const userData = result.data
-                // const venue = userData.facilities_assigned_to_reservation.facility_name
-                // console.log(venue)
+
+            const signatories = userData.reservation_signatories
+            console.log(signatories)
 
             $('#reserve_number').html(userData.reservation_number)
 
             let organization_name = userData.organization_assigned_to_reservations.display_name
-            console.log(organization_name)
             let acadorg = ['CHRS', 'COMMITS', 'DOMT.CS', 'FBTO', 'JMS', 'SPAS', 'YES']
             let nonacadorg = ['KATAGA', 'MUSA', 'PSC', 'Vox Nova', 'Other']
             let studgov = ['SSC', 'COL']
 
             if (acadorg.includes(organization_name)) {
-                console.log('True')
                 $('#organization').html(
                     `<span class="fs-4 badge badge-outline-info fw-bold mb-0">${organization_name}</span>`,
                 )
             } else if (nonacadorg.includes(organization_name)) {
-                console.log('True')
                 $('#organization').html(
                     `<h5 class="fs-4 badge badge-outline-danger fw-bold mb-0">${organization_name}</h5>`,
                 )
             } else if (studgov.includes(organization_name)) {
-                console.log('True')
                 $('#organization').html(
                     `<h5 class="fs-4 badge badge-outline-dark fw-bold mb-0">${organization_name}</h5>`,
                 )
@@ -164,6 +161,8 @@ viewDetailsReservationStaff = (reservation_id) => {
             }
             const reservation_id = userData.reservation_id
 
+
+
             $('#cancelBtn').on('click', function() {
                 console.log(reservation_id)
                 cancelReservation(reservation_id)
@@ -259,7 +258,7 @@ viewAllPendingReservation = () => {
                         return `
                             <div class="dropdown d-inline-block mt-2">
                                 <button type="button" class="btn btn-info btn-icon waves-effect waves-light mb-2" data-bs-toggle="modal" data-bs-target="#viewReservationModal" onclick="viewDetailsReservationStaff('${data.reservation_id}')"><i class=" ri-eye-fill fs-6 align-middle"></i></button>
-                                <button type="button" class="btn btn-success waves-effect waves-light mb-2" data-bs-toggle="modal" data-bs-target="#addSignModal" onclick="fetchAllStaff('${data.reservation_id}'); loadSignatories('${data.reservation_id}')"><i class=" ri-quill-pen-fill fs-6 me-2 align-middle"></i>Add Signatories</button>
+                                <button type="button" class="btn btn-success waves-effect waves-light mb-2" data-bs-toggle="modal" data-bs-target="#addSignModal" onclick="fetchAllStaff('${data.reservation_id}')"><i class=" ri-quill-pen-fill fs-6 me-2 align-middle"></i>Add Signatories</button>
                             </div>
                                 `
                     },
@@ -464,6 +463,7 @@ viewAllApprovedReservation = () => {
     }
 }
 
+// Cancel the reservation
 cancelReservation = (reservation_id) => {
     console.log('Reservation ID:', reservation_id)
     $('#viewReservationModal').modal('hide')
@@ -601,11 +601,12 @@ fetchAllStaff = (reservation_id) => {
                     count--
                 }
 
-                // Do code once showConfirmButton is clicked
-                $('#ConfirmButton').on('click', function(e) {
-                    e.preventDefault()
-                    addSignatory(signatoryList, reservation_id)
-                })
+            })
+
+            // Do code once showConfirmButton is clicked
+            $('#confirmSignatory').on('click', function(e) {
+                e.preventDefault()
+                addSignatory(signatoryList, reservation_id)
             })
         },
     })
@@ -662,11 +663,4 @@ addSignatory = (signatoryList, reservation_id) => {
             })
         }
     })
-
-}
-
-// Load signatories through function
-loadSignatories = (reservation_id) => {
-    console.log('Reservation ID:', reservation_id)
-        // Check if reservation_id has reservation_signatories
 }
