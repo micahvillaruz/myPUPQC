@@ -45,7 +45,7 @@
                     </div>
                     <div class="flex-grow-1 ms-3">
                         <p class="text-uppercase fw-medium text-muted mb-3"><i class="las la-clipboard-list"></i>Medical</p>
-                        <h4 class="fs-4 mb-3"><span class="counter-value" id="appointment_history_pending_medical" data-target="7522">0</span></h4>
+                        <h4 class="fs-4 mb-3"><span class="counter-value" id="appointment_history_pending_medical"></span></h4>
                         <p class="text-muted mb-0">Pending Number of Appointments</p>
                     </div>
                     <div class="flex-shrink-0 align-self-center">
@@ -77,7 +77,7 @@
                     </div>
                     <div class="flex-grow-1 ms-3">
                         <p class="text-uppercase fw-medium text-muted mb-3"><i class="las la-tooth"></i>Dental</p>
-                        <h4 class="fs-4 mb-3"><span class="counter-value" id="appointment_history_pending_dental" data-target="2045">0</span></h4>
+                        <h4 class="fs-4 mb-3"><span class="counter-value" id="appointment_history_pending_dental"></span></h4>
                         <p class="text-muted mb-0">Pending Number of Appointments</p>
                     </div>
                     <div class="flex-shrink-0 align-self-center">
@@ -109,7 +109,7 @@
                     </div>
                     <div class="flex-grow-1 ms-3">
                         <p class="text-uppercase fw-medium text-muted mb-3"><i class="mdi mdi-brain me-1"></i>Guidance</p>
-                        <h4 class="fs-4 mb-3"><span class="counter-value" id="appointment_history_pending_guidance" data-target="2045">0</span></h4>
+                        <h4 class="fs-4 mb-3"><span class="counter-value" id="appointment_history_pending_guidance"></span></h4>
                         <p class="text-muted mb-0">Pending Number of Appointments</p>
                     </div>
                     <div class="flex-shrink-0 align-self-center">
@@ -141,7 +141,7 @@
                     </div>
                     <div class="flex-grow-1 ms-3">
                         <p class="text-uppercase fw-medium text-muted mb-3"><i class="las la-clipboard-list"></i>Medical</p>
-                        <h4 class="fs-4 mb-3"><span class="counter-value" id="appointment_history_done_medical" data-target="2045">0</span></h4>
+                        <h4 class="fs-4 mb-3"><span class="counter-value" id="appointment_history_done_medical"></span></h4>
                         <p class="text-muted mb-0">2024 Done Appoinments</p>
                     </div>
                     <div class="flex-shrink-0 align-self-center">
@@ -174,7 +174,7 @@
                     </div>
                     <div class="flex-grow-1 ms-3">
                         <p class="text-uppercase fw-medium text-muted mb-3"><i class="las la-tooth"></i>Dental</p>
-                        <h4 class="fs-4 mb-3"><span class="counter-value" id="appointment_history_done_dental" data-target="2045">0</span></h4>
+                        <h4 class="fs-4 mb-3"><span class="counter-value" id="appointment_history_done_dental"></span></h4>
                         <p class="text-muted mb-0">2024 Done Appoinments</p>
                     </div>
                     <div class="flex-shrink-0 align-self-center">
@@ -207,7 +207,7 @@
                     </div>
                     <div class="flex-grow-1 ms-3">
                         <p class="text-uppercase fw-medium text-muted mb-3"><i class="mdi mdi-brain me-1"></i>Guidance</p>
-                        <h4 class="fs-4 mb-3"><span class="counter-value" id="appointment_history_done_guidance" data-target="405">0</span></h4>
+                        <h4 class="fs-4 mb-3"><span class="counter-value" id="appointment_history_done_guidance"></span></h4>
                         <p class="text-muted mb-0">2024 Done Appoinments</p>
                     </div>
                     <div class="flex-shrink-0 align-self-center">

@@ -94,12 +94,13 @@ getConsultationStatusCount = () => {
 		type: 'GET',
 		headers: AJAX_HEADERS,
 		success: function (data) {
+			let dataForChart = data.data
 			// process the data and update the chart
 			var chartData = {
-				labels: Object.keys(data.consultation_status_count), // extract the keys (i.e. "Done", "Cancelled by Staff", etc.)
+				labels: Object.keys(dataForChart), // extract the keys (i.e. "Done", "Cancelled by Staff", etc.)
 				datasets: [
 					{
-						data: Object.values(data.consultation_status_count), // extract the values (i.e. 1, 1, 1, etc.)
+						data: Object.values(dataForChart), // extract the values (i.e. 1, 1, 1, etc.)
 						backgroundColor: ['#9ACD32', '#6495ED', '#87ceeb', '#ffd700', '#FFB347', '#FF6961'], // use the colors specified in the canvas element's data-colors attribute
 					},
 				],
@@ -125,10 +126,10 @@ getConsultationTypeCount = () => {
 		success: function (data) {
 			// process the data and update the chart
 			var chartData = {
-				labels: Object.keys(data.consultation_type_count), // extract the keys (i.e. "Done", "Cancelled by Staff", etc.)
+				labels: Object.keys(data.data), // extract the keys (i.e. "Done", "Cancelled by Staff", etc.)
 				datasets: [
 					{
-						data: Object.values(data.consultation_type_count), // extract the values (i.e. 1, 1, 1, etc.)
+						data: Object.values(data.data), // extract the values (i.e. 1, 1, 1, etc.)
 						backgroundColor: ['#87CEEB', '#FFB6C1'], // use the colors specified in the canvas element's data-colors attribute
 					},
 				],
@@ -150,22 +151,19 @@ getPendingAppointmentHistory = () => {
 		url: apiURL + `omsss/super_admin/analytics/view_pending_appointment`,
 		type: 'GET',
 		headers: AJAX_HEADERS,
-		success: function (data) {
-			console.log(data)
+		success: function (result) {
+			if (result) {
+				// Get data from result
+				const data = result.data.appointment_pending_count
+				$('#appointment_history_pending_medical').html(data.Medical)
+				$('#appointment_history_pending_dental').html(data.Dental)
+				$('#appointment_history_pending_guidance').html(data.Guidance)
+			}
 		},
 		error: function (xhr, status, error) {
-			console.log(error)
+			console.log(xhr)
 		},
 	})
-
-	// if (result) {
-	//     // Get data from result
-	//     const data = result.appointment_pending_count
-	//     console.log(data)
-	//     $('#appointment_history_pending_medical').attr('data-target', data.Medical)
-	//     $('#appointment_history_pending_dental').attr('data-target', data.Dental)
-	//     $('#appointment_history_pending_guidance').attr('data-target', data.Guidance)
-	// }
 }
 
 getDoneAppointmentHistory = () => {
@@ -175,12 +173,10 @@ getDoneAppointmentHistory = () => {
 		headers: AJAX_HEADERS,
 		success: (result) => {
 			if (result) {
-				// Get data from result
-				const data = result.appointment_done_count
-				console.log(data)
-				$('#appointment_history_done_medical').attr('data-target', data.Medical)
-				$('#appointment_history_done_dental').attr('data-target', data.Dental)
-				$('#appointment_history_done_guidance').attr('data-target', data.Guidance)
+				const data = result.data.appointment_done_count
+				$('#appointment_history_done_medical').html(data.Medical)
+				$('#appointment_history_done_dental').html(data.Dental)
+				$('#appointment_history_done_guidance').html(data.Guidance)
 			}
 		},
 	}).fail(() => console.error('There was an error in retrieving appointment history request data'))
