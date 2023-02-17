@@ -1,3 +1,7 @@
+<div id="has_signatory_requests" class="row d-none">
+
+</div>
+
 <div id="has_no_signatory_requests" class="row my-5 py-5">
     <div class="py-5 col-12 d-flex justify-content-center align-items-center text-center flex-column gap-2">
         <lord-icon src="https://cdn.lordicon.com/kdookkse.json" trigger="loop-on-hover" style="width:180px;height:180px"></lord-icon>
