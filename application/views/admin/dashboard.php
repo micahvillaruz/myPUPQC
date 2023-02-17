@@ -188,9 +188,9 @@
                         </div>
                     </div>
                 </div>
-                <!-- Analytics for 3 Years: Appointment (OMSSS) -->
+                <!-- Analytics for 3 Years: Appointment (OMSSS)/Request (ODRTS)/Reservation (EVRSERS) -->
                 <div class="row">
-                    <div class="col-xl-12">
+                    <div class="col-xl-4">
                         <div class="card card-animate">
                             <div class="card-header alert alert-info border-0 rounded-top rounded-0 d-flex align-items-center" role="alert">
                                 <i class="ri-line-chart-line text-info me-2 fs-20 fw-bold"></i>
@@ -201,10 +201,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- Analytics for 3 Years: Request (ODRTS) -->
-                <div class=" row">
-                    <div class="col-xl-12">
+                    <div class="col-xl-4">
                         <div class="card card-animate">
                             <div class="card-header alert alert-info border-0 rounded-top rounded-0 d-flex align-items-center" role="alert">
                                 <i class="ri-line-chart-line text-info me-2 fs-20 fw-bold"></i>
@@ -215,10 +212,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- Analytics for 3 Years: Reservation (EVRSERS) -->
-                <div class="row">
-                    <div class="col-xl-12">
+                    <div class="col-xl-4">
                         <div class="card card-animate">
                             <div class="card-header alert alert-info border-0 rounded-top rounded-0 d-flex align-items-center" role="alert">
                                 <i class="ri-line-chart-line text-info me-2 fs-20 fw-bold"></i>
@@ -226,6 +220,20 @@
                             </div>
                             <div class="card-body d-flex align-items-center justify-content-center">
                                 <div id="chartReservation" style="width: 500px; height: 500px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Analytics Comparion: All Systtms -->
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card card-animate">
+                            <div class="card-header alert alert-info border-0 rounded-top rounded-0 d-flex align-items-center" role="alert">
+                                <i class="ri-line-chart-line text-info me-2 fs-20 fw-bold"></i>
+                                <span class="fw-bold fs-15">Comparison of All Systems</span>
+                            </div>
+                            <div class="card-body d-flex align-items-center justify-content-center">
+                                <div id="finalChart" style="width: 500px; height: 500px;"></div>
                             </div>
                         </div>
                     </div>

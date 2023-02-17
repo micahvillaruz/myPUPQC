@@ -63,6 +63,7 @@ charts = () => {
 	chartAppointment()
 	chartRequest()
 	chartReservation()
+	finalChart()
 }
 
 chartOne = () => {
@@ -702,5 +703,98 @@ chartReservation = () => {
 
 		// Set options to chart
 		chartReservation.setOption(option)
+	})
+}
+
+finalChart = () => {
+	var finalChart = echarts.init(document.getElementById('finalChart'))
+
+	$.ajax({
+		type: 'GET',
+		cache: false,
+		url: apiURL + 'super_admin/analytics/three_year_all_system_count',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+	}).then((result) => {
+		const data = result.data
+
+		// Get the unique years from the data
+		const years = Array.from(
+			new Set(
+				Object.keys(data.health_appointment_count)
+					.concat(Object.keys(data.request_count))
+					.concat(Object.keys(data.reservation_count)),
+			),
+		)
+
+		// Sort the years in ascending order
+		years.sort()
+
+		// Get the counts for each year for each type
+		const healthAppointmentCounts = years.map((year) => data.health_appointment_count[year] || 0)
+		const requestCounts = years.map((year) => data.request_count[year] || 0)
+		const reservationCounts = years.map((year) => data.reservation_count[year] || 0)
+
+		// Create options object for chart
+		const option = {
+			title: {
+				text: 'System Count Comparison by Year',
+				left: 'center',
+			},
+			toolbox: {
+				show: true,
+				feature: {
+					saveAsImage: {
+						show: true,
+						title: 'Save as Image',
+						name: `(myPUPQC) chart`,
+					},
+				},
+			},
+			tooltip: {
+				trigger: 'axis',
+				axisPointer: {
+					type: 'shadow',
+				},
+				formatter: '{b}<br/>{a0}: {c0}<br/>{a1}: {c1}<br/>{a2}: {c2}',
+			},
+			legend: {
+				data: ['Health Appointment', 'Request', 'Reservation'],
+				orient: 'vertical',
+				left: 'left',
+				scroll: true,
+			},
+			xAxis: {
+				type: 'category',
+				data: years,
+				axisLabel: {
+					interval: 0,
+					rotate: 45,
+				},
+			},
+			yAxis: {
+				type: 'value',
+			},
+			series: [
+				{
+					name: 'Health Appointment',
+					type: 'bar',
+					data: healthAppointmentCounts,
+				},
+				{
+					name: 'Request',
+					type: 'bar',
+					data: requestCounts,
+				},
+				{
+					name: 'Reservation',
+					type: 'bar',
+					data: reservationCounts,
+				},
+			],
+		}
+
+		// Set options to chart
+		finalChart.setOption(option)
 	})
 }
