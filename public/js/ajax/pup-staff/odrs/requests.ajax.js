@@ -1284,10 +1284,11 @@ viewTraceRequestApproval = (request_id) => {
 				})
 			})
 			$('#trace_request_approval').append(
-				`<h6 class="mt-4 mb-3 text-start text-primary">Remarks</h6>`,
+				`<h6 class="mt-4 mb-3 text-start text-primary d-none" id="trace_request_remarks">Remarks</h6>`,
 			)
 			data.signatories_assigned_to_request.forEach((signatory) => {
 				if (signatory.remarks !== null) {
+					$('#trace_request_remarks').removeClass('d-none')
 					$('#trace_request_approval').append(`
 						<div class="list-group text-start">
               <div class="list-group-item list-group-item-action list-group-item-danger">

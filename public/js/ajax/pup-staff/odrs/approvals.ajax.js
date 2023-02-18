@@ -871,6 +871,8 @@ viewforApprovalRequest = (request_id) => {
 
 			$('#purpose').html(data.purpose_of_request)
 
+			$('#remarks_text').addClass('d-none')
+
 			const documents = data.documents_assigned_to_request
 			let signatoryWorkflow = ''
 			for (const document of documents) {
@@ -1089,6 +1091,7 @@ viewforApprovalRequest = (request_id) => {
 			let remarks = ''
 			for (const signatory of data.signatories_assigned_to_request) {
 				if (signatory.remarks !== null) {
+					$('#remarks_text').removeClass('d-none')
 					remarks += `
 					<div class="d-block mb-3 list-group text-start">
 						<div class="list-group-item list-group-item-action list-group-item-info">

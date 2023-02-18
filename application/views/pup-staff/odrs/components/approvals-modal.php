@@ -199,7 +199,7 @@
                         </div>
                     </li>
                 </ul>
-                <h6 class="mt-4 mb-3 text-start text-primary">Remarks</h6>
+                <h6 class="mt-4 mb-3 text-start text-primary d-none" id="remarks_text">Remarks</h6>
                 <div id="remarks"></div>
             </div>
             <div class="modal-footer">
