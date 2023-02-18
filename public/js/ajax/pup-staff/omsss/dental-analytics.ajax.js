@@ -11,6 +11,20 @@ loadDentalDoneTable = () => {
 
 	if (dt.length) {
 		dt.DataTable({
+			dom:
+				"<'row'<'col-xl-12 mb-2'B>>" +
+				"<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+				"<'row'<'col-sm-12'tr>>" +
+				"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+			buttons: [
+				{
+					extend: 'print',
+					text: '<i class="ri-printer-fill"></i> Print',
+					exportOptions: {
+						columns: [0, 1, 2, 3],
+					},
+				},
+			],
 			bDestroy: true,
 			ajax: {
 				url: apiURL + 'omsss/pup_staff/view_appointment_analytics/Dental',
@@ -85,6 +99,20 @@ loadDentalCancelledStaffTable = () => {
 
 	if (dt.length) {
 		dt.DataTable({
+			dom:
+				"<'row'<'col-xl-12 mb-2'B>>" +
+				"<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+				"<'row'<'col-sm-12'tr>>" +
+				"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+			buttons: [
+				{
+					extend: 'print',
+					text: '<i class="ri-printer-fill"></i> Print',
+					exportOptions: {
+						columns: [0, 1, 2, 3],
+					},
+				},
+			],
 			bDestroy: true,
 			ajax: {
 				url: apiURL + 'omsss/pup_staff/view_appointment_analytics/Dental',
@@ -159,6 +187,20 @@ loadMedicalCancelledStudentTable = () => {
 
 	if (dt.length) {
 		dt.DataTable({
+			dom:
+				"<'row'<'col-xl-12 mb-2'B>>" +
+				"<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+				"<'row'<'col-sm-12'tr>>" +
+				"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+			buttons: [
+				{
+					extend: 'print',
+					text: '<i class="ri-printer-fill"></i> Print',
+					exportOptions: {
+						columns: [0, 1, 2, 3],
+					},
+				},
+			],
 			bDestroy: true,
 			ajax: {
 				url: apiURL + 'omsss/pup_staff/view_appointment_analytics/Dental',
