@@ -250,3 +250,105 @@
   </div>
   <!-- /.modal-dialog -->
 </div>
+
+<div class="modal fade" id="satisfactionSurveyModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="clientSatisfactionSurvey" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body text-center px-4">
+        <lord-icon src="https://cdn.lordicon.com/yhlmlhlk.json" trigger="loop" style="width:120px;height:120px">
+        </lord-icon>
+
+        <div class="mt-4">
+          <h4 class="mb-3 fw-semibold">Client Satisfaction Survey</h4>
+          <p class="text-muted mb-4">Thank you for using the Online Document Request and Tracking System. To help us improve our services, please take a moment to answer our client satisfaction survey by filling up the form below.</p>
+          <input type="hidden" id="survey_request_id">
+          <div class="card text-center p-3" style="background-color: #4b38b3">
+            <blockquote class="card-blockquote m-0">
+              <h5 class="text-white mb-4">How would you rate the service/s provided to you by the OIC, Student Records?</h5>
+              <div class="text-white font-size-12 mt-3 mb-0">
+                <table>
+                  <thead>
+                    <tr class="fs-12">
+                      <th scope="col">
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                      </th>
+                      <th scope="col">
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                      </th>
+                      <th scope="col">
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                      </th>
+                      <th scope="col">
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                      </th>
+                      <th scope="col">
+                        <i class="ri-star-fill text-warning"></i>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><small>Outstanding</small></td>
+                      <td><small>Exceeds Expectations</small></td>
+                      <td><small>Meets Expectations</small></td>
+                      <td><small>Needs Improvement</small></td>
+                      <td><small>Poor</small></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </blockquote>
+          </div>
+          <form id="clientSurveyForm" class="mt-4 needs-validation" novalidate>
+            <div class="row mb-3">
+              <div class="ps-5 col-lg-6 text-start">
+                <label for="quality_service" class="form-label">Quality of Service</label>
+              </div>
+              <div class="col-lg-6">
+                <div id="quality_service"></div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="ps-5 col-lg-6 text-start">
+                <label for="timeliness_service" class="form-label">Timeliness of Service</label>
+              </div>
+              <div class="col-lg-6">
+                <div id="timeliness_service"></div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="ps-5 col-lg-6 text-start">
+                <label for="courtesy_staff" class="form-label">Courtesy of Staff</label>
+              </div>
+              <div class="col-lg-6">
+                <div id="courtesy_staff"></div>
+              </div>
+            </div>
+            <div class="text-center row mt-4">
+              <div class="col-lg-12">
+                <label for="remarksSurvey" class="form-label">Comments/Suggestions/Recommendations</label>
+              </div>
+              <div class="col-lg-12">
+                <textarea class="form-control" id="remarksSurvey" rows="4" placeholder="Please feel free to share any comments on how we can improve our services in the future. Your feedback is greatly appreciated and will be taken into consideration as we continue to improve our services. Thank you!"></textarea>
+              </div>
+            </div>
+            <div class="mt-4 justify-content-center">
+              <button type="submit" class="w-100 btn btn-dark bg-gradient fw-medium waves-effect waves-light" style="background-color: #4b38b3; border-color: #4b38b3!important;">Submit</button>
+            </div>
+          </form>
+          <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

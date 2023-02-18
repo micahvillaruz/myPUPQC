@@ -14,6 +14,13 @@
 		<!-- Sweet alert init js-->
 		<script src="<?= base_url() ?>public/js/pages/sweetalerts.init.js"></script>
 
+		<!-- prismjs plugin -->
+		<script src="<?= base_url() ?>public/libs/prismjs/prism.js"></script>
+		<!-- rater-js plugin -->
+		<script src="<?= base_url() ?>public/libs/rater-js/index.js"></script>
+		<!-- rating init -->
+		<script src="<?= base_url() ?>public/js/pages/rating.init.js"></script>
+
 		<!-- History ajax -->
 		<script src="<?= base_url() ?>public/js/ajax/student/odrs/history.ajax.js"></script>
 
