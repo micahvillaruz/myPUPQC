@@ -30,6 +30,8 @@ loadRequestsTable = () => {
 
 	if (dt.length) {
 		dt.DataTable({
+			dom: 'Bfrtip',
+			buttons: ['print'],
 			bDestroy: true,
 			scrollX: true,
 			ajax: {

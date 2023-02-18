@@ -39,6 +39,8 @@ loadReleasedRequests = () => {
 
 	if (dt.length) {
 		dt.DataTable({
+			dom: 'Bfrtip',
+			buttons: ['print'],
 			bDestroy: true,
 			scrollX: true,
 			ajax: {
@@ -189,6 +191,8 @@ loadCancelledRequests = () => {
 
 	if (dt.length) {
 		dt.DataTable({
+			dom: 'Bfrtip',
+			buttons: ['print'],
 			bDestroy: true,
 			scrollX: true,
 			ajax: {
@@ -340,6 +344,8 @@ loadDeletedRequests = () => {
 
 	if (dt.length) {
 		dt.DataTable({
+			dom: 'Bfrtip',
+			buttons: ['print'],
 			bDestroy: true,
 			ajax: {
 				url: `${apiURL}odrs/super_admin/requests_history/Deleted`,

@@ -10,6 +10,8 @@ loadHistoryTable = () => {
 
 	if (dt.length) {
 		dt.DataTable({
+			dom: 'Bfrtip',
+			buttons: ['print'],
 			bDestroy: true,
 			ajax: {
 				url: `${apiURL}odrs/pup_staff/requests_history`,

@@ -37,6 +37,8 @@ loadForApprovalRequests = () => {
 
 	if (dt.length) {
 		dt.DataTable({
+			dom: 'Bfrtip',
+			buttons: ['print'],
 			bDestroy: true,
 			scrollX: true,
 			ajax: {
@@ -197,6 +199,8 @@ loadApprovedRequests = () => {
 
 	if (dt.length) {
 		dt.DataTable({
+			dom: 'Bfrtip',
+			buttons: ['print'],
 			bDestroy: true,
 			scrollX: true,
 			ajax: {
@@ -363,6 +367,8 @@ loadOnHoldRequests = () => {
 
 	if (dt.length) {
 		dt.DataTable({
+			dom: 'Bfrtip',
+			buttons: ['print'],
 			bDestroy: true,
 			scrollX: true,
 			ajax: {

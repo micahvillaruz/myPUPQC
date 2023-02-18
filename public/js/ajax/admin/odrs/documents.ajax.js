@@ -15,6 +15,8 @@ loadActiveDocuments = () => {
 	if (!dt.length) return
 
 	dt.DataTable({
+		dom: 'Bfrtip',
+		buttons: ['print'],
 		bDestroy: true,
 		ajax: {
 			url: apiURL + 'odrs/super_admin/view_documents',
@@ -82,6 +84,8 @@ loadDeletedDocuments = () => {
 	if (!dt.length) return
 
 	dt.DataTable({
+		dom: 'Bfrtip',
+		buttons: ['print'],
 		bDestroy: true,
 		ajax: {
 			url: apiURL + 'odrs/super_admin/view_deleted_documents',

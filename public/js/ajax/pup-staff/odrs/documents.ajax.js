@@ -28,6 +28,8 @@ loadDocumentsTable = () => {
 	if (!dt.length) return
 
 	dt.DataTable({
+		dom: 'Bfrtip',
+		buttons: ['print'],
 		bDestroy: true,
 		ajax: {
 			url: apiURL + 'odrs/pup_staff/view_documents',

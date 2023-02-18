@@ -88,6 +88,8 @@ loadPendingRequests = () => {
 				type: 'GET',
 				headers: AJAX_HEADERS,
 			},
+			dom: 'Bfrtip',
+			buttons: ['print'],
 			columns: [
 				// Control Number
 				{
@@ -221,6 +223,8 @@ loadApprovedRequests = () => {
 
 	if (dt.length) {
 		dt.DataTable({
+			dom: 'Bfrtip',
+			buttons: ['print'],
 			bDestroy: true,
 			scrollX: true,
 			ajax: {
