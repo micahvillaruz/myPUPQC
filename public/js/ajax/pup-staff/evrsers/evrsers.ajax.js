@@ -365,13 +365,11 @@ viewAllForEvaluation = () => {
                     data: null,
                     class: 'text-center',
                     render: (data) => {
-                        if (data.reserve_status == 'For Revision') {
-                            return `
+                        return `
                             <div class="dropdown d-inline-block">
                                 <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewReservationModal" onclick="viewDetailsReservationStaff('${data.reservation_id}')"><i class="ri-eye-fill fs-5"></i></button>
                             </div>
                                 `
-                        }
                     },
                 },
             ],
