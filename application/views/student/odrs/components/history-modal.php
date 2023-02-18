@@ -310,6 +310,7 @@
             </blockquote>
           </div>
           <form id="clientSurveyForm" class="mt-4 needs-validation" novalidate>
+            <input type="hidden" id="survey_request_id">
             <div class="row mb-3">
               <div class="ps-5 col-lg-6 text-start">
                 <label for="quality_service" class="form-label">Quality of Service</label>
@@ -336,10 +337,10 @@
             </div>
             <div class="text-center row mt-4">
               <div class="col-lg-12">
-                <label for="remarksSurvey" class="form-label">Comments/Suggestions/Recommendations</label>
+                <label for="comments" class="form-label">Comments/Suggestions/Recommendations</label>
               </div>
               <div class="col-lg-12">
-                <textarea class="form-control" id="remarksSurvey" rows="4" placeholder="Please feel free to share any comments on how we can improve our services in the future. Your feedback is greatly appreciated and will be taken into consideration as we continue to improve our services. Thank you!"></textarea>
+                <textarea class="form-control" id="comments" name="comments" rows="4" placeholder="Please feel free to share any comments on how we can improve our services in the future. Your feedback is greatly appreciated and will be taken into consideration as we continue to improve our services. Thank you!"></textarea>
               </div>
             </div>
             <div class="mt-4 justify-content-center">
