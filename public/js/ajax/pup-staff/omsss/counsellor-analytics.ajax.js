@@ -10,6 +10,20 @@ loadGuidanceDoneTable = () => {
 	const dt = $('#done_appointments_table')
 	if (dt.length) {
 		dt.DataTable({
+			dom:
+				"<'row'<'col-xl-12 mb-2'B>>" +
+				"<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+				"<'row'<'col-sm-12'tr>>" +
+				"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+			buttons: [
+				{
+					extend: 'print',
+					text: '<i class="ri-printer-fill"></i> Print',
+					exportOptions: {
+						columns: [0, 1, 2, 3],
+					},
+				},
+			],
 			bDestroy: true,
 			ajax: {
 				url: apiURL + 'omsss/pup_staff/view_appointment_analytics/Guidance',
@@ -83,6 +97,20 @@ loadDentalCancelledStaffTable = () => {
 	const dt = $('#cancelled_staff_appointments_table')
 	if (dt.length) {
 		dt.DataTable({
+			dom:
+				"<'row'<'col-xl-12 mb-2'B>>" +
+				"<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+				"<'row'<'col-sm-12'tr>>" +
+				"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+			buttons: [
+				{
+					extend: 'print',
+					text: '<i class="ri-printer-fill"></i> Print',
+					exportOptions: {
+						columns: [0, 1, 2, 3],
+					},
+				},
+			],
 			bDestroy: true,
 			ajax: {
 				url: apiURL + 'omsss/pup_staff/view_appointment_analytics/Guidance',
@@ -156,6 +184,20 @@ loadMedicalCancelledStudentTable = () => {
 	const dt = $('#cancelled_student_appointments_table')
 	if (dt.length) {
 		dt.DataTable({
+			dom:
+				"<'row'<'col-xl-12 mb-2'B>>" +
+				"<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+				"<'row'<'col-sm-12'tr>>" +
+				"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+			buttons: [
+				{
+					extend: 'print',
+					text: '<i class="ri-printer-fill"></i> Print',
+					exportOptions: {
+						columns: [0, 1, 2, 3],
+					},
+				},
+			],
 			bDestroy: true,
 			ajax: {
 				url: apiURL + 'omsss/pup_staff/view_appointment_analytics/Guidance',

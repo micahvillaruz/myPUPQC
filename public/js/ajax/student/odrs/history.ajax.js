@@ -16,8 +16,20 @@ loadHistoryTable = () => {
 
 	if (dt.length) {
 		dt.DataTable({
-			dom: 'Bfrtip',
-			buttons: ['print'],
+			dom:
+				"<'row'<'col-xl-12 mb-2'B>>" +
+				"<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+				"<'row'<'col-sm-12'tr>>" +
+				"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+			buttons: [
+				{
+					extend: 'print',
+					text: '<i class="ri-printer-fill"></i> Print',
+					exportOptions: {
+						columns: [0, 4, 5],
+					},
+				},
+			],
 			bDestroy: true,
 			ajax: {
 				url: `${apiURL}odrs/student/requests_history`,

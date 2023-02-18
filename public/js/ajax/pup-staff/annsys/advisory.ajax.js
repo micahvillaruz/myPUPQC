@@ -22,6 +22,20 @@ loadAdvisoryTables = () => {
 
 	if (all_advisories_dt.length) {
 		all_advisories_dt.DataTable({
+			dom:
+				"<'row'<'col-xl-12 mb-2'B>>" +
+				"<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+				"<'row'<'col-sm-12'tr>>" +
+				"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+			buttons: [
+				{
+					extend: 'print',
+					text: '<i class="ri-printer-fill"></i> Print',
+					exportOptions: {
+						columns: [0, 1, 2, 3, 4],
+					},
+				},
+			],
 			bDestroy: true,
 			ajax: {
 				url: apiURL + 'annsys/pup_staff/get_all_advisory',
@@ -103,6 +117,20 @@ loadAdvisoryTables = () => {
 
 	if (my_advisories_dt.length) {
 		my_advisories_dt.DataTable({
+			dom:
+				"<'row'<'col-xl-12 mb-2'B>>" +
+				"<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+				"<'row'<'col-sm-12'tr>>" +
+				"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+			buttons: [
+				{
+					extend: 'print',
+					text: '<i class="ri-printer-fill"></i> Print',
+					exportOptions: {
+						columns: [0, 1, 2, 3],
+					},
+				},
+			],
 			bDestroy: true,
 			ajax: {
 				url: apiURL + 'annsys/pup_staff/get_advisory_from_user',
