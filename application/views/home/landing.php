@@ -105,16 +105,13 @@
 									<a class="nav-link" href="<?= base_url() ?>student/handbook"><i class="ri-arrow-right-s-line"></i> Student Handbook</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="https://sisstudents.pup.edu.ph/"><i class="ri-arrow-right-s-line"></i> PUP Student Information System</a>
+									<a class="nav-link" href="https://sisstudents.pup.edu.ph/" target="_blank"><i class="ri-arrow-right-s-line"></i> PUP Student Information System</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="https://odrs.pup.edu.ph/"><i class="ri-arrow-right-s-line"></i> PUP Online Document Request System</a>
+									<a class="nav-link" href="https://odrs.pup.edu.ph/" target="_blank"><i class="ri-arrow-right-s-line"></i> PUP Online Document Request System</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="https://apps.pup.edu.ph/books/"><i class="ri-arrow-right-s-line"></i> PUP Bookstore</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="<?= base_url() ?>student/downloads"><i class="ri-arrow-right-s-line"></i> Downloadable Forms</a>
+									<a class="nav-link" href="<?= base_url() ?>student/downloads" target="_blank"><i class="ri-arrow-right-s-line"></i> Downloadable Forms</a>
 								</li>
 							</ul>
 						</div>
@@ -138,10 +135,10 @@
 									<a class="nav-link" href="<?= base_url() ?>research/intellectual-property"><i class="ri-arrow-right-s-line"></i> Intellectual Property</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="https://apps.pup.edu.ph/ojs/"><i class="ri-arrow-right-s-line"></i> PUP Online Journal System</a>
+									<a class="nav-link" href="https://apps.pup.edu.ph/ojs/" target="_blank"><i class="ri-arrow-right-s-line"></i> PUP Online Journal System</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="https://drive.google.com/open?id=0B1BuDAuN0r8SMFpBYWNGckhUWkE"><i class="ri-arrow-right-s-line"></i> University Thesis and Dissertation Manual</a>
+									<a class="nav-link" href="https://drive.google.com/open?id=0B1BuDAuN0r8SMFpBYWNGckhUWkE" target="_blank"><i class="ri-arrow-right-s-line"></i> University Thesis and Dissertation Manual</a>
 								</li>
 							</ul>
 						</div>
@@ -204,7 +201,7 @@
 								<span class="d-block text-primary fw-semibold">Request Document</span>
 							</div>
 							<div class="col-3">
-								<a href="https://apps.pup.edu.ph/appointment/"><i class="bx bxs-school border border-primary border-3 rounded-circle h1 p-3 text-primary mb-3"></i></a>
+								<a href="https://apps.pup.edu.ph/appointment/" target="_blank"><i class="bx bxs-school border border-primary border-3 rounded-circle h1 p-3 text-primary mb-3"></i></a>
 								<span class="d-block text-primary fw-semibold">Schedule Appointment</span>
 							</div>
 						</div>
