@@ -353,3 +353,114 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="viewSurveyEvaluation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="viewClientSurveyEvaluation" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body text-center px-4">
+        <lord-icon src="https://cdn.lordicon.com/bzzdsrlh.json" trigger="loop" style="width:120px;height:120px">
+        </lord-icon>
+
+        <div class="mt-4">
+          <h4 class="mb-3 fw-semibold">Client Satisfaction Survey Result</h4>
+          <p class="text-muted mb-4">Thank you for taking the time to provide feedback on your experience using the Online Document Request and Tracking System. Your feedback is greatly appreciated and will be taken into consideration as we continue to improve our services.</p>
+          <input type="hidden" id="survey_request_id">
+          <div class="card text-center p-3" style="background-color: #4b38b3">
+            <blockquote class="card-blockquote m-0">
+              <div class="text-white font-size-12 mt-0 mb-0">
+                <table>
+                  <thead>
+                    <tr class="fs-12">
+                      <th scope="col">
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                      </th>
+                      <th scope="col">
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                      </th>
+                      <th scope="col">
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                      </th>
+                      <th scope="col">
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                      </th>
+                      <th scope="col">
+                        <i class="ri-star-fill text-warning"></i>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><small>Outstanding</small></td>
+                      <td><small>Exceeds Expectations</small></td>
+                      <td><small>Meets Expectations</small></td>
+                      <td><small>Needs Improvement</small></td>
+                      <td><small>Poor</small></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </blockquote>
+          </div>
+          <div class="d-flex align-items-center row mb-3">
+            <div class="ps-5 col-lg-6 text-start">
+              <h6 class="mb-0" for="quality_rating">Quality of Service</h6>
+            </div>
+            <div class="col-lg-6">
+              <i class="fs-3 ri-star-fill text-warning"></i>
+              <i class="fs-3 ri-star-fill text-warning"></i>
+              <i class="fs-3 ri-star-fill text-warning"></i>
+              <i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+              <i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+            </div>
+          </div>
+          <div class="d-flex align-items-center row mb-3">
+            <div class="ps-5 col-lg-6 text-start">
+              <h6 class="mb-0" for="timeliness_rating">Timeliness of Service</h6>
+            </div>
+            <div class="col-lg-6">
+              <i class="fs-3 ri-star-fill text-warning"></i>
+              <i class="fs-3 ri-star-fill text-warning"></i>
+              <i class="fs-3 ri-star-fill text-warning"></i>
+              <i class="fs-3 ri-star-fill text-warning"></i>
+              <i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+            </div>
+          </div>
+          <div class="d-flex align-items-center row mb-3">
+            <div class="ps-5 col-lg-6 text-start">
+              <h6 class="mb-0" for="courtesy_staff">Courtesy of Staff</h6>
+            </div>
+            <div class="col-lg-6">
+              <i class="fs-3 ri-star-fill text-warning"></i>
+              <i class="fs-3 ri-star-fill text-warning"></i>
+              <i class="fs-3 ri-star-fill text-warning"></i>
+              <i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+              <i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+            </div>
+          </div>
+          <div class="text-center row mt-5">
+            <div class="col-lg-12">
+              <h6 for="comments">Comments/Suggestions/Recommendations</h6>
+            </div>
+            <div class="col-lg-12">
+              <!-- Blockquote Background Color -->
+              <blockquote class="mt-2 blockquote custom-blockquote blockquote-primary rounded shadow mb-0">
+                <p class="fs-13 mb-2">Very well accommodating staff! It is really hassle free to use ODRTS and the OIC, Student Reecords is very responsive to my queries.</p>
+              </blockquote>
+            </div>
+          </div>
+          <button class="mt-4 w-100 btn btn-dark bg-gradient fw-medium waves-effect waves-light" style="background-color: #4b38b3; border-color: #4b38b3!important;" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
