@@ -169,7 +169,21 @@ loadHistoryTable = () => {
 					data: null,
 					class: 'text-center',
 					render: (data) => {
-						return `
+						const evaluationStatus = data.is_evaluated
+
+						if (evaluationStatus) {
+							return `
+								<div class="dropdown d-inline-block">
+									<button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails" onclick = "viewRequestDetails('${data.request_id}')">
+										<i class="ri-eye-fill fs-5"></i>
+									</button>
+									<button type="button" class="btn btn-icon text-white waves-effect waves-light" data-bs-toggle="modal" style="background-color: #3577f1;" data-bs-target="#viewSurveyEvaluation" onclick="viewSurveyEvaluation('${data.request_id}')">
+										<i class="ri-search-eye-fill fs-5"></i>
+									</button>
+								</div>
+							`
+						} else {
+							return `
 							<div class="dropdown d-inline-block">
 								<button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails" onclick = "viewRequestDetails('${data.request_id}')">
 									<i class="ri-eye-fill fs-5"></i>
@@ -179,6 +193,7 @@ loadHistoryTable = () => {
 								</button>
 							</div>
 						`
+						}
 					},
 				},
 			],
