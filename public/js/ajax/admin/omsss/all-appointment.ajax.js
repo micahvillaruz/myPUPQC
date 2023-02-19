@@ -498,7 +498,6 @@ viewOverallDetails = (health_appointment_id) => {
 			// * Case Detail
 			$('#control_no').html(userData.case_control_number)
 			$('#view_consultation_type').html(userData.consultation_type)
-			$('#view_consultation_reason').html(userData.consultation_reason)
 			let consultationDate = new Date(userData.consultation_date)
 			consultationDate = consultationDate.toLocaleDateString('en-US', {
 				year: 'numeric',

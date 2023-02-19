@@ -27,12 +27,6 @@
                                 <p id="view_consultation_date" class="p-2 fw-medium"></p>
                             </div>
                         </div>
-                        <div class="mt-4 mx-3">
-                            <span class="badge rounded-pill bg-primary fs-12">Consultation Reason</span>
-                            <div class="bg-soft-secondary ms-1 text-wrap">
-                                <p id="view_consultation_reason" class="p-2 fw-medium"></p>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="card mb-2">
