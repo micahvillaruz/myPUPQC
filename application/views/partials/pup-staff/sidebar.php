@@ -136,6 +136,13 @@
                                 <span>History</span>
                             </a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/odrs/evaluation">
+                                <i class="ri-line-chart-line"></i>
+                                <span>Evaluations</span>
+                            </a>
+                        </li>
                     <?php } ?>
 
                     <!--OMSS -->

@@ -324,4 +324,18 @@ class PUPStaff extends CI_Controller
         $this->load->view('partials/foot-scripts');
         $this->load->view('pup-staff/omsss/scripts/evaluation-scripts');
     }
+
+    public function odrs_evaluation()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/pup-staff/topbar');
+        $this->load->view('partials/pup-staff/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "ODRTS", "title" => "Evaluation"]);
+        $this->load->view('pup-staff/odrs/evaluation');
+        $this->load->view('partials/footer');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('pup-staff/odrs/scripts/evaluation-scripts');
+    }
 }
