@@ -151,7 +151,7 @@
             <div class="rounded bg-primary bg-opacity-50 d-flex justify-content-center align-items-center flex-column" style="height: 300px;">
                 <h1 class="pb-4 text-white fw-medium align-center text-center text-uppercase">Online Document Request System</h1>
                 <div class="d-flex justify-content-center">
-                    <button type="button" class="mb-5 btn btn-secondary waves-effect waves-light"> <i class="ri-article-line me-2"></i> Request a document</button>
+                <button onclick="window.location.href='<?= base_url() ?>student/odrs/request'" class="mb-5 btn btn-secondary waves-effect waves-light"> <i class="ri-article-line me-2"></i> Request a document</button>
                 </div>
             </div>
         </div>
@@ -168,7 +168,7 @@
                         Expect the quality health care services as you conveniently book your appointments, and get e-prescriptions from our university doctor.
                     </p>
                     <div class="my-3">
-                        <button type="button" class="btn fw-medium btn-secondary waves-effect waves-light"> <i class="las la-first-aid me-2"></i> Book a Medical Consultation Appointment</button>
+                        <button onclick="window.location.href='<?= base_url() ?>student/omsss/medical-services/medical-consultation'" class="btn fw-medium btn-secondary waves-effect waves-light"> <i class="las la-first-aid me-2"></i> Book a Medical Consultation Appointment</button>
                     </div>
                     <img src="<?= base_url() ?>public/images/doctor.png" class="img-fluid" style="height: 200px;" />
                 </div>
@@ -185,7 +185,7 @@
                         With regular dental check-ups, our dentists can help and give you a perfect treatment plan towards a perfect beautiful smile.
                     </p>
                     <div class="my-3">
-                        <button type="button" class="btn fw-medium btn-secondary waves-effect waves-light"> <i class="las la-tooth me-2"></i> Book a Dental Consultation Appointment</button>
+                    <button onclick="window.location.href='<?= base_url() ?>student/omsss/dentist-services'" class="btn fw-medium btn-secondary waves-effect waves-light"> <i class="las la-tooth me-2"></i> Book a Dental Consultation Appointment</button>
                     </div>
                     <img src="<?= base_url() ?>public/images/dentist.jpg" class="img-fluid" style="height: 200px;" />
                 </div>
@@ -202,7 +202,7 @@
                         Our experienced psychologist offer free counselling support. Talk to us now if you're having emotional or psychological issues.
                     </p>
                     <div class="my-3">
-                        <button type="button" class="btn fw-medium btn-secondary waves-effect waves-light"> <i class="mdi mdi-brain me-2"></i> Book a Guidance Consultation Appointment</button>
+                    <button onclick="window.location.href='<?= base_url() ?>student/omsss/guidance-services'" class="btn fw-medium btn-secondary waves-effect waves-light"> <i class="mdi mdi-brain me-2"></i> Book a Guidance Consultation Appointment</button>
                     </div>
                     <img src="<?= base_url() ?>public/images/guidance.jpg" class="img-fluid" style="height: 200px;" />
                 </div>
