@@ -177,7 +177,7 @@ loadHistoryTable = () => {
 									<button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails" onclick = "viewRequestDetails('${data.request_id}')">
 										<i class="ri-eye-fill fs-5"></i>
 									</button>
-									<button type="button" class="btn btn-icon text-white waves-effect waves-light" data-bs-toggle="modal" style="background-color: #3577f1;" data-bs-target="#viewSurveyEvaluation" onclick="viewSurveyEvaluation('${data.request_id}')">
+									<button type="button" class="btn btn-icon text-white waves-effect waves-light" data-bs-toggle="modal" style="background-color: #3577f1;" data-bs-target="#viewSurveyEvaluation" onclick="viewSurveyEvaluation('${data.document_request_evaluation.evaluation_id}')">
 										<i class="ri-search-eye-fill fs-5"></i>
 									</button>
 								</div>
@@ -841,6 +841,167 @@ submitSurvey = (request_id) => {
 			})
 		})
 	}
+}
+
+// View Client Satisfaction Survey
+viewSurveyEvaluation = (document_request_evaluation_id) => {
+	$.ajax({
+		type: 'GET',
+		url: `${apiURL}odrs/student/view_evaluation/${document_request_evaluation_id}`,
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			const data = result.data
+
+			const quality = data.quality_rating
+			const timeliness = data.timeliness_rating
+			const courtesy = data.courtesy_rating
+
+			let qualityStars = ''
+			let timelinessStars = ''
+			let courtesyStars = ''
+
+			if (quality === 5 || timeliness === 5 || courtesy === 5) {
+				qualityStars += `
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+				`
+
+				timelinessStars += `
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+				`
+
+				courtesyStars += `
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+				`
+			} else if (quality === 4 || timeliness === 4 || courtesy === 4) {
+				qualityStars += `
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+				`
+
+				timelinessStars += `
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+				`
+
+				courtesyStars += `
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+				`
+			} else if (quality === 3 || timeliness === 3 || courtesy === 3) {
+				qualityStars += `
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+				`
+				timelinessStars += `
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+				`
+
+				courtesyStars += `
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+				`
+			} else if (quality === 2 || timeliness === 2 || courtesy === 2) {
+				qualityStars += `
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+				`
+
+				timelinessStars += `
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+				`
+
+				courtesyStars += `
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+				`
+			} else {
+				qualityStars += `
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+				`
+
+				timelinessStars += `
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+				`
+
+				courtesyStars += `
+					<i class="fs-3 ri-star-fill text-warning"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+					<i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+				`
+			}
+
+			$('#quality').html(qualityStars)
+			$('#timeliness').html(timelinessStars)
+			$('#courtesy').html(courtesyStars)
+
+			let comment = ''
+			if (data.evaluation_comment !== null) {
+				comment += `
+					<div class="col-lg-12 mt-3">
+					<h6 for="comments">Comments/Suggestions/Recommendations</h6>
+					</div>
+					<div class="col-lg-12">
+						<blockquote class="mt-2 blockquote custom-blockquote blockquote-primary rounded shadow mb-0">
+						<p class="fs-13 mb-2">${data.evaluation_comment}</p>
+						</blockquote>
+					</div>
+				`
+			}
+			$('#comment_survey').html(comment)
+		},
+	})
 }
 
 addId = (request_id) => {

@@ -415,48 +415,24 @@
             <div class="ps-5 col-lg-6 text-start">
               <h6 class="mb-0" for="quality_rating">Quality of Service</h6>
             </div>
-            <div class="col-lg-6">
-              <i class="fs-3 ri-star-fill text-warning"></i>
-              <i class="fs-3 ri-star-fill text-warning"></i>
-              <i class="fs-3 ri-star-fill text-warning"></i>
-              <i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
-              <i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+            <div id="quality" class="col-lg-6">
             </div>
           </div>
           <div class="d-flex align-items-center row mb-3">
             <div class="ps-5 col-lg-6 text-start">
               <h6 class="mb-0" for="timeliness_rating">Timeliness of Service</h6>
             </div>
-            <div class="col-lg-6">
-              <i class="fs-3 ri-star-fill text-warning"></i>
-              <i class="fs-3 ri-star-fill text-warning"></i>
-              <i class="fs-3 ri-star-fill text-warning"></i>
-              <i class="fs-3 ri-star-fill text-warning"></i>
-              <i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+            <div id="timeliness" class="col-lg-6">
             </div>
           </div>
           <div class="d-flex align-items-center row mb-3">
             <div class="ps-5 col-lg-6 text-start">
               <h6 class="mb-0" for="courtesy_staff">Courtesy of Staff</h6>
             </div>
-            <div class="col-lg-6">
-              <i class="fs-3 ri-star-fill text-warning"></i>
-              <i class="fs-3 ri-star-fill text-warning"></i>
-              <i class="fs-3 ri-star-fill text-warning"></i>
-              <i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
-              <i class="fs-3 ri-star-fill" style="color: #ced4da"></i>
+            <div id="courtesy" class="col-lg-6">
             </div>
           </div>
-          <div class="text-center row mt-5">
-            <div class="col-lg-12">
-              <h6 for="comments">Comments/Suggestions/Recommendations</h6>
-            </div>
-            <div class="col-lg-12">
-              <!-- Blockquote Background Color -->
-              <blockquote class="mt-2 blockquote custom-blockquote blockquote-primary rounded shadow mb-0">
-                <p class="fs-13 mb-2">Very well accommodating staff! It is really hassle free to use ODRTS and the OIC, Student Reecords is very responsive to my queries.</p>
-              </blockquote>
-            </div>
+          <div id="comment_survey" class="text-center row">
           </div>
           <button class="mt-4 w-100 btn btn-dark bg-gradient fw-medium waves-effect waves-light" style="background-color: #4b38b3; border-color: #4b38b3!important;" data-bs-dismiss="modal">Close</button>
         </div>
