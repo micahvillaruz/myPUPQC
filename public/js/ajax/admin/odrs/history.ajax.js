@@ -39,6 +39,20 @@ loadReleasedRequests = () => {
 
 	if (dt.length) {
 		dt.DataTable({
+			dom:
+				"<'row'<'col-xl-12 mb-2'B>>" +
+				"<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+				"<'row'<'col-sm-12'tr>>" +
+				"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+			buttons: [
+				{
+					extend: 'print',
+					text: '<i class="ri-printer-fill"></i> Print',
+					exportOptions: {
+						columns: [0, 1, 2, 3, 4, 5],
+					},
+				},
+			],
 			bDestroy: true,
 			scrollX: true,
 			ajax: {
@@ -77,7 +91,7 @@ loadReleasedRequests = () => {
 						} else {
 							return `
 							<div class="d-flex align-items-center fw-medium">
-								<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-1.png" class="avatar-xs rounded-circle me-2">
+								<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-8.png" class="avatar-xs rounded-circle me-2">
 								<div>
 									<span class="d-block fw-medium">${fullName}</span>
 									<i class="mdi mdi-gender-female text-danger"></i>
@@ -189,6 +203,20 @@ loadCancelledRequests = () => {
 
 	if (dt.length) {
 		dt.DataTable({
+			dom:
+				"<'row'<'col-xl-12 mb-2'B>>" +
+				"<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+				"<'row'<'col-sm-12'tr>>" +
+				"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+			buttons: [
+				{
+					extend: 'print',
+					text: '<i class="ri-printer-fill"></i> Print',
+					exportOptions: {
+						columns: [0, 1, 2, 3, 4, 5],
+					},
+				},
+			],
 			bDestroy: true,
 			scrollX: true,
 			ajax: {
@@ -227,7 +255,7 @@ loadCancelledRequests = () => {
 						} else {
 							return `
 							<div class="d-flex align-items-center fw-medium">
-								<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-1.png" class="avatar-xs rounded-circle me-2">
+								<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-8.png" class="avatar-xs rounded-circle me-2">
 								<div>
 									<span class="d-block fw-medium">${fullName}</span>
 									<i class="mdi mdi-gender-female text-danger"></i>
@@ -340,6 +368,20 @@ loadDeletedRequests = () => {
 
 	if (dt.length) {
 		dt.DataTable({
+			dom:
+				"<'row'<'col-xl-12 mb-2'B>>" +
+				"<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+				"<'row'<'col-sm-12'tr>>" +
+				"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+			buttons: [
+				{
+					extend: 'print',
+					text: '<i class="ri-printer-fill"></i> Print',
+					exportOptions: {
+						columns: [0, 1, 2, 3, 4, 5],
+					},
+				},
+			],
 			bDestroy: true,
 			ajax: {
 				url: `${apiURL}odrs/super_admin/requests_history/Deleted`,
@@ -377,7 +419,7 @@ loadDeletedRequests = () => {
 						} else {
 							return `
 								<div class="d-flex align-items-center fw-medium">
-									<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-1.png" class="avatar-xs rounded-circle me-2">
+									<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-8.png" class="avatar-xs rounded-circle me-2">
 									<div>
 										<span class="d-block fw-medium">${fullName}</span>
 										<i class="mdi mdi-gender-female text-danger"></i>
@@ -498,7 +540,7 @@ viewRequestDetails = (request_id) => {
 				`
 			} else {
 				image += `
-					<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-1.png" class="avatar-md" />
+					<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-8.png" class="avatar-md" />
 				`
 			}
 

@@ -38,7 +38,7 @@
                             Anything relevant to the creation of the event request should then be included here. <br><br>
                         </span>
                         <span class="mt-4 fs-6">
-                            <i class="text-muted">*** Note that this could help your event request application to be processed faster.</i>
+                            <i class="">*** Note that this could help your event request application to be processed faster.</i>
                         </span>
                     </li>
                 </ul>

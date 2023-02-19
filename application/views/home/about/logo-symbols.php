@@ -9,14 +9,14 @@
         <div class="container-boxed">
           <div class="profile-foreground position-relative mx-n4 mt-n4">
             <div class="profile-wid-bg">
-              <img src="<?= base_url() ?>public/images/pupqc-bg.jpg" alt="" class="profile-wid-img" />
+              <img src="<?= base_url() ?>public/images/pupqc-bg.webp" alt="PUPQC BG" class="profile-wid-img" />
             </div>
           </div>
           <div class="pt-4 mb-4 mb-lg-3 pb-lg-4">
             <div class="row g-4">
               <div class="col-auto">
                 <div class="avatar-lg">
-                  <img src="<?= base_url() ?>public/images/pupqc-logo.png" class="img-thumbnail rounded-circle" />
+                  <img src="<?= base_url() ?>public/images/pupqc-logo.webp" alt="PUP Logo" class="img-thumbnail rounded-circle" />
                 </div>
               </div>
               <!--end col-->
@@ -40,7 +40,7 @@
           <div class="row">
             <div class="col-lg-12">
               <div>
-                <div class="row pt-4 text-muted">
+                <div class="row pt-4 ">
                   <div class="col-xxl-9">
                     <div class="card">
                       <div class="card-body">
@@ -48,7 +48,7 @@
                         <div class="mb-4">
                           <h4 class="text-primary">The PUP Logo</h4>
                           <div class="mx-3 my-5 text-center">
-                            <img src="<?= base_url() ?>public/images/pupqc-logo.png" alt="" class="rounded" height="300">
+                            <img src="<?= base_url() ?>public/images/pupqc-logo.webp" alt="PUP Logo" class="rounded" height="300">
                           </div>
                           <p>
                             The star in the logo stands for the perfection of the human person as well as the search for truth, while the five concentric circles depict infinite wisdom.
@@ -65,14 +65,14 @@
                           <p class="d-block fst-italic fs-13 mt-2 mb-3">See also: <a class="link-primary" href="https://drive.google.com/open?id=0B1BuDAuN0r8SeDZnZ1BiZkF0dUE">The PUP Logo Design Specifications, Guidelines, and Visual Identity Standards</a></p>
                           <p>Here are the former logos of this institution:</p>
                           <div class="d-flex justify-content-center">
-                            <img src="<?= base_url() ?>public\images\pastlogos.gif" class="mb-4 img-fluid" />
+                            <img src="<?= base_url() ?>public\images\pastlogos.webp" alt="Past PUP Logos" class="mb-4 img-fluid" />
                           </div>
                           <p class="text-center">Left to Right: Philippine School of Commerce (1908), Philippine College of Commerce (1953), and Polytechnic University of the Philippines (1978).</p>
                         </div>
                         <div class="mb-4">
                           <h4 class="text-primary">The Mural</h4>
                           <div class="text-center">
-                            <img src="<?= base_url() ?>public\images\pupmural.jpg" class="mb-4 img-fluid" />
+                            <img src="<?= base_url() ?>public\images\pupmural.webp" alt="The Mural" class="mb-4 img-fluid" />
                           </div>
                           <p>The sculpture (Cut and welded brass mural relief, 2.5 x 9.3 meters) was built by national artist
                             <a href="http://www.eduardocastrillo.com" class="link-primary">Eduardo Castrillo</a> in 1974. The theme of the artwork is Consolidated Growth through Education - the role of PUP in the educational development of the youth in preparation for their involvement in nation building. The mural illustrates the social, economic, industrial, technological, and cultural aspect of life with which man blends himself to develop an environment necessary to the progress of the nation.
@@ -83,7 +83,7 @@
                         <div class="mb-4">
                           <h4 class="text-primary">The Pylon</h4>
                           <div class="text-center">
-                            <img src="<?= base_url() ?>public\images\pylon.jpg" class="mb-4 img-fluid" />
+                            <img src="<?= base_url() ?>public\images\pylon.webp" alt="Pylon" class="mb-4 img-fluid" />
                           </div>
                           <p>
                             The Pylon originally stood for the true, the good and the beautiful.
@@ -98,7 +98,7 @@
                         <div class="mb-4">
                           <h4 class="text-primary">The Centenary Insignia</h4>
                           <div class="text-center">
-                            <img src="<?= base_url() ?>public\images\centenniallogo.gif" class="mb-4 img-fluid" />
+                            <img src="<?= base_url() ?>public\images\centenniallogo.webp" alt="The Centenary Insignia" class="mb-4 img-fluid" />
                           </div>
                           <p>
                             The Centenary Logo is an emblem of a noble and glorious past, a living testimony to the University population's adherence to the beautiful traits of loyalty, integrity, love of peace, commitment to service, and undying love of and devotion to God - essential attributes in the pursuit of academic excellence and progress in a span of one hundred years (1904-2004).
@@ -141,43 +141,43 @@
                         <div>
                           <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about">University Profile</a>
+                              <a class="" href="<?= base_url() ?>about">University Profile</a>
                             </li>
-                            <li class="list-group-item text-muted">
-                              <a class="text-muted" href="<?= base_url() ?>about/vm">Vision and Mission</a>
-                            </li>
-                            <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/history">History</a>
+                            <li class="list-group-item ">
+                              <a class="" href="<?= base_url() ?>about/vm">Vision and Mission</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/logo-and-symbols">Logo and Symbols</a>
+                              <a class="" href="<?= base_url() ?>about/history">History</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/hymn">Hymn</a>
+                              <a class="" href="<?= base_url() ?>about/logo-and-symbols">Logo and Symbols</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/annual-reports">Annual Reports</a>
+                              <a class="" href="<?= base_url() ?>about/hymn">Hymn</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/contact-us">Contact us</a>
+                              <a class="" href="<?= base_url() ?>about/annual-reports">Annual Reports</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/maps">Maps</a>
+                              <a class="" href="<?= base_url() ?>about/contact-us">Contact us</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/code">University Code</a>
+                              <a class="" href="<?= base_url() ?>about/maps">Maps</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/memorandum-orders">Memorandum Orders</a>
+                              <a class="" href="<?= base_url() ?>about/code">University Code</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/executive-orders">Executive Orders</a>
+                              <a class="" href="<?= base_url() ?>about/memorandum-orders">Memorandum Orders</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/codi-manual">CODI Manual</a>
+                              <a class="" href="<?= base_url() ?>about/executive-orders">Executive Orders</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/citizens-charter">Citizens Charter</a>
+                              <a class="" href="<?= base_url() ?>about/codi-manual">CODI Manual</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="" href="<?= base_url() ?>about/citizens-charter">Citizens Charter</a>
                             </li>
                           </ul>
                         </div>

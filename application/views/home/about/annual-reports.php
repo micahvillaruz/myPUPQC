@@ -9,14 +9,14 @@
         <div class="container-boxed">
           <div class="profile-foreground position-relative mx-n4 mt-n4">
             <div class="profile-wid-bg">
-              <img src="<?= base_url() ?>public/images/pupqc-bg.jpg" alt="" class="profile-wid-img" />
+              <img src="<?= base_url() ?>public/images/pupqc-bg.webp" alt="PUPQC BG" class="profile-wid-img" />
             </div>
           </div>
           <div class="pt-4 mb-4 mb-lg-3 pb-lg-4">
             <div class="row g-4">
               <div class="col-auto">
                 <div class="avatar-lg">
-                  <img src="<?= base_url() ?>public/images/pupqc-logo.png" class="img-thumbnail rounded-circle" />
+                  <img src="<?= base_url() ?>public/images/pupqc-logo.webp" alt="PUP Logo" class="img-thumbnail rounded-circle" />
                 </div>
               </div>
               <!--end col-->
@@ -40,7 +40,7 @@
           <div class="row">
             <div class="col-lg-12">
               <div>
-                <div class="row pt-4 text-muted">
+                <div class="row pt-4 ">
                   <div class="col-xxl-9">
                     <div class="card shadow-none">
                       <div class="card-body">
@@ -90,7 +90,7 @@
                                   </a>
                                 </li>
                               </ul>
-                              <div class="tab-content text-muted">
+                              <div class="tab-content ">
                                 <div class="tab-pane active" id="annual-2019" role="tabpanel">
                                   <div class="m-5">
                                     <iframe src="https://drive.google.com/file/d/1xcsY2ZhADf0h3sMM9r7m3-xTU80Kzicq/preview" width="100%" height="1000px" allow="autoplay"></iframe>
@@ -154,43 +154,43 @@
                         <div>
                           <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about">University Profile</a>
+                              <a class="" href="<?= base_url() ?>about">University Profile</a>
                             </li>
-                            <li class="list-group-item text-muted">
-                              <a class="text-muted" href="<?= base_url() ?>about/vm">Vision and Mission</a>
-                            </li>
-                            <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/history">History</a>
+                            <li class="list-group-item ">
+                              <a class="" href="<?= base_url() ?>about/vm">Vision and Mission</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/logo-and-symbols">Logo and Symbols</a>
+                              <a class="" href="<?= base_url() ?>about/history">History</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/hymn">Hymn</a>
+                              <a class="" href="<?= base_url() ?>about/logo-and-symbols">Logo and Symbols</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/annual-reports">Annual Reports</a>
+                              <a class="" href="<?= base_url() ?>about/hymn">Hymn</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/contact-us">Contact us</a>
+                              <a class="" href="<?= base_url() ?>about/annual-reports">Annual Reports</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/maps">Maps</a>
+                              <a class="" href="<?= base_url() ?>about/contact-us">Contact us</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/code">University Code</a>
+                              <a class="" href="<?= base_url() ?>about/maps">Maps</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/memorandum-orders">Memorandum Orders</a>
+                              <a class="" href="<?= base_url() ?>about/code">University Code</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/executive-orders">Executive Orders</a>
+                              <a class="" href="<?= base_url() ?>about/memorandum-orders">Memorandum Orders</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/codi-manual">CODI Manual</a>
+                              <a class="" href="<?= base_url() ?>about/executive-orders">Executive Orders</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/citizens-charter">Citizens Charter</a>
+                              <a class="" href="<?= base_url() ?>about/codi-manual">CODI Manual</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="" href="<?= base_url() ?>about/citizens-charter">Citizens Charter</a>
                             </li>
                           </ul>
                         </div>

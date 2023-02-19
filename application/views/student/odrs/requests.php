@@ -9,7 +9,7 @@
       <div class="card-body">
         <div class="table-responsive table-card">
           <table class="table table-nowrap align-middle table-borderless mb-0">
-            <thead class="table-light text-muted">
+            <thead class="table-light ">
               <tr>
                 <th colspan="3" class="bg-soft-primary text-dark">Requested Document/s:</th>
               </tr>
@@ -64,7 +64,7 @@
               <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body ms-2 ps-5 pt-0">
                   <h6 class="mb-1">The Document Request is Pending for Approval and is being reviewed by the Officer-in-Charge, Student Records.</h6>
-                  <p id="pending_datetime" class="text-muted mb-0"></p>
+                  <p id="pending_datetime" class=" mb-0"></p>
                 </div>
               </div>
             </div>
@@ -76,7 +76,7 @@
             </div>
             <div class="accordion-item border-0">
               <div class="accordion-header" id="headingFive">
-                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFile" aria-expanded="false">
+                <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false">
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0 avatar-xs">
                       <div class="avatar-title bg-light text-success rounded-circle">
@@ -105,7 +105,7 @@
     <div class="card">
       <div class="card-header">
         <div class="d-flex">
-          <h5 class="card-title flex-grow-1 mb-0"><i class="mdi mdi-file-document-multiple-outline align-middle me-1 text-muted"></i> Requirements</h5>
+          <h5 class="card-title flex-grow-1 mb-0"><i class="mdi mdi-file-document-multiple-outline align-middle me-1 "></i> Requirements</h5>
           <div id="statusReq" class="flex-shrink-0">
           </div>
         </div>
@@ -129,7 +129,7 @@
 
     <div class="card">
       <div class="card-header align-items-center d-flex border-bottom-dashed">
-        <h4 class="card-title mb-0 flex-grow-1"><i class="mdi mdi-download-box-outline align-middle me-1 text-muted"></i> Attachment/s</h4>
+        <h4 class="card-title mb-0 flex-grow-1"><i class="mdi mdi-download-box-outline align-middle me-1 "></i> Attachment/s</h4>
       </div>
 
       <div class="card-body">
@@ -149,7 +149,7 @@
               </div>
               <div class="flex-shrink-0 ms-2">
                 <div class="d-flex gap-1">
-                  <a href="<?= base_url() ?>public/file/Letter-Format-for-CHED.docx" download="Letter-Format-for-CHED" type="button" class="btn btn-icon text-muted btn-sm fs-18">
+                  <a href="<?= base_url() ?>public/file/Letter-Format-for-CHED.docx" download="Letter-Format-for-CHED" type="button" class="btn btn-icon  btn-sm fs-18">
                     <i class="ri-download-2-line"></i>
                   </a>
                 </div>
@@ -171,7 +171,7 @@
               </div>
               <div class="flex-shrink-0 ms-2">
                 <div class="d-flex gap-1">
-                  <a href="<?= base_url() ?>public/file/Request-Form.pdf" download="Request Form" type="button" class="btn btn-icon text-muted btn-sm fs-18">
+                  <a href="<?= base_url() ?>public/file/Request-Form.pdf" download="Request Form" type="button" class="btn btn-icon  btn-sm fs-18">
                     <i class="ri-download-2-line"></i>
                   </a>
                 </div>
@@ -200,7 +200,7 @@
     <div class="card">
       <div class="card-header">
         <div class="d-flex">
-          <h5 class="card-title flex-grow-1 mb-0"><i class="mdi mdi-cash align-middle me-1 text-muted"></i> Payment Details</h5>
+          <h5 class="card-title flex-grow-1 mb-0"><i class="mdi mdi-cash align-middle me-1 "></i> Payment Details</h5>
         </div>
       </div>
       <div class="card-body">

@@ -88,6 +88,8 @@ loadPendingRequests = () => {
 				type: 'GET',
 				headers: AJAX_HEADERS,
 			},
+			dom: 'Bfrtip',
+			buttons: ['print'],
 			columns: [
 				// Control Number
 				{
@@ -118,7 +120,7 @@ loadPendingRequests = () => {
 						} else {
 							return `
 							<div class="d-flex align-items-center fw-medium">
-								<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-1.png" class="avatar-xs rounded-circle me-2">
+								<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-8.png" class="avatar-xs rounded-circle me-2">
 								<div>
 									<span class="d-block fw-medium">${fullName}</span>
 									<i class="mdi mdi-gender-female text-danger"></i>
@@ -221,6 +223,8 @@ loadApprovedRequests = () => {
 
 	if (dt.length) {
 		dt.DataTable({
+			dom: 'Bfrtip',
+			buttons: ['print'],
 			bDestroy: true,
 			scrollX: true,
 			ajax: {
@@ -258,7 +262,7 @@ loadApprovedRequests = () => {
 						} else {
 							return `
 							<div class="d-flex align-items-center fw-medium">
-								<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-1.png" class="avatar-xs rounded-circle me-2">
+								<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-8.png" class="avatar-xs rounded-circle me-2">
 								<div>
 									<span class="d-block fw-medium">${fullName}</span>
 									<i class="mdi mdi-gender-female text-danger"></i>
@@ -389,11 +393,19 @@ loadApprovedRequests = () => {
 								</button>
 							`
 						} else if (requestStatus === 'For Evaluation/Processing') {
-							return `
+							if (!data.is_approved_all) {
+								return `
+									<button type="button" class="btn btn-icon waves-effect waves-light text-white" style="background-color: #4b38b3;" data-bs-toggle="modal" data-bs-target="#approvalWorkflowModal" onclick="viewTraceRequestApproval('${data.request_id}')">
+										<i class="ri-file-search-line fs-5"></i>
+									</button>
+								`
+							} else {
+								return `
 								<button type="button" class="btn btn-dark btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#readyforPickupModal" onclick="addId('${data.request_id}', 'pickup_request')">
 									<i class="ri-user-received-2-line fs-5"></i>
 								</button>
 							`
+							}
 						} else if (requestStatus === 'Ready for Pickup') {
 							return `
 								<button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#releasedModal" onclick="addId('${data.request_id}', 'release_request')">
@@ -430,7 +442,7 @@ viewPendingRequest = (request_id) => {
 				`
 			} else {
 				image += `
-					<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-1.png" class="avatar-md" />
+					<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-8.png" class="avatar-md" />
 				`
 			}
 			$('#image').html(image)
@@ -498,7 +510,7 @@ viewApprovedRequest = (request_id) => {
 				`
 			} else {
 				image += `
-					<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-1.png" class="avatar-md" />
+					<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-8.png" class="avatar-md" />
 				`
 			}
 			$('#view_picture').html(image)
@@ -1181,6 +1193,126 @@ releasedRequest = (request_id) => {
 			})
 		})
 	}
+}
+
+// View Trace Request Approval
+viewTraceRequestApproval = (request_id) => {
+	$.ajax({
+		url: `${apiURL}odrs/pup_staff/view_signatory/${request_id}`,
+		type: 'GET',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			const data = result.data
+
+			$('#trace_request_approval').html('')
+			data.documents_assigned_to_request.forEach((document, i) => {
+				$('#trace_request_approval').append(`
+				<div class="vstack gap-2 mb-4">
+				<div class="form-check card-radio shadow">
+					<div class="form-check-label" style="background-color: #fff5da">
+						<div class="d-flex align-items-center">
+							<div class="flex-shrink-0">
+								<div class="avatar-xs">
+									<div class="avatar-title bg-primary text-white fs-18 rounded">
+										<i class="ri-file-text-line"></i>
+									</div>
+								</div>
+							</div>
+							<div class="flex-grow-1 ms-3">
+								<h6 class="mb-1 fw-semibold">${document.document_information[0].document_name}</h6>
+								<p class="text-muted mb-0">Type: ${document.document_information[0].document_type}</p>
+							</div>
+							<div class="flex-shrink-0 align-self-center">
+								<span class="badge bg-dark"></i>QTY: ${document.quantity}<span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+				`)
+				$('#trace_request_approval').append(`
+				<div class="text-start card mt-3 card-height-100 border shadow">
+				<div class="card-body p-0">
+					<div class="alert alert-danger border-0 rounded-top alert-solid alert-label-icon rounded-0 m-0 d-flex align-items-center" style="background-color: #4b38b3!important" role="alert">
+						<i class="mdi mdi-file-sign label-icon"></i>
+						<div class="flex-grow-1 text-truncate">
+							Signatories in this approval workflow
+						</div>
+					</div>
+					<div class="p-3">
+						<div class="acitivity-timeline acitivity-main" id="doc_signatory_${i}">
+						</div>
+					</div>
+				</div>
+			</div>
+				`)
+				data.signatories_assigned_to_request.forEach((signatory, j) => {
+					if (signatory.document_id === document.document_id) {
+						$(`#doc_signatory_${i}`).append(`
+										<div class="acitivity-item d-flex">
+                      <div class="flex-shrink-0">
+                        <img src="${baseURL}public/images/profile/flat-faces-icons-circle-man-6.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                      </div>
+                      <div class="flex-grow-1 ms-3 mb-4" id="signatory_status_${j}">
+                        <h6 class="mb-1">${signatory.signatory_for_user.user_profiles[0].full_name}</h6>
+                      </div>
+                    </div>
+						`)
+						if (!signatory.is_signed && !signatory.is_onhold) {
+							$(`#signatory_status_${j}`).append(`
+							<span class="badge badge-soft-warning text-uppercase">Pending</span>
+							`)
+						} else if (signatory.is_signed) {
+							$(`#signatory_status_${j}`).append(`
+												<span class="badge badge-soft-success text-uppercase">Approved</span><br>
+                        <div class="d-flex align-items-center text-muted mt-1 gap-2">
+                          <i class="ri-calendar-todo-fill text-primary"></i>
+                          <small>${moment(data.approved).format('ddd')},
+													${moment(data.approved).format('DD, MMM. YYYY')} -
+													${moment(data.approved).format('hh:mm A')}</small>
+                        </div>
+							`)
+						} else if (signatory.is_onhold) {
+							$(`#signatory_status_${j}`).append(`
+										<span class="badge badge-soft-danger text-uppercase">On Hold</span><br>
+                      <div class="d-flex align-items-center text-muted mt-1 gap-2">
+                        <i class="ri-calendar-todo-fill text-primary"></i>
+                        <small> ${moment(data.onhold).format('ddd')},
+												${moment(data.onhold).format('DD, MMM. YYYY')} -
+												${moment(data.onhold).format('hh:mm A')}</small>
+                			</div>
+							`)
+						}
+					}
+				})
+			})
+			$('#trace_request_approval').append(
+				`<h6 class="mt-4 mb-3 text-start text-primary d-none" id="trace_request_remarks">Remarks</h6>`,
+			)
+			data.signatories_assigned_to_request.forEach((signatory) => {
+				if (signatory.remarks !== null) {
+					$('#trace_request_remarks').removeClass('d-none')
+					$('#trace_request_approval').append(`
+						<div class="list-group text-start">
+              <div class="list-group-item list-group-item-action list-group-item-danger">
+                <div class="d-flex mb-2 align-items-center">
+                  <div class="flex-shrink-0">
+                    <img src="${baseURL}public/images/profile/flat-faces-icons-circle-man-6.png" alt="" class="avatar-xs rounded-circle" />
+                  </div>
+                  <div class="flex-grow-1 ms-3">
+                    <h6 class="list-title mb-1">${signatory.signatory_for_user.user_profiles[0].full_name}</h6>
+                  </div>
+                </div>
+                <p>${signatory.remarks}</p>
+              </div>
+            </div>
+						<br>
+					`)
+				}
+			})
+		},
+	})
 }
 
 addId = (request_id, status) => {

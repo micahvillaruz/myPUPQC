@@ -494,6 +494,42 @@ class Home extends CI_Controller
 		$this->load->view('partials/foot-scripts');
 		$this->load->view('home/scripts/privacy-scripts');
 	}
+	
+	public function terms_of_use()
+	{
+		$this->load->view('partials/main-home');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/terms_of_use');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/terms_of_use-scripts');
+	}
+	public function privacy_statement()
+	{
+		$this->load->view('partials/main-home');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/privacy_statement');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/privacy_statement-scripts');
+	}
+
+	public function about_mypupqc()
+	{
+		$this->load->view('partials/main-home');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+		$this->load->view('partials/home/home-header');
+		$this->load->view('home/about_mypupqc');
+		$this->load->view('partials/home/home-footer');
+		$this->load->view('partials/foot-scripts');
+		$this->load->view('home/scripts/about_mypupqc-scripts');
+	}
+
 
     public function news($go = NULL)
     {
@@ -511,6 +547,15 @@ class Home extends CI_Controller
 		$this->load->view('partials/home/home-footer');
 		$this->load->view('partials/foot-scripts');
 		$this->load->view('home/scripts/news-scripts');
+    }
+
+    public function rss(){
+        $this->load->view('partials/main-home');
+		$this->load->view('partials/title-meta');
+		$this->load->view('partials/head-css');
+        $this->load->view('home/rss');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('home/scripts/news-scripts');
     }
 
     public function advisory($go = NULL)

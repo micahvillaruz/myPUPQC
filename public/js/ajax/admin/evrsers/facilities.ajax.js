@@ -45,9 +45,10 @@ viewFacilities = () => {
                     let venue_name = venue.toUpperCase()
                     facilitiesHTML += `
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-3">
-                        <div class="card border card-border-primary h-100">
+                        <div class="card ribbon-box right border shadow-none card-border-primary h-100">
                             <img src="${facility.facility_picture}" class="card-img-top" alt="" style="height: 260px;">
                                 <div class="card-body">
+                                    <div class="ribbon ribbon-warning round-shape mt-3"><i class="ri-group-line me-1 mt-2 fs-6"></i>Capacity: ${facility.facility_capacity}</div>
                                     <h1 class="fs-5 card-title text-dark fw-bold">${venue_name}</h1>
                                     <p class="card-text">${facility.facility_description}</p>
                                 </div>
@@ -89,6 +90,8 @@ addNewFacility = () => {
     // inputGroupFile01, inputGroupFile02, inputGroupFile03
     const facility_name = document.getElementById('facility-name')
     const facility = facility_name.value
+    const facility_capacity = document.getElementById('facility-capacity')
+    const capacity = facility_capacity.value
     const facility_description = document.getElementById('facility-description')
     const description = facility_description.value
     const facility_picture = document.getElementById('facility-pic').files[0]
@@ -97,6 +100,7 @@ addNewFacility = () => {
 
     const formData = new FormData()
     formData.append('facility_name', facility)
+    formData.append('facility_capacity', capacity)
     formData.append('facility_description', description)
     formData.append('facility_picture', facility_pic)
     formData.append('reserve_status', 'Pending')
@@ -170,6 +174,7 @@ viewSpecificFacility = (facility_id) => {
                 // show modal
             console.log(facility_id, data)
             $('#facility-name-edit').val(data.facility_name)
+            $('#facility-capacity-edit').val(data.facility_capacity)
             $('#facility-description-edit').val(data.facility_description)
             facility_status = data.facility_status
             if (facility_status == 'Available') {
@@ -192,11 +197,9 @@ viewSpecificFacility = (facility_id) => {
             })
 
             $('#editFacilityBtn').on('click', function(e) {
-                $('#edit-facility-modal').modal('hide')
                 e.preventDefault() // prevent page refresh
                 editFacilityDetails(facility_id)
             })
-
         },
     })
 }
@@ -206,6 +209,8 @@ editFacilityDetails = (facility_id) => {
     // with the id's: facility-name-edit, facility-description-edit, facility-status-edit
     const facility_name = document.getElementById('facility-name-edit')
     const facility = facility_name.value
+    const facility_capacity = document.getElementById('facility-capacity-edit')
+    const capacity = facility_capacity.value
     const facility_description = document.getElementById('facility-description-edit')
     const description = facility_description.value
     const facility_status = document.getElementById('facility-status-edit')
@@ -226,13 +231,11 @@ editFacilityDetails = (facility_id) => {
         url: apiURL + `evrsers/super_admin/edit_facility/${facility_id}`,
         data: {
             facility_name: facility,
+            facility_capacity: capacity,
             facility_description: description,
             facility_status: status,
         },
         success: (result) => {
-            const data = result.data
-            console.log(data)
-
             //  display success message using sweetalert2
             if (result) {
                 Swal.fire({
@@ -245,14 +248,14 @@ editFacilityDetails = (facility_id) => {
                     showCloseButton: !0,
                 }).then(function() {
                     // hide success message
-                    $('#edit-facility-modal').modal('hide')
-                    viewFacilities()
+                    $('#editFacilityModal').modal('hide')
+                    window.location.reload()
                 })
             } else {
                 Swal.fire({
                     html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">${
-							JSON.parse(xhr.responseText).message
-						}</p></div></div>`,
+						JSON.parse(xhr.responseText).message
+					}</p></div></div>`,
                     showCancelButton: !0,
                     showConfirmButton: !1,
                     cancelButtonClass: 'btn btn-danger w-xs mb-1',
@@ -279,7 +282,6 @@ deactFacility = (facility_id) => {
         type: 'DELETE',
         ContentType: 'application/x-www-form-urlencoded',
         success: (result) => {
-            $('#editFacilityModal').modal('hide')
             if (result) {
                 Swal.fire({
                     html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully deactivated a facility!</p></div></div>',
@@ -291,6 +293,7 @@ deactFacility = (facility_id) => {
                     showCloseButton: !0,
                 }).then(function() {
                     // reload page
+                    $('#editFacilityModal').modal('hide')
                     window.location.reload()
                 })
             }

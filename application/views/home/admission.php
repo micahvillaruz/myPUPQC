@@ -9,14 +9,14 @@
         <div class="container-boxed">
           <div class="profile-foreground position-relative mx-n4 mt-n4">
             <div class="profile-wid-bg">
-              <img src="<?= base_url() ?>public/images/pupqc-bg.jpg" alt="" class="profile-wid-img" />
+              <img src="<?= base_url() ?>public/images/pupqc-bg.webp" alt="PUPQC BG" class="profile-wid-img" />
             </div>
           </div>
           <div class="pt-4 mb-4 mb-lg-3 pb-lg-4">
             <div class="row g-4">
               <div class="col-auto">
                 <div class="avatar-lg">
-                  <img src="<?= base_url() ?>public/images/pupqc-logo.png" class="img-thumbnail rounded-circle" />
+                  <img src="<?= base_url() ?>public/images/pupqc-logo.webp" alt="PUP Logo" class="img-thumbnail rounded-circle" />
                 </div>
               </div>
               <!--end col-->
@@ -40,7 +40,7 @@
           <div class="row">
             <div class="col-lg-12">
               <div>
-                <div class="row pt-4 text-muted">
+                <div class="row pt-4 ">
                   <div class="col-xxl-9">
                     <div class="card">
                       <div class="card-body">
@@ -75,31 +75,31 @@
                         <div>
                           <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>admission">Admission Overview</a>
+                              <a class="" href="<?= base_url() ?>admission">Admission Overview</a>
                             </li>
-                            <li class="list-group-item text-muted">
-                              <a class="text-muted" href="#!">Incoming Freshman</a>
-                            </li>
-                            <li class="list-group-item">
-                              <a class="text-muted" href="#!">Transferring Students</a>
+                            <li class="list-group-item ">
+                              <a class="" href="#!">Incoming Freshman</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="#!">Returning Students</a>
+                              <a class="" href="#!">Transferring Students</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="#!">Baccalaureate Degree Holders</a>
+                              <a class="" href="#!">Returning Students</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="#!">Academic Load</a>
+                              <a class="" href="#!">Baccalaureate Degree Holders</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="#!">Tenure and Dismissal</a>
+                              <a class="" href="#!">Academic Load</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="#!">Graduation Requirements</a>
+                              <a class="" href="#!">Tenure and Dismissal</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="#!">Tuition and Fees</a>
+                              <a class="" href="#!">Graduation Requirements</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="" href="#!">Tuition and Fees</a>
                             </li>
                           </ul>
                         </div>

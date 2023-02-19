@@ -82,24 +82,38 @@ class Admin extends CI_Controller
     $this->load->view('partials/page-title', ["page_title" => "Role Management", "title" => "Roles"]);
     $this->load->view('admin/role-management/roles');
     $this->load->view('partials/footer');
-    $this->load->view('admin/roles-management/components/roles-modal');
     $this->load->view('partials/foot-scripts');
     $this->load->view('admin/role-management/scripts/roles-scripts');
   }
 
-  public function user_roles_management()
+  public function user_roles_student()
   {
     $this->load->view('partials/main');
     $this->load->view('partials/title-meta');
     $this->load->view('partials/head-css');
     $this->load->view('partials/admin/topbar');
     $this->load->view('partials/admin/sidebar');
-    $this->load->view('partials/page-title', ["page_title" => "User Role Management", "title" => "User Roles"]);
-    $this->load->view('admin/user-role-management/user-roles');
+    $this->load->view('partials/page-title', ["page_title" => "User Role Management", "title" => "Assign Roles to Student"]);
+    $this->load->view('admin/user-role-management/ur-student');
     $this->load->view('partials/footer');
-    $this->load->view('admin/user-roles-management/components/user-roles-modal');
+    $this->load->view('admin/user-role-management/components/user-roles-modal');
     $this->load->view('partials/foot-scripts');
-    $this->load->view('admin/user-role-management/scripts/user-roles-scripts');
+    $this->load->view('admin/user-role-management/scripts/ur-student-scripts');
+  }
+
+  public function user_roles_staff()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/admin/topbar');
+    $this->load->view('partials/admin/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "User Role Management", "title" => "Assign Roles to PUP Staff"]);
+    $this->load->view('admin/user-role-management/ur-staff');
+    $this->load->view('partials/footer');
+    $this->load->view('admin/user-role-management/components/user-roles-modal');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('admin/user-role-management/scripts/ur-staff-scripts');
   }
 
 
@@ -193,21 +207,6 @@ class Admin extends CI_Controller
     $this->load->view('admin/omsss/appointment-history/scripts/appointment-history-scripts');
   }
 
-  public function all_prescription()
-  {
-    $this->load->view('partials/main');
-    $this->load->view('partials/title-meta');
-    $this->load->view('partials/head-css');
-    $this->load->view('partials/admin/topbar');
-    $this->load->view('partials/admin/sidebar');
-    $this->load->view('partials/page-title', ["page_title" => "Health and Well-Being", "title" => "Appointment History"]);
-    $this->load->view('admin/omsss/medical-prescription/all-prescription');
-    $this->load->view('partials/footer');
-    $this->load->view('admin/omsss/components/all-prescription-modal');
-    $this->load->view('partials/foot-scripts');
-    $this->load->view('admin/omsss/medical-prescription/scripts/all-prescription-scripts');
-  }
-
   public function facilities()
   {
     $this->load->view('partials/main');
@@ -251,5 +250,34 @@ class Admin extends CI_Controller
     $this->load->view('admin/evrsers/components/reservation-history-modal');
     $this->load->view('partials/foot-scripts');
     $this->load->view('admin/evrsers/scripts/reservation-history-scripts');
+  }
+
+  public function holiday()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/admin/topbar');
+    $this->load->view('partials/admin/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "Holiday", "title" => "Holiday Management"]);
+    $this->load->view('admin/holiday/holiday');
+    $this->load->view('partials/footer');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('admin/holiday/scripts/holiday-scripts');
+  }
+
+  public function organization()
+  {
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    $this->load->view('partials/admin/topbar');
+    $this->load->view('partials/admin/sidebar');
+    $this->load->view('partials/page-title', ["page_title" => "Organizations", "title" => "Organization Management"]);
+    $this->load->view('admin/organization/organization');
+    $this->load->view('admin/organization/components/organization-modal');
+    $this->load->view('partials/footer');
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('admin/organization/scripts/org-scripts');
   }
 }

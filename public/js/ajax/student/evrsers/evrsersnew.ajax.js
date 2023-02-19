@@ -17,12 +17,54 @@ checkCreatePermission = () => {
             } else {
                 $('#decline_create_reservation').addClass('d-none')
                 $('#allow_create_reservation').removeClass('d-none')
+
                 loadFullName()
+
+                loadHolidays()
+
+                dateAndTimeSelectFunctions()
+
                 loadFacilities()
+
+                loadOrganizations()
 
                 $('#addNewReservation').on('submit', function(e) {
                     e.preventDefault() // prevent page refresh
                     addNewReservation()
+                })
+
+                const attachmentsFileTypes = [
+                    'file/pdf',
+                    'file/docx',
+                    'application/msword',
+                    'application/pdf',
+                    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                ]
+
+                pond = FilePond.create(document.querySelector('#attachments'), {
+                    instantUpload: false,
+                    allowProcess: false,
+                    acceptedFileTypes: attachmentsFileTypes,
+                    beforeAddFile: (file) => {
+                        if (!attachmentsFileTypes.includes(file.fileType)) {
+                            Swal.fire({
+                                iconHtml: `<lord-icon src="https://cdn.lordicon.com/nduddlov.json" trigger="loop-on-hover" colors="outline:#f06548,primary:#ffffff,secondary:#f06548" style="width:100px;height:100px"></lord-icon>`,
+                                customClass: {
+                                    icon: 'border-white',
+                                },
+                                title: 'Oops...',
+                                text: `Only PDF and Document files are allowed! The one you are uploading is a: ${file.fileType}`,
+                                showCancelButton: !0,
+                                showConfirmButton: !1,
+                                cancelButtonClass: 'btn btn-danger w-xs mb-1',
+                                cancelButtonText: 'Dismiss',
+                                buttonsStyling: !1,
+                                showCloseButton: !0,
+                            })
+                            return false
+                        }
+                        return true
+                    },
                 })
             }
         },
@@ -91,15 +133,8 @@ addNewReservation = () => {
     if ($('#addNewReservation')[0].checkValidity()) {
         // no validation error
         const form = new FormData($('#addNewReservation')[0])
-            // with the id's: orgfloatingInput, eventTitlefloatingInput, eventDetailsfloatingInput,
-            // reserveDatefloatingInput, timeFromfloatingInput, timeTofloatingInput
-            // inputGroupFile01, inputGroupFile02, inputGroupFile03
-        const org = document.getElementById('orgfloatingInput')
-        const organization_name = org.value
-        const title = document.getElementById('eventTitlefloatingInput')
-        const event_title = title.value
-        const details = document.getElementById('eventDetailsfloatingInput')
-        const event_details = details.value
+
+        //* Date and Time Selection
         const date = document.getElementById('reserveDatefloatingInput')
         const reserve_date = date.value
         const timefrom = document.getElementById('timeFromfloatingInput')
@@ -107,28 +142,50 @@ addNewReservation = () => {
         const timeto = document.getElementById('timeTofloatingInput')
         const time_to = timeto.value
         console.log(reserve_date, time_from + ' - ' + time_to)
-        const file1 = form.get('inputGroupFile01')
-        const file2 = form.get('inputGroupFile02')
-        const file3 = form.get('inputGroupFile03')
-            // convert file1, file2, file3 to blob
-        const file1Blob = new Blob([file1], { type: file1.type })
-        const file2Blob = new Blob([file2], { type: file2.type })
-        const file3Blob = new Blob([file3], { type: file3.type })
+
+        // * Facility Selection
         const facility_id = $('input[name="facility"]:checked').attr('id')
 
+        // * Event Details
+        const org = document.getElementById('orgfloatingInput')
+        const organization = org.value
+        const title = document.getElementById('eventTitlefloatingInput')
+        const event_title = title.value
+        const details = document.getElementById('eventDetailsfloatingInput')
+        const event_details = details.value
+        const objectives = document.getElementById('objectivesfloatingInput')
+        const event_objectives = objectives.value
+        const pillars = document.getElementById('pillarsfloatingInput')
+            // get inner html of the selected option
+        const event_pillars = pillars.options[pillars.selectedIndex].innerHTML
+
+        pondFiles = pond.getFiles()
+
         const formData = new FormData()
-        formData.append('organization_name', organization_name)
-        formData.append('event_title', event_title)
-        formData.append('event_details', event_details)
+
+        // * Append Date and Time Selection
         formData.append('reserve_date', reserve_date)
         formData.append('time_from', time_from)
         formData.append('time_to', time_to)
-            // append the blob to formData
-        formData.append('reserve_attachments_1', file1Blob)
-        formData.append('reserve_attachments_2', file2Blob)
-        formData.append('reserve_attachments_3', file3Blob)
+
+        // * Append Facility Selection
         formData.append('facility_id', facility_id)
-        formData.append('reserve_status', 'Pending')
+
+        // * Append Event Details
+        formData.append('organization_id', organization)
+        formData.append('event_title', event_title)
+        formData.append('event_details', event_details)
+        formData.append('pup_objectives', event_objectives)
+        formData.append('pup_pillars', event_pillars)
+
+        // for files in pondFiles
+        for (let i = 0; i < pondFiles.length; i++) {
+            formData.append('event_request', pondFiles[0].file)
+            formData.append('concept_paper', pondFiles[1].file)
+            formData.append('others', pondFiles[2].file)
+        }
+
+        formData.append('reserve_status', 'For Review')
         formData.append('remarks', 'Please wait for admin approval.')
 
         // all values are not empty, proceed to ajax call
@@ -179,4 +236,134 @@ addNewReservation = () => {
             })
         })
     }
+}
+
+// Calendar functions for new reservation
+//Disable sundays for flatpickr reserveDatefloatingInput using disable option
+
+loadHolidays = () => {
+    let completeHolidayDetails
+    let holidayDates = []
+    $.ajax({
+        url: apiURL + 'student/holidays',
+        type: 'GET',
+        headers: AJAX_HEADERS,
+        async: false,
+        success: (data) => {
+            completeHolidayDetails = data.data
+        },
+    })
+    completeHolidayDetails.forEach((holiday) => {
+        // push holidaay.holiday_date to holidayDates and parrse it to Date.parse(date)
+        holidayDates.push(Date.parse(holiday.holiday_date))
+    })
+
+
+    flatpickr('#reserveDatefloatingInput', {
+        dateFormat: 'd M, Y',
+        defaultDate: 'today',
+        minDate: 'today',
+        inline: true,
+        disable: [
+            function(date) {
+                return date.getDay() === 0
+            },
+            ...holidayDates,
+        ],
+
+    })
+
+    dateAndTimeSelectFunctions = () => {
+        // enable #nextBtn1 upon selecting date, time from and time to in one line
+        const reserveDateInput = document.querySelector('#reserveDatefloatingInput')
+        const timeFromInput = document.querySelector('#timeFromfloatingInput')
+        const timeToInput = document.querySelector('#timeTofloatingInput')
+        const nextBtn1 = document.querySelector('#nextBtn1')
+
+        let inputsFilled = 0
+
+        reserveDateInput.addEventListener('change', checkInputs)
+        timeFromInput.addEventListener('change', checkInputs)
+        timeToInput.addEventListener('change', checkInputs)
+
+        function checkInputs() {
+            inputsFilled += 1
+
+            if (inputsFilled === 3) {
+                nextBtn1.removeAttribute('disabled')
+            }
+        }
+
+        // disable previous options if time from is greater than time to
+        const timeFrom = document.getElementById('timeFromfloatingInput')
+        const timeTo = document.getElementById('timeTofloatingInput')
+
+        timeFrom.addEventListener('change', function() {
+            const selectedTimeFrom = timeFrom.value
+            console.log(selectedTimeFrom)
+
+            if (selectedTimeFrom != '8:00 AM') {
+                updateTimeToOptions(selectedTimeFrom)
+            }
+        })
+
+        updateTimeToOptions = (selectedTimeFrom) => {
+            const timeToOptions = ["9:00AM", "10:00AM", "11:00AM", "1:00PM", "2:00PM", "3:00PM", "4:00PM", "5:00PM", "6:00PM", "7:00PM", "8:00PM", "9:00PM"]
+
+            // Get the index of the selected time from and remove previous values from array
+            const index = timeToOptions.indexOf(selectedTimeFrom)
+            console.log(index)
+            timeToOptions.splice(0, index + 1)
+            console.log(timeToOptions)
+
+            // append the values in the timeTofloatingInput
+            timeTo.innerHTML = ''
+            timeToOptions.forEach((timeToOption) => {
+                timeTo.innerHTML += `<option value="${timeToOption}">${timeToOption}</option>`
+            })
+        }
+    }
+}
+
+// load organizations as options in orgfloatingInput using ajax /student/view_organization
+loadOrganizations = () => {
+    $.ajaxSetup({
+        headers: {
+            Accept: 'application/json',
+            Authorization: 'Bearer ' + TOKEN,
+        },
+    })
+
+    $.ajax({
+        type: 'GET',
+        url: apiURL + `evrsers/student/view_organization`,
+        // filter by organization status == active using dataSrc
+        dataSrc: (data) => {
+            let filterData = data.data.filter((item) => {
+                return item.reserve_status == 'Active'
+            })
+            return filterData
+        },
+        success: (result) => {
+            const data = result.data
+            console.log(data)
+
+            if (result) {
+                data.forEach((organization) => {
+                    if (organization.organization_abbreviation === '') {
+                        $('#orgfloatingInput').append(
+                            `<option value="${organization.organization_id}">${organization.organization_name}</option>
+                            `,
+                        )
+                    } else {
+                        $('#orgfloatingInput').append(
+                            `<option value="${organization.organization_id}">${organization.organization_abbreviation}</option>
+                            `,
+                        )
+                    }
+                })
+                $('#orgfloatingInput').append(`<option>Other</option>`)
+            }
+        },
+    })
 }

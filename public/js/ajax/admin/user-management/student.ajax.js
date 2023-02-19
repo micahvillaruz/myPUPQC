@@ -12,6 +12,17 @@ $(function () {
 		// pass data to API for updating of student's info
 		updateStudentAJAX($('#edit_user_id').val())
 	})
+
+	$('#updateEducationProfileForm').on('submit', function (e) {
+		e.preventDefault() // prevent page refresh
+
+		// pass data to API for updating of student's info
+		if ($('#updateEducationProfileForm')[0].checkValidity()) {
+			const form = new FormData($('#updateEducationProfileForm')[0])
+
+			updateEducationProfile(form, $('#hidden_user_id').val())
+		}
+	})
 })
 
 // Load datatables
@@ -28,6 +39,20 @@ loadStudentTable = () => {
 
 	if (dt.length) {
 		dt.DataTable({
+			dom:
+				"<'row'<'col-xl-12 mb-2'B>>" +
+				"<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+				"<'row'<'col-sm-12'tr>>" +
+				"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+			buttons: [
+				{
+					extend: 'print',
+					text: '<i class="ri-printer-fill"></i> Print',
+					exportOptions: {
+						columns: [0, 1, 2, 3],
+					},
+				},
+			],
 			bDestroy: true,
 			ajax: {
 				url: apiURL + 'super_admin/student/',
@@ -54,41 +79,12 @@ loadStudentTable = () => {
 					},
 				},
 
-				// Address
-				{
-					data: null,
-					render: (data) => {
-						const address = data.user_profiles[0].full_address
-						return `${address}`
-					},
-				},
-
 				// Gender
 				{
 					data: null,
 					render: (data) => {
 						const igender = data.user_profiles[0].gender
 						return `${igender}`
-					},
-				},
-
-				// Birthday
-				{
-					data: null,
-					render: (data) => {
-						const birth_date = moment(data.user_profiles[0].birth_date).format('LL')
-
-						return `${birth_date}`
-					},
-				},
-
-				// Contact Number
-				{
-					data: null,
-					render: (data) => {
-						const contact_number = data.user_profiles[0].contact_number
-
-						return `${contact_number}`
 					},
 				},
 
@@ -99,6 +95,16 @@ loadStudentTable = () => {
 						return data.is_blacklist
 							? `<span class="badge rounded-pill bg-danger">Inactive</span>`
 							: `<span class="badge rounded-pill bg-success">Active</span>`
+					},
+				},
+
+				// Education Profile
+				{
+					data: null,
+					render: (data) => {
+						return `
+                        <button type="button" class="btn btn-secondary bg-gradient btn-icon waves-effect waves-light" onclick="populateEducationProfile('${data.user_id}')" data-bs-toggle="modal" data-bs-target="#updateEducationProfile"><i class="bx bxs-graduation fs-4"></i></button>
+                        `
 					},
 				},
 
@@ -168,7 +174,6 @@ enrollStudent = () => {
 		data = {
 			image: form.get('profile-img-file-input'),
 			user_no: form.get('user_no'),
-			password: form.get('password'),
 			first_name: form.get('first_name'),
 			middle_name: form.get('middle_name'),
 			last_name: form.get('last_name'),
@@ -473,5 +478,74 @@ activateStudent = (user_id) => {
 				})
 			})
 		}
+	})
+}
+
+populateEducationProfile = (user_id) => {
+	$.ajax({
+		url: apiURL + 'super_admin/education_profile/' + user_id,
+		type: 'GET',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			const data = result.data
+			$('#hidden_user_id').val(data.user_id)
+			$('#user_course').val(data.user_course)
+			$('#admission_status').val(data.admission_status)
+			$('#scholastic_status').val(data.scholastic_status)
+			$('#school_year_admitted').val(data.school_year_admitted)
+			$('#course_when_admitted').val(data.course_when_admitted)
+			$('#high_school_graduated').val(data.high_school_graduated)
+			$('#high_school_graduated_year').val(data.high_school_graduated_year)
+			$('#elementary_graduated').val(data.elementary_graduated)
+			$('#elementary_graduated_year').val(data.elementary_graduated_year)
+		},
+	})
+}
+
+updateEducationProfile = (form, user_id) => {
+	let data = {
+		user_course: form.get('user_course'),
+		admission_status: form.get('admission_status'),
+		scholastic_status: form.get('scholastic_status'),
+		school_year_admitted: form.get('school_year_admitted'),
+		course_when_admitted: form.get('course_when_admitted'),
+		high_school_graduated: form.get('high_school_graduated'),
+		high_school_graduated_year: form.get('high_school_graduated_year'),
+		elementary_graduated: form.get('elementary_graduated'),
+		elementary_graduated_year: form.get('elementary_graduated_year'),
+	}
+	$.ajax({
+		url: apiURL + 'super_admin/education_profile/' + user_id,
+		type: 'PUT',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			if (result) {
+				Swal.fire({
+					html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done!</h4><p class="text-muted mx-4 mb-0">You have successfully updated the education profile!</p></div></div>',
+					showCancelButton: !0,
+					showConfirmButton: !1,
+					cancelButtonClass: 'btn btn-success w-xs mb-1',
+					cancelButtonText: 'Ok',
+					buttonsStyling: !1,
+					showCloseButton: !0,
+				}).then(function () {
+					setTimeout(() => {
+						location.reload()
+					}, 1000)
+				})
+			}
+		},
+	}).fail(() => {
+		Swal.fire({
+			html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">There was an error while updating your education profile. Please try again.</p></div></div>',
+			showCancelButton: !0,
+			showConfirmButton: !1,
+			cancelButtonClass: 'btn btn-danger w-xs mb-1',
+			cancelButtonText: 'Dismiss',
+			buttonsStyling: !1,
+			showCloseButton: !0,
+		})
 	})
 }

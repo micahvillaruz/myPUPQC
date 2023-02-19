@@ -4,12 +4,6 @@
             <div class="flex-grow-1">
                 <button type="button" class="btn btn-success" data-bs-toggle="collapse" href="#collapseExample" aria-expanded="true" aria-controls="collapseExample"><i class="ri-add-line align-bottom me-1"></i> Add Announcement</button>
             </div>
-            <div class="flex-shrink-0">
-                <div class="hstack text-nowrap gap-2">
-                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#addmembers"><i class="ri-filter-2-line me-1 align-bottom"></i> Filters</button>
-                    <button class="btn btn-soft-info shadow-none">Import</button>
-                </div>
-            </div>
         </div>
         <div class="collapse mb-3" id="collapseExample">
             <div class="card mb-0">
@@ -67,26 +61,28 @@
                         </li>
                     </ul>
                     <!-- Tab panes -->
-                    <div class="tab-content text-muted">
+                    <div class="tab-content ">
                         <div class="tab-pane active" id="all_announcements" role="tabpanel">
-                            <table id="all_announcements_table" class="table nowrap align-middle" style="width:100%">
-                                <thead class="text-muted table-light">
+                            <table id="all_announcements_table" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
+                                <thead class=" table-light">
                                     <tr class="text-uppercase">
                                         <th>Title</th>
                                         <th>Description</th>
                                         <th>Created By</th>
                                         <th>Create Date</th>
+                                        <th>Status</th>
                                     </tr>
                                 </thead>
                             </table>
                         </div>
                         <div class="tab-pane" id="my_announcements" role="tabpanel">
-                            <table id="my_announcements_table" class="table nowrap align-middle" style="width:100%">
-                                <thead class="text-muted table-light">
+                            <table id="my_announcements_table" class="table table-bordered dt-responsive nowrap table-striped align-middle text-center" style="width: 100%">
+                                <thead class=" table-light">
                                     <tr class="text-uppercase">
                                         <th>Title</th>
                                         <th>Description</th>
                                         <th>Create Date</th>
+                                        <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>

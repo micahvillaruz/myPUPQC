@@ -114,7 +114,7 @@
       <div class="modal-body">
         <h2 class="text-center"><span id="control_no" class="badge badge-outline-primary text-center fw-bold"></span></h2>
         <table class="mt-5 table table-bordered nowrap align-middle" style="width: 100%">
-          <thead class="table-light text-muted">
+          <thead class="table-light ">
             <tr>
               <th colspan="2" class="bg-soft-primary text-dark">Requested Document/s:</th>
             </tr>
@@ -142,7 +142,7 @@
                   </div>
                 </div>
                 <div class="flex-grow-1">
-                  <p class="text-uppercase text-muted mb-1">Payment Status :</p>
+                  <p class="text-uppercase  mb-1">Payment Status :</p>
                   <h6 id="payment_status" class="mb-0"></h6>
                 </div>
               </div>
@@ -158,7 +158,7 @@
                   </div>
                 </div>
                 <div class="flex-grow-1">
-                  <p class="text-uppercase text-muted mb-1">OR Number :</p>
+                  <p class="text-uppercase  mb-1">OR Number :</p>
                   <h6 id="or_no" class="mb-0"></h6>
                 </div>
               </div>
@@ -174,7 +174,7 @@
                   </div>
                 </div>
                 <div class="flex-grow-1">
-                  <p class="text-uppercase text-muted mb-1">Release Classification :</p>
+                  <p class="text-uppercase  mb-1">Release Classification :</p>
                   <h6 id="release_classification" class="mb-0"></h6>
                 </div>
               </div>
@@ -190,7 +190,7 @@
                   </div>
                 </div>
                 <div class="flex-grow-1">
-                  <p id="completed_date" class="text-uppercase text-muted mb-1"></p>
+                  <p id="completed_date" class="text-uppercase  mb-1"></p>
                   <h6 id="date_completed" class="mb-0"></h6>
                 </div>
               </div>
@@ -223,7 +223,7 @@
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                   <div class="accordion-body ms-2 ps-5 pt-0">
                     <h6 class="mb-1">The Document Request is Pending for Approval and is being reviewed by the Officer-in-Charge, Student Records.</h6>
-                    <p id="pending_for_clearance_datetime" class="text-muted mb-0"></p>
+                    <p id="pending_for_clearance_datetime" class=" mb-0"></p>
                   </div>
                 </div>
               </div>
@@ -249,4 +249,194 @@
     <!-- /.modal-content -->
   </div>
   <!-- /.modal-dialog -->
+</div>
+
+<div class="modal fade" id="satisfactionSurveyModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="clientSatisfactionSurvey" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body text-center px-4">
+        <lord-icon src="https://cdn.lordicon.com/yhlmlhlk.json" trigger="loop" style="width:120px;height:120px">
+        </lord-icon>
+
+        <div class="mt-4">
+          <h4 class="mb-3 fw-semibold">Client Satisfaction Survey</h4>
+          <p class="text-muted mb-4">Thank you for using the Online Document Request and Tracking System. To help us improve our services, please take a moment to answer our client satisfaction survey by filling up the form below.</p>
+          <input type="hidden" id="survey_request_id">
+          <div class="card text-center p-3" style="background-color: #4b38b3">
+            <blockquote class="card-blockquote m-0">
+              <h5 class="text-white mb-4">How would you rate the service/s provided to you by the OIC, Student Records?</h5>
+              <div class="text-white font-size-12 mt-3 mb-0">
+                <table>
+                  <thead>
+                    <tr class="fs-12">
+                      <th scope="col">
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                      </th>
+                      <th scope="col">
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                      </th>
+                      <th scope="col">
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                      </th>
+                      <th scope="col">
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                      </th>
+                      <th scope="col">
+                        <i class="ri-star-fill text-warning"></i>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><small>Outstanding</small></td>
+                      <td><small>Exceeds Expectations</small></td>
+                      <td><small>Meets Expectations</small></td>
+                      <td><small>Needs Improvement</small></td>
+                      <td><small>Poor</small></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </blockquote>
+          </div>
+          <form id="clientSurveyForm" class="mt-4 needs-validation" novalidate>
+            <input type="hidden" id="survey_request_id">
+            <div class="row mb-3">
+              <div class="ps-5 col-lg-6 text-start">
+                <label for="quality_service" class="form-label">Quality of Service</label>
+              </div>
+              <div class="col-lg-6">
+                <div id="quality_service"></div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="ps-5 col-lg-6 text-start">
+                <label for="timeliness_service" class="form-label">Timeliness of Service</label>
+              </div>
+              <div class="col-lg-6">
+                <div id="timeliness_service"></div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="ps-5 col-lg-6 text-start">
+                <label for="courtesy_staff" class="form-label">Courtesy of Staff</label>
+              </div>
+              <div class="col-lg-6">
+                <div id="courtesy_staff"></div>
+              </div>
+            </div>
+            <div class="text-center row mt-4">
+              <div class="col-lg-12">
+                <label for="comments" class="form-label">Comments/Suggestions/Recommendations</label>
+              </div>
+              <div class="col-lg-12">
+                <textarea class="form-control" id="comments" name="comments" rows="4" placeholder="Please feel free to share any comments on how we can improve our services in the future. Your feedback is greatly appreciated and will be taken into consideration as we continue to improve our services. Thank you!"></textarea>
+              </div>
+            </div>
+            <div class="mt-4 justify-content-center">
+              <button type="submit" class="w-100 btn btn-dark bg-gradient fw-medium waves-effect waves-light" style="background-color: #4b38b3; border-color: #4b38b3!important;">Submit</button>
+            </div>
+          </form>
+          <button class="mt-2 btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Dismiss</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="viewSurveyEvaluation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="viewClientSurveyEvaluation" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body text-center px-4">
+        <lord-icon src="https://cdn.lordicon.com/bzzdsrlh.json" trigger="loop" style="width:120px;height:120px">
+        </lord-icon>
+
+        <div class="mt-4">
+          <h4 class="mb-3 fw-semibold">Client Satisfaction Survey Result</h4>
+          <p class="text-muted mb-4">Thank you for taking the time to provide feedback on your experience using the Online Document Request and Tracking System. Your feedback is greatly appreciated and will be taken into consideration as we continue to improve our services.</p>
+          <input type="hidden" id="survey_request_id">
+          <div class="card text-center p-3" style="background-color: #4b38b3">
+            <blockquote class="card-blockquote m-0">
+              <div class="text-white font-size-12 mt-0 mb-0">
+                <table>
+                  <thead>
+                    <tr class="fs-12">
+                      <th scope="col">
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                      </th>
+                      <th scope="col">
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                      </th>
+                      <th scope="col">
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                      </th>
+                      <th scope="col">
+                        <i class="ri-star-fill text-warning"></i>
+                        <i class="ri-star-fill text-warning"></i>
+                      </th>
+                      <th scope="col">
+                        <i class="ri-star-fill text-warning"></i>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><small>Outstanding</small></td>
+                      <td><small>Exceeds Expectations</small></td>
+                      <td><small>Meets Expectations</small></td>
+                      <td><small>Needs Improvement</small></td>
+                      <td><small>Poor</small></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </blockquote>
+          </div>
+          <div class="d-flex align-items-center row mb-3">
+            <div class="ps-5 col-lg-6 text-start">
+              <h6 class="mb-0" for="quality_rating">Quality of Service</h6>
+            </div>
+            <div id="quality" class="col-lg-6">
+            </div>
+          </div>
+          <div class="d-flex align-items-center row mb-3">
+            <div class="ps-5 col-lg-6 text-start">
+              <h6 class="mb-0" for="timeliness_rating">Timeliness of Service</h6>
+            </div>
+            <div id="timeliness" class="col-lg-6">
+            </div>
+          </div>
+          <div class="d-flex align-items-center row mb-3">
+            <div class="ps-5 col-lg-6 text-start">
+              <h6 class="mb-0" for="courtesy_staff">Courtesy of Staff</h6>
+            </div>
+            <div id="courtesy" class="col-lg-6">
+            </div>
+          </div>
+          <div id="comment_survey" class="text-center row">
+          </div>
+          <button class="mt-4 w-100 btn btn-dark bg-gradient fw-medium waves-effect waves-light" style="background-color: #4b38b3; border-color: #4b38b3!important;" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

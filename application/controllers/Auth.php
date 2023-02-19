@@ -54,6 +54,23 @@ class Auth extends CI_Controller
     $this->load->view('access/scripts/forgot-password-scripts');
   }
 
+  public function reset_password($token = NULL)
+  {
+    $data['token'] = $token;
+    $this->load->view('partials/main');
+    $this->load->view('partials/title-meta');
+    $this->load->view('partials/head-css');
+    if(!$token){
+        // * 404
+        $this->load->view('errors/error-404');
+    }
+    else{
+        $this->load->view('access/reset-password', $data);
+    }
+    $this->load->view('partials/foot-scripts');
+    $this->load->view('access/scripts/reset-password-scripts');
+  }
+
   public function logout()
   {
     $this->session->sess_destroy();

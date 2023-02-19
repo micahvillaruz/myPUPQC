@@ -9,14 +9,14 @@
         <div class="container-boxed">
           <div class="profile-foreground position-relative mx-n4 mt-n4">
             <div class="profile-wid-bg">
-              <img src="<?= base_url() ?>public/images/pupqc-bg.jpg" alt="" class="profile-wid-img" />
+              <img src="<?= base_url() ?>public/images/pupqc-bg.webp" alt="PUPQC BG" class="profile-wid-img" />
             </div>
           </div>
           <div class="pt-4 mb-4 mb-lg-3 pb-lg-4">
             <div class="row g-4">
               <div class="col-auto">
                 <div class="avatar-lg">
-                  <img src="<?= base_url() ?>public/images/pupqc-logo.png" class="img-thumbnail rounded-circle" />
+                  <img src="<?= base_url() ?>public/images/pupqc-logo.webp" alt="PUP logo" class="img-thumbnail rounded-circle" />
                 </div>
               </div>
               <!--end col-->
@@ -40,12 +40,31 @@
           <div class="row">
             <div class="col-lg-12">
               <div>
-                <div class="row pt-4 text-muted">
+                <div class="row pt-4 ">
                   <div class="col-xxl-9">
                     <div class="card">
                       <div class="card-body">
                         <h3 class="mb-3 text-primary">News</h3>
-                        micah and shane help me kailangan lagyan ng laman ito any ideas??
+                        <p class="p-1 m-3">Here are some latest PUPQC University News:</p>
+                        <div id="latest_three_news"></div>
+                        <hr class="p-1 m-3" />
+                        <p class="p-1 m-3">An RSS Feed is available for PUPQC Latest News</p>
+                        <div class="d-flex flex-column align-items-center h-100">
+                          <div class="flex-grow-1">
+                            <div class="text-center d-flex flex-column">
+                              <img src="<?= base_url() ?>public/images/mypupqc-logo.webp" alt="myPUPQC logo" height="60">
+
+                              <div class="d-flex justify-content-center h-100">
+                                <a href="<?= base_url() ?>news/rss/" target="_blank">
+                                  <div class="d-flex align-items-center align-self-center justify-content-center">
+                                    <img src="<?= base_url() ?>public/images/rss.png" alt="RSS Feed" width="30" height="30" class="mx-2">
+                                    <h4 class="m-0"><strong class="text-primary">RSS Feed</strong></h4>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       <!--end card-body-->
                     </div>
@@ -62,10 +81,10 @@
                         <div>
                           <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>news">News</a>
+                              <a class="" href="<?= base_url() ?>news">News</a>
                             </li>
-                            <li class="list-group-item text-muted">
-                              <a class="text-muted" href="<?= base_url() ?>advisory">Advisories</a>
+                            <li class="list-group-item ">
+                              <a class="" href="<?= base_url() ?>advisory">Advisories</a>
                             </li>
                           </ul>
                         </div>

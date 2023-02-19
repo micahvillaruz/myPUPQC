@@ -9,14 +9,14 @@
         <div class="container-boxed">
           <div class="profile-foreground position-relative mx-n4 mt-n4">
             <div class="profile-wid-bg">
-              <img src="<?= base_url() ?>public/images/pupqc-bg.jpg" alt="" class="profile-wid-img" />
+              <img src="<?= base_url() ?>public/images/pupqc-bg.webp" alt="PUPQC BG" class="profile-wid-img" />
             </div>
           </div>
           <div class="pt-4 mb-4 mb-lg-3 pb-lg-4">
             <div class="row g-4">
               <div class="col-auto">
                 <div class="avatar-lg">
-                  <img src="<?= base_url() ?>public/images/pupqc-logo.png" class="img-thumbnail rounded-circle" />
+                  <img src="<?= base_url() ?>public/images/pupqc-logo.webp" alt="PUP Logo" class="img-thumbnail rounded-circle" />
                 </div>
               </div>
               <!--end col-->
@@ -40,12 +40,12 @@
           <div class="row">
             <div class="col-lg-12">
               <div>
-                <div class="row pt-4 text-muted">
+                <div class="row pt-4 ">
                   <div class="col-xxl-9">
                     <div class="card">
                       <div class="card-body">
                         <h3 class="mb-3 text-primary">Calendar</h3>
-                        <table class="table table-nonwrap text-muted">
+                        <table class="table table-nonwrap ">
                           <tbody>
                             <tr>
                               <td class="fw-bold text-primary" colspan="3">First Semester, Academic Year 2022-2023</td>
@@ -120,9 +120,9 @@
                               <td class=""></td>
                               <td>Application and Processing of Credentials of Admission of Transfer Students with complete credentials / Ladderized Programs from PUP Institute of Technology</td>
                             </tr>
-                              <td class="text-primary">October</td>
-                              <td class=""><strong>1-2</strong></td>
-                              <td><strong>PUP 118th Founding Anniversary</strong></td>
+                            <td class="text-primary">October</td>
+                            <td class=""><strong>1-2</strong></td>
+                            <td><strong>PUP 118th Founding Anniversary</strong></td>
                             </tr>
                             <tr>
                               <td class="text-primary">&nbsp;</td>
@@ -174,7 +174,7 @@
                               <td class="">22</td>
                               <td>Auto finalization of Grades in PUPSIS for Summer A.Y. 2020-2021 </td>
                             </tr>
-                            
+
                             <tr>
                               <td class="text-primary">&nbsp;</td>
                               <td class="">30</td>
@@ -193,7 +193,7 @@
                             <tr>
                               <td class="text-primary">&nbsp;</td>
                               <td class="">8</td>
-                            <td>Immaculate Conception</td>
+                              <td>Immaculate Conception</td>
                             </tr>
                             <tr>
                               <td class="text-primary">&nbsp;</td>
@@ -363,7 +363,7 @@
                             </tr>
                             <tr>
                               <td class="text-primary">April</td>
-                             <td class="">6, 7, 8</td>
+                              <td class="">6, 7, 8</td>
                               <td>Maundy Thursday, Good Friday, Black Saturday</td>
                             </tr>
                             <tr>
@@ -479,7 +479,7 @@
                             <tr>
                               <td class="text-primary">&nbsp;</td>
                               <td class="">10</td>
-                              <td>	Submission of Second Semester, A.Y. 2022-2023 grade sheets to the Office of the University Registrar</td>
+                              <td> Submission of Second Semester, A.Y. 2022-2023 grade sheets to the Office of the University Registrar</td>
                             </tr>
                             <tr>
                               <td class="text-primary">&nbsp;</td>
@@ -597,43 +597,43 @@
                         <div>
                           <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about">University Profile</a>
+                              <a class="" href="<?= base_url() ?>about">University Profile</a>
                             </li>
-                            <li class="list-group-item text-muted">
-                              <a class="text-muted" href="<?= base_url() ?>about/vm">Vision and Mission</a>
-                            </li>
-                            <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/history">History</a>
+                            <li class="list-group-item ">
+                              <a class="" href="<?= base_url() ?>about/vm">Vision and Mission</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/logo-and-symbols">Logo and Symbols</a>
+                              <a class="" href="<?= base_url() ?>about/history">History</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/hymn">Hymn</a>
+                              <a class="" href="<?= base_url() ?>about/logo-and-symbols">Logo and Symbols</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/annual-reports">Annual Reports</a>
+                              <a class="" href="<?= base_url() ?>about/hymn">Hymn</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/contact-us">Contact us</a>
+                              <a class="" href="<?= base_url() ?>about/annual-reports">Annual Reports</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/maps">Maps</a>
+                              <a class="" href="<?= base_url() ?>about/contact-us">Contact us</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/code">University Code</a>
+                              <a class="" href="<?= base_url() ?>about/maps">Maps</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/memorandum-orders">Memorandum Orders</a>
+                              <a class="" href="<?= base_url() ?>about/code">University Code</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/executive-orders">Executive Orders</a>
+                              <a class="" href="<?= base_url() ?>about/memorandum-orders">Memorandum Orders</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/codi-manual">CODI Manual</a>
+                              <a class="" href="<?= base_url() ?>about/executive-orders">Executive Orders</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/citizens-charter">Citizens Charter</a>
+                              <a class="" href="<?= base_url() ?>about/codi-manual">CODI Manual</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="" href="<?= base_url() ?>about/citizens-charter">Citizens Charter</a>
                             </li>
                           </ul>
                         </div>

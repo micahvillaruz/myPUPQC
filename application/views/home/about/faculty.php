@@ -9,14 +9,14 @@
         <div class="container-boxed">
           <div class="profile-foreground position-relative mx-n4 mt-n4">
             <div class="profile-wid-bg">
-              <img src="<?= base_url() ?>public/images/pupqc-bg.jpg" alt="" class="profile-wid-img" />
+              <img src="<?= base_url() ?>public/images/pupqc-bg.webp" alt="PUPQC BG" class="profile-wid-img" />
             </div>
           </div>
           <div class="pt-4 mb-4 mb-lg-3 pb-lg-4">
             <div class="row g-4">
               <div class="col-auto">
                 <div class="avatar-lg">
-                  <img src="<?= base_url() ?>public/images/pupqc-logo.png" class="img-thumbnail rounded-circle" />
+                  <img src="<?= base_url() ?>public/images/pupqc-logo.webp" alt="PUP Logo" class="img-thumbnail rounded-circle" />
                 </div>
               </div>
               <!--end col-->
@@ -40,7 +40,7 @@
           <div class="row">
             <div class="col-lg-12">
               <div>
-                <div class="row pt-4 text-muted">
+                <div class="row pt-4 ">
                   <div class="col-xxl-9">
                     <div class="card">
                       <div class="card-body">
@@ -53,14 +53,14 @@
                                 <div class="d-flex align-items-start">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-1.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-1.webp" alt="Instructor I" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
                                       Rodolfo Y. Aquino Jr., MBA
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Instructor I
                                     </p>
                                   </div>
@@ -71,14 +71,14 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-2.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-2.webp" alt="Head, Academic Programs" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
                                       Melanie F. Bactasa, MAED
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Head, Academic Programs
                                     </p>
                                   </div>
@@ -89,14 +89,14 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-3.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-3.webp" alt="Assistant Professor II" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
                                       Mary Grace I. Cruz, MEM
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Assistant Professor II
                                     </p>
                                   </div>
@@ -107,14 +107,14 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-4.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-4.webp" alt="Assistant Professor IV" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
                                       Edgardo S. Delmo, MGM, MBA
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Assistant Professor IV
                                     </p>
                                   </div>
@@ -125,14 +125,14 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-5.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-5.webp" alt="Assistant Professor IV" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
                                       Rodrigo S. Dolorosa, DEM
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Assistant Professor IV
                                     </p>
                                   </div>
@@ -143,14 +143,14 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-6.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-6.webp" alt="Assistant Professor I" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
                                       Cherrylyn P. Esparagoza, MPA
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Assistant Professor I
                                     </p>
                                   </div>
@@ -161,14 +161,14 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-7.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-7.webp" alt="Assistant Professor III" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
                                       Alma C. Fernandez, MIT
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Assistant Professor III
                                     </p>
                                   </div>
@@ -179,14 +179,14 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-8.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-8.webp" alt="Associate Professor V" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
                                       Doris B. Gatan, MBA
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Associate Professor V
                                     </p>
                                   </div>
@@ -197,14 +197,14 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-9.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-9.webp" alt="Assistant Professor IV" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
                                       Irynne P. Gatchalian
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Assistant Professor IV
                                     </p>
                                   </div>
@@ -215,14 +215,14 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-10.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-10.webp" alt="Assistant Professor IV" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
                                       Roseller M. Malabanan, MPA
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Assistant Professor IV
                                     </p>
                                   </div>
@@ -233,14 +233,14 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-11.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-11.webp" alt="Associate Professor II" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
                                       Demelyn E. Monzon, MEM
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Associate Professor II
                                     </p>
                                   </div>
@@ -251,14 +251,14 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-12.jpg" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-12.webp" alt="Assistant Professor I" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
                                       Sheryl R. Morales, MEM
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Assistant Professor I
                                     </p>
                                   </div>
@@ -268,14 +268,14 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-13.jpg" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-13.webp" alt="Assistant Professor I" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
                                       Rommel Y. Roxas, MBA
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Assistant Professor I
                                     </p>
                                   </div>
@@ -285,14 +285,14 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-14.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-14.webp" alt="Assistant Professor I" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
                                       Cleotilde B. Servigon
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Assistant Professor I
                                     </p>
                                   </div>
@@ -302,14 +302,14 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-15.jpg" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-15.webp" alt="instructor I" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
                                       Philip Sj Soberano, MPA
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Instructor I
                                     </p>
                                   </div>
@@ -319,14 +319,14 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-16.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-16.webp" alt="Professor IV" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
                                     <h5 class="mb-1">
                                       Caroline T. Sumande, DEM
                                     </h5>
-                                    <p class="text-muted fs-13 mb-0">
+                                    <p class=" fs-13 mb-0">
                                       Professor IV
                                     </p>
                                   </div>
@@ -345,7 +345,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-17.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-17.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -360,7 +360,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-18.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-18.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -375,7 +375,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-19.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-19.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -390,7 +390,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-20.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-20.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -405,7 +405,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-21.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-21.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -420,7 +420,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-22.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-22.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -435,7 +435,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-23.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-23.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -450,7 +450,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-24.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-24.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -465,7 +465,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-25.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-25.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -480,7 +480,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-26.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-26.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -495,7 +495,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-27.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-27.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -510,7 +510,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-28.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-28.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -525,7 +525,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-29.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-29.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -540,7 +540,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-30.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-30.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -555,7 +555,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-31.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-31.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -570,7 +570,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-32.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-32.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -585,7 +585,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-33.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-33.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -600,7 +600,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-34.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-34.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -615,7 +615,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-35.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-35.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -630,7 +630,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-36.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-36.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -645,7 +645,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-37.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-37.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -660,7 +660,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-38.png" />
+                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-38.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -675,7 +675,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-39.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-39.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -690,7 +690,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-40.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-40.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -705,7 +705,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-41.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-41.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -720,7 +720,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-42.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-42.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -735,7 +735,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-43.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-43.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -750,7 +750,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-44.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-44.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -765,7 +765,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-45.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-45.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -780,7 +780,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-46.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-46.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -795,7 +795,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-47.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-47.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -810,7 +810,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-48.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-48.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -825,7 +825,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-49.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-49.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -840,7 +840,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-50.jpg" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-50.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -855,7 +855,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-51.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-51.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -870,7 +870,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-52.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-52.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -885,7 +885,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-53.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-53.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -900,7 +900,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-54.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-54.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -915,7 +915,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-55.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-55.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -930,7 +930,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-56.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-56.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -945,7 +945,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-57.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-57.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -960,7 +960,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-58.png" />
+                                      <img class="image avatar-sm rounded-circle" src="<?= base_url() ?>public/images/faculty/img-58.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -975,7 +975,7 @@
                                 <div class="d-flex align-items-center">
                                   <div class="flex-shrink-0 me-4">
                                     <div>
-                                      <img class="image avatar-sm rounded-circle" alt="" src="<?= base_url() ?>public/images/faculty/img-59.png" />
+                                      <img class="image avatar-sm rounded-circle"src="<?= base_url() ?>public/images/faculty/img-59.webp" alt="Part-time Faculty Member" />
                                     </div>
                                   </div>
                                   <div class="flex-grow-1 overflow-hidden">
@@ -1007,25 +1007,25 @@
                         <div>
                           <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about">PUP Quezon City Branch</a>
+                              <a class="" href="<?= base_url() ?>about">PUP Quezon City Branch</a>
                             </li>
-                            <li class="list-group-item text-muted">
-                              <a class="text-muted" href="<?= base_url() ?>about/history">History</a>
-                            </li>
-                            <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>facilities">Facilities</a>
+                            <li class="list-group-item ">
+                              <a class="" href="<?= base_url() ?>about/history">History</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>offices">Offices</a>
+                              <a class="" href="<?= base_url() ?>facilities">Facilities</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>personnel">Officials and Staff</a>
+                              <a class="" href="<?= base_url() ?>offices">Offices</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>faculty">Faculty</a>
+                              <a class="" href="<?= base_url() ?>personnel">Officials and Staff</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/contact-us">Contact Information</a>
+                              <a class="" href="<?= base_url() ?>faculty">Faculty</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="" href="<?= base_url() ?>about/contact-us">Contact Information</a>
                             </li>
                           </ul>
                         </div>

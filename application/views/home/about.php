@@ -9,14 +9,14 @@
         <div class="container-boxed">
           <div class="profile-foreground position-relative mx-n4 mt-n4">
             <div class="profile-wid-bg">
-              <img src="<?= base_url() ?>public/images/pupqc-bg.jpg" alt="" class="profile-wid-img" />
+              <img src="<?= base_url() ?>public/images/pupqc-bg.webp" alt="PUPQC BG" class="profile-wid-img" />
             </div>
           </div>
           <div class="pt-4 mb-4 mb-lg-3 pb-lg-4">
             <div class="row g-4">
               <div class="col-auto">
                 <div class="avatar-lg">
-                  <img src="<?= base_url() ?>public/images/pupqc-logo.png" class="img-thumbnail rounded-circle" />
+                  <img src="<?= base_url() ?>public/images/pupqc-logo.webp" alt="PUP Logo" class="img-thumbnail rounded-circle" />
                 </div>
               </div>
               <!--end col-->
@@ -40,14 +40,14 @@
           <div class="row">
             <div class="col-lg-12">
               <div>
-                <div class="row pt-4 text-muted">
+                <div class="row pt-4 ">
                   <div class="col-xxl-9">
                     <div class="card">
                       <div class="card-body">
                         <h3 class="mb-3 text-primary">About</h3>
                         <div class="mx-3">
                           <div class="mb-3 d-flex justify-content-center">
-                            <img src="<?= base_url() ?>public/images/about/img-1.jpg" alt="" class="img-fluid">
+                            <img src="<?= base_url() ?>public/images/about/img-1.webp" alt="PUPQC Pylon" class="img-fluid">
                           </div>
                           <p>
                             The Polytechnic University of the Philippines Quezon City (abbreviated as PUPQC; also known as PUP Commonwealth Campus) is one of the satellite campuses of the Polytechnic University of the Philippines located in Don Fabian Street., Barangay Commonwealth, Quezon City, Philippines. It was established in 1997. It confers undergraduate and diploma degrees.
@@ -74,7 +74,7 @@
                           </ul>
                           </p>
                           <div class="mb-3 d-flex justify-content-center">
-                            <img src="<?= base_url() ?>public/images/about/img-2.jpg" alt="" class="img-fluid">
+                            <img src="<?= base_url() ?>public/images/about/img-2.webp" alt="PUPQC" class="img-fluid">
                           </div>
                           <p>
                             PUPQC was established through the generosity and benevolence of Walter Rothlehner, a German church leader who donated his property in Barangay Commonwealth, Quezon City to PUP. The campus lot with an area of 1.9 hectares is donated by SIKHAY, an association led by Rev. Fr. Joel Tabora. The PUP Open University was tasked to administer and maintain the campus and its facilities. PUPQC was formally inaugurated on July 29, 1997. Although it was in existing prior to 1997, it only started its operations and formal classes after its inauguration.
@@ -158,25 +158,25 @@
                         <div>
                           <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about">PUP Quezon City Branch</a>
+                              <a class="" href="<?= base_url() ?>about">PUP Quezon City Branch</a>
                             </li>
-                            <li class="list-group-item text-muted">
-                              <a class="text-muted" href="<?= base_url() ?>about/history">History</a>
-                            </li>
-                            <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>facilities">Facilities</a>
+                            <li class="list-group-item ">
+                              <a class="" href="<?= base_url() ?>about/history">History</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>offices">Offices</a>
+                              <a class="" href="<?= base_url() ?>facilities">Facilities</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>personnel">Officials and Staff</a>
+                              <a class="" href="<?= base_url() ?>offices">Offices</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>faculty">Faculty</a>
+                              <a class="" href="<?= base_url() ?>personnel">Officials and Staff</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/contact-us">Contact Information</a>
+                              <a class="" href="<?= base_url() ?>faculty">Faculty</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="" href="<?= base_url() ?>about/contact-us">Contact Information</a>
                             </li>
                           </ul>
                         </div>

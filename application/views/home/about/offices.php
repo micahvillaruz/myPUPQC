@@ -9,14 +9,14 @@
         <div class="container-boxed">
           <div class="profile-foreground position-relative mx-n4 mt-n4">
             <div class="profile-wid-bg">
-              <img src="<?= base_url() ?>public/images/pupqc-bg.jpg" alt="" class="profile-wid-img" />
+              <img src="<?= base_url() ?>public/images/pupqc-bg.webp" alt="PUPQC BG" class="profile-wid-img" />
             </div>
           </div>
           <div class="pt-4 mb-4 mb-lg-3 pb-lg-4">
             <div class="row g-4">
               <div class="col-auto">
                 <div class="avatar-lg">
-                  <img src="<?= base_url() ?>public/images/pupqc-logo.png" class="img-thumbnail rounded-circle" />
+                  <img src="<?= base_url() ?>public/images/pupqc-logo.webp" alt="PUP Logo" class="img-thumbnail rounded-circle" />
                 </div>
               </div>
               <!--end col-->
@@ -40,7 +40,7 @@
           <div class="row">
             <div class="col-lg-12">
               <div>
-                <div class="row pt-4 text-muted">
+                <div class="row pt-4 ">
                   <div class="col-xxl-9">
                     <div class="card">
                       <div class="card-body">
@@ -49,61 +49,61 @@
                           <div class="row mb-3">
                             <div class="col-6">
                               <span class="badge badge-soft-primary badge-border fs-14 mb-2">Student Affairs Services Office</span>
-                              <img src="<?= base_url() ?>public/images/offices/img-1.jpg" alt="" class="facilities-img">
+                              <img src="<?= base_url() ?>public/images/offices/img-1.webp" alt="Student Affairs Services Office" class="facilities-img">
                             </div>
                             <div class="col-6">
                               <span class="badge badge-soft-primary badge-border fs-14 mb-2">Records Section</span>
-                              <img src="<?= base_url() ?>public/images/offices/img-2.jpg" alt="" class="facilities-img">
+                              <img src="<?= base_url() ?>public/images/offices/img-2.webp" alt="Records Section" class="facilities-img">
                             </div>
                           </div>
                           <div class="row mb-3">
                             <div class="col-6">
                               <span class="badge badge-soft-primary badge-border fs-14 mb-2">Admission and Registration Office</span>
-                              <img src="<?= base_url() ?>public/images/offices/img-3.jpg" alt="" class="facilities-img">
+                              <img src="<?= base_url() ?>public/images/offices/img-3.webp" alt="Admission and Registration Office" class="facilities-img">
                             </div>
                             <div class="col-6">
                               <span class="badge badge-soft-primary badge-border fs-14 mb-2">Collection and Disbursement Office</span>
-                              <img src="<?= base_url() ?>public/images/offices/img-4.jpg" alt="" class="facilities-img">
+                              <img src="<?= base_url() ?>public/images/offices/img-4.webp" alt="Collection and Disbursement Office" class="facilities-img">
                             </div>
                           </div>
                           <div class="row mb-3">
                             <div class="col-6">
                               <span class="badge badge-soft-primary badge-border fs-14 mb-2">Office of the Director</span>
-                              <img src="<?= base_url() ?>public/images/offices/img-5.jpg" alt="" class="facilities-img">
+                              <img src="<?= base_url() ?>public/images/offices/img-5.webp" alt="Office of the Director" class="facilities-img">
                             </div>
                             <div class="col-6">
                               <span class="badge badge-soft-primary badge-border fs-14 mb-2">Medical Office</span>
-                              <img src="<?= base_url() ?>public/images/offices/img-6.jpg" alt="" class="facilities-img">
+                              <img src="<?= base_url() ?>public/images/offices/img-6.webp" alt="Medical Office" class="facilities-img">
                             </div>
                           </div>
                           <div class="row mb-3">
                             <div class="col-6">
                               <span class="badge badge-soft-primary badge-border fs-14 mb-2">Research and Extension Office</span>
-                              <img src="<?= base_url() ?>public/images/offices/img-7.jpg" alt="" class="facilities-img">
+                              <img src="<?= base_url() ?>public/images/offices/img-7.webp" alt="Research and Extension Office" class="facilities-img">
                             </div>
                             <div class="col-6">
                               <span class="badge badge-soft-primary badge-border fs-14 mb-2">Admin / Property Office</span>
-                              <img src="<?= base_url() ?>public/images/offices/img-8.jpg" alt="" class="facilities-img">
+                              <img src="<?= base_url() ?>public/images/offices/img-8.webp" alt="Admin / Property Office" class="facilities-img">
                             </div>
                           </div>
                           <div class="row mb-3">
                             <div class="col-6">
                               <span class="badge badge-soft-primary badge-border fs-14 mb-2">Guidance Office</span>
-                              <img src="<?= base_url() ?>public/images/offices/img-9.jpg" alt="" class="facilities-img">
+                              <img src="<?= base_url() ?>public/images/offices/img-9.webp" alt="Guidance Office" class="facilities-img">
                             </div>
                             <div class="col-6">
                               <span class="badge badge-soft-primary badge-border fs-14 mb-2">Registrar Office</span>
-                              <img src="<?= base_url() ?>public/images/offices/img-10.jpg" alt="" class="facilities-img">
+                              <img src="<?= base_url() ?>public/images/offices/img-10.webp" alt="Registrar Office" class="facilities-img">
                             </div>
                           </div>
                           <div class="row mb-3">
                             <div class="col-6">
                               <span class="badge badge-soft-primary badge-border fs-14 mb-2">Dental Clinic</span>
-                              <img src="<?= base_url() ?>public/images/offices/img-11.jpg" alt="" class="facilities-img">
+                              <img src="<?= base_url() ?>public/images/offices/img-11.webp" alt="Dental Clinic" class="facilities-img">
                             </div>
                             <div class="col-6">
                               <span class="badge badge-soft-primary badge-border fs-14 mb-2">Accreditation Center</span>
-                              <img src="<?= base_url() ?>public/images/offices/img-12.jpg" alt="" class="facilities-img">
+                              <img src="<?= base_url() ?>public/images/offices/img-12.webp" alt="Accreditation Center" class="facilities-img">
                             </div>
                           </div>
                         </div>
@@ -124,25 +124,25 @@
                         <div>
                           <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about">PUP Quezon City Branch</a>
+                              <a class="" href="<?= base_url() ?>about">PUP Quezon City Branch</a>
                             </li>
-                            <li class="list-group-item text-muted">
-                              <a class="text-muted" href="<?= base_url() ?>about/history">History</a>
-                            </li>
-                            <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>facilities">Facilities</a>
+                            <li class="list-group-item ">
+                              <a class="" href="<?= base_url() ?>about/history">History</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>offices">Offices</a>
+                              <a class="" href="<?= base_url() ?>facilities">Facilities</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>personnel">Officials and Staff</a>
+                              <a class="" href="<?= base_url() ?>offices">Offices</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>faculty">Faculty</a>
+                              <a class="" href="<?= base_url() ?>personnel">Officials and Staff</a>
                             </li>
                             <li class="list-group-item">
-                              <a class="text-muted" href="<?= base_url() ?>about/contact-us">Contact Information</a>
+                              <a class="" href="<?= base_url() ?>faculty">Faculty</a>
+                            </li>
+                            <li class="list-group-item">
+                              <a class="" href="<?= base_url() ?>about/contact-us">Contact Information</a>
                             </li>
                           </ul>
                         </div>

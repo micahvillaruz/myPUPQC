@@ -250,7 +250,7 @@
               </div>
               <div class="accordion-item border-0">
                 <div class="accordion-header" id="headingFive">
-                  <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFile" aria-expanded="false">
+                  <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false">
                     <div class="d-flex align-items-center">
                       <div class="flex-shrink-0 avatar-xs">
                         <div class="avatar-title bg-light text-success rounded-circle">
@@ -401,7 +401,7 @@
               </div>
               <div class="accordion-item border-0">
                 <div class="accordion-header" id="headingFive">
-                  <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFile" aria-expanded="false">
+                  <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false">
                     <div class="d-flex align-items-center">
                       <div class="flex-shrink-0 avatar-xs">
                         <div class="avatar-title bg-light text-success rounded-circle">
@@ -585,6 +585,29 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="approvalWorkflowModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="approvalWorkflow" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body text-center px-4">
+        <lord-icon src="https://cdn.lordicon.com/lzpqzjob.json" trigger="loop" style="width:120px;height:120px">
+        </lord-icon>
+
+        <div class="mt-4">
+          <h4 class="mb-3 fw-semibold">Trace Request Approval</h4>
+          <p class="text-muted mb-4">All of the documents included in this request and the audit trail of the signatories for each document is displayed below. The document can be <span class="fw-medium">On Hold</span> or <span class="fw-medium">Approved</span> and you must comply with the remarks indicated by the signatories for smooth facilitation of request.</p>
+
+
+          <div id="trace_request_approval">
+          </div>
+
+          <button class="mt-4 w-100 btn fw-medium waves-effect waves-light" style="background-color: rgb(75,56,179, 0.25)" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <div class="modal fade" id="readyforPickupModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="pickupThisRequest" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">

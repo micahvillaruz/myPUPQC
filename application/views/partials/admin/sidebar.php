@@ -66,9 +66,15 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link menu-link" href="<?= base_url() ?>admin/user-role-management/user-roles">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/user-role-management/student">
                 <i class="las la-user-graduate"></i>
-                <span>User Role </span>
+                <span>For Students</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/user-role-management/staff">
+                <i class="las la-user-graduate"></i>
+                <span>For PUP Staff</span>
               </a>
             </li>
 
@@ -144,6 +150,25 @@
               </a>
             </li>
 
+
+            <li class="menu-title">
+              <i class="ri-more-fill"></i>
+              <span>others</span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/holiday" class="nav-link">
+                <i class="bx bx-history"></i>
+                <span>Holiday Management</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/organization" class="nav-link">
+                <i class="bx bx-group"></i>
+                <span>Org Management</span>
+              </a>
+            </li>
 
           </ul>
         </div>

@@ -18,11 +18,11 @@ editMedicalHistory = () => {
 			if (result) {
 				// Get data from result
 				const data = result.data
-				const medical_history = data.medical_history
-				const social_history = data.social_history
-				const allergy = data.allergy.join(';')
-				const family_history = data.family_history.join(';')
-				const medications = data.medications.join(';')
+				const medical_history = data.medical_history ?? []
+				const social_history = data.social_history ?? []
+				const allergy = data.allergy ? data.allergy.join(';') : ''
+				const family_history = data.family_history ? data.family_history.join(';') : ''
+				const medications = data.medications ? data.medications.join(';') : ''
 				const formCheckboxes = document.querySelectorAll('.form-check-input')
 
 				formCheckboxes.forEach((checkbox) => {
@@ -38,7 +38,6 @@ editMedicalHistory = () => {
 				smokerCheckbox.checked = social_history.smoker
 				alcoholCheckbox.checked = social_history.alcoholic
 
-				console.log(data)
 				$('#allergy').val(allergy)
 				$('#family_history').val(family_history)
 				$('#medications').val(medications)

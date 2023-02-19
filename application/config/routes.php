@@ -61,6 +61,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['signin'] = 'auth/signin';
 $route['forgot-password'] = 'auth/forgot_password';
+$route['reset-password/(:any)'] = 'auth/reset_password/$1';
 $route['logout'] = 'auth/logout';
 $route['sis'] = 'auth/sis';
 $route['vass'] = 'auth/vass';
@@ -131,11 +132,17 @@ $route['admission'] = 'home/admission';
 
 // News and Dynamic Parameter
 $route['news'] = 'home/news';
+$route['news/rss'] = 'home/rss';
 $route['news/(:any)'] = 'home/news/$1';
 
 // Advisory and Dynamic Parameter
 $route['advisory'] = 'home/advisory';
 $route['advisory/(:any)'] = 'home/advisory/$1';
+
+// myPUPQC
+$route['terms-of-use'] = 'home/terms_of_use';
+$route['privacy-statement'] = 'home/privacy_statement';
+$route['about-mypupqc'] = 'home/about_mypupqc';
 
 /*
 | -------------------------------------------------------------------------
@@ -167,7 +174,6 @@ $route['student/odrs/history'] = 'student/history';
 // Health Information
 $route['student/omsss/medical-services/patient-info'] = 'student/patient_info';
 $route['student/omsss/medical-services/health-history'] = 'student/health_history';
-$route['student/omsss/medical-services/immunization'] = 'student/immunization';
 
 // Appointment
 $route['student/omsss/medical-services/medical-consultation'] = 'student/medical_consultation';
@@ -226,7 +232,8 @@ $route['admin/role-management/roles'] = 'admin/roles';
 | ----------------------
 */
 
-$route['admin/user-role-management/user-roles'] = 'admin/user_roles_management';
+$route['admin/user-role-management/student'] = 'admin/user_roles_student';
+$route['admin/user-role-management/staff'] = 'admin/user_roles_staff';
 
 
 /*
@@ -265,6 +272,15 @@ $route['admin/evrsers/manage-reservations'] = 'admin/manage_reservations';
 $route['admin/evrsers/reservation-history'] = 'admin/reservation_history';
 
 /*
+| ----------------------
+|         OTHERS
+| ----------------------
+*/
+
+$route['admin/holiday'] = 'admin/holiday';
+$route['admin/organization'] = 'admin/organization';
+
+/*
 | -------------------------------------------------------------------------
 | PUP STAFF ROUTES
 | -------------------------------------------------------------------------
@@ -279,6 +295,7 @@ $route['pupstaff/omsss/dentist/dental-requests'] = 'pupstaff/dental_requests';
 $route['pupstaff/omsss/dentist/analytics-and-history'] = 'pupstaff/dental_analytics';
 $route['pupstaff/omsss/counsellor/counsel-requests'] = 'pupstaff/counsellor_requests';
 $route['pupstaff/omsss/counsellor/analytics-and-history'] = 'pupstaff/counsellor_analytics';
+$route['pupstaff/omsss/evaluation'] = 'pupstaff/omsss_evaluation';
 
 /*
 | --------------
@@ -298,7 +315,9 @@ $route['pupstaff/announcement/news'] = 'pupstaff/news';
 
 $route['pupstaff/odrs/documents'] = 'pupstaff/documents';
 $route['pupstaff/odrs/requests'] = 'pupstaff/requests';
+$route['pupstaff/odrs/approvals'] = 'pupstaff/approvals';
 $route['pupstaff/odrs/history'] = 'pupstaff/history';
+$route['pupstaff/odrs/evaluation'] = 'pupstaff/odrs_evaluation';
 
 /*
 | --------------
@@ -312,3 +331,6 @@ $route['pupstaff/evrsers/organizer-management'] = 'pupstaff/organizer_management
 // Reservations
 $route['pupstaff/evrsers/manage-reservations'] = 'pupstaff/manage_reservations';
 $route['pupstaff/evrsers/reservation-history'] = 'pupstaff/reservation_history';
+
+// Event Approvals
+$route['pupstaff/evrsers/reservation-approval'] = 'pupstaff/event_approvals';

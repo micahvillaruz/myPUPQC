@@ -13,6 +13,10 @@
                         <input type="text" class="form-control" id="facility-name" name="facility-name" placeholder="Facility Name" required>
                     </div>
                     <div class="mb-3">
+                        <label for="facility-capacity" class="form-label">Facility Capacity</label>
+                        <input type="text" class="form-control" id="facility-capacity" name="facility-capacity" placeholder="Facility Capacity" required>
+                    </div>
+                    <div class="mb-3">
                         <label for="facility-description" class="form-label">Facility Description</label>
                         <input class="form-control" id="facility-description" name="facility-description" rows="3" placeholder="Facility Description" required>
                     </div>
@@ -48,8 +52,12 @@
                         <input type="text" class="form-control" id="facility-name-edit" name="facility-name-edit" placeholder="Facility Name" required>
                     </div>
                     <div class="mb-3">
+                        <label for="facility-capacity-edit" class="form-label">Facility Capacity</label>
+                        <input type="text" class="form-control" id="facility-capacity-edit" name="facility-capacity-edit" placeholder="Facility Capacity" required>
+                    </div>
+                    <div class="mb-3">
                         <label for="facility-description-edit" class="form-label">Facility Description</label>
-                        <input class="form-control" id="facility-description-edit" name="facility-description-edit" rows="3" placeholder="Facility Description" required>
+                        <textarea class="form-control" id="facility-description-edit" name="facility-description-edit" rows="4" placeholder="Facility Description" required></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="facility-status-edit" class="form-label">Facility Status</label>
