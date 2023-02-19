@@ -8,7 +8,7 @@ $(function() {
 
     const pubmatFileTypes = ['image/jpeg', 'image/png']
 
-    pond = FilePond.create(document.querySelector('#pubmat-file'), {
+    pond1 = FilePond.create(document.querySelector('#pubmat-file'), {
         allowImagePreview: true,
         allowFileEncode: true,
         imagePreviewMaxHeight: 200,
@@ -87,13 +87,27 @@ viewReservationDetails = () => {
         url: apiURL + `evrsers/student/view_reservations`,
         dataType: 'json',
         success: (result) => {
-            console.log(result)
+            // console.log(result)
             const userData = result.data[0]
             console.log(userData)
 
             if (userData.length !== 0) {
                 $('#existing_reservation').removeClass('d-none')
                 $('#no_reservation').addClass('d-none')
+            }
+
+            var pubmatimg = userData.ReservationPubmats.pubmats_images[0]
+            console.log(pubmatimg)
+
+            if (pubmatimg != null || pubmatimg != '') {
+                $('#no-pubmat').addClass('d-none')
+                $('#has-pubmat').removeClass('d-none')
+                    // set pubmat-img src to pubmatimg
+                $('#pubmat-img').attr('src', pubmatimg)
+                    // $('#pubmat-img').val(pubmatimg)
+            } else {
+                $('#no-pubmat').removeClass('d-none')
+                $('#has-pubmat').addClass('d-none')
             }
 
             // load details in the editReservationModal
@@ -160,7 +174,11 @@ viewReservationDetails = () => {
             $('#reserve_date').html(moment(userData.reserve_date).format('LL'))
             const time = `${userData.time_from} - ${userData.time_to}`
             $('#time').html(time)
-            $('#remarks').html(userData.remarks)
+            if (userData.remarks == null || userData.remarks == '') {
+                $('#remarks-container').addClass('d-none')
+            } else {
+                $('#remarks').html(userData.remarks)
+            }
             $('#attachment1').html(
                 `<i class="ri-file-fill text-primary me-2"></i><a href="${userData.event_request}" target="_blank" class="link fw-bold">Event Request</a>`,
             )
@@ -172,6 +190,8 @@ viewReservationDetails = () => {
             )
             let reservation_status = userData.reserve_status
             if (reservation_status == 'For Review') {
+                $('#signatories-container').addClass('d-none')
+                $('#editBtn').addClass('d-none')
                 $('#reservation-status').html(
                     `<div class="card card-secondary">
                         <div class="card-body">
@@ -180,7 +200,7 @@ viewReservationDetails = () => {
                                 class="lord-icon me-4"
                                 colors="primary:#ffffff"
                                 src="https://cdn.lordicon.com/zncllhmn.json"
-                                trigger="hover"
+                                trigger="loop-on-hover"
                                 style="width:50px;height:50px;">
                             </lord-icon>
                                 <h2 class="card-text fw-medium text-white my-auto" style="font-size:30px;">${reservation_status}</h2>
@@ -199,7 +219,7 @@ viewReservationDetails = () => {
                                 class="lord-icon me-4"
                                 colors="primary:#ffffff"
                                 src="https://cdn.lordicon.com/frjgvxce.json"
-                                trigger="hover"
+                                trigger="loop-on-hover"
                                 style="width:50px;height:50px;">
                             </lord-icon>
                                 <h3 class="card-text fw-medium text-white my-auto" style="font-size:30px;">${reservation_status}</h3>
@@ -217,7 +237,7 @@ viewReservationDetails = () => {
                                 class="lord-icon me-4"
                                 colors="primary:#ffffff"
                                 src="https://cdn.lordicon.com/frjgvxce.json"
-                                trigger="hover"
+                                trigger="loop-on-hover"
                                 style="width:50px;height:50px;">
                             </lord-icon>
                                 <h3 class="card-text fw-medium text-white my-auto" style="font-size:30px;">${reservation_status}</h3>
@@ -226,6 +246,8 @@ viewReservationDetails = () => {
                     </div>`,
                 )
             } else if (reservation_status == 'Approved & Released') {
+                $('#cancelBtn').addClass('d-none')
+                $('#editBtn').addClass('d-none')
                 $('#reservation-status').html(
                     `<div class="card card-success">
                         <div class="card-body">
@@ -234,7 +256,7 @@ viewReservationDetails = () => {
                                 class="lord-icon me-4"
                                 colors="primary:#ffffff"
                                 src="https://cdn.lordicon.com/yqzmiobz.json"
-                                trigger="hover"
+                                trigger="loop-on-hover"
                                 style="width:50px;height:50px;">
                             </lord-icon>
                                 <h3 class="card-text fw-medium text-white my-auto" style="font-size:30px;">${reservation_status}</h3>
@@ -247,6 +269,49 @@ viewReservationDetails = () => {
             const reservation_id = userData.reservation_id
 
             loadSignatory(reservation_id)
+
+            $('#upload-pubmat').on('click', function() {
+                pondFiles1 = pond1.getFiles()
+
+                const formData = new FormData()
+                formData.append('pubmats_images', pondFiles1[0].file)
+
+                $.ajax({
+                    type: 'PUT',
+                    cache: false,
+                    url: apiURL + `evrsers/student/add_pubmats/${reservation_id}`,
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: (result) => {
+                        if (result) {
+                            Swal.fire({
+                                html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have uploaded a pubmat for your event!</p></div></div>',
+                                showCancelButton: !0,
+                                showConfirmButton: !1,
+                                cancelButtonClass: 'btn btn-success w-xs mb-1',
+                                cancelButtonText: 'Ok',
+                                buttonsStyling: !1,
+                                showCloseButton: !0,
+                            }).then(function() {
+                                window.location.href = `${baseURL}student/evrsers/view-reservation`
+                            })
+                        }
+                    },
+                }).fail((xhr) => {
+                    Swal.fire({
+                        html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">${
+							JSON.parse(xhr.responseText).message
+						}</p></div></div>`,
+                        showCancelButton: !0,
+                        showConfirmButton: !1,
+                        cancelButtonClass: 'btn btn-danger w-xs mb-1',
+                        cancelButtonText: 'Dismiss',
+                        buttonsStyling: !1,
+                        showCloseButton: !0,
+                    })
+                })
+            })
 
             $('#cancelBtn').on('click', function() {
                 cancelReservation(reservation_id)
@@ -378,10 +443,11 @@ loadSignatory = (reservation_id) => {
                 </div> 
                 </a> 
                 </div>`
-                if (user.remarks != null) {
+                if (user.remarks != null && user.remarks != '') {
                     signatoriesHTML += `<hr>
                     <h6 class="text-medium mb-2 mt-4">SIGNATORY REMARKS</h6>
                     <p class="text-muted fw-medium">${user.remarks}</p>`
+                    $('#remarks').html(user.remarks)
                 }
             })
 
