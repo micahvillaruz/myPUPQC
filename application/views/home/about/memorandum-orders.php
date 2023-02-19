@@ -97,7 +97,7 @@
                           <div class="gallery-box card">
                             <div class="gallery-container">
                               <a class="image-popup" href="<?= base_url() ?>public/images/about/memorandum-orders/img-1.webp" alt="memo" title="">
-                                <img class="gallery-img mx-auto memo-img" src="<?= base_url() ?>public/images/about/memorandum-orders/img-1.webp" alt="" />
+                                <img class="gallery-img mx-auto memo-img" src="<?= base_url() ?>public/images/about/memorandum-orders/img-1.webp" alt="memorandum" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Amendment to Easing of Academic Requirements and Limitations due to Pandemic Limitations</h5>
                                 </div>
@@ -121,7 +121,7 @@
                           <div class="gallery-box card">
                             <div class="gallery-container">
                               <a class="image-popup" href="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="memo" title="">
-                                <img class="gallery-img mx-auto memo-img" src="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="" />
+                                <img class="gallery-img mx-auto memo-img" src="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="memorandum" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Adjustment of dates in the Extension of Suspension Period for Synchronous and Asynchronous Class Activities in PUPQC</h5>
                                 </div>
@@ -144,7 +144,7 @@
                           <div class="gallery-box card">
                             <div class="gallery-container">
                               <a class="image-popup" href="<?= base_url() ?>public/images/about/memorandum-orders/img-3.webp" alt="memo" title="">
-                                <img class="gallery-img mx-auto memo-img" src="<?= base_url() ?>public/images/about/memorandum-orders/img-3.webp" alt="" />
+                                <img class="gallery-img mx-auto memo-img" src="<?= base_url() ?>public/images/about/memorandum-orders/img-3.webp" alt="memorandum" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Extension of Suspension Period for Synchronous and Asynchronous Class Activities and Limited Face-to-Face Business Transaction</h5>
                                 </div>
@@ -167,7 +167,7 @@
                           <div class="gallery-box card">
                             <div class="gallery-container">
                               <a class="image-popup" href="<?= base_url() ?>public/images/about/memorandum-orders/img-4.webp" alt="memo" title="">
-                                <img class="gallery-img mx-auto memo-img" src="<?= base_url() ?>public/images/about/memorandum-orders/img-4.webp" alt="" />
+                                <img class="gallery-img mx-auto memo-img" src="<?= base_url() ?>public/images/about/memorandum-orders/img-4.webp" alt="memorandum" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Suspension of Synchronous and Asynchronous Activities</h5>
                                 </div>
@@ -190,7 +190,7 @@
                           <div class="gallery-box card">
                             <div class="gallery-container">
                               <a class="image-popup" href="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="memo" title="">
-                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="" />
+                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="memorandum" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Adjustment of dates in the Extension of Suspension Period for Synchronous and Asynchronous Class Activities in PUPQC</h5>
                                 </div>
@@ -213,7 +213,7 @@
                           <div class="gallery-box card">
                             <div class="gallery-container">
                               <a class="image-popup" href="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="memo" title="">
-                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="" />
+                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="memorandum" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Adjustment of dates in the Extension of Suspension Period for Synchronous and Asynchronous Class Activities in PUPQC</h5>
                                 </div>
@@ -236,7 +236,7 @@
                           <div class="gallery-box card">
                             <div class="gallery-container">
                               <a class="image-popup" href="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="memo" title="">
-                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="" />
+                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="memorandum" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Adjustment of dates in the Extension of Suspension Period for Synchronous and Asynchronous Class Activities in PUPQC</h5>
                                 </div>
@@ -259,31 +259,7 @@
                           <div class="gallery-box card">
                             <div class="gallery-container">
                               <a class="image-popup" href="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="memo" title="">
-                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="" />
-                                <div class="gallery-overlay">
-                                  <h5 class="overlay-caption">Adjustment of dates in the Extension of Suspension Period for Synchronous and Asynchronous Class Activities in PUPQC</h5>
-                                </div>
-                              </a>
-                            </div>
-
-                            <div class="box-content">
-                              <div class="d-flex align-items-center mt-1">
-                                <div class="flex-grow-1">
-                                  <a href="" class="text-body text-truncate">
-                                    <i class="mdi mdi-bullhorn-variant text-primary align-bottom me-1"></i>
-                                    OD Memo No.3-B s. 2022</a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- end col -->
-
-                        <div class="element-item col-xxl-3 col-xl-4 col-sm-6 memo2022" data-category="memo2022">
-                          <div class="gallery-box card">
-                            <div class="gallery-container">
-                              <a class="image-popup" href="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="memo" title="">
-                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="" />
+                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="memorandum" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Adjustment of dates in the Extension of Suspension Period for Synchronous and Asynchronous Class Activities in PUPQC</h5>
                                 </div>
@@ -307,7 +283,7 @@
                           <div class="gallery-box card">
                             <div class="gallery-container">
                               <a class="image-popup" href="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="memo" title="">
-                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="" />
+                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="memorandum" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Adjustment of dates in the Extension of Suspension Period for Synchronous and Asynchronous Class Activities in PUPQC</h5>
                                 </div>
@@ -331,7 +307,7 @@
                           <div class="gallery-box card">
                             <div class="gallery-container">
                               <a class="image-popup" href="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="memo" title="">
-                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="" />
+                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="memorandum" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Adjustment of dates in the Extension of Suspension Period for Synchronous and Asynchronous Class Activities in PUPQC</h5>
                                 </div>
@@ -355,7 +331,31 @@
                           <div class="gallery-box card">
                             <div class="gallery-container">
                               <a class="image-popup" href="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="memo" title="">
-                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="" />
+                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="memorandum" />
+                                <div class="gallery-overlay">
+                                  <h5 class="overlay-caption">Adjustment of dates in the Extension of Suspension Period for Synchronous and Asynchronous Class Activities in PUPQC</h5>
+                                </div>
+                              </a>
+                            </div>
+
+                            <div class="box-content">
+                              <div class="d-flex align-items-center mt-1">
+                                <div class="flex-grow-1">
+                                  <a href="" class="text-body text-truncate">
+                                    <i class="mdi mdi-bullhorn-variant text-primary align-bottom me-1"></i>
+                                    OD Memo No.3-B s. 2022</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- end col -->
+
+                        <div class="element-item col-xxl-3 col-xl-4 col-sm-6 memo2022" data-category="memo2022">
+                          <div class="gallery-box card">
+                            <div class="gallery-container">
+                              <a class="image-popup" href="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="memo" title="">
+                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/memorandum-orders/img-2.webp" alt="memorandum" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Adjustment of dates in the Extension of Suspension Period for Synchronous and Asynchronous Class Activities in PUPQC</h5>
                                 </div>

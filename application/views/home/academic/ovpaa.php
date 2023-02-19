@@ -96,8 +96,8 @@
                         <div class="element-item col-xxl-3 col-xl-4 col-sm-6 ovpaa2022" data-category="ovpaa2022">
                           <div class="gallery-box card">
                             <div class="gallery-container">
-                              <a class="image-popup" href="<?= base_url() ?>public/images/about/ovpaa-advisories/img-1.jpg" title="">
-                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/ovpaa-advisories/img-1.jpg" alt="" />
+                              <a class="image-popup" href="<?= base_url() ?>public/images/about/ovpaa-advisories/img-1.webp" title="">
+                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/ovpaa-advisories/img-1.webp" alt="ovpaa-advisory" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">New Guidelines Enhancing OVPAA Advisory No. 1, S. 2020</h5>
                                 </div>
@@ -120,8 +120,8 @@
                         <div class="element-item col-xxl-3 col-xl-4 col-sm-6 ovpaa2022" data-category="ovpaa2022">
                           <div class="gallery-box card">
                             <div class="gallery-container">
-                              <a class="image-popup" href="<?= base_url() ?>public/images/about/ovpaa-advisories/img-2.jpg" title="">
-                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/ovpaa-advisories/img-2.jpg" alt="" />
+                              <a class="image-popup" href="<?= base_url() ?>public/images/about/ovpaa-advisories/img-2.webp" title="">
+                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/ovpaa-advisories/img-2.webp" alt="ovpaa-advisory" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Opening of Classes for the 1st Semester, SY 2020-2021</h5>
                                 </div>
@@ -143,8 +143,8 @@
                         <div class="element-item col-xxl-3 col-xl-4 col-sm-6 ovpaa2022" data-category="ovpaa2022">
                           <div class="gallery-box card">
                             <div class="gallery-container">
-                              <a class="image-popup" href="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.jpg" title="">
-                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.jpg" alt="" />
+                              <a class="image-popup" href="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.webp" title="">
+                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.webp" alt="ovpaa-advisory" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Opening of Classes for the 1st Semester, SY 2020-2021</h5>
                                 </div>
@@ -166,8 +166,8 @@
                         <div class="element-item col-xxl-3 col-xl-4 col-sm-6 ovpaa2022" data-category="ovpaa2022">
                           <div class="gallery-box card">
                             <div class="gallery-container">
-                              <a class="image-popup" href="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.jpg" title="">
-                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.jpg" alt="" />
+                              <a class="image-popup" href="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.webp" title="">
+                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.webp" alt="ovpaa-advisory" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Opening of Classes for the 1st Semester, SY 2020-2021</h5>
                                 </div>
@@ -189,8 +189,8 @@
                         <div class="element-item col-xxl-3 col-xl-4 col-sm-6 ovpaa2022" data-category="ovpaa2022">
                           <div class="gallery-box card">
                             <div class="gallery-container">
-                              <a class="image-popup" href="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.jpg" title="">
-                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.jpg" alt="" />
+                              <a class="image-popup" href="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.webp" title="">
+                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.webp" alt="ovpaa-advisory" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Opening of Classes for the 1st Semester, SY 2020-2021</h5>
                                 </div>
@@ -212,8 +212,8 @@
                         <div class="element-item col-xxl-3 col-xl-4 col-sm-6 ovpaa2022" data-category="ovpaa2022">
                           <div class="gallery-box card">
                             <div class="gallery-container">
-                              <a class="image-popup" href="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.jpg" title="">
-                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.jpg" alt="" />
+                              <a class="image-popup" href="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.webp" title="">
+                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.webp" alt="ovpaa-advisory" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Opening of Classes for the 1st Semester, SY 2020-2021</h5>
                                 </div>
@@ -235,8 +235,8 @@
                         <div class="element-item col-xxl-3 col-xl-4 col-sm-6 ovpaa2022" data-category="ovpaa2022">
                           <div class="gallery-box card">
                             <div class="gallery-container">
-                              <a class="image-popup" href="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.jpg" title="">
-                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.jpg" alt="" />
+                              <a class="image-popup" href="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.webp" title="">
+                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.webp" alt="ovpaa-advisory" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Opening of Classes for the 1st Semester, SY 2020-2021</h5>
                                 </div>
@@ -258,8 +258,8 @@
                         <div class="element-item col-xxl-3 col-xl-4 col-sm-6 ovpaa2022" data-category="ovpaa2022">
                           <div class="gallery-box card">
                             <div class="gallery-container">
-                              <a class="image-popup" href="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.jpg" title="">
-                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.jpg" alt="" />
+                              <a class="image-popup" href="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.webp" title="">
+                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.webp" alt="ovpaa-advisory" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Opening of Classes for the 1st Semester, SY 2020-2021</h5>
                                 </div>
@@ -281,8 +281,8 @@
                         <div class="element-item col-xxl-3 col-xl-4 col-sm-6 ovpaa2022" data-category="ovpaa2022">
                           <div class="gallery-box card">
                             <div class="gallery-container">
-                              <a class="image-popup" href="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.jpg" title="">
-                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.jpg" alt="" />
+                              <a class="image-popup" href="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.webp" title="">
+                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.webp" alt="ovpaa-advisory" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Opening of Classes for the 1st Semester, SY 2020-2021</h5>
                                 </div>
@@ -304,8 +304,8 @@
                         <div class="element-item col-xxl-3 col-xl-4 col-sm-6 ovpaa2022" data-category="ovpaa2022">
                           <div class="gallery-box card">
                             <div class="gallery-container">
-                              <a class="image-popup" href="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.jpg" title="">
-                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.jpg" alt="" />
+                              <a class="image-popup" href="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.webp" title="">
+                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.webp" alt="ovpaa-advisory" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Opening of Classes for the 1st Semester, SY 2020-2021</h5>
                                 </div>
@@ -327,8 +327,8 @@
                         <div class="element-item col-xxl-3 col-xl-4 col-sm-6 ovpaa2022" data-category="ovpaa2022">
                           <div class="gallery-box card">
                             <div class="gallery-container">
-                              <a class="image-popup" href="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.jpg" title="">
-                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.jpg" alt="" />
+                              <a class="image-popup" href="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.webp" title="">
+                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.webp" alt="ovpaa-advisory" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Opening of Classes for the 1st Semester, SY 2020-2021</h5>
                                 </div>
@@ -350,8 +350,8 @@
                         <div class="element-item col-xxl-3 col-xl-4 col-sm-6 ovpaa2022" data-category="ovpaa2022">
                           <div class="gallery-box card">
                             <div class="gallery-container">
-                              <a class="image-popup" href="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.jpg" title="">
-                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.jpg" alt="" />
+                              <a class="image-popup" href="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.webp" title="">
+                                <img class="gallery-img img-fluid mx-auto" src="<?= base_url() ?>public/images/about/ovpaa-advisories/img-3.webp" alt="ovpaa-advisory" />
                                 <div class="gallery-overlay">
                                   <h5 class="overlay-caption">Opening of Classes for the 1st Semester, SY 2020-2021</h5>
                                 </div>
