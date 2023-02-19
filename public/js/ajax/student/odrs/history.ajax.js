@@ -171,7 +171,7 @@ loadHistoryTable = () => {
 					render: (data) => {
 						const evaluationStatus = data.is_evaluated
 
-						if (evaluationStatus) {
+						if (evaluationStatus == true) {
 							return `
 								<div class="dropdown d-inline-block">
 									<button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewRequestDetails" onclick = "viewRequestDetails('${data.request_id}')">
