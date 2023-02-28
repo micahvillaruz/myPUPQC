@@ -2,6 +2,18 @@ $(() => {
 	checkCreatePermission()
 })
 
+const Toast = Swal.mixin({
+	toast: true,
+	position: 'top-end',
+	showConfirmButton: false,
+	timer: 2000,
+	timerProgressBar: true,
+	didOpen: (toast) => {
+		toast.addEventListener('mouseenter', Swal.stopTimer)
+		toast.addEventListener('mouseleave', Swal.resumeTimer)
+	},
+})
+
 // Check if student has existing request. If yes, he cannot create a new request. If no, he can access the new request form.
 checkCreatePermission = () => {
 	$.ajax({
@@ -188,14 +200,9 @@ createRequest = () => {
 		dataType: 'json',
 		success: (result) => {
 			if (result) {
-				Swal.fire({
-					html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully created a request!</p></div></div>',
-					showCancelButton: !0,
-					showConfirmButton: !1,
-					cancelButtonClass: 'btn btn-success w-xs mb-1',
-					cancelButtonText: 'Ok',
-					buttonsStyling: !1,
-					showCloseButton: !0,
+				Toast.fire({
+					icon: 'success',
+					title: 'Added New Request Successfully!',
 				}).then(function () {
 					$('form#createRequestForm')[0].reset()
 
