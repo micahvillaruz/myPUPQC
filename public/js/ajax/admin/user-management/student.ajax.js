@@ -25,6 +25,18 @@ $(function () {
 	})
 })
 
+const Toast = Swal.mixin({
+	toast: true,
+	position: 'top-end',
+	showConfirmButton: false,
+	timer: 2000,
+	timerProgressBar: true,
+	didOpen: (toast) => {
+		toast.addEventListener('mouseenter', Swal.stopTimer)
+		toast.addEventListener('mouseleave', Swal.resumeTimer)
+	},
+})
+
 // Load datatables
 loadStudentTable = () => {
 	const dt = $('#students-datatable')
@@ -200,14 +212,9 @@ enrollStudent = () => {
 			headers: AJAX_HEADERS,
 			success: (result) => {
 				if (result) {
-					Swal.fire({
-						html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully enrolled a student!</p></div></div>',
-						showCancelButton: !0,
-						showConfirmButton: !1,
-						cancelButtonClass: 'btn btn-success w-xs mb-1',
-						cancelButtonText: 'Ok',
-						buttonsStyling: !1,
-						showCloseButton: !0,
+					Toast.fire({
+						icon: 'success',
+						title: 'Enrolled Student Successfully!',
 					}).then(function () {
 						$('#addStudentModal').modal('hide')
 						$('form#enrollStudentForm')[0].reset()
@@ -298,14 +305,9 @@ updateStudentAJAX = (user_id) => {
 			headers: AJAX_HEADERS,
 			success: (result) => {
 				if (result) {
-					Swal.fire({
-						html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully updated a student!</p></div></div>',
-						showCancelButton: !0,
-						showConfirmButton: !1,
-						cancelButtonClass: 'btn btn-success w-xs mb-1',
-						cancelButtonText: 'Ok',
-						buttonsStyling: !1,
-						showCloseButton: !0,
+					Toast.fire({
+						icon: 'success',
+						title: 'Updated Student Information Successfully!',
 					}).then(function () {
 						// Hide the update student details modal
 						$('#updateStudentModal').modal('hide')
@@ -362,21 +364,9 @@ deactivateStudent = (user_id) => {
 				dataType: 'json',
 				success: (result) => {
 					if (result) {
-						Swal.fire({
-							html:
-								'<div class="mt-3">' +
-								'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
-								'<div class="mt-4 pt-2 fs-15">' +
-								'<h4>Well done !</h4>' +
-								'<p class="text-muted mx-4 mb-0">You have successfully deactivated a student!</p>' +
-								'</div>' +
-								'</div>',
-							showCancelButton: !0,
-							showConfirmButton: !1,
-							cancelButtonClass: 'btn btn-success w-xs mb-1',
-							cancelButtonText: 'Ok',
-							buttonsStyling: !1,
-							showCloseButton: !0,
+						Toast.fire({
+							icon: 'success',
+							title: 'Deactivated Student Successfully!',
 						}).then(function () {
 							// Reload Student Datatable
 							loadStudentTable()
@@ -438,21 +428,9 @@ activateStudent = (user_id) => {
 				dataType: 'json',
 				success: (result) => {
 					if (result) {
-						Swal.fire({
-							html:
-								'<div class="mt-3">' +
-								'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
-								'<div class="mt-4 pt-2 fs-15">' +
-								'<h4>Well done !</h4>' +
-								'<p class="text-muted mx-4 mb-0">You have successfully reactivated a student!</p>' +
-								'</div>' +
-								'</div>',
-							showCancelButton: !0,
-							showConfirmButton: !1,
-							cancelButtonClass: 'btn btn-success w-xs mb-1',
-							cancelButtonText: 'Ok',
-							buttonsStyling: !1,
-							showCloseButton: !0,
+						Toast.fire({
+							icon: 'success',
+							title: 'Reactivated Student Successfully!',
 						}).then(function () {
 							// Reload Student Datatable
 							loadStudentTable()
@@ -522,14 +500,9 @@ updateEducationProfile = (form, user_id) => {
 		headers: AJAX_HEADERS,
 		success: (result) => {
 			if (result) {
-				Swal.fire({
-					html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done!</h4><p class="text-muted mx-4 mb-0">You have successfully updated the education profile!</p></div></div>',
-					showCancelButton: !0,
-					showConfirmButton: !1,
-					cancelButtonClass: 'btn btn-success w-xs mb-1',
-					cancelButtonText: 'Ok',
-					buttonsStyling: !1,
-					showCloseButton: !0,
+				Toast.fire({
+					icon: 'success',
+					title: 'Updated Student Education Profile Successfully!',
 				}).then(function () {
 					setTimeout(() => {
 						location.reload()
