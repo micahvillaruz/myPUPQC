@@ -28,5 +28,8 @@
 <!-- student ajax -->
 <script src="<?= base_url() ?>public/js/ajax/admin/user-management/student.ajax.js"></script>
 
+<!-- psgc api -->
+<script src="<?= base_url() ?>public/js/psgc.js"></script>
+
 <!-- App js -->
 <script src="<?= base_url() ?>public/js/app.js"></script>
