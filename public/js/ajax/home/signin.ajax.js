@@ -58,13 +58,16 @@ var login = () => {
 			session_data += '&user_type=' + data.user_type
 			session_data += '&user_roles=' + data.user_roles
 
+			
+			setTimeout(()=>{window.location.replace(baseURL + 'Auth/oAuth?' + session_data)},2000)
+			
 			Toast.fire({
 				icon: 'success',
-				title: 'Login Successfully!',
-			}).then(() => {
-				// Redirect to oAuth
-				window.location.replace(baseURL + 'Auth/oAuth?' + session_data)
+				title: ' Login Successfully!',
+				
 			})
+			
+			
 		},
 		error: function (xhr) {
 			Swal.fire({
