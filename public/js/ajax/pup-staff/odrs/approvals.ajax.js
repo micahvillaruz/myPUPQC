@@ -540,7 +540,7 @@ approveRequest = (request_id, document_id) => {
 		url: `${apiURL}odrs/pup_staff/approve_signatory/${request_id}/${document_id}`,
 		type: 'PUT',
 		data: {
-			remarks: form.get('remarks'),
+			remarks: form.get('remarks') !== '' ? form.get('remarks') : null,
 		},
 		dataType: 'json',
 		headers: AJAX_HEADERS,
@@ -595,7 +595,7 @@ onHoldRequest = (request_signatory_id) => {
 		url: `${apiURL}odrs/pup_staff/onhold_signatory/${request_signatory_id}`,
 		type: 'PUT',
 		data: {
-			remarks: form.get('remarks'),
+			remarks: form.get('remarks') !== '' ? form.get('remarks') : null,
 		},
 		dataType: 'json',
 		headers: AJAX_HEADERS,
