@@ -40,7 +40,7 @@ loadActiveDocuments = () => {
 				data: null,
 				width: '70%',
 				render: (data) => {
-					return `<a href="#!" class="fw-medium">${data.document_name}</a><br><small>${
+					return `<span class="fw-medium">${data.document_name}</span><br><small>${
 						data.document_details == null ? '' : data.document_details
 					}</small>`
 				},
