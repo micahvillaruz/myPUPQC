@@ -221,6 +221,7 @@ addDocument = () => {
 		dataType: 'json',
 		success: (result) => {
 			if (result) {
+				$('#addDocumentModal').modal('hide');
 				Toast.fire({
 					icon: 'success',
 					title: 'Added Document Successfully!',
