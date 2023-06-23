@@ -64,7 +64,7 @@
                                                             </div>
                                                         <div class="col">
                                                             <ul class="list-group list-group-flush">
-                                                                <li class="list-group-item"><span class="fw-bold">The Council of Leaders (COL)</span> shall be known as the General Assembly of all student organization officers and class officers in the University.</li>
+                                                                <li class="list-group-item"><span class="fw-bold">The Council of Leaders (COL)</span> is be known as the General Assembly of all student organization officers and class officers in the University.</li>
                                                             </ul>
                                                             <ul class="list-group list-group-flush">
                                                                 <li class="list-group-item"><span class="fw-bold">The Council of Leaders (COL) shall be committed to:</span>
@@ -93,11 +93,11 @@
                                                             </div>
                                                             <div class="col">
                                                                 <ul class="list-group list-group-flush">
-                                                                    <h4 class="text-center">Mission</h4>
+                                                                    <h4 class="text-center fw-bold">Mission</h4>
                                                                     <li class="list-group-item">To uphold the standard of the Human Resources education by promoting excellence, integrity, unity, and equity. </li>
                                                                 </ul>
                                                                 <ul class="list-group list-group-flush">
-                                                                    <h4 class="text-center">Vision</h4>
+                                                                    <h4 class="text-center fw-bold">Vision</h4>
                                                                     <li class="list-group-item">The CHRS revisions a premier academic organization contributing to the total academic achievement and excellence of the students inside and outside the University.</li>
                                                                 </ul>
                                                             </div>
@@ -114,11 +114,11 @@
                                                             </div>
                                                             <div class="col">
                                                                 <ul class="list-group list-group-flush">
-                                                                    <h4 class="text-center">Mission</h4>
+                                                                    <h4 class="text-center fw-bold" >Mission</h4>
                                                                     <li class="list-group-item">Recognizing the importance of a scientific culture among Bachelor of Science in Information Technology and Diploma in Information Communication Technology Students, the Society shall encourage and promote the advancement of Information Technology. </li>
                                                                 </ul>
                                                                 <ul class="list-group list-group-flush">
-                                                                    <h4 class="text-center">Vision</h4>
+                                                                    <h4 class="text-center fw-bold">Vision</h4>
                                                                     <li class="list-group-item">Quality Information Technology education towards competency among Polytechnic University of the Philippines, Quezon City Branch Students.</li>
                                                                 </ul>
                                                             </div>
@@ -134,11 +134,11 @@
                                                             </div>
                                                             <div class="col">
                                                                 <ul class="list-group list-group-flush">
-                                                                    <h4 class="text-center">Mission</h4>    
+                                                                    <h4 class="text-center fw-bold">Mission</h4>    
                                                                     <li class="list-group-item">Educate students as to what the Student Organization is and does. Provide extensive leadership opportunities. </li>
                                                                 </ul>
                                                                 <ul class="list-group list-group-flush">
-                                                                    <h4 class="text-center">Vision</h4>
+                                                                    <h4 class="text-center fw-bold">Vision</h4>
                                                                     <li class="list-group-item">Advocate for and engage members collaboratively and provide numerous services, programs, and opportunities in enhancing their skills in medical office management technology.</li>
                                                                 </ul>
                                                             </div>
@@ -154,11 +154,11 @@
                                                             </div>
                                                             <div class="col">
                                                                 <ul class="list-group list-group-flush">
-                                                                    <h4 class="text-center">Mission</h4>
+                                                                    <h4 class="text-center fw-bold">Mission</h4>
                                                                     <li class="list-group-item">To uphold the standard of the Human Resources education by promoting excellence, integrity, unity, and equity. </li>
                                                                 </ul>
                                                                 <ul class="list-group list-group-flush">
-                                                                    <h4 class="text-center">Vision</h4>
+                                                                    <h4 class="text-center fw-bold">Vision</h4>
                                                                     <li class="list-group-item">The CHRS revisions a premier academic organization contributing to the total academic achievement and excellence of the students inside and outside the University.</li>
                                                                 </ul>
                                                             </div>
@@ -174,11 +174,11 @@
                                                             </div>
                                                             <div class="col">
                                                                 <ul class="list-group list-group-flush">
-                                                                    <h4 class="text-center">Mission</h4>    
+                                                                    <h4 class="text-center fw-bold">Mission</h4>    
                                                                     <li class="list-group-item">Educate students as to what the Student Organization is and does. Provide extensive leadership opportunities. </li>
                                                                 </ul>
                                                                 <ul class="list-group list-group-flush">
-                                                                    <h4 class="text-center">Vision</h4>
+                                                                    <h4 class="text-center fw-bold">Vision</h4>
                                                                     <li class="list-group-item">Advocate for and engage members collaboratively and provide numerous services, programs, and opportunities in enhancing their skills in medical office management technology.</li>
                                                                 </ul>
                                                             </div>
@@ -194,11 +194,11 @@
                                                             </div>
                                                             <div class="col">
                                                                 <ul class="list-group list-group-flush">
-                                                                    <h4 class="text-center">Mission</h4>
+                                                                    <h4 class="text-center fw-bold">Mission</h4>
                                                                     <li class="list-group-item">Our mission is to promote excellence and social influence among student leaders who serve for the greater benefit of its stakeholders toward collaborative social transformation. </li>
                                                                 </ul>
                                                                 <ul class="list-group list-group-flush">
-                                                                    <h4 class="text-center">Vision</h4>
+                                                                    <h4 class="text-center fw-bold">Vision</h4>
                                                                     <li class="list-group-item">Future Business Teachers' Organization envisions itself as a powerhouse of highly competent and responsible students that will turn out to be dynamic, innovative, and adept educators and leaders in the future.</li>
                                                                 </ul>
                                                             </div>
@@ -214,11 +214,11 @@
                                                             </div>
                                                             <div class="col">
                                                                 <ul class="list-group list-group-flush">
-                                                                    <h4 class="text-center">Mission</h4>
+                                                                    <h4 class="text-center fw-bold">Mission</h4>
                                                                     <li class="list-group-item">The Junior Marketing Society is the student organization of Bachelor of Science in Business Administration major in Marketing Management that aims quality leadership, unity, and equity for the development of its co-students, and serves as the foundation of teamwork and academic excellence of the students as well as the university. </li>
                                                                 </ul>
                                                                 <ul class="list-group list-group-flush">
-                                                                    <h4 class="text-center">Vision</h4>
+                                                                    <h4 class="text-center fw-bold">Vision</h4>
                                                                     <li class="list-group-item">The Junior Marketing Society envisions that the organization will serve as the premier academic organization contributing to the total achievement of the student’s advancement and excellence in their academics, as well as the realization of the university’s goals and aspirations, by the encouragement of the continuous effort and perseverance of its members.</li>
                                                                 </ul>
                                                             </div>
@@ -234,11 +234,11 @@
                                                             </div>
                                                             <div class="col">
                                                                 <ul class="list-group list-group-flush">
-                                                                    <h4 class="text-center">Mission</h4>
+                                                                    <h4 class="text-center fw-bold">Mission</h4>
                                                                     <li class="list-group-item">Create consciousness on the significance of Entrepreneurship in the community. </li>
                                                                 </ul>
                                                                 <ul class="list-group list-group-flush">
-                                                                    <h4 class="text-center">Vision</h4>
+                                                                    <h4 class="text-center fw-bold">Vision</h4>
                                                                     <li class="list-group-item">Pushing beyond learners capability in promoting Entrepreneurship in the community.</li>
                                                                 </ul>
                                                             </div>
