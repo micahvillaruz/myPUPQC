@@ -3,7 +3,7 @@
         border: 2px solid black;
         padding: 10px;
         border-radius: 5px;
-        <div class="border">
+        /* <div class="border"></div> */
     }
 </style>
 
@@ -64,12 +64,18 @@
                                                             </div>
                                                         <div class="col">
                                                             <ul class="list-group list-group-flush">
-                                                                <h4 class="text-center">Mission</h4>
-                                                                <li class="list-group-item">Acts as COMELEC for the Student body, as well as aide for the Supreme Student Council</li>
+                                                                <li class="list-group-item"><span class="fw-bold">The Council of Leaders (COL)</span> shall be known as the General Assembly of all student organization officers and class officers in the University.</li>
                                                             </ul>
                                                             <ul class="list-group list-group-flush">
-                                                                <h4 class="text-center">Vision</h4>
-                                                                <li class="list-group-item">Send the billing agreement</li>
+                                                                <li class="list-group-item"><span class="fw-bold">The Council of Leaders (COL) shall be committed to:</span>
+                                                            </ul>
+                                                            <ul class="list-group list-group-flush">
+                                                                <li class="list-group-item"><span class="fw-bold">a.</span> coordinate and disseminate information concerning students;</li>
+                                                                <li class="list-group-item"><span class="fw-bold">b.</span> develop an effective working relationship between the Supreme Student Council
+                                                                and the members of the Council of Leaders;</li>
+                                                                <li class="list-group-item"><span class="fw-bold">c.</span> assist the Supreme Student Council in the operation and implementation of its
+                                                                programs, projects, and activities, rules and regulations, resolutions, and memoranda concerning the student body;</li>
+                                                                <li class="list-group-item"><span class="fw-bold">d.</span> report all the raised concerns, criticisms, and suggestions of the constituents</li>
                                                             </ul>
                                                         </div>
                                                     </div>
