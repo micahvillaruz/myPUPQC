@@ -65,11 +65,6 @@ var login = () => {
 			setTimeout(() => {
 				window.location.replace(baseURL + 'Auth/oAuth?' + session_data)
 			}, 2000)
-
-			Toast.fire({
-				icon: 'success',
-				title: ' Login Successfully!',
-			})
 		},
 		error: function (xhr) {
 			Swal.fire({
