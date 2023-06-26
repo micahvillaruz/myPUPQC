@@ -72,6 +72,7 @@ loadAnnouncements = () => {
                 const title = item.announcement_title
                 const description = item.announcement_description
                 const date = moment(item.created_at).from(now)
+                const id = item.announcement_id
 
                 // ! Add modal on href if possible
                 const annnouncement_to_append = `
@@ -81,7 +82,7 @@ loadAnnouncements = () => {
                             <i class="ri-checkbox-circle-fill"></i>
                         </span>
                     </div>
-                    <a href="#">
+                    <a href="#" onclick="return loadSpecificAnnouncement(\'${id}\')">
                         <div class="flex-grow-1 text-muted">
                             <h6 class="mb-1 fs-14">${title}</h6>
                             <p class="mb-0">
@@ -103,6 +104,43 @@ loadAnnouncements = () => {
     })
     console.log('hello??')
 }
+
+// Load Specific Announcement
+// parameter: id = Announcement id
+loadSpecificAnnouncement = (id) => {
+    var now = moment()
+    $.ajaxSetup({
+        headers: {
+            Accept: 'application/json',
+            Authorization: 'Bearer ' + TOKEN,
+            ContentType: 'application/x-www-form-urlencoded',
+        },
+    })
+    $.ajax({
+        type: 'GET',
+        url: apiURL + 'annsys/student/get_announcement/' + id,
+        dataType: 'json',
+        cache: false,
+        success: (result) => {
+            const data = result.data
+        
+                const id = data.announcement_id
+                const title = data.announcement_title
+                const description = data.announcement_description
+                const content = data.announcement_content
+                const date = moment(data.created_at).from(now)
+
+                $('#myAnnouncementTitle').html(title)
+                $('#myAnnouncementDescription').html(description)
+                $('#myAnnouncementContent').html(content)
+                $('#myAnnouncementDate').html(date)
+            
+                $('#myAnnouncementModalId').modal('show');
+        
+        },
+    })
+}
+
 
 // Student EVRSERS Tracker
 loadEvents = () => {
