@@ -352,11 +352,18 @@
 						</div><!-- end card header -->
 
 						<div class="card-body">
-							<div class="mx-n3">
+							<div class="mx-n3" id="advisoryDiv">
 								<div data-simplebar data-simplebar-auto-hide="false" data-simplebar-track="primary" style="max-height: 536px;">
 									<div class="list-group list-group-flush" id="advisory_slider">
 									</div>
 								</div>
+
+								
+							</div>
+
+							<div id="advisoriesBody" style="display:block">
+								<img src="<?= base_url() ?>public/images/news/advisories.gif" alt="News" width="300" height="250" class="mx-1">
+								<center><h4 style="color:#700101;margin-top: -10px;">No Advisory Available</h4></center>
 							</div>
 						</div><!-- end card-body -->
 					</div><!-- end card -->
@@ -377,12 +384,17 @@
 								</a>
 							</h4>
 						</div><!-- end card header -->
-						<div class="card-body">
+						<div class="card-body" >
 							<!-- Swiper -->
-							<div class="swiper pagination-dynamic-swiper rounded">
+							<div class="swiper pagination-dynamic-swiper rounded" id="swiperDiv">
 								<div class="swiper-wrapper" id="news_slider">
 								</div>
 								<div class="swiper-pagination dynamic-pagination"></div>
+							</div>
+							<div id="newsBody" style="display:block">
+							    
+								<img src="<?= base_url() ?>public/images/news/news.gif" alt="News" width="500" height="500" class="mx-1">
+								<center><h4 style="color:#700101;margin-top: -40px;">No News Available</h4></center>
 							</div>
 						</div><!-- end card-body -->
 					</div><!-- end card -->
