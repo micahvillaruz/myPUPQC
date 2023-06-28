@@ -198,7 +198,8 @@ $route['student/evrsers/new-reservation'] = 'student/new_reservation';
 $route['student/evrsers/view-reservation'] = 'student/view_reservation';
 $route['student/evrsers/reservation-history'] = 'student/reservation_history';
 $route['student/evrsers/reservationpolicy'] = 'student/reservationpolicy';
-
+$route['student/ems/new-reservation2'] = 'student/new_reservation2';
+$route['student/ems/view-reservation2'] = 'student/view_reservation2';
 /*
 | -------------------------------------------------------------------------
 | SUPER ADMIN ROUTES

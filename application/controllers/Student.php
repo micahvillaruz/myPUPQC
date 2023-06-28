@@ -207,6 +207,21 @@ class Student extends CI_Controller
         $this->load->view('student/evrsers/scripts/new-reservation-scripts');
     }
 
+    public function new_reservation2()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/student/topbar');
+        $this->load->view('partials/student/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "EMS", "title" => "New Reservation"]);
+        $this->load->view('student/ems/new-reservation');
+        $this->load->view('partials/footer');
+        $this->load->view('student/ems/components/new-reservation-modal');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('student/ems/scripts/new-reservation-scripts');
+    }
+
     public function view_reservation()
     {
         $this->load->view('partials/main');
@@ -237,6 +252,21 @@ class Student extends CI_Controller
         $this->load->view('student/evrsers/components/reservation-history-modal');
         $this->load->view('partials/foot-scripts');
         $this->load->view('student/evrsers/scripts/reservationhist-scripts');
+    }
+
+    public function view_reservation2()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/student/topbar');
+        $this->load->view('partials/student/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "EMS", "title" => "View Reservation"]);
+        $this->load->view('student/ems/view-reservation');
+        $this->load->view('partials/footer');
+        $this->load->view('student/ems/components/view-reservation-modal');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('student/ems/scripts/view-reservation-scripts');
     }
 
     public function reservationpolicy()
