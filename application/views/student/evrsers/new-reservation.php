@@ -33,7 +33,7 @@
                                 <div class="col-lg mx-4 mb-2">
                                     <div class="mb-3">
                                         <p class="text-muted fw-medium fs-9">Reserve Date</p>
-                                        <input type="text" id="reserveDatefloatingInput" name="reserveDatefloatingInput" class="form-control mb-3 d-none" />
+                                        <input type="text" id="reserveDatefloatingInput" name="reserveDatefloatingInput" class="form-control mb-3 d-none"/>
                                     </div>
                                 </div>
                                 <div class="col-lg vstack gap-3 align-middle justify-content-center">

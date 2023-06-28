@@ -63,8 +63,7 @@
                             <button id="editBtn" type="button" class="btn btn-soft-warning float-end text-start fw-medium mt-2 mt-sm-0 w-100 fs-5 mb-3" data-bs-toggle="modal" data-bs-target="#editReservationModal"><i class="ri-edit-2-line me-3 fs-4 align-middle"></i> Edit Reservation</button>
                             <button id="cancelBtn" type="button" class="btn btn-soft-danger float-end text-start fw-medium mt-2 mt-sm-0 w-100 fs-5 mb-3"><i class="mdi mdi-archive-remove-outline me-3 fs-4 align-middle"></i> Cancel Reservation</button>
                         </div>
-                        <div id="pubmat" class="mb-2">
-                            <!-- //* Section Interchangeable depending on whether reservation has pubmat or nah -->
+                        <!-- <div id="pubmat" class="mb-2">
                             <div id="no-pubmat" class="alert alert-info alert-top-border" style="height:305px">
                                 <div class="d-flex hstack gap-2">
                                     <h6 class="text-medium my-2">ADD PUBMAT</h6>
@@ -77,25 +76,25 @@
                             <div id="has-pubmat" class="alert alert-info alert-top-border">
                                 <div class="d-block vstack gap-2">
                                     <h6 class="text-medium my-2">EVENT PUBMAT</h6>
-                                    <row>
+                                    <div class="row">
                                         <img id="pubmat-img" src="" alt="" class="ms-auto img-fluid">
-                                    </row>
-                                    <!-- <button class="btn btn-icon btn-success float-end ms-auto waves-effect waves-light"><i class="ri-check-fill fs-5"></i></button> -->
+                                    </div>
                                 </div>
                             </div>
-                            <!-- //* Until here -->
-                            
-                            <h6 class="text-medium mb-3">RESERVATION STATUS</h6>
-                            <span id="reservation-status"></span>
-                        </div>
-                        <div class="alert alert-info alert-top-border" id="signatories-container">
-                        </div>
+                        </div> -->
+                        <!-- //* Until here -->
+
+                        <h6 class="text-medium mb-3">RESERVATION STATUS</h6>
+                        <span id="reservation-status"></span>
+                    </div>
+                    <div class="alert alert-info alert-top-border" id="signatories-container">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!--end col-->
+</div>
+<!--end col-->
 </div>
 
 <div id="no_reservation" class="row my-5 py-5">
