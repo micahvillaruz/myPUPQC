@@ -71,6 +71,14 @@ function logout(page) {
 	})
 }
 
+function changePassLogout() {
+
+	localStorage.clear()
+	sessionStorage.clear()
+	window.location.href = baseURL + 'auth/signin'
+}
+
+
 function adjustTime(date) {
 	// Tanginang time time to, eto reference: https://stackoverflow.com/questions/7556591/is-the-javascript-date-object-always-one-day-off
 	date = new Date(date)
