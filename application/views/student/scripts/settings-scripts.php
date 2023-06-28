@@ -16,12 +16,9 @@
 		<!-- Settings ajax -->
 		<script src="<?= base_url() ?>public/js/ajax/student/settings.ajax.js"></script>
 
-		<!-- Changepassword and logout js -->
-		<script src="<?= base_url() ?>public/js/common.js"></script>
-
 		<!-- App js -->
 		<script src="<?= base_url() ?>public/js/app.js"></script>
 
 		</body>
-		
+
 		</html>
