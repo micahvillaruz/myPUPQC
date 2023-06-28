@@ -246,3 +246,32 @@
         </div>
     </div>
 </div>
+
+<!-- Modal for Announcement -->
+<div id="myAnnouncementModalId" class="modal fade" tabindex="-1" aria-labelledby="myAnnouncementTitle" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myAnnouncementTitle">Modal Heading</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h5 class="fs-15" id="myAnnouncementDescription">
+                    Overflowing text to show scroll behavior
+                </h5>
+                <div class="flex-shrink-0 ms-2">
+                    <div class="fs-11 text-muted">
+                        <i class="mdi mdi-clock-outline"> </i><span id="myAnnouncementDate"></span>
+                    </div>
+                </div>
+                <br/><br/>
+                <div id="myAnnouncementContent"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- End Modal for Announcement -->
