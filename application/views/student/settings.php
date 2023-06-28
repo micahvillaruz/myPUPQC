@@ -200,7 +200,7 @@
                                         <!--end row-->
                                     </form>
                                 </div>
-                                <!--end tab-pane-->
+                                <!-- end tab-pane-->
                                 <div class="tab-pane" id="changePassword" role="tabpanel">
                                     <form id="changePasswordForm" class="needs-validation" novalidate>
                                         <div class="row g-2">
@@ -213,13 +213,13 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!--end col-->
+                                            <!-- end col -->
                                             <div class="col-lg-4">
                                                 <div>
                                                     <label for="newpasswordInput" class="form-label">New Password <span class="text-danger">*</span></label>
                                                     <input type="password" class="form-control" id="password-input" name='new_password' placeholder="Enter new password" required />
                                                     <div class="invalid-feedback">
-                                                        Please enter password
+                                                    Please enter a password that meets the requirements
                                                     </div>
                                                 </div>
                                             </div>
@@ -227,7 +227,7 @@
                                             <div class="col-lg-4">
                                                 <div>
                                                     <label for="confirmpasswordInput" class="form-label">Confirm Password <span class="text-danger">*</span></label>
-                                                    <input type="password" class="form-control" id="confirm-password-input" placeholder="Confirm password" required />
+                                                    <input type="password" class="form-control" id="confirm-password-input" name='confirm_password' placeholder="Confirm password" required />
                                                     <div class="invalid-feedback">
                                                         Password don't match
                                                     </div>
@@ -246,13 +246,13 @@
                                                         Change Password
                                                     </button>
                                                 </div>
-                                            </div>
+                                            </div> 
                                             <!--end col-->
                                         </div>
                                         <!--end row-->
                                     </form>
                                 </div>
-                                <!--end tab-pane-->
+                             <!--end tab-pane -->
                             </div>
                         </div>
                     </div>

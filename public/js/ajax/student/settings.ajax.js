@@ -1,3 +1,4 @@
+
 $(function () {
 	editPersonalInfo()
 
@@ -146,7 +147,7 @@ changePasswordAJAX = () => {
 					icon: 'success',
 					title: 'Change Password Successfully!',
 				}).then(function () {
-					window.location.reload()
+				    changePassLogout()
 				})
 			}
 		},
