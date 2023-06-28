@@ -88,10 +88,10 @@ viewReservationDetails = () => {
         dataType: 'json',
         success: (result) => {
             console.log(result)
-            const userData = result.data[0]
+            const userData = result.data
             console.log(userData)
 
-            if (userData.length !== 0) {
+            if (userData.length != 0) {
                 $('#existing_reservation').removeClass('d-none')
                 $('#no_reservation').addClass('d-none')
             }
@@ -125,7 +125,7 @@ viewReservationDetails = () => {
 
             $('#reserve_number').html(userData.reservation_number)
             let organization_name =
-                userData.organization_assigned_to_reservations.organization_abbreviation
+                userData.organization_assigned_to_reservations.display_name
             console.log(organization_name)
             let acadorg = ['CHRS', 'COMMITS', 'DOMT.CS', 'FBTO', 'JMS', 'SPAS', 'YES']
             let nonacadorg = ['KATAGA', 'MUSA', 'PSC', 'Vox Nova', 'Other']
