@@ -118,25 +118,24 @@ loadSpecificAnnouncement = (id) => {
     })
     $.ajax({
         type: 'GET',
-        url: apiURL + 'annsys/student/get_announcement/' + id,
+        url: apiURL + 'annsys/student/get_announcement/' + id, // api add author name in the response
         dataType: 'json',
         cache: false,
         success: (result) => {
             const data = result.data
-        
-                const id = data.announcement_id
-                const title = data.announcement_title
-                const description = data.announcement_description
-                const content = data.announcement_content
-                const date = moment(data.created_at).from(now)
-
-                $('#myAnnouncementTitle').html(title)
-                $('#myAnnouncementDescription').html(description)
-                $('#myAnnouncementContent').html(content)
-                $('#myAnnouncementDate').html(date)
             
-                $('#myAnnouncementModalId').modal('show');
+            const id = data.announcement_id
+            const title = data.announcement_title
+            const description = data.announcement_description
+            const content = data.announcement_content
+            const date = moment(data.created_at).format('MMMM D, YYYY');
+
+            $('#myAnnouncementTitle').html(title)
+            $('#myAnnouncementAuthor').html('PUP Staff') // this will be replaced by the actual author name once API is ready.
+            $('#myAnnouncementContent').html(content)
+            $('#myAnnouncementDate').html(date)
         
+            $('#myAnnouncementModalId').modal('show');
         },
     })
 }
