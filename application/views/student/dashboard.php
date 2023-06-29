@@ -38,7 +38,7 @@
         <blockquote class="blockquote custom-blockquote blockquote-outline blockquote-primary rounded py-3">
             <div class="row g-0">
                 <div class="col-lg-4 quote-image">
-                    <img id="background" class="rounded-start img-fluid h-100 object-cover" src="https://theysaidso.com/img/qod/qod-inspire.jpg" alt="QoD Image" />
+                    <img id="background" class="rounded-start img-fluid h-100 object-cover" src="https://images.pexels.com/photos/450441/pexels-photo-450441.jpeg" alt="QoD Image" />
                 </div>
                 <div class="col-xs-12 col-lg-8 qotd">
                     <div class="card-header">
@@ -249,26 +249,28 @@
 
 <!-- Modal for Announcement -->
 <div id="myAnnouncementModalId" class="modal fade" tabindex="-1" aria-labelledby="myAnnouncementTitle" aria-hidden="true" style="display: none;">
-    <div class="modal-dialog">
-        <div class="modal-content">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content px-4 border-0 overflow-hidden">
             <div class="modal-header">
                 <h5 class="modal-title" id="myAnnouncementTitle">Modal Heading</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
             </div>
             <div class="modal-body">
-                <h5 class="fs-15" id="myAnnouncementDescription">
+                <h5 class="fs-15" id="myAnnouncementAuthor">
                     Overflowing text to show scroll behavior
                 </h5>
-                <div class="flex-shrink-0 ms-2">
+
+                <h5 class="fs-15" id="myAnnouncementDate"></h5>
+                <!-- <div class="flex-shrink-0 ms-2">
                     <div class="fs-11 text-muted">
                         <i class="mdi mdi-clock-outline"> </i><span id="myAnnouncementDate"></span>
                     </div>
                 </div>
-                <br/><br/>
-                <div id="myAnnouncementContent"></div>
+                <br/><br/> -->
+                <div id="myAnnouncementContent" class="mt-3"></div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Close</button>
             </div>
 
         </div><!-- /.modal-content -->
