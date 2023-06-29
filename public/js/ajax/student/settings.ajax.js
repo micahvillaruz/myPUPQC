@@ -123,36 +123,47 @@ editPersonalInfoAJAX = () => {
 	}
 }
 
-// Change Password AJAX
-changePasswordAJAX = () => {
-	if (!$('#changePasswordForm')[0].checkValidity()) return false
 
-	const form = new FormData($('#changePasswordForm')[0])
-
-	let data = {
-		current_password: form.get('current_password'),
-		new_password: form.get('new_password'),
-	}
-
-	$.ajax({
-		url: apiURL + `student/info/change_password`,
-		type: 'PUT',
-		data: data,
-		dataType: 'json',
-		headers: AJAX_HEADERS,
-		success: (result) => {
-			console.log(result)
-			if (result) {
+  // Change Password AJAX
+  changePasswordAJAX = () => {
+		if (!$('#changePasswordForm')[0].checkValidity()) return false
+	
+		const form = new FormData($('#changePasswordForm')[0])
+	
+		let data = {
+			current_password: form.get('current_password'),
+			new_password: form.get('new_password'),
+		};
+	
+		$.ajax({
+			url: apiURL + `student/info/change_password`,
+			type: 'PUT',
+			data: data,
+			dataType: 'json',
+			headers: AJAX_HEADERS,
+			success: (result) => {
+				console.log(result)
+				if (result) {
 				Toast.fire({
 					icon: 'success',
 					title: 'Change Password Successfully!',
 				}).then(function () {
-				    changePassLogout()
-				})
-			}
-		},
-	}).fail(() => {
-		let password = document.getElementById('old-password-input')
-		password.setCustomValidity('Incorrect Password')
-	})
-}
+					handlePasswordInputChange()
+					
+					toggleValidationClass("pass-lower", true)
+					toggleValidationClass("pass-upper", true)
+					toggleValidationClass("pass-number", true)
+					toggleValidationClass("pass-special", true)
+					toggleValidationClass("pass-length-min", true)
+					toggleValidationClass("pass-length-max", true)
+
+					changePassLogout()
+				});
+				}
+			},
+			}).fail(() => {
+				let password = document.getElementById('old-password-input')
+				password.setCustomValidity('Incorrect Password')
+			});
+	}
+		

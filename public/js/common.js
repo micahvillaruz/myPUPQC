@@ -71,6 +71,52 @@ function logout(page) {
 	})
 }
 
+// Function to handle password input change
+function handlePasswordInputChange() {
+		var passwordInput = document.getElementById("password-input")
+		var password = passwordInput.value
+		var message = document.getElementById("password-contain")
+	
+		// Validate password and show/hide validation messages
+		var lowercase = /[a-z]/.test(password)
+		var uppercase = /[A-Z]/.test(password)
+		var number = /[0-9]/.test(password)
+		var specialChar = /[!@#$%^&-]/.test(password)
+		var length = password.length >= 8 && password.length <= 24
+	
+		// Apply validation classes to the password validation messages
+		toggleValidationClass("pass-lower", lowercase)
+		toggleValidationClass("pass-upper", uppercase)
+		toggleValidationClass("pass-number", number)
+		toggleValidationClass("pass-special", specialChar)
+		toggleValidationClass("pass-length-min", length)
+		toggleValidationClass("pass-length-max", length && password.length <= 24)
+	
+		// Show/hide the password validation container
+		message.style.display = password ? "block" : "none"
+		
+		// Hide the password requirements if all validations pass
+		if (lowercase && uppercase && number && specialChar && length) {
+		message.style.display = "none"
+		}
+	}
+  
+	// Function to toggle validation class for a given element
+	function toggleValidationClass(elementId, isValid) {
+		var element = document.getElementById(elementId)
+			if (isValid) {
+				element.classList.add("valid")
+				element.classList.remove("invalid")
+			} else {
+				element.classList.add("invalid")
+				element.classList.remove("valid")
+			}
+		}
+	
+	// Add event listener for password input change
+	document.getElementById("password-input").addEventListener("input", handlePasswordInputChange)
+
+
 function changePassLogout() {
 
 	localStorage.clear()

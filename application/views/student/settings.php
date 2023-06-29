@@ -219,8 +219,18 @@
                                                     <label for="newpasswordInput" class="form-label">New Password <span class="text-danger">*</span></label>
                                                     <input type="password" class="form-control" id="password-input" name='new_password' placeholder="Enter new password" required />
                                                     <div class="invalid-feedback">
-                                                    Please enter a password that meets the requirements
+                                                        Please enter a password that meets the requirements
                                                     </div>
+                                                </div>
+                                                <!-- Password validation -->
+                                                <div id="password-contain" class="p-3 bg-light mb-2 rounded">
+                                                    <h5 class="fs-13"><b>Password must contain:</b></h5>
+                                                    <p id="pass-length-min" class="invalid fs-12 mb-2"><b>Minimum 8 characters</b></p>
+                                                    <p id="pass-length-max" class="invalid fs-12 mb-2"><b>Maximum 24 characters</b></p>
+                                                    <p id="pass-lower" class="invalid fs-12 mb-2"><b>At least one lowercase letter (a-z)</b></p>
+                                                    <p id="pass-upper" class="invalid fs-12 mb-2"><b>At least one uppercase letter (A-Z)</b></p>
+                                                    <p id="pass-number" class="invalid fs-12 mb-2"><b>At least one number (0-9)</b></p>
+                                                    <p id="pass-special" class="invalid fs-12 mb-0"><b>At least one special character (!@#$%^&-)</b></p>
                                                 </div>
                                             </div>
                                             <!--end col-->
