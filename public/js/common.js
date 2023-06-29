@@ -95,10 +95,6 @@ function handlePasswordInputChange() {
 		// Show/hide the password validation container
 		message.style.display = password ? "block" : "none"
 		
-		// Hide the password requirements if all validations pass
-		if (lowercase && uppercase && number && specialChar && length) {
-		message.style.display = "none"
-		}
 	}
   
 	// Function to toggle validation class for a given element
@@ -116,7 +112,7 @@ function handlePasswordInputChange() {
 	// Add event listener for password input change
 	document.getElementById("password-input").addEventListener("input", handlePasswordInputChange)
 
-
+	
 function changePassLogout() {
 
 	localStorage.clear()
