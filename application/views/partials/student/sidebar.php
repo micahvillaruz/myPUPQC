@@ -70,7 +70,17 @@
                             <span>View Reservation</span>
                         </a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/org-pending" class="nav-link">
+                            <i class="bx bx-history"></i>
+                            <span>Organization Dashboard</span>
+                        </a>
+                    </li>    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/org-regis" class="nav-link">
+                            <i class="bx bx-history"></i>
+                            <span>Organization Registration</span>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/reservation-history" class="nav-link">
                             <i class="bx bx-history"></i>

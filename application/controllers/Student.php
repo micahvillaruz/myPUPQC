@@ -280,4 +280,48 @@ class Student extends CI_Controller
         $this->load->view('partials/foot-scripts');
         $this->load->view('home/scripts/terms-scripts');
     }
+
+    public function org_regis()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/student/topbar');
+        $this->load->view('partials/student/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "Organization Registration"]);
+        $this->load->view('student/evrsers/org-regis');
+        $this->load->view('partials/footer');
+        $this->load->view('student/evrsers/components/org-regis-modal');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('student/evrsers/scripts/org-regis-script');
+    }
+
+    public function org_pending()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/student/topbar');
+        $this->load->view('partials/student/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "Organization Pending"]);
+        $this->load->view('student/evrsers/org-pending');
+        $this->load->view('partials/footer');
+        $this->load->view('student/evrsers/components/org-pending-modal');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('student/evrsers/scripts/org-pending-script');
+    }
+
+    public function org_dashboard()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/student/topbar');
+        $this->load->view('partials/student/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "Organization Dashboard"]);
+        $this->load->view('student/evrsers/org-dashboard');
+        $this->load->view('partials/footer');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('student/evrsers/scripts/org-dashboard-script');
+    }
 }
