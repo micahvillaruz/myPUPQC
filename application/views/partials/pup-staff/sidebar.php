@@ -42,6 +42,13 @@
                         </li>
 
                         <li class="nav-item">
+                            <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/evrsers/organizer-list">
+                                <i class="ri-team-line"></i>
+                                <span>Organizer List</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
                             <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/evrsers/manage-reservations">
                                 <i class="ri-reserved-line"></i>
                                 <span>Reservations</span>
@@ -65,6 +72,13 @@
                             <i class="mdi mdi-file-sign"></i>
                             <span>Event Approvals</span>
                         </a>
+                    </li>
+
+                    <li class="nav-item">
+                            <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/evrsers/org-list">
+                                <i class="ri-team-line"></i>
+                                <span>Organizer List</span>
+                            </a>
                     </li>
 
                     <?php if (strpos($this->session->userdata('user_roles'), 'News Reporter') !== false || strpos($this->session->userdata('user_roles'), 'Public Relations') !== false) { ?>

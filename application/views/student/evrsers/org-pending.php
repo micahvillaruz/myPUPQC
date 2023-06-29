@@ -6,7 +6,6 @@
             </div>
             <!-- end card header -->
             <div class="row">
-   
     <!--end col-->
     <div class="card-body">
                 <ul class="nav nav-pills nav-primary nav-custom-warning arrow-navtabs nav-justified mb-3" role="tablist">
@@ -47,7 +46,7 @@
                                     <th>Organization Registration #</th>
                                     <th>Organization Name</th>
                                     <th>Date Registered</th>
-                                    <th>Student Head</th>
+                               
                                     <th>Edit Responce</th>
                                     
                                 </tr>

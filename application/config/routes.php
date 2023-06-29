@@ -202,7 +202,7 @@ $route['student/ems/new-reservation2'] = 'student/new_reservation2';
 $route['student/ems/view-reservation2'] = 'student/view_reservation2';
 $route['student/evrsers/org-regis'] = 'student/org_regis';
 $route['student/evrsers/org-pending'] = 'student/org_pending';
-$route['student/evrsers/org-pending'] = 'student/org_dashboard';
+$route['student/evrsers/org-dashboard'] = 'student/org_dashboard';
 /*
 | -------------------------------------------------------------------------
 | SUPER ADMIN ROUTES
@@ -300,6 +300,7 @@ $route['pupstaff/omsss/dentist/analytics-and-history'] = 'pupstaff/dental_analyt
 $route['pupstaff/omsss/counsellor/counsel-requests'] = 'pupstaff/counsellor_requests';
 $route['pupstaff/omsss/counsellor/analytics-and-history'] = 'pupstaff/counsellor_analytics';
 $route['pupstaff/omsss/evaluation'] = 'pupstaff/omsss_evaluation';
+$route['pupstaff/evrsers/org-list'] = 'pupstaff/org_list';
 
 /*
 | --------------
@@ -331,6 +332,7 @@ $route['pupstaff/odrs/evaluation'] = 'pupstaff/odrs_evaluation';
 
 // Organizer Management
 $route['pupstaff/evrsers/organizer-management'] = 'pupstaff/organizer_management';
+
 
 // Reservations
 $route['pupstaff/evrsers/manage-reservations'] = 'pupstaff/manage_reservations';

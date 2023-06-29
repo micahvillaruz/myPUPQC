@@ -220,6 +220,21 @@ class PUPStaff extends CI_Controller
         $this->load->view('pup-staff/evrsers/scripts/organizer-management-scripts');
     }
 
+    public function org_list()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/pup-staff/topbar');
+        $this->load->view('partials/pup-staff/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "Organization List"]);
+        $this->load->view('pup-staff/evrsers/org-list');
+        $this->load->view('partials/footer');
+        $this->load->view('pup-staff/evrsers/components/org-list-modal');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('pup-staff/evrsers/scripts/org-list-scripts');
+    }
+
     public function manage_reservations()
     {
         $this->load->view('partials/main');
@@ -338,4 +353,6 @@ class PUPStaff extends CI_Controller
         $this->load->view('partials/foot-scripts');
         $this->load->view('pup-staff/odrs/scripts/evaluation-scripts');
     }
+
+    
 }

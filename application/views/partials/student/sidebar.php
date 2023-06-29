@@ -71,11 +71,18 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/org-pending" class="nav-link">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/org-dashboard" class="nav-link">
                             <i class="bx bx-history"></i>
                             <span>Organization Dashboard</span>
                         </a>
-                    </li>    <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/org-pending" class="nav-link">
+                            <i class="bx bx-history"></i>
+                            <span>Organization Status</span>
+                        </a>
+                    </li>     
+                    <li class="nav-item">
                         <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/org-regis" class="nav-link">
                             <i class="bx bx-history"></i>
                             <span>Organization Registration</span>
