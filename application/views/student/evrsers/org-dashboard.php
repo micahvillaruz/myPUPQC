@@ -1,5 +1,3 @@
-
-
 <div class="row">
     <div class="col-xs-12 col-lg-4">
         <div class="rounded" style="background: url('<?= base_url() ?>public/images/menu/img-1.webp');background-size:cover;">
