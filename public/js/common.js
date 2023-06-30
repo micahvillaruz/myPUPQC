@@ -23,11 +23,12 @@ const refreshPage = () => {
 	}, 1000)
 }
 
+
 function logout(page) {
 	let msg = ''
 
 	switch (page) {
-		case 'logout':
+		case 'signin':
 			msg = 'You will be redirected to Home page.'
 			break
 		case 'sis':
@@ -42,6 +43,8 @@ function logout(page) {
 		default:
 			return false
 	}
+
+	
 
 	Swal.fire({
 		html: `

@@ -68,16 +68,17 @@ class Auth extends CI_Controller
         $this->load->view('access/scripts/reset-password-scripts');
     }
 
-    public function logout()
-    {
-        $this->session->sess_destroy();
-        $this->load->view('partials/main');
-        $this->load->view('partials/title-meta');
-        $this->load->view('partials/head-css');
-        $this->load->view('access/logout');
-        $this->load->view('partials/foot-scripts');
-        $this->load->view('access/scripts/logout-scripts');
-    }
+    // public function logout()
+    // {
+    //     $this->session->sess_destroy();
+    //     $this->load->view('partials/main');
+    //     $this->load->view('partials/title-meta');
+    //     $this->load->view('partials/head-css');
+    //     $this->load->view('access/signin');
+    //     $this->load->view('partials/foot-scripts');
+    //     $this->load->view('access/scripts/logout-scripts');
+    // }
+    
 
     public function error_message()
     {

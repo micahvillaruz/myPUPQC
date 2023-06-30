@@ -247,6 +247,7 @@
     </div>
 </div>
 
+
 <!-- Modal for Announcement -->
 <div id="myAnnouncementModalId" class="modal fade" tabindex="-1" aria-labelledby="myAnnouncementTitle" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-dialog-centered">
