@@ -68,48 +68,59 @@ fetchNews = () => {
 		dataType: 'json',
 		success: (result) => {
 			const newsInArray = result.data
-			let slider = $('#news_slider')
-			newsInArray.forEach((news) => {
-				const date = new Date(news.created_at)
-				const link =
-					baseURL == 'http://localhost/myPUPQC/'
-						? baseURL + `news/${news.reference_id}`
-						: news.announcement_link
-				const article_date = date.toLocaleDateString('en-US', {
-					year: 'numeric',
-					month: 'long',
-					day: 'numeric',
-				})
-				const article_time = date.toLocaleTimeString('en-US', {
-					hour: 'numeric',
-					minute: 'numeric',
-					hour12: true,
-				})
-				// albert palitan mo ito in the future
-				let imageToShow = news.announcement_image
-					? news.announcement_image
-					: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921'
 
-				let newsOnSlider = `
-                <div class="swiper-slide">
-                    <a href="${link}">
-                        <img src="${imageToShow}" class="img-fluid news-img" />
-                        <h5 class="text-wrap mb-3 mt-4 text-primary">${news.announcement_title}</h5>
-                    </a>
-                    <span class="h5 fw-light">Posted: ${article_date}</span>
-                    <small class="text-muted">${article_time}</small>
-                </div>
-                `
-				slider.append(newsOnSlider)
-			})
+			// check if there's a news
+			if (newsInArray.length > 0){
+				let slider = $('#news_slider')
+				newsInArray.forEach((news) => {
+					const date = new Date(news.created_at)
+					const link =
+						baseURL == 'http://localhost/myPUPQC/'
+							? baseURL + `news/${news.reference_id}`
+							: news.announcement_link
+					const article_date = date.toLocaleDateString('en-US', {
+						year: 'numeric',
+						month: 'long',
+						day: 'numeric',
+					})
+					const article_time = date.toLocaleTimeString('en-US', {
+						hour: 'numeric',
+						minute: 'numeric',
+						hour12: true,
+					})
+					// albert palitan mo ito in the future
+					let imageToShow = news.announcement_image
+						? news.announcement_image
+						: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921'
 
-			let mySwiper = new Swiper('.pagination-dynamic-swiper', {
-				// Swiper configuration options
-				loop: true,
-				autoplay: {
-					delay: 3000,
-				},
-			})
+					let newsOnSlider = `
+					<div class="swiper-slide">
+						<a href="${link}">
+							<img src="${imageToShow}" class="img-fluid news-img" />
+							<h5 class="text-wrap mb-3 mt-4 text-primary">${news.announcement_title}</h5>
+						</a>
+						<span class="h5 fw-light">Posted: ${article_date}</span>
+						<small class="text-muted">${article_time}</small>
+					</div>
+					`
+					slider.append(newsOnSlider)
+				})
+
+				let mySwiper = new Swiper('.pagination-dynamic-swiper', {
+					// Swiper configuration options
+					loop: true,
+					autoplay: {
+						delay: 3000,
+					},
+				})
+
+				$('#newsBody').hide();
+			}else{
+				// no news
+				$('#swiperDiv').hide();
+				$('#newsBody').show();
+				
+			}
 		},
 	})
 }
@@ -122,45 +133,54 @@ fetchAdvisory = () => {
 		success: (result) => {
 			const advisoryInArray = result.data
 			let slider = $('#advisory_slider')
-			advisoryInArray.forEach((advisory) => {
-				const date = new Date(advisory.created_at)
-				const link =
-					baseURL == 'http://localhost/myPUPQC/'
-						? baseURL + `advisory/${advisory.reference_id}`
-						: advisory.announcement_link
-				const article_date = date.toLocaleDateString('en-US', {
-					year: 'numeric',
-					month: 'long',
-					day: 'numeric',
+
+			if (advisoryInArray.length > 0){
+				advisoryInArray.forEach((advisory) => {
+					const date = new Date(advisory.created_at)
+					const link =
+						baseURL == 'http://localhost/myPUPQC/'
+							? baseURL + `advisory/${advisory.reference_id}`
+							: advisory.announcement_link
+					const article_date = date.toLocaleDateString('en-US', {
+						year: 'numeric',
+						month: 'long',
+						day: 'numeric',
+					})
+					const article_time = date.toLocaleTimeString('en-US', {
+						hour: 'numeric',
+						minute: 'numeric',
+						hour12: true,
+					})
+	
+					let advisoryOnSlider = `
+					<a href="${link}" class="text-reset notification-item d-block dropdown-item list-group-item py-4">
+						<div class="d-flex align-items-start">
+							<div class="flex-grow-1 overflow-hidden">
+								<h5 class="fw-normal mb-1 text-primary">${advisory.announcement_title}</h5>
+								<p class="mb-0 fs-6">Posted: <span>${article_date}</span>
+									<small>${article_time}</small>
+								</p>
+							</div>
+						</div>
+					</a>
+					`
+					slider.append(advisoryOnSlider)
 				})
-				const article_time = date.toLocaleTimeString('en-US', {
-					hour: 'numeric',
-					minute: 'numeric',
-					hour12: true,
+	
+				let mySwiper = new Swiper('.pagination-dynamic-swiper', {
+					// Swiper configuration options
+					loop: true,
+					autoplay: {
+						delay: 3000,
+					},
 				})
 
-				let advisoryOnSlider = `
-                <a href="${link}" class="text-reset notification-item d-block dropdown-item list-group-item py-4">
-                    <div class="d-flex align-items-start">
-                        <div class="flex-grow-1 overflow-hidden">
-                            <h5 class="fw-normal mb-1 text-primary">${advisory.announcement_title}</h5>
-                            <p class="mb-0 fs-6">Posted: <span>${article_date}</span>
-                                <small>${article_time}</small>
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                `
-				slider.append(advisoryOnSlider)
-			})
-
-			let mySwiper = new Swiper('.pagination-dynamic-swiper', {
-				// Swiper configuration options
-				loop: true,
-				autoplay: {
-					delay: 3000,
-				},
-			})
+				$('#advisoriesBody').hide();
+			}else{
+				$('#advisoryDiv').hide();
+				$('#advisoriesBody').show();
+			}
+			
 		},
 	})
 }
