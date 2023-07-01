@@ -49,16 +49,15 @@ loadDocumentsTable = () => {
 			headers: AJAX_HEADERS,
 		},
 		//No Sort Function
-		"aoColumnDefs": [
-			{ 'bSortable': false, 'aTargets': ['no-sort'] }
-		],
+		aoColumnDefs: [{ bSortable: false, aTargets: ['no-sort'] }],
 		columns: [
 			{
 				data: null,
 				width: '70%',
 				render: (data) => {
-					return `<a href="#!" class="fw-medium">${data.document_name}</a><br><small>${data.document_details == null ? '' : data.document_details
-						}</small>`
+					return `<a href="#!" class="fw-medium">${data.document_name}</a><br><small>${
+						data.document_details == null ? '' : data.document_details
+					}</small>`
 				},
 			},
 			{
@@ -208,9 +207,12 @@ addDocument = () => {
 		document_name: form.get('document_name'),
 		document_details: form.get('document_details'),
 		document_type: form.get('document_type'),
-		document_requirements: values.map((item) => {
-			return { doc_req_name: item }
-		}),
+		document_requirements:
+			values > 0
+				? values.map((item) => {
+						return { doc_req_name: item }
+				  })
+				: null,
 		document_signatories: signatoriesList.map((element, index) => {
 			return { user_id: element, hierarchy_number: index + 1 }
 		}),
@@ -224,7 +226,7 @@ addDocument = () => {
 		dataType: 'json',
 		success: (result) => {
 			if (result) {
-				$('#addDocumentModal').modal('hide');
+				$('#addDocumentModal').modal('hide')
 				Toast.fire({
 					icon: 'success',
 					title: 'Added Document Successfully!',
@@ -280,14 +282,17 @@ updateDocument = (document_id) => {
 			return $(this).val()
 		})
 		.get()
+
 	const data = {
 		document_name: form.get('document_name'),
 		document_details: form.get('document_details'),
 		document_type: form.get('document_type'),
-
-		document_requirements: values.map((item) => {
-			return { doc_req_name: item }
-		}),
+		document_requirements:
+			values > 0
+				? values.map((item) => {
+						return { doc_req_name: item }
+				  })
+				: null,
 		document_signatories: filteredSignatoriesList.map((element, index) => {
 			return { user_id: element, hierarchy_number: index + 1 }
 		}),
@@ -366,9 +371,11 @@ getDocumentInfo = (document_id) => {
 				document_requirements.forEach((item, i) => {
 					$('#edit_document_requirements_list').append(`
 					<div id=${i + 1}>
-					<div class="row"><div class="hstack gap-2 justify-content-end mb-3"><input type="text" name="edit_document_requirement" class="form-control" value="${item.doc_req_name
-						}" required><a class="btn btn-danger rounded-pill" href="javascript:deleteEl(${i + 1
-						}, 'edit')">Delete</a></div><div class="invalid-feedback">Please select the Document Requirement.</div></div></div>
+					<div class="row"><div class="hstack gap-2 justify-content-end mb-3"><input type="text" name="edit_document_requirement" class="form-control" value="${
+						item.doc_req_name
+					}" required><a class="btn btn-danger rounded-pill" href="javascript:deleteEl(${
+						i + 1
+					}, 'edit')">Delete</a></div><div class="invalid-feedback">Please select the Document Requirement.</div></div></div>
 					`)
 				})
 			}
@@ -524,8 +531,8 @@ function edit_new_link() {
 	let o = document.createElement('div'),
 		e = `<div class="row"><div class="hstack gap-2 justify-content-end mb-3"><input type="text" name="edit_document_requirement" class="form-control" placeholder="Enter a requirement for this Document" required><a class="btn btn-danger rounded-pill" href="javascript:deleteEl(${(o.id =
 			editCount)}, 'edit')">Delete</a></div><div class="invalid-feedback">Please select the Document Requirement.</div></div>`
-		; (o.innerHTML = document.getElementById('edit_newForm').innerHTML + e),
-			document.getElementById('edit_document_requirements_list').appendChild(o)
+	;(o.innerHTML = document.getElementById('edit_newForm').innerHTML + e),
+		document.getElementById('edit_document_requirements_list').appendChild(o)
 }
 
 function deleteEl(o, val) {
