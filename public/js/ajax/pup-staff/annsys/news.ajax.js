@@ -9,9 +9,9 @@ $(() => {
 	$('#NewNews').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
 
-		if ($('#announcement_id').val() == ""){
+		if ($('#announcement_id').val() == "") {
 			addNews(pond)
-		}else{
+		} else {
 			editNews(pond)
 		}
 	})
@@ -249,6 +249,8 @@ addNews = (pond) => {
 			console.log(pair[0] + ': ' + pair[1])
 		}
 
+		form.delete('announcement_id');
+
 		$.ajax({
 			url: apiURL + 'annsys/pup_staff/add_news',
 			type: 'POST',
@@ -274,9 +276,8 @@ addNews = (pond) => {
 			},
 		}).fail((xhr) => {
 			Swal.fire({
-				html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong!</h4><p class="text-muted mx-4 mb-0">${
-					JSON.parse(xhr.responseText).message
-				}</p></div></div>`,
+				html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong!</h4><p class="text-muted mx-4 mb-0">${JSON.parse(xhr.responseText).message
+					}</p></div></div>`,
 				showCancelButton: !0,
 				showConfirmButton: !1,
 				cancelButtonClass: 'btn btn-danger w-xs mb-1',
@@ -332,9 +333,8 @@ editNews = (pond) => {
 			},
 		}).fail((xhr) => {
 			Swal.fire({
-				html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong!</h4><p class="text-muted mx-4 mb-0">${
-					JSON.parse(xhr.responseText).message
-				}</p></div></div>`,
+				html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong!</h4><p class="text-muted mx-4 mb-0">${JSON.parse(xhr.responseText).message
+					}</p></div></div>`,
 				showCancelButton: !0,
 				showConfirmButton: !1,
 				cancelButtonClass: 'btn btn-danger w-xs mb-1',
@@ -412,11 +412,11 @@ getSpecificNews = (announcement_id) => {
 		success: (result) => {
 			if (result) {
 
-				if (!$('#collapseExample').is(':visible')){
+				if (!$('#collapseExample').is(':visible')) {
 					$('#addNewsBtn').trigger('click');
 					$('#addNewsBtn').hide();
 				}
-				
+
 				$('#addNewButtonLabel').html('Edit News');
 				$('#announcement_id').val(result.data.announcement_id);
 				$('#announcement_title').val(result.data.announcement_title);
