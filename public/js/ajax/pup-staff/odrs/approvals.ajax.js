@@ -46,6 +46,10 @@ loadForApprovalRequests = () => {
 				type: 'GET',
 				headers: AJAX_HEADERS,
 			},
+			//No Sort Function
+			"aoColumnDefs": [
+				{ 'bSortable': false, 'aTargets': ['no-sort'] }
+			],
 			columns: [
 				// Control Number
 				{
@@ -376,6 +380,10 @@ loadOnHoldRequests = () => {
 				type: 'GET',
 				headers: AJAX_HEADERS,
 			},
+			//No Sort Function
+			"aoColumnDefs": [
+				{ 'bSortable': false, 'aTargets': ['no-sort'] }
+			],
 			columns: [
 				// Control Number
 				{
@@ -574,9 +582,8 @@ approveRequest = (request_id, document_id) => {
 		},
 	}).fail((xhr) => {
 		Swal.fire({
-			html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">${
-				JSON.parse(xhr.responseText).message
-			}</p></div></div>`,
+			html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">${JSON.parse(xhr.responseText).message
+				}</p></div></div>`,
 			showCancelButton: !0,
 			showConfirmButton: !1,
 			cancelButtonClass: 'btn btn-danger w-xs mb-1',
@@ -629,9 +636,8 @@ onHoldRequest = (request_signatory_id) => {
 		},
 	}).fail((xhr) => {
 		Swal.fire({
-			html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">${
-				JSON.parse(xhr.responseText).message
-			}</p></div></div>`,
+			html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">${JSON.parse(xhr.responseText).message
+				}</p></div></div>`,
 			showCancelButton: !0,
 			showConfirmButton: !1,
 			cancelButtonClass: 'btn btn-danger w-xs mb-1',
@@ -679,9 +685,8 @@ revertRequest = (request_signatory_id) => {
 		},
 	}).fail((xhr) => {
 		Swal.fire({
-			html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">${
-				JSON.parse(xhr.responseText).message
-			}</p></div></div>`,
+			html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">${JSON.parse(xhr.responseText).message
+				}</p></div></div>`,
 			showCancelButton: !0,
 			showConfirmButton: !1,
 			cancelButtonClass: 'btn btn-danger w-xs mb-1',
