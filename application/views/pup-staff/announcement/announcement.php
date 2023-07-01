@@ -2,18 +2,19 @@
     <div class="col-lg-12">
         <div class="d-flex align-items-center flex-wrap gap-2 mb-3">
             <div class="flex-grow-1">
-                <button type="button" class="btn btn-success" data-bs-toggle="collapse" href="#collapseExample" aria-expanded="true" aria-controls="collapseExample"><i class="ri-add-line align-bottom me-1"></i> Add Announcement</button>
+                <button type="button" id="newAnnouncementBtn" class="btn btn-success" data-bs-toggle="collapse" href="#collapseExample" aria-expanded="true" aria-controls="collapseExample"><i class="ri-add-line align-bottom me-1"></i> Add Announcement</button>
             </div>
         </div>
         <div class="collapse mb-3" id="collapseExample">
             <div class="card mb-0">
                 <div class="card-header border-0">
                     <div class="d-flex align-items-center">
-                        <h5 class="card-title mb-0 flex-grow-1">Add New Announcement</h5>
+                        <h5 class="card-title mb-0 flex-grow-1" id="addAnnouncementLabel">Add New Announcement</h5>
                     </div>
                 </div>
                 <div class="card-body">
                     <form id="NewAnnouncement" class="row g-3 needs-validation" novalidate>
+                        <input type="hidden" class="form-control" id="announcement_id" name="announcement_id">
                         <div class="col-md-12">
                             <label for="announcement_title" class="form-label">Title <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="announcement_title" name="announcement_title" placeholder="Enter the title of the announcement" required>
@@ -29,7 +30,7 @@
                         <div class="col-12">
                             <div class="mt-2 d-flex justify-content-end gap-2">
                                 <button type="submit" class="btn btn-success w-lg waves-effect waves-light">Submit</button>
-                                <button type="button" class="btn btn-danger w-lg waves-effect waves-light" data-bs-toggle="collapse" href="#collapseExample" aria-expanded="true" aria-controls="collapseExample">Cancel</button>
+                                <button type="button" onclick="return gotoAdd()" class="btn btn-danger w-lg waves-effect waves-light" data-bs-toggle="collapse" href="#collapseExample" aria-expanded="true" aria-controls="collapseExample">Cancel</button>
                             </div>
                         </div>
                     </form>
