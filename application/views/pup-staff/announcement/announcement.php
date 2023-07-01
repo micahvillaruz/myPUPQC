@@ -30,7 +30,7 @@
                         <div class="col-12">
                             <div class="mt-2 d-flex justify-content-end gap-2">
                                 <button type="submit" class="btn btn-success w-lg waves-effect waves-light">Submit</button>
-                                <button type="button" class="btn btn-danger w-lg waves-effect waves-light" data-bs-toggle="collapse" href="#collapseExample" aria-expanded="true" aria-controls="collapseExample">Cancel</button>
+                                <button type="button" onclick="return gotoAdd()" class="btn btn-danger w-lg waves-effect waves-light" data-bs-toggle="collapse" href="#collapseExample" aria-expanded="true" aria-controls="collapseExample">Cancel</button>
                             </div>
                         </div>
                     </form>

@@ -392,8 +392,12 @@ editAnnouncement = (announcement_id) => {
 		headers: AJAX_HEADERS,
 		success: (result) => {
 			if (result) {
-				$('#newAnnouncementBtn').trigger('click');
-				$('#newAnnouncementBtn').hide();
+
+				if (!$( "#collapseExample" ).is( ":visible" )){
+					$('#newAnnouncementBtn').trigger('click');
+					$('#newAnnouncementBtn').hide();
+				}
+
 				$('#addAnnouncementLabel').html('Edit Announcement');
 				$('#announcement_id').val(result.data.announcement_id);
 				$('#announcement_title').val(result.data.announcement_title);
@@ -467,4 +471,15 @@ deleteAnnouncement = (announcement_id) => {
 			})
 		}
 	})
+}
+
+gotoAdd = () => {
+	$('#newAnnouncementBtn').show();
+	$('#addAnnouncementLabel').html('Add New Announcement');
+	$('#announcement_id').val('');
+	$('#announcement_title').val('');
+	$('#announcement_description').val('');
+	$('#announcement_content').val('');
+	tinymce.get("announcement_content").setContent('');
+			
 }
