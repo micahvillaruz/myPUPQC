@@ -23,12 +23,11 @@ const refreshPage = () => {
 	}, 1000)
 }
 
-
 function logout(page) {
 	let msg = ''
 
 	switch (page) {
-		case 'signin':
+		case 'logout':
 			msg = 'You will be redirected to Home page.'
 			break
 		case 'sis':
@@ -43,8 +42,6 @@ function logout(page) {
 		default:
 			return false
 	}
-
-	
 
 	Swal.fire({
 		html: `
@@ -76,53 +73,49 @@ function logout(page) {
 
 // Function to handle password input change
 function handlePasswordInputChange() {
-		var passwordInput = document.getElementById("password-input")
-		var password = passwordInput.value
-		var message = document.getElementById("password-contain")
-	
-		// Validate password and show/hide validation messages
-		var lowercase = /[a-z]/.test(password)
-		var uppercase = /[A-Z]/.test(password)
-		var number = /[0-9]/.test(password)
-		var specialChar = /[!@#$%^&-]/.test(password)
-		var length = password.length >= 8 && password.length <= 24
-	
-		// Apply validation classes to the password validation messages
-		toggleValidationClass("pass-lower", lowercase)
-		toggleValidationClass("pass-upper", uppercase)
-		toggleValidationClass("pass-number", number)
-		toggleValidationClass("pass-special", specialChar)
-		toggleValidationClass("pass-length-min", length)
-		toggleValidationClass("pass-length-max", length && password.length <= 24)
-	
-		// Show/hide the password validation container
-		message.style.display = password ? "block" : "none"
-		
+	var passwordInput = document.getElementById('password-input')
+	var password = passwordInput.value
+	var message = document.getElementById('password-contain')
+
+	// Validate password and show/hide validation messages
+	var lowercase = /[a-z]/.test(password)
+	var uppercase = /[A-Z]/.test(password)
+	var number = /[0-9]/.test(password)
+	var specialChar = /[!@#$%^&-]/.test(password)
+	var length = password.length >= 8 && password.length <= 24
+
+	// Apply validation classes to the password validation messages
+	toggleValidationClass('pass-lower', lowercase)
+	toggleValidationClass('pass-upper', uppercase)
+	toggleValidationClass('pass-number', number)
+	toggleValidationClass('pass-special', specialChar)
+	toggleValidationClass('pass-length-min', length)
+	toggleValidationClass('pass-length-max', length && password.length <= 24)
+
+	// Show/hide the password validation container
+	message.style.display = password ? 'block' : 'none'
+}
+
+// Function to toggle validation class for a given element
+function toggleValidationClass(elementId, isValid) {
+	var element = document.getElementById(elementId)
+	if (isValid) {
+		element.classList.add('valid')
+		element.classList.remove('invalid')
+	} else {
+		element.classList.add('invalid')
+		element.classList.remove('valid')
 	}
-  
-	// Function to toggle validation class for a given element
-	function toggleValidationClass(elementId, isValid) {
-		var element = document.getElementById(elementId)
-			if (isValid) {
-				element.classList.add("valid")
-				element.classList.remove("invalid")
-			} else {
-				element.classList.add("invalid")
-				element.classList.remove("valid")
-			}
-		}
-	
-	// Add event listener for password input change
-	document.getElementById("password-input").addEventListener("input", handlePasswordInputChange)
+}
 
-	
+// Add event listener for password input change
+document.getElementById('password-input').addEventListener('input', handlePasswordInputChange)
+
 function changePassLogout() {
-
 	localStorage.clear()
 	sessionStorage.clear()
 	window.location.href = baseURL + 'auth/signin'
 }
-
 
 function adjustTime(date) {
 	// Tanginang time time to, eto reference: https://stackoverflow.com/questions/7556591/is-the-javascript-date-object-always-one-day-off
