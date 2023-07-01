@@ -67,7 +67,8 @@ function logout(page) {
 		if (!result.value) return false
 
 		localStorage.clear()
-		window.location.href = baseURL + page
+		if (page == 'logout') window.location.href = baseURL + 'signin'
+		else window.location.href = baseURL + page
 	})
 }
 
