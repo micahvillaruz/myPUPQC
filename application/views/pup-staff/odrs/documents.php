@@ -9,9 +9,9 @@
         <table id="documents-datatable" class="table dt-responsive align-middle" style="width: 100%">
           <thead class="bg-light">
             <tr>
-              <th class="text-uppercase">Document Name</th>
-              <th class="text-uppercase">Document Type</th>
-              <th class="text-uppercase no-sort">Action</th>
+              <th>Document Name</th>
+              <th>Document Type</th>
+              <th class="no-sort">Action</th>
             </tr>
           </thead>
           <tbody>

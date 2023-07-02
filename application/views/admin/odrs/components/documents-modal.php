@@ -10,6 +10,8 @@
         <mark class="mb-4 mx-3 fw-bold d-block text-center" id="document_type"></mark>
         <span class="badge badge-soft-dark fs-15 mb-3"> <i class="ri-file-list-3-line me-2"></i> Details</span>
         <p class="mb-4 mx-3" id="document_details"></p>
+        <span class="badge badge-soft-dark fs-15 mb-3"> <i class="ri-pen-nib-line me-2"></i> Signatories</span>
+        <ul id="view_document_signatories" class="mx-3"></ul>
         <span class="badge badge-soft-dark fs-15 mb-3"> <i class="ri-suitcase-line me-2"></i> Requirements</span>
         <ul id="document_requirements" class="mx-3">
         </ul>
