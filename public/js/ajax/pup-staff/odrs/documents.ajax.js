@@ -133,7 +133,7 @@ populateSelect = (signatoriesList = []) => {
 				)
 			selectSignatories.append(options)
 			isPopulateSelectRunning = false
-			$('#select_signatories').select2({
+			selectSignatories.select2({
 				dropdownParent: $('#addDocumentModal'),
 				minimumResultsForSearch: Infinity,
 			})
@@ -239,7 +239,6 @@ addDocument = () => {
 					$('#select_signatories').attr('required', 'required')
 					populateSelect()
 					signatoriesList.length = 0
-					// Reload Document Datatable
 					loadDocumentsTable()
 				})
 			}
@@ -254,6 +253,38 @@ addDocument = () => {
 			buttonsStyling: !1,
 			showCloseButton: !0,
 		})
+	})
+}
+
+filterSelect = (filteredSignatories = []) => {
+	if (isPopulateSelectRunning) return
+	isPopulateSelectRunning = true
+	const selectSignatories = $('#edit_signatories')
+	selectSignatories.find('option').not(':disabled').remove()
+	selectSignatories.find('option:disabled').prop('selected', true)
+
+	$.ajax({
+		type: 'GET',
+		url: apiURL + 'odrs/pup_staff/view_signatory_users',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			const signatories = result.data
+			const options = signatories
+				.filter((signatory) => !filteredSignatories.includes(signatory.user_id))
+				.map(
+					(signatory) =>
+						new Option(
+							signatory.user_assigned_to_role.user_profiles[0].full_name,
+							signatory.user_id,
+						),
+				)
+			selectSignatories.append(options)
+			isPopulateSelectRunning = false
+			selectSignatories.select2({
+				dropdownParent: $('#updateDocumentModal'),
+				minimumResultsForSearch: Infinity,
+			})
+		},
 	})
 }
 
@@ -314,7 +345,11 @@ updateDocument = (document_id) => {
 					$('form#editDocumentForm')[0].reset()
 					$('#document_requirements_list').empty()
 					editCount = 0
-					// Reload Document Datatable
+					$('#signatories_list').empty()
+					$('.signatories_div').removeClass('d-none')
+					$('#edit_signatories').attr('required', 'required')
+					filterSelect()
+					filteredSignatoriesList.length = 0
 					loadDocumentsTable()
 				})
 			}
@@ -361,6 +396,7 @@ getDocumentInfo = (document_id) => {
 					</li>
 				`)
 				})
+				validationChecker()
 
 				filteredSignatoriesList = document_signatories.map((signatory) => signatory.user_id)
 				filterSelect(filteredSignatoriesList)
@@ -397,7 +433,12 @@ function checkSignatoryStatus() {
 	if ($('#display_list').find('li').length == 0) {
 		// No li elements found inside the ul tag with the id of display_list
 		$('#select_signatories').prop('required', true)
-	} else {
+		$('.signatories_div').removeClass('d-none')
+	} else if ($('#display_list').find('li').length <= 4) {
+		$('.signatories_div').removeClass('d-none')
+		$('#select_signatories').removeAttr('required')
+	} else if ($('#signatories_list').find('li').length == 4) {
+		$('.signatories_div').addClass('d-none')
 		$('#select_signatories').removeAttr('required')
 	}
 }
@@ -438,51 +479,20 @@ $('#display_list').on('click', '.link-delete', function () {
 	const removedOptionID = $(this).parent().attr('id')
 	signatoriesList = signatoriesList.filter((value) => value !== removedOptionID)
 	$(this).parent().remove()
-	populateSelect(signatoriesList)
-
 	checkSignatoryStatus()
+	populateSelect(signatoriesList)
 })
-
-filterSelect = (filteredSignatories) => {
-	const selectSignatories = $('#edit_signatories')
-	selectSignatories.find('option').not(':disabled').remove()
-	selectSignatories.find('option:disabled').prop('selected', true)
-
-	$.ajax({
-		type: 'GET',
-		url: apiURL + 'odrs/pup_staff/view_signatory_users',
-		headers: AJAX_HEADERS,
-		success: (result) => {
-			const signatories = result.data
-			const options = signatories
-				.filter((signatory) => !filteredSignatories.includes(signatory.user_id))
-				.map(
-					(signatory) =>
-						new Option(
-							signatory.user_assigned_to_role.user_profiles[0].full_name,
-							signatory.user_id,
-						),
-				)
-			selectSignatories.append(options)
-			if (selectSignatories.find('option').length > 1) {
-				$('.signatories_div').removeClass('d-none')
-			} else {
-				$('.signatories_div').addClass('d-none')
-			}
-			selectSignatories.val(null).trigger('change')
-			selectSignatories.select2({
-				dropdownParent: $('#updateDocumentModal'),
-				minimumResultsForSearch: Infinity,
-			})
-		},
-	})
-}
 
 function validationChecker() {
 	if ($('#signatories_list').find('li').length === 0) {
-		// No li elements found inside the ul tag with the id of display_list
+		// No li elements found inside the ul tag with the id of signatories_list
 		$('#edit_signatories').prop('required', true)
-	} else {
+		$('.signatories_div').removeClass('d-none')
+	} else if ($('#signatories_list').find('li').length <= 4) {
+		$('.signatories_div').removeClass('d-none')
+		$('#edit_signatories').removeAttr('required')
+	} else if ($('#signatories_list').find('li').length == 4) {
+		$('.signatories_div').addClass('d-none')
 		$('#edit_signatories').removeAttr('required')
 	}
 }
@@ -492,7 +502,7 @@ function edit_signatory() {
 	const selectedOptionID = selectedOption.val()
 
 	if (selectedOptionID) {
-		if (!signatoriesList.includes(selectedOptionID)) {
+		if (!filteredSignatoriesList.includes(selectedOptionID)) {
 			filteredSignatoriesList.push(selectedOptionID)
 			$('#signatories_list').append(`
 				<li id="${selectedOptionID}" class="d-flex align-items-center justify-content-between mb-2">
@@ -508,7 +518,9 @@ function edit_signatory() {
 			selectedOption.remove()
 			$('#edit_signatories').find('option:disabled').prop('selected', true)
 
-			if ($('#select_signatories option').length > 1) {
+			if ($('#edit_signatories option').length === 1) {
+				$('.signatories_div').addClass('d-none')
+			} else {
 				$('.signatories_div').removeClass('d-none')
 			}
 		}
@@ -521,9 +533,8 @@ $('#signatories_list').on('click', '.link-delete', function () {
 	const removedOptionID = $(this).parent().attr('id')
 	filteredSignatoriesList = filteredSignatoriesList.filter((value) => value !== removedOptionID)
 	$(this).parent().remove()
-	filterSelect(filteredSignatoriesList)
-
 	validationChecker()
+	filterSelect(filteredSignatoriesList)
 })
 
 function edit_new_link() {
