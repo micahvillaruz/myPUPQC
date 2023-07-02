@@ -101,9 +101,7 @@ loadPendingRequests = () => {
 				headers: AJAX_HEADERS,
 			},
 			//No Sort Function
-			"aoColumnDefs": [
-				{ 'bSortable': false, 'aTargets': ['no-sort'] }
-			],
+			aoColumnDefs: [{ bSortable: false, aTargets: ['no-sort'] }],
 			dom: 'Bfrtip',
 			buttons: ['print'],
 			columns: [
@@ -248,9 +246,7 @@ loadApprovedRequests = () => {
 				type: 'GET',
 				headers: AJAX_HEADERS,
 			},
-			"aoColumnDefs": [
-				{ 'bSortable': false, 'aTargets': ['no-sort'] }
-			],
+			aoColumnDefs: [{ bSortable: false, aTargets: ['no-sort'] }],
 			columns: [
 				// Control Number
 				{
@@ -1208,16 +1204,29 @@ viewTraceRequestApproval = (request_id) => {
 				`)
 				data.signatories_assigned_to_request.forEach((signatory, j) => {
 					if (signatory.document_id === document.document_id) {
-						$(`#doc_signatory_${i}`).append(`
-										<div class="acitivity-item d-flex">
-                      <div class="flex-shrink-0">
-                        <img src="${baseURL}public/images/profile/flat-faces-icons-circle-man-6.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
-                      </div>
-                      <div class="flex-grow-1 ms-3 mb-4" id="signatory_status_${j}">
-                        <h6 class="mb-1">${signatory.signatory_for_user.user_profiles[0].full_name}</h6>
-                      </div>
-                    </div>
-						`)
+						if (signatory.signatory_for_user.user_profiles[0].gender == 'Male') {
+							$(`#doc_signatory_${i}`).append(`
+								<div class="acitivity-item d-flex">
+									<div class="flex-shrink-0">
+										<img src="${baseURL}public/images/profile/flat-faces-icons-circle-man-6.png" class="avatar-xs rounded-circle acitivity-avatar shadow">
+									</div>
+									<div class="flex-grow-1 ms-3 mb-4" id="signatory_status_${j}">
+										<h6 class="mb-1">${signatory.signatory_for_user.user_profiles[0].full_name}</h6>
+									</div>
+								</div>
+							`)
+						} else {
+							$(`#doc_signatory_${i}`).append(`
+								<div class="acitivity-item d-flex">
+									<div class="flex-shrink-0">
+										<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-8.png" class="avatar-xs rounded-circle acitivity-avatar shadow">
+									</div>
+									<div class="flex-grow-1 ms-3 mb-4" id="signatory_status_${j}">
+										<h6 class="mb-1">${signatory.signatory_for_user.user_profiles[0].full_name}</h6>
+									</div>
+								</div>
+							`)
+						}
 						if (!signatory.is_signed && !signatory.is_onhold) {
 							$(`#signatory_status_${j}`).append(`
 							<span class="badge badge-soft-warning text-uppercase">Pending</span>
@@ -1252,22 +1261,41 @@ viewTraceRequestApproval = (request_id) => {
 			data.signatories_assigned_to_request.forEach((signatory) => {
 				if (signatory.remarks !== null) {
 					$('#trace_request_remarks').removeClass('d-none')
-					$('#trace_request_approval').append(`
-						<div class="list-group text-start">
-              <div class="list-group-item list-group-item-action list-group-item-danger">
-                <div class="d-flex mb-2 align-items-center">
-                  <div class="flex-shrink-0">
-                    <img src="${baseURL}public/images/profile/flat-faces-icons-circle-man-6.png" alt="" class="avatar-xs rounded-circle" />
-                  </div>
-                  <div class="flex-grow-1 ms-3">
-                    <h6 class="list-title mb-1">${signatory.signatory_for_user.user_profiles[0].full_name}</h6>
-                  </div>
-                </div>
-                <p>${signatory.remarks}</p>
-              </div>
-            </div>
-						<br>
-					`)
+					if (signatory.signatory_for_user.user_profiles[0].gender == 'Male') {
+						$('#trace_request_approval').append(`
+							<div class="list-group text-start">
+								<div class="list-group-item list-group-item-action list-group-item-danger">
+									<div class="d-flex mb-2 align-items-center">
+										<div class="flex-shrink-0">
+											<img src="${baseURL}public/images/profile/flat-faces-icons-circle-man-6.png" alt="" class="avatar-xs rounded-circle" />
+										</div>
+										<div class="flex-grow-1 ms-3">
+											<h6 class="list-title mb-1">${signatory.signatory_for_user.user_profiles[0].full_name}</h6>
+										</div>
+									</div>
+									<p>${signatory.remarks}</p>
+								</div>
+							</div>
+							<br>
+						`)
+					} else {
+						$('#trace_request_approval').append(`
+							<div class="list-group text-start">
+								<div class="list-group-item list-group-item-action list-group-item-danger">
+									<div class="d-flex mb-2 align-items-center">
+										<div class="flex-shrink-0">
+											<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-8.png" alt="" class="avatar-xs rounded-circle" />
+										</div>
+										<div class="flex-grow-1 ms-3">
+											<h6 class="list-title mb-1">${signatory.signatory_for_user.user_profiles[0].full_name}</h6>
+										</div>
+									</div>
+									<p>${signatory.remarks}</p>
+								</div>
+							</div>
+							<br>
+						`)
+					}
 				}
 			})
 		},
