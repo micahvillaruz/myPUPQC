@@ -8,7 +8,11 @@ $(() => {
 
 	$('#NewAdvisory').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
-		addAdvisory(pond)
+		if ($('#announcement_id').val() == "") {
+			addAdvisory(pond)
+		} else {
+			editAdvisory(pond)
+		}
 	})
 })
 
@@ -208,7 +212,7 @@ loadAdvisoryTables = () => {
                         </button>
                         `
 						const editButton = `
-                        <button type="button" class="btn btn-warning btn-icon waves-effect waves-light">
+                        <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" onclick="getSpecificAdvisory('${data.announcement_id}')">
                             <i class="ri-edit-2-fill"></i>
                         </button>
                         `
@@ -248,6 +252,8 @@ addAdvisory = (pond) => {
 			console.log(pair[0] + ': ' + pair[1])
 		}
 
+		form.delete('announcement_id');
+
 		$.ajax({
 			url: apiURL + 'annsys/pup_staff/add_advisory',
 			type: 'POST',
@@ -273,9 +279,65 @@ addAdvisory = (pond) => {
 			},
 		}).fail((xhr) => {
 			Swal.fire({
-				html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong!</h4><p class="text-muted mx-4 mb-0">${
-					JSON.parse(xhr.responseText).message
-				}</p></div></div>`,
+				html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong!</h4><p class="text-muted mx-4 mb-0">${JSON.parse(xhr.responseText).message
+					}</p></div></div>`,
+				showCancelButton: !0,
+				showConfirmButton: !1,
+				cancelButtonClass: 'btn btn-danger w-xs mb-1',
+				cancelButtonText: 'Dismiss',
+				buttonsStyling: !1,
+				showCloseButton: !0,
+			})
+		})
+	}
+}
+
+editAdvisory = (pond) => {
+	if ($('#NewAdvisory')[0].checkValidity()) {
+		// * No error in validation
+		const form = new FormData($('#NewAdvisory')[0])
+		form.set('announcement_type', 'Advisory')
+		if (form.get('filepond')) {
+			form.delete('filepond')
+		}
+
+		pondFiles = pond.getFiles()
+		for (var i = 0; i < pondFiles.length; i++) {
+			// append the blob file
+			form.append('announcement_image', pondFiles[i].file)
+		}
+
+		for (var pair of form.entries()) {
+			console.log(pair[0] + ': ' + pair[1])
+		}
+
+		$.ajax({
+			url: apiURL + 'annsys/pup_staff/edit_Advisory/' + $('#announcement_id').val(),
+			type: 'PUT',
+			headers: AJAX_HEADERS,
+			data: form,
+			processData: false,
+			contentType: false,
+			success: (result) => {
+				if (result) {
+					Swal.fire({
+						html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully updated a Advisory!</p></div></div>',
+						showCancelButton: !0,
+						showConfirmButton: !1,
+						cancelButtonClass: 'btn btn-success w-xs mb-1',
+						cancelButtonText: 'Ok',
+						buttonsStyling: !1,
+						showCloseButton: !0,
+					}).then(function () {
+						// reload Pending Reservations table
+						refreshPage()
+					})
+				}
+			},
+		}).fail((xhr) => {
+			Swal.fire({
+				html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong!</h4><p class="text-muted mx-4 mb-0">${JSON.parse(xhr.responseText).message
+					}</p></div></div>`,
 				showCancelButton: !0,
 				showConfirmButton: !1,
 				cancelButtonClass: 'btn btn-danger w-xs mb-1',
@@ -345,6 +407,41 @@ changeAdvisoryStatus = (announcement_id, announcement_status) => {
 	})
 }
 
+getSpecificAdvisory = (announcement_id) => {
+	$.ajax({
+		url: apiURL + 'annsys/pup_staff/get_Advisory/' + announcement_id,
+		type: 'GET',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			if (result) {
+
+				if (!$('#collapseExample').is(':visible')) {
+					$('#addAdvisoryBtn').trigger('click');
+					$('#addAdvisoryBtn').hide();
+				}
+
+				$('#addAdvisoryButtonLabel').html('Edit Advisory');
+				$('#announcement_id').val(result.data.announcement_id);
+				$('#announcement_title').val(result.data.announcement_title);
+				$('#announcement_description').val(result.data.announcement_description);
+				$('#announcement_content').val(result.data.announcement_content);
+				tinymce.get("announcement_content").setContent(result.data.announcement_content);
+			}
+		},
+	}).fail((xhr) => {
+		Swal.fire({
+			html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong!</h4><p class="text-muted mx-4 mb-0">${xhr.responseJSON.message}</p></div></div>`,
+			showCancelButton: !0,
+			showConfirmButton: !1,
+			cancelButtonClass: 'btn btn-danger w-xs mb-1',
+			cancelButtonText: 'Dismiss',
+			buttonsStyling: !1,
+			showCloseButton: !0,
+		})
+	})
+}
+
+
 deleteAdvisory = (announcement_id) => {
 	Swal.fire({
 		title: `Are you sure you want to delete this advisory?`,
@@ -397,4 +494,15 @@ deleteAdvisory = (announcement_id) => {
 			})
 		}
 	})
+}
+
+goToAddAdvisories = () => {
+	$('#addAdvisoryBtn').show();
+	$('#addAdvisoryButtonLabel').html('Edit Advisory');
+	$('#announcement_id').val('');
+	$('#announcement_title').val('');
+	$('#announcement_description').val('');
+	$('#announcement_content').val('');
+	tinymce.get("announcement_content").setContent('');
+
 }
