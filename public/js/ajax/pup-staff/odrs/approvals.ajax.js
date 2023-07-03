@@ -909,6 +909,9 @@ viewforApprovalRequest = (request_id) => {
 						<div class="accordion accordion-flush">`
 
 				for (const signatory of data.signatories_assigned_to_request) {
+					arrayPos = data.signatories_assigned_to_request.indexOf(signatory);
+                    var prevArray = arrayPos - 1
+					
 					if (document.document_id == signatory.document_id) {
 						if (signatory.hierarchy_number == 1) {
 							signatoryWorkflow += `
@@ -958,12 +961,23 @@ viewforApprovalRequest = (request_id) => {
 												</h6>`
 							if (
 								signatory.is_signed == false &&
-								(signatory.is_onhold == false) & ($('#user_id').val() === signatory.user_id)
+								(signatory.is_onhold == false) & data.signatories_assigned_to_request[prevArray].is_signed == true & ($('#user_id').val() === signatory.user_id)
 							) {
 								signatoryWorkflow += `
 									<span class="mt-1 badge badge-soft-info text-uppercase">Ongoing</span>
 								`
-							} else if (signatory.is_signed == false && signatory.is_onhold == false) {
+							} 
+							
+							else if (
+								signatory.is_signed == false &&
+								(signatory.is_onhold == false) & data.signatories_assigned_to_request[prevArray].is_signed == true) 
+								{
+								signatoryWorkflow += `
+									<span class="mt-1 badge badge-soft-info text-uppercase">Ongoing</span>
+								`
+							}
+
+							else if (signatory.is_signed == false && signatory.is_onhold == false) {
 								signatoryWorkflow += `
 									<span class="mt-1 badge badge-soft-warning text-uppercase">Pending</span>
 								`
@@ -1044,12 +1058,15 @@ viewforApprovalRequest = (request_id) => {
 												</h6>`
 							if (
 								signatory.is_signed == false &&
-								(signatory.is_onhold == false) & ($('#user_id').val() === signatory.user_id)
+								(signatory.is_onhold == false) & data.signatories_assigned_to_request[prevArray].is_signed == true & ($('#user_id').val() === signatory.user_id)
 							) {
 								signatoryWorkflow += `
 									<span class="mt-1 badge badge-soft-info text-uppercase">Ongoing</span>
 								`
-							} else if (signatory.is_signed == false && signatory.is_onhold == false) {
+							} 
+							
+							
+							else if (signatory.is_signed == false && signatory.is_onhold == false) {
 								signatoryWorkflow += `
 									<span class="mt-1 badge badge-soft-warning text-uppercase">Pending</span>
 								`
@@ -1178,6 +1195,9 @@ viewApprovedRequest = (request_id) => {
 						<div class="accordion accordion-flush">`
 
 				for (const signatory of data.signatories_assigned_to_request) {
+					arrayPos = data.signatories_assigned_to_request.indexOf(signatory);
+                    var nextArray = arrayPos - 1
+
 					if (document.document_id == signatory.document_id) {
 						if (signatory.hierarchy_number == 1) {
 							signatoryWorkflow += `
@@ -1236,7 +1256,8 @@ viewApprovedRequest = (request_id) => {
 								signatoryWorkflow += `
 									<span class="mt-1 badge badge-soft-warning text-uppercase">Pending</span>
 								`
-							} else if (signatory.is_signed == true && signatory.is_onhold == false) {
+							} 
+							else if (signatory.is_signed == true && signatory.is_onhold == false) {
 								signatoryWorkflow += `
 									<span class="mt-2 my-1 badge badge-soft-success text-uppercase">Approved</span><br>
 									<div class="d-flex align-items-center text-muted mt-1 gap-2">
@@ -1313,16 +1334,18 @@ viewApprovedRequest = (request_id) => {
 												</h6>`
 							if (
 								signatory.is_signed == false &&
-								(signatory.is_onhold == false) & ($('#user_id').val() === signatory.user_id)
+								(signatory.is_onhold == false) & data.signatories_assigned_to_request[nextArray].is_signed == true 
 							) {
 								signatoryWorkflow += `
 									<span class="mt-1 badge badge-soft-info text-uppercase">Ongoing</span>
 								`
-							} else if (signatory.is_signed == false && signatory.is_onhold == false) {
+							} 
+							else if (signatory.is_signed == false && signatory.is_onhold == false) {
 								signatoryWorkflow += `
 									<span class="mt-1 badge badge-soft-warning text-uppercase">Pending</span>
 								`
-							} else if (signatory.is_signed == true && signatory.is_onhold == false) {
+							} 
+							else if (signatory.is_signed == true && signatory.is_onhold == false) {
 								signatoryWorkflow += `
 									<span class="mt-2 my-1 badge badge-soft-success text-uppercase">Approved</span><br>
 									<div class="d-flex align-items-center text-muted mt-1 gap-2">

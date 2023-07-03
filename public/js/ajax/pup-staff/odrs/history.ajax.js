@@ -195,6 +195,13 @@ getHistoryAnalytics = () => {
 viewRequestDetails = (request_id) => {
 	$.ajax({
 		type: 'GET',
+		url: apiURL + `odrs/pup_staff/fetch_oic_records`,
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			const staff = result.data
+
+	$.ajax({
+		type: 'GET',
 		url: `${apiURL}odrs/pup_staff/view_request/${request_id}`,
 		dataType: 'json',
 		headers: AJAX_HEADERS,
@@ -459,11 +466,11 @@ viewRequestDetails = (request_id) => {
 						<div class="list-group-item list-group-item-action">
 							<div class="d-flex mb-2 align-items-center">
 								<div class="flex-shrink-0">
-									<img src="${baseURL}public/images/officials/img-25.png" alt="" class="avatar-sm rounded-circle" />
+									<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-9.png" alt="" class="avatar-sm rounded-circle" />
 								</div>
 								<div class="flex-grow-1 ms-3">
-									<h5 class="list-title fs-15 mb-1">Hernando Liberato</h5>
-									<p class="list-text mb-0 fs-12">Officer-in-Charge, Student Records</p>
+									<h5 class="list-title fs-15 mb-1">${staff.user_assigned_to_role.user_profiles[0].full_name}</h5>
+									<p class="list-text mb-0 fs-12">${staff.user_assigned_to_role.user_type}</p>
 								</div>
 							</div>
 							<p>Good Day! Please be informed that the document/s you requested has been cancelled due to the following reason/s:</p>
@@ -482,6 +489,9 @@ viewRequestDetails = (request_id) => {
 			}
 		},
 	})
+}
+
+})
 }
 
 processCancelled = (data) => {
