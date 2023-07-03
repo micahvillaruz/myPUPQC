@@ -137,6 +137,21 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <td>0001</td>
+                                <td>Commits</td>
+                                <td>10/23/23</td>
+                                <td>We are an organization that wants to utilzie it</td>
+                                <td>PDF</td>
+                                <td><li class="list-inline-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Remove">
+                                                                    <a class="text-danger d-inline-block remove-item-btn" data-bs-toggle="modal" href="#deleteOrder">
+                                                                    <button type="button" class="btn btn-success btn-label waves-effect waves-light rounded-pill"><i class="ri-check-double-line label-icon align-middle rounded-pill fs-16 me-2"></i> Approve</button>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Remove">
+                                                                    <a class="text-danger d-inline-block remove-item-btn" data-bs-toggle="modal" href="#deleteOrder">
+                                                                    <button type="button" class="btn btn-danger btn-label waves-effect waves-light rounded-pill"><i class=" ri-close-line label-icon align-middle rounded-pill fs-16 me-2"></i> Disapprove</button>
+                                                                    </a>
+                                                                </li></td>
                             </tbody>
                         </table>
                     </div>
@@ -153,6 +168,23 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            <tbody>
+                                <td>0001</td>
+                                <td>Commits</td>
+                                <td>10/23/23</td>
+                                <td>We are an organization that wants to utilzie it</td>
+                                <td>PDF</td>
+                                <td><li class="list-inline-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Remove">
+                                                                    <a class="text-danger d-inline-block remove-item-btn" data-bs-toggle="modal" href="#deleteOrder">
+                                                                    <button type="button" class="btn btn-success btn-label waves-effect waves-light rounded-pill"><i class="ri-check-double-line label-icon align-middle rounded-pill fs-16 me-2"></i> Approve</button>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Remove">
+                                                                    <a class="text-danger d-inline-block remove-item-btn" data-bs-toggle="modal" href="#deleteOrder">
+                                                                    <button type="button" class="btn btn-danger btn-label waves-effect waves-light rounded-pill"><i class=" ri-close-line label-icon align-middle rounded-pill fs-16 me-2"></i> Disapprove</button>
+                                                                    </a>
+                                                                </li></td>
+                            </tbody>
                             </tbody>
                         </table>
                     </div>
@@ -170,6 +202,23 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            <tbody>
+                                <td>0001</td>
+                                <td>Commits</td>
+                                <td>10/23/23</td>
+                                <td>We are an organization that wants to utilzie it</td>
+                                <td>PDF</td>
+                                <td><li class="list-inline-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Remove">
+                                                                    <a class="text-danger d-inline-block remove-item-btn" data-bs-toggle="modal" href="#deleteOrder">
+                                                                    <button type="button" class="btn btn-success btn-label waves-effect waves-light rounded-pill"><i class="ri-check-double-line label-icon align-middle rounded-pill fs-16 me-2"></i> Approve</button>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Remove">
+                                                                    <a class="text-danger d-inline-block remove-item-btn" data-bs-toggle="modal" href="#deleteOrder">
+                                                                    <button type="button" class="btn btn-danger btn-label waves-effect waves-light rounded-pill"><i class=" ri-close-line label-icon align-middle rounded-pill fs-16 me-2"></i> Disapprove</button>
+                                                                    </a>
+                                                                </li></td>
+                            </tbody>
                             </tbody>
                         </table>
                     </div>
