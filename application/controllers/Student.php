@@ -207,7 +207,7 @@ class Student extends CI_Controller
         $this->load->view('student/evrsers/scripts/new-reservation-scripts');
     }
 
-    public function add_reservation()
+    public function facility_add_reservation()
     {
         $this->load->view('partials/main');
         $this->load->view('partials/title-meta');
@@ -215,14 +215,14 @@ class Student extends CI_Controller
         $this->load->view('partials/student/topbar');
         $this->load->view('partials/student/sidebar');
         $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "Add Reservation"]);
-        $this->load->view('student/evrsers/add-reservation');
+        $this->load->view('student/evrsers/facility/add-reservation');
         $this->load->view('partials/footer');
-        $this->load->view('student/evrsers/components/add-reservation-modal');
+        $this->load->view('student/evrsers/components/facility/add-reservation-modal');
         $this->load->view('partials/foot-scripts');
-        $this->load->view('student/evrsers/scripts/add-reservation-scripts');
+        $this->load->view('student/evrsers/scripts/facility/add-reservation-scripts');
     }
 
-    public function view_facility_reservation()
+    public function facility_view_reservation()
     {
         $this->load->view('partials/main');
         $this->load->view('partials/title-meta');
@@ -230,14 +230,14 @@ class Student extends CI_Controller
         $this->load->view('partials/student/topbar');
         $this->load->view('partials/student/sidebar');
         $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "View Facility Reservation"]);
-        $this->load->view('student/evrsers/view-facility-reservation');
+        $this->load->view('student/evrsers/facility/view-reservation');
         $this->load->view('partials/footer');
-        $this->load->view('student/evrsers/components/view-facility-reservation-modal');
+        $this->load->view('student/evrsers/components/facility/view-reservation-modal');
         $this->load->view('partials/foot-scripts');
-        $this->load->view('student/evrsers/scripts/view-facility-reservation-scripts');
+        $this->load->view('student/evrsers/scripts/facility/view-reservation-scripts');
     }
 
-    public function facility_history()
+    public function facility_view_history()
     {
         $this->load->view('partials/main');
         $this->load->view('partials/title-meta');
@@ -245,11 +245,11 @@ class Student extends CI_Controller
         $this->load->view('partials/student/topbar');
         $this->load->view('partials/student/sidebar');
         $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "Facility Reservation History"]);
-        $this->load->view('student/evrsers/facility-history');
+        $this->load->view('student/evrsers/facility/view-history');
         $this->load->view('partials/footer');
-        $this->load->view('student/evrsers/components/facility-history-modal');
+        $this->load->view('student/evrsers/components/facility/view-history-modal');
         $this->load->view('partials/foot-scripts');
-        $this->load->view('student/evrsers/scripts/facility-history-scripts');
+        $this->load->view('student/evrsers/scripts/facility/view-history-scripts');
     }
 
     public function view_reservation()
