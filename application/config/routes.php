@@ -195,9 +195,17 @@ $route['student/omsss/contact-omsss'] = 'student/contact_omsss';
 
 // Reservations
 $route['student/evrsers/new-reservation'] = 'student/new_reservation';
+$route['student/evrsers/add-reservation'] = 'student/add_reservation';
 $route['student/evrsers/view-reservation'] = 'student/view_reservation';
 $route['student/evrsers/reservation-history'] = 'student/reservation_history';
 $route['student/evrsers/reservationpolicy'] = 'student/reservationpolicy';
+
+// If no organizer status
+
+// Facility Reservation
+$route['student/evrsers/add-reservation'] = 'student/add_reservation';
+$route['student/evrsers/view-facility-reservation'] = 'student/view_facility_reservation';
+$route['student/evrsers/facility-history'] = 'student/facility_history';
 
 /*
 | -------------------------------------------------------------------------
