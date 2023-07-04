@@ -37,6 +37,7 @@ $(function () {
 	})
 
 	$('#forProcessingRequestForm').on('submit', function (e) {
+		$('#forProcessingModal').modal('hide')
 		e.preventDefault() // prevent page refresh
 		const requestID = $('#process_request_id').val()
 		forProcessingRequest(requestID)
