@@ -1,30 +1,74 @@
-<div id="allow_create_reservation" class="row d-none">
-    <div class="col-xl-12">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-title mb-0">Registration</h4>
+<!DOCTYPE html>
+<!-- ============================================================== -->
+<!-- Start right Content here -->
+<!-- ============================================================== -->
+
+<div class="position-relative mx-n4 mt-n4">
+    <div class="profile-wid-bg profile-setting-img">
+        <div class="overlay-content">
+            <div class="text-end p-3">
+                <div class="p-0 ms-auto rounded-circle profile-photo-edit">
+                </div>
             </div>
-            <!-- end card header -->
-            <div class="row">
-    <!--end col-->
-    <div class="row">
-                <div class="col-xxl-12">
-                    <div class="card mt-xxl-n5">
-                        <div class="card-header">
-                            <ul class="nav nav-tabs-custom rounded card-header-tabs border-bottom-0" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" data-bs-toggle="tab" href="#personalInfo" role="tab">
-                                        <i class="fas fa-home"></i> Organization Registration
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#changePassword" role="tab">
-                                        <i class="far fa-user"></i> Add Members
-                                    </a>
-                                </li>
-                            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xxl-3">
+        <div class="card mt-n5">
+            <div class="card-body p-4">
+                <div class="text-center">
+                    <div class="profile-user position-relative d-inline-block mx-auto mb-4">
+                        <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-man-6.png" alt="user-img" class="rounded-circle avatar-xl img-thumbnail user-profile-image" />
+                        <div class="avatar-xs p-0 rounded-circle profile-photo-edit">
+                            <input id="profile-img-file-input" type="file" class="profile-img-file-input" />
+                            <label for="profile-img-file-input" class="profile-photo-edit avatar-xs">
+                                <span class="avatar-title rounded-circle bg-light text-body">
+                                    <i class="ri-camera-fill"></i>
+                                </span>
+                            </label>
                         </div>
-                        <div class="card-body p-4">
+                    </div>
+                    <h5 class="fs-16 mb-1" id=""></h5>
+                    <span>
+                        <h5 class=" mb-0">Upload Organization Logo</h5>
+                    </span>
+                    <div class="table-card mt-1">
+                        <table class="table mb-0">
+                            <tbody>
+                                <tr>
+                                    <td class="fw-medium">Organization Number</td>
+                                    <td id="sb_student_number"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-medium">Organization Name</td>
+                                    <td id="sb_birthdate"></td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                        <!--end table-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end card-->
+    </div>
+    <!--end col-->
+    <div class="col-xxl-9">
+        <div class="card mt-xxl-n5">
+            <div class="card-header">
+                <ul class="nav nav-tabs-custom rounded card-header-tabs border-bottom-0" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#personalDetails" role="tab">
+                            <i class="fas fa-home"></i> Organization Details
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="card-body p-4">
                             <div class="tab-content">
                                 <div class="tab-pane active" id="personalInfo" role="tabpanel">
                                     <form id="personalInfoForm" class="needs-validation" novalidate>
@@ -42,7 +86,7 @@
                             <div class="row mb-3">
                                 <div class="col-lg-3">
                                     <label for="uploadphilHealthInput" class="form-label">
-                                        Upload Organization Logo
+                                        Upload File
                                         <span class="d-inline-block" id="philhealth_popover">
                                             <i class="ri-question-fill text-info text-gradient"></i>
                                         </span>
@@ -65,6 +109,18 @@
                                 </div>
                                 <div class="col-lg-9">
                                     <input type="email" class="form-control" id="emergency_contact_email" name="emergency_contact_email" placeholder="Enter email">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-lg-3">
+                                        <label for="emailInput" class="form-label">Org Description</label>
+                                    </div>
+                                <div class="col-lg-9">
+                                
+                                            <div class="form-floating">
+                                                <textarea class="form-control" placeholder="Add Objectives" id="objectivesfloatingInput" style="height: 90px" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="This should answer your organizations objectives"></textarea>
+                                                <label for="objectivesfloatingInput">Objectives</label>
+                                            </div>
                                 </div>
                             </div>
                             <!-- Base Example -->
@@ -137,25 +193,10 @@
                                 <!--end tab-pane-->
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!--end col-->
-            </div>
-</div>
-            <!-- end card body -->
         </div>
-        <!-- end card -->
     </div>
-    <!-- end col -->
 </div>
-<!-- end row -->
-
-<div id="decline_create_reservation" class="row d-none px-5">
-    <div class="py-5 col-12 d-flex justify-content-center align-items-center text-center flex-column gap-2">
-        <lord-icon src="https://cdn.lordicon.com/ckatldkn.json" trigger="loop" style="width:180px;height:180px"></lord-icon>
-        <h4 class="fw-bold">Existing Reservation is Found!</h4>
-        <p class="fs-15">If you want to create a New Reservation and the status of your request is currently <b class="text-secondary">Pending</b> you must cancel your Existing Reservation first. <br> You can cancel the request by going to the <span class="fw-bold">Reservations</span> page and clicking the <button type="button" class="mx-2 mt-1 btn btn-soft-danger btn-sm mt-2 mt-sm-0"><i class="mdi mdi-archive-remove-outline align-middle me-1"></i> Cancel Reservation</button> button.<br> Otherwise, wait for your reservation to be Done or Cancelled before creating a New Request.</p>
-        <span class="fs-13 mb-3 badge text-dark bg-warning">You can only cancel your existing reservation if the status of your reservation is <b>Pending For Approval</b> only.</span>
-        <a href="<?= base_url() ?>student/evrsers/view-reservation" role="button" class="btn btn-primary bg-gradient waves-effect waves-light">Go to the Reservation Page</a>
-    </div>
+<!--end col-->
+</div>
+<!--end row-->
 </div>
