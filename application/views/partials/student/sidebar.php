@@ -170,6 +170,39 @@
                         <span>Medical Logs</span>
                     </a>
                 </li>
+
+                <li class="menu-title">
+                    <i class="ri-computer-fill"></i>
+                    <span>ResearchCop</span>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="<?= base_url() ?>student/researchcop/dashboard">
+                        <i class="ri-computer-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="<?= base_url() ?>student/researchcop/copyright">
+                        <i class="ri-copyright-line"></i>
+                        <span>Copyright Generator</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="<?= base_url() ?>student/researchcop/my-submissions">
+                        <i class="ri-upload-line"></i>
+                        <span>My Submissions</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="<?= base_url() ?>student/researchcop/help-and-support">
+                        <i class="ri-question-line"></i>
+                        <span>Help and Support</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->

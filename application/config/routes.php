@@ -260,3 +260,16 @@ $route['pupstaff/evrsers/reservation-history'] = 'pupstaff/reservation_history';
 
 // Event Approvals
 $route['pupstaff/evrsers/reservation-approval'] = 'pupstaff/event_approvals';
+
+/*
+| ----------------------
+|    RESEARCHCOP ROUTES FOR STUDENTS
+| ----------------------
+*/
+
+$route['student/researchcop/dashboard'] = 'student/researchcop_dashboard';
+$route['student/researchcop/copyright'] = 'student/researchcop_copyright';
+$route['student/researchcop/my-submissions'] = 'student/my_submissions';
+$route['student/researchcop/add-research'] = 'student/add_research';
+$route['student/researchcop/help-and-support'] = 'student/help_and_support';
+

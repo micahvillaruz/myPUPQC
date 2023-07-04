@@ -295,4 +295,78 @@ class Student extends CI_Controller
         $this->load->view('partials/foot-scripts');
         $this->load->view('home/scripts/terms-scripts');
     }
+
+    public function researchcop_dashboard()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/student/topbar');
+        $this->load->view('partials/student/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Dashboard"]);
+        $this->load->view('student/researchcop/dashboard');
+        $this->load->view('partials/footer');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('student/scripts/dashboard-scripts');
+    }
+
+    public function researchcop_copyright()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/student/topbar');
+        $this->load->view('partials/student/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Copyright Generator"]);
+        $this->load->view('student/researchcop/copyright');
+        $this->load->view('partials/footer');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('student/scripts/dashboard-scripts');
+    }
+
+    public function my_submissions()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/student/topbar');
+        $this->load->view('partials/student/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "My Submissions"]);
+        $this->load->view('student/researchcop/my-submissions');
+        $this->load->view('partials/footer');
+        $this->load->view('student/researchcop/components/ms-modal');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('student/scripts/dashboard-scripts');
+        $this->load->view('student/researchcop/scripts/ms-scripts');
+    }
+
+    public function add_research()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/student/topbar');
+        $this->load->view('partials/student/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Add Research"]);
+        $this->load->view('student/researchcop/add-research');
+        $this->load->view('partials/footer');
+        $this->load->view('student/researchcop/components/ms-modal');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('student/scripts/dashboard-scripts');
+        $this->load->view('student/researchcop/scripts/add-research-scripts');
+    }
+
+    public function help_and_support()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/student/topbar');
+        $this->load->view('partials/student/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Help and Support"]);
+        $this->load->view('student/researchcop/help-and-support');
+        $this->load->view('partials/footer');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('student/scripts/dashboard-scripts');
+    }
 }
