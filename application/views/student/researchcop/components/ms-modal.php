@@ -158,10 +158,10 @@
                         <li class="list-group-item">
                             <div class="d-flex align-items-center">
                                 <div class="col-4">
-                                    <h5 class="fs-13 mb-1"><span class="badge rounded-pill bg-dark">Deleted</span></h5>
+                                    <h5 class="fs-13 mb-1"><span class="badge rounded-pill bg-dark">Archieved</span></h5>
                                 </div>
                                 <div class="d-flex fs-13 fw-medium">
-                                <div class="d-flex fs-13 fw-medium">Your Research is Deleted.</div>
+                                <div class="d-flex fs-13 fw-medium">Your Research is moved and mark as Archived.</div>
                                 </div>
                             </div>
                         </li>
