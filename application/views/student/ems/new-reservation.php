@@ -104,6 +104,25 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <div class="col-lg mb-3">
+                                        <div class="form-floating">
+                                            <select class="form-select fs-5" id="platformfloatinginput" placeholder="" required>
+                                                <option selected disabled>- Select the type of Platform for your Event -</option>
+                                                <option value="On-Campus"> On-Campus</option>
+                                                <option value="Online"> Online </option>
+                                                <option value="Hybrid"> Hybrid </option>
+                                            </select>
+                                        <label for="pillarsfloatingInput">Platforms</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg mb-3">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" placeholder="Participants" id="participantsfloatinginput" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Estimated number of participants on the event" required>
+                                            <label for="participantsfloatinginput">Participants</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-lg-4 mb-3">
                                         <div class="form-floating">
                                             <input type="text" class="form-control" id="eventTitlefloatingInput" placeholder="Event Title" required>
@@ -181,9 +200,9 @@
                                     </div>
                                 </div>
                                 <div class="d-flex align-items-start gap-3 mt-4">
-                                    <button type="button" class="btn btn-light btn-label previestab" data-previous="venue-selection-tab">
-                                        <i class="ri-arrow-left-line label-icon align-middle fs-16 me-2"></i>
-                                        Back to Venue Selection
+                                    <button type="button" class="btn btn-light btn-label previestab" data-previous="datetime-selection-tab">
+                                    <i class="ri-arrow-left-line label-icon align-middle fs-16 me-2"></i>
+                                         Back to Date & Time Selection
                                     </button>
                                     <button type="submit" class="btn btn-success btn-label right ms-auto" value="Submit">
                                         <i class="ri-check-line label-icon align-middle fs-16 ms-2"></i>Submit

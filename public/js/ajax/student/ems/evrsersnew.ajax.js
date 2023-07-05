@@ -278,8 +278,8 @@ addNewReservation = () => {
 dateAndTimeSelectFunctions = () => {
     flatpickr('#reserveDatefloatingInput', {
                 dateFormat: 'd M, Y',
-                defaultDate: 'today',
-                minDate: 'today',
+                defaultDate: new Date().fp_incr(1),
+                minDate: new Date().fp_incr(1),
                 inline: true,
                 disable: [
                     function(date) {

@@ -261,7 +261,7 @@ class Student extends CI_Controller
         $this->load->view('partials/head-css');
         $this->load->view('partials/student/topbar');
         $this->load->view('partials/student/sidebar');
-        $this->load->view('partials/page-title', ["page_title" => "EMS", "title" => "View Reservation"]);
+        $this->load->view('partials/page-title', ["page_title" => "EMS", "title" => "View Events"]);
         $this->load->view('student/ems/view-reservation');
         $this->load->view('partials/footer');
         $this->load->view('student/ems/components/view-reservation-modal');
