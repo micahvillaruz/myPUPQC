@@ -53,19 +53,6 @@
                         </select>
                     </div>
 
-                    <div class="row mb-3">
-                        <label for="r_program" class="form-label">Upload<span class="text-danger">*</span></label>
-                        <p class="text-muted">Upload your Research Document here, file format must be at <span class="text-danger">PDF File only. </span>Other document format not accepted.</p>
-                        <div class="col-lg-12" id="research_upload">
-                            <div class="row">
-                                    <input type="file" class="filepond filepond-input-multiple" id="research_pdf" multiple data-allow-reorder="true" data-max-files="1">
-                                    <div class="col-xl w-100 d-flex flex-column justify-content-center align-items-center" id="show_vaxcard_button">
-                                    
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="text-end">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>

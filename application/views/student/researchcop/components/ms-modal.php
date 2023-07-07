@@ -242,3 +242,43 @@
     </div>
     <!-- /.modal-dialog -->
 </div>
+
+<!-- Upload Research Model -->
+<div id="uploadResearchModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="updateEducationProfile" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-lg">
+		<div class="modal-content border-0 overflow-hidden">
+			<div class="modal-header p-3">
+				<i class="ri-information-line fs-3 text-info me-2"></i>
+				<h4 class="modal-title d-flex align-items-center" id="overall_information_title">Upload Research Document</h4>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
+			</div>
+			<div class="modal-body">
+				<form id="UploadResearchForm" class="needs-validation" novalidate>
+					<p class="fs-5">Research Title: <span class="fs-5 text-info" id="display_research_title"></span></p>
+					<p class="fs-5">Upload your Research Document here, file format must be at <span class="text-danger">PDF File only. </span>Other document format will not accepted.</p>
+					<table class="table mb-0">
+						<tbody>
+							<tr>
+                            <form id="uploadResearchForm" class="needs-validation" novalidate>
+                                <div class="row mb-3">
+                                    <div class="col-lg-12" id="research_upload">
+                                        <div class="row">
+                                            <input type="file" class="filepond filepond-input-multiple" id="research_pdf" multiple data-allow-reorder="true" data-max-files="1">
+                                            <div class="col-xl w-100 d-flex flex-column justify-content-center align-items-center" id="show_vaxcard_button">
+                                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+							</tr>
+						</tbody>
+					</table>
+					<div class="mt-4 justify-content-center">
+						<button type="submit" class="w-100 btn btn-primary bg-gradient fw-medium waves-effect waves-light">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

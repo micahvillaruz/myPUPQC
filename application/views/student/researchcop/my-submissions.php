@@ -24,6 +24,7 @@
                             <th class="t-align">Status</th>
                             <th class="t-align">Actions</th>
                             <th class="t-align">Remarks</th>
+                            <th class="t-align">Research Document</th>
                         </tr>
                     </thead>
                     <tbody>

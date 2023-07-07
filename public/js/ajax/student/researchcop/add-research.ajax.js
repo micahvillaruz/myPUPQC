@@ -6,41 +6,6 @@ $(function () {
 		addResearch()
 	})
 
-	const ResearchFileTypes = ['application/pdf']
-
-	pondForVaxCard = FilePond.create(document.querySelector('#research_pdf'), {
-		instantUpload: false,
-		allowProcess: false,
-		acceptedFileTypes: ResearchFileTypes,
-		// ! Minsan hindi talaga ChatGPT ang solution: ang Documentation.
-		// ! https://pqina.nl/filepond/docs/api/instance/properties/
-		beforeAddFile: (file) => {
-			// Check if the file type is not accepted
-			if (!ResearchFileTypes.includes(file.fileType)) {
-				// Show an error message
-				// * Sweetalert2 that will say: Only PDF, JPG, and PNG files are allowed
-				Swal.fire({
-					iconHtml: `<lord-icon src="https://cdn.lordicon.com/nduddlov.json" trigger="loop" colors="outline:#f06548,primary:#ffffff,secondary:#f06548" style="width:100px;height:100px"></lord-icon>`,
-					customClass: {
-						icon: 'border-white',
-					},
-					title: 'Something went wrong.',
-					text: `Only PDF files are allowed! The one you are uploading is a: ${file.fileType}`,
-					showCancelButton: !0,
-					showConfirmButton: !1,
-					cancelButtonClass: 'btn btn-danger w-xs mb-1',
-					cancelButtonText: 'Dismiss',
-					buttonsStyling: !1,
-					showCloseButton: !0,
-				})
-				// Reject the file
-				return false
-			}
-			// Continue with the file upload
-			return true
-		},
-	})
-
 })
 
 
