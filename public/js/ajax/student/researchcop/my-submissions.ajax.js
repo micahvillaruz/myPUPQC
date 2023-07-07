@@ -1,7 +1,7 @@
 $(function () {
 	loadMySubmissionsTable()
 
-	$('#UploadResearchForm').on('submit', function (e) {
+	$('#uploadResearchForm').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
 		uploadResearchAJAX(pondForResearch)
 	})
@@ -147,7 +147,7 @@ loadMySubmissionsTable = () => {
 					render: (data) => {
 						let UpResearchDocu = data.research_pdf
 						if (data.research_pdf == null) {
-							UpResearchDocu = `<button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewResearchRecord('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#uploadResearchModal"><i class="ri-upload-line fs-5"></i></button>`
+							UpResearchDocu = `<button type="button" class="btn btn-info btn-label waves-effect waves-light" onclick="viewResearchRecord('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#uploadResearchModal"><i class="ri-file-upload-line label-icon align-middle fs-16 me-2"></i>Upload</button>`
 						}
 						else{
 							UpResearchDocu = ``
@@ -183,7 +183,9 @@ loadMySubmissionsTable = () => {
 							ResearchDocu = `<span class="badge rounded-pill bg-danger">Not Available</span>`
 						}
 						else{
-							ResearchDocu = `<span class="badge rounded-pill bg-dark">Archived</span>`
+							ResearchDocu = `<button type="button" class="btn btn-success btn-label waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#?"><i class="ri-file-line label-icon align-middle fs-16 me-2"></i>View</button>
+											<button type="button" class="btn btn-danger btn-label waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#?"><i class="ri-delete-bin-line label-icon align-middle fs-16 me-2"></i>Delete</button>
+											`
 						}
 
 						return `

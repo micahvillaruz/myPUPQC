@@ -264,7 +264,6 @@
                                     <div class="col-lg-12" id="research_upload">
                                         <div class="row">
                                             <input type="file" class="filepond filepond-input-multiple" id="research_pdf" multiple data-allow-reorder="true" data-max-files="1">
-                                            <div class="col-xl w-100 d-flex flex-column justify-content-center align-items-center" id="show_vaxcard_button">
                                     
                                             </div>
                                         </div>
