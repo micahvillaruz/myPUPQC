@@ -100,6 +100,10 @@ loadPendingRequests = () => {
 				type: 'GET',
 				headers: AJAX_HEADERS,
 			},
+			//No Sort Function
+			"aoColumnDefs": [
+				{ 'bSortable': false, 'aTargets': ['no-sort'] }
+			],
 			dom: 'Bfrtip',
 			buttons: ['print'],
 			columns: [
@@ -244,6 +248,9 @@ loadApprovedRequests = () => {
 				type: 'GET',
 				headers: AJAX_HEADERS,
 			},
+			"aoColumnDefs": [
+				{ 'bSortable': false, 'aTargets': ['no-sort'] }
+			],
 			columns: [
 				// Control Number
 				{

@@ -113,7 +113,7 @@ loadDocuments = () => {
 								<input class="form-check-input fs-15 docs" type="checkbox" name="checkAll" value="${data.document_id}" />
 							</div>
 							<div class="d-flex flex-column">
-								<a href="#!" class="fw-medium">${data.document_name}</a>
+								<span class="fw-medium">${data.document_name}</span>
 								<div class="mt-2">
 									<button type="button" class="btn btn-sm btn-info btn-label waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#viewDocumentDetails" onclick="loadDocumentInfo('${data.document_id}')">
 										<i class="mdi mdi-eye label-icon align-middle fs-13 me-2"></i> 

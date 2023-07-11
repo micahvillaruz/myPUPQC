@@ -13,7 +13,7 @@
 
             <div class="col-lg-12">
               <label for="course_when_admitted" class="form-label">Program / Course <span class="text-danger">*</span></label>
-              <select class="form-select" value="" id="course_when_admitted" name="course_when_admitted" disabled>
+              <select class="form-control" value="" id="course_when_admitted" name="course_when_admitted" disabled>
                 <option id="course" selected></option>
               </select>
             </div>

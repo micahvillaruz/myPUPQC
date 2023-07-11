@@ -11,7 +11,7 @@
             <tr>
               <th class="text-uppercase">Document Name</th>
               <th class="text-uppercase">Document Type</th>
-              <th class="text-uppercase">Action</th>
+              <th class="text-uppercase no-sort">Action</th>
             </tr>
           </thead>
           <tbody>

@@ -14,7 +14,7 @@
               <th>Details</th>
               <th>Date Released / Cancelled</th>
               <th>Request Status</th>
-              <th>Action</th>
+              <th class="no-sort">Action</th>
             </tr>
           </thead>
           <tbody>

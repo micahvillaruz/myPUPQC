@@ -34,28 +34,28 @@
                                             <div class="col-lg-3">
                                                 <div class="mb-3">
                                                     <label for="first_name" class="form-label">First Name <span class="text-danger">*</span></label>
-                                                    <input type="text" class="form-control" id="first_name" name="first_name" required readonly="readonly" />
+                                                    <input type="text" class="form-control" id="first_name" name="first_name" required readonly="readonly" disabled />
                                                 </div>
                                             </div>
                                             <!--end col-->
                                             <div class="col-lg-3">
                                                 <div class="mb-3">
                                                     <label for="middle_name" class="form-label">Middle Name</label>
-                                                    <input type="text" class="form-control" id="middle_name" name="middle_name" readonly="readonly" />
+                                                    <input type="text" class="form-control" id="middle_name" name="middle_name" readonly="readonly" disabled />
                                                 </div>
                                             </div>
                                             <!--end col-->
                                             <div class="col-lg-3">
                                                 <div class="mb-3">
                                                     <label for="last_name" class="form-label">Last Name <span class="text-danger">*</span></label></label>
-                                                    <input type="text" class="form-control" id="last_name" name="last_name" required readonly="readonly" />
+                                                    <input type="text" class="form-control" id="last_name" name="last_name" required readonly="readonly" disabled />
                                                 </div>
                                             </div>
                                             <!--end col-->
                                             <div class="col-lg-3">
                                                 <div class="mb-3">
                                                     <label for="extension_name" class="form-label">Extension Name</label>
-                                                    <input type="text" class="form-control" id="extension_name" name="extension_name" readonly="readonly" />
+                                                    <input type="text" class="form-control" id="extension_name" name="extension_name" readonly="readonly" disabled />
                                                 </div>
                                             </div>
                                             <!--end col-->
@@ -77,7 +77,7 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <label for="birth_date" class="form-label">Date of Birth <span class="text-danger">*</span></label>
-                                                    <input type="text" class="form-control" id="birth_date" name="birth_date" required readonly="readonly" />
+                                                    <input type="text" class="form-control" id="birth_date" name="birth_date" required readonly="readonly" disabled />
                                                 </div>
                                             </div>
                                             <!--end col-->
