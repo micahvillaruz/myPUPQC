@@ -38,9 +38,11 @@ $(function () {
 
 	$('#upload_submit').on('click', function (e) {
 		e.preventDefault() // prevent page refresh
+		console.log('Uploading Research Document')
 
+		const research_id = $('#research_id').val()
 
-		uploadResearchAJAX(pondForResearch)
+		uploadResearchAJAX(pondForResearch, research_id)
 	})
 
 })
@@ -222,6 +224,7 @@ viewResearchRecord = (research_id) => {
 				$('#view_research_type').html(researchRecord.research_type)
 				$('#view_research_abstract').html(researchRecord.research_abstract)
 				$('#display_research_title').html(researchRecord.research_title)
+				$('#research_id').val(researchRecord.research_id)
 		},
 	})
 }
@@ -244,9 +247,10 @@ viewResearchRemarks = (research_id) => {
 	})
 }
 
-uploadResearchAJAX = (pondForResearch) => {
+uploadResearchAJAX = (pondForResearch, research_id) => {
 	if ($('#uploadResearchForm')[0]) {
 		const form = new FormData($('#uploadResearchForm')[0])
+		console.log(research_id)
 
 		if (
 			form.get('filepond') == '' ||
@@ -268,7 +272,7 @@ uploadResearchAJAX = (pondForResearch) => {
 		}
 
 		$.ajax({
-			url: apiURL + `researchcop/my-submissions/upload`,
+			url: apiURL + `researchcop/my-submissions/upload/${research_id}`,
 			type: 'PUT',
 			headers: AJAX_HEADERS,
 			data: form,

@@ -253,13 +253,13 @@
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
 			</div>
 			<div class="modal-body">
-				<form id="UploadResearchForm" class="needs-validation" novalidate>
+				<form id="uploadResearchForm" class="needs-validation" novalidate>
+                    <input type="hidden" id="research_id" name="research_id" />
 					<p class="fs-5">Research Title: <span class="fs-5 text-info" id="display_research_title"></span></p>
 					<p class="fs-5">Upload your Research Document here, file format must be at <span class="text-danger">PDF File only. </span>Other document format will not accepted.</p>
 					<table class="table mb-0">
 						<tbody>
 							<tr>
-                            <form id="uploadResearchForm" class="needs-validation" novalidate>
                                 <div class="row mb-3">
                                     <div class="col-lg-12" id="research_upload">
                                         <div class="row">
@@ -267,7 +267,6 @@
                                         </div>
                                     </div>
                                 </div>
-                            </form>
 							</tr>
 						</tbody>
 					</table>
