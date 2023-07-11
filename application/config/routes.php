@@ -202,9 +202,9 @@ $route['student/evrsers/reservationpolicy'] = 'student/reservationpolicy';
 // If no organizer status
 
 // Facility Reservation
-$route['student/evrsers/add-reservation'] = 'student/add_reservation';
-$route['student/evrsers/view-facility-reservation'] = 'student/view_facility_reservation';
-$route['student/evrsers/facility-history'] = 'student/facility_history';
+$route['student/evrsers/facility/add-reservation'] = 'student/facility_add_reservation';
+$route['student/evrsers/facility/view-reservation'] = 'student/facility_view_reservation';
+$route['student/evrsers/facility/view-history'] = 'student/facility_view_history';
 
 /*
 | -------------------------------------------------------------------------

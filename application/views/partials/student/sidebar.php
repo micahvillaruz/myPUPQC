@@ -84,21 +84,21 @@
                 </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/add-reservation" class="nav-link">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/facility/add-reservation" class="nav-link">
                             <i class=" bx bx-buildings"></i>
                             <span>Add Reservation</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/view-facility-reservation" class="nav-link">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/facility/view-reservation" class="nav-link">
                             <i class="ri-reserved-line"></i>
                             <span>View Facility Reservation</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/facility-history" class="nav-link">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/facility/view-history" class="nav-link">
                             <i class="bx bx-history"></i>
                             <span>Facility History</span>
                         </a>
