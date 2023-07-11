@@ -54,7 +54,7 @@
                 <?php if (strpos($this->session->userdata('user_roles'), 'Organizer') !== false) { ?>
                     <li class="menu-title">
                         <i class="ri-more-fill"></i>
-                        <span>Venue Management System</span>
+                        <span>EVRSERS</span>
                     </li>
 
                     <li class="nav-item">
@@ -70,7 +70,24 @@
                             <span>View Reservation</span>
                         </a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/org-dashboard" class="nav-link">
+                            <i class="bx bx-history"></i>
+                            <span>Organization Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/org-pending" class="nav-link">
+                            <i class="bx bx-history"></i>
+                            <span>Organization Status</span>
+                        </a>
+                    </li>     
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/org-regis" class="nav-link">
+                            <i class="bx bx-history"></i>
+                            <span>Organization Registration</span>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/reservation-history" class="nav-link">
                             <i class="bx bx-history"></i>
@@ -105,6 +122,28 @@
                     </li>
 
                 <?php } ?>
+
+                <?php if (strpos($this->session->userdata('user_roles'), 'Organizer') !== false) { ?>
+                    <li class="menu-title">
+                        <i class="ri-more-fill"></i>
+                        <span>Event Monitoring System</span>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/ems/new-reservation2" class="nav-link">
+                            <i class=" ri-add-box-line"></i>
+                            <span>New Reservation</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/ems/view-reservation2" class="nav-link">
+                            <i class="ri-reserved-line"></i>
+                            <span>View Reservation</span>
+                        </a>
+                    </li>
+                <?php } ?>
+
                 <li class="menu-title">
                     <i class="ri-more-fill"></i>
                     <span>Document Request</span>

@@ -207,51 +207,6 @@ class Student extends CI_Controller
         $this->load->view('student/evrsers/scripts/new-reservation-scripts');
     }
 
-    public function facility_add_reservation()
-    {
-        $this->load->view('partials/main');
-        $this->load->view('partials/title-meta');
-        $this->load->view('partials/head-css');
-        $this->load->view('partials/student/topbar');
-        $this->load->view('partials/student/sidebar');
-        $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "Add Reservation"]);
-        $this->load->view('student/evrsers/facility/add-reservation');
-        $this->load->view('partials/footer');
-        $this->load->view('student/evrsers/components/facility/add-reservation-modal');
-        $this->load->view('partials/foot-scripts');
-        $this->load->view('student/evrsers/scripts/facility/add-reservation-scripts');
-    }
-
-    public function facility_view_reservation()
-    {
-        $this->load->view('partials/main');
-        $this->load->view('partials/title-meta');
-        $this->load->view('partials/head-css');
-        $this->load->view('partials/student/topbar');
-        $this->load->view('partials/student/sidebar');
-        $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "View Facility Reservation"]);
-        $this->load->view('student/evrsers/facility/view-reservation');
-        $this->load->view('partials/footer');
-        $this->load->view('student/evrsers/components/facility/view-reservation-modal');
-        $this->load->view('partials/foot-scripts');
-        $this->load->view('student/evrsers/scripts/facility/view-reservation-scripts');
-    }
-
-    public function facility_view_history()
-    {
-        $this->load->view('partials/main');
-        $this->load->view('partials/title-meta');
-        $this->load->view('partials/head-css');
-        $this->load->view('partials/student/topbar');
-        $this->load->view('partials/student/sidebar');
-        $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "Facility Reservation History"]);
-        $this->load->view('student/evrsers/facility/view-history');
-        $this->load->view('partials/footer');
-        $this->load->view('student/evrsers/components/facility/view-history-modal');
-        $this->load->view('partials/foot-scripts');
-        $this->load->view('student/evrsers/scripts/facility/view-history-scripts');
-    }
-
     public function view_reservation()
     {
         $this->load->view('partials/main');
@@ -284,6 +239,21 @@ class Student extends CI_Controller
         $this->load->view('student/evrsers/scripts/reservationhist-scripts');
     }
 
+    public function view_reservation2()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/student/topbar');
+        $this->load->view('partials/student/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "EMS", "title" => "View Events"]);
+        $this->load->view('student/ems/view-reservation');
+        $this->load->view('partials/footer');
+        $this->load->view('student/ems/components/view-reservation-modal');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('student/ems/scripts/view-reservation-scripts');
+    }
+
     public function reservationpolicy()
     {
         $this->load->view('partials/main-home');
@@ -294,79 +264,5 @@ class Student extends CI_Controller
         $this->load->view('partials/home/home-footer');
         $this->load->view('partials/foot-scripts');
         $this->load->view('home/scripts/terms-scripts');
-    }
-
-    public function researchcop_dashboard()
-    {
-        $this->load->view('partials/main');
-        $this->load->view('partials/title-meta');
-        $this->load->view('partials/head-css');
-        $this->load->view('partials/student/topbar');
-        $this->load->view('partials/student/sidebar');
-        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Dashboard"]);
-        $this->load->view('student/researchcop/dashboard');
-        $this->load->view('partials/footer');
-        $this->load->view('partials/foot-scripts');
-        $this->load->view('student/scripts/dashboard-scripts');
-    }
-
-    public function researchcop_copyright()
-    {
-        $this->load->view('partials/main');
-        $this->load->view('partials/title-meta');
-        $this->load->view('partials/head-css');
-        $this->load->view('partials/student/topbar');
-        $this->load->view('partials/student/sidebar');
-        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Copyright Generator"]);
-        $this->load->view('student/researchcop/copyright');
-        $this->load->view('partials/footer');
-        $this->load->view('partials/foot-scripts');
-        $this->load->view('student/scripts/dashboard-scripts');
-    }
-
-    public function my_submissions()
-    {
-        $this->load->view('partials/main');
-        $this->load->view('partials/title-meta');
-        $this->load->view('partials/head-css');
-        $this->load->view('partials/student/topbar');
-        $this->load->view('partials/student/sidebar');
-        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "My Submissions"]);
-        $this->load->view('student/researchcop/my-submissions');
-        $this->load->view('partials/footer');
-        $this->load->view('student/researchcop/components/ms-modal');
-        $this->load->view('partials/foot-scripts');
-        $this->load->view('student/scripts/dashboard-scripts');
-        $this->load->view('student/researchcop/scripts/ms-scripts');
-    }
-
-    public function add_research()
-    {
-        $this->load->view('partials/main');
-        $this->load->view('partials/title-meta');
-        $this->load->view('partials/head-css');
-        $this->load->view('partials/student/topbar');
-        $this->load->view('partials/student/sidebar');
-        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Add Research"]);
-        $this->load->view('student/researchcop/add-research');
-        $this->load->view('partials/footer');
-        $this->load->view('student/researchcop/components/ms-modal');
-        $this->load->view('partials/foot-scripts');
-        $this->load->view('student/scripts/dashboard-scripts');
-        $this->load->view('student/researchcop/scripts/add-research-scripts');
-    }
-
-    public function help_and_support()
-    {
-        $this->load->view('partials/main');
-        $this->load->view('partials/title-meta');
-        $this->load->view('partials/head-css');
-        $this->load->view('partials/student/topbar');
-        $this->load->view('partials/student/sidebar');
-        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Help and Support"]);
-        $this->load->view('student/researchcop/help-and-support');
-        $this->load->view('partials/footer');
-        $this->load->view('partials/foot-scripts');
-        $this->load->view('student/scripts/dashboard-scripts');
     }
 }

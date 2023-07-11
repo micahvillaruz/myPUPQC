@@ -15,11 +15,6 @@
                                 </button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="venue-selection-tab" data-bs-toggle="pill" data-bs-target="#venue-selection" type="button" role="tab" aria-controls="venue-selection" aria-selected="false" style="pointer-events: none;">
-                                    Venue Selection
-                                </button>
-                            </li>
-                            <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="event-details-tab" data-bs-toggle="pill" data-bs-target="#event-details" type="button" role="tab" aria-controls="event-details" aria-selected="false" style="pointer-events: none;">
                                     Event Details
                                 </button>
@@ -33,7 +28,7 @@
                                 <div class="col-lg mx-4 mb-2">
                                     <div class="mb-3">
                                         <p class="text-muted fw-medium fs-9">Reserve Date</p>
-                                        <input type="text" id="reserveDatefloatingInput" name="reserveDatefloatingInput" class="form-control mb-3 d-none"/>
+                                        <input type="text" id="reserveDatefloatingInput" name="reserveDatefloatingInput" class="form-control mb-3 d-none" />
                                     </div>
                                 </div>
                                 <div class="col-lg vstack gap-3 align-middle justify-content-center">
@@ -81,30 +76,13 @@
                                 </div>
                             </diV>
                             <div class="d-flex align-items-start gap-3 mt-4">
-                                <button id="nextBtn1" type="button" class="btn btn-success btn-label right ms-auto nexttab" data-nexttab="venue-selection-tab" disabled>
+                                <button id="nextBtn1" type="button" class="btn btn-success btn-label right ms-auto nexttab" data-nexttab="event-details-tab" disabled>
                                     <i class="ri-arrow-right-line label-icon align-middle fs-16 ms-2"></i>Next
                                 </button>
                             </div>
                         </div>
                         <!-- end tab pane -->
 
-                        <div class="tab-pane fade" id="venue-selection" role="tabpanel" aria-labelledby="venue-selection-tab">
-                            <div>
-                                <p class="text-dark fw-medium fs-6">Please choose your venue.</p>
-                                <div class="row row-cols g-3" id="facilities">
-                                </div>
-                                <!-- end row -->
-                            </div>
-                            <div class="d-flex align-items-start gap-3 mt-4">
-                                <button type="button" class="btn btn-light btn-label previestab" data-previous="datetime-selection-tab">
-                                    <i class="ri-arrow-left-line label-icon align-middle fs-16 me-2"></i>
-                                    Back to Date & Time Selection
-                                </button>
-                                <button id="nextBtn" type="button" class="btn btn-success btn-label right ms-auto nexttab" data-nexttab="event-details-tab" disabled>
-                                    <i class="ri-arrow-right-line label-icon align-middle fs-16 ms-2"></i>Next
-                                </button>
-                            </div>
-                        </div>
                         <!-- end tab pane -->
 
                         <div class="tab-pane fade" id="event-details" role="tabpanel" aria-labelledby="event-details-tab">
@@ -122,6 +100,25 @@
                                                 <option selected disabled>- Select Organization -</option>
                                             </select>
                                             <label for="orgfloatingInput">Organization</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg mb-3">
+                                        <div class="form-floating">
+                                            <select class="form-select fs-5" id="platformfloatinginput" placeholder="" required>
+                                                <option selected disabled>- Select the type of Platform for your Event -</option>
+                                                <option value="On-Campus"> On-Campus</option>
+                                                <option value="Online"> Online </option>
+                                                <option value="Hybrid"> Hybrid </option>
+                                            </select>
+                                        <label for="pillarsfloatingInput">Platforms</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg mb-3">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" placeholder="Participants" id="participantsfloatinginput" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Estimated number of participants on the event" required>
+                                            <label for="participantsfloatinginput">Participants</label>
                                         </div>
                                     </div>
                                 </div>
@@ -203,9 +200,9 @@
                                     </div>
                                 </div>
                                 <div class="d-flex align-items-start gap-3 mt-4">
-                                    <button type="button" class="btn btn-light btn-label previestab" data-previous="venue-selection-tab">
-                                        <i class="ri-arrow-left-line label-icon align-middle fs-16 me-2"></i>
-                                        Back to Venue Selection
+                                    <button type="button" class="btn btn-light btn-label previestab" data-previous="datetime-selection-tab">
+                                    <i class="ri-arrow-left-line label-icon align-middle fs-16 me-2"></i>
+                                         Back to Date & Time Selection
                                     </button>
                                     <button type="submit" class="btn btn-success btn-label right ms-auto" value="Submit">
                                         <i class="ri-check-line label-icon align-middle fs-16 ms-2"></i>Submit

@@ -199,7 +199,11 @@ $route['student/evrsers/view-reservation'] = 'student/view_reservation';
 $route['student/evrsers/reservation-history'] = 'student/reservation_history';
 $route['student/evrsers/reservationpolicy'] = 'student/reservationpolicy';
 
-// If no organizer status
+/*
+| -------------------------------------------------------------------------
+| SUPER ADMIN ROUTES
+| -------------------------------------------------------------------------
+*/
 
 // Facility Reservation
 $route['student/evrsers/facility/add-reservation'] = 'student/facility_add_reservation';
@@ -222,6 +226,7 @@ $route['pupstaff/omsss/dentist/analytics-and-history'] = 'pupstaff/dental_analyt
 $route['pupstaff/omsss/counsellor/counsel-requests'] = 'pupstaff/counsellor_requests';
 $route['pupstaff/omsss/counsellor/analytics-and-history'] = 'pupstaff/counsellor_analytics';
 $route['pupstaff/omsss/evaluation'] = 'pupstaff/omsss_evaluation';
+$route['pupstaff/evrsers/org-list'] = 'pupstaff/org_list';
 
 /*
 | --------------
@@ -254,6 +259,7 @@ $route['pupstaff/odrs/evaluation'] = 'pupstaff/odrs_evaluation';
 // Organizer Management
 $route['pupstaff/evrsers/organizer-management'] = 'pupstaff/organizer_management';
 
+
 // Reservations
 $route['pupstaff/evrsers/manage-reservations'] = 'pupstaff/manage_reservations';
 $route['pupstaff/evrsers/reservation-history'] = 'pupstaff/reservation_history';
@@ -272,4 +278,3 @@ $route['student/researchcop/copyright'] = 'student/researchcop_copyright';
 $route['student/researchcop/my-submissions'] = 'student/my_submissions';
 $route['student/researchcop/add-research'] = 'student/add_research';
 $route['student/researchcop/help-and-support'] = 'student/help_and_support';
-
