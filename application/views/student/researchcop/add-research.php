@@ -44,14 +44,6 @@
                                         <option value="Bachelor of Science in Information Technology">[IT] Bachelor of Science in Information Technology</option>
                         </select>
                     </div>
-                    <div class="mb-3">
-                        <label for="r_type" class="form-label">Type<span class="text-danger">*</span></label>
-                        <select class="form-select mb-3" id="r_type" name="r_type" required>
-                            <option selected disabled value="">Type of Research</option>
-                            <option value="Copyrighted">Copyrighted</option>
-                            <option value="Non-Copyrighted">Non-Copyrighted</option>
-                        </select>
-                    </div>
 
                     <div class="text-end">
                         <button type="submit" class="btn btn-primary">Submit</button>

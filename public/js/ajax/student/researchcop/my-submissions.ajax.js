@@ -144,7 +144,7 @@ loadMySubmissionsTable = () => {
 					},
 				},
 
-				//Action
+				// Research Upload
 				{
 					data: null,
 					class: 'text-center',
@@ -154,7 +154,9 @@ loadMySubmissionsTable = () => {
 							UpResearchDocu = `<button type="button" class="btn btn-info btn-label waves-effect waves-light" onclick="viewResearchRecord('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#uploadResearchModal"><i class="ri-file-upload-line label-icon align-middle fs-16 me-2"></i>Upload</button>`
 						}
 						else{
-							UpResearchDocu = ``
+							UpResearchDocu = `<button type="button" class="btn btn-success btn-label waves-effect waves-light" onclick="viewResearchDocument('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#research_document_preview"><i class="ri-file-line label-icon align-middle fs-16 me-2"></i>View</button>
+							<button type="button" class="btn btn-danger btn-label waves-effect waves-light" onclick="deleteResearchDocument('${data.research_id}')"><i class="ri-delete-bin-line label-icon align-middle fs-16 me-2"></i>Delete</button>
+											`
 						}
 						return `
     				<div class="dropdown d-inline-block">
@@ -187,9 +189,7 @@ loadMySubmissionsTable = () => {
 							ResearchDocu = `<span class="badge rounded-pill bg-danger">Not Available</span>`
 						}
 						else{
-							ResearchDocu = `<button type="button" class="btn btn-success btn-label waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#?"><i class="ri-file-line label-icon align-middle fs-16 me-2"></i>View</button>
-											<button type="button" class="btn btn-danger btn-label waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#?"><i class="ri-delete-bin-line label-icon align-middle fs-16 me-2"></i>Delete</button>
-											`
+							ResearchDocu = `<span class="badge rounded-pill bg-success">Available</span>`
 						}
 
 						return `
@@ -306,4 +306,71 @@ uploadResearchAJAX = (pondForResearch, research_id) => {
 			})
 		})
 	}
+}
+
+viewResearchDocument = (research_id) => {
+	$.ajax({
+		url: apiURL + `researchcop/my-submissions/${research_id}`,
+		type: 'GET',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			const data = result.data
+			console.log(data)
+			$('#hid_research_id').val(data.research_id)
+			$('#hid_research_title').html(data.research_title)
+			$('#document_preview').attr('src', data.research_pdf)
+		},
+	})
+}
+
+
+deleteResearchDocument = (research_id) => {
+	// next update
+	Swal.fire({
+		title: 'Are you sure you want to delete your Research Document?',
+		text: "By deleting your Research Document, PUP guarantees that your uploads are deleted immediately in our databases and you won't be able to retrieve it.",
+		iconHtml: `<lord-icon src="https://cdn.lordicon.com/nduddlov.json" trigger="loop" colors="outline:#f06548,primary:#ffffff,secondary:#f06548" style="width:100px;height:100px"></lord-icon>`,
+		customClass: {
+			icon: 'border-white',
+		},
+		showCancelButton: true,
+		confirmButtonColor: '#f06548',
+		cancelButtonColor: '#6c757d',
+		confirmButtonText: 'Delete',
+	}).then((result) => {
+		if (result.isConfirmed) {
+			$.ajax({
+				url: apiURL + `researchcop/my-submissions/deleteupload/${research_id}`,
+				type: 'DELETE',
+				headers: AJAX_HEADERS,
+				success: (result) => {
+					if (result) {
+						Swal.fire({
+							html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully deleted your Research Document!</p></div></div>',
+							showCancelButton: !0,
+							showConfirmButton: !1,
+							cancelButtonClass: 'btn btn-success w-xs mb-1',
+							cancelButtonText: 'Ok',
+							buttonsStyling: !1,
+							showCloseButton: !0,
+						}).then(function () {
+							setTimeout(() => {
+								location.reload()
+							}, 1000)
+						})
+					}
+				},
+			}).fail(() => {
+				Swal.fire({
+					html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">There was an error while deleting your Research Document. Please try again.</p></div></div>',
+					showCancelButton: !0,
+					showConfirmButton: !1,
+					cancelButtonClass: 'btn btn-danger w-xs mb-1',
+					cancelButtonText: 'Dismiss',
+					buttonsStyling: !1,
+					showCloseButton: !0,
+				})
+			})
+		}
+	})
 }

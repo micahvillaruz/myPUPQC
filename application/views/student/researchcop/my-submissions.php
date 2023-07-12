@@ -22,9 +22,9 @@
                             <th class="t-align">Title</th>
                             <th class="t-align">Information</th>
                             <th class="t-align">Status</th>
-                            <th class="t-align">Actions</th>
+                            <th class="t-align">Document</th>
                             <th class="t-align">Remarks</th>
-                            <th class="t-align">Research Document</th>
+                            <th class="t-align">Availability</th>
                         </tr>
                     </thead>
                     <tbody>

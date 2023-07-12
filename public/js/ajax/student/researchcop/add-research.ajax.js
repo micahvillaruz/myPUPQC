@@ -58,7 +58,6 @@ addResearch = () => {
 			research_date_accomplished: form.get('r_date_accomplished'),
 			research_adviser: form.get('r_adviser'),
 			research_program: form.get('r_program'),
-			research_type: form.get('r_type'),
 		}
 
 		if(authorname != researchauthor){

@@ -244,7 +244,7 @@
 </div>
 
 <!-- Upload Research Model -->
-<div id="uploadResearchModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="updateEducationProfile" aria-hidden="true">
+<div id="uploadResearchModal" class="modal fade" data-bs-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="updateEducationProfile" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered modal-lg">
 		<div class="modal-content border-0 overflow-hidden">
 			<div class="modal-header p-3">
@@ -277,4 +277,30 @@
 			</div>
 		</div>
 	</div>
+</div>
+
+<!-- Modal for Research Document Preview -->
+<div id="research_document_preview" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="philhealth_id" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title d-flex align-items-center" id="philhealth_id_label"> <i class="ri-information-line fs-3 text-info me-2"></i>Research Document Preview</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
+            </div>
+            <div class="modal-body">
+            <input type="hidden" id="hid_research_id" name="hid_research_id" />
+                <h5 class="fs-15 text-primary">
+                    This is the Research Document you uploaded in ResearchCop.
+                </h5>
+                <h5 class="fs-15 text-info">
+                    Research Title: <span id="hid_research_title"></span>
+                </h5>
+                <div id="philhealth_id_content">
+                    <div class="d-flex justify-content-center">
+                        <embed src="" id="document_preview" type="application/pdf" width="100%" height="500px" alt="Research Document">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
