@@ -225,7 +225,7 @@
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="<?= base_url() ?>student/researchcop/copyright">
                         <i class="ri-copyright-line"></i>
-                        <span>Copyright Generator</span>
+                        <span>Copyright Management</span>
                     </a>
                 </li>
 

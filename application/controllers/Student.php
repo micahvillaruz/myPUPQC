@@ -290,8 +290,10 @@ class Student extends CI_Controller
         $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Copyright Generator"]);
         $this->load->view('student/researchcop/copyright');
         $this->load->view('partials/footer');
+        $this->load->view('student/researchcop/components/copyright-modal');
         $this->load->view('partials/foot-scripts');
         $this->load->view('student/scripts/dashboard-scripts');
+        $this->load->view('student/researchcop/scripts/copyright-scripts');
     }
 
     public function my_submissions()
