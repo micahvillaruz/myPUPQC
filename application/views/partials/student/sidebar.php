@@ -51,7 +51,47 @@
                         <span>HelpDesk</span>
                     </a>
                 </li>
+
                 <?php if (strpos($this->session->userdata('user_roles'), 'Organizer') !== false) { ?>
+                    <li class="menu-title">
+                        <i class="ri-more-fill"></i>
+                        <span>ORGMS</span>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/orgms/org-register" class="nav-link">
+                            <i class="ri-contacts-fill"></i>
+                            <span>Registration</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/orgms/org-profile" class="nav-link">
+                            <i class="ri-group-2-fill"></i>
+                            <span>Organization Profile</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="#sidebarEvents" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarEvents">
+                            <i class="ri-calendar-todo-fill"></i>
+                            <span>Organization Events</span>
+                        </a>
+                        <div class="collapse menu-dropdown" id="sidebarEvents">
+                            <ul class="nav nav-sm flex-column">
+                                <li class="nav-item">
+                                    <a href="<?= base_url() ?>student/ems/view-event-reservation" class="nav-link">My Event</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?= base_url() ?>student/ems/org-events" class="nav-link">Organization Events</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?= base_url() ?>student/ems/org-analytics" class="nav-link">Organization Analytics</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
                     <li class="menu-title">
                         <i class="ri-more-fill"></i>
                         <span>EVRSERS</span>
@@ -59,7 +99,7 @@
 
                     <li class="nav-item">
                         <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/new-reservation" class="nav-link">
-                            <i class=" ri-add-box-line"></i>
+                            <i class="ri-add-box-line"></i>
                             <span>New Reservation</span>
                         </a>
                     </li>
@@ -70,24 +110,7 @@
                             <span>View Reservation</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/org-dashboard" class="nav-link">
-                            <i class="bx bx-history"></i>
-                            <span>Organization Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/org-pending" class="nav-link">
-                            <i class="bx bx-history"></i>
-                            <span>Organization Status</span>
-                        </a>
-                    </li>     
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/org-regis" class="nav-link">
-                            <i class="bx bx-history"></i>
-                            <span>Organization Registration</span>
-                        </a>
-                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/reservation-history" class="nav-link">
                             <i class="bx bx-history"></i>
@@ -95,6 +118,32 @@
                         </a>
                     </li>
                 <?php } ?>
+
+                <li class="menu-title">
+                        <i class="ri-more-fill"></i>
+                        <span>FACILITIES</span>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/frs/new-facility-reservation" class="nav-link">
+                            <i class="ri-add-box-line"></i>
+                            <span>Use a Facility</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/frs/view-facility-reservation" class="nav-link">
+                            <i class="ri-reserved-line"></i>
+                            <span>View Facility Reservation</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/frs/facility-reservation-history" class="nav-link">
+                            <i class="bx bx-history"></i>
+                            <span>Reservation History</span>
+                        </a>
+                    </li>
 
                 <?php if (strpos($this->session->userdata('user_roles'), 'Organizer') !== false) { ?>
                     <li class="menu-title">

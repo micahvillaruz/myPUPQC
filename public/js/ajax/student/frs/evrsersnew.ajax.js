@@ -1,11 +1,5 @@
 $(function () {
-	// checkCreatePermission()
-
-	loadFilepond()
-
-	dateAndTimeSelectFunctions()
-
-	loadOrganizations()
+	checkCreatePermission()
 })
 
 // Check if student has existing request. If yes, he cannot create a new request. If no, he can access the new request form.
@@ -77,42 +71,6 @@ checkCreatePermission = () => {
 	})
 }
 
-loadFilepond = () => {
-	const attachmentsFileTypes = [
-		'file/pdf',
-		'file/docx',
-		'application/msword',
-		'application/pdf',
-		'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-	]
-	
-	pond = FilePond.create(document.querySelector('#attachments'), {
-		instantUpload: false,
-		allowProcess: false,
-		acceptedFileTypes: attachmentsFileTypes,
-		beforeAddFile: (file) => {
-			if (!attachmentsFileTypes.includes(file.fileType)) {
-				Swal.fire({
-					iconHtml: `<lord-icon src="https://cdn.lordicon.com/nduddlov.json" trigger="loop-on-hover" colors="outline:#f06548,primary:#ffffff,secondary:#f06548" style="width:100px;height:100px"></lord-icon>`,
-					customClass: {
-						icon: 'border-white',
-					},
-					title: 'Oops...',
-					text: `Only PDF and Document files are allowed! The one you are uploading is a: ${file.fileType}`,
-					showCancelButton: !0,
-					showConfirmButton: !1,
-					cancelButtonClass: 'btn btn-danger w-xs mb-1',
-					cancelButtonText: 'Dismiss',
-					buttonsStyling: !1,
-					showCloseButton: !0,
-				})
-				return false
-			}
-			return true
-		},
-	})
-}
-
 loadFullName = () => {
 	$.ajax({
 		type: 'GET',
@@ -125,6 +83,49 @@ loadFullName = () => {
 			$('input[name="full_name"]').val(full_name)
 		},
 		error: function () {},
+	})
+}
+
+loadFacilities = () => {
+	// ajax generate facility in wizard using /student/view_all_facilities route
+	//
+	$.ajaxSetup({
+		headers: {
+			Accept: 'application/json',
+			Authorization: 'Bearer ' + TOKEN,
+			ContentType: 'application/x-www-form-urlencoded',
+		},
+	})
+
+	$.ajax({
+		type: 'GET',
+		cache: false,
+		url: apiURL + `evrsers/student/view_all_facilities/`,
+		dataType: 'json',
+		success: (result) => {
+			const facilities = result.data
+			console.log(facilities)
+			let facilitiesHTML = ''
+			facilities.forEach((facility) => {
+				facilitiesHTML += `
+                <div class="col-3">
+                    <div class="form-check card-radio">
+                        <input id="${facility.facility_id}" name="facility" type="radio" value="${facility.facility_name}" class="form-check-input"/>
+                            <label class="form-check-label p-0 avatar-md w-100 h-50" for="${facility.facility_id}">
+                                <img src="${facility.facility_picture}" class="card-img-top" alt="${facility.facility_name}" style="height:200px;">
+                            </label>
+                    </div>
+                    <h5 class="fs-13 text-center mt-2">${facility.facility_name}</h5>
+                </div>
+                `
+			})
+			$('#facilities').html(facilitiesHTML)
+
+			// enable next button upon selecting a facility
+			$('input[name="facility"]').on('change', function () {
+				$('#nextBtn').prop('disabled', false)
+			})
+		},
 	})
 }
 
@@ -275,18 +276,18 @@ addNewReservation = () => {
 //     })
 
 dateAndTimeSelectFunctions = () => {
-	flatpickr('#reserveDatefloatingInput', {
-		dateFormat: 'd M, Y',
-		defaultDate: new Date().fp_incr(1),
-		minDate: new Date().fp_incr(1),
-		inline: true,
-		disable: [
-			function (date) {
-				return date.getDay() === 0
-			},
-			// ...holidayDates,
-		],
-	})
+    flatpickr('#reserveDatefloatingInput', {
+                dateFormat: 'd M, Y',
+                defaultDate: 'today',
+                minDate: 'today',
+                inline: true,
+                disable: [
+                    function(date) {
+                        return date.getDay() === 0
+                    },
+                    // ...holidayDates,
+                ],
+            })
 
 	// enable #nextBtn1 upon selecting date, time from and time to in one line
 	const reserveDateInput = document.querySelector('#reserveDatefloatingInput')
