@@ -1,0 +1,27 @@
+  <!-- apexcharts -->
+  <script src="<?= base_url() ?>public/libs/apexcharts/apexcharts.min.js"></script>
+
+  <!-- projects js -->
+  <script src="<?= base_url() ?>public/js/pages/dashboard-projects.init.js"></script>
+  <script src="<?= base_url() ?> public/js/pages/dashboard-analytics.init.js"></script>
+
+  <!-- Dashboared ajax -->
+  <script src="<?= base_url() ?>public/js/ajax/student/organalytics.ajax.js"></script>
+
+  <!-- apexcharts -->
+  <script src="<?= base_url() ?>public/js/pages/apexcharts-pie.init.js"></script>
+  <script src="<?= base_url() ?>public/js/pages/apexcharts-line.init.js"></script>
+
+  <!-- Vector map-->
+  <script src="<?= base_url() ?>public/libs/jsvectormap/js/jsvectormap.min.js"></script>
+  <script src="<?= base_url() ?>public/libs/jsvectormap/maps/world-merc.js"></script>
+  <script src="<?= base_url() ?>public/libs/jsvectormap/maps/us-merc-en.js"></script>
+
+  <!-- Widget init -->
+  <script src="<?= base_url() ?>public/js/pages/widgets.init.js"></script>
+
+  <!-- App js -->
+  <script src="<?= base_url() ?>public/js/app.js"></script>
+  </body>
+
+  </html>

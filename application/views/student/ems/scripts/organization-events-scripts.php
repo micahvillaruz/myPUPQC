@@ -33,7 +33,7 @@
 
 
 <!-- new reservations ajax -->
-<script src="<?= base_url() ?>public/js/ajax/student/ems/evrsersnew.ajax.js"></script>
+<script src="<?= base_url() ?>public/js/ajax/student/ems/emsorgevents.ajax.js"></script>
 
 <!-- App js -->
 <script src="<?= base_url() ?>public/js/app.js"></script>

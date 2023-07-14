@@ -14,6 +14,7 @@
 
 <!-- form picker js -->
 <script src="<?= base_url() ?>public/js/pages/form-pickers.init.js"></script>
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"> -->
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 <!-- filepond js -->
@@ -33,7 +34,7 @@
 
 
 <!-- new reservations ajax -->
-<script src="<?= base_url() ?>public/js/ajax/student/ems/evrsersnew.ajax.js"></script>
+<script src="<?= base_url() ?>public/js/ajax/student/evrsers/evrsersnew.ajax.js"></script>
 
 <!-- App js -->
 <script src="<?= base_url() ?>public/js/app.js"></script>

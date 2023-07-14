@@ -23,17 +23,14 @@
 <script src="<?= base_url() ?>public/libs/filepond-plugin-image-exif-orientation/filepond-plugin-image-exif-orientation.min.js"></script>
 <script src="<?= base_url() ?>public/libs/filepond-plugin-file-encode/filepond-plugin-file-encode.min.js"></script>
 
-<!-- <script src="<?= base_url() ?>public/js/pages/form-file-upload.init.js"></script> -->
-
 <!-- form wizard init -->
 <script src="<?= base_url() ?>public/js/pages/form-wizard.init.js"></script>
 
 <!-- form validation script -->
 <script src="<?= base_url() ?>public/js/pages/form-validation.init.js"></script>
 
-
-<!-- new reservations ajax -->
-<script src="<?= base_url() ?>public/js/ajax/student/ems/evrsersnew.ajax.js"></script>
+<!-- register org ajax -->
+<script src="<?= base_url() ?>public/js/ajax/student/orgms/orgnew.ajax.js"></script>
 
 <!-- App js -->
 <script src="<?= base_url() ?>public/js/app.js"></script>

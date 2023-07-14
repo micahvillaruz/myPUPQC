@@ -186,11 +186,33 @@ $route['student/omsss/contact-omsss'] = 'student/contact_omsss';
 
 /*
 | --------------
-|     EVRSERS
+|     ORGMS
 | --------------
 */
 
-// If no organizer status
+$route['student/orgms/org-register'] = 'student/org_register';
+$route['student/orgms/org-profile'] = 'student/org_profile'; // * This would also hold the information for the organization officers
+
+/*
+| --------------
+|      EMS
+| --------------
+*/
+
+// * This would also be available in ORGMS since these are organization events
+$route['student/ems/new-event-reservation'] = 'student/new_event_reservation';
+$route['student/ems/view-event-reservation'] = 'student/view_event_reservation';
+$route['student/ems/org-events'] = 'student/org_events';
+$route['student/ems/org-analytics'] = 'student/org_analytics';
+
+/*
+| --------------
+|      FRS
+| --------------
+*/
+$route['student/frs/new-facility-reservation'] = 'student/new_facility_reservation';
+$route['student/frs/view-facility-reservation'] = 'student/view_facility_reservation';
+$route['student/frs/facility-reservation-history'] = 'student/facility_reservation_history';
 
 // Reservations
 $route['student/evrsers/new-reservation'] = 'student/new_reservation';
@@ -198,7 +220,9 @@ $route['student/evrsers/add-reservation'] = 'student/add_reservation';
 $route['student/evrsers/view-reservation'] = 'student/view_reservation';
 $route['student/evrsers/reservation-history'] = 'student/reservation_history';
 $route['student/evrsers/reservationpolicy'] = 'student/reservationpolicy';
-
+$route['student/evrsers/org-regis'] = 'student/org_regis';
+$route['student/evrsers/org-pending'] = 'student/org_pending';
+$route['student/evrsers/org-dashboard'] = 'student/org_dashboard';
 /*
 | -------------------------------------------------------------------------
 | SUPER ADMIN ROUTES
