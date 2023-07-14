@@ -45,6 +45,12 @@ $(function () {
 		uploadResearchAJAX(pondForResearch, research_id)
 	})
 
+	$('#resubmitResearchForm').on('submit', function (e) {
+		e.preventDefault() // prevent page refresh
+		const research_id = $('#re_id').val()
+		resubmitResearchAJAX(research_id)
+	})
+
 })
 
 const Toast = Swal.mixin({
@@ -179,17 +185,17 @@ loadMySubmissionsTable = () => {
 					},
 				},
 
-				// Research Document
+				// Actions
 				{
 					data: null,
 					class: 'text-center',
 					render: (data) => {
-						let ResearchDocu = data.research_pdf
-						if (data.research_pdf == null) {
-							ResearchDocu = `<span class="badge rounded-pill bg-danger">Not Available</span>`
+						let ResearchDocu = data.research_status
+						if (data.research_status == 'Rejected') {
+							ResearchDocu = `<button type="button" class="btn btn-success btn-warning waves-effect waves-light" onclick="resubmitResearch('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#resubmitResearchModal"><i class="ri-edit-fill fs-5"></i></button>`
 						}
 						else{
-							ResearchDocu = `<span class="badge rounded-pill bg-success">Available</span>`
+							ResearchDocu = ``
 						}
 
 						return `
@@ -218,6 +224,7 @@ viewResearchRecord = (research_id) => {
 			const researchRecord = result.data
 				$('#view_research_title').html(researchRecord.research_title)
 				$('#view_research_author').html(researchRecord.research_author)
+				$('#view_research_co_author').html(researchRecord.research_co_author)
 				$('#view_research_date_accomplished').html(researchRecord.research_date_accomplished)
                 $('#view_research_adviser').html(researchRecord.research_adviser)
 				$('#view_research_program').html(researchRecord.research_program)
@@ -225,6 +232,18 @@ viewResearchRecord = (research_id) => {
 				$('#view_research_abstract').html(researchRecord.research_abstract)
 				$('#display_research_title').html(researchRecord.research_title)
 				$('#research_id').val(researchRecord.research_id)
+
+				// For edit/resubmit
+				$('#re_id').val(researchRecord.research_id)
+				$('#re_title').val(researchRecord.research_title)
+				$('#re_author').val(researchRecord.research_author)
+				$('#re_author').prop('disabled', true)
+				$('#re_co_author').val(researchRecord.research_co_author)
+				$('#re_date_accomplished').val(researchRecord.research_date_accomplished)
+                $('#re_adviser').val(researchRecord.research_adviser)
+				$('#re_program').val(researchRecord.research_program)
+				$('#re_type').val(researchRecord.research_type)
+				$('#re_abstract').val(researchRecord.research_abstract)
 		},
 	})
 }
@@ -373,4 +392,56 @@ deleteResearchDocument = (research_id) => {
 			})
 		}
 	})
+}
+
+resubmitResearch = (research_id) => viewResearchRecord(research_id)
+
+resubmitResearchAJAX = (research_id) => {
+	// Enroll Student
+	if ($('#resubmitResearchForm')[0].checkValidity()) {
+		// no validation error
+		const form = new FormData($('#resubmitResearchForm')[0])
+
+		data = {
+			research_title: form.get('re_title'),
+			research_co_author: form.get('re_co_author'),
+			research_abstract: form.get('re_abstract'),
+			research_date_accomplished: form.get('re_date_accomplished'),
+			research_adviser: form.get('re_adviser'),
+			research_program: form.get('re_program'),
+		}
+
+		$.ajax({
+			url: apiURL + `researchcop/my-submissions/resubmitResearch/${research_id}`,
+			type: 'PUT',
+			data: data,
+			dataType: 'json',
+			headers: AJAX_HEADERS,
+			success: (result) => {
+				if (result) {
+					Toast.fire({
+						icon: 'success',
+						title: 'Updated Research Successfully!',
+					}).then(function () {
+						// Hide the update student details modal
+						$('form#resubmitResearchForm')[0].reset()
+						$('#resubmitResearchModal').modal('hide')
+
+						// Reload Student Datatable
+						loadMySubmissionsTable()
+					})
+				}
+			},
+		}).fail(() => {
+			Swal.fire({
+				html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">There was an error while updating a research. Please try again.</p></div></div>',
+				showCancelButton: !0,
+				showConfirmButton: !1,
+				cancelButtonClass: 'btn btn-danger w-xs mb-1',
+				cancelButtonText: 'Dismiss',
+				buttonsStyling: !1,
+				showCloseButton: !0,
+			})
+		})
+	}
 }

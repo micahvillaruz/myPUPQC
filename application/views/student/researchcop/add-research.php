@@ -21,6 +21,10 @@
                         <input type="text" class="form-control" id="fkr_author" name="fkr_author" placeholder="Enter Research Author" required />
                     </div>
                     <div class="mb-3">
+                        <label for="r_co_author" class="form-label">Research Co-Author</label>
+                        <input type="text" class="form-control" id="r_co_author" name="r_co_author" placeholder="Enter Research Co-Author">
+                    </div>
+                    <div class="mb-3">
                         <label for="r_abstract" class="form-label">Research Abstract<span class="text-danger">*</span></label>
                         <textarea class="form-control" id="r_abstract" name="r_abstract" rows="5" placeholder="Enter Abstract" required></textarea>
                     </div>

@@ -24,7 +24,7 @@
                             <th class="t-align">Status</th>
                             <th class="t-align">Document</th>
                             <th class="t-align">Remarks</th>
-                            <th class="t-align">Availability</th>
+                            <th class="t-align">Actions</th>
                         </tr>
                     </thead>
                     <tbody>

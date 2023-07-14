@@ -54,6 +54,7 @@ addResearch = () => {
 			research_title: form.get('r_title'),
 			user_full_name: form.get('fkr_author'),
 			research_author: form.get('r_author'),
+			research_co_author: form.get('r_co_author'),
 			research_abstract: form.get('r_abstract'),
 			research_date_accomplished: form.get('r_date_accomplished'),
 			research_adviser: form.get('r_adviser'),
