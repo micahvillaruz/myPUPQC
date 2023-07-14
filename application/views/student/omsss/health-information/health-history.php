@@ -136,7 +136,7 @@
                         </div>
                         <div class="mb-3 pb-2">
                             <label for="exampleFormControlTextarea" class="form-label">Others:</label>
-                            <textarea class="form-control" id="#medical_history" name="#medical_history" placeholder="Please use semi-colon (;) as seperator for ypur entries." rows="3"></textarea>
+                            <textarea class="form-control" id="#medical_history_others" name="medical_history_others" placeholder="Please use semi-colon (;) as seperator for your entries." rows="3"></textarea>
                         </div>
                     </div>
                 </div>
