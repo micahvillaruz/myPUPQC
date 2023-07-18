@@ -49,16 +49,15 @@ loadDocumentsTable = () => {
 			headers: AJAX_HEADERS,
 		},
 		//No Sort Function
-		"aoColumnDefs": [
-			{ 'bSortable': false, 'aTargets': ['no-sort'] }
-		],
+		aoColumnDefs: [{ bSortable: false, aTargets: ['no-sort'] }],
 		columns: [
 			{
 				data: null,
 				width: '70%',
 				render: (data) => {
-					return `<a href="#!" class="fw-medium">${data.document_name}</a><br><small>${data.document_details == null ? '' : data.document_details
-						}</small>`
+					return `<a href="#!" class="fw-medium">${data.document_name}</a><br><small>${
+						data.document_details == null ? '' : data.document_details
+					}</small>`
 				},
 			},
 			{
@@ -134,7 +133,7 @@ populateSelect = (signatoriesList = []) => {
 				)
 			selectSignatories.append(options)
 			isPopulateSelectRunning = false
-			$('#select_signatories').select2({
+			selectSignatories.select2({
 				dropdownParent: $('#addDocumentModal'),
 				minimumResultsForSearch: Infinity,
 			})
@@ -208,9 +207,12 @@ addDocument = () => {
 		document_name: form.get('document_name'),
 		document_details: form.get('document_details'),
 		document_type: form.get('document_type'),
-		document_requirements: values.map((item) => {
-			return { doc_req_name: item }
-		}),
+		document_requirements:
+			values > 0
+				? values.map((item) => {
+						return { doc_req_name: item }
+				  })
+				: null,
 		document_signatories: signatoriesList.map((element, index) => {
 			return { user_id: element, hierarchy_number: index + 1 }
 		}),
@@ -224,7 +226,7 @@ addDocument = () => {
 		dataType: 'json',
 		success: (result) => {
 			if (result) {
-				$('#addDocumentModal').modal('hide');
+				$('#addDocumentModal').modal('hide')
 				Toast.fire({
 					icon: 'success',
 					title: 'Added Document Successfully!',
@@ -237,7 +239,6 @@ addDocument = () => {
 					$('#select_signatories').attr('required', 'required')
 					populateSelect()
 					signatoriesList.length = 0
-					// Reload Document Datatable
 					loadDocumentsTable()
 				})
 			}
@@ -252,6 +253,38 @@ addDocument = () => {
 			buttonsStyling: !1,
 			showCloseButton: !0,
 		})
+	})
+}
+
+filterSelect = (filteredSignatories = []) => {
+	if (isPopulateSelectRunning) return
+	isPopulateSelectRunning = true
+	const selectSignatories = $('#edit_signatories')
+	selectSignatories.find('option').not(':disabled').remove()
+	selectSignatories.find('option:disabled').prop('selected', true)
+
+	$.ajax({
+		type: 'GET',
+		url: apiURL + 'odrs/pup_staff/view_signatory_users',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			const signatories = result.data
+			const options = signatories
+				.filter((signatory) => !filteredSignatories.includes(signatory.user_id))
+				.map(
+					(signatory) =>
+						new Option(
+							signatory.user_assigned_to_role.user_profiles[0].full_name,
+							signatory.user_id,
+						),
+				)
+			selectSignatories.append(options)
+			isPopulateSelectRunning = false
+			selectSignatories.select2({
+				dropdownParent: $('#updateDocumentModal'),
+				minimumResultsForSearch: Infinity,
+			})
+		},
 	})
 }
 
@@ -280,14 +313,17 @@ updateDocument = (document_id) => {
 			return $(this).val()
 		})
 		.get()
+
 	const data = {
 		document_name: form.get('document_name'),
 		document_details: form.get('document_details'),
 		document_type: form.get('document_type'),
-
-		document_requirements: values.map((item) => {
-			return { doc_req_name: item }
-		}),
+		document_requirements:
+			values > 0
+				? values.map((item) => {
+						return { doc_req_name: item }
+				  })
+				: null,
 		document_signatories: filteredSignatoriesList.map((element, index) => {
 			return { user_id: element, hierarchy_number: index + 1 }
 		}),
@@ -309,7 +345,11 @@ updateDocument = (document_id) => {
 					$('form#editDocumentForm')[0].reset()
 					$('#document_requirements_list').empty()
 					editCount = 0
-					// Reload Document Datatable
+					$('#signatories_list').empty()
+					$('.signatories_div').removeClass('d-none')
+					$('#edit_signatories').attr('required', 'required')
+					filterSelect()
+					filteredSignatoriesList.length = 0
 					loadDocumentsTable()
 				})
 			}
@@ -356,6 +396,7 @@ getDocumentInfo = (document_id) => {
 					</li>
 				`)
 				})
+				validationChecker()
 
 				filteredSignatoriesList = document_signatories.map((signatory) => signatory.user_id)
 				filterSelect(filteredSignatoriesList)
@@ -366,9 +407,11 @@ getDocumentInfo = (document_id) => {
 				document_requirements.forEach((item, i) => {
 					$('#edit_document_requirements_list').append(`
 					<div id=${i + 1}>
-					<div class="row"><div class="hstack gap-2 justify-content-end mb-3"><input type="text" name="edit_document_requirement" class="form-control" value="${item.doc_req_name
-						}" required><a class="btn btn-danger rounded-pill" href="javascript:deleteEl(${i + 1
-						}, 'edit')">Delete</a></div><div class="invalid-feedback">Please select the Document Requirement.</div></div></div>
+					<div class="row"><div class="hstack gap-2 justify-content-end mb-3"><input type="text" name="edit_document_requirement" class="form-control" value="${
+						item.doc_req_name
+					}" required><a class="btn btn-danger rounded-pill" href="javascript:deleteEl(${
+						i + 1
+					}, 'edit')">Delete</a></div><div class="invalid-feedback">Please select the Document Requirement.</div></div></div>
 					`)
 				})
 			}
@@ -390,7 +433,12 @@ function checkSignatoryStatus() {
 	if ($('#display_list').find('li').length == 0) {
 		// No li elements found inside the ul tag with the id of display_list
 		$('#select_signatories').prop('required', true)
-	} else {
+		$('.signatories_div').removeClass('d-none')
+	} else if ($('#display_list').find('li').length <= 4) {
+		$('.signatories_div').removeClass('d-none')
+		$('#select_signatories').removeAttr('required')
+	} else if ($('#signatories_list').find('li').length == 4) {
+		$('.signatories_div').addClass('d-none')
 		$('#select_signatories').removeAttr('required')
 	}
 }
@@ -431,51 +479,20 @@ $('#display_list').on('click', '.link-delete', function () {
 	const removedOptionID = $(this).parent().attr('id')
 	signatoriesList = signatoriesList.filter((value) => value !== removedOptionID)
 	$(this).parent().remove()
-	populateSelect(signatoriesList)
-
 	checkSignatoryStatus()
+	populateSelect(signatoriesList)
 })
-
-filterSelect = (filteredSignatories) => {
-	const selectSignatories = $('#edit_signatories')
-	selectSignatories.find('option').not(':disabled').remove()
-	selectSignatories.find('option:disabled').prop('selected', true)
-
-	$.ajax({
-		type: 'GET',
-		url: apiURL + 'odrs/pup_staff/view_signatory_users',
-		headers: AJAX_HEADERS,
-		success: (result) => {
-			const signatories = result.data
-			const options = signatories
-				.filter((signatory) => !filteredSignatories.includes(signatory.user_id))
-				.map(
-					(signatory) =>
-						new Option(
-							signatory.user_assigned_to_role.user_profiles[0].full_name,
-							signatory.user_id,
-						),
-				)
-			selectSignatories.append(options)
-			if (selectSignatories.find('option').length > 1) {
-				$('.signatories_div').removeClass('d-none')
-			} else {
-				$('.signatories_div').addClass('d-none')
-			}
-			selectSignatories.val(null).trigger('change')
-			selectSignatories.select2({
-				dropdownParent: $('#updateDocumentModal'),
-				minimumResultsForSearch: Infinity,
-			})
-		},
-	})
-}
 
 function validationChecker() {
 	if ($('#signatories_list').find('li').length === 0) {
-		// No li elements found inside the ul tag with the id of display_list
+		// No li elements found inside the ul tag with the id of signatories_list
 		$('#edit_signatories').prop('required', true)
-	} else {
+		$('.signatories_div').removeClass('d-none')
+	} else if ($('#signatories_list').find('li').length <= 4) {
+		$('.signatories_div').removeClass('d-none')
+		$('#edit_signatories').removeAttr('required')
+	} else if ($('#signatories_list').find('li').length == 4) {
+		$('.signatories_div').addClass('d-none')
 		$('#edit_signatories').removeAttr('required')
 	}
 }
@@ -485,7 +502,7 @@ function edit_signatory() {
 	const selectedOptionID = selectedOption.val()
 
 	if (selectedOptionID) {
-		if (!signatoriesList.includes(selectedOptionID)) {
+		if (!filteredSignatoriesList.includes(selectedOptionID)) {
 			filteredSignatoriesList.push(selectedOptionID)
 			$('#signatories_list').append(`
 				<li id="${selectedOptionID}" class="d-flex align-items-center justify-content-between mb-2">
@@ -501,7 +518,9 @@ function edit_signatory() {
 			selectedOption.remove()
 			$('#edit_signatories').find('option:disabled').prop('selected', true)
 
-			if ($('#select_signatories option').length > 1) {
+			if ($('#edit_signatories option').length === 1) {
+				$('.signatories_div').addClass('d-none')
+			} else {
 				$('.signatories_div').removeClass('d-none')
 			}
 		}
@@ -514,9 +533,8 @@ $('#signatories_list').on('click', '.link-delete', function () {
 	const removedOptionID = $(this).parent().attr('id')
 	filteredSignatoriesList = filteredSignatoriesList.filter((value) => value !== removedOptionID)
 	$(this).parent().remove()
-	filterSelect(filteredSignatoriesList)
-
 	validationChecker()
+	filterSelect(filteredSignatoriesList)
 })
 
 function edit_new_link() {
@@ -524,8 +542,8 @@ function edit_new_link() {
 	let o = document.createElement('div'),
 		e = `<div class="row"><div class="hstack gap-2 justify-content-end mb-3"><input type="text" name="edit_document_requirement" class="form-control" placeholder="Enter a requirement for this Document" required><a class="btn btn-danger rounded-pill" href="javascript:deleteEl(${(o.id =
 			editCount)}, 'edit')">Delete</a></div><div class="invalid-feedback">Please select the Document Requirement.</div></div>`
-		; (o.innerHTML = document.getElementById('edit_newForm').innerHTML + e),
-			document.getElementById('edit_document_requirements_list').appendChild(o)
+	;(o.innerHTML = document.getElementById('edit_newForm').innerHTML + e),
+		document.getElementById('edit_document_requirements_list').appendChild(o)
 }
 
 function deleteEl(o, val) {

@@ -37,6 +37,7 @@ $(function () {
 	})
 
 	$('#forProcessingRequestForm').on('submit', function (e) {
+		$('#forProcessingModal').modal('hide')
 		e.preventDefault() // prevent page refresh
 		const requestID = $('#process_request_id').val()
 		forProcessingRequest(requestID)
@@ -101,9 +102,7 @@ loadPendingRequests = () => {
 				headers: AJAX_HEADERS,
 			},
 			//No Sort Function
-			"aoColumnDefs": [
-				{ 'bSortable': false, 'aTargets': ['no-sort'] }
-			],
+			aoColumnDefs: [{ bSortable: false, aTargets: ['no-sort'] }],
 			dom: 'Bfrtip',
 			buttons: ['print'],
 			columns: [
@@ -248,9 +247,7 @@ loadApprovedRequests = () => {
 				type: 'GET',
 				headers: AJAX_HEADERS,
 			},
-			"aoColumnDefs": [
-				{ 'bSortable': false, 'aTargets': ['no-sort'] }
-			],
+			aoColumnDefs: [{ bSortable: false, aTargets: ['no-sort'] }],
 			columns: [
 				// Control Number
 				{
@@ -510,6 +507,14 @@ viewPendingRequest = (request_id) => {
 
 // View Approved Request Details
 viewApprovedRequest = (request_id) => {
+	$.ajax({
+		type: 'GET',
+		url: apiURL + `odrs/pup_staff/fetch_oic_records`,
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			const staff = result.data
+			
+			
 	$.ajax({
 		type: 'GET',
 		url: `${apiURL}odrs/pup_staff/view_request/${request_id}`,
@@ -804,11 +809,11 @@ viewApprovedRequest = (request_id) => {
 						<div class="list-group-item list-group-item-action">
 							<div class="d-flex mb-2 align-items-center">
 								<div class="flex-shrink-0">
-									<img src="${baseURL}public/images/officials/img-25.png" class="avatar-sm rounded-circle" />
+									<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-9.png" alt="" class="avatar-sm rounded-circle" />
 								</div>
 								<div class="flex-grow-1 ms-3">
-									<h5 class="list-title fs-15 mb-1">Hernando Liberato</h5>
-									<p class="list-text mb-0 fs-12">Officer-in-Charge, Student Records</p>
+									<h5 class="list-title fs-15 mb-1">${staff.user_assigned_to_role.user_profiles[0].full_name}</h5>
+									<p class="list-text mb-0 fs-12">${staff.user_assigned_to_role.user_type}</p>
 								</div>
 							</div>
 							<p>
@@ -847,11 +852,11 @@ viewApprovedRequest = (request_id) => {
 						<div class="list-group-item list-group-item-action">
 							<div class="d-flex mb-2 align-items-center">
 								<div class="flex-shrink-0">
-									<img src="${baseURL}public/images/officials/img-25.png" alt="" class="avatar-sm rounded-circle" />
+									<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-9.png" alt="" class="avatar-sm rounded-circle" />
 								</div>
 								<div class="flex-grow-1 ms-3">
-									<h5 class="list-title fs-15 mb-1">Hernando Liberato</h5>
-									<p class="list-text mb-0 fs-12">Officer-in-Charge, Student Records</p>
+									<h5 class="list-title fs-15 mb-1">${staff.user_assigned_to_role.user_profiles[0].full_name}</h5>
+									<p class="list-text mb-0 fs-12">${staff.user_assigned_to_role.user_type}</p>
 								</div>
 							</div>
 							<p>Good Day! Please be informed that your requested credential/s is/are scheduled for pick-up and can now be claimed at the Records Section, Rothlener Building in PUP Quezon City.</p>
@@ -869,6 +874,8 @@ viewApprovedRequest = (request_id) => {
 			$('#requirements').html(documentRequirements)
 		},
 	})
+},
+})
 }
 
 // Get Requeest Requirements
@@ -889,12 +896,19 @@ getRequirements = (data) => {
 
 // Approve Request
 approveRequest = (request_id) => {
+	$.ajax({
+		type: 'GET',
+		url: apiURL + `pup_staff/info`,
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			const staff = result.data
 	if ($('#approveRequestForm')[0].checkValidity()) {
 		// no validation error
 		const form = new FormData($('#approveRequestForm')[0])
-
+		
 		data = {
 			remarks: form.get('remarks'),
+			Sname: staff.full_name.get
 		}
 
 		$.ajax({
@@ -938,6 +952,9 @@ approveRequest = (request_id) => {
 			})
 		})
 	}
+}
+
+})
 }
 
 // Cancel Request
@@ -1208,16 +1225,29 @@ viewTraceRequestApproval = (request_id) => {
 				`)
 				data.signatories_assigned_to_request.forEach((signatory, j) => {
 					if (signatory.document_id === document.document_id) {
-						$(`#doc_signatory_${i}`).append(`
-										<div class="acitivity-item d-flex">
-                      <div class="flex-shrink-0">
-                        <img src="${baseURL}public/images/profile/flat-faces-icons-circle-man-6.png" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
-                      </div>
-                      <div class="flex-grow-1 ms-3 mb-4" id="signatory_status_${j}">
-                        <h6 class="mb-1">${signatory.signatory_for_user.user_profiles[0].full_name}</h6>
-                      </div>
-                    </div>
-						`)
+						if (signatory.signatory_for_user.user_profiles[0].gender == 'Male') {
+							$(`#doc_signatory_${i}`).append(`
+								<div class="acitivity-item d-flex">
+									<div class="flex-shrink-0">
+										<img src="${baseURL}public/images/profile/flat-faces-icons-circle-man-6.png" class="avatar-xs rounded-circle acitivity-avatar shadow">
+									</div>
+									<div class="flex-grow-1 ms-3 mb-4" id="signatory_status_${j}">
+										<h6 class="mb-1">${signatory.signatory_for_user.user_profiles[0].full_name}</h6>
+									</div>
+								</div>
+							`)
+						} else {
+							$(`#doc_signatory_${i}`).append(`
+								<div class="acitivity-item d-flex">
+									<div class="flex-shrink-0">
+										<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-8.png" class="avatar-xs rounded-circle acitivity-avatar shadow">
+									</div>
+									<div class="flex-grow-1 ms-3 mb-4" id="signatory_status_${j}">
+										<h6 class="mb-1">${signatory.signatory_for_user.user_profiles[0].full_name}</h6>
+									</div>
+								</div>
+							`)
+						}
 						if (!signatory.is_signed && !signatory.is_onhold) {
 							$(`#signatory_status_${j}`).append(`
 							<span class="badge badge-soft-warning text-uppercase">Pending</span>
@@ -1252,22 +1282,41 @@ viewTraceRequestApproval = (request_id) => {
 			data.signatories_assigned_to_request.forEach((signatory) => {
 				if (signatory.remarks !== null) {
 					$('#trace_request_remarks').removeClass('d-none')
-					$('#trace_request_approval').append(`
-						<div class="list-group text-start">
-              <div class="list-group-item list-group-item-action list-group-item-danger">
-                <div class="d-flex mb-2 align-items-center">
-                  <div class="flex-shrink-0">
-                    <img src="${baseURL}public/images/profile/flat-faces-icons-circle-man-6.png" alt="" class="avatar-xs rounded-circle" />
-                  </div>
-                  <div class="flex-grow-1 ms-3">
-                    <h6 class="list-title mb-1">${signatory.signatory_for_user.user_profiles[0].full_name}</h6>
-                  </div>
-                </div>
-                <p>${signatory.remarks}</p>
-              </div>
-            </div>
-						<br>
-					`)
+					if (signatory.signatory_for_user.user_profiles[0].gender == 'Male') {
+						$('#trace_request_approval').append(`
+							<div class="list-group text-start">
+								<div class="list-group-item list-group-item-action list-group-item-danger">
+									<div class="d-flex mb-2 align-items-center">
+										<div class="flex-shrink-0">
+											<img src="${baseURL}public/images/profile/flat-faces-icons-circle-man-6.png" alt="" class="avatar-xs rounded-circle" />
+										</div>
+										<div class="flex-grow-1 ms-3">
+											<h6 class="list-title mb-1">${signatory.signatory_for_user.user_profiles[0].full_name}</h6>
+										</div>
+									</div>
+									<p>${signatory.remarks}</p>
+								</div>
+							</div>
+							<br>
+						`)
+					} else {
+						$('#trace_request_approval').append(`
+							<div class="list-group text-start">
+								<div class="list-group-item list-group-item-action list-group-item-danger">
+									<div class="d-flex mb-2 align-items-center">
+										<div class="flex-shrink-0">
+											<img src="${baseURL}public/images/profile/flat-faces-icons-circle-woman-8.png" alt="" class="avatar-xs rounded-circle" />
+										</div>
+										<div class="flex-grow-1 ms-3">
+											<h6 class="list-title mb-1">${signatory.signatory_for_user.user_profiles[0].full_name}</h6>
+										</div>
+									</div>
+									<p>${signatory.remarks}</p>
+								</div>
+							</div>
+							<br>
+						`)
+					}
 				}
 			})
 		},
