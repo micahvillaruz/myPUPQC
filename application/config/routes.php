@@ -302,3 +302,16 @@ $route['student/researchcop/copyright'] = 'student/researchcop_copyright';
 $route['student/researchcop/my-submissions'] = 'student/my_submissions';
 $route['student/researchcop/add-research'] = 'student/add_research';
 $route['student/researchcop/help-and-support'] = 'student/help_and_support';
+
+
+/*
+| ----------------------
+|    RESEARCHCOP ROUTES FOR PUPSTAFF
+| ----------------------
+*/
+
+$route['pupstaff/researchcop/dashboard'] = 'pupstaff/researchcop_dashboard';
+$route['pupstaff/researchcop/copyright'] = 'pupstaff/research_copyright';
+$route['pupstaff/researchcop/research-archives'] = 'pupstaff/research_archives';
+$route['pupstaff/researchcop/research-records'] = 'pupstaff/research_records';
+$route['pupstaff/researchcop/research-submissions'] = 'pupstaff/research_submissions';

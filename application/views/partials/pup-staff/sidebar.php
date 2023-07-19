@@ -236,6 +236,50 @@
                             </a>
                         </li>
                     <?php } ?>
+
+                    <?php if (strpos($this->session->userdata('user_roles'), 'Research Manager') !== false) { ?>
+                    <li class="menu-title">
+                        <i class="ri-more-fill"></i>
+                         <span>ResearchCop</span>
+                    </li>
+
+                    <li class="nav-item">
+                    <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/researchcop/dashboard">         
+                        <i class="ri-home-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    </li>                   
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/researchcop/copyright">
+                            <i class="ri-copyright-line"></i>
+                            <span>Copyright Management</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/researchcop/research-archives">
+                            <i class="ri-archive-line"></i>
+                            <span>Research Archives</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/researchcop/research-records">
+                            <i class="ri-article-line"></i>
+                            <span>Research Records</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/researchcop/research-submissions">
+                            <i class="ri-time-line"></i>
+                            <span>Research Submissions</span>
+                        </a>
+                    </li>
+                    <?php } ?>
+
+
                 </ul>
             </div>
             <!-- Sidebar -->
