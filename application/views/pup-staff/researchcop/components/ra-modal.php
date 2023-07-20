@@ -111,6 +111,17 @@
                             </div>
                         </li>
 
+                        <li class="list-group-item">
+                            <div class="d-flex align-items-center">
+                                <div class="col-4">
+                                    <h5 class="fs-13 mb-1">Category</h5>
+                                </div>
+                                <div class="d-flex fs-13 fw-medium">
+                                    <div class="d-flex fs-13 fw-medium" id="view_research_category"></div>
+                                </div>
+                            </div>
+                        </li>
+
                         <!-- end list item -->
                     </ul>
                     <!-- end ul list -->

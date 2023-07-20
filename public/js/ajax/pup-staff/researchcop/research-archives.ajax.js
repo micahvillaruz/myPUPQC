@@ -1,5 +1,6 @@
 $(function () {
 	loadResearchArchivesTable()
+	loadCapstoneArchivesTable()
 
 	$('#returnResearchForm').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
@@ -33,7 +34,113 @@ loadResearchArchivesTable = () => {
 			],
 			bDestroy: true,
 			ajax: {
-				url: apiURL + 'researchcop/research-archives/',
+				url: apiURL + 'researchcop/research-archives/research',
+				type: 'GET',
+				ContentType: 'application/x-www-form-urlencoded',
+			},
+			columns: [
+				// Title
+				{
+					data: null,
+					class: 'text-center',
+					render: (data) => {
+						const rTitle = data.research_title
+						return `${rTitle}`
+					},
+				},
+
+				// Information
+				{
+					data: null,
+					class: 'text-center',
+					render: (data) => {
+						return `
+    <div class="dropdown d-inline-block">
+    <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewResearchRecord('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#viewResearchRecord"><i class="ri-eye-fill fs-5"></i></button>
+	</div>
+    `
+					},
+				},
+
+				// Remarks
+				{
+					data: null,
+					class: 'text-center',
+					render: (data) => {
+						return `
+						<div class="dropdown d-inline-block">
+						<button type="button" class="btn btn-success btn-icon waves-effect waves-light" onclick="viewResearchRemarks('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#viewResearchRemarks"><i class="ri-question-fill fs-5"></i></button>
+						</div>
+						`
+					},
+				},
+
+				// Research Document
+				{
+					data: null,
+					class: 'text-center',
+					render: (data) => {
+						let ResearchDocu = data.research_pdf
+						if (data.research_pdf == null) {
+							ResearchDocu = `<span class="badge rounded-pill bg-danger">Not Available</span>`
+						}
+						else{
+							ResearchDocu = `<button type="button" class="btn btn-success btn-label waves-effect waves-light" onclick="viewResearchDocument('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#research_document_preview"><i class="ri-file-line label-icon align-middle fs-16 me-2"></i>View</button>`
+						}
+
+						return `
+						<div class="dropdown d-inline-block">
+						${ResearchDocu}
+						</div>
+						`
+					},
+				},
+
+				//Action
+				{
+					data: null,
+					class: 'text-center',
+					render: (data) => {
+						return `
+    <div class="dropdown d-inline-block">
+	<button type="button" class="btn btn-success btn-icon waves-effect waves-light" onclick="returnResearchRecord('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#returnResearchModal"><i class="ri-check-line"></i></button>
+    `
+					},
+				},
+
+			],
+			order: [[0, 'asc']],
+		})
+	}
+}
+
+// Load  research datatables
+loadCapstoneArchivesTable = () => {
+	const dt = $('#capstone-archives-datatable')
+
+	$.ajaxSetup({
+		headers: AJAX_HEADERS,
+	})
+
+	if (dt.length) {
+		dt.DataTable({
+			dom:
+				"<'row'<'col-xl-12 mb-2'B>>" +
+				"<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+				"<'row'<'col-sm-12'tr>>" +
+				"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+			buttons: [
+				{
+					extend: 'print',
+					text: '<i class="ri-printer-fill"></i> Print',
+					exportOptions: {
+						columns: [0],
+					},
+				},
+			],
+			bDestroy: true,
+			ajax: {
+				url: apiURL + 'researchcop/research-archives/capstone',
 				type: 'GET',
 				ContentType: 'application/x-www-form-urlencoded',
 			},
@@ -144,6 +251,7 @@ viewResearchRecord = (research_id) => {
 				$('#view_research_type').html(researchRecord.research_type)
 				$('#view_research_abstract').html(researchRecord.research_abstract)
 				$('#view_research_status').html(researchRecord.research_status)
+				$('#view_research_category').html(researchRecord.research_category)
 		},
 	})
 }

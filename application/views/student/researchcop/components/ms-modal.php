@@ -92,6 +92,17 @@
                         <li class="list-group-item">
                             <div class="d-flex align-items-center">
                                 <div class="col-4">
+                                    <h5 class="fs-13 mb-1">Category</h5>
+                                </div>
+                                <div class="d-flex fs-13 fw-medium">
+                                    <div class="d-flex fs-13 fw-medium" id="view_research_category"></div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- end list item -->
+                        <li class="list-group-item">
+                            <div class="d-flex align-items-center">
+                                <div class="col-4">
                                     <h5 class="fs-13 mb-1">Abstract</h5>
                                 </div>
                                 <div class="d-flex fs-13 fw-medium">
@@ -364,6 +375,14 @@
                                         <option value="Bachelor of Science in Business Administration Major in Marketing Management">[MM] Bachelor of Science in Business Administration Major in Marketing Management</option>
                                         <option value="Bachelor of Science in Business Teacher's Education">[BTLED] Bachelor of Science in Business Teacher's Education</option>
                                         <option value="Bachelor of Science in Information Technology">[IT] Bachelor of Science in Information Technology</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="re_category" class="form-label">Category<span class="text-danger">*</span></label>
+                        <select class="form-select mb-3" id="re_category" name="re_category" required>
+                            <option selected disabled value="">Select Category</option>
+                                <option value="Research">Research</option>
+                                <option value="Capstone">Capstone</option>
                         </select>
                     </div>
 					<div class="text-end">

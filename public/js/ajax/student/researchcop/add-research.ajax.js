@@ -59,6 +59,7 @@ addResearch = () => {
 			research_date_accomplished: form.get('r_date_accomplished'),
 			research_adviser: form.get('r_adviser'),
 			research_program: form.get('r_program'),
+			research_category: form.get('r_category'),
 		}
 
 		if(authorname != researchauthor){
@@ -75,6 +76,24 @@ addResearch = () => {
 		}
 
 		else{
+
+		Swal.fire({
+			html:
+			'<div class="mt-3">' +
+			'<lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f7b84b,secondary:#f06548" style="width:100px;height:100px"></lord-icon>' +
+			'<div class="mt-4 pt-2 fs-15 mx-5">' +
+			'<h4>Submitting Research Information</h4>' +
+			'<p class="text-muted mx-4 mb-0">Make sure to check all your information before submitting to avoid problems.</p>' +
+			'</div>' +
+			'</div>',
+			showCancelButton: true,
+			confirmButtonClass: 'btn btn-success w-xs me-2 mb-1',
+			confirmButtonText: 'Submit',
+			cancelButtonClass: 'btn btn-light w-xs mb-1',
+			buttonsStyling: false,
+			showCloseButton: true,
+		}).then((result) => {
+			if (result.isConfirmed) {
 
 		$.ajax({
 			url: apiURL + 'researchcop/my-submissions/add',
@@ -103,9 +122,11 @@ addResearch = () => {
 				buttonsStyling: !1,
 				showCloseButton: !0,
 			})
-		})
+			})
 
-		}
+			}
+		})
+	}
 
 	}
 }

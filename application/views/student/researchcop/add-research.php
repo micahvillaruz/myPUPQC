@@ -48,6 +48,14 @@
                                         <option value="Bachelor of Science in Information Technology">[IT] Bachelor of Science in Information Technology</option>
                         </select>
                     </div>
+                    <div class="mb-3">
+                        <label for="r_category" class="form-label">Category<span class="text-danger">*</span></label>
+                        <select class="form-select mb-3" id="r_category" name="r_category" required>
+                            <option selected disabled value="">Select Category</option>
+                                <option value="Research">Research</option>
+                                <option value="Capstone">Capstone</option>
+                        </select>
+                    </div>
 
                     <div class="text-end">
                         <button type="submit" class="btn btn-primary">Submit</button>
