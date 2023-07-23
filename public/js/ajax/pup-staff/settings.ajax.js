@@ -65,11 +65,10 @@ editProfileAJAX = () => {
 		const form = new FormData($('#profileSettingsForm')[0])
 
 		data = {
-			image: null,
-			first_name: form.get('first_name'),
-			middle_name: form.get('middle_name'),
-			last_name: form.get('last_name'),
-			extension_name: form.get('extension_name'),
+			first_name: document.getElementById('first_name').value,
+			middle_name: document.getElementById('middle_name').value,
+			last_name: document.getElementById('last_name').value,
+			extension_name: document.getElementById('extension_name').value,
 			contact_number: form.get('contact_number'),
 			birth_date: form.get('birth_date'),
 			gender: form.get('gender'),
@@ -135,16 +134,15 @@ changePasswordAJAX = () => {
 					title: 'Change Password Successfully!',
 				}).then(function () {
 					handlePasswordInputChange()
-				    
-					toggleValidationClass("pass-lower", true)
-					toggleValidationClass("pass-upper", true)
-					toggleValidationClass("pass-number", true)
-					toggleValidationClass("pass-special", true)
-					toggleValidationClass("pass-length-min", true)
-					toggleValidationClass("pass-length-max", true)
-		  
-					changePassLogout()
 
+					toggleValidationClass('pass-lower', true)
+					toggleValidationClass('pass-upper', true)
+					toggleValidationClass('pass-number', true)
+					toggleValidationClass('pass-special', true)
+					toggleValidationClass('pass-length-min', true)
+					toggleValidationClass('pass-length-max', true)
+
+					changePassLogout()
 				})
 			}
 		},

@@ -1,4 +1,3 @@
-
 $(function () {
 	editPersonalInfo()
 
@@ -70,13 +69,12 @@ editPersonalInfoAJAX = () => {
 		const form = new FormData($('#personalInfoForm')[0])
 
 		data = {
-			image: null,
-			first_name: form.get('first_name'),
-			middle_name: form.get('middle_name'),
-			last_name: form.get('last_name'),
-			extension_name: form.get('extension_name'),
+			first_name: document.getElementById('first_name').value,
+			middle_name: document.getElementById('middle_name').value,
+			last_name: document.getElementById('last_name').value,
+			extension_name: document.getElementById('extension_name').value,
 			gender: form.get('gender'),
-			birth_date: form.get('birth_date'),
+			birth_date: document.getElementById('birth_date').value,
 			civil_status: form.get('civil_status'),
 			citizenship: form.get('citizenship'),
 			religion: form.get('religion'),
@@ -123,47 +121,47 @@ editPersonalInfoAJAX = () => {
 	}
 }
 
+// Change Password AJAX
+changePasswordAJAX = () => {
+	if (!$('#changePasswordForm')[0].checkValidity()) return false
 
-  // Change Password AJAX
-  changePasswordAJAX = () => {
-		if (!$('#changePasswordForm')[0].checkValidity()) return false
-	
-		const form = new FormData($('#changePasswordForm')[0])
-	
-		let data = {
-			current_password: form.get('current_password'),
-			new_password: form.get('new_password'),
-		};
-	
-		$.ajax({
-			url: apiURL + `student/info/change_password`,
-			type: 'PUT',
-			data: data,
-			dataType: 'json',
-			headers: AJAX_HEADERS,
-			success: (result) => {
-				console.log(result)
-				if (result) {
+	const form = new FormData($('#changePasswordForm')[0])
+
+	console.log(form)
+
+	let data = {
+		current_password: form.get('current_password'),
+		new_password: form.get('new_password'),
+	}
+
+	$.ajax({
+		url: apiURL + `student/info/change_password`,
+		type: 'PUT',
+		data: data,
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			console.log(result)
+			if (result) {
 				Toast.fire({
 					icon: 'success',
 					title: 'Change Password Successfully!',
 				}).then(function () {
 					handlePasswordInputChange()
-					
-					toggleValidationClass("pass-lower", true)
-					toggleValidationClass("pass-upper", true)
-					toggleValidationClass("pass-number", true)
-					toggleValidationClass("pass-special", true)
-					toggleValidationClass("pass-length-min", true)
-					toggleValidationClass("pass-length-max", true)
+
+					toggleValidationClass('pass-lower', true)
+					toggleValidationClass('pass-upper', true)
+					toggleValidationClass('pass-number', true)
+					toggleValidationClass('pass-special', true)
+					toggleValidationClass('pass-length-min', true)
+					toggleValidationClass('pass-length-max', true)
 
 					changePassLogout()
-				});
-				}
-			},
-			}).fail(() => {
-				let password = document.getElementById('old-password-input')
-				password.setCustomValidity('Incorrect Password')
-			});
-	}
-		
+				})
+			}
+		},
+	}).fail(() => {
+		let password = document.getElementById('old-password-input')
+		password.setCustomValidity('Incorrect Password')
+	})
+}
