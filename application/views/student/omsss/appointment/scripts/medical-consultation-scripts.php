@@ -26,6 +26,7 @@
 <script src="<?= base_url() ?>public/js/pages/sweetalerts.init.js"></script>
 
 <!-- medical consultation ajax -->
+<script src="https://www.google.com/recaptcha/api.js?render=6LfBbEgnAAAAAFJ-ELYeg_wF-l5VX5G52W55Dnx2"></script>
 <script src="<?= base_url() ?>public/js/ajax/student/OMSSS/view-medical-appointment.ajax.js"></script>
 
 <!-- App js -->

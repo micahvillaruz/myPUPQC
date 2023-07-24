@@ -68,7 +68,33 @@ $(() => {
 
 	$('#addMedicalAppointment').on('click', function (e) {
 		e.preventDefault() // prevent page refresh
-		addNewMedicalCase(calendar)
+
+		grecaptcha.ready(function () {
+			grecaptcha
+				.execute('6LfBbEgnAAAAAFJ-ELYeg_wF-l5VX5G52W55Dnx2', {
+					action: 'submit',
+				})
+				.then(function (token) {
+					const data = {
+						recaptchaToken: token,
+					}
+					$.ajax({
+						url: apiURL + `verify-recaptcha`,
+						type: 'POST',
+						data: data,
+						success: (result) => {
+							if (result.success) {
+								addNewMedicalCase(calendar)
+							} else {
+								Toast.fire({
+									icon: 'info',
+									title: 'Please verify that you are not a robot!',
+								})
+							}
+						},
+					})
+				})
+		})
 	})
 })
 

@@ -68,7 +68,37 @@ $(function () {
 	$('#update_patient_information').on('click', function (e) {
 		e.preventDefault() // prevent page refresh
 		// pass data to API for updating of student's info
-		editPatientInformationAJAX(pond)
+
+		grecaptcha.ready(function () {
+			grecaptcha
+				.execute('6LfBbEgnAAAAAFJ-ELYeg_wF-l5VX5G52W55Dnx2', {
+					action: 'submit',
+				})
+				.then(function (token) {
+					const data = {
+						recaptchaToken: token,
+					}
+
+					console.log(token)
+
+					$.ajax({
+						url: apiURL + `verify-recaptcha`,
+						type: 'POST',
+						data: data,
+						success: (result) => {
+							console.log(result)
+							if (result.success) {
+								editPatientInformationAJAX(pond)
+							} else {
+								Toast.fire({
+									icon: 'info',
+									title: 'Please verify that you are not a robot!',
+								})
+							}
+						},
+					})
+				})
+		})
 	})
 	const checkbox = document.getElementById('formCheck1')
 	const input = document.getElementById('emergency_contact_address')
