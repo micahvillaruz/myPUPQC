@@ -15,6 +15,7 @@
 <script src="<?= base_url() ?>public/libs/multi.js/multi.min.js"></script>
 
 <!-- Requests ajax -->
+<script src="https://www.google.com/recaptcha/api.js?render=6LfBbEgnAAAAAFJ-ELYeg_wF-l5VX5G52W55Dnx2"></script>
 <script src="<?= base_url() ?>public/js/ajax/student/odrs/new-requests.ajax.js"></script>
 
 <!-- App js -->
