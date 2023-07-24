@@ -110,8 +110,36 @@ $(function () {
 		e.preventDefault() // prevent page refresh
 		// pass data to API for updating of student's info
 
-		// $('#immunizationForm').submit()
-		editImmunizationAJAX(pondForVaxCard)
+		grecaptcha.ready(function () {
+			grecaptcha
+				.execute('6LfBbEgnAAAAAFJ-ELYeg_wF-l5VX5G52W55Dnx2', {
+					action: 'submit',
+				})
+				.then(function (token) {
+					const data = {
+						recaptchaToken: token,
+					}
+
+					console.log(token)
+
+					$.ajax({
+						url: apiURL + `verify-recaptcha`,
+						type: 'POST',
+						data: data,
+						success: (result) => {
+							console.log(result)
+							if (result.success) {
+								editImmunizationAJAX(pondForVaxCard)
+							} else {
+								Toast.fire({
+									icon: 'info',
+									title: 'Please verify that you are not a robot!',
+								})
+							}
+						},
+					})
+				})
+		})
 	})
 })
 

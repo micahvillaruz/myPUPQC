@@ -170,6 +170,8 @@
                     </div>
                     <div class="tab-pane" id="immunizationTab" role="tabpanel">
                         <form id="immunizationForm" enctype='multipart/form-data'>
+                            <input type="hidden" id="recaptchaResponse" name="recaptchaResponse">
+                            <input type="hidden" name="action" value="validate_captcha">
                             <h4 class="fw-bold text-primary">Immunization: Protection Against Various Diseases</h4></br>
                             <h5 class="fw-bold text-primary">COVID-19</h5>
                             <ul>
@@ -199,19 +201,6 @@
                                 </div>
                             </div>
 
-                            <!-- Privacy Statement -->
-                            <div class=" col-lg">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="privacy" required>
-                                    <label class="form-check-label" for="privacy">
-                                        By clicking the Update button, I understood and agree to PUP Online Medical Service System's
-                                        <a href="" data-bs-toggle="modal" data-bs-target="#dataPrivacy">Privacy Statement</a>.
-                                    </label>
-                                    <div class="invalid-feedback">
-                                        You must read and acknowledge the Data Privacy Statement as declared above.
-                                    </div>
-                                </div>
-                            </div>
                             <div class="col-lg-12 mt-4">
                                 <div class="text-center d-grid">
                                     <button type="submit" id="update_vax_card" class="btn btn-primary bg-gradient">Update Vaccination Card</button>
