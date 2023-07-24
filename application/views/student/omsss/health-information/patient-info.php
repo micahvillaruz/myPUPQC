@@ -170,8 +170,6 @@
                     </div>
                     <div class="tab-pane" id="immunizationTab" role="tabpanel">
                         <form id="immunizationForm" enctype='multipart/form-data'>
-                            <input type="hidden" id="recaptchaResponse" name="recaptchaResponse">
-                            <input type="hidden" name="action" value="validate_captcha">
                             <h4 class="fw-bold text-primary">Immunization: Protection Against Various Diseases</h4></br>
                             <h5 class="fw-bold text-primary">COVID-19</h5>
                             <ul>
