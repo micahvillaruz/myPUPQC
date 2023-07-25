@@ -184,7 +184,7 @@
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="hstack gap-2 justify-content-center">
-                                                    <a role="button" href="<?= base_url() ?>student/profile" class="btn btn-ghost-primary waves-effect waves-light w-100">Cancel</a>
+                                                    <a role="button" href="<?= base_url() ?>pupstaff/profile" class="btn btn-ghost-primary waves-effect waves-light w-100">Cancel</a>
                                                     <button type="submit" class="btn btn-primary w-100">Update</button>
                                                 </div>
                                             </div>
