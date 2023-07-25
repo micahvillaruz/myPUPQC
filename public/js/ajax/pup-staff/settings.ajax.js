@@ -46,12 +46,16 @@ editProfile = () => {
 				let birthDateFormatted = `${moment(birth_date).format('LL')}`
 				$('#birth_date').val(birthDateFormatted)
 				$('#gender').val(data.gender)
+				$('#civil_status').val(data.civil_status)
+				$('#citizenship').val(data.citizenship)
+				$('#religion').val(data.religion)
+				$('#email_address').val(data.email_address)
 				$('#contact_number').val(data.contact_number)
 				$('#house_street').val(data.house_street)
-				$('#barangay').val(data.barangay)
-				$('#municipality').val(data.municipality)
-				$('#province').val(data.province)
-				$('#region').val(data.region)
+				$('#region_detail').html(`<b>Region</b>: ${data.region}`)
+				$('#province_detail').html(`<b>Province</b>: ${data.province}`)
+				$('#municipality_detail').html(`<b>Municipality</b>: ${data.municipality}`)
+				$('#barangay_detail').html(`<b>Barangay</b>: ${data.barangay}`)
 			}
 		},
 	}).fail(() => console.error('There was an error in retrieving PUP Staff data'))
@@ -69,15 +73,29 @@ editProfileAJAX = () => {
 			middle_name: document.getElementById('middle_name').value,
 			last_name: document.getElementById('last_name').value,
 			extension_name: document.getElementById('extension_name').value,
-			contact_number: form.get('contact_number'),
-			birth_date: form.get('birth_date'),
 			gender: form.get('gender'),
+			birth_date: document.getElementById('birth_date').value,
+			civil_status: form.get('civil_status'),
+			citizenship: form.get('citizenship'),
+			religion: form.get('religion'),
+			contact_number: form.get('contact_number'),
+			email_address: form.get('email_address'),
 			house_street: form.get('house_street'),
-			barangay: form.get('barangay'),
-			municipality: form.get('municipality'),
-			province: form.get('province'),
-			region: form.get('region'),
 		}
+
+		if (
+			$('#region option:selected').text() !== 'Select Region' &&
+			$('#province option:selected').text() !== 'Select Province' &&
+			$('#municipality option:selected').text() !== 'Select City/Municipality' &&
+			$('#barangay option:selected').text() !== 'Select Barangay'
+		) {
+			data['region'] = $('#region option:selected').text()
+			data['province'] = $('#province option:selected').text()
+			data['municipality'] = $('#municipality option:selected').text()
+			data['barangay'] = $('#barangay option:selected').text()
+		}
+
+		console.log(data)
 
 		$.ajax({
 			url: apiURL + `pup_staff/info`,
@@ -91,7 +109,7 @@ editProfileAJAX = () => {
 						icon: 'success',
 						title: 'Update Profile Successfully!',
 					}).then(function () {
-						loadProfile()
+						window.location.href = `${baseURL}pupstaff/profile`
 					})
 				}
 			},

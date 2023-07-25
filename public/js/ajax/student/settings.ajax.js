@@ -52,10 +52,10 @@ editPersonalInfo = () => {
 				$('#contact_number').val(data.contact_number)
 				$('#email_address').val(data.email_address)
 				$('#house_street').val(data.house_street)
-				$('#barangay').val(data.barangay)
-				$('#municipality').val(data.municipality)
-				$('#province').val(data.province)
-				$('#region').val(data.region)
+				$('#region_detail').html(`<b>Region</b>: ${data.region}`)
+				$('#province_detail').html(`<b>Province</b>: ${data.province}`)
+				$('#municipality_detail').html(`<b>Municipality</b>: ${data.municipality}`)
+				$('#barangay_detail').html(`<b>Barangay</b>: ${data.barangay}`)
 			}
 		},
 	}).fail(() => console.error('There was an error in retrieving student data'))
@@ -81,13 +81,19 @@ editPersonalInfoAJAX = () => {
 			contact_number: form.get('contact_number'),
 			email_address: form.get('email_address'),
 			house_street: form.get('house_street'),
-			barangay: form.get('barangay'),
-			municipality: form.get('municipality'),
-			province: form.get('province'),
-			region: form.get('region'),
 		}
 
-		console.log(data)
+		if (
+			$('#region option:selected').text() !== 'Select Region' &&
+			$('#province option:selected').text() !== 'Select Province' &&
+			$('#municipality option:selected').text() !== 'Select City/Municipality' &&
+			$('#barangay option:selected').text() !== 'Select Barangay'
+		) {
+			data['region'] = $('#region option:selected').text()
+			data['province'] = $('#province option:selected').text()
+			data['municipality'] = $('#municipality option:selected').text()
+			data['barangay'] = $('#barangay option:selected').text()
+		}
 
 		$.ajax({
 			url: apiURL + `student/info`,
