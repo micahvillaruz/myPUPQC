@@ -1,6 +1,5 @@
 $(function () {
 	loadResearchRecordsTable()
-	loadCapstoneRecordsTable()
 
 	$('#rejectResearchForm').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
@@ -46,7 +45,7 @@ loadResearchRecordsTable = () => {
 			],
 			bDestroy: true,
 			ajax: {
-				url: apiURL + 'researchcop/research-pending/research',
+				url: apiURL + 'researchcop/research-pending/allresearch',
 				type: 'GET',
 				ContentType: 'application/x-www-form-urlencoded',
 			},
@@ -54,16 +53,18 @@ loadResearchRecordsTable = () => {
 				// Title
 				{
 					data: null,
+					width: '20%',
 					class: 'text-center',
 					render: (data) => {
 						const rTitle = data.research_title
-						return `${rTitle}`
+						return `<div style="width: 200px; white-space: nowrap; overflow-y: auto;">${rTitle}</div>`
 					},
 				},
 
 				// Author name
 				{
 					data: null,
+					width: '5%',
 					class: 'text-center',
 					render: (data) => {
 						const rAuthor = data.research_author
@@ -74,10 +75,11 @@ loadResearchRecordsTable = () => {
 				// Program
 				{
 					data: null,
+					width: '40%',
 					class: 'text-center',
 					render: (data) => {
 						const rProgram = data.research_program
-						return `${rProgram}`
+						return `<div style="width: 400px; white-space: nowrap; overflow-y: auto;" title="${rProgram}">${rProgram}</div>`
 					},
 				},
 
@@ -91,13 +93,24 @@ loadResearchRecordsTable = () => {
 					},
 				},
 
-                // Year Published
+                // Research Category
 				{
 					data: null,
 					class: 'text-center',
 					render: (data) => {
-						const rYearPub = data.research_date_accomplished
-						return `${rYearPub}`
+						let categ = data.research_category
+						if (data.research_category === 'Research'){
+							categ = `<span class="badge rounded-pill bg-success">Research</span>`
+						}
+						else{
+							categ = `<span class="badge rounded-pill bg-info">Capstone</span>`
+						}
+
+						return `
+						<div class="dropdown d-inline-block">
+						${categ}
+						</div>
+						`
 					},
 				},
 
@@ -144,128 +157,7 @@ loadResearchRecordsTable = () => {
 	}
 }
 
-loadCapstoneRecordsTable = () => {
-	const dt = $('#capstone-pending-datatable')
 
-	$.ajaxSetup({
-		headers: AJAX_HEADERS,
-	})
-
-	if (dt.length) {
-		dt.DataTable({
-			dom:
-				"<'row'<'col-xl-12 mb-2'B>>" +
-				"<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
-				"<'row'<'col-sm-12'tr>>" +
-				"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
-			buttons: [
-				{
-					extend: 'print',
-					text: '<i class="ri-printer-fill"></i> Print',
-					exportOptions: {
-						columns: [0, 1, 2, 3, 4],
-					},
-				},
-			],
-			bDestroy: true,
-			ajax: {
-				url: apiURL + 'researchcop/research-pending/capstone',
-				type: 'GET',
-				ContentType: 'application/x-www-form-urlencoded',
-			},
-			columns: [
-				// Title
-				{
-					data: null,
-					class: 'text-center',
-					render: (data) => {
-						const rTitle = data.research_title
-						return `${rTitle}`
-					},
-				},
-
-				// Author name
-				{
-					data: null,
-					class: 'text-center',
-					render: (data) => {
-						const rAuthor = data.research_author
-						return `${rAuthor}`
-					},
-				},
-
-				// Program
-				{
-					data: null,
-					class: 'text-center',
-					render: (data) => {
-						const rProgram = data.research_program
-						return `${rProgram}`
-					},
-				},
-
-				// Type
-				{
-					data: null,
-					class: 'text-center',
-					render: (data) => {
-						const rType = data.research_type
-						return `${rType}`
-					},
-				},
-
-                // Year Published
-				{
-					data: null,
-					class: 'text-center',
-					render: (data) => {
-						const rYearPub = data.research_date_accomplished
-						return `${rYearPub}`
-					},
-				},
-
-				//Action
-				{
-					data: null,
-					class: 'text-center',
-					render: (data) => {
-						return `
-    <div class="dropdown d-inline-block">
-    <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewResearchPending('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#viewResearchPending"><i class="ri-eye-fill fs-5"></i></button>
-	<button type="button" class="btn btn-success btn-icon waves-effect waves-light" onclick="approveResearchRecord('${data.research_id}')"><i class="ri-check-line"></i></button>
-	<button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="rejectResearchRecord('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#rejectResearchModal"><i class="ri-close-line"></i></button>
-  </div>
-    `
-					},
-				},
-
-				// Research Document
-				{
-					data: null,
-					class: 'text-center',
-					render: (data) => {
-						let ResearchDocu = data.research_pdf
-						if (data.research_pdf == null) {
-							ResearchDocu = `<span class="badge rounded-pill bg-danger">Not Available</span>`
-						}
-						else{
-							ResearchDocu = `<button type="button" class="btn btn-success btn-label waves-effect waves-light" onclick="viewResearchDocument('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#research_document_preview"><i class="ri-file-line label-icon align-middle fs-16 me-2"></i>View</button>`
-						}
-
-						return `
-						<div class="dropdown d-inline-block">
-						${ResearchDocu}
-						</div>
-						`
-					},
-				},
-
-			
-			],
-			order: [[0, 'asc']],
-		})
-	}
-}
 
 // View Research Pending Modal
 viewResearchPending = (research_id) => {
@@ -281,6 +173,7 @@ viewResearchPending = (research_id) => {
 				$('#view_research_title').html(researchRecord.research_title)
 				$('#view_research_co_author').html(researchRecord.research_co_author)
                 $('#view_research_adviser').html(researchRecord.research_adviser)
+				$('#view_research_date_accomplished').html(researchRecord.research_date_accomplished)
 				$('#view_research_status').html(researchRecord.research_status)
                 $('#view_research_abstract').html(researchRecord.research_abstract)
 				$('#view_research_category').html(researchRecord.research_category)
@@ -352,7 +245,6 @@ rejectResearchRecordAJAX = (research_id) => {
 
 						// Reload My Submissions Datatable
 						loadResearchRecordsTable()
-						loadCapstoneRecordsTable()
 					})
 				}
 			},
@@ -417,7 +309,6 @@ approveResearchRecord = (research_id) => {
 						}).then(function () {
 							// Reload Research Records Datatable
 							loadResearchRecordsTable()
-							loadCapstoneRecordsTable()
 						})
 					}
 				},

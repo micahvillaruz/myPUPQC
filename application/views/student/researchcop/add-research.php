@@ -1,12 +1,16 @@
 <section class="addresearch">
 <div class="card">
-         <div class="card-header align-items-center d-flex">
-                <a href="<?= base_url() ?>student/researchcop/my-submissions">
+        <div class="card-header alert alert-info border-0 rounded-top rounded-0 d-flex align-items-center" role="alert">
+                <i class="ri-add-line text-info me-2 fs-20"></i>
+                <span class="fw-bold fs-15 m-1">Add Research</span>
+         </div>
+        <div class="card-header align-items-center d-flex">
+            <a href="<?= base_url() ?>student/researchcop/my-submissions">
                 <button type="button" class="btn btn-info btn-label waves-effect waves-light">
                 <i class="ri-arrow-go-back-line label-icon align-middle fs-16 me-2" style="color: #fff;"></i>
                 Back
                 </button>
-                </a>
+            </a>
         </div>
     <div class="card-body">
         <div id="addResearchPage">
@@ -57,8 +61,10 @@
                         </select>
                     </div>
 
-                    <div class="text-end">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="col-lg-12 mt-4">
+                        <div class="text-center d-grid">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
                     </div>
                 </form>
             </div>

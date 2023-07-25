@@ -245,8 +245,8 @@
 
                     <li class="nav-item">
                     <a class="nav-link menu-link" href="<?= base_url() ?>pupstaff/researchcop/dashboard">         
-                        <i class="ri-home-line"></i>
-                        <span>Dashboard</span>
+                        <i class="ri-line-chart-line"></i>
+                        <span>Analytics</span>
                     </a>
                     </li>                   
 

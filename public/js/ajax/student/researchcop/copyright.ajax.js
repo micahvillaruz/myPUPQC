@@ -1,6 +1,5 @@
 $(function () {
 	loadResearchCopyrightTable()
-	loadCapstoneCopyrightTable()
 
 	const ResearchFileTypes = ['application/pdf']
 
@@ -67,7 +66,7 @@ loadResearchCopyrightTable = () => {
 			],
 			bDestroy: true,
 			ajax: {
-				url: apiURL + 'researchcop/my-submissions/research',
+				url: apiURL + 'researchcop/my-submissions/allresearch',
 				type: 'GET',
 				ContentType: 'application/x-www-form-urlencoded',
 			},
@@ -75,10 +74,11 @@ loadResearchCopyrightTable = () => {
 				// Title
 				{
 					data: null,
+					width: '20%',
 					class: 'text-center',
 					render: (data) => {
 						const rTitle = data.research_title
-						return `${rTitle}`
+						return `<div style="width: 200px; white-space: nowrap; overflow-y: auto;">${rTitle}</div>`
 					},
 				},
 
@@ -89,7 +89,7 @@ loadResearchCopyrightTable = () => {
 					render: (data) => {
 						let UpResearchDocu = data.copyright_pdf
 						if (data.copyright_pdf == null) {
-							UpResearchDocu = `<button type="button" class="btn btn-primary btn-label waves-effect waves-light" onclick="viewResearchRecord('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#uploadCopyrightModal"><i class="ri-copyright-line label-icon align-middle fs-16 me-2"></i>Upload</button>`
+							UpResearchDocu = `<button type="button" class="btn btn-info btn-label waves-effect waves-light" onclick="viewResearchRecord('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#uploadCopyrightModal"><i class="ri-upload-line label-icon align-middle fs-16 me-2"></i>Upload</button>`
 						}
 						else{
 							UpResearchDocu = `<button type="button" class="btn btn-success btn-label waves-effect waves-light" onclick="viewCopyrightDocument('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#copyright_document_preview"><i class="ri-file-line label-icon align-middle fs-16 me-2"></i>View</button>
@@ -101,6 +101,27 @@ loadResearchCopyrightTable = () => {
 					${UpResearchDocu}
 					</div>
     					`
+					},
+				},
+
+				// Research Category
+				{
+					data: null,
+					class: 'text-center',
+					render: (data) => {
+						let categ = data.research_category
+						if (data.research_category === 'Research'){
+							categ = `<span class="badge rounded-pill bg-success">Research</span>`
+						}
+						else{
+							categ = `<span class="badge rounded-pill bg-info">Capstone</span>`
+						}
+
+						return `
+						<div class="dropdown d-inline-block">
+						${categ}
+						</div>
+						`
 					},
 				},
 
@@ -172,130 +193,6 @@ loadResearchCopyrightTable = () => {
 	}
 }
 
-// Load  research datatables
-loadCapstoneCopyrightTable = () => {
-	const dt = $('#capstone-copyright-management-datatable')
-
-	$.ajaxSetup({
-		headers: AJAX_HEADERS,
-	})
-
-	if (dt.length) {
-		dt.DataTable({
-			dom:
-				"<'row'<'col-xl-12 mb-2'B>>" +
-				"<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
-				"<'row'<'col-sm-12'tr>>" +
-				"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
-			buttons: [
-				
-			],
-			bDestroy: true,
-			ajax: {
-				url: apiURL + 'researchcop/my-submissions/capstone',
-				type: 'GET',
-				ContentType: 'application/x-www-form-urlencoded',
-			},
-			columns: [
-				// Title
-				{
-					data: null,
-					class: 'text-center',
-					render: (data) => {
-						const rTitle = data.research_title
-						return `${rTitle}`
-					},
-				},
-
-                // Copyright Document Upload
-				{
-					data: null,
-					class: 'text-center',
-					render: (data) => {
-						let UpResearchDocu = data.copyright_pdf
-						if (data.copyright_pdf == null) {
-							UpResearchDocu = `<button type="button" class="btn btn-primary btn-label waves-effect waves-light" onclick="viewResearchRecord('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#uploadCopyrightModal"><i class="ri-copyright-line label-icon align-middle fs-16 me-2"></i>Upload</button>`
-						}
-						else{
-							UpResearchDocu = `<button type="button" class="btn btn-success btn-label waves-effect waves-light" onclick="viewCopyrightDocument('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#copyright_document_preview"><i class="ri-file-line label-icon align-middle fs-16 me-2"></i>View</button>
-							<button type="button" class="btn btn-danger btn-label waves-effect waves-light" onclick="deleteCopyrightDocument('${data.research_id}')"><i class="ri-delete-bin-line label-icon align-middle fs-16 me-2"></i>Delete</button>
-											`
-						}
-						return `
-    				<div class="dropdown d-inline-block">
-					${UpResearchDocu}
-					</div>
-    					`
-					},
-				},
-
-
-                // Research Status
-				{
-					data: null,
-					class: 'text-center',
-					render: (data) => {
-						let copyrht = data.research_type
-						if (data.research_type === 'Copyrighted'){
-							copyrht = `<span class="badge rounded-pill bg-success">Copyrighted</span>`
-						}
-						else{
-							copyrht = `<span class="badge rounded-pill bg-danger">Non-Copyrighted</span>`
-						}
-
-						return `
-						<div class="dropdown d-inline-block">
-						${copyrht}
-						</div>
-						`
-					},
-				},
-
-                // Copyright Status
-				{
-					data: null,
-					class: 'text-center',
-					render: (data) => {
-						let copyrhtsts = data.copyright_status
-						if (data.copyright_status === 'Approved'){
-							copyrhtsts = `<span class="badge rounded-pill bg-success">Copyrighted</span>`
-						}
-                        else if (data.copyright_status === 'Reviewing'){
-							copyrhtsts = `<span class="badge rounded-pill bg-warning">Reviewing</span>`
-						}
-                        else if (data.copyright_status === 'Rejected'){
-							copyrhtsts = `<span class="badge rounded-pill bg-danger">Rejected</span>`
-						}
-						else{
-							copyrhtsts = `<span class="badge rounded-pill bg-dark">No Upload</span>`
-						}
-
-						return `
-						<div class="dropdown d-inline-block">
-						${copyrhtsts}
-						</div>
-						`
-					},
-				},
-
-				// Remarks
-				{
-					data: null,
-					class: 'text-center',
-					render: (data) => {
-						return `
-						<div class="dropdown d-inline-block">
-						<button type="button" class="btn btn-success btn-icon waves-effect waves-light" onclick="viewCopyrightRemarks('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#viewCopyrightRemarks"><i class="ri-question-fill fs-5"></i></button>
-						</div>
-						`
-					},
-				},
-				
-			],
-			order: [[0, 'asc']],
-		})
-	}
-}
 
 // View Research Record Modal
 viewResearchRecord = (research_id) => {

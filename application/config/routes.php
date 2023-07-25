@@ -299,6 +299,7 @@ $route['pupstaff/evrsers/reservation-approval'] = 'pupstaff/event_approvals';
 
 $route['student/researchcop/dashboard'] = 'student/researchcop_dashboard';
 $route['student/researchcop/copyright'] = 'student/researchcop_copyright';
+$route['student/researchcop/author'] = 'student/researchcop_author';
 $route['student/researchcop/my-submissions'] = 'student/my_submissions';
 $route['student/researchcop/add-research'] = 'student/add_research';
 $route['student/researchcop/help-and-support'] = 'student/help_and_support';

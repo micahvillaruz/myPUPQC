@@ -266,8 +266,15 @@
 
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="<?= base_url() ?>student/researchcop/dashboard">
-                        <i class="ri-computer-line"></i>
-                        <span>Dashboard</span>
+                        <i class="ri-search-line"></i>
+                        <span>Research Papers</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="<?= base_url() ?>student/researchcop/author">
+                        <i class="ri-user-add-fill"></i>
+                        <span>Research Authors</span>
                     </a>
                 </li>
 

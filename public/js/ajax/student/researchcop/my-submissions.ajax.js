@@ -1,6 +1,5 @@
 $(function () {
 	loadMyResearchSubmissionsTable()
-	loadMyCapstoneSubmissionsTable()
 
 	const ResearchFileTypes = ['application/pdf']
 
@@ -87,7 +86,7 @@ loadMyResearchSubmissionsTable = () => {
 			],
 			bDestroy: true,
 			ajax: {
-				url: apiURL + 'researchcop/my-submissions/research',
+				url: apiURL + 'researchcop/my-submissions/allresearch',
 				type: 'GET',
 				ContentType: 'application/x-www-form-urlencoded',
 			},
@@ -95,10 +94,11 @@ loadMyResearchSubmissionsTable = () => {
 				// Title
 				{
 					data: null,
+					width: '20%',
 					class: 'text-center',
 					render: (data) => {
 						const rTitle = data.research_title
-						return `${rTitle}`
+						return `<div style="width: 200px; white-space: nowrap; overflow-y: auto;">${rTitle}</div>`
 					},
 				},
 
@@ -173,149 +173,24 @@ loadMyResearchSubmissionsTable = () => {
 					},
 				},
 
-				// Remarks
+				// Research Category
 				{
 					data: null,
 					class: 'text-center',
 					render: (data) => {
-						return `
-						<div class="dropdown d-inline-block">
-						<button type="button" class="btn btn-success btn-icon waves-effect waves-light" onclick="viewResearchRemarks('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#viewResearchRemarks"><i class="ri-question-fill fs-5"></i></button>
-						</div>
-						`
-					},
-				},
-
-				// Actions
-				{
-					data: null,
-					class: 'text-center',
-					render: (data) => {
-						let ResearchDocu = data.research_status
-						if (data.research_status == 'Rejected') {
-							ResearchDocu = `<button type="button" class="btn btn-success btn-warning waves-effect waves-light" onclick="resubmitResearch('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#resubmitResearchModal"><i class="ri-edit-fill fs-5"></i></button>`
+						let categ = data.research_category
+						if (data.research_category === 'Research'){
+							categ = `<span class="badge rounded-pill bg-success">Research</span>`
 						}
 						else{
-							ResearchDocu = ``
+							categ = `<span class="badge rounded-pill bg-info">Capstone</span>`
 						}
 
 						return `
 						<div class="dropdown d-inline-block">
-						${ResearchDocu}
+						${categ}
 						</div>
 						`
-					},
-				},
-				
-			],
-			order: [[0, 'asc']],
-		})
-	}
-}
-
-// Load  capstone datatables
-loadMyCapstoneSubmissionsTable = () => {
-	const dt = $('#my-submissions-capstone-datatable')
-
-	$.ajaxSetup({
-		headers: AJAX_HEADERS,
-	})
-
-	if (dt.length) {
-		dt.DataTable({
-			dom:
-				"<'row'<'col-xl-12 mb-2'B>>" +
-				"<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
-				"<'row'<'col-sm-12'tr>>" +
-				"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
-			buttons: [
-				
-			],
-			bDestroy: true,
-			ajax: {
-				url: apiURL + 'researchcop/my-submissions/capstone',
-				type: 'GET',
-				ContentType: 'application/x-www-form-urlencoded',
-			},
-			columns: [
-				// Title
-				{
-					data: null,
-					class: 'text-center',
-					render: (data) => {
-						const rTitle = data.research_title
-						return `${rTitle}`
-					},
-				},
-
-				// Research Information
-				{
-					data: null,
-					class: 'text-center',
-					render: (data) => {
-						return `
-    <div class="dropdown d-inline-block">
-    <button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewResearchRecord('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#viewResearchRecord"><i class="ri-eye-fill fs-5"></i></button>
-	</div>
-    `
-					},
-				},
-
-                // Status
-				{
-					data: null,
-					class: 'text-center',
-					render: (data) => {
-						let activationBtn = data.research_status
-						if (data.research_status === 'Approved') {
-							activationBtn = `<span class="badge rounded-pill bg-success">Approved</span>`
-						}
-						else if (data.research_status === 'Pending') {
-							activationBtn = `<span class="badge rounded-pill bg-warning">Pending</span>`
-						}
-						else if (data.research_status === 'Rejected') {
-							activationBtn = `<span class="badge rounded-pill bg-danger">Rejected</span>`
-						}
-						else{
-							activationBtn = `<span class="badge rounded-pill bg-dark">Archived</span>`
-						}
-
-						let copyrht = data.research_type
-						if (data.research_type === 'Copyrighted'){
-							copyrht = `<span class="badge rounded-pill bg-success">Copyrighted</span>`
-						}
-						else{
-							copyrht = `<span class="badge rounded-pill bg-danger">Non-Copyrighted</span>`
-						}
-
-						return `
-						<div class="dropdown d-inline-block">
-						${activationBtn}
-						${copyrht}
-						</div>
-						`
-					},
-				},
-
-				// Research Upload
-				{
-					data: null,
-					class: 'text-center',
-					render: (data) => {
-						let UpResearchDocu = data.research_pdf
-						if (data.research_pdf == null) {
-							UpResearchDocu = `<button type="button" class="btn btn-info btn-label waves-effect waves-light" onclick="viewResearchRecord('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#uploadResearchModal"><i class="ri-file-upload-line label-icon align-middle fs-16 me-2"></i>Upload</button>`
-						}
-						else{
-							UpResearchDocu = `<button type="button" class="btn btn-success btn-label waves-effect waves-light" onclick="viewResearchDocument('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#research_document_preview"><i class="ri-file-line label-icon align-middle fs-16 me-2"></i>View</button>
-							<button type="button" class="btn btn-danger btn-label waves-effect waves-light" onclick="deleteResearchDocument('${data.research_id}')"><i class="ri-delete-bin-line label-icon align-middle fs-16 me-2"></i>Delete</button>
-											`
-						}
-						return `
-    				<div class="dropdown d-inline-block">
-					${UpResearchDocu}
-					</div>
-    					`
 					},
 				},
 
@@ -358,6 +233,7 @@ loadMyCapstoneSubmissionsTable = () => {
 		})
 	}
 }
+
 
 // View Research Record Modal
 viewResearchRecord = (research_id) => {
@@ -579,7 +455,6 @@ resubmitResearchAJAX = (research_id) => {
 
 						// Reload Student Datatable
 						loadMyResearchSubmissionsTable()
-						loadMyCapstoneSubmissionsTable()
 					})
 				}
 			},
