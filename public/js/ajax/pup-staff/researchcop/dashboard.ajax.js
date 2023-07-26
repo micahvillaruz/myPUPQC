@@ -10,6 +10,8 @@ charts = () => {
 	chartFive()
 	chartSix()
 
+	donutOne()
+
 }
 
 chartOne = () => {
@@ -123,5 +125,77 @@ chartSix = () => {
 		const htmlContent = `<h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value">${researchCount}</span></h2>`
 
 		chartNumberSix.innerHTML = htmlContent
+	})
+}
+
+donutOne = () => {
+	var donutOne = echarts.init(document.getElementById('donutChartOne'))
+
+	$.ajax({
+		type: 'GET',
+		cache: false,
+		url: apiURL + 'researchcop/programcharts',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+	}).then((result) => {
+		const data = result.data.program_count
+
+		// Convert data object to array of objects
+		const chartData = Object.entries(data).map(([name, value], index) => {
+			return {
+				value: value,
+				name: name,
+			}
+		})
+
+		// Create options object for chart
+		const option = {
+			title: {
+				text: 'Research Programs',
+				subtext: 'All Programs',
+				left: 'center',
+			},
+			toolbox: {
+				show: true,
+				feature: {
+					saveAsImage: {
+						show: true,
+						title: 'Save as Image',
+						name: `(myPUPQC) donutOne_${new Date().toISOString().slice(0, 10)}research_program_count`,
+					},
+				},
+			},
+			legend: {
+				orient: 'vertical',
+				left: 'left',
+				scroll: true,
+			},
+			tooltip: {
+				trigger: 'item',
+				formatter: '<b>{b}</b>: {c} ({d}%)',
+			},
+			series: [
+				{
+					type: 'pie',
+					radius: ['50%', '70%'],
+					itemStyle: {
+						borderRadius: 10,
+						borderColor: '#fff',
+						borderWidth: 2,
+					},
+					emphasis: {
+						label: {
+							show: true,
+							fontSize: 16,
+							fontWeight: 'bold',
+						},
+					},
+					data: chartData.sort((a, b) => b.value - a.value),
+				},
+			],
+		}
+
+		// Set options to chart
+		donutOne.setOption(option)
 	})
 }
