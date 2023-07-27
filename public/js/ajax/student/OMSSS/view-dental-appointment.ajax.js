@@ -1,4 +1,51 @@
 $(function () {
+	$.ajax({
+		type: 'GET',
+		url: apiURL + 'student/view/dpa_agreement',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			if (result.data.length == 0) {
+				$('#dataPrivacy').modal('show')
+				$('#addDentalAppointment').attr('disabled', true)
+			} else {
+				const signedDate = moment(result.data.is_signed).format('MMMM D, YYYY h:mm A')
+				$('#dataPrivacy').modal('hide')
+				$('#checkDataPrivacy').html(`
+                <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading"><i class="mdi mdi-checkbox-marked-circle-outline"></i> You are DPA Compliant!</h4>
+                <p class="mb-0">You can able to access all systems for myPUPQC. You have signed the Data Collection Policy and Warranty for Reporting Agreement on:
+                    <span class="text-primary" id="dpaSignedDate">${signedDate}</span>
+                </p>
+                </div>`)
+			}
+		},
+	})
+
+	$('#dpaDisagreeButton').click(function () {
+		$('#checkDataPrivacy').html(`
+        <div class="alert alert-info" role="alert">
+            <h4 class="alert-heading"><i class="mdi mdi-information"></i> Data Privacy Agreement</h4>
+            <p>To use all of the systems in myPUPQC, you must agree to the Data Collection Policy and Warranty for Reporting Agreement. If you are seeing this message, that means you haven't agreed to the form.</p>
+            <hr>
+            <p class="mb-0">To access the form again,
+                <span class="text-primary" data-bs-toggle="modal" data-bs-target="#dataPrivacy" role="button">click here.</span>
+            </p>
+        </div>`)
+	})
+
+	$('#dpaAgreeButton').click(function () {
+		$.ajax({
+			type: 'POST',
+			url: apiURL + 'student/submit/dpa_agreement',
+			headers: AJAX_HEADERS,
+			success: (result) => {
+				if (result.data.is_signed) {
+					location.reload()
+				}
+			},
+		})
+	})
+
 	verifyDentalAppointment()
 
 	const currentDate = new Date()

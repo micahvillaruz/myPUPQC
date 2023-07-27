@@ -142,17 +142,9 @@
 
                             <!-- Privacy Statement -->
                             <div class=" col-lg">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="privacy" required>
-                                    <label class="form-check-label" for="privacy">
-                                        By clicking the Update button, I understood and agree to PUP Online Medical Service System's
-                                        <a href="" data-bs-toggle="modal" data-bs-target="#dataPrivacy">Privacy Statement</a>.
-                                    </label>
-                                    <div class="invalid-feedback">
-                                        You must read and acknowledge the Data Privacy Statement as declared above.
-                                    </div>
-                                </div>
+                                <div id="checkDataPrivacy"></div>
                             </div>
+
                             <div class="col-lg-12 mt-4">
                                 <div class="text-center d-grid">
                                     <button type="submit" id="update_patient_information" class="btn btn-primary bg-gradient">Update Patient Information</button>
@@ -189,6 +181,11 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+
+                            <!-- Privacy Statement -->
+                            <div class=" col-lg">
+                                <div id="checkDataPrivacy2"></div>
                             </div>
 
                             <div class="col-lg-12 mt-4">

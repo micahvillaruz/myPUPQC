@@ -1,4 +1,7 @@
 <div class="row">
+    <div class="col-xs-12 mb-1">
+        <div id="checkDataPrivacy"></div>
+    </div>
     <div class="col-xs-12 col-xxl-6">
         <div class="card card-animate">
             <div class="card-body p-0">
@@ -151,7 +154,7 @@
             <div class="rounded bg-primary bg-opacity-50 d-flex justify-content-center align-items-center flex-column" style="height: 300px;">
                 <h1 class="pb-4 text-white fw-medium align-center text-center text-uppercase">Online Document Request System</h1>
                 <div class="d-flex justify-content-center">
-                <button onclick="window.location.href='<?= base_url() ?>student/odrs/request'" class="mb-5 btn btn-secondary waves-effect waves-light"> <i class="ri-article-line me-2"></i> Request a document</button>
+                    <button onclick="window.location.href='<?= base_url() ?>student/odrs/request'" class="mb-5 btn btn-secondary waves-effect waves-light"> <i class="ri-article-line me-2"></i> Request a document</button>
                 </div>
             </div>
         </div>
@@ -185,7 +188,7 @@
                         With regular dental check-ups, our dentists can help and give you a perfect treatment plan towards a perfect beautiful smile.
                     </p>
                     <div class="my-3">
-                    <button onclick="window.location.href='<?= base_url() ?>student/omsss/dentist-services'" class="btn fw-medium btn-secondary waves-effect waves-light"> <i class="las la-tooth me-2"></i> Book a Dental Consultation Appointment</button>
+                        <button onclick="window.location.href='<?= base_url() ?>student/omsss/dentist-services'" class="btn fw-medium btn-secondary waves-effect waves-light"> <i class="las la-tooth me-2"></i> Book a Dental Consultation Appointment</button>
                     </div>
                     <img src="<?= base_url() ?>public/images/dentist.jpg" class="img-fluid" style="height: 200px;" />
                 </div>
@@ -202,7 +205,7 @@
                         Our experienced psychologist offer free counselling support. Talk to us now if you're having emotional or psychological issues.
                     </p>
                     <div class="my-3">
-                    <button onclick="window.location.href='<?= base_url() ?>student/omsss/guidance-services'" class="btn fw-medium btn-secondary waves-effect waves-light"> <i class="mdi mdi-brain me-2"></i> Book a Guidance Consultation Appointment</button>
+                        <button onclick="window.location.href='<?= base_url() ?>student/omsss/guidance-services'" class="btn fw-medium btn-secondary waves-effect waves-light"> <i class="mdi mdi-brain me-2"></i> Book a Guidance Consultation Appointment</button>
                     </div>
                     <img src="<?= base_url() ?>public/images/guidance.jpg" class="img-fluid" style="height: 200px;" />
                 </div>

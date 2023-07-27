@@ -24,6 +24,7 @@ class Student extends CI_Controller
         $this->load->view('partials/head-css');
         $this->load->view('partials/student/topbar');
         $this->load->view('partials/student/sidebar');
+        $this->load->view('student/components/data_privacy');
         $this->load->view('partials/page-title', ["page_title" => "Student", "title" => "Dashboard"]);
         $this->load->view('student/dashboard');
         $this->load->view('partials/footer');
@@ -65,6 +66,7 @@ class Student extends CI_Controller
         $this->load->view('partials/head-css');
         $this->load->view('partials/student/topbar');
         $this->load->view('partials/student/sidebar');
+        $this->load->view('student/components/data_privacy');
         $this->load->view('partials/page-title', ["page_title" => "ODRS", "title" => "New Request"]);
         $this->load->view('student/odrs/new-request');
         $this->load->view('student/odrs/footer');
@@ -110,6 +112,7 @@ class Student extends CI_Controller
         $this->load->view('partials/head-css');
         $this->load->view('partials/student/topbar');
         $this->load->view('partials/student/sidebar');
+        $this->load->view('student/components/data_privacy');
         $this->load->view('partials/page-title', ["page_title" => "Medical Services", "title" => "Patient Information"]);
         $this->load->view('student/omsss/health-information/patient-info');
         $this->load->view('student/omsss/footer');
@@ -125,6 +128,7 @@ class Student extends CI_Controller
         $this->load->view('partials/head-css');
         $this->load->view('partials/student/topbar');
         $this->load->view('partials/student/sidebar');
+        $this->load->view('student/components/data_privacy');
         $this->load->view('partials/page-title', ["page_title" => "Medical Services", "title" => "Health History"]);
         $this->load->view('student/omsss/health-information/health-history');
         $this->load->view('student/omsss/footer');
@@ -139,6 +143,7 @@ class Student extends CI_Controller
         $this->load->view('partials/head-css');
         $this->load->view('partials/student/topbar');
         $this->load->view('partials/student/sidebar');
+        $this->load->view('student/components/data_privacy');
         $this->load->view('partials/page-title', ["page_title" => "Medical Services", "title" => "Medical Consultation"]);
         $this->load->view('student/omsss/appointment/medical-consultation');
         $this->load->view('student/omsss/footer');
@@ -154,6 +159,7 @@ class Student extends CI_Controller
         $this->load->view('partials/head-css');
         $this->load->view('partials/student/topbar');
         $this->load->view('partials/student/sidebar');
+        $this->load->view('student/components/data_privacy');
         $this->load->view('partials/page-title', ["page_title" => "Dental Services", "title" => "Dental Consultation"]);
         $this->load->view('student/omsss/appointment/dental-consultation');
         $this->load->view('student/omsss/footer');
@@ -169,6 +175,7 @@ class Student extends CI_Controller
         $this->load->view('partials/head-css');
         $this->load->view('partials/student/topbar');
         $this->load->view('partials/student/sidebar');
+        $this->load->view('student/components/data_privacy');
         $this->load->view('partials/page-title', ["page_title" => "Guidance Services", "title" => "Guidance Consultation"]);
         $this->load->view('student/omsss/appointment/guidance-consultation');
         $this->load->view('student/omsss/footer');
@@ -455,6 +462,7 @@ class Student extends CI_Controller
         $this->load->view('partials/head-css');
         $this->load->view('partials/student/topbar');
         $this->load->view('partials/student/sidebar');
+        $this->load->view('student/components/data_privacy');
         $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Add Research"]);
         $this->load->view('student/researchcop/add-research');
         $this->load->view('partials/footer');

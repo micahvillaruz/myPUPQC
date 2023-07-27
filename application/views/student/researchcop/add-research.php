@@ -1,19 +1,19 @@
 <section class="addresearch">
-<div class="card">
+    <div class="card">
         <div class="card-header alert alert-info border-0 rounded-top rounded-0 d-flex align-items-center" role="alert">
-                <i class="ri-add-line text-info me-2 fs-20"></i>
-                <span class="fw-bold fs-15 m-1">Add Research</span>
-         </div>
+            <i class="ri-add-line text-info me-2 fs-20"></i>
+            <span class="fw-bold fs-15 m-1">Add Research</span>
+        </div>
         <div class="card-header align-items-center d-flex">
             <a href="<?= base_url() ?>student/researchcop/my-submissions">
                 <button type="button" class="btn btn-info btn-label waves-effect waves-light">
-                <i class="ri-arrow-go-back-line label-icon align-middle fs-16 me-2" style="color: #fff;"></i>
-                Back
+                    <i class="ri-arrow-go-back-line label-icon align-middle fs-16 me-2" style="color: #fff;"></i>
+                    Back
                 </button>
             </a>
         </div>
-    <div class="card-body">
-        <div id="addResearchPage">
+        <div class="card-body">
+            <div id="addResearchPage">
                 <form id="addResearchForm" class="needs-validation" novalidate>
                     <div class="mb-3">
                         <input type="hidden" id="r_author" name="r_author">
@@ -38,36 +38,38 @@
                     </div>
                     <div class="mb-3">
                         <label for="r_adviser" class="form-label">Adviser<span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="r_adviser" name="r_adviser" placeholder="Enter Research Adviser" required/>
+                        <input type="text" class="form-control" id="r_adviser" name="r_adviser" placeholder="Enter Research Adviser" required />
                     </div>
                     <div class="mb-3">
                         <label for="r_program" class="form-label">Program<span class="text-danger">*</span></label>
                         <select class="form-select mb-3" id="r_program" name="r_program" required>
                             <option selected disabled value="">Select Program</option>
                             <option value="Bachelor of Public Administration Major in Public Financial Management Diploma in Office Management Technology">[DOMT] Diploma in Office Management Technology</option>
-                                        <option value="Bachelor of Science in Business Administration Major in Entrepreneurship">[ENTREP] Bachelor of Science in Business Administration Major in Entrepreneurship</option>
-                                        <option value="Bachelor of Science in Business Administration Major in Human Resource Development Management">[HRDM] Bachelor of Science in Business Administration Major in Human Resource Development Management</option>
-                                        <option value="Bachelor of Science in Business Administration Major in Marketing Management">[MM] Bachelor of Science in Business Administration Major in Marketing Management</option>
-                                        <option value="Bachelor of Science in Business Teacher's Education">[BTLED] Bachelor of Science in Business Teacher's Education</option>
-                                        <option value="Bachelor of Science in Information Technology">[IT] Bachelor of Science in Information Technology</option>
+                            <option value="Bachelor of Science in Business Administration Major in Entrepreneurship">[ENTREP] Bachelor of Science in Business Administration Major in Entrepreneurship</option>
+                            <option value="Bachelor of Science in Business Administration Major in Human Resource Development Management">[HRDM] Bachelor of Science in Business Administration Major in Human Resource Development Management</option>
+                            <option value="Bachelor of Science in Business Administration Major in Marketing Management">[MM] Bachelor of Science in Business Administration Major in Marketing Management</option>
+                            <option value="Bachelor of Science in Business Teacher's Education">[BTLED] Bachelor of Science in Business Teacher's Education</option>
+                            <option value="Bachelor of Science in Information Technology">[IT] Bachelor of Science in Information Technology</option>
                         </select>
                     </div>
                     <div class="mb-3">
                         <label for="r_category" class="form-label">Category<span class="text-danger">*</span></label>
                         <select class="form-select mb-3" id="r_category" name="r_category" required>
                             <option selected disabled value="">Select Category</option>
-                                <option value="Research">Research</option>
-                                <option value="Capstone">Capstone</option>
+                            <option value="Research">Research</option>
+                            <option value="Capstone">Capstone</option>
                         </select>
                     </div>
 
+                    <div id="checkDataPrivacy"></div>
+
                     <div class="col-lg-12 mt-4">
                         <div class="text-center d-grid">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary" id="addResearchButton">Submit</button>
                         </div>
                     </div>
                 </form>
             </div>
+        </div>
     </div>
-</div>
 </section>
