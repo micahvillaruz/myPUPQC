@@ -14,29 +14,17 @@
                             </div>
                     </div>
                         <div class="col-auto">
-                            <button id="search_button" class="btn btn-primary btn-lg waves-effect waves-light"><i class="mdi mdi-magnify me-1"></i> Search</button>
+                            <button onclick="search()" class="btn btn-primary btn-lg waves-effect waves-light"><i class="mdi mdi-magnify me-1"></i> Search</button>
                         </div>
                 </div>
             </div>
         </div>
-                <div class="col-lg-12">
-                    <h5 class="fs-16 fw-semibold text-center mb-0">Showing results for "<span class="text-primary fw-medium fst-italic" id="search_result"></span> "</h5>
+                <div class="col-lg-12"  id="search_result">
                 </div>
 
     </div> <!--Card header end-->
 
-    <div class="research_display">
-        <div class="card-body p-4">
-            <div class="tab-content text-muted">
-                <div class="tab-pane active" id="all" role="tabpanel">
-                            <div class="pb-3">
-                                    <h5 class="mb-1"><a href="">Research Title:</a></h5>
-                                    <p class="text-success mb-2">Research Auhor:</p>
-                                    <p class="text-muted mb-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum voluptates ipsam ipsa, vero enim consectetur beatae! Modi quos animi fugiat, similique, labore ab doloremque id eos voluptatem pariatur eum laudantium.</p>
-                            </div>
-                            <div class="border border-dashed"></div>
-                </div>
-            </div>
-        </div>
+    <div id="research_display">
     </div>
+
 </section>
