@@ -21,7 +21,7 @@
                         <div class="card-body">
                             <div class="d-flex justify-content-between">
                                 <div>
-                                    <p class="fw-medium text-muted mb-0">Uploaded Researhes</p>
+                                    <p class="fw-medium text-muted mb-0">Submitted Researhes</p>
                                     <div id="chartOne">
                                     </div>
                                 </div>
@@ -149,7 +149,7 @@
                         <div class="card card-animate">
                             <div class="card-header alert alert-info border-0 rounded-top rounded-0 d-flex align-items-center" role="alert">
                                 <i class="ri-line-chart-line text-info me-2 fs-20 fw-bold"></i>
-                                <span class="fw-bold fs-15">Donut Chart for Research Program</span>
+                                <span class="fw-bold fs-15">Research Programs</span>
                             </div>
                             <div class="card-body d-flex align-items-center justify-content-center">
                                 <div id="donutChartOne" style="width: 500px; height: 500px;"></div>
@@ -163,7 +163,29 @@
                                 <span class="fw-bold fs-15">Research V.S Capstone</span>
                             </div>
                             <div class="card-body d-flex align-items-center justify-content-center">
-                                <div id="donutChartOne" style="width: 500px; height: 500px;"></div>
+                                <div id="donutChartTwo" style="width: 500px; height: 500px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="card card-animate">
+                            <div class="card-header alert alert-info border-0 rounded-top rounded-0 d-flex align-items-center" role="alert">
+                                <i class="ri-line-chart-line text-info me-2 fs-20 fw-bold"></i>
+                                <span class="fw-bold fs-15">Research Statuses</span>
+                            </div>
+                            <div class="card-body d-flex align-items-center justify-content-center">
+                                <div id="donutChartThree" style="width: 500px; height: 500px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="card card-animate">
+                            <div class="card-header alert alert-info border-0 rounded-top rounded-0 d-flex align-items-center" role="alert">
+                                <i class="ri-line-chart-line text-info me-2 fs-20 fw-bold"></i>
+                                <span class="fw-bold fs-15">Copyright Statuses</span>
+                            </div>
+                            <div class="card-body d-flex align-items-center justify-content-center">
+                                <div id="donutChartFour" style="width: 500px; height: 500px;"></div>
                             </div>
                         </div>
                     </div>

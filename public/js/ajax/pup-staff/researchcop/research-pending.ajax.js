@@ -57,7 +57,7 @@ loadResearchRecordsTable = () => {
 					class: 'text-center',
 					render: (data) => {
 						const rTitle = data.research_title
-						return `<div style="width: 200px; white-space: nowrap; overflow-y: auto;">${rTitle}</div>`
+						return `${rTitle}`
 					},
 				},
 
@@ -79,16 +79,23 @@ loadResearchRecordsTable = () => {
 					class: 'text-center',
 					render: (data) => {
 						const rProgram = data.research_program
-						return `<div style="width: 400px; white-space: nowrap; overflow-y: auto;" title="${rProgram}">${rProgram}</div>`
+						return `${rProgram}`
 					},
 				},
 
 				// Type
 				{
 					data: null,
+					width: '5%',
 					class: 'text-center',
 					render: (data) => {
-						const rType = data.research_type
+						let rType = data.research_type
+						if (data.research_type === 'Copyrighted'){
+							rType = `<span class="badge rounded-pill bg-success">Copyrighted</span>`
+						}
+						else{
+							rType = `<span class="badge rounded-pill bg-danger">Non-Copyrighted</span>`
+						}
 						return `${rType}`
 					},
 				},
@@ -96,6 +103,7 @@ loadResearchRecordsTable = () => {
                 // Research Category
 				{
 					data: null,
+					width: '5%',
 					class: 'text-center',
 					render: (data) => {
 						let categ = data.research_category
@@ -117,6 +125,7 @@ loadResearchRecordsTable = () => {
 				//Action
 				{
 					data: null,
+					width: '5%',
 					class: 'text-center',
 					render: (data) => {
 						return `
@@ -132,6 +141,7 @@ loadResearchRecordsTable = () => {
 				// Research Document
 				{
 					data: null,
+					width: '5%',
 					class: 'text-center',
 					render: (data) => {
 						let ResearchDocu = data.research_pdf

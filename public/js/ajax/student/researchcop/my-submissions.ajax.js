@@ -98,13 +98,14 @@ loadMyResearchSubmissionsTable = () => {
 					class: 'text-center',
 					render: (data) => {
 						const rTitle = data.research_title
-						return `<div style="width: 200px; white-space: nowrap; overflow-y: auto;">${rTitle}</div>`
+						return `${rTitle}`
 					},
 				},
 
 				// Research Information
 				{
 					data: null,
+					width: '5%',
 					class: 'text-center',
 					render: (data) => {
 						return `
@@ -119,6 +120,7 @@ loadMyResearchSubmissionsTable = () => {
 				{
 					data: null,
 					class: 'text-center',
+					width: '5%',
 					render: (data) => {
 						let activationBtn = data.research_status
 						if (data.research_status === 'Approved') {
@@ -154,6 +156,7 @@ loadMyResearchSubmissionsTable = () => {
 				// Research Upload
 				{
 					data: null,
+					width: '5%',
 					class: 'text-center',
 					render: (data) => {
 						let UpResearchDocu = data.research_pdf
@@ -176,6 +179,7 @@ loadMyResearchSubmissionsTable = () => {
 				// Research Category
 				{
 					data: null,
+					width: '5%',
 					class: 'text-center',
 					render: (data) => {
 						let categ = data.research_category
@@ -197,6 +201,7 @@ loadMyResearchSubmissionsTable = () => {
 				// Remarks
 				{
 					data: null,
+					width: '5%',
 					class: 'text-center',
 					render: (data) => {
 						return `
@@ -210,6 +215,7 @@ loadMyResearchSubmissionsTable = () => {
 				// Actions
 				{
 					data: null,
+					width: '5%',
 					class: 'text-center',
 					render: (data) => {
 						let ResearchDocu = data.research_status
