@@ -147,7 +147,6 @@ class Student extends CI_Controller
         $this->load->view('partials/page-title', ["page_title" => "Medical Services", "title" => "Medical Consultation"]);
         $this->load->view('student/omsss/appointment/medical-consultation');
         $this->load->view('student/omsss/footer');
-        $this->load->view('student/omsss/components/medical-consultation-modal');
         $this->load->view('partials/foot-scripts');
         $this->load->view('student/omsss/appointment/scripts/medical-consultation-scripts');
     }
@@ -163,7 +162,6 @@ class Student extends CI_Controller
         $this->load->view('partials/page-title', ["page_title" => "Dental Services", "title" => "Dental Consultation"]);
         $this->load->view('student/omsss/appointment/dental-consultation');
         $this->load->view('student/omsss/footer');
-        $this->load->view('student/omsss/components/dental-consultation-modal');
         $this->load->view('partials/foot-scripts');
         $this->load->view('student/omsss/appointment/scripts/dental-consultation-scripts');
     }
@@ -179,7 +177,6 @@ class Student extends CI_Controller
         $this->load->view('partials/page-title', ["page_title" => "Guidance Services", "title" => "Guidance Consultation"]);
         $this->load->view('student/omsss/appointment/guidance-consultation');
         $this->load->view('student/omsss/footer');
-        $this->load->view('student/omsss/components/guidance-consultation-modal');
         $this->load->view('partials/foot-scripts');
         $this->load->view('student/omsss/appointment/scripts/guidance-consultation-scripts');
     }
