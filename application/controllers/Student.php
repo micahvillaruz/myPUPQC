@@ -399,7 +399,7 @@ class Student extends CI_Controller
         $this->load->view('partials/head-css');
         $this->load->view('partials/student/topbar');
         $this->load->view('partials/student/sidebar');
-        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Dashboard"]);
+        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Search Papers"]);
         $this->load->view('student/researchcop/dashboard');
         $this->load->view('partials/footer');
         $this->load->view('partials/foot-scripts');
@@ -414,7 +414,7 @@ class Student extends CI_Controller
         $this->load->view('partials/head-css');
         $this->load->view('partials/student/topbar');
         $this->load->view('partials/student/sidebar');
-        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Copyright Generator"]);
+        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Copyright Management"]);
         $this->load->view('student/researchcop/copyright');
         $this->load->view('partials/footer');
         $this->load->view('student/researchcop/components/copyright-modal');
@@ -430,7 +430,7 @@ class Student extends CI_Controller
         $this->load->view('partials/head-css');
         $this->load->view('partials/student/topbar');
         $this->load->view('partials/student/sidebar');
-        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Author"]);
+        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Research Author"]);
         $this->load->view('student/researchcop/author');
         $this->load->view('partials/footer');
         $this->load->view('student/researchcop/components/author-modal');

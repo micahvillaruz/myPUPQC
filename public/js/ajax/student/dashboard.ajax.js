@@ -122,7 +122,7 @@ loadAnnouncements = () => {
 
 				// ! Add modal on href if possible
 				const annnouncement_to_append = `
-                <div class="d-flex text-reset notification-item d-block dropdown-item active">
+                <div class="d-flex text-reset notification-item d-block dropdown-item">
                     <div class="flex-shrink-0 avatar-xs me-3">
                         <span class="avatar-title bg-soft-info text-info rounded-circle fs-16">
                             <i class="ri-checkbox-circle-fill"></i>
@@ -169,7 +169,7 @@ loadSpecificAnnouncement = (id) => {
 		cache: false,
 		success: (result) => {
 			const data = result.data
-
+			const author = data.announcement_assigned_to_user.user_profiles[0].full_name
 			const id = data.announcement_id
 			const title = data.announcement_title
 			const description = data.announcement_description
@@ -177,7 +177,7 @@ loadSpecificAnnouncement = (id) => {
 			const date = moment(data.created_at).format('MMMM D, YYYY')
 
 			$('#myAnnouncementTitle').html(title)
-			$('#myAnnouncementAuthor').html('PUP Staff') // this will be replaced by the actual author name once API is ready.
+			$('#myAnnouncementAuthor').html(author) // this will be replaced by the actual author name once API is ready.
 			$('#myAnnouncementContent').html(content)
 			$('#myAnnouncementDate').html(date)
 
