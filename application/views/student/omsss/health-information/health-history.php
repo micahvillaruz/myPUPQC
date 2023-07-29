@@ -2,6 +2,12 @@
     <div class="card">
         <h5 class="card-header mb-2 text-white bg-primary">Health History Form</h5>
         <div class="card-body">
+            <div class="mx-5 alert alert-info" role="alert">
+                <h5 class="alert-heading"><i class="mdi mdi-information"></i> Advisory on Input</h5>
+                The Medical History Form is <b>input-sensitive</b>. It detects the semi-colon (;) as a separator for your entries. When typing in the text area, use the semi-colon (;) then type the next entry.
+                <hr>
+                Example: <b>Entry 1; Entry 2; Entry 3</b>
+            </div>
             <form action="javascript:void(0);" id="medicalHistoryForm">
                 <div class="mx-5">
                     <h3 class="mb-3 text-primary">Medical History</h3>
@@ -137,7 +143,7 @@
                         </div>
                         <div class="mt-3 pb-2">
                             <label for="exampleFormControlTextarea" class="form-label">Others:</label>
-                            <textarea class="form-control" id="#medical_history_others" name="medical_history_others" placeholder="Please use semi-colon (;) as seperator for your entries." rows="3"></textarea>
+                            <textarea class="form-control" oninput="setupInputRestriction(this)" id="#medical_history_others" name="medical_history_others" placeholder="Please use semi-colon (;) as seperator for your entries." rows="3"></textarea>
                         </div>
                     </div>
                 </div>
@@ -168,7 +174,7 @@
                         </div>
                         <div class="mb-1 pb-1">
                             <label for="exampleFormControlTextarea" class="form-label"></label>
-                            <textarea class="form-control" id="allergy" name="allergy" placeholder="Please use semi-colon (;) as seperator for ypur entries." rows="3"></textarea>
+                            <textarea class="form-control" oninput="setupInputRestriction(this)" id="allergy" name="allergy" placeholder="Please use semi-colon (;) as seperator for ypur entries." rows="3"></textarea>
                         </div>
                     </div>
                 </div>

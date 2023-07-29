@@ -23,6 +23,21 @@ const refreshPage = () => {
 	}, 1000)
 }
 
+function restrictInputAndRemove(event) {
+	const allowedRegex = /^[A-Za-z0-9\s-;]*$/
+	const inputElement = event.target
+	const inputValue = inputElement.value
+
+	if (!allowedRegex.test(inputValue)) {
+		inputElement.value = inputValue.replace(/[^A-Za-z0-9\s-;]/g, '')
+	}
+}
+
+function setupInputRestriction(inputElement) {
+	inputElement.oninput = restrictInputAndRemove
+	inputElement.onpaste = restrictInputAndRemove
+}
+
 function logout(page) {
 	let msg = ''
 

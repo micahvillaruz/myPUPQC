@@ -18,7 +18,7 @@
                     <div class="mb-3">
                         <input type="hidden" id="r_author" name="r_author">
                         <label for="r_title" class="form-label">Research Title<span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="r_title" name="r_title" placeholder="Enter Research Title" required />
+                        <input type="text" class="form-control" oninput="setupInputRestriction(this)" id="r_title" name="r_title" placeholder="Enter Research Title" required />
                     </div>
                     <div class="mb-3">
                         <label for="fkr_author" class="form-label">Research Author<span class="text-danger">*</span></label>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="r_abstract" class="form-label">Research Abstract<span class="text-danger">*</span></label>
-                        <textarea class="form-control" id="r_abstract" name="r_abstract" rows="5" placeholder="Enter Abstract" required></textarea>
+                        <textarea class="form-control" id="r_abstract" oninput="setupInputRestriction(this)" name="r_abstract" rows="5" placeholder="Enter Abstract" required></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="r_date_accomplished" class="form-label">Date Accomplished<span class="text-danger">*</span></label>
@@ -38,7 +38,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="r_adviser" class="form-label">Adviser<span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="r_adviser" name="r_adviser" placeholder="Enter Research Adviser" required />
+                        <input type="text" class="form-control" id="r_adviser" oninput="setupInputRestriction(this)" name="r_adviser" placeholder="Enter Research Adviser" required />
                     </div>
                     <div class="mb-3">
                         <label for="r_program" class="form-label">Program<span class="text-danger">*</span></label>

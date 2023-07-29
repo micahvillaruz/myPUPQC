@@ -41,7 +41,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="reasonInput" class="form-label"> Reason for Consultation <span class="text-danger">*</span></label>
-                                <textarea type="text" class="form-control" id="consultation_reason" name="consultation_reason" style="resize:none" rows="8" required></textarea>
+                                <textarea autocomplete="off" type="text" class="form-control" oninput="setupInputRestriction(this)" id="consultation_reason" name="consultation_reason" style="resize:none" rows="8" required></textarea>
                             </div>
                         </div>
                         <div class="col-6">

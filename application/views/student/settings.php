@@ -101,7 +101,7 @@
                                             <div class="col-lg-4">
                                                 <div class="mb-3">
                                                     <label for="citizenship" class="form-label">Citizenship <span class="text-danger">*</span></label>
-                                                    <input type="text" class="form-control" id="citizenship" name="citizenship" placeholder="Enter your Citizenship" required />
+                                                    <input type="text" autocomplete="off" class="form-control" oninput="setupInputRestriction(this)" id="citizenship" name="citizenship" placeholder="Enter your Citizenship" required />
                                                     <div class="invalid-feedback">
                                                         Please enter your Citizenship.
                                                     </div>
@@ -111,7 +111,7 @@
                                             <div class="col-lg-4">
                                                 <div class="mb-3">
                                                     <label for="religion" class="form-label">Religion <span class="text-danger">*</span></label>
-                                                    <input type="text" class="form-control" id="religion" name="religion" placeholder="Enter your Religion" required />
+                                                    <input type="text" autocomplete="off" class="form-control" oninput="setupInputRestriction(this)" id="religion" name="religion" placeholder="Enter your Religion" required />
                                                     <div class="invalid-feedback">
                                                         Please enter your Religion.
                                                     </div>
@@ -121,7 +121,7 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <label for="contact_number" class="form-label">Contact Number <span class="text-danger">*</span></label>
-                                                    <input type="text" class="form-control" id="contact_number" name="contact_number" placeholder="Enter your Contact Number" required />
+                                                    <input type="number" class="form-control" id="contact_number" name="contact_number" placeholder="Enter your Contact Number" required />
                                                     <div class="invalid-feedback">
                                                         Please enter your Contact Number.
                                                     </div>
@@ -174,7 +174,7 @@
                                             </div>
                                             <div class="mb-3">
                                                 <label for="house_street" class="form-label">Street <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" id="house_street" name="house_street" placeholder="Enter Street Number or Street Name" required>
+                                                <input type="text" class="form-control" oninput="validateInput(event)" id="house_street" name="house_street" placeholder="Enter Street Number or Street Name" required>
                                             </div>
 
                                             <div class="col-lg-12">

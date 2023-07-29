@@ -241,7 +241,7 @@
                             <tr>
                                 <td class="align-middle fw-medium">Comments/Suggestions/Recommendations</td>
                                 <td>
-                                    <textarea type="text" class="form-control" id="evaluation_comment" name="evaluation_comment" style="resize:none" rows="5" required></textarea>
+                                    <textarea type="text" oninput="setupInputRestriction(this)" class="form-control" id="evaluation_comment" name="evaluation_comment" style="resize:none" rows="5" required></textarea>
                                 </td>
                             </tr>
                         </tbody>

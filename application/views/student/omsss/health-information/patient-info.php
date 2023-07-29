@@ -85,7 +85,7 @@
                                     <label for="contactpersonNumber" class="form-label">Contact Person</label>
                                 </div>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="emergency_contact_name" name="emergency_contact_name" placeholder="Enter your contact person">
+                                    <input type="text" oninput="setupInputRestriction(this)" class="form-control" id="emergency_contact_name" name="emergency_contact_name" placeholder="Enter your contact person">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -117,7 +117,7 @@
                                     <label for="philHealthInput" class="form-label">PhilHealth No.</label>
                                 </div>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="philhealth_number" name="philhealth_number" placeholder="If none, please leave it blank">
+                                    <input type="text" oninput="setupInputRestriction(this)" class="form-control" id="philhealth_number" name="philhealth_number" placeholder="If none, please leave it blank">
                                 </div>
                             </div>
                             <div class="row mb-3">
