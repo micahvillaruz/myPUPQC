@@ -165,7 +165,7 @@
                         <input type="hidden" id="approve_consultation_status">
                         <div class="mt-4">
                             <label for="remarks" class="h5 form-label">Remarks <span class="text-danger">*</span></label>
-                            <textarea class="form-control mt-2" id="approve_remarks" name="approve_remarks" rows="5" placeholder="As the Staff, be specific and concise with the remarks you'll provide to the student in preparation of the appointment." required></textarea>
+                            <textarea class="form-control mt-2" autocomplete="off" oninput="setupInputRestriction(this)" id="approve_remarks" name="approve_remarks" rows="5" placeholder="As the Staff, be specific and concise with the remarks you'll provide to the student in preparation of the appointment." required></textarea>
                             <div class="invalid-feedback">
                                 Please indicate your availability at the remarks above.
                             </div>
@@ -196,7 +196,7 @@
                         <input type="hidden" id="cancel_consultation_status">
                         <div class="mt-4">
                             <label for="remarks" class="h5 form-label">Remarks <span class="text-danger">*</span></label>
-                            <textarea class="form-control mt-2" id="cancel_remarks" name="cancel_remarks" rows="5" placeholder="Enter the reason why you are cancelling the appointment and the instructions, if any, that the student must comply before appointing for a consultation again." required></textarea>
+                            <textarea class="form-control mt-2" autocomplete="off" oninput="setupInputRestriction(this)" id="cancel_remarks" name="cancel_remarks" rows="5" placeholder="Enter the reason why you are cancelling the appointment and the instructions, if any, that the student must comply before appointing for a consultation again." required></textarea>
                             <div class="invalid-feedback">
                                 Please indicate your reason for cancelling.
                             </div>
@@ -227,7 +227,7 @@
                         <input type="hidden" id="done_consultation_status">
                         <div class="mt-4">
                             <label for="remarks" class="h5 form-label">Remarks <span class="text-danger">*</span></label>
-                            <textarea class="form-control mt-2" id="done_remarks" name="done_remarks" rows="5" placeholder="Enter the remarks before finishing this consultation appointment." required></textarea>
+                            <textarea class="form-control mt-2" autocomplete="off" oninput="setupInputRestriction(this)" id="done_remarks" name="done_remarks" rows="5" placeholder="Enter the remarks before finishing this consultation appointment." required></textarea>
                             <div class="invalid-feedback">
                                 Please indicate the reason for closing the appointment.
                             </div>

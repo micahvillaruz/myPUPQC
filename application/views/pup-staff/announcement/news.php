@@ -17,11 +17,11 @@
                         <input type="hidden" class="form-control" id="announcement_id" name="announcement_id">
                         <div class="col-md-12">
                             <label for="announcement_title" class="form-label">Title <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="announcement_title" name="announcement_title" placeholder="Enter the title of the News" required>
+                            <input type="text" class="form-control" autocomplete="off" oninput="setupInputRestriction(this)" id="announcement_title" name="announcement_title" placeholder="Enter the title of the News" required>
                         </div>
                         <div class="col-md-12">
                             <label for="announcement_description" class="form-label">Description <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="announcement_description" name="announcement_description" placeholder="Enter the short description/headline for this news" required>
+                            <input type="text" class="form-control" autocomplete="off" oninput="setupInputRestriction(this)" id="announcement_description" name="announcement_description" placeholder="Enter the short description/headline for this news" required>
                         </div>
                         <div class="col-md-12">
                             <label for="announcement_image" class="form-label">Attachment <span class="text-danger">*</span></label>
