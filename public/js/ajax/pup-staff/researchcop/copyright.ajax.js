@@ -49,6 +49,7 @@ loadResearchCopyrightTable = () => {
 				// Title
 				{
 					data: null,
+					width: '40%',
 					class: 'text-center',
 					render: (data) => {
 						const rTitle = data.research_title
@@ -59,6 +60,7 @@ loadResearchCopyrightTable = () => {
                 // Copyright Document Upload
 				{
 					data: null,
+					width: '5%',
 					class: 'text-center',
 					render: (data) => {
 						let UpResearchDocu = data.copyright_pdf
@@ -81,6 +83,7 @@ loadResearchCopyrightTable = () => {
                 // Research Status
 				{
 					data: null,
+					width: '5%',
 					class: 'text-center',
 					render: (data) => {
 						let copyrht = data.research_type
@@ -102,6 +105,7 @@ loadResearchCopyrightTable = () => {
 				// Research Category
 				{
 					data: null,
+					width: '5%',
 					class: 'text-center',
 					render: (data) => {
 						let categ = data.research_category
@@ -123,6 +127,7 @@ loadResearchCopyrightTable = () => {
                 //Action
 				{
 					data: null,
+					width: '5%',
 					class: 'text-center',
 					render: (data) => {
 						return `

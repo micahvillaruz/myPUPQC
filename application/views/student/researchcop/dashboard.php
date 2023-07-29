@@ -10,21 +10,21 @@
                  <div class="row g-2">
                     <div class="col">
                             <div class="position-relative mb-3">
-                                    <input type="text" class="form-control form-control-lg bg-light border-light" placeholder="Search Research here..">
+                                    <input type="text" id="searchQuery" class="form-control form-control-lg bg-light border-light" placeholder="Search Research here..">
                             </div>
                     </div>
                         <div class="col-auto">
-                            <button type="submit" class="btn btn-primary btn-lg waves-effect waves-light"><i class="mdi mdi-magnify me-1"></i> Search</button>
+                            <button onclick="search()" class="btn btn-primary btn-lg waves-effect waves-light"><i class="mdi mdi-magnify me-1"></i> Search</button>
                         </div>
                 </div>
             </div>
         </div>
-                <div class="col-lg-12">
-                    <h5 class="fs-16 fw-semibold text-center mb-0">Showing results for "<span class="text-primary fw-medium fst-italic">Admin Dashboard</span> "</h5>
+                <div class="col-lg-12"  id="search_result">
                 </div>
 
     </div> <!--Card header end-->
 
-    <div class="research_display">
+    <div id="research_display">
     </div>
+
 </section>

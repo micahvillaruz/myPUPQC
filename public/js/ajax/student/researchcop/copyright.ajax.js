@@ -78,17 +78,21 @@ loadResearchCopyrightTable = () => {
 					class: 'text-center',
 					render: (data) => {
 						const rTitle = data.research_title
-						return `<div style="width: 200px; white-space: nowrap; overflow-y: auto;">${rTitle}</div>`
+						return `${rTitle}`
 					},
 				},
 
                 // Copyright Document Upload
 				{
 					data: null,
+					width: '5%',
 					class: 'text-center',
 					render: (data) => {
 						let UpResearchDocu = data.copyright_pdf
-						if (data.copyright_pdf == null) {
+						if (data.copyright_pdf == null && data.research_pdf == null) {
+							UpResearchDocu = `<span class="badge rounded-pill bg-danger">Upload Research First</span>`
+						}
+						else if (data.copyright_pdf == null && data.research_pdf != null) {
 							UpResearchDocu = `<button type="button" class="btn btn-info btn-label waves-effect waves-light" onclick="viewResearchRecord('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#uploadCopyrightModal"><i class="ri-upload-line label-icon align-middle fs-16 me-2"></i>Upload</button>`
 						}
 						else{
@@ -107,6 +111,7 @@ loadResearchCopyrightTable = () => {
 				// Research Category
 				{
 					data: null,
+					width: '5%',
 					class: 'text-center',
 					render: (data) => {
 						let categ = data.research_category
@@ -129,6 +134,7 @@ loadResearchCopyrightTable = () => {
                 // Research Status
 				{
 					data: null,
+					width: '5%',
 					class: 'text-center',
 					render: (data) => {
 						let copyrht = data.research_type
@@ -150,6 +156,7 @@ loadResearchCopyrightTable = () => {
                 // Copyright Status
 				{
 					data: null,
+					width: '5%',
 					class: 'text-center',
 					render: (data) => {
 						let copyrhtsts = data.copyright_status
@@ -177,6 +184,7 @@ loadResearchCopyrightTable = () => {
 				// Remarks
 				{
 					data: null,
+					width: '5%',
 					class: 'text-center',
 					render: (data) => {
 						return `

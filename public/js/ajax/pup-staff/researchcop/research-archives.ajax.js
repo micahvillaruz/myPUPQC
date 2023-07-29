@@ -41,6 +41,7 @@ loadResearchArchivesTable = () => {
 				// Title
 				{
 					data: null,
+					width: '20%',
 					class: 'text-center',
 					render: (data) => {
 						const rTitle = data.research_title
@@ -51,6 +52,7 @@ loadResearchArchivesTable = () => {
 				// Information
 				{
 					data: null,
+					width: '5%',
 					class: 'text-center',
 					render: (data) => {
 						return `
@@ -64,6 +66,7 @@ loadResearchArchivesTable = () => {
 				// Research Category
 				{
 					data: null,
+					width: '5%',
 					class: 'text-center',
 					render: (data) => {
 						let categ = data.research_category
@@ -85,6 +88,7 @@ loadResearchArchivesTable = () => {
 				// Remarks
 				{
 					data: null,
+					width: '5%',
 					class: 'text-center',
 					render: (data) => {
 						return `
@@ -98,6 +102,7 @@ loadResearchArchivesTable = () => {
 				// Research Document
 				{
 					data: null,
+					width: '5%',
 					class: 'text-center',
 					render: (data) => {
 						let ResearchDocu = data.research_pdf
@@ -119,6 +124,7 @@ loadResearchArchivesTable = () => {
 				//Action
 				{
 					data: null,
+					width: '5%',
 					class: 'text-center',
 					render: (data) => {
 						return `
