@@ -122,21 +122,23 @@ loadAnnouncements = () => {
 
 				// ! Add modal on href if possible
 				const annnouncement_to_append = `
-                <div class="d-flex text-reset notification-item d-block dropdown-item">
-                    <div class="flex-shrink-0 avatar-xs me-3">
+                <div class="d-flex justify-content-center align-items-center text-reset notification-item d-block dropdown-item">
+                    <div class="flex-shrink-0 avatar-xs text-center">
                         <span class="avatar-title bg-soft-info text-info rounded-circle fs-16">
                             <i class="ri-checkbox-circle-fill"></i>
                         </span>
                     </div>
-                    <a href="#" onclick="return loadSpecificAnnouncement(\'${id}\')">
-                        <div class="flex-grow-1 text-muted">
-                            <h6 class="mb-1 fs-14">${title}</h6>
-                            <p class="mb-0">
-                                ${description}
-                            </p>
+                    <a href="#" onclick="return loadSpecificAnnouncement(\'${id}\')" class="flex-grow-1">
+                        <div class="d-flex px-3">
+                            <div class="text-muted">
+                                <h6 class="mb-1 fs-14">${title}</h6>
+                                <p class="mb-0">
+                                    ${description}
+                                </p>
+                            </div>
                         </div>
                     </a>
-                    <div class="flex-shrink-0 ms-2">
+                    <div class="flex-shrink-0">
                         <div class="fs-11 text-muted">
                             <i class="mdi mdi-clock-outline"></i> ${date}
                         </div>
@@ -186,68 +188,68 @@ loadSpecificAnnouncement = (id) => {
 	})
 }
 
-// Student EVRSERS Tracker
-loadEvents = () => {
-	$.ajaxSetup({
-		headers: {
-			Accept: 'application/json',
-			Authorization: 'Bearer ' + TOKEN,
-			ContentType: 'application/x-www-form-urlencoded',
-		},
-	})
+// // Student EVRSERS Tracker
+// loadEvents = () => {
+// 	$.ajaxSetup({
+// 		headers: {
+// 			Accept: 'application/json',
+// 			Authorization: 'Bearer ' + TOKEN,
+// 			ContentType: 'application/x-www-form-urlencoded',
+// 		},
+// 	})
 
-	$.ajax({
-		type: 'GET',
-		cache: false,
-		url: apiURL + `evrsers/student/view_approved_reservation`,
-		dataType: 'json',
-		success: (result) => {
-			const data = result.data
+// 	$.ajax({
+// 		type: 'GET',
+// 		cache: false,
+// 		url: apiURL + `evrsers/student/view_approved_reservation`,
+// 		dataType: 'json',
+// 		success: (result) => {
+// 			const data = result.data
 
-			// create a list item for each result
-			data.forEach((item) => {
-				console.log(item)
-				const title = item.event_title
-				const organization_name = item.organization_assigned_to_reservations.display_name
-				const time_from = item.time_from
-				const time_to = item.time_to
-				const pubmat_img = item.ReservationPubmats.pubmats_images
+// 			// create a list item for each result
+// 			data.forEach((item) => {
+// 				console.log(item)
+// 				const title = item.event_title
+// 				const organization_name = item.organization_assigned_to_reservations.display_name
+// 				const time_from = item.time_from
+// 				const time_to = item.time_to
+// 				const pubmat_img = item.ReservationPubmats.pubmats_images
 
-				const reserve_date = item.reserve_date
-				// moment.js get month of reserve_date
-				const month = moment(reserve_date).format('MMM')
-				// moment.js get day of reserve_date
-				const day = moment(reserve_date).format('D')
+// 				const reserve_date = item.reserve_date
+// 				// moment.js get month of reserve_date
+// 				const month = moment(reserve_date).format('MMM')
+// 				// moment.js get day of reserve_date
+// 				const day = moment(reserve_date).format('D')
 
-				$('#upcoming-events').append(`
-					<li class="list-group-item ps-0">
-						<div class="d-flex align-items-center g-3">
-							<div class="flex-shrink-0 me-3 mini-stats-wid">
-								<div class="avatar-sm p-1 py-2 h-auto bg-light rounded-3 mini-stat-icon bg-soft-success">
-									<div class="text-center">
-										<h5 class="mb-0">${day}</h5>
-										<div class="text-muted">${month} </div>
-									</div>
-								</div>
-						</div>
-						<div class="flex-grow-1">
-							<h5 class="text-muted mt-0 mb-1 fs-13">${time_from} - ${time_to}</h5>
-							<a href="#" class="d-block text-reset fs-14 mb-0 fw-medium">${title} </a>
-								<div id="organization" class="mt-0 fs-6">
-									<span class="badge badge-outline-info fw-bold mb-0">
-								<i class="mdi mdi-book-open-page-variant me-1"></i>
-									${organization_name}
-								</span>
-								</div>
-								</div>
-								<a href="${pubmat_img}" class="d-flex">
-								<img src="${pubmat_img}" class="avatar-sm img-fluid"></img>
-								</a>
-						</div>
-						
-					</li>
-				`)
-			})
-		},
-	})
-}
+// 				$('#upcoming-events').append(`
+// 					<li class="list-group-item ps-0">
+// 						<div class="d-flex align-items-center g-3">
+// 							<div class="flex-shrink-0 me-3 mini-stats-wid">
+// 								<div class="avatar-sm p-1 py-2 h-auto bg-light rounded-3 mini-stat-icon bg-soft-success">
+// 									<div class="text-center">
+// 										<h5 class="mb-0">${day}</h5>
+// 										<div class="text-muted">${month} </div>
+// 									</div>
+// 								</div>
+// 						</div>
+// 						<div class="flex-grow-1">
+// 							<h5 class="text-muted mt-0 mb-1 fs-13">${time_from} - ${time_to}</h5>
+// 							<a href="#" class="d-block text-reset fs-14 mb-0 fw-medium">${title} </a>
+// 								<div id="organization" class="mt-0 fs-6">
+// 									<span class="badge badge-outline-info fw-bold mb-0">
+// 								<i class="mdi mdi-book-open-page-variant me-1"></i>
+// 									${organization_name}
+// 								</span>
+// 								</div>
+// 								</div>
+// 								<a href="${pubmat_img}" class="d-flex">
+// 								<img src="${pubmat_img}" class="avatar-sm img-fluid"></img>
+// 								</a>
+// 						</div>
+
+// 					</li>
+// 				`)
+// 			})
+// 		},
+// 	})
+// }
