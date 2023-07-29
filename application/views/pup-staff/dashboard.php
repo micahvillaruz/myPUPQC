@@ -38,7 +38,7 @@
         <blockquote class="blockquote custom-blockquote blockquote-outline blockquote-primary rounded py-3">
             <div class="row g-0">
                 <div class="col-lg-4 quote-image">
-                    <img id="background" class="rounded-start img-fluid h-100 object-cover" src="https://images.pexels.com/photos/450441/pexels-photo-450441.jpeg" alt="QoD Image" />
+                    <img id="background" class="rounded-start img-fluid h-100 object-cover" loading="lazy" src="https://images.pexels.com/photos/450441/pexels-photo-450441.jpeg" alt="QoD Image" />
                 </div>
                 <div class="col-xs-12 col-lg-8 qotd">
                     <div class="card-header">
