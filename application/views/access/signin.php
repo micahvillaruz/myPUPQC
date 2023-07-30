@@ -41,7 +41,7 @@
 
                                         <div class="mb-3">
                                             <label for="user_no" class="form-label">Student / Employee Number <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" autocomplete="off" id="user_no" name="user_no" placeholder="Enter User Number" required>
+                                            <input type="text" class="form-control" autocomplete="off" oninput="setupInputRestriction(this)" id="user_no" name="user_no" placeholder="Enter User Number" required>
                                             <div class="invalid-feedback">
                                                 Please enter User Number
                                             </div>
