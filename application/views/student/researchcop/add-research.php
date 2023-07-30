@@ -1,20 +1,11 @@
 <section class="addresearch">
     <div class="card">
-        <div class="card-header alert alert-info border-0 rounded-top rounded-0 d-flex align-items-center" role="alert">
-            <i class="ri-add-line text-info me-2 fs-20"></i>
-            <span class="fw-bold fs-15 m-1">Add Research</span>
-        </div>
-        <div class="card-header align-items-center d-flex">
-            <a href="<?= base_url() ?>student/researchcop/my-submissions">
-                <button type="button" class="btn btn-info btn-label waves-effect waves-light">
-                    <i class="ri-arrow-go-back-line label-icon align-middle fs-16 me-2" style="color: #fff;"></i>
-                    Back
-                </button>
-            </a>
+        <div class="card-header d-flex align-items-center justify-content-between" role="alert">
+            <h2 class="card-title mb-0 flex-grow-1 fw-bold text-primary">ADD RESEARCH</h2>
         </div>
         <div class="card-body">
             <div id="addResearchPage">
-                <form id="addResearchForm" class="needs-validation" novalidate>
+                <form id="addResearchForm" class="needs-validation mx-5" novalidate>
                     <div class="mb-3">
                         <input type="hidden" id="r_author" name="r_author">
                         <label for="r_title" class="form-label">Research Title<span class="text-danger">*</span></label>
@@ -63,9 +54,12 @@
 
                     <div id="checkDataPrivacy"></div>
 
-                    <div class="col-lg-12 mt-4">
-                        <div class="text-center d-grid">
-                            <button type="submit" class="btn btn-primary" id="addResearchButton">Submit</button>
+                    <div class="row">
+                        <div class="col-lg-12 mt-4">
+                            <div class="hstack gap-2 justify-content-center">
+                                <a role="button" class="btn btn-ghost-primary waves-effect waves-light w-100" href="<?= base_url() ?>student/researchcop/my-submissions">Return to My Submissions</a>
+                                <button type="submit" class="btn btn-primary w-100" id="addResearchButton">Submit</button>
+                            </div>
                         </div>
                     </div>
                 </form>

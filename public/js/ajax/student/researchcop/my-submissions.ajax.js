@@ -50,7 +50,6 @@ $(function () {
 		const research_id = $('#re_id').val()
 		resubmitResearchAJAX(research_id)
 	})
-
 })
 
 const Toast = Swal.mixin({
@@ -64,7 +63,6 @@ const Toast = Swal.mixin({
 		toast.addEventListener('mouseleave', Swal.resumeTimer)
 	},
 })
-
 
 // Load  research datatables
 loadMyResearchSubmissionsTable = () => {
@@ -81,9 +79,7 @@ loadMyResearchSubmissionsTable = () => {
 				"<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
 				"<'row'<'col-sm-12'tr>>" +
 				"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
-			buttons: [
-				
-			],
+			buttons: [],
 			bDestroy: true,
 			ajax: {
 				url: apiURL + 'researchcop/my-submissions/allresearch',
@@ -116,7 +112,7 @@ loadMyResearchSubmissionsTable = () => {
 					},
 				},
 
-                // Status
+				// Status
 				{
 					data: null,
 					class: 'text-center',
@@ -125,22 +121,18 @@ loadMyResearchSubmissionsTable = () => {
 						let activationBtn = data.research_status
 						if (data.research_status === 'Approved') {
 							activationBtn = `<span class="badge rounded-pill bg-success">Approved</span>`
-						}
-						else if (data.research_status === 'Pending') {
+						} else if (data.research_status === 'Pending') {
 							activationBtn = `<span class="badge rounded-pill bg-warning">Pending</span>`
-						}
-						else if (data.research_status === 'Rejected') {
+						} else if (data.research_status === 'Rejected') {
 							activationBtn = `<span class="badge rounded-pill bg-danger">Rejected</span>`
-						}
-						else{
+						} else {
 							activationBtn = `<span class="badge rounded-pill bg-dark">Archived</span>`
 						}
 
 						let copyrht = data.research_type
-						if (data.research_type === 'Copyrighted'){
+						if (data.research_type === 'Copyrighted') {
 							copyrht = `<span class="badge rounded-pill bg-success">Copyrighted</span>`
-						}
-						else{
+						} else {
 							copyrht = `<span class="badge rounded-pill bg-danger">Non-Copyrighted</span>`
 						}
 
@@ -161,9 +153,8 @@ loadMyResearchSubmissionsTable = () => {
 					render: (data) => {
 						let UpResearchDocu = data.research_pdf
 						if (data.research_pdf == null) {
-							UpResearchDocu = `<button type="button" class="btn btn-info btn-label waves-effect waves-light" onclick="viewResearchRecord('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#uploadResearchModal"><i class="ri-file-upload-line label-icon align-middle fs-16 me-2"></i>Upload</button>`
-						}
-						else{
+							UpResearchDocu = `<button type="button" class="btn text-white btn-label waves-effect waves-light" style="background-color: #4b38b3;" onclick="viewResearchRecord('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#uploadResearchModal"><i class="ri-file-upload-line label-icon align-middle fs-16 me-2"></i>Upload</button>`
+						} else {
 							UpResearchDocu = `<button type="button" class="btn btn-success btn-label waves-effect waves-light" onclick="viewResearchDocument('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#research_document_preview"><i class="ri-file-line label-icon align-middle fs-16 me-2"></i>View</button>
 							<button type="button" class="btn btn-danger btn-label waves-effect waves-light" onclick="deleteResearchDocument('${data.research_id}')"><i class="ri-delete-bin-line label-icon align-middle fs-16 me-2"></i>Delete</button>
 											`
@@ -183,10 +174,9 @@ loadMyResearchSubmissionsTable = () => {
 					class: 'text-center',
 					render: (data) => {
 						let categ = data.research_category
-						if (data.research_category === 'Research'){
+						if (data.research_category === 'Research') {
 							categ = `<span class="badge rounded-pill bg-success">Research</span>`
-						}
-						else{
+						} else {
 							categ = `<span class="badge rounded-pill bg-info">Capstone</span>`
 						}
 
@@ -206,7 +196,7 @@ loadMyResearchSubmissionsTable = () => {
 					render: (data) => {
 						return `
 						<div class="dropdown d-inline-block">
-						<button type="button" class="btn btn-success btn-icon waves-effect waves-light" onclick="viewResearchRemarks('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#viewResearchRemarks"><i class="ri-question-fill fs-5"></i></button>
+						<button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewResearchRemarks('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#viewResearchRemarks"><i class="ri-question-fill fs-5"></i></button>
 						</div>
 						`
 					},
@@ -221,8 +211,7 @@ loadMyResearchSubmissionsTable = () => {
 						let ResearchDocu = data.research_status
 						if (data.research_status == 'Rejected') {
 							ResearchDocu = `<button type="button" class="btn btn-success btn-warning waves-effect waves-light" onclick="resubmitResearch('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#resubmitResearchModal"><i class="ri-edit-fill fs-5"></i></button>`
-						}
-						else{
+						} else {
 							ResearchDocu = ``
 						}
 
@@ -233,13 +222,11 @@ loadMyResearchSubmissionsTable = () => {
 						`
 					},
 				},
-				
 			],
 			order: [[0, 'asc']],
 		})
 	}
 }
-
 
 // View Research Record Modal
 viewResearchRecord = (research_id) => {
@@ -251,34 +238,33 @@ viewResearchRecord = (research_id) => {
 		dataType: 'json',
 		success: (result) => {
 			const researchRecord = result.data
-				$('#view_research_title').html(researchRecord.research_title)
-				$('#view_research_author').html(researchRecord.research_author)
-				$('#view_research_co_author').html(researchRecord.research_co_author)
-				$('#view_research_date_accomplished').html(researchRecord.research_date_accomplished)
-                $('#view_research_adviser').html(researchRecord.research_adviser)
-				$('#view_research_program').html(researchRecord.research_program)
-				$('#view_research_type').html(researchRecord.research_type)
-				$('#view_research_abstract').html(researchRecord.research_abstract)
-				$('#view_research_category').html(researchRecord.research_category)
-				$('#display_research_title').html(researchRecord.research_title)
-				$('#research_id').val(researchRecord.research_id)
+			$('#view_research_title').html(researchRecord.research_title)
+			$('#view_research_author').html(researchRecord.research_author)
+			$('#view_research_co_author').html(researchRecord.research_co_author)
+			$('#view_research_date_accomplished').html(researchRecord.research_date_accomplished)
+			$('#view_research_adviser').html(researchRecord.research_adviser)
+			$('#view_research_program').html(researchRecord.research_program)
+			$('#view_research_type').html(researchRecord.research_type)
+			$('#view_research_abstract').html(researchRecord.research_abstract)
+			$('#view_research_category').html(researchRecord.research_category)
+			$('#display_research_title').html(researchRecord.research_title)
+			$('#research_id').val(researchRecord.research_id)
 
-				// For edit/resubmit
-				$('#re_id').val(researchRecord.research_id)
-				$('#re_title').val(researchRecord.research_title)
-				$('#re_author').val(researchRecord.research_author)
-				$('#re_author').prop('disabled', true)
-				$('#re_co_author').val(researchRecord.research_co_author)
-				$('#re_date_accomplished').val(researchRecord.research_date_accomplished)
-                $('#re_adviser').val(researchRecord.research_adviser)
-				$('#re_program').val(researchRecord.research_program)
-				$('#re_type').val(researchRecord.research_type)
-				$('#re_category').val(researchRecord.research_category)
-				$('#re_abstract').val(researchRecord.research_abstract)
+			// For edit/resubmit
+			$('#re_id').val(researchRecord.research_id)
+			$('#re_title').val(researchRecord.research_title)
+			$('#re_author').val(researchRecord.research_author)
+			$('#re_author').prop('disabled', true)
+			$('#re_co_author').val(researchRecord.research_co_author)
+			$('#re_date_accomplished').val(researchRecord.research_date_accomplished)
+			$('#re_adviser').val(researchRecord.research_adviser)
+			$('#re_program').val(researchRecord.research_program)
+			$('#re_type').val(researchRecord.research_type)
+			$('#re_category').val(researchRecord.research_category)
+			$('#re_abstract').val(researchRecord.research_abstract)
 		},
 	})
 }
-
 
 // View Research Record Modal
 viewResearchRemarks = (research_id) => {
@@ -290,9 +276,9 @@ viewResearchRemarks = (research_id) => {
 		dataType: 'json',
 		success: (result) => {
 			const researchRecord = result.data
-				$('#view2_research_title').html(researchRecord.research_title)
-				$('#view_research_checked_by').html(researchRecord.research_checked_by)
-				$('#view_research_remarks').html(researchRecord.research_remarks)
+			$('#view2_research_title').html(researchRecord.research_title)
+			$('#view_research_checked_by').html(researchRecord.research_checked_by)
+			$('#view_research_remarks').html(researchRecord.research_remarks)
 		},
 	})
 }
@@ -372,7 +358,6 @@ viewResearchDocument = (research_id) => {
 		},
 	})
 }
-
 
 deleteResearchDocument = (research_id) => {
 	// next update

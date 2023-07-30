@@ -118,9 +118,9 @@ loadDoneLogsTable = () => {
 						const health_appointment_id = data.health_appointment_id
 						let buttonEvaluation
 						if (data.is_evaluated == false) {
-							buttonEvaluation = `<button type="button" class="btn btn-success btn-icon waves-effect waves-light" onclick="addEvaluationDetails('${health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewEvaluationModal"><i class="ri-chat-check-fill fs-5"></i></button>`
+							buttonEvaluation = `<button type="button" class="btn text-white btn-icon waves-effect waves-light" style="background-color: #4b38b3;" onclick="addEvaluationDetails('${health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#viewEvaluationModal"><i class="ri-chat-check-fill fs-5"></i></button>`
 						} else {
-							buttonEvaluation = `<button type="button" class="btn btn-info btn-icon waves-effect waves-light" onclick="viewEvaluationDetails('${health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#aboutEvaluationModal"><i class="ri-clipboard-fill fs-5"></i></button>`
+							buttonEvaluation = `<button type="button" class="btn text-white btn-icon waves-effect waves-light" style="background-color: #4b38b3;" onclick="viewEvaluationDetails('${health_appointment_id}')" data-bs-toggle="modal" data-bs-target="#aboutEvaluationModal"><i class="ri-clipboard-fill fs-5"></i></button>`
 						}
 						return `
                         <div class="dropdown d-inline-block">
