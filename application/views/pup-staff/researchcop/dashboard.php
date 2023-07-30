@@ -21,7 +21,7 @@
                         <div class="card-body">
                             <div class="d-flex justify-content-between">
                                 <div>
-                                    <p class="fw-medium text-muted mb-0">Submitted Researhes</p>
+                                    <p class="fw-medium text-muted mb-0">Submitted Researches</p>
                                     <div id="chartOne">
                                     </div>
                                 </div>
@@ -84,7 +84,7 @@
                         <div class="card-body">
                             <div class="d-flex justify-content-between">
                                 <div>
-                                    <p class="fw-medium text-muted mb-0">Pending Researhes</p>
+                                    <p class="fw-medium text-muted mb-0">Pending Researches</p>
                                     <div id="chartFour">
                                     </div>
                                 </div>
