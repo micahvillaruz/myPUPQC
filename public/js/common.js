@@ -24,7 +24,7 @@ const refreshPage = () => {
 }
 
 function restrictInputAndRemove(event) {
-	const allowedRegex = /^[A-Za-z0-9\s-;]*$/
+	const allowedRegex = /^[A-Za-z0-9\s-;@.]*$/
 	const inputElement = event.target
 	const inputValue = inputElement.value
 
