@@ -239,7 +239,7 @@ addNewReservation = () => {
 }
 
 // Calendar functions for new reservation
-//Disable sundays for flatpickr reserveDatefloatingInput using disable option
+// Disable sundays for flatpickr reserveDatefloatingInput using disable option
 
 loadHolidays = () => {
     let completeHolidayDetails
@@ -253,12 +253,23 @@ loadHolidays = () => {
             completeHolidayDetails = data.data
         },
     })
+<<<<<<< Updated upstream
     completeHolidayDetails.forEach((holiday) => {
         // push holidaay.holiday_date to holidayDates and parrse it to Date.parse(date)
         holidayDates.push(Date.parse(holiday.holiday_date))
     })
 
 
+=======
+
+    console.log(completeHolidayDetails)
+
+    completeHolidayDetails.forEach((holiday) => {
+        // push holidaay.holiday_date to holidayDates and parrse it to Date.parse(date)
+        holidayDates.push(Date.parse(holiday.holiday_date))
+    })
+
+>>>>>>> Stashed changes
     flatpickr('#reserveDatefloatingInput', {
         dateFormat: 'd M, Y',
         defaultDate: 'today',
@@ -270,6 +281,7 @@ loadHolidays = () => {
             },
             ...holidayDates,
         ],
+<<<<<<< Updated upstream
 
     })
 
@@ -323,6 +335,87 @@ loadHolidays = () => {
             })
         }
     }
+=======
+    })
+}
+
+dateAndTimeSelectFunctions = () => {
+	flatpickr('#reserveDatefloatingInput', {
+		dateFormat: 'd M, Y',
+		defaultDate: 'today',
+		minDate: 'today',
+		inline: true,
+		disable: [
+			function (date) {
+				return date.getDay() === 0
+			},
+			// ...holidayDates,
+		],
+})
+	
+
+	// enable #nextBtn1 upon selecting date, time from and time to in one line
+	const reserveDateInput = document.querySelector('#reserveDatefloatingInput')
+	const timeFromInput = document.querySelector('#timeFromfloatingInput')
+	const timeToInput = document.querySelector('#timeTofloatingInput')
+	const nextBtn1 = document.querySelector('#nextBtn1')
+
+	let inputsFilled = 0
+
+	reserveDateInput.addEventListener('change', checkInputs)
+	timeFromInput.addEventListener('change', checkInputs)
+	timeToInput.addEventListener('change', checkInputs)
+
+	function checkInputs() {
+		inputsFilled += 1
+
+		if (inputsFilled === 3) {
+			nextBtn1.removeAttribute('disabled')
+		}
+	}
+
+	// disable previous options if time from is greater than time to
+	const timeFrom = document.getElementById('timeFromfloatingInput')
+	const timeTo = document.getElementById('timeTofloatingInput')
+
+	timeFrom.addEventListener('change', function () {
+		const selectedTimeFrom = timeFrom.value
+		console.log(selectedTimeFrom)
+
+		if (selectedTimeFrom != '8:00 AM') {
+			updateTimeToOptions(selectedTimeFrom)
+		}
+	})
+
+	updateTimeToOptions = (selectedTimeFrom) => {
+		const timeToOptions = [
+			'9:00AM',
+			'10:00AM',
+			'11:00AM',
+			'1:00PM',
+			'2:00PM',
+			'3:00PM',
+			'4:00PM',
+			'5:00PM',
+			'6:00PM',
+			'7:00PM',
+			'8:00PM',
+			'9:00PM',
+		]
+
+		// Get the index of the selected time from and remove previous values from array
+		const index = timeToOptions.indexOf(selectedTimeFrom)
+		console.log(index)
+		timeToOptions.splice(0, index + 1)
+		console.log(timeToOptions)
+
+		// append the values in the timeTofloatingInput
+		timeTo.innerHTML = ''
+		timeToOptions.forEach((timeToOption) => {
+			timeTo.innerHTML += `<option value="${timeToOption}">${timeToOption}</option>`
+		})
+	}
+>>>>>>> Stashed changes
 }
 
 // load organizations as options in orgfloatingInput using ajax /student/view_organization

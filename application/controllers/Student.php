@@ -238,6 +238,39 @@ class Student extends CI_Controller
         $this->load->view('partials/foot-scripts');
         $this->load->view('student/evrsers/scripts/reservationhist-scripts');
     }
+<<<<<<< Updated upstream
+=======
+    
+    public function new_event_reservation()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/student/topbar');
+        $this->load->view('partials/student/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "EMS", "title" => "New Reservation"]);
+        $this->load->view('student/ems/new-event-reservation');
+        $this->load->view('partials/footer');
+        $this->load->view('student/ems/components/new-reservation-modal');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('student/ems/scripts/new-reservation-scripts');
+    }
+
+    public function view_event_reservation()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/student/topbar');
+        $this->load->view('partials/student/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "EMS", "title" => "View Events"]);
+        $this->load->view('student/ems/view-event-reservation');
+        $this->load->view('partials/footer');
+        $this->load->view('student/ems/components/view-reservation-modal');
+        $this->load->view('student/ems/scripts/view-reservation-scripts');
+        $this->load->view('partials/foot-scripts');
+    }
+>>>>>>> Stashed changes
 
     public function reservationpolicy()
     {

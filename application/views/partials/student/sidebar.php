@@ -54,7 +54,50 @@
                 <?php if (strpos($this->session->userdata('user_roles'), 'Organizer') !== false) { ?>
                     <li class="menu-title">
                         <i class="ri-more-fill"></i>
+<<<<<<< Updated upstream
                         <span>Venue Management System</span>
+=======
+                        <span>ORGMS</span>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/orgms/org-register" class="nav-link">
+                            <i class="ri-contacts-fill"></i>
+                            <span>Registration</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/orgms/org-profile" class="nav-link">
+                            <i class="ri-group-2-fill"></i>
+                            <span>Organization Profile</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="#sidebarEvents" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarEvents">
+                            <i class="ri-calendar-todo-fill"></i>
+                            <span>Organization Events</span>
+                        </a>
+                        <div class="collapse menu-dropdown" id="sidebarEvents">
+                            <ul class="nav nav-sm flex-column">
+                                <li class="nav-item">
+                                    <a href="<?= base_url() ?>student/ems/view-event-reservation" class="nav-link">My Event</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?= base_url() ?>student/ems/org-events" class="nav-link">Current Organization Events</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?= base_url() ?>student/ems/org-analytics" class="nav-link">Organization Analytics</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="menu-title">
+                        <i class="ri-more-fill"></i>
+                        <span>EVRSERS</span>
+>>>>>>> Stashed changes
                     </li>
 
                     <li class="nav-item">
