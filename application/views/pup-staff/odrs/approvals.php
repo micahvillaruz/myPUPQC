@@ -133,7 +133,7 @@
                                     <th>Date Filed</th>
                                     <th>Details</th>
                                     <th>Document/s for Approval</th>
-                                    <th>Action</th>
+                                    <th class="no-sort">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -166,7 +166,7 @@
                                     <th>Details</th>
                                     <th>Date On Hold</th>
                                     <th>Document/s On Hold</th>
-                                    <th>Action</th>
+                                    <th class="no-sort">Action</th>
                                 </tr>
                             </thead>
                             <tbody>

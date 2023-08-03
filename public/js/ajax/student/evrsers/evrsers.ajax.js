@@ -87,7 +87,7 @@ viewReservationDetails = () => {
         url: apiURL + `evrsers/student/view_reservations`,
         dataType: 'json',
         success: (result) => {
-            // console.log(result)
+            console.log(result)
             const userData = result.data[0]
             console.log(userData)
 
@@ -96,19 +96,19 @@ viewReservationDetails = () => {
                 $('#no_reservation').addClass('d-none')
             }
 
-            var pubmatimg = userData.ReservationPubmats.pubmats_images[0]
-            console.log(pubmatimg)
+            // var pubmatimg = userData.ReservationPubmats.pubmatimg[0]
+            // console.log(pubmatimg)
 
-            if (pubmatimg != null || pubmatimg != '') {
-                $('#no-pubmat').addClass('d-none')
-                $('#has-pubmat').removeClass('d-none')
-                    // set pubmat-img src to pubmatimg
-                $('#pubmat-img').attr('src', pubmatimg)
-                    // $('#pubmat-img').val(pubmatimg)
-            } else {
-                $('#no-pubmat').removeClass('d-none')
-                $('#has-pubmat').addClass('d-none')
-            }
+            // if (pubmatimg != null || pubmatimg != '') {
+            //     $('#no-pubmat').addClass('d-none')
+            //     $('#has-pubmat').removeClass('d-none')
+            //         // set pubmat-img src to pubmatimg
+            //     $('#pubmat-img').attr('src', pubmatimg)
+            //         // $('#pubmat-img').val(pubmatimg)
+            // } else {
+            //     $('#no-pubmat').removeClass('d-none')
+            //     $('#has-pubmat').addClass('d-none')
+            // }
 
             // load details in the editReservationModal
             $('#reserve_number_edit').val(userData.reservation_number)
@@ -124,8 +124,7 @@ viewReservationDetails = () => {
             })
 
             $('#reserve_number').html(userData.reservation_number)
-            let organization_name =
-                userData.organization_assigned_to_reservations.organization_abbreviation
+            let organization_name = userData.organization_assigned_to_reservations.display_name
             console.log(organization_name)
             let acadorg = ['CHRS', 'COMMITS', 'DOMT.CS', 'FBTO', 'JMS', 'SPAS', 'YES']
             let nonacadorg = ['KATAGA', 'MUSA', 'PSC', 'Vox Nova', 'Other']

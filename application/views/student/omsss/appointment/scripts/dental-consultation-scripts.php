@@ -26,6 +26,7 @@
 <script src="<?= base_url() ?>public/js/pages/sweetalerts.init.js"></script>
 
 <!-- dental ajax -->
+<script src="https://www.google.com/recaptcha/api.js?render=6LfBbEgnAAAAAFJ-ELYeg_wF-l5VX5G52W55Dnx2"></script>
 <script src="<?= base_url() ?>public/js/ajax/student/OMSSS/view-dental-appointment.ajax.js"></script>
 
 <!-- App js -->

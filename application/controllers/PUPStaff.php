@@ -220,6 +220,21 @@ class PUPStaff extends CI_Controller
         $this->load->view('pup-staff/evrsers/scripts/organizer-management-scripts');
     }
 
+    public function org_list()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/pup-staff/topbar');
+        $this->load->view('partials/pup-staff/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "EVRSERS", "title" => "Organization List"]);
+        $this->load->view('pup-staff/evrsers/org-list');
+        $this->load->view('partials/footer');
+        $this->load->view('pup-staff/evrsers/components/org-list-modal');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('pup-staff/evrsers/scripts/org-list-scripts');
+    }
+
     public function manage_reservations()
     {
         $this->load->view('partials/main');
@@ -338,4 +353,86 @@ class PUPStaff extends CI_Controller
         $this->load->view('partials/foot-scripts');
         $this->load->view('pup-staff/odrs/scripts/evaluation-scripts');
     }
+
+    public function researchcop_dashboard()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/pup-staff/topbar');
+        $this->load->view('partials/pup-staff/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Dashboard"]);
+        $this->load->view('pup-staff/researchcop/dashboard');
+        $this->load->view('partials/footer');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('pup-staff/scripts/dashboard-scripts');
+        $this->load->view('pup-staff/researchcop/scripts/dashboard-scripts');
+    }
+
+    public function research_copyright()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/pup-staff/topbar');
+        $this->load->view('partials/pup-staff/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Copyright Management"]);
+        $this->load->view('pup-staff/researchcop/copyright');
+        $this->load->view('partials/footer');
+        $this->load->view('pup-staff/researchcop/components/copyright-modal');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('pup-staff/scripts/dashboard-scripts');
+        $this->load->view('pup-staff/researchcop/scripts/copyright-scripts');
+    }
+
+
+    public function research_archives()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/pup-staff/topbar');
+        $this->load->view('partials/pup-staff/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Research Archives"]);
+        $this->load->view('pup-staff/researchcop/research-archives');
+        $this->load->view('partials/footer');
+        $this->load->view('pup-staff/researchcop/components/ra-modal');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('pup-staff/scripts/dashboard-scripts');
+        $this->load->view('pup-staff/researchcop/scripts/ra-scripts');
+    }
+
+    public function research_records()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/pup-staff/topbar');
+        $this->load->view('partials/pup-staff/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Research Records"]);
+        $this->load->view('pup-staff/researchcop/research-records');
+        $this->load->view('partials/footer');
+        $this->load->view('pup-staff/researchcop/components/rr-modal');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('pup-staff/scripts/dashboard-scripts');
+        $this->load->view('pup-staff/researchcop/scripts/rr-scripts');
+    }
+
+    public function research_submissions()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/pup-staff/topbar');
+        $this->load->view('partials/pup-staff/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Research Submissions"]);
+        $this->load->view('pup-staff/researchcop/research-submissions');
+        $this->load->view('partials/footer');
+        $this->load->view('pup-staff/researchcop/components/rp-modal');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('pup-staff/scripts/dashboard-scripts');
+        $this->load->view('pup-staff/researchcop/scripts/rp-scripts');
+    }
+
+    
 }

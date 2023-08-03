@@ -34,7 +34,11 @@
 
 
 <!-- new reservations ajax -->
+<<<<<<< HEAD
 <script src="<?= base_url() ?>public/js/ajax/student/frs/frsnew.ajax.js"></script>
+=======
+<script src="<?= base_url() ?>public/js/ajax/student/frs/evrsersnew.ajax.js"></script>
+>>>>>>> 7cf361db4f89674cf7aedfff8cd5c0d79510baa8
 
 <!-- App js -->
 <script src="<?= base_url() ?>public/js/app.js"></script>

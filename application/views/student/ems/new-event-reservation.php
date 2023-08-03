@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <div id="allow_create_reservation" class="row d-none">
+=======
+<div id="allow_create_reservation" class="row">
+>>>>>>> 7cf361db4f89674cf7aedfff8cd5c0d79510baa8
     <div class="col-xl-12">
         <div class="card">
             <div class="card-header">

@@ -63,7 +63,11 @@
                             <button id="editBtn" type="button" class="btn btn-soft-warning float-end text-start fw-medium mt-2 mt-sm-0 w-100 fs-5 mb-3" data-bs-toggle="modal" data-bs-target="#editReservationModal"><i class="ri-edit-2-line me-3 fs-4 align-middle"></i> Edit Reservation</button>
                             <button id="cancelBtn" type="button" class="btn btn-soft-danger float-end text-start fw-medium mt-2 mt-sm-0 w-100 fs-5 mb-3"><i class="mdi mdi-archive-remove-outline me-3 fs-4 align-middle"></i> Cancel Reservation</button>
                         </div>
+<<<<<<< HEAD
                         <!-- <div id="pubmat" class="mb-2">
+=======
+                        <div id="pubmat" class="mb-2">
+>>>>>>> 7cf361db4f89674cf7aedfff8cd5c0d79510baa8
                             <div id="no-pubmat" class="alert alert-info alert-top-border" style="height:305px">
                                 <div class="d-flex hstack gap-2">
                                     <h6 class="text-medium my-2">ADD PUBMAT</h6>
@@ -81,7 +85,11 @@
                                     </div>
                                 </div>
                             </div>
+<<<<<<< HEAD
                         </div> -->
+=======
+                        </div>
+>>>>>>> 7cf361db4f89674cf7aedfff8cd5c0d79510baa8
                         <!-- //* Until here -->
 
                         <h6 class="text-medium mb-3">RESERVATION STATUS</h6>

@@ -62,7 +62,6 @@ $route['translate_uri_dashes'] = FALSE;
 $route['signin'] = 'auth/signin';
 $route['forgot-password'] = 'auth/forgot_password';
 $route['reset-password/(:any)'] = 'auth/reset_password/$1';
-$route['logout'] = 'auth/logout';
 $route['sis'] = 'auth/sis';
 $route['vass'] = 'auth/vass';
 $route['osssac'] = 'auth/osssac';
@@ -187,98 +186,53 @@ $route['student/omsss/contact-omsss'] = 'student/contact_omsss';
 
 /*
 | --------------
-|     EVRSERS
+|     ORGMS
 | --------------
 */
 
-// If no organizer status
+$route['student/orgms/org-register'] = 'student/org_register';
+$route['student/orgms/org-profile'] = 'student/org_profile'; // * This would also hold the information for the organization officers
+
+/*
+| --------------
+|      EMS
+| --------------
+*/
+
+// * This would also be available in ORGMS since these are organization events
+$route['student/ems/new-event-reservation'] = 'student/new_event_reservation';
+$route['student/ems/view-event-reservation'] = 'student/view_event_reservation';
+$route['student/ems/org-events'] = 'student/org_events';
+$route['student/ems/org-analytics'] = 'student/org_analytics';
+
+/*
+| --------------
+|      FRS
+| --------------
+*/
+$route['student/frs/new-facility-reservation'] = 'student/new_facility_reservation';
+$route['student/frs/view-facility-reservation'] = 'student/view_facility_reservation';
+$route['student/frs/facility-reservation-history'] = 'student/facility_reservation_history';
 
 // Reservations
 $route['student/evrsers/new-reservation'] = 'student/new_reservation';
+$route['student/evrsers/add-reservation'] = 'student/add_reservation';
 $route['student/evrsers/view-reservation'] = 'student/view_reservation';
 $route['student/evrsers/reservation-history'] = 'student/reservation_history';
 $route['student/evrsers/reservationpolicy'] = 'student/reservationpolicy';
-
+$route['student/evrsers/org-regis'] = 'student/org_regis';
+$route['student/evrsers/org-pending'] = 'student/org_pending';
+$route['student/evrsers/org-dashboard'] = 'student/org_dashboard';
 /*
 | -------------------------------------------------------------------------
 | SUPER ADMIN ROUTES
 | -------------------------------------------------------------------------
 */
 
-$route['admin/dashboard'] = 'admin';
-$route['admin/profile'] = 'admin/profile';
-$route['admin/profile/settings'] = 'admin/settings';
-
-/*
-| ----------------------
-|     USER MANAGEMENT
-| ----------------------
-*/
-
-$route['admin/user-management/students'] = 'admin/user_students';
-$route['admin/user-management/pup-staffs'] = 'admin/user_pup_staffs';
-
-/*
-| ----------------------
-|     ROLE MANAGEMENT
-| ----------------------
-*/
-
-$route['admin/role-management/roles'] = 'admin/roles';
-
-/*
-| ----------------------
-|     USER ROLE MANAGEMENT
-| ----------------------
-*/
-
-$route['admin/user-role-management/student'] = 'admin/user_roles_student';
-$route['admin/user-role-management/staff'] = 'admin/user_roles_staff';
-
-
-/*
-| --------------
-|     ODRS
-| --------------
-*/
-
-$route['admin/odrs/documents'] = 'admin/documents';
-$route['admin/odrs/requests'] = 'admin/requests';
-$route['admin/odrs/history'] = 'admin/history';
-
-/*
-| --------------
-|     OMSSS
-| --------------
-*/
-
-$route['admin/omsss/all-appointment'] = 'admin/all_appointment';
-$route['admin/omsss/appointment-history'] = 'admin/appointment_history';
-
-
-/*
-| --------------
-|     EVRSERS
-| --------------
-*/
-// Organizer Management
-$route['admin/evrsers/organizer-management'] = 'admin/organizer_management';
-
-// Facilities
-$route['admin/evrsers/facilities'] = 'admin/facilities';
-
-// Reservations
-$route['admin/evrsers/manage-reservations'] = 'admin/manage_reservations';
-$route['admin/evrsers/reservation-history'] = 'admin/reservation_history';
-
-/*
-| ----------------------
-|         OTHERS
-| ----------------------
-*/
-
-$route['admin/holiday'] = 'admin/holiday';
-$route['admin/organization'] = 'admin/organization';
+// Facility Reservation
+$route['student/evrsers/facility/add-reservation'] = 'student/facility_add_reservation';
+$route['student/evrsers/facility/view-reservation'] = 'student/facility_view_reservation';
+$route['student/evrsers/facility/view-history'] = 'student/facility_view_history';
 
 /*
 | -------------------------------------------------------------------------
@@ -296,6 +250,7 @@ $route['pupstaff/omsss/dentist/analytics-and-history'] = 'pupstaff/dental_analyt
 $route['pupstaff/omsss/counsellor/counsel-requests'] = 'pupstaff/counsellor_requests';
 $route['pupstaff/omsss/counsellor/analytics-and-history'] = 'pupstaff/counsellor_analytics';
 $route['pupstaff/omsss/evaluation'] = 'pupstaff/omsss_evaluation';
+$route['pupstaff/evrsers/org-list'] = 'pupstaff/org_list';
 
 /*
 | --------------
@@ -328,9 +283,36 @@ $route['pupstaff/odrs/evaluation'] = 'pupstaff/odrs_evaluation';
 // Organizer Management
 $route['pupstaff/evrsers/organizer-management'] = 'pupstaff/organizer_management';
 
+
 // Reservations
 $route['pupstaff/evrsers/manage-reservations'] = 'pupstaff/manage_reservations';
 $route['pupstaff/evrsers/reservation-history'] = 'pupstaff/reservation_history';
 
 // Event Approvals
 $route['pupstaff/evrsers/reservation-approval'] = 'pupstaff/event_approvals';
+
+/*
+| ----------------------
+|    RESEARCHCOP ROUTES FOR STUDENTS
+| ----------------------
+*/
+
+$route['student/researchcop/dashboard'] = 'student/researchcop_dashboard';
+$route['student/researchcop/copyright'] = 'student/researchcop_copyright';
+$route['student/researchcop/author'] = 'student/researchcop_author';
+$route['student/researchcop/my-submissions'] = 'student/my_submissions';
+$route['student/researchcop/add-research'] = 'student/add_research';
+$route['student/researchcop/help-and-support'] = 'student/help_and_support';
+
+
+/*
+| ----------------------
+|    RESEARCHCOP ROUTES FOR PUPSTAFF
+| ----------------------
+*/
+
+$route['pupstaff/researchcop/dashboard'] = 'pupstaff/researchcop_dashboard';
+$route['pupstaff/researchcop/copyright'] = 'pupstaff/research_copyright';
+$route['pupstaff/researchcop/research-archives'] = 'pupstaff/research_archives';
+$route['pupstaff/researchcop/research-records'] = 'pupstaff/research_records';
+$route['pupstaff/researchcop/research-submissions'] = 'pupstaff/research_submissions';

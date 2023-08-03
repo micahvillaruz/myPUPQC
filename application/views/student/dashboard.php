@@ -1,4 +1,7 @@
 <div class="row">
+    <div class="col-xs-12 mb-1">
+        <div id="checkDataPrivacy"></div>
+    </div>
     <div class="col-xs-12 col-xxl-6">
         <div class="card card-animate">
             <div class="card-body p-0">
@@ -38,7 +41,7 @@
         <blockquote class="blockquote custom-blockquote blockquote-outline blockquote-primary rounded py-3">
             <div class="row g-0">
                 <div class="col-lg-4 quote-image">
-                    <img id="background" class="rounded-start img-fluid h-100 object-cover" src="https://theysaidso.com/img/qod/qod-inspire.jpg" alt="QoD Image" />
+                    <img id="background" class="rounded-start img-fluid h-100 object-cover" loading="lazy" src="https://images.pexels.com/photos/450441/pexels-photo-450441.jpeg" alt="QoD Image" />
                 </div>
                 <div class="col-xs-12 col-lg-8 qotd">
                     <div class="card-header">
@@ -151,7 +154,7 @@
             <div class="rounded bg-primary bg-opacity-50 d-flex justify-content-center align-items-center flex-column" style="height: 300px;">
                 <h1 class="pb-4 text-white fw-medium align-center text-center text-uppercase">Online Document Request System</h1>
                 <div class="d-flex justify-content-center">
-                <button onclick="window.location.href='<?= base_url() ?>student/odrs/request'" class="mb-5 btn btn-secondary waves-effect waves-light"> <i class="ri-article-line me-2"></i> Request a document</button>
+                    <button onclick="window.location.href='<?= base_url() ?>student/odrs/request'" class="mb-5 btn btn-secondary waves-effect waves-light"> <i class="ri-article-line me-2"></i> Request a document</button>
                 </div>
             </div>
         </div>
@@ -185,7 +188,7 @@
                         With regular dental check-ups, our dentists can help and give you a perfect treatment plan towards a perfect beautiful smile.
                     </p>
                     <div class="my-3">
-                    <button onclick="window.location.href='<?= base_url() ?>student/omsss/dentist-services'" class="btn fw-medium btn-secondary waves-effect waves-light"> <i class="las la-tooth me-2"></i> Book a Dental Consultation Appointment</button>
+                        <button onclick="window.location.href='<?= base_url() ?>student/omsss/dentist-services'" class="btn fw-medium btn-secondary waves-effect waves-light"> <i class="las la-tooth me-2"></i> Book a Dental Consultation Appointment</button>
                     </div>
                     <img src="<?= base_url() ?>public/images/dentist.jpg" class="img-fluid" style="height: 200px;" />
                 </div>
@@ -202,7 +205,7 @@
                         Our experienced psychologist offer free counselling support. Talk to us now if you're having emotional or psychological issues.
                     </p>
                     <div class="my-3">
-                    <button onclick="window.location.href='<?= base_url() ?>student/omsss/guidance-services'" class="btn fw-medium btn-secondary waves-effect waves-light"> <i class="mdi mdi-brain me-2"></i> Book a Guidance Consultation Appointment</button>
+                        <button onclick="window.location.href='<?= base_url() ?>student/omsss/guidance-services'" class="btn fw-medium btn-secondary waves-effect waves-light"> <i class="mdi mdi-brain me-2"></i> Book a Guidance Consultation Appointment</button>
                     </div>
                     <img src="<?= base_url() ?>public/images/guidance.jpg" class="img-fluid" style="height: 200px;" />
                 </div>
@@ -246,3 +249,35 @@
         </div>
     </div>
 </div>
+
+
+<!-- Modal for Announcement -->
+<div id="myAnnouncementModalId" class="modal fade" tabindex="-1" aria-labelledby="myAnnouncementTitle" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content px-4 border-0 overflow-hidden">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myAnnouncementTitle">Modal Heading</h5>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            </div>
+            <div class="modal-body">
+                <h5 class="fs-15" id="myAnnouncementAuthor">
+                    Overflowing text to show scroll behavior
+                </h5>
+
+                <h5 class="fs-15" id="myAnnouncementDate"></h5>
+                <!-- <div class="flex-shrink-0 ms-2">
+                    <div class="fs-11 text-muted">
+                        <i class="mdi mdi-clock-outline"> </i><span id="myAnnouncementDate"></span>
+                    </div>
+                </div>
+                <br/><br/> -->
+                <div id="myAnnouncementContent" class="mt-3"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light fw-medium w-100 waves-effect waves-light" data-bs-dismiss="modal">Close</button>
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- End Modal for Announcement -->

@@ -23,6 +23,21 @@ const refreshPage = () => {
 	}, 1000)
 }
 
+function restrictInputAndRemove(event) {
+	const allowedRegex = /^[A-Za-z0-9\s-;@.]*$/
+	const inputElement = event.target
+	const inputValue = inputElement.value
+
+	if (!allowedRegex.test(inputValue)) {
+		inputElement.value = inputValue.replace(/[^A-Za-z0-9\s-;]/g, '')
+	}
+}
+
+function setupInputRestriction(inputElement) {
+	inputElement.oninput = restrictInputAndRemove
+	inputElement.onpaste = restrictInputAndRemove
+}
+
 function logout(page) {
 	let msg = ''
 
@@ -67,8 +82,55 @@ function logout(page) {
 		if (!result.value) return false
 
 		localStorage.clear()
-		window.location.href = baseURL + page
+		if (page == 'logout') window.location.href = baseURL + 'signin'
+		else window.location.href = baseURL + page
 	})
+}
+
+// Function to handle password input change
+function handlePasswordInputChange() {
+	var passwordInput = document.getElementById('password-input')
+	var password = passwordInput.value
+	var message = document.getElementById('password-contain')
+
+	// Validate password and show/hide validation messages
+	var lowercase = /[a-z]/.test(password)
+	var uppercase = /[A-Z]/.test(password)
+	var number = /[0-9]/.test(password)
+	var specialChar = /[!@#$%^&-]/.test(password)
+	var length = password.length >= 8 && password.length <= 24
+
+	// Apply validation classes to the password validation messages
+	toggleValidationClass('pass-lower', lowercase)
+	toggleValidationClass('pass-upper', uppercase)
+	toggleValidationClass('pass-number', number)
+	toggleValidationClass('pass-special', specialChar)
+	toggleValidationClass('pass-length-min', length)
+	toggleValidationClass('pass-length-max', length && password.length <= 24)
+
+	// Show/hide the password validation container
+	message.style.display = password ? 'block' : 'none'
+}
+
+// Function to toggle validation class for a given element
+function toggleValidationClass(elementId, isValid) {
+	var element = document.getElementById(elementId)
+	if (isValid) {
+		element.classList.add('valid')
+		element.classList.remove('invalid')
+	} else {
+		element.classList.add('invalid')
+		element.classList.remove('valid')
+	}
+}
+
+// Add event listener for password input change
+document.getElementById('password-input').addEventListener('input', handlePasswordInputChange)
+
+function changePassLogout() {
+	localStorage.clear()
+	sessionStorage.clear()
+	window.location.href = baseURL + 'auth/signin'
 }
 
 function adjustTime(date) {

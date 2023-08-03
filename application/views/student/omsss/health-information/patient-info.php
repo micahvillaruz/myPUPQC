@@ -21,14 +21,6 @@
                 <div class="text-center">
                     <div class="profile-user position-relative d-inline-block mx-auto mb-4">
                         <img src="<?= base_url() ?>public/images/profile/flat-faces-icons-circle-man-6.png" alt="user-img" class="rounded-circle avatar-xl img-thumbnail user-profile-image" />
-                        <div class="avatar-xs p-0 rounded-circle profile-photo-edit">
-                            <input id="profile-img-file-input" type="file" class="profile-img-file-input" />
-                            <label for="profile-img-file-input" class="profile-photo-edit avatar-xs">
-                                <span class="avatar-title rounded-circle bg-light text-body">
-                                    <i class="ri-camera-fill"></i>
-                                </span>
-                            </label>
-                        </div>
                     </div>
                     <h5 class="fs-16 mb-1" id="view_full_name"></h5>
                     <span>
@@ -93,7 +85,7 @@
                                     <label for="contactpersonNumber" class="form-label">Contact Person</label>
                                 </div>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="emergency_contact_name" name="emergency_contact_name" placeholder="Enter your contact person">
+                                    <input type="text" oninput="setupInputRestriction(this)" class="form-control" id="emergency_contact_name" name="emergency_contact_name" placeholder="Enter your contact person">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -125,7 +117,7 @@
                                     <label for="philHealthInput" class="form-label">PhilHealth No.</label>
                                 </div>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="philhealth_number" name="philhealth_number" placeholder="If none, please leave it blank">
+                                    <input type="text" oninput="setupInputRestriction(this)" class="form-control" id="philhealth_number" name="philhealth_number" placeholder="If none, please leave it blank">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -150,17 +142,9 @@
 
                             <!-- Privacy Statement -->
                             <div class=" col-lg">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="privacy" required>
-                                    <label class="form-check-label" for="privacy">
-                                        By clicking the Update button, I understood and agree to PUP Online Medical Service System's
-                                        <a href="" data-bs-toggle="modal" data-bs-target="#dataPrivacy">Privacy Statement</a>.
-                                    </label>
-                                    <div class="invalid-feedback">
-                                        You must read and acknowledge the Data Privacy Statement as declared above.
-                                    </div>
-                                </div>
+                                <div id="checkDataPrivacy"></div>
                             </div>
+
                             <div class="col-lg-12 mt-4">
                                 <div class="text-center d-grid">
                                     <button type="submit" id="update_patient_information" class="btn btn-primary bg-gradient">Update Patient Information</button>
@@ -201,17 +185,9 @@
 
                             <!-- Privacy Statement -->
                             <div class=" col-lg">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="privacy" required>
-                                    <label class="form-check-label" for="privacy">
-                                        By clicking the Update button, I understood and agree to PUP Online Medical Service System's
-                                        <a href="" data-bs-toggle="modal" data-bs-target="#dataPrivacy">Privacy Statement</a>.
-                                    </label>
-                                    <div class="invalid-feedback">
-                                        You must read and acknowledge the Data Privacy Statement as declared above.
-                                    </div>
-                                </div>
+                                <div id="checkDataPrivacy2"></div>
                             </div>
+
                             <div class="col-lg-12 mt-4">
                                 <div class="text-center d-grid">
                                     <button type="submit" id="update_vax_card" class="btn btn-primary bg-gradient">Update Vaccination Card</button>

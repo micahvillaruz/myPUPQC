@@ -72,6 +72,7 @@
     <!-- /.modal-content -->
   </div>
   <!-- /.modal-dialog -->
+<<<<<<< HEAD
 </div>
 <!-- /.modal -->
 
@@ -155,4 +156,6 @@
     <!-- /.modal-content -->
   </div>
   <!-- /.modal-dialog -->
+=======
+>>>>>>> 7cf361db4f89674cf7aedfff8cd5c0d79510baa8
 </div>

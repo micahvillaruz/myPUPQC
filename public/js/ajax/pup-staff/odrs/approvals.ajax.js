@@ -35,6 +35,7 @@ $(function () {
 loadForApprovalRequests = () => {
 	const dt = $('#for-approval-requests-sign')
 
+
 	if (dt.length) {
 		dt.DataTable({
 			dom: 'Bfrtip',
@@ -46,6 +47,10 @@ loadForApprovalRequests = () => {
 				type: 'GET',
 				headers: AJAX_HEADERS,
 			},
+			//No Sort Function
+			"aoColumnDefs": [
+				{ 'bSortable': false, 'aTargets': ['no-sort'] }
+			],
 			columns: [
 				// Control Number
 				{
@@ -376,6 +381,10 @@ loadOnHoldRequests = () => {
 				type: 'GET',
 				headers: AJAX_HEADERS,
 			},
+			//No Sort Function
+			"aoColumnDefs": [
+				{ 'bSortable': false, 'aTargets': ['no-sort'] }
+			],
 			columns: [
 				// Control Number
 				{
@@ -540,7 +549,7 @@ approveRequest = (request_id, document_id) => {
 		url: `${apiURL}odrs/pup_staff/approve_signatory/${request_id}/${document_id}`,
 		type: 'PUT',
 		data: {
-			remarks: form.get('remarks'),
+			remarks: form.get('remarks') !== '' ? form.get('remarks') : null,
 		},
 		dataType: 'json',
 		headers: AJAX_HEADERS,
@@ -574,9 +583,8 @@ approveRequest = (request_id, document_id) => {
 		},
 	}).fail((xhr) => {
 		Swal.fire({
-			html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">${
-				JSON.parse(xhr.responseText).message
-			}</p></div></div>`,
+			html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">${JSON.parse(xhr.responseText).message
+				}</p></div></div>`,
 			showCancelButton: !0,
 			showConfirmButton: !1,
 			cancelButtonClass: 'btn btn-danger w-xs mb-1',
@@ -595,7 +603,7 @@ onHoldRequest = (request_signatory_id) => {
 		url: `${apiURL}odrs/pup_staff/onhold_signatory/${request_signatory_id}`,
 		type: 'PUT',
 		data: {
-			remarks: form.get('remarks'),
+			remarks: form.get('remarks') !== '' ? form.get('remarks') : null,
 		},
 		dataType: 'json',
 		headers: AJAX_HEADERS,
@@ -629,9 +637,8 @@ onHoldRequest = (request_signatory_id) => {
 		},
 	}).fail((xhr) => {
 		Swal.fire({
-			html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">${
-				JSON.parse(xhr.responseText).message
-			}</p></div></div>`,
+			html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">${JSON.parse(xhr.responseText).message
+				}</p></div></div>`,
 			showCancelButton: !0,
 			showConfirmButton: !1,
 			cancelButtonClass: 'btn btn-danger w-xs mb-1',
@@ -679,9 +686,8 @@ revertRequest = (request_signatory_id) => {
 		},
 	}).fail((xhr) => {
 		Swal.fire({
-			html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">${
-				JSON.parse(xhr.responseText).message
-			}</p></div></div>`,
+			html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">${JSON.parse(xhr.responseText).message
+				}</p></div></div>`,
 			showCancelButton: !0,
 			showConfirmButton: !1,
 			cancelButtonClass: 'btn btn-danger w-xs mb-1',
@@ -904,6 +910,10 @@ viewforApprovalRequest = (request_id) => {
 						<div class="accordion accordion-flush">`
 
 				for (const signatory of data.signatories_assigned_to_request) {
+					arrayPos = data.signatories_assigned_to_request.indexOf(signatory);
+                    var prevArray = arrayPos
+					var nextArray = arrayPos - 1
+	
 					if (document.document_id == signatory.document_id) {
 						if (signatory.hierarchy_number == 1) {
 							signatoryWorkflow += `
@@ -953,12 +963,23 @@ viewforApprovalRequest = (request_id) => {
 												</h6>`
 							if (
 								signatory.is_signed == false &&
-								(signatory.is_onhold == false) & ($('#user_id').val() === signatory.user_id)
+								(signatory.is_onhold == false) & data.signatories_assigned_to_request[prevArray].is_signed == true & ($('#user_id').val() === signatory.user_id)
 							) {
 								signatoryWorkflow += `
 									<span class="mt-1 badge badge-soft-info text-uppercase">Ongoing</span>
 								`
-							} else if (signatory.is_signed == false && signatory.is_onhold == false) {
+							} 
+							
+							else if (
+								signatory.is_signed == false &&
+								(signatory.is_onhold == false) & data.signatories_assigned_to_request[prevArray].is_signed == true) 
+								{
+								signatoryWorkflow += `
+									<span class="mt-1 badge badge-soft-info text-uppercase">Ongoing</span>
+								`
+							}
+
+							else if (signatory.is_signed == false && signatory.is_onhold == false) {
 								signatoryWorkflow += `
 									<span class="mt-1 badge badge-soft-warning text-uppercase">Pending</span>
 								`
@@ -1039,12 +1060,15 @@ viewforApprovalRequest = (request_id) => {
 												</h6>`
 							if (
 								signatory.is_signed == false &&
-								(signatory.is_onhold == false) & ($('#user_id').val() === signatory.user_id)
+								(signatory.is_onhold == false) & data.signatories_assigned_to_request[nextArray].is_signed == true
 							) {
 								signatoryWorkflow += `
 									<span class="mt-1 badge badge-soft-info text-uppercase">Ongoing</span>
 								`
-							} else if (signatory.is_signed == false && signatory.is_onhold == false) {
+							} 
+							
+							
+							else if (signatory.is_signed == false && signatory.is_onhold == false) {
 								signatoryWorkflow += `
 									<span class="mt-1 badge badge-soft-warning text-uppercase">Pending</span>
 								`
@@ -1173,6 +1197,9 @@ viewApprovedRequest = (request_id) => {
 						<div class="accordion accordion-flush">`
 
 				for (const signatory of data.signatories_assigned_to_request) {
+					arrayPos = data.signatories_assigned_to_request.indexOf(signatory);
+                    var nextArray = arrayPos - 1
+
 					if (document.document_id == signatory.document_id) {
 						if (signatory.hierarchy_number == 1) {
 							signatoryWorkflow += `
@@ -1231,7 +1258,8 @@ viewApprovedRequest = (request_id) => {
 								signatoryWorkflow += `
 									<span class="mt-1 badge badge-soft-warning text-uppercase">Pending</span>
 								`
-							} else if (signatory.is_signed == true && signatory.is_onhold == false) {
+							} 
+							else if (signatory.is_signed == true && signatory.is_onhold == false) {
 								signatoryWorkflow += `
 									<span class="mt-2 my-1 badge badge-soft-success text-uppercase">Approved</span><br>
 									<div class="d-flex align-items-center text-muted mt-1 gap-2">
@@ -1308,16 +1336,18 @@ viewApprovedRequest = (request_id) => {
 												</h6>`
 							if (
 								signatory.is_signed == false &&
-								(signatory.is_onhold == false) & ($('#user_id').val() === signatory.user_id)
+								(signatory.is_onhold == false) & data.signatories_assigned_to_request[nextArray].is_signed == true 
 							) {
 								signatoryWorkflow += `
 									<span class="mt-1 badge badge-soft-info text-uppercase">Ongoing</span>
 								`
-							} else if (signatory.is_signed == false && signatory.is_onhold == false) {
+							} 
+							else if (signatory.is_signed == false && signatory.is_onhold == false) {
 								signatoryWorkflow += `
 									<span class="mt-1 badge badge-soft-warning text-uppercase">Pending</span>
 								`
-							} else if (signatory.is_signed == true && signatory.is_onhold == false) {
+							} 
+							else if (signatory.is_signed == true && signatory.is_onhold == false) {
 								signatoryWorkflow += `
 									<span class="mt-2 my-1 badge badge-soft-success text-uppercase">Approved</span><br>
 									<div class="d-flex align-items-center text-muted mt-1 gap-2">

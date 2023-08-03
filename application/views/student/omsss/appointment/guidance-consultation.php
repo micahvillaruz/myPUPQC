@@ -41,7 +41,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="reasonInput" class="form-label"> Reason for Consultation <span class="text-danger">*</span></label>
-                                <textarea type="text" class="form-control" id="consultation_reason" name="consultation_reason" style="resize:none" rows="8" required></textarea>
+                                <textarea autocomplete="off" type="text" class="form-control" oninput="setupInputRestriction(this)" id="consultation_reason" name="consultation_reason" style="resize:none" rows="8" required></textarea>
                             </div>
                         </div>
                         <div class="col-6">
@@ -54,14 +54,7 @@
                         </div>
                     </div>
 
-                    <div class="alert alert-info alert-dismissible alert-label-icon rounded-label" role="alert">
-                        <i class="ri-error-warning-line fw-bold label-icon"></i>
-                        <strong>
-                            <h4>Data Privacy Act of 2012</h4>
-                        </strong>
-                        I hereby authorize PUPQC to collect and process the data indicate herein for purpose of effecting control of the covid-19 infection.
-                        I understand that any personal information is protected under Data Privacy Act of 2012, if needed, this may be used to facilitate contact tracing of PUPQC Medical Service and/or LGU and that I am required at RA 11469 Bayanihan to Heal as One Act, to provide truthful information.
-                    </div>
+                    <div id="checkDataPrivacy"></div>
 
                     <div class="d-grid text-center">
                         <button type="submit" class="btn btn-primary" id="addGuidanceAppointment">Submit Appointment</button>

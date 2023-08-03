@@ -51,12 +51,16 @@
                         <span>HelpDesk</span>
                     </a>
                 </li>
+
                 <?php if (strpos($this->session->userdata('user_roles'), 'Organizer') !== false) { ?>
                     <li class="menu-title">
                         <i class="ri-more-fill"></i>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                         <span>Venue Management System</span>
 =======
+=======
+>>>>>>> 7cf361db4f89674cf7aedfff8cd5c0d79510baa8
                         <span>ORGMS</span>
                     </li>
 
@@ -85,7 +89,11 @@
                                     <a href="<?= base_url() ?>student/ems/view-event-reservation" class="nav-link">My Event</a>
                                 </li>
                                 <li class="nav-item">
+<<<<<<< HEAD
                                     <a href="<?= base_url() ?>student/ems/org-events" class="nav-link">Current Organization Events</a>
+=======
+                                    <a href="<?= base_url() ?>student/ems/org-events" class="nav-link">Organization Events</a>
+>>>>>>> 7cf361db4f89674cf7aedfff8cd5c0d79510baa8
                                 </li>
                                 <li class="nav-item">
                                     <a href="<?= base_url() ?>student/ems/org-analytics" class="nav-link">Organization Analytics</a>
@@ -97,12 +105,15 @@
                     <li class="menu-title">
                         <i class="ri-more-fill"></i>
                         <span>EVRSERS</span>
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> 7cf361db4f89674cf7aedfff8cd5c0d79510baa8
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/new-reservation" class="nav-link">
-                            <i class=" ri-add-box-line"></i>
+                            <i class="ri-add-box-line"></i>
                             <span>New Reservation</span>
                         </a>
                     </li>
@@ -120,7 +131,82 @@
                             <span>Reservation History</span>
                         </a>
                     </li>
+
+                <li class="menu-title">
+                    <i class="ri-more-fill"></i>
+                    <span>Facility Reservation</span>
+                </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/facility/add-reservation" class="nav-link">
+                            <i class=" bx bx-buildings"></i>
+                            <span>Add Reservation</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/facility/view-reservation" class="nav-link">
+                            <i class="ri-reserved-line"></i>
+                            <span>View Facility Reservation</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/evrsers/facility/view-history" class="nav-link">
+                            <i class="bx bx-history"></i>
+                            <span>Facility History</span>
+                        </a>
+                    </li>
+
                 <?php } ?>
+
+                <li class="menu-title">
+                        <i class="ri-more-fill"></i>
+                        <span>FACILITIES</span>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/frs/new-facility-reservation" class="nav-link">
+                            <i class="ri-add-box-line"></i>
+                            <span>Use a Facility</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/frs/view-facility-reservation" class="nav-link">
+                            <i class="ri-reserved-line"></i>
+                            <span>View Facility Reservation</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/frs/facility-reservation-history" class="nav-link">
+                            <i class="bx bx-history"></i>
+                            <span>Reservation History</span>
+                        </a>
+                    </li>
+
+                <?php if (strpos($this->session->userdata('user_roles'), 'Organizer') !== false) { ?>
+                    <li class="menu-title">
+                        <i class="ri-more-fill"></i>
+                        <span>Event Monitoring System</span>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/ems/new-reservation2" class="nav-link">
+                            <i class=" ri-add-box-line"></i>
+                            <span>New Reservation</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>student/ems/view-reservation2" class="nav-link">
+                            <i class="ri-reserved-line"></i>
+                            <span>View Reservation</span>
+                        </a>
+                    </li>
+                <?php } ?>
+
                 <li class="menu-title">
                     <i class="ri-more-fill"></i>
                     <span>Document Request</span>
@@ -184,6 +270,46 @@
                     <a class="nav-link menu-link" href="<?= base_url() ?>student/omsss/medical-logs">
                         <i class="ri-refresh-line"></i>
                         <span>Medical Logs</span>
+                    </a>
+                </li>
+
+                <li class="menu-title">
+                    <i class="ri-computer-fill"></i>
+                    <span>ResearchCop</span>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="<?= base_url() ?>student/researchcop/dashboard">
+                        <i class="ri-search-line"></i>
+                        <span>Research Papers</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="<?= base_url() ?>student/researchcop/author">
+                        <i class="ri-user-add-fill"></i>
+                        <span>Research Authors</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="<?= base_url() ?>student/researchcop/copyright">
+                        <i class="ri-copyright-line"></i>
+                        <span>Copyright Management</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="<?= base_url() ?>student/researchcop/my-submissions">
+                        <i class="ri-upload-line"></i>
+                        <span>My Submissions</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="<?= base_url() ?>student/researchcop/help-and-support">
+                        <i class="ri-question-line"></i>
+                        <span>Help and Support</span>
                     </a>
                 </li>
             </ul>
